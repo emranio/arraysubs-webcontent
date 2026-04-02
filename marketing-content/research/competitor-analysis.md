@@ -1,6 +1,6 @@
 # ArraySubs Competitor Analysis
 
-> **Date**: 2nd April, 2026 **Product**: ArraySubs (Free + Pro) **Category**: WooCommerce Subscriptions & Memberships **Competitors Analyzed**: 7 plugins across 4 vendors
+> **Date**: 2nd April, 2026 **Product**: ArraySubs (Free + Pro) **Category**: WooCommerce Subscriptions & Memberships **Competitors Analyzed**: 9 plugins across 5 vendors
 
 * * *
 
@@ -25,6 +25,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 -   **WP Swings** offers a free subscription plugin with 10K+ installs but limited depth — no plan switching, no retention, no analytics, and a separate membership plugin with only 800 installs.
 -   **WPSubscription (Convers Lab)** is a newer entrant (700+ installs, 4.9★) with a freemium model, installment payments, and multi-gateway support, but lacks membership/access control entirely.
 -   **SUMO (Fantastic Plugins)** sells premium-only CodeCanyon plugins for subscriptions and memberships separately, with deep feature sets but an aging codebase (last changelog entries from 2017) and no free tier.
+-   **YITH (Your Inspiration Solutions)** sells a freemium subscription plugin (7K+ installs, €199.99/yr premium) and a premium-only membership plugin (€179.99/yr). Deep feature sets including subscription boxes and download credit systems, but poor WordPress.org reviews (3.0★ for Subscriptions), limited gateway support (mostly YITH's own plugins), and combined cost of €379.98/yr for subscriptions + memberships.
 
 **ArraySubs occupies a unique position** as the only all-in-one solution that combines subscriptions, memberships, store credit, retention flows, checkout builder, and advanced analytics in a single plugin ecosystem (Free + Pro). No competitor offers this breadth.
 
@@ -77,7 +78,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Type | Freemium |
 | Price | Free (limited) + Pro (pricing not publicly listed) |
 | Installs | 10,000+ |
-| Rating | 4.4★ (159 reviews — 139 five-star, 20 one-star) |
+| Rating | 4.4★ (168 reviews — 139 five-star, 20 one-star) |
 | Version | 1.9.4 |
 | Website | wordpress.org/plugins/subscriptions-for-woocommerce/ |
 
@@ -174,110 +175,161 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 
 * * *
 
+### 8\. YITH WooCommerce Subscription
+
+| Attribute | Detail |
+| --- | --- |
+| Vendor | YITH (Your Inspiration Solutions) |
+| Type | Freemium |
+| Price | Free + Premium (€199.99/yr) |
+| Installs | 7,000+ (WordPress.org) / 28,216 customers (YITH) |
+| Rating | 3.0★ on WordPress.org (45 reviews — 19 five-star, 17 one-star) / 4.28★ on YITH (102 reviews) |
+| Version | 4.15.0 |
+| Compatibility | WP 6.9.4, WooCommerce, HPOS |
+| Website | yithemes.com/themes/plugins/yith-woocommerce-subscription/ |
+
+**Core capabilities (Free)**: Simple/virtual/downloadable product subscriptions, daily/weekly/monthly/yearly billing, PayPal auto-payment, WooCommerce PayPal Payments integration, variation-based subscription plans, My Account subscription info, customizable Add to Cart and Place Order button labels.
+
+**Premium additions**: Free trial, sign-up fee, payment synchronization (pro-rate or delay first payment), auto-cancel on order cancel, auto-suspend on failed payment (3 attempts then cancel), configurable status switch delays (hours), "Renew Now" button for failed payments, pause/resume with admin-set limits, post-expiry access while awaiting payment, resubscribe from My Account, upgrade/downgrade (variable products only), subscription limit (one per product), cart subscription limits, billing/shipping address editing, manual backend creation, dashboard (MRR, ARR, trials, net sales), CSV export, coupon discounts (sign-up and recurring with payment count limits), email notifications, staging mode auto-detection, Gutenberg subscription plan block, delivery scheduling with sync, PDF shipping address labels, one-time shipping, Subscription Box module (YITH exclusive — customers choose box contents).
+
+**Gateway support**: PayPal Standard, YITH WooCommerce Stripe Premium, YITH Stripe Connect Premium, YITH PayPal Express Checkout, YITH WooCommerce Account Funds Premium, WooCommerce Stripe Payment Gateway.
+
+**Limitations**: No membership/access control (requires separate YITH Membership at €179.99/yr), no retention flow, no store credit, no checkout builder, no advanced analytics beyond basic dashboard, no audit logs, limited gateway ecosystem (mostly YITH's own plugins), upgrade/downgrade limited to variable products only, poor WordPress.org support resolution (0/4 issues), significant review split (42% five-star vs. 38% one-star on WordPress.org).
+
+* * *
+
+### 9\. YITH WooCommerce Membership
+
+| Attribute | Detail |
+| --- | --- |
+| Vendor | YITH (Your Inspiration Solutions) |
+| Type | Premium only |
+| Price | €179.99/yr |
+| Installs | 18,315 customers (YITH — no WordPress.org free version) |
+| Rating | 4.47★ (93 reviews on YITH) |
+| Website | yithemes.com/themes/plugins/yith-woocommerce-membership/ |
+
+**Core capabilities**: Unlimited plans with permission rules, auto-assign membership on registration, private shop (Privalia-style hidden products), hide pages/posts from non-members, limited content preview (newspaper model), Gutenberg "Members-only content starts here" block, file download restriction (PDFs, images, audio, video), alternative content for non-members (Gutenberg blocks), free shipping for members, per-plan member discounts (percentage), download credit system (for stock image/resource platforms), YITH Subscription integration for recurring billing, content dripping (gradual release), membership/download monitoring dashboard, My Account membership section, email notifications (creation, 10-day expiry warning, expired, canceled).
+
+**Limitations**: Premium-only (no free tier, no WordPress.org listing), requires YITH Subscription for recurring payments (€199.99 + €179.99 = €379.98/yr combined), no retention flow, no store credit, no checkout builder, no analytics beyond monitoring dashboard, no audit logs, no role mapping, no advanced rules engine, no URL pattern restriction, locked into YITH ecosystem for full functionality.
+
+* * *
+
 ## Feature Comparison Matrix
 
 ### Subscription & Billing Features
 
-| Feature | ArraySubs | Woo Subscriptions | WP Swings Sub | WPSubscription | SUMO Sub |
-| --- | --- | --- | --- | --- | --- |
-| Simple subscriptions | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ |
-| Variable subscriptions | ✅ Free | ✅ | ✅ Pro | ✅ Pro | ✅ |
-| Grouped subscriptions | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Installment/split payments | ❌ | ❌ | ❌ | ✅ Pro | ❌ |
-| Billing cycles (D/W/M/Y) | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ |
-| Free trial | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ |
-| Paid trial | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Sign-up fee | ✅ Free | ✅ | ✅ Free | ✅ Pro | ✅ |
-| Plan switching (up/down/cross) | ✅ Free | ✅ | ❌ | ✅ Pro | ✅ (variation only) |
-| Proration (3 methods) | ✅ Pro | ✅ | ❌ | ❌ | ✅ (limited) |
-| Renewal sync | ✅ Free | ✅ | ❌ | ✅ Pro | ✅ |
-| Different renewal price | ✅ Free | ❌ | ❌ | 🔜 Coming Soon | ❌ |
-| Skip next renewal | ✅ Free | ❌ | ❌ | ❌ | ❌ |
-| Pause/vacation mode | ✅ Free | ✅ (suspend) | ❌ | ❌ | ✅ |
-| Grace period (2-phase) | ✅ Free | ✅ (basic) | ❌ | ✅ Pro | ✅ |
-| Auto-retry failed payments | ✅ Pro | ✅ | ✅ Pro | ❌ | ❌ |
-| Auto-downgrade on failure | ✅ Pro | ❌ | ❌ | ❌ | ❌ |
-| Fixed period membership product | ✅ Free | ❌ | ❌ | ❌ | ❌ |
-| Feature manager per plan | ✅ Pro | ❌ | ❌ | ❌ | ❌ |
-| Subscription shipping | ✅ Free | ✅ | ❌ | ✅ Pro | ✅ |
-| Coupon integration | ✅ Free | ✅ | ❌ | ❌ | ✅ |
-| Multiple subs in cart | ✅ Free | ✅ | ❌ | ❌ | ✅ |
-| Gifting subscriptions | ❌ | ✅ | ❌ | ❌ | ❌ |
-| Manual subscription creation | ✅ Free | ✅ | ✅ Pro | ❌ | ✅ |
+| Feature | ArraySubs | Woo Subscriptions | WP Swings Sub | WPSubscription | SUMO Sub | YITH Sub |
+| --- | --- | --- | --- | --- | --- | --- |
+| Simple subscriptions | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ | ✅ Free |
+| Variable subscriptions | ✅ Free | ✅ | ✅ Pro | ✅ Pro | ✅ | ✅ Free |
+| Grouped subscriptions | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Installment/split payments | ❌ | ❌ | ❌ | ✅ Pro | ❌ | ❌ |
+| Billing cycles (D/W/M/Y) | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ | ✅ Free |
+| Free trial | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ | ✅ Premium |
+| Paid trial | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Sign-up fee | ✅ Free | ✅ | ✅ Free | ✅ Pro | ✅ | ✅ Premium |
+| Plan switching (up/down/cross) | ✅ Free | ✅ | ❌ | ✅ Pro | ✅ (variation only) | ✅ Premium (variation only) |
+| Proration (3 methods) | ✅ Pro | ✅ | ❌ | ❌ | ✅ (limited) | ✅ Premium (limited) |
+| Renewal sync | ✅ Free | ✅ | ❌ | ✅ Pro | ✅ | ✅ Premium |
+| Different renewal price | ✅ Free | ❌ | ❌ | 🔜 Coming Soon | ❌ | ❌ |
+| Skip next renewal | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Pause/vacation mode | ✅ Free | ✅ (suspend) | ❌ | ❌ | ✅ | ✅ Premium |
+| Grace period (2-phase) | ✅ Free | ✅ (basic) | ❌ | ✅ Pro | ✅ | ✅ Premium (configurable) |
+| Auto-retry failed payments | ✅ Pro | ✅ | ✅ Pro | ❌ | ❌ | ✅ Premium (3 attempts) |
+| Auto-downgrade on failure | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Fixed period membership product | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Feature manager per plan | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Subscription shipping | ✅ Free | ✅ | ❌ | ✅ Pro | ✅ | ✅ Premium |
+| Coupon integration | ✅ Free | ✅ | ❌ | ❌ | ✅ | ✅ Premium |
+| Multiple subs in cart | ✅ Free | ✅ | ❌ | ❌ | ✅ | ✅ Premium |
+| Gifting subscriptions | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Manual subscription creation | ✅ Free | ✅ | ✅ Pro | ❌ | ✅ | ✅ Premium |
+| Subscription box module | ❌ | ❌ | ✅ Free | ❌ | ❌ | ✅ Premium |
 
 ### Membership & Access Control
 
-| Feature | ArraySubs | Woo Memberships | WP Swings Mem | SUMO Mem |
-| --- | --- | --- | --- | --- |
-| Content restriction rules | ✅ Free | ✅ | ✅ Free | ✅ |
-| URL restriction (4 patterns) | ✅ Free | ❌ | ❌ | ✅ |
-| Post type restriction | ✅ Free | ✅ | ✅ Free | ✅ |
-| Product/category restriction | ✅ Free | ✅ | ✅ Free | ✅ |
-| Download restriction | ✅ Free | ✅ | ❌ | ❌ |
-| Ecommerce restriction | ✅ Free | ✅ | ❌ | ✅ |
-| Content dripping/scheduling | ✅ Free | ✅ | ❌ | ✅ (delayed) |
-| Role mapping | ✅ Free | ❌ | ❌ | ❌ |
-| Discount rules | ✅ Free | ✅ | ✅ Free | ❌ |
-| Rules engine (AND/OR groups) | ✅ Free | ❌ | ❌ | ❌ |
-| 10+ condition types | ✅ Free | ❌ | ❌ | ❌ |
-| Restriction shortcodes | ✅ Free | ❌ | ✅ Free | ✅ |
-| Default plan on signup | ❌ | ❌ | ❌ | ✅ |
-| Membership plan transfer | ❌ | ❌ | ❌ | ✅ |
-| Member discounts | ✅ Free | ✅ | ✅ Free | ❌ |
-| Free shipping for members | ❌ | ✅ | ✅ Free | ❌ |
-| Teams/group memberships | ❌ | ✅ ($129/yr add-on) | ❌ | ❌ |
-| Multi-login prevention | ✅ Pro | ❌ | ❌ | ❌ |
-| Per-plan session limits | ✅ Pro | ❌ | ❌ | ❌ |
+| Feature | ArraySubs | Woo Memberships | WP Swings Mem | SUMO Mem | YITH Mem |
+| --- | --- | --- | --- | --- | --- |
+| Content restriction rules | ✅ Free | ✅ | ✅ Free | ✅ | ✅ |
+| URL restriction (4 patterns) | ✅ Free | ❌ | ❌ | ✅ | ❌ |
+| Post type restriction | ✅ Free | ✅ | ✅ Free | ✅ | ✅ |
+| Product/category restriction | ✅ Free | ✅ | ✅ Free | ✅ | ✅ |
+| Download restriction | ✅ Free | ✅ | ❌ | ❌ | ✅ |
+| Ecommerce restriction | ✅ Free | ✅ | ❌ | ✅ | ✅ (private shop) |
+| Content dripping/scheduling | ✅ Free | ✅ | ❌ | ✅ (delayed) | ✅ |
+| Role mapping | ✅ Free | ❌ | ❌ | ❌ | ❌ |
+| Discount rules | ✅ Free | ✅ | ✅ Free | ❌ | ✅ |
+| Rules engine (AND/OR groups) | ✅ Free | ❌ | ❌ | ❌ | ❌ |
+| 10+ condition types | ✅ Free | ❌ | ❌ | ❌ | ❌ |
+| Restriction shortcodes | ✅ Free | ❌ | ✅ Free | ✅ | ❌ (Gutenberg blocks) |
+| Default plan on signup | ❌ | ❌ | ❌ | ✅ | ✅ |
+| Membership plan transfer | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Member discounts | ✅ Free | ✅ | ✅ Free | ❌ | ✅ |
+| Free shipping for members | ❌ | ✅ | ✅ Free | ❌ | ✅ |
+| Teams/group memberships | ❌ | ✅ ($129/yr add-on) | ❌ | ❌ | ❌ |
+| Multi-login prevention | ✅ Pro | ❌ | ❌ | ❌ | ❌ |
+| Per-plan session limits | ✅ Pro | ❌ | ❌ | ❌ | ❌ |
+| Limited content preview | ❌ | ❌ | ❌ | ❌ | ✅ (newspaper model) |
+| Download credit system | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Alternative content (non-members) | ❌ | ❌ | ❌ | ❌ | ✅ (Gutenberg blocks) |
 
 ### Payment Gateways
 
-| Gateway | ArraySubs | Woo Sub | WP Swings | WPSubscription | SUMO |
-| --- | --- | --- | --- | --- | --- |
-| Stripe | ✅ Pro (SCA/3DS, auto-update) | ✅ | ✅ Pro | ✅ Pro | ✅ (inbuilt) |
-| PayPal | ✅ Pro (billing agreements) | ✅ | ✅ Pro | ✅ Pro | ✅ (3 modes) |
-| Paddle (MoR) | ✅ Pro | ❌ | ❌ | ✅ Pro | ❌ |
-| Mollie | ❌ | ✅ (3rd-party) | ✅ Pro | ✅ Pro | ❌ |
-| Razorpay | ❌ | ❌ | ❌ | ✅ Pro | ❌ |
-| Xendit | ❌ | ❌ | ❌ | ✅ Pro | ❌ |
-| Manual renewal (any gateway) | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ |
-| Auto-renew toggle | ✅ Pro | ❌ | ❌ | ❌ | ✅ |
+| Gateway | ArraySubs | Woo Sub | WP Swings | WPSubscription | SUMO | YITH |
+| --- | --- | --- | --- | --- | --- | --- |
+| Stripe | ✅ Pro (SCA/3DS, auto-update) | ✅ | ✅ Pro | ✅ Pro | ✅ (inbuilt) | ✅ Premium (YITH Stripe) |
+| PayPal | ✅ Pro (billing agreements) | ✅ | ✅ Pro | ✅ Pro | ✅ (3 modes) | ✅ Free (Standard) |
+| Paddle (MoR) | ✅ Pro | ❌ | ❌ | ✅ Pro | ❌ | ❌ |
+| Mollie | ❌ | ✅ (3rd-party) | ✅ Pro | ✅ Pro | ❌ | ❌ |
+| Razorpay | ❌ | ❌ | ❌ | ✅ Pro | ❌ | ❌ |
+| Xendit | ❌ | ❌ | ❌ | ✅ Pro | ❌ | ❌ |
+| YITH Account Funds | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ Premium |
+| Manual renewal (any gateway) | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ | ❌ |
+| Auto-renew toggle | ✅ Pro | ❌ | ❌ | ❌ | ✅ | ❌ |
 
 ### Customer Portal
 
-| Feature | ArraySubs | Woo Sub + Mem | WP Swings | WPSubscription | SUMO |
-| --- | --- | --- | --- | --- | --- |
-| Subscription list | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ |
-| Subscription detail view | ✅ Free (9-row) | ✅ | ✅ Free | ✅ Free | ✅ |
-| Cancel/undo cancel | ✅ Free | ✅ | ✅ Free | ✅ Pro | ✅ |
-| Skip next renewal | ✅ Free | ❌ | ❌ | ❌ | ❌ |
-| Pause subscription | ✅ Free | ✅ | ❌ | ❌ | ✅ |
-| Change plan | ✅ Free | ✅ | ❌ | ✅ Pro | ✅ (variation) |
-| Update payment method | ✅ Pro | ✅ | ❌ | ❌ | ✅ |
-| Update shipping | ✅ Pro | ❌ | ❌ | ✅ Pro | ❌ |
-| My Features page | ✅ Pro | ❌ | ❌ | ❌ | ❌ |
-| Store Credit page | ✅ Pro | ❌ | ❌ | ❌ | ❌ |
-| Retention offers on cancel | ✅ Free | ❌ | ❌ | ❌ | ❌ |
+| Feature | ArraySubs | Woo Sub + Mem | WP Swings | WPSubscription | SUMO | YITH |
+| --- | --- | --- | --- | --- | --- | --- |
+| Subscription list | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ | ✅ Free |
+| Subscription detail view | ✅ Free (9-row) | ✅ | ✅ Free | ✅ Free | ✅ | ✅ Premium |
+| Cancel/undo cancel | ✅ Free | ✅ | ✅ Free | ✅ Pro | ✅ | ✅ Premium (resubscribe) |
+| Skip next renewal | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Pause subscription | ✅ Free | ✅ | ❌ | ❌ | ✅ | ✅ Premium |
+| Change plan | ✅ Free | ✅ | ❌ | ✅ Pro | ✅ (variation) | ✅ Premium (variation) |
+| Update payment method | ✅ Pro | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Update shipping | ✅ Pro | ❌ | ❌ | ✅ Pro | ❌ | ✅ Premium |
+| My Features page | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Store Credit page | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Retention offers on cancel | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Membership section | ✅ Free | ✅ | ✅ Free | ❌ | ✅ | ✅ |
+| Renew Now button (failed pay) | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ Premium |
 
 ### Unique/Advanced Features
 
-| Feature | ArraySubs | Woo Sub | Woo Mem | WP Swings | WPSub | SUMO |
-| --- | --- | --- | --- | --- | --- | --- |
-| Retention flow builder | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Store credit system | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Checkout builder (27 fields) | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Advanced analytics (10 KPIs) | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Retention analytics (8 KPIs) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Audit & activity logs | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ✅ (basic) |
-| Gateway health dashboard | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Profile builder | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ |
-| My Account editor | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Login as User (6 placements) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Member insight dashboard | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
-| 16+ email templates | ✅ Free | ✅ | ❌ | ✅ Free | ❌ | ✅ |
-| CSV/JSON export | ✅ Free | ✅ | ✅ Free | ❌ | ❌ | ❌ |
-| Subscription notes (21 events) | ✅ Free | ✅ | ❌ | ❌ | ✅ |  |
-| Refund-to-store-credit | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Credit purchase product | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Feature | ArraySubs | Woo Sub | Woo Mem | WP Swings | WPSub | SUMO | YITH |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Retention flow builder | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Store credit system | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Checkout builder (27 fields) | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Advanced analytics (10 KPIs) | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Retention analytics (8 KPIs) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Audit & activity logs | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ✅ (basic) | ❌ |
+| Gateway health dashboard | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Profile builder | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| My Account editor | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Login as User (6 placements) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Member insight dashboard | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 16+ email templates | ✅ Free | ✅ | ❌ | ✅ Free | ❌ | ✅ | ✅ Premium |
+| CSV/JSON export | ✅ Free | ✅ | ✅ Free | ❌ | ❌ | ❌ | ✅ Premium (CSV) |
+| Subscription notes (21 events) | ✅ Free | ✅ | ❌ | ❌ | ✅ |  | ❌ |
+| Refund-to-store-credit | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Credit purchase product | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Subscription box module | ❌ | ❌ | ❌ | ✅ Free | ❌ | ❌ | ✅ Premium |
+| Download credit system | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ (Membership) |
+| Gutenberg plan display block | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ Premium |
+| Subscription dashboard (MRR/ARR) | ✅ Pro | ✅ (basic) | ❌ | ❌ | ❌ | ❌ | ✅ Premium |
 
 * * *
 
@@ -293,13 +345,16 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | WP Swings | Free / Pro ($?) | Free / Pro ($?) | 2 plugins | ✅ Limited |
 | WPSubscription | $55/yr (Pro) | ❌ Not available | $55/yr (no memberships) | ✅ Basic |
 | SUMO | ~$49 one-time | ~$29 one-time | ~$78 one-time | ❌ None |
+| YITH | €199.99/yr | €179.99/yr | €379.98/yr (~$413/yr) | ✅ Limited (Sub only) |
 
 ### Key Pricing Insights
 
 1.  **Woo Official is the most expensive** at $478/yr for a complete subscription + membership solution, with poor satisfaction (3.2★ for Subscriptions).
-2.  **SUMO is cheapest upfront** at ~$78 total one-time, but has aging code, no free tier, no WordPress.org presence, and limited support.
-3.  **WPSubscription** is competitively priced ($55/yr) but offers subscriptions only — no membership/access control.
-4.  **ArraySubs is the only all-in-one** where subscriptions + memberships + store credit + analytics + retention are available in a single ecosystem, with a generous free tier.
+2.  **YITH is the second most expensive** at €379.98/yr (~$413/yr) for subscriptions + memberships combined, with a limited free subscription tier but no free membership option.
+3.  **SUMO is cheapest upfront** at ~$78 total one-time, but has aging code, no free tier, no WordPress.org presence, and limited support.
+4.  **WPSubscription** is competitively priced ($55/yr) but offers subscriptions only — no membership/access control.
+5.  **ArraySubs is the only all-in-one** where subscriptions + memberships + store credit + analytics + retention are available in a single ecosystem, with a generous free tier.
+6.  **YITH locks you into their ecosystem** — automatic gateway support requires purchasing additional YITH plugins (Stripe, PayPal Express), pushing the real total cost even higher.
 
 * * *
 
@@ -386,6 +441,36 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Multiple linked plans | No modern UI or development activity |
 |  | Small ecosystem, limited support |
 
+### YITH WooCommerce Subscription
+
+| Strengths | Weaknesses |
+| --- | --- |
+| 28,216 customers on YITH marketplace | Poor WordPress.org reviews (3.0★, 38% one-star) |
+| Subscription Box module (YITH exclusive) | No membership (requires €179.99/yr YITH Membership) |
+| Gutenberg plan display block | Upgrade/downgrade limited to variable products only |
+| Dashboard with MRR/ARR/trials | Limited gateway ecosystem (mostly YITH's own plugins) |
+| Configurable failed payment handling | No retention flow or store credit |
+| Payment sync (pro-rate or delay) | No checkout builder or advanced analytics |
+| PDF shipping address labels | No audit/activity logs |
+| Delivery scheduling with sync | WordPress.org support: 0/4 resolved |
+| Active development (v4.15.0) | Free version very limited (PayPal only for auto-pay) |
+| Staging mode auto-detection | €199.99/yr premium price point |
+
+### YITH WooCommerce Membership
+
+| Strengths | Weaknesses |
+| --- | --- |
+| 18,315 customers, high satisfaction (4.47★) | Premium-only, no free tier or WordPress.org listing |
+| Download credit system (unique — stock image model) | Requires YITH Subscription for recurring (€379.98/yr combined) |
+| Limited content preview (newspaper model) | No retention flow or store credit |
+| Gutenberg "Members-only" block | No advanced rules engine (AND/OR groups) |
+| Alternative content for non-members | No URL pattern-based restriction |
+| Auto-assign membership on registration | No checkout builder or advanced analytics |
+| Private shop (Privalia-style) | No role mapping |
+| Free shipping for members | No audit/activity logs |
+| Per-plan discounts | Locked into YITH ecosystem |
+| Content dripping | No multi-login prevention |
+
 * * *
 
 ## ArraySubs Competitive Advantages
@@ -400,6 +485,7 @@ ArraySubs is the **only plugin that combines** subscriptions, memberships, store
 -   WP Swings: 2 separate plugins, neither has retention or analytics
 -   WPSubscription: Subscriptions only, no memberships at all
 -   SUMO: 2 separate plugins, no retention/store credit/analytics
+-   YITH: 2 separate plugins (€379.98/yr combined), no retention/store credit/analytics/checkout builder
 
 ### 2\. Retention Flow Builder (No Competition)
 
@@ -520,14 +606,18 @@ This is critical for international sellers who want to avoid sales tax complianc
 | Grouped product subscriptions | SUMO Subscriptions | Low | Rare use case |
 | Paid trial | SUMO Subscriptions | Low | Free trial covers most cases |
 | Teams/group memberships | Woo Memberships ($129 add-on) | Medium | B2B/enterprise demand |
-| Member-only free shipping | Woo Memberships, WP Swings Mem | Low | Can be achieved via discount rules |
+| Member-only free shipping | Woo Memberships, WP Swings Mem, YITH Mem | Low | Can be achieved via discount rules |
 | BuddyPress integration | WP Swings Membership | Low | Community-focused niche |
 | SMS/WhatsApp notifications | WP Swings Membership | Low | Can use third-party automation |
 | Mollie gateway | WP Swings, WPSubscription | Medium | Popular in EU/Netherlands |
 | Razorpay gateway | WPSubscription | Low | India-specific market |
-| Default membership on signup | SUMO Memberships | Low | Niche convenience feature |
+| Default membership on signup | SUMO Memberships, YITH Membership | Low | Niche convenience feature |
 | Membership plan transfer | SUMO Memberships | Low | Rare use case |
 | 25+ payment gateways | Woo Subscriptions | Medium | Woo's biggest moat is gateway breadth |
+| Subscription box module | WP Swings Sub, YITH Sub | Medium | Growing business model (curated product boxes) |
+| Download credit system | YITH Membership | Low | Niche for stock image/resource platforms |
+| Limited content preview (newspaper) | YITH Membership | Low | Niche for paywall-style content |
+| Gutenberg plan display block | YITH Subscription | Low | Nice-to-have for visual plan presentation |
 | Early renewal (before due date) | WPSubscription | Low | Nice-to-have convenience |
 
 ### Competitive Threats
@@ -541,6 +631,8 @@ This is critical for international sellers who want to avoid sales tax complianc
 4.  **Market awareness**: ArraySubs is newer and likely has lower brand recognition. WooCommerce Subscriptions benefits from the official Woo marketplace and brand trust, even with poor reviews.
     
 5.  **LMS ecosystem**: WPSubscription already integrates with Tutor LMS, LearnPress, and LearnDash. WP Swings Membership has Tutor LMS. The learning platform market is growing and could drive plugin adoption.
+    
+6.  **YITH marketplace reach**: YITH has 2.25M+ users across their plugin ecosystem and 28K+ customers on YITH Subscription alone. Their integrated plugin catalog (Stripe, PayPal Express, Account Funds, Membership) creates ecosystem lock-in. If they improve WordPress.org reviews and add better gateway support, their existing customer base could be a launching pad. Their Subscription Box module is also a differentiator for the curated product box market.
     
 
 * * *
@@ -607,6 +699,8 @@ This is critical for international sellers who want to avoid sales tax complianc
      -   "ArraySubs vs WooCommerce Subscriptions"
      -   "ArraySubs vs WP Swings Subscriptions"
      -   "ArraySubs vs SUMO Subscriptions"
+     -   "ArraySubs vs YITH WooCommerce Subscription"
+     -   "ArraySubs vs YITH WooCommerce Membership"
 11.  **Target high-intent keywords**:
      
      -   "woocommerce subscription plugin free"
@@ -615,6 +709,8 @@ This is critical for international sellers who want to avoid sales tax complianc
      -   "woocommerce subscription and membership plugin"
      -   "woocommerce retention plugin"
      -   "woocommerce store credit plugin"
+     -   "yith woocommerce subscription alternative"
+     -   "yith woocommerce membership alternative"
 12.  **Thought leadership content**:
      
      -   "How to reduce subscription churn with retention flows"
@@ -627,19 +723,21 @@ This is critical for international sellers who want to avoid sales tax complianc
 
 | Dimension | ArraySubs Position | Key Competitors |
 | --- | --- | --- |
-| Feature breadth | 🟢 Leader — only all-in-one solution | Woo Official (2 plugins, $478/yr) |
+| Feature breadth | 🟢 Leader — only all-in-one solution | Woo Official (2 plugins, $478/yr), YITH (2 plugins, €379.98/yr) |
 | Retention tools | 🟢 Sole provider — no competition | None |
 | Store credit | 🟢 Sole provider — no competition | None |
 | Checkout builder | 🟢 Sole provider — no competition | None |
-| Analytics depth | 🟢 Leader — 10 KPIs + retention analytics | Woo Sub (basic reports) |
-| Free tier value | 🟢 Leader — most generous free feature set | WP Swings (limited free) |
-| Gateway breadth | 🟡 Moderate — 3 auto + manual | Woo Sub (25+), WPSub (6) |
-| Install base | 🔴 Early stage | Woo Sub (100K+), WP Swings (10K+) |
-| Brand recognition | 🔴 Building | Woo Official (Automattic brand) |
-| Price competitiveness | 🟢 Strong — single purchase vs. $478/yr | WPSub ($55/yr), SUMO ($78 one-time) |
+| Analytics depth | 🟢 Leader — 10 KPIs + retention analytics | Woo Sub (basic reports), YITH (basic dashboard) |
+| Free tier value | 🟢 Leader — most generous free feature set | WP Swings (limited free), YITH Sub (very limited free) |
+| Gateway breadth | 🟡 Moderate — 3 auto + manual | Woo Sub (25+), WPSub (6), YITH (YITH ecosystem only) |
+| Install base | 🔴 Early stage | Woo Sub (100K+), WP Swings (10K+), YITH Sub (7K+ / 28K customers) |
+| Brand recognition | 🔴 Building | Woo Official (Automattic brand), YITH (2.25M+ users ecosystem) |
+| Price competitiveness | 🟢 Strong — single purchase vs. $478/yr | WPSub ($55/yr), SUMO ($78 one-time), YITH (€379.98/yr) |
 | LMS integrations | 🟡 Gap | WPSub (3 LMS), WP Swings (Tutor) |
 | Installment payments | 🔴 Missing | WPSub (unique feature) |
+| Subscription box | 🔴 Missing | YITH Sub (premium), WP Swings (free) |
+| Membership features | 🟢 Integrated | Woo Mem ($199/yr), YITH Mem (€179.99/yr), SUMO Mem ($29) |
 
 * * *
 
-_Analysis conducted April 2026. Competitor data sourced from WordPress.org plugin pages, vendor websites, CodeCanyon listings, and official marketing materials. Install counts and ratings are approximate and subject to change._
+_Analysis conducted April 2026. Last verified April 2026. Competitor data sourced from WordPress.org plugin pages, vendor websites (yithemes.com, woocommerce.com, wpswings.com, wpsubscription.co, fantasticplugins.com), CodeCanyon listings, and official marketing materials. Install counts and ratings are approximate and subject to change._
