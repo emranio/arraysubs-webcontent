@@ -87,6 +87,7 @@
 - Invoice generation 6 hours before due date
 - Manual vs automatic payment routing (Core creates invoice → Pro charges gateway)
 - Renewal Sync: Monthly / Weekly / Yearly alignment with configurable sync day
+- Sync is a global system-level setting (applies to all subscription products, not per-product)
 - First-payment proration options: Prorate first payment or Extend billing period
 - Different Renewal Price support (override recurring price)
 - Subscription Length / Fixed End-Date for automatic expiration
@@ -107,6 +108,7 @@
 
 ### 3.4 Skip & Pause (Free)
 - Skip Next Renewal: max 3 consecutive skips, 2-day cutoff before due date
+- Undo Skip or modify skip cycle count at any time before the skipped renewal
 - Pause / Vacation Mode: max 30-day pause, max 2 pauses per subscription, 30-day cooldown
 - Auto-resume after pause duration
 - Pause eligibility rules and cooldown enforcement
@@ -122,7 +124,7 @@
 - Refund-to-Store-Credit (Pro): "As Store Credit" refund method on WooCommerce order screen, balance preview, no WC refund record created, guest orders ineligible
 
 ### 3.6 Renewal Communication (Free)
-- 7 billing-related email triggers mapped to lifecycle events: Renewal Reminder, Renewal Invoice, Renewal Payment Complete, Payment Failed, Retry Payment, Subscription On-Hold, Subscription Cancelled
+- 6 billing-related email triggers mapped to lifecycle events: Renewal Reminder, Renewal Invoice, Payment Successful, Payment Failed, Subscription On-Hold, Subscription Cancelled
 
 ---
 
@@ -316,7 +318,7 @@
 - **Undo Scheduled Cancellation**: Reverts pending cancellation
 - **Retention Offers** (Free): 4 types — Discount, Pause, Downgrade, Contact Support (shown during cancellation flow)
 - **Change Plan** (Free): Modal with Upgrade/Downgrade/Crossgrade tabs, proration preview before confirmation
-- **Skip Next Renewal** (Free): Skip button with max-skip limit and cutoff enforcement
+- **Skip Next Renewal** (Free): Skip button with max-skip limit and cutoff enforcement, undo skip or modify skip count
 - **Pause / Vacation Mode** (Free): Pause with duration, max pauses, and cooldown rules
 - **Reactivate** (Free): Re-enable cancelled/expired subscriptions
 
@@ -328,6 +330,7 @@
 
 ### 7.5 My Features Page (Pro)
 - Per-subscription or combined view of all feature entitlements
+- Feature aggregation modes: Union (any active subscription grants feature) or Intersection
 - Feature name, type, value, and usage tracking display
 - Appears as My Account menu item when Feature Manager is enabled
 
@@ -342,19 +345,19 @@
 ## 8. Emails (`emails.md`)
 
 ### 8.1 Customer Emails — 13 Total (Free)
-1. New Subscription — triggered on subscription creation
-2. Subscription Activated — triggered on status change to active
-3. Subscription On-Hold — triggered on status change to on-hold
-4. Subscription Cancelled — triggered on cancellation
-5. Subscription Expired — triggered on expiration
-6. Trial Started — triggered when trial begins
-7. Trial Ending — reminder N days before trial ends
-8. Renewal Reminder — reminder N days before next payment
-9. Renewal Invoice — invoice for upcoming/overdue payment
-10. Renewal Complete — triggered on successful renewal
-11. Payment Failed — triggered on payment failure
-12. Expiring Soon — reminder N days before subscription expires
-13. Payment Method Updated — triggered on card/payment change
+1. New Subscription — triggered when subscription status becomes active (from pending/trial/auto-draft)
+2. Trial Started — triggered when trial begins
+3. Trial Converted — triggered when trial converts to active paid subscription
+4. Renewal Reminder — reminder N days before next payment
+5. Renewal Invoice — invoice for upcoming/overdue payment
+6. Payment Successful — triggered on successful renewal payment
+7. Payment Failed — triggered on payment failure (manual, renewal, or gateway)
+8. Subscription On-Hold — triggered on status change to on-hold
+9. Subscription Cancelled — triggered on cancellation
+10. Subscription Expired — triggered on expiration
+11. Subscription Reactivated — triggered when a cancelled/expired subscription is reactivated
+12. Auto-Downgrade — triggered when a subscription is auto-downgraded to a cheaper plan
+13. Retention Discount Accepted — triggered when customer accepts a retention discount offer
 
 ### 8.2 Admin Emails — 3 Total (Free)
 1. Admin — New Subscription — notifies admin of new subscription
@@ -371,7 +374,8 @@
 - Full WooCommerce email framework integration (inherits template styling)
 - Configurable subject, heading, additional content, email type (HTML/Plain/Multipart)
 - Rich placeholder system per email (50+ unique placeholders across all emails)
-- Email Reminder Schedule: configurable timers for Renewal Reminder (default 3 days), Trial Ending Reminder (default 3 days), Expiring Soon Reminder (default 7 days)
+- Email Reminder Schedule: configurable timer for Renewal Reminder (default 3 days before next payment)
+- Planned/Stub reminders: Trial Ending Reminder and Expiring Soon Reminder settings exist but email classes are not yet implemented
 - Template override support via theme/child theme
 - Each email has unique WooCommerce email ID for developer hooks
 
@@ -430,11 +434,12 @@
 - Cancellation modes: Immediate + End-of-Period
 - Expiration triggers: Fixed end-date, subscription length
 - Trial management and trial-to-paid conversion
-- 14 email triggers mapped to lifecycle events
+- 16 email triggers mapped to lifecycle events (13 customer + 3 admin)
 - 5 scheduled jobs for automated lifecycle transitions
 
 ### 10.5 Admin Tools (Free + Pro)
-- Subscription Notes: 4 author types (Customer, Admin, System, Gateway)
+- Subscription Notes: 4 author types (Customer, Admin, System, Gateway), 21 auto-note event types
+- 21 automated note events: subscription created, status changes, reactivated, on-hold, waiting cancellation, payment complete, payment failed (3 sources), renewal invoice created, trial started, trial converted, product changed, payment method changed, next payment date changed, quantity changed, recurring amount changed, subscription synced/unsynced, plan switch completed
 - Feature Log (Pro): entitlement change history
 - Order History with refund sub-rows
 - CSV/JSON export with 15 fields
@@ -445,8 +450,9 @@
 
 ### 11.1 Rule System Architecture (Free)
 - 7 rule tabs: Role Mapping, Discount, Ecommerce, URL, Post Types, Downloads, Login Limit (Pro)
-- Common rule structure with 8 condition types: Active Subscription, Specific Products, Specific Variations, User Roles, Specific Subscriptions, Lifetime Spend, Total Orders, Registration Date
-- AND/OR + nested condition groups
+- Common rule structure with 10 condition types: Subscription Status, Has Active Subscription, Subscription Variation, Purchased Product, Purchased Variation, Purchased from Category/Taxonomy, Lifetime Spend, Feature Value (Pro), User Role, Nested Group (AND/OR logic)
+- 12 comparison operators: =, !=, >, >=, <, <=, contains, not_contains, in, not_in, empty, not_empty
+- AND/OR + recursive nested condition groups
 - Content dripping / scheduled access support
 
 ### 11.2 Role Mapping Rules (Free)
@@ -601,7 +607,8 @@
 - Subscription tab in WooCommerce product editor
 - Billing Period: Daily, Weekly, Monthly, Yearly, Custom Days
 - Billing Interval: 1-12
-- Subscription Length: 0 (unlimited) to 365 periods
+- Subscription Length: 0 (unlimited / lifetime) to 365 periods
+- Lifetime subscription support: subscriptions with length 0 never expire
 - Free Trial: configurable days
 - Sign-up Fee: one-time charge at checkout
 - Different Renewal Price: separate recurring price after initial
@@ -623,12 +630,15 @@
 ### 14.4 Auto-Downgrade (Pro)
 - 3 timing options: On expire, On cancel, On trial expire
 - Reuses existing subscription (doesn't create new one)
+- Email suppression during auto-downgrade (prevents double notifications)
 - Configured via Linked Products tab → Auto-downgrade to field
 
 ### 14.5 Fixed Period Membership (Pro)
 - Absolute date end or Recurring annual cutoff
 - Enrollment Window: open/close dates limiting when customers can purchase
 - Period End Behavior: Expire or Renew
+- Invoice blocking: renewal invoices blocked past end date
+- Variation support: variations inherit product-level settings if not explicitly set
 - Frontend display of remaining days and membership period
 
 ### 14.6 Product Experience & Frontend Display (Free + Pro)
@@ -636,7 +646,7 @@
 - Fully formatted recurring price strings with trial/sign-up fee info
 - **Redirect Product Page** (Pro): 301 redirect or 404 for subscription products, SEO integration with Yoast/Rank Math canonical management
 - **Feature Manager** (Pro): Define product features (toggle/number/text types), feature templates, storefront "What's Included" display, customer My Features page
-- **Subscription Shipping** (Pro): Recurring vs one-time shipping, initial/renewal shipping overrides
+- **Subscription Shipping** (Pro): Recurring vs one-time shipping, initial/renewal shipping overrides, cart display of shipping type, shipping address inherited on plan switch
 
 ### 14.7 Coupon Integration (Free)
 - "Apply to subscriptions" checkbox on WooCommerce coupons
@@ -645,12 +655,16 @@
 - One coupon per subscription enforcement
 - Stored coupon values locked at capture (immune to coupon edits)
 - Discount caps and renewal application logic
+- Full coupon audit logging: tracks coupon create, update (field-level change tracking), delete, and trash events
+- Tracked coupon fields: discount amount, expiry date, discount type, description, individual use, product/category inclusions/exclusions, usage limits, shipping, spending thresholds, email restrictions
 
 ### 14.8 Product Lifecycle (Free)
 - Cached product data at subscription creation (price, period, trial, fees all locked in)
-- Admin warnings for products with active subscriptions
+- 30+ property change tracking with audit trail: price, name, slug, status, description, SKU, stock, dimensions, weight, tax, shipping class, media, attributes, and more
+- Pre-save snapshot engine: captures old state before DB write, diff engine compares old vs new, batches multiple edits per request into single audit note
+- Admin warnings for products with active subscriptions (affected subscription count shown on product edit)
+- Product deletion/trashing behavior: subscriptions continue working with cached data, link restored on untrash
 - Test links: Direct add-to-cart URL + One-click checkout URL
-- Product deletion/trashing behavior (doesn't affect existing subscriptions)
 
 ---
 
@@ -675,7 +689,8 @@
 - All third-party login URL helpers affected
 
 ### 15.4 Login as User / Admin Impersonation (Free)
-- Session impersonation from multiple admin screens (Users list, User profile, Order detail, Subscription detail)
+- Session impersonation from multiple admin screens (Users list, User profile/edit, Order detail, Subscription detail, Member profile)
+- 6 admin UI placements total across WordPress and ArraySubs admin screens
 - Notification bar with return-to-admin link
 - Admin-only; non-admin targets only; admin-to-admin impersonation blocked
 - Impersonated sessions exempt from Multi-Login Prevention limits
@@ -697,7 +712,7 @@
 ### Free Features (Core — `arraysubs`)
 - Subscription Products (Simple + Variable)
 - Plan Switching (Upgrade/Downgrade/Crossgrade with proration)
-- Coupon Integration
+- Coupon Integration (with audit logging)
 - Subscription Checkout (Classic + Block, One-Click, Cart validation)
 - Recurring Billing & Renewal Engine
 - Trial Management
@@ -715,7 +730,10 @@
 - My Account Editor
 - Reports Hub
 - 13 Customer Emails + 3 Admin Emails
-- Email Reminder Schedule
+- Email Reminder Schedule (Renewal Reminder)
+- Product Lifecycle Tracking (30+ property change audit trail)
+- Subscription Notes (21 auto-note events)
+- Login As User (6 admin placements)
 - Toolkit Settings (Admin Bar, Dashboard Access, Login Page, Login as User)
 - General Settings (30+ configurable options)
 
