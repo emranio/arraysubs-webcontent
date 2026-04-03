@@ -330,6 +330,11 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Download credit system | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ (Membership) |
 | Gutenberg plan display block | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ Premium |
 | Subscription dashboard (MRR/ARR) | ✅ Pro | ✅ (basic) | ❌ | ❌ | ❌ | ❌ | ✅ Premium |
+| Setup wizard (guided config) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Settings export/import (JSON) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Business-type presets (7 profiles) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Section-level settings import | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Sensitive data stripping on export | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
 * * *
 
@@ -593,6 +598,23 @@ This is critical for international sellers who want to avoid sales tax complianc
 -   Action Scheduler for all background jobs
 -   REST API throughout
 
+### 10\. Easy Setup Wizard & Settings Migration (No Competition)
+
+**No competitor offers a guided setup wizard or settings import/export system.**
+
+ArraySubs provides:
+
+-   9-step guided wizard that maps business answers to 47+ plugin settings
+-   7 Business Type Profiles (SaaS, Subscription Box, Membership, Digital Content, Professional Services, Nonprofit, Custom) with smart defaults
+-   Conditional question visibility — only relevant questions shown based on earlier answers
+-   Review & edit all answers before applying, skip-with-defaults per step
+-   One-click settings export as JSON with automatic sensitive data stripping (Stripe + PayPal API keys removed)
+-   Section-level settings import — choose exactly which of 8 virtual sections to apply (Subscription Settings, Retention Flow, Store Credit, My Account Builder, Checkout Builder, Member Access, Emails, Profile Fields)
+-   File metadata with version compatibility checks and Pro setting detection
+-   Multi-site migration flow: configure once, export, import identically across staging/production/franchise stores
+
+Every other plugin requires manual configuration through dozens of settings screens with no guided flow, no export, and no import. This is especially impactful for agencies managing multiple WooCommerce stores.
+
 * * *
 
 ## Gap Analysis & Threats
@@ -734,6 +756,8 @@ This is critical for international sellers who want to avoid sales tax complianc
 | Brand recognition | 🔴 Building | Woo Official (Automattic brand), YITH (2.25M+ users ecosystem) |
 | Price competitiveness | 🟢 Strong — single purchase vs. $478/yr | WPSub ($55/yr), SUMO ($78 one-time), YITH (€379.98/yr) |
 | LMS integrations | 🟡 Gap | WPSub (3 LMS), WP Swings (Tutor) |
+| Easy setup wizard | 🟢 Sole provider — 9-step wizard, 7 business profiles | None |
+| Settings migration (export/import) | 🟢 Sole provider — JSON export, section-level import | None |
 | Installment payments | 🔴 Missing | WPSub (unique feature) |
 | Subscription box | 🔴 Missing | YITH Sub (premium), WP Swings (free) |
 | Membership features | 🟢 Integrated | Woo Mem ($199/yr), YITH Mem (€179.99/yr), SUMO Mem ($29) |

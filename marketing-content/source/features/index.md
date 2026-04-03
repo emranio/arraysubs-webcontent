@@ -707,6 +707,37 @@
 
 ---
 
+## 16. Easy Setup (`easy-setup.md`)
+
+One-page setup hub — guided wizard, settings export, and settings import with section-level control.
+
+### 16.1 Setup Wizard (Free — Pro options appear with Pro active)
+- 9-step guided interview that maps business answers to plugin settings
+- 7 Business Type Profiles (SaaS, Subscription Box, Membership, Digital Content, Professional Services, Nonprofit, Custom)
+- Conditional question visibility based on earlier answers
+- Review & edit all answers before applying
+- Skip-with-defaults fills current step with profile defaults
+- Covers billing, renewals, checkout, portal, cancellation, retention, access control, emails, and optional features
+- Step 8 toggles optional modules (Store Credit, Feature Manager, Audit Log, Multi-Login, Profile Fields, My Account Editor, Admin Bar, Dashboard Access)
+
+### 16.2 Settings Export (Free)
+- One-click full JSON download of all ArraySubs settings
+- Exports 5 option keys: core settings, profile fields, avatar config, My Account menu, WC email templates
+- Automatic sensitive data stripping (Stripe + PayPal API keys removed)
+- File metadata includes plugin version, Pro version, site URL, export date, PHP/WP/WC versions
+- File named `arraysubs-settings-YYYY-MM-DD.json`
+
+### 16.3 Settings Import (Free)
+- Upload JSON file or paste raw JSON text
+- 8 virtual sections for selective import (Subscription & Others, Retention Flow, Store Credit, My Account Builder, Checkout Builder, Member Access, Emails, Profile Fields)
+- Confirm step warns that selected sections will be replaced
+- Results summary shows imported, skipped, and warnings
+- Pro compatibility detection — Pro settings stored dormant and activate when Pro installed
+- Module version compatibility check rejects newer exports
+- Per-section sanitization pipelines
+
+---
+
 ## Feature Tier Summary
 
 ### Free Features (Core — `arraysubs`)
@@ -735,6 +766,9 @@
 - Subscription Notes (21 auto-note events)
 - Login As User (6 admin placements)
 - Toolkit Settings (Admin Bar, Dashboard Access, Login Page, Login as User)
+- Easy Setup Wizard (9 Steps, 7 Business Profiles, Conditional Questions, Review & Apply)
+- Settings Export (Full JSON Download, Sensitive Data Stripping)
+- Settings Import (8 Virtual Sections, Selective Import, Pro Compatibility Detection)
 - General Settings (30+ configurable options)
 
 ### Pro Features (Addon — `arraysubspro`)
@@ -756,6 +790,7 @@
 - Manage Members (Member Insight Dashboard, Login as Customer, Commerce Overview)
 - Login Limit / Multi-Login Prevention
 - 4 Store Credit Emails
+- Easy Setup Wizard Pro Options (Payment Method Change, Store Credit, Feature Manager, Audit Log, Multi-Login toggles)
 
 ---
 

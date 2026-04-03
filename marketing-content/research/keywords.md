@@ -37,6 +37,7 @@ The strategy below clusters 200+ keywords into **12 topic clusters**, each split
 | 10 | Checkout Optimization for Subscriptions | Mixed | 2,000–4,000/mo | ⭐⭐⭐ |
 | 11 | Subscription Analytics & Metrics | Blog/Article | 3,000–5,000/mo | ⭐⭐⭐⭐ |
 | 12 | WordPress Membership Site (Broad) | Blog/Article | 15,000–25,000/mo | ⭐⭐⭐ |
+| 13 | Easy Setup & Plugin Configuration | Mixed | 2,000–4,000/mo | ⭐⭐⭐⭐ |
 
 ---
 
@@ -512,6 +513,46 @@ The strategy below clusters 200+ keywords into **12 topic clusters**, each split
 
 ---
 
+## Cluster 13: Easy Setup & Plugin Configuration
+
+> **Pillar Page**: Easy Setup feature page / Setup Wizard landing page
+> **Intent Mix**: Informational (60%) + Commercial (40%)
+> **ArraySubs Advantage**: ONLY subscription plugin with a guided setup wizard + settings import/export — ZERO direct competition. No competitor offers one-click configuration migration or a business-type-aware wizard.
+
+### 13A. Landing Page & Feature Page Keywords
+
+| Keyword | Est. Volume | KD | Intent | Opportunity | Target Page |
+|---------|-------------|-----|--------|-------------|-------------|
+| woocommerce subscription plugin easy setup | 140/mo | 8 | Commercial | ⭐⭐⭐⭐⭐ | Easy Setup feature page |
+| woocommerce subscription setup wizard | 170/mo | 10 | Commercial | ⭐⭐⭐⭐⭐ | Easy Setup feature page |
+| woocommerce subscription plugin quick start | 110/mo | 8 | Commercial | ⭐⭐⭐⭐⭐ | Easy Setup feature page |
+| woocommerce subscription import export settings | 90/mo | 5 | Commercial | ⭐⭐⭐⭐⭐ | Easy Setup feature page |
+| woocommerce subscription settings migration | 110/mo | 5 | Commercial | ⭐⭐⭐⭐⭐ | Easy Setup feature page |
+| woocommerce subscription backup settings | 70/mo | 5 | Commercial | ⭐⭐⭐⭐⭐ | Easy Setup feature page |
+| woocommerce subscription plugin configuration export | 50/mo | 3 | Commercial | ⭐⭐⭐⭐⭐ | Easy Setup feature page |
+| woocommerce plugin settings export import | 320/mo | 20 | Commercial | ⭐⭐⭐⭐ | Easy Setup feature page |
+| woocommerce subscription site migration settings | 90/mo | 5 | Commercial | ⭐⭐⭐⭐⭐ | Easy Setup feature page |
+| easiest woocommerce subscription plugin to set up | 170/mo | 10 | Commercial | ⭐⭐⭐⭐⭐ | Main landing page + Easy Setup |
+
+### 13B. Blog / Article Keywords
+
+| Keyword | Est. Volume | KD | Intent | Opportunity | Content Type |
+|---------|-------------|-----|--------|-------------|--------------|
+| how to set up woocommerce subscriptions in minutes | 260/mo | 15 | Informational | ⭐⭐⭐⭐⭐ | Tutorial |
+| fastest way to configure woocommerce subscription plugin | 110/mo | 5 | Informational | ⭐⭐⭐⭐⭐ | Tutorial |
+| how to migrate woocommerce subscription settings between sites | 170/mo | 8 | Informational | ⭐⭐⭐⭐⭐ | Migration guide |
+| how to export woocommerce subscription plugin settings | 140/mo | 8 | Informational | ⭐⭐⭐⭐⭐ | Tutorial |
+| how to import subscription settings to new woocommerce site | 110/mo | 5 | Informational | ⭐⭐⭐⭐⭐ | Tutorial |
+| woocommerce subscription plugin setup guide for beginners | 320/mo | 20 | Informational | ⭐⭐⭐⭐⭐ | Beginner guide |
+| how to back up woocommerce subscription settings | 90/mo | 5 | Informational | ⭐⭐⭐⭐⭐ | Quick tutorial |
+| woocommerce subscription staging to production migration | 140/mo | 10 | Informational | ⭐⭐⭐⭐⭐ | Migration guide |
+| how to configure woocommerce subscriptions for saas business | 170/mo | 10 | Informational | ⭐⭐⭐⭐⭐ | Business-type guide |
+| how to configure woocommerce subscriptions for membership site | 210/mo | 12 | Informational | ⭐⭐⭐⭐⭐ | Business-type guide |
+| how to configure woocommerce subscriptions for subscription box | 140/mo | 8 | Informational | ⭐⭐⭐⭐⭐ | Business-type guide |
+| woocommerce subscription multi store configuration sync | 70/mo | 5 | Informational | ⭐⭐⭐⭐⭐ | Guide |
+
+---
+
 ## GEO-Relevant Keywords (AI Answer Overlap)
 
 These keywords are highly likely to trigger AI-generated answers in ChatGPT, Perplexity, Google AI Overviews, and similar systems. Content targeting these must be structured for AI citation.
@@ -588,6 +629,11 @@ These keywords have the highest opportunity scores — low to moderate competiti
 | 28 | subscription retention strategies for woocommerce | 110/mo | 8 | Info | 5 | Article |
 | 29 | woocommerce member only products | 320/mo | 25 | Commercial | 6 | Landing |
 | 30 | woocommerce subscription management dashboard | 210/mo | 20 | Commercial | 8 | Landing |
+| 31 | woocommerce subscription setup wizard | 170/mo | 10 | Commercial | 13 | Landing |
+| 32 | woocommerce subscription import export settings | 90/mo | 5 | Commercial | 13 | Landing |
+| 33 | easiest woocommerce subscription plugin to set up | 170/mo | 10 | Commercial | 13 | Landing |
+| 34 | how to migrate woocommerce subscription settings between sites | 170/mo | 8 | Info | 13 | Article |
+| 35 | woocommerce subscription plugin setup guide for beginners | 320/mo | 20 | Info | 13 | Article |
 
 ---
 
@@ -613,6 +659,7 @@ These keywords have the highest opportunity scores — low to moderate competiti
 | 7 | vs WP Swings | wp swings subscription alternative | 170/mo |
 | 8 | Stripe Gateway Page | woocommerce stripe subscription plugin | 880/mo |
 | 8 | Pricing Page | woocommerce subscription plugin pricing | 140/mo |
+| 8 | Easy Setup Feature Page | woocommerce subscription setup wizard | 170/mo |
 
 ### Phase 2: Content Authority (Month 3–5) — Blog Articles
 
@@ -647,6 +694,10 @@ These keywords have the highest opportunity scores — low to moderate competiti
 | 30 | How to Start a Subscription Box Business with WordPress | how to start a subscription box business wordpress | 390/mo |
 | 31 | Membership vs Subscription: Which Business Model to Choose | membership vs subscription which business model to choose | 590/mo |
 | 32 | WooCommerce Subscription Use Cases and Examples | woocommerce subscription use cases and examples | 210/mo |
+| 33 | How to Set Up WooCommerce Subscriptions in Minutes (Wizard Guide) | how to set up woocommerce subscriptions in minutes | 260/mo |
+| 34 | How to Migrate WooCommerce Subscription Settings Between Sites | how to migrate woocommerce subscription settings between sites | 170/mo |
+| 35 | WooCommerce Subscription Setup Guide for Beginners | woocommerce subscription plugin setup guide for beginners | 320/mo |
+| 36 | How to Configure WooCommerce Subscriptions for SaaS | how to configure woocommerce subscriptions for saas business | 170/mo |
 
 ---
 
