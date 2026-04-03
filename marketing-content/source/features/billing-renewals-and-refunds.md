@@ -40,11 +40,13 @@ The core plugin always creates the invoice. The Pro plugin handles automatic cha
 Align all subscription renewals to a specific calendar date — useful for businesses that bill on the 1st of the month, every Monday, or a specific day each year.
 
 - **3 sync types**: Monthly (specific day 1–28), Weekly (specific day), Yearly (specific day + month)
-- **Global system-level setting** — applies to all subscription products, not per-product
+- **Global system-level setting** — applies to all new subscription products using the shared cadence you choose, not per-product
+- **Best for**: subscription boxes, weekly delivery programs, finance-friendly billing calendars, and annual cohorts that should renew together
 - **2 first-payment proration methods**:
   - **Prorate first payment** — charge a partial amount for the days until the sync date
   - **Extend billing period** — extend the first cycle to the sync date at full price
 - Optional display of sync details at checkout so customers understand their billing date
+- **Gateway support**: manual renewals and Stripe support synced schedules; Paddle supports new synced automatic subscriptions; PayPal keeps its own billing schedule and is not sync-compatible
 
 ### Different Renewal Price
 

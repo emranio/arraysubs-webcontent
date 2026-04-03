@@ -25,6 +25,16 @@ Any WooCommerce simple product can become a subscription by enabling the Subscri
 
 Product prices are locked at the time of purchase. If a store owner changes the product price later, existing subscriptions continue at the original price. Only new subscriptions use the updated price.
 
+## Store-Wide Renewal Synchronization (Free)
+
+Need new subscriptions to renew on one predictable date instead of each customer's anniversary? ArraySubs includes store-wide renewal synchronization for businesses that want cleaner billing operations.
+
+- **Monthly, weekly, and yearly sync modes** for shared billing dates
+- **Best for** subscription boxes, scheduled delivery routes, cohort-based memberships, and annual programs
+- **Two first-payment strategies**: prorate the first payment or extend the first billing period to the sync date
+- **Checkout clarity**: optionally show the synced renewal date and first-payment explanation during checkout
+- **Gateway support**: manual renewals and Stripe support synced schedules; Paddle supports new synced automatic subscriptions; PayPal keeps its own billing schedule and is not sync-compatible
+
 ---
 
 ## Variable Subscription Products (Free)
