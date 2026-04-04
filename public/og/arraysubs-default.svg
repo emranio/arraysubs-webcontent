@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fcff"/>
+      <stop offset="100%" stop-color="#eef8ff"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0699e7"/>
+      <stop offset="100%" stop-color="#ff7a00"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="72" y="72" width="1056" height="486" rx="28" fill="#ffffff" stroke="#d9ecf8"/>
+  <rect x="118" y="120" width="90" height="90" rx="24" fill="url(#brand)"/>
+  <text x="163" y="177" text-anchor="middle" font-size="52" font-family="Arial, Helvetica, sans-serif" fill="#ffffff" font-weight="700">A</text>
+  <text x="238" y="175" font-size="56" font-family="Arial, Helvetica, sans-serif" fill="#0f172a" font-weight="700">ArraySubs</text>
+  <text x="118" y="286" font-size="54" font-family="Arial, Helvetica, sans-serif" fill="#0f172a" font-weight="700">
+    Fast static website starter
+  </text>
+  <text x="118" y="344" font-size="28" font-family="Arial, Helvetica, sans-serif" fill="#475569">
+    SEO-ready • accessible • export-friendly for R2 hosting
+  </text>
+  <rect x="118" y="402" width="250" height="54" rx="27" fill="#0699e7"/>
+  <text x="243" y="437" text-anchor="middle" font-size="24" font-family="Arial, Helvetica, sans-serif" fill="#ffffff" font-weight="700">arraysubs.com</text>
+</svg>
