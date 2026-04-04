@@ -108,63 +108,6 @@ Row of inline badges/logos:
 
 * * *
 
-## Section 2: The Plugin Overload Problem
-
-**Layout**: Two-column comparison. Left column = the old way (stacked plugin cards, red/muted palette). Right column = the ArraySubs way (single card, green/brand palette). Background: light gray or subtle pattern.
-
-* * *
-
-### Section Label
-
-THE PROBLEM
-
-### Headline (H2)
-
-You Shouldn't Need Six Plugins to Sell Subscriptions and Memberships
-
-### Body
-
-Most WooCommerce store owners end up stacking a subscription plugin, a membership plugin, a retention tool, a store credit add-on, a checkout customizer, and an analytics dashboard — just to do what should be built into one solution. That's six update cycles, six potential conflicts, six support channels, and a never-ending compatibility headache. Every new plugin you add is another point of failure.
-
-### Comparison Visual
-
-**Left card — "The Old Way"**
-
-| What You Need | Separate Plugin? |
-| --- | --- |
-| Subscriptions & recurring billing | Plugin 1 |
-| Memberships & access control | Plugin 2 |
-| Retention / churn prevention | Plugin 3 |
-| Store credit / virtual wallet | Plugin 4 |
-| Checkout customization | Plugin 5 |
-| Analytics & MRR tracking | Plugin 6 |
-| Total | 6 plugins, 6 update cycles |
-
-_Six plugins. Six conflicts waiting to happen._
-
-**Right card — "The ArraySubs Way"**
-
-| What You Get | Where? |
-| --- | --- |
-| Subscriptions + Memberships + Billing + Portal + Emails + Retention Flow + Easy Setup + Manage Subscriptions + Profile Builder | Free core |
-| + Store Credit + Checkout Builder + Analytics + Audits + Automatic Payments + Feature Manager + Multi-Login Prevention | Pro add-on |
-| Total | One plugin. One update. |
-
-_One plugin. One data layer. Zero conflicts._
-
-### Quotable Stat (GEO-optimized)
-
-> **"Replace your entire WooCommerce subscription and membership plugin stack with one free solution."**
-
-### CTA
-
-| CTA | Style | Link |
-| --- | --- | --- |
-| Download Free Plugin | Primary | /download/ |
-| See Full Comparison | Text link | /compare/woocommerce-subscriptions/ |
-
-* * *
-
 ## Section 3: Everything You Need. One Plugin.
 
 **Layout**: Section headline centered. 15 feature cards in a responsive grid (3 columns desktop, 2 tablet, 1 mobile). Each card has an icon, title, 1–2 line description, tier badge (Free / Pro), and links to the feature page. Hover animation on cards. Grouped by category for visual flow.
@@ -1058,6 +1001,63 @@ Yes. A 9-step guided wizard asks about your business type (SaaS, subscription bo
   ]
 }
 ```
+
+* * *
+
+## Section 2: The Plugin Overload Problem
+
+**Layout**: Two-column comparison. Left column = the old way (stacked plugin cards, red/muted palette). Right column = the ArraySubs way (single card, green/brand palette). Background: light gray or subtle pattern.
+
+* * *
+
+### Section Label
+
+THE PROBLEM
+
+### Headline (H2)
+
+You Shouldn't Need Six Plugins to Sell Subscriptions and Memberships
+
+### Body
+
+Most WooCommerce store owners end up stacking a subscription plugin, a membership plugin, a retention tool, a store credit add-on, a checkout customizer, and an analytics dashboard — just to do what should be built into one solution. That's six update cycles, six potential conflicts, six support channels, and a never-ending compatibility headache. Every new plugin you add is another point of failure.
+
+### Comparison Visual
+
+**Left card — "The Old Way"**
+
+| What You Need | Separate Plugin? |
+| --- | --- |
+| Subscriptions & recurring billing | Plugin 1 |
+| Memberships & access control | Plugin 2 |
+| Retention / churn prevention | Plugin 3 |
+| Store credit / virtual wallet | Plugin 4 |
+| Checkout customization | Plugin 5 |
+| Analytics & MRR tracking | Plugin 6 |
+| Total | 6 plugins, 6 update cycles |
+
+_Six plugins. Six conflicts waiting to happen._
+
+**Right card — "The ArraySubs Way"**
+
+| What You Get | Where? |
+| --- | --- |
+| Subscriptions + Memberships + Billing + Portal + Emails + Retention Flow + Easy Setup + Manage Subscriptions + Profile Builder | Free core |
+| + Store Credit + Checkout Builder + Analytics + Audits + Automatic Payments + Feature Manager + Multi-Login Prevention | Pro add-on |
+| Total | One plugin. One update. |
+
+_One plugin. One data layer. Zero conflicts._
+
+### Quotable Stat (GEO-optimized)
+
+> **"Replace your entire WooCommerce subscription and membership plugin stack with one free solution."**
+
+### CTA
+
+| CTA | Style | Link |
+| --- | --- | --- |
+| Download Free Plugin | Primary | /download/ |
+| See Full Comparison | Text link | /compare/woocommerce-subscriptions/ |
 
 * * *
 
