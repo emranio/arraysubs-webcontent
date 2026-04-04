@@ -62,7 +62,11 @@ canonical: "https://arraysubs.com/"
 
 * * *
 
-## Section 1: Hero
+## Section 0: Hero
+
+leave it blank right now.
+
+## Section 1: Intro
 
 **Layout**: Full-width. Left-aligned text block (60%) + right-side product screenshot or animated demo (40%). Gradient background (subtle brand-to-white). Floating trust badges beneath CTA row.
 
