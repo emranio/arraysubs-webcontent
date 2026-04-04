@@ -738,6 +738,59 @@ One-page setup hub — guided wizard, settings export, and settings import with 
 
 ---
 
+## 17. Feature Manager (`feature-manager.md`)
+
+### 17.1 Feature Entitlement System (Pro)
+- Define product-level features that customers receive with their subscription
+- 3 feature types: Toggle (on/off access), Number (quantitative limits), Text (descriptive entitlements)
+- Per-product and per-variation feature assignment
+- Features locked at purchase — product edits don't affect existing subscriptions
+
+### 17.2 Feature Templates (Pro)
+- Reusable feature sets that can be applied to multiple products
+- Create template once, apply across products for consistency
+- Template includes feature name, type, value, and display order
+- Streamlines setup for merchants with many products/plans
+
+### 17.3 Storefront Display (Pro)
+- "What's Included" section rendered on product pages (simple products)
+- Automatic display when feature-manager product page setting is enabled
+- Shows feature name, type indicator, and value for each assigned feature
+- Helps customers understand plan value before purchase
+
+### 17.4 Customer Portal — My Features (Pro)
+- Dedicated My Account → My Features page
+- 2 aggregation modes: Per-subscription (features listed per subscription) or Combined (union across all active subscriptions)
+- Displays feature name, type, current value, and usage tracking data
+- Appears only when Feature Manager module is enabled
+
+### 17.5 Usage Tracking (Pro)
+- 6 helper functions for tracking feature consumption: `arraysubs_get_feature_usage()`, `arraysubs_set_feature_usage()`, `arraysubs_increment_feature_usage()`, `arraysubs_decrement_feature_usage()`, `arraysubs_reset_feature_usage()`, `arraysubs_check_feature_limit()`
+- Per-subscription, per-feature usage counters
+- Limit enforcement via `arraysubs_check_feature_limit()` (compares usage against Number-type feature value)
+- Designed for developer integration (API call tracking, download counts, seat limits, storage usage)
+
+### 17.6 Admin Feature Log (Pro)
+- Entitlement change history on subscription detail screen
+- Tracks feature additions, removals, and value changes
+- Useful for auditing plan switches and manual adjustments
+
+### 17.7 Feature-Based Content Restriction (Pro)
+- `[arraysubs_restrict feature="feature_name"]` shortcode attribute
+- Content gating based on whether the customer has a specific feature entitlement
+- Integrates with the Member Access Control restriction system
+
+### 17.8 Plan Switching Integration (Pro)
+- Feature entitlements automatically update when customer switches plans
+- Feature Log records changes from old plan to new plan
+- Supports upgrade, downgrade, and crossgrade scenarios
+
+### 17.9 Settings (Pro)
+- 8 configurable settings: master enable, types enabled, default template, storefront display, portal display mode, usage tracking, feature log, restriction integration
+- Managed via ArraySubs → Store → Feature Manager Settings page
+
+---
+
 ## Feature Tier Summary
 
 ### Free Features (Core — `arraysubs`)

@@ -38,6 +38,7 @@ The strategy below clusters 200+ keywords into **12 topic clusters**, each split
 | 11 | Subscription Analytics & Metrics | Blog/Article | 3,000–5,000/mo | ⭐⭐⭐⭐ |
 | 12 | WordPress Membership Site (Broad) | Blog/Article | 15,000–25,000/mo | ⭐⭐⭐ |
 | 13 | Easy Setup & Plugin Configuration | Mixed | 2,000–4,000/mo | ⭐⭐⭐⭐ |
+| 14 | Feature Entitlements & Plan Management | Mixed | 1,000–2,000/mo | ⭐⭐⭐⭐ |
 
 ---
 
@@ -553,6 +554,42 @@ The strategy below clusters 200+ keywords into **12 topic clusters**, each split
 
 ---
 
+## Cluster 14: Feature Entitlements & Plan Management
+
+> **Pillar Page**: Feature Manager feature page (`/features/feature-manager/`)
+> **Intent Mix**: Commercial (55%) + Informational (45%)
+> **ArraySubs Advantage**: ONLY WooCommerce subscription plugin with built-in per-plan feature entitlements, storefront display, customer portal aggregation, and usage tracking — ZERO direct competition. No competitor offers integrated entitlement management for WooCommerce subscriptions.
+
+### 14A. Landing Page & Feature Page Keywords
+
+| Keyword | Est. Volume | KD | Intent | Opportunity | Target Page |
+|---------|-------------|-----|--------|-------------|-------------|
+| woocommerce subscription feature entitlements | 140/mo | 8 | Commercial | ⭐⭐⭐⭐⭐ | Feature Manager feature page |
+| woocommerce plan features comparison | 210/mo | 15 | Commercial | ⭐⭐⭐⭐ | Feature Manager feature page |
+| woocommerce subscription plan limits | 170/mo | 10 | Commercial | ⭐⭐⭐⭐⭐ | Feature Manager feature page |
+| woocommerce saas entitlement management | 90/mo | 5 | Commercial | ⭐⭐⭐⭐⭐ | Feature Manager feature page |
+| woocommerce show plan features on product page | 110/mo | 8 | Commercial | ⭐⭐⭐⭐⭐ | Feature Manager feature page |
+| woocommerce subscription usage tracking | 140/mo | 10 | Commercial | ⭐⭐⭐⭐⭐ | Feature Manager feature page |
+| woocommerce per plan entitlements | 70/mo | 5 | Commercial | ⭐⭐⭐⭐⭐ | Feature Manager feature page |
+| woocommerce subscription what's included | 90/mo | 5 | Commercial | ⭐⭐⭐⭐⭐ | Feature Manager feature page |
+| woocommerce plan comparison on product page | 110/mo | 8 | Commercial | ⭐⭐⭐⭐⭐ | Feature Manager feature page |
+| woocommerce subscription feature toggle per plan | 50/mo | 3 | Commercial | ⭐⭐⭐⭐⭐ | Feature Manager feature page |
+
+### 14B. Blog / Article Keywords
+
+| Keyword | Est. Volume | KD | Intent | Opportunity | Content Type |
+|---------|-------------|-----|--------|-------------|--------------|
+| how to define subscription plan features woocommerce | 140/mo | 8 | Informational | ⭐⭐⭐⭐⭐ | Tutorial |
+| how to show what each subscription plan includes woocommerce | 110/mo | 5 | Informational | ⭐⭐⭐⭐⭐ | Tutorial |
+| how to track feature usage woocommerce subscription | 90/mo | 5 | Informational | ⭐⭐⭐⭐⭐ | Tutorial |
+| woocommerce saas subscription plan differentiation | 70/mo | 5 | Informational | ⭐⭐⭐⭐⭐ | Explainer |
+| how to create tiered subscription plans with features woocommerce | 170/mo | 10 | Informational | ⭐⭐⭐⭐⭐ | Guide |
+| subscription plan feature comparison for woocommerce | 90/mo | 5 | Informational | ⭐⭐⭐⭐⭐ | Guide |
+| how to add api limits to woocommerce subscription plans | 50/mo | 3 | Informational | ⭐⭐⭐⭐⭐ | Tutorial |
+| woocommerce subscription entitlement system for saas | 70/mo | 5 | Informational | ⭐⭐⭐⭐⭐ | Use case guide |
+
+---
+
 ## GEO-Relevant Keywords (AI Answer Overlap)
 
 These keywords are highly likely to trigger AI-generated answers in ChatGPT, Perplexity, Google AI Overviews, and similar systems. Content targeting these must be structured for AI citation.
@@ -634,6 +671,9 @@ These keywords have the highest opportunity scores — low to moderate competiti
 | 33 | easiest woocommerce subscription plugin to set up | 170/mo | 10 | Commercial | 13 | Landing |
 | 34 | how to migrate woocommerce subscription settings between sites | 170/mo | 8 | Info | 13 | Article |
 | 35 | woocommerce subscription plugin setup guide for beginners | 320/mo | 20 | Info | 13 | Article |
+| 36 | woocommerce subscription feature entitlements | 140/mo | 8 | Commercial | 14 | Landing |
+| 37 | woocommerce plan features comparison | 210/mo | 15 | Commercial | 14 | Landing |
+| 38 | how to create tiered subscription plans with features woocommerce | 170/mo | 10 | Info | 14 | Article |
 
 ---
 

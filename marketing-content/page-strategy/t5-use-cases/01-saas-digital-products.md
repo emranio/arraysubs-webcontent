@@ -88,6 +88,7 @@
 | `/features/store-credit/` | Credits model |
 | `/features/retention-flow-builder/` | Churn prevention |
 | `/features/analytics/` | SaaS metrics |
+| `/features/feature-manager/` | Plan entitlements & usage limits |
 | `/features/` | All features |
 | `/pricing/` | CTA |
 
