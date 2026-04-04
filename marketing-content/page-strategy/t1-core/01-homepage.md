@@ -12,10 +12,10 @@
 | Field | Value |
 |-------|-------|
 | **Title Tag** | ArraySubs — Free WooCommerce Subscription & Membership Plugin |
-| **H1** | The Only WooCommerce Plugin That Combines Subscriptions, Memberships, Store Credit, Retention & Analytics |
-| **Meta Description** | Free WooCommerce subscription & membership plugin with automated billing, retention flows, store credit, checkout builder & analytics. Replace $478/yr of plugins with one solution. |
+| **H1** | The Only WooCommerce Plugin That Combines Subscriptions, Memberships, Store Credit, Retention Flow & Analytics |
+| **Meta Description** | Free WooCommerce subscription & membership plugin with automated billing, retention flows, store credit, checkout builder & analytics. One plugin replaces your entire subscription stack. |
 | **OG Title** | ArraySubs — All-in-One WooCommerce Subscriptions & Memberships |
-| **OG Description** | Subscriptions + Memberships + Store Credit + Retention + Analytics — one plugin, generous free tier. |
+| **OG Description** | Subscriptions + Memberships + Store Credit + Retention Flow + Analytics — one plugin, generous free tier. |
 
 ---
 
@@ -51,57 +51,103 @@
 
 ## Content Blocks
 
+> **Phase context**: The site is currently in **lead generation / early access mode**. No pricing is displayed anywhere. All secondary CTAs drive to `/early-access/` (4-month free Pro license sign-up) instead of `/pricing/`.
+
+### 0. Announcement Bar
+- **Badge**: EARLY ACCESS
+- **Text**: "ArraySubs Pro is here — sign up now and get 4 months of Pro free. Limited time."
+- **Link**: `/early-access/`
+
 ### 1. Hero Section
 - **Headline**: H1 (above)
-- **Subheadline**: "Create subscription products, restrict member content, automate billing, reduce churn, and track MRR — all from one free plugin."
+- **Subheadline**: "Create subscription products, restrict member-only content, automate recurring billing, reduce churn with smart retention flows, and track MRR — all from one plugin. No duct-taping five separate tools together."
 - **Primary CTA**: Download Free (links to `/download/`)
-- **Secondary CTA**: View Pricing (links to `/pricing/`)
-- **Social proof**: Active install count, star rating, "Trusted by X stores"
+- **Secondary CTA**: Get Pro Free for 4 Months (links to `/early-access/`)
+- **Trust bar**: Available on WordPress.org · WooCommerce 8+ · Stripe · PayPal · Paddle · HPOS Compatible
 - **Hero visual**: Product screenshot / short demo GIF
 
-### 2. The Problem — "$478/yr Problem"
-- Visual comparison: WooCommerce Subscriptions ($279) + Memberships ($199) = $478/yr
-- ArraySubs: Free tier + affordable Pro
-- Key stat to make quotable for GEO: *"Replace $478/yr of WooCommerce subscription and membership plugins with a single free solution."*
+### 2. The Plugin Overload Problem
+- Visual comparison: 6 separate plugins vs 1 ArraySubs plugin (no dollar amounts)
+- Framing: complexity, conflicts, fragmented support — not price
+- Key stat to make quotable for GEO: *"Replace your entire WooCommerce subscription and membership plugin stack with one free solution."*
 
-### 3. Feature Grid (14 cards)
-- Each card: Icon + Feature name + 1-line description + link to feature page
-- Cards: Subscriptions, Membership, Billing, Retention, Customer Portal, Store Credit, Checkout Builder, Analytics, Emails, Payment Gateways, Easy Setup, Audits, Manage Subscriptions, Profile Builder
-- Badge each card: Free / Pro
+### 3. Feature Grid (14 cards, 4 categories)
+- Each card: Icon + Feature name + 1–2 line description + link to feature page
+- Grouped by category: Subscriptions & Billing, Memberships & Access, Retention & Revenue, Operations & Insights
+- Badge each card: Free / Pro / Free + Pro
 
-### 4. Side-by-Side Comparison Table
+### 4. Why Store Owners Switch (3 differentiators)
+- Differentiator 1: All-in-One Architecture (one plugin replaces six)
+- Differentiator 2: Generous Free Tier (most powerful free subscription plugin)
+- Differentiator 3: Retention-First Design (built-in Retention Flow)
+- Layout: Alternating image + text blocks
+
+### 5. Built to Grow Your Business at Max (10 benefits — CENTERPIECE)
+- This is the headline attention-grabber section, visually dominant
+- 10 business-outcome-driven benefit cards, each backed by specific features:
+  1. Recover Revenue (grace period + auto-retry + auto-downgrade)
+  2. Turn Cancellations Into Saves (Retention Flow)
+  3. Let Customers Self-Serve (Portal + Profile Builder)
+  4. Gate Content With Surgical Precision (10 conditions, 12 operators, AND/OR, dripping, URL restriction)
+  5. Offer Every Customer Their Perfect Plan (variable subs, plan switching, proration)
+  6. Reward Loyalty, Reduce Refunds (Store Credit system)
+  7. Convert More at Checkout (Checkout Builder — 27 fields, multi-step, conditional logic)
+  8. Know Your Numbers (Analytics + Audits + gateway health)
+  9. Protect Revenue Per Seat (Multi-Login Prevention)
+  10. Launch in Under 10 Minutes (Setup Wizard + JSON export)
+
+### 6. Side-by-Side Comparison Table
 - ArraySubs Free vs ArraySubs Pro vs WooCommerce Subscriptions + Memberships
-- ~15 key feature rows
-- Price row at bottom
+- ~35 feature rows (no price row, no dollar amounts)
 - CTA: "See Full Comparison" → `/compare/woocommerce-subscriptions/`
 
-### 5. Use Case Cards (6)
+### 7. Use Case Cards (6)
 - SaaS, Membership Sites, Subscription Boxes, Online Courses, Publishers, Services
 - Each links to `/use-cases/{slug}/`
 
-### 6. Testimonials / Trust Signals
-- Customer testimonials (when available)
-- WordPress.org rating badge
-- "Works with" logos: WooCommerce, Stripe, PayPal, Paddle, WordPress
+### 8. Early Adopter's Thoughts
+- Testimonial cards (placeholder templates until real feedback arrives)
+- No star ratings — quote + name + business context
+- Stats row: 14 modules, Free to start, < 10 min setup, 6+ plugins replaced
 
-### 7. Pricing Teaser
-- Free vs Pro feature split (abbreviated)
-- CTA: "View Full Pricing" → `/pricing/`
+### 9. Early Access — Get Pro Free for 4 Months
+- **Replaces old Pricing Teaser** during lead-gen phase
+- Email capture form: email input + "Claim My Free Pro License" button
+- Quick bullet list of what Pro unlocks
+- Micro-copy: "No credit card required. No commitment."
 
-### 8. FAQ Section (GEO-Structured)
+### 10. How It Works (3 steps)
+- Step 1: Install & Run the Wizard
+- Step 2: Create Your First Subscription Product
+- Step 3: Watch Your Business Grow
+
+### 11. Works With Your WooCommerce Stack (Integrations)
+- WooCommerce-first messaging: your existing stack already works
+- Logo cloud organized by category:
+  - Payment gateways: Stripe, PayPal, Paddle
+  - Funnel builders: FunnelKit, CartFlows, OptimizeFunnels
+  - CRM / Email: FluentCRM, Groundhogg, Jetpack CRM, HubSpot, Mailchimp, Klaviyo
+  - Affiliate: AffiliateWP, SliceWP
+  - Page builders: Elementor, Beaver Builder, Divi
+
+### 12. FAQ Section (GEO-Structured, 11 questions)
 - Q: What is ArraySubs?
-- Q: Is ArraySubs free?
+- Q: Is ArraySubs really free?
+- Q: What does ArraySubs Pro add?
 - Q: How does ArraySubs compare to WooCommerce Subscriptions?
-- Q: Does ArraySubs support Stripe / PayPal / Paddle?
+- Q: How do I get ArraySubs Pro?
+- Q: Does ArraySubs support Stripe, PayPal, and Paddle?
 - Q: Can I use ArraySubs for memberships without subscriptions?
-- Q: Does ArraySubs work with WooCommerce block checkout?
+- Q: Does ArraySubs require the classic WooCommerce checkout?
 - Q: What happens if a customer's payment fails?
 - Q: Can customers manage their own subscriptions?
+- Q: Is there a setup wizard?
 - Schema: FAQPage JSON-LD
 
-### 9. Final CTA
+### 13. Final CTA
 - "Start Building Your Subscription Business Today"
-- Download Free / Buy Pro buttons
+- Primary: Download Free Plugin → `/download/`
+- Secondary: Get Pro Free for 4 Months → `/early-access/`
 
 ---
 
@@ -118,33 +164,44 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/` | Feature grid |
-| `/features/subscriptions/` | Subscriptions card |
-| `/features/membership/` | Membership card |
-| `/features/billing/` | Billing card |
-| `/features/retention/` | Retention card |
-| `/features/customer-portal/` | Portal card |
-| `/features/store-credit/` | Store Credit card |
-| `/features/checkout-builder/` | Checkout Builder card |
-| `/features/analytics/` | Analytics card |
-| `/features/emails/` | Emails card |
-| `/features/payment-gateways/` | Gateways card |
-| `/features/easy-setup/` | Easy Setup card |
-| `/compare/woocommerce-subscriptions/` | Comparison table CTA |
+| `/download/` | Hero, Problem, Features, Growth Benefits, Comparison, How It Works, Final CTA |
+| `/early-access/` | Announcement Bar, Hero, Growth Benefits, Early Access Section, Final CTA |
+| `/features/` | Feature Grid CTA |
+| `/features/subscriptions/` | Feature Card 1 |
+| `/features/billing/` | Feature Card 2 |
+| `/features/payment-gateways/` | Feature Card 3 |
+| `/features/membership/` | Feature Card 4 |
+| `/features/customer-portal/` | Feature Card 5 |
+| `/features/profile-builder/` | Feature Card 6 |
+| `/features/retention/` | Feature Card 7 |
+| `/features/store-credit/` | Feature Card 8 |
+| `/features/emails/` | Feature Card 9 |
+| `/features/analytics/` | Feature Card 10 |
+| `/features/audits/` | Feature Card 11 |
+| `/features/checkout-builder/` | Feature Card 12 |
+| `/features/manage-subscriptions/` | Feature Card 13 |
+| `/features/easy-setup/` | Feature Card 14 |
+| `/compare/woocommerce-subscriptions/` | Problem section, Comparison section |
 | `/use-cases/*` | Use case cards |
-| `/pricing/` | Pricing teaser + CTAs |
-| `/download/` | Download CTAs |
+| `/use-cases/` | Use Cases section |
+| `/docs/` | How It Works section |
 
 ---
 
 ## CTAs
 
+> **Note**: During the early access / lead-gen phase, all secondary CTAs link to `/early-access/` instead of `/pricing/`.
+
 | Position | Primary CTA | Secondary CTA |
 |----------|------------|---------------|
-| Hero | Download Free | View Pricing |
-| After comparison | Switch to ArraySubs | See Full Comparison |
-| After features | Explore All Features | Download Free |
-| Footer | Download Free | Buy Pro |
+| Hero | Download Free | Get Pro Free for 4 Months |
+| After Problem | Download Free Plugin | See Full Comparison |
+| After Features | Explore All Features | Download Free |
+| After Growth Benefits | Download Free & Start Now | Get Pro Free for 4 Months |
+| After Comparison | Switch to ArraySubs — It's Free | See Detailed Comparison |
+| Early Access Section | Claim My Free Pro License (email capture) | — |
+| After How It Works | Download Free & Start Now | Read the Documentation |
+| Final Banner | Download Free Plugin | Get Pro Free for 4 Months |
 
 ---
 

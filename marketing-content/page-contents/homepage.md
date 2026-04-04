@@ -181,12 +181,12 @@ _One plugin. One data layer. Zero conflicts._
 ---
 
 <!-- ========================================================= -->
-<!-- SECTION 3 — FEATURE GRID (14 FEATURES)                    -->
+<!-- SECTION 3 — FEATURE GRID (15 FEATURES)                    -->
 <!-- ========================================================= -->
 
 ## Section 3: Everything You Need. One Plugin.
 
-**Layout**: Section headline centered. 14 feature cards in a responsive grid (3 columns desktop, 2 tablet, 1 mobile). Each card has an icon, title, 1–2 line description, tier badge (Free / Pro), and links to the feature page. Hover animation on cards. Grouped by category for visual flow.
+**Layout**: Section headline centered. 15 feature cards in a responsive grid (3 columns desktop, 2 tablet, 1 mobile). Each card has an icon, title, 1–2 line description, tier badge (Free / Pro), and links to the feature page. Hover animation on cards. Grouped by category for visual flow.
 
 ---
 
@@ -200,7 +200,7 @@ Everything You Need to Run a Subscription Business
 
 ### Subheadline
 
-14 integrated modules. Zero plugin conflicts. From free trials to MRR dashboards — built for WooCommerce store owners who want power without complexity.
+15 integrated modules. Zero plugin conflicts. From free trials to MRR dashboards — built for WooCommerce store owners who want power without complexity.
 
 ---
 
@@ -302,6 +302,12 @@ Everything You Need to Run a Subscription Business
 - **Description**: A 9-step guided wizard with 7 business type profiles that configures your entire subscription engine in minutes — plus JSON export/import for backup and multi-site migration.
 - **Link**: `/features/easy-setup/`
 
+#### Card 15: Feature Manager
+- **Icon**: `list-checks` (Lucide)
+- **Badge**: Pro
+- **Description**: Define per-plan entitlements — toggle features on/off, set numeric limits, and add text details per product or variation. Show "What's Included" on product pages, aggregate in the portal, and track usage.
+- **Link**: `/features/feature-manager/`
+
 ---
 
 ### Below Grid CTA
@@ -341,7 +347,7 @@ Built Different. Built Complete.
 
 **Body**: Other solutions force you to buy subscriptions from one vendor, memberships from another, retention from a third — and pray they all work together. ArraySubs is a single, integrated system where subscriptions, memberships, billing, Retention Flow, store credit, analytics, and audits share the same data layer. No API bridges. No webhook hacks. No compatibility prayers.
 
-**Proof point**: 14 built-in modules that would normally require 6+ separate plugins.
+**Proof point**: 15 built-in modules that would normally require 6+ separate plugins.
 
 ---
 
@@ -510,6 +516,18 @@ Every feature in ArraySubs exists for one reason — to grow your subscription r
 **Features behind this**: 9-step guided wizard, 7 business type profiles, auto-configuration of billing/checkout/access/emails/features, JSON export/import, backup and multi-site migration.
 
 **Outcome**: Under 10 minutes from install to live. Zero guesswork configuration.
+
+---
+
+### Benefit 11: Show Customers Exactly What They're Paying For
+
+**Icon**: `list-checks` (Lucide)
+
+**Body**: "What do I get on the Pro plan?" is the most common pre-purchase question — and most subscription plugins can't answer it on the product page. Feature Manager lets you define per-plan entitlements (toggles, numeric limits, and text details) and renders a "What's Included" section right on the product page. Variable products update the feature list dynamically per variation. Customers also see their aggregated entitlements in the My Features portal page, and for metered features like API calls or team seats, usage tracking shows "Used X of Y" in real time. The result: fewer pre-sale questions, clearer plan differentiation, and more confident upgrades.
+
+**Features behind this**: Feature Manager (3 entitlement types, per-product and per-variation configuration, templates), storefront "What's Included" display, My Features customer portal page, usage tracking (6 helper functions), admin Feature Log, feature-based content restriction via shortcode.
+
+**Outcome**: Transparent plans. Fewer support tickets. Higher upgrade rates.
 
 ---
 
@@ -716,7 +734,7 @@ What Early Adopters Are Saying
 
 | Stat | Value | Label |
 |------|-------|-------|
-| Modules | **14** | Built-in features |
+| Modules | **15** | Built-in features |
 | Cost to start | **Free** | No credit card required |
 | Setup time | **< 10 min** | With the setup wizard |
 | Plugins replaced | **6+** | One unified solution |
@@ -1115,7 +1133,7 @@ Free forever. No credit card required. Installs in 2 minutes.
 | 0 | Announcement Bar (Early Access) | Brand color | Critical |
 | 1 | Hero | Gradient | Critical |
 | 2 | The Plugin Overload Problem | Light gray | Critical |
-| 3 | Feature Grid (14 cards, 4 categories) | White | Critical |
+| 3 | Feature Grid (15 cards, 4 categories) | White | Critical |
 | 4 | Why Store Owners Switch (3 differentiators) | White | High |
 | 5 | Built to Grow Your Business at Max (10 benefits) | Light gradient | Critical |
 | 6 | Comparison Table | Light gray | Critical |
@@ -1161,6 +1179,7 @@ Free forever. No credit card required. Installs in 2 minutes.
 | `/features/checkout-builder/` | Feature Card 12 |
 | `/features/manage-subscriptions/` | Feature Card 13 |
 | `/features/easy-setup/` | Feature Card 14 |
+| `/features/feature-manager/` | Feature Card 15 |
 | `/compare/woocommerce-subscriptions/` | Problem section, Comparison section |
 | `/use-cases/saas/` | Use Case Card 1 |
 | `/use-cases/membership-site/` | Use Case Card 2 |

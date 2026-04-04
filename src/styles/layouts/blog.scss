@@ -1,0 +1,29 @@
+.layout-blog-main {
+	&__body {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: 40px 24px;
+	}
+}
+
+.layout-blog-article {
+	&__body {
+		max-width: 780px;
+		margin: 0 auto;
+		padding: 40px 24px;
+	}
+}
+
+.layout-blog-category {
+	&__body {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: 40px 24px;
+	}
+
+	&__heading {
+		font-size: 2rem;
+		font-weight: 700;
+		margin-bottom: 24px;
+	}
+}

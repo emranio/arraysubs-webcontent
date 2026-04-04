@@ -13,7 +13,7 @@
 | 2 | Features Hub | [02-features-hub.md](t1-core/02-features-hub.md) | Week 1 |
 | 3 | Pricing | [03-pricing.md](t1-core/03-pricing.md) | Week 1 |
 
-## T2 — Feature Detail Pages (14)
+## T2 — Feature Detail Pages (15)
 
 | # | Page | File | Ownership | Priority |
 |---|------|------|-----------|----------|
@@ -31,6 +31,7 @@
 | 12 | Audits & Logs | [12-audits-and-logs.md](t2-features/12-audits-and-logs.md) | Pro | Week 4 |
 | 13 | Manage Subscriptions | [13-manage-subscriptions.md](t2-features/13-manage-subscriptions.md) | Free | Week 3 |
 | 14 | Profile Builder & Shortcodes | [14-profile-builder.md](t2-features/14-profile-builder.md) | Free + Pro | Week 4 |
+| 15 | Feature Manager | [15-feature-manager.md](t2-features/15-feature-manager.md) | Pro | Week 4 |
 
 ## T3 — Comparison Pages (7)
 
@@ -69,15 +70,18 @@
 |------|-------------|
 | [blog-content-plan.md](t6-blog/blog-content-plan.md) | 28-post editorial calendar with keywords, volumes, and publishing schedule |
 
-## T7 — Trust & Conversion Pages (4)
+## T7 — Trust & Conversion Pages (5)
 
 | # | Page | File | Priority |
 |---|------|------|----------|
-| 1 | Download | [01-download.md](t7-trust/01-download.md) | Week 1 |
-| 2 | Documentation Hub | [02-documentation.md](t7-trust/02-documentation.md) | Week 3 |
-| 3 | Changelog | [03-changelog.md](t7-trust/03-changelog.md) | Week 3 |
-| 4 | Support | [04-support.md](t7-trust/04-support.md) | Week 2 |
+| 1 | Early Access (Lead Capture) | [00-early-access.md](t7-trust/00-early-access.md) | Week 1 |
+| 2 | Download | [01-download.md](t7-trust/01-download.md) | Week 1 |
+| 3 | Documentation Hub | [02-documentation.md](t7-trust/02-documentation.md) | Week 3 |
+| 4 | Changelog | [03-changelog.md](t7-trust/03-changelog.md) | Week 3 |
+| 5 | Support | [04-support.md](t7-trust/04-support.md) | Week 2 |
+
+> **Note**: The Pricing page (`/pricing/`) is not publicly linked during the early access phase. All secondary CTAs point to `/early-access/` instead. When pricing launches, a pricing page plan will be added.
 
 ---
 
-## Total: 37 page plans + 1 blog content plan = 38 files
+## Total: 38 page plans + 1 blog content plan + 1 early access page = 40 files

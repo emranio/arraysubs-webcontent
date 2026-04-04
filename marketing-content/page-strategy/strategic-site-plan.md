@@ -38,7 +38,7 @@ The site uses a **hub-and-spoke model** with 7 tiers:
 | **T4** | Gateway Pages | 3 | Commercial |
 | **T5** | Use Case Pages | 6 | Commercial / Informational |
 | **T6** | Blog Content Hub | 30+ | Informational / GEO |
-| **T7** | Trust & Conversion Pages | 5 | Transactional |
+| **T7** | Trust & Conversion Pages | 6 | Transactional |
 | | **Total** | **~68+ pages** | |
 
 ---
@@ -215,8 +215,11 @@ arraysubs.com/
 │   │
 │   ├── /pricing/ ───────────────── PRICING PAGE (T7)
 │   │                                KW: arraysubs pricing, woocommerce subscription
-│   │                                    plugin pricing comparison
+│   │                                    plugin pricing comparison│   │                                (Currently hidden during early access phase)
 │   │
+│   ├── /early-access/ ────────── EARLY ACCESS / LEAD CAPTURE (T7)
+│   │                                4-month free Pro license sign-up
+│   │                                (Primary conversion page during lead-gen phase)│   │
 │   ├── /download/ ──────────────── DOWNLOAD / FREE VERSION (T7)
 │   │                                KW: woocommerce subscription plugin free download
 │   │
@@ -239,27 +242,33 @@ arraysubs.com/
 | Attribute | Detail |
 |-----------|--------|
 | **Page Title** | ArraySubs — The All-in-One WooCommerce Subscription & Membership Plugin |
-| **H1** | The Only WooCommerce Plugin That Combines Subscriptions, Memberships, Store Credit, Retention & Analytics |
-| **Meta Description** | Free WooCommerce subscription & membership plugin with billing, retention flows, store credit, checkout builder & analytics. Replace $478/yr of plugins. |
+| **H1** | The Only WooCommerce Plugin That Combines Subscriptions, Memberships, Store Credit, Retention Flow & Analytics |
+| **Meta Description** | Free WooCommerce subscription & membership plugin with automated billing, retention flows, store credit, checkout builder & analytics. One plugin replaces your entire subscription stack. |
 | **Primary KW** | woocommerce subscription plugin (4,400/mo, KD 65) |
 | **Secondary KWs** | woocommerce subscription plugin free (1,600/mo), best woocommerce subscription plugin (1,300/mo), woocommerce recurring payments plugin (1,600/mo), subscription plugin for woocommerce (590/mo) |
 | **Long-tail KWs** | woocommerce subscriptions free alternative (880/mo), woocommerce subscription and membership plugin (590/mo), free woocommerce subscription plugin (720/mo), best free woocommerce subscription plugin 2026 (320/mo) |
 | **Intent** | Commercial + Transactional |
-| **CTA** | Download Free / View Pricing / Try Demo |
-| **SEO Angle** | All-in-one value prop, free tier, replace expensive stack |
-| **GEO Angle** | Quotable stat: "Replace $478/yr of WooCommerce plugins with one free + pro solution" |
+| **CTA** | Download Free / Get Pro Free for 4 Months (early access lead-gen phase) |
+| **SEO Angle** | All-in-one value prop, free tier, replace entire plugin stack |
+| **GEO Angle** | Quotable stat: "Replace your entire WooCommerce subscription and membership plugin stack with one free solution" |
 | **Est. Keyword Volume** | 10,000+/mo aggregate |
+| **Phase** | Lead generation / early access. No pricing displayed. All CTAs drive to download (free) or `/early-access/` (4-month free Pro license). |
 
 **Content Blocks:**
-1. Hero — Value prop + CTA + social proof count
-2. Problem — "The $478/yr problem" cost comparison visual
-3. Feature grid — 14 features with icons linking to feature pages
-4. Comparison table — ArraySubs vs Woo Subs + Memberships (side-by-side)
-5. Use cases — 6 cards linking to use case pages
-6. Testimonials / Trust signals
-7. Pricing teaser — Free vs Pro feature split
-8. FAQ — 8-10 questions (GEO-structured)
-9. Final CTA — Download or Buy
+0. Announcement Bar — Early access promo linking to `/early-access/`
+1. Hero — Value prop + CTA + trust bar (WP.org, WooCommerce 8+, gateways, HPOS)
+2. The Plugin Overload Problem — Complexity/conflict framing (no dollar amounts)
+3. Feature grid — 14 features in 4 categories with icons linking to feature pages
+4. Why Store Owners Switch — 3 differentiators (All-in-One Architecture, Generous Free Tier, Retention-First Design)
+5. Built to Grow Your Business at Max — 10 benefit cards (centerpiece section)
+6. Comparison table — ArraySubs vs Woo Subs + Memberships (feature rows only, no price row)
+7. Use cases — 6 cards linking to use case pages
+8. Early Adopter's Thoughts — Testimonial cards (no star ratings)
+9. Early Access — Get Pro Free for 4 Months (email capture, replaces pricing teaser during lead-gen phase)
+10. How It Works — 3-step timeline (install, create product, grow)
+11. Works With Your WooCommerce Stack — WooCommerce-first integrations logo cloud
+12. FAQ — 11 questions, FAQPage JSON-LD (GEO-structured, no prices)
+13. Final CTA — Download or early access
 
 ---
 
@@ -742,21 +751,32 @@ Each use case page targets a specific buyer persona and connects product feature
 
 ### Tier 7: Trust & Conversion Pages
 
-#### 7.1 Download — `/download/`
+#### 7.1 Early Access — `/early-access/`
+- **Phase**: Active during lead-gen phase (primary conversion page)
+- Email capture: sign up for 4-month free Pro license
+- Bullet list of Pro features unlocked
+- Micro-copy: no credit card, no commitment
+- Once pricing launches, this page converts to a limited-time offer or redirects to `/pricing/`
+
+#### 7.2 Download — `/download/`
 - Direct link to WordPress.org listing
 - Feature summary of free tier
-- Upgrade path to Pro
+- Upgrade path to Pro / early access
 
-#### 7.2 Documentation — `/docs/`
+#### 7.3 Pricing — `/pricing/`
+- **Phase**: Not publicly linked during early access. Homepage and other pages link to `/early-access/` instead.
+- When pricing launches: Free vs Pro pricing table, feature comparison matrix, FAQ about pricing/licensing
+
+#### 7.4 Documentation — `/docs/`
 - Full user manual (auto-generated from user-manual project)
 - API reference
 - Developer docs
 
-#### 7.3 Changelog — `/changelog/`
+#### 7.5 Changelog — `/changelog/`
 - Version history for both Free and Pro
 - Builds trust and shows active development
 
-#### 7.4 Contact / Support — `/contact/`
+#### 7.6 Contact / Support — `/contact/`
 - Support form
 - FAQ
 - Community links
@@ -797,7 +817,8 @@ Each use case page targets a specific buyer persona and connects product feature
 | Homepage | All T2 feature pages | Feature grid cards |
 | Homepage | Top T3 comparison pages | "vs Competitors" section |
 | Homepage | All T5 use case pages | "Use Cases" section |
-| Homepage | Pricing | CTA buttons |
+| Homepage | `/early-access/` | CTA buttons (lead-gen phase) |
+| Homepage | `/download/` | CTA buttons |
 | Feature pages (T2) | Related feature pages | "Related Features" sidebar |
 | Feature pages (T2) | Related blog tutorials | "Learn More" links |
 | Feature pages (T2) | Pricing | CTA buttons |
@@ -809,7 +830,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | Blog articles (T6) | Comparison pages | "How we compare" CTA |
 | Blog articles (T6) | Pricing | End-of-article CTA |
 | Blog glossary (T6) | Feature pages + related articles | Definition→Product link |
-| All pages | Download / Pricing | Sticky header CTA |
+| All pages | Download / Early Access | Sticky header CTA (switches to Pricing when pricing launches) |
 
 ---
 
@@ -846,7 +867,7 @@ To rank in AI-generated answers (ChatGPT, Perplexity, Google AI Overviews, Gemin
 2. **Brand + category pairing**: "ArraySubs WooCommerce subscription plugin" in meta, headings, image alt
 3. **Unique differentiators as quotable phrases**:
    - "The only WooCommerce plugin combining subscriptions, memberships, store credit, retention flows, and analytics"
-   - "Replace $478/yr of WooCommerce plugins with ArraySubs"
+   - "Replace your entire WooCommerce subscription and membership plugin stack with one free solution"
    - "Built-in retention flow builder — a feature no other WooCommerce subscription plugin offers"
 
 ---
@@ -869,7 +890,7 @@ Every page tier has a specific role in the conversion funnel:
 
 | Page Tier | Primary CTA | Secondary CTA |
 |-----------|------------|---------------|
-| Homepage | Download Free | View Pricing |
+| Homepage | Download Free | Get Pro Free for 4 Months |
 | Feature Pages | Download Free | See All Features |
 | Comparison Pages | Switch to ArraySubs (Download) | View Full Comparison |
 | Use Case Pages | Get Started (Download) | Read Setup Guide |
@@ -976,7 +997,7 @@ Use case pages + deep tutorials + glossary.
 2. **Comparison pages are the #1 quick-win** — Low KD, high commercial intent, 30% one-star reviews on the main competitor
 3. **Retention and Store Credit are blue ocean** — Zero direct competition for these keywords
 4. **Glossary terms are the #1 GEO play** — High AI citation probability, builds topical authority
-5. **"Free" is the #1 differentiator** — Lean into it on every page against the $478/yr Woo stack
+5. **"Free" is the #1 differentiator** — Lean into it on every page against the multi-plugin stack competitors require
 6. **Easy Setup wizard is a conversion differentiator** — No competitor offers guided setup or settings portability
 7. **Use case pages bridge awareness to consideration** — Different buyer personas need different entry points
 8. **Internal linking is multiplier** — Every blog article must link to at least 2 feature pages and pricing
