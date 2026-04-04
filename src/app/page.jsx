@@ -1,19 +1,28 @@
 import { buildMetadata, Schema } from "@/lib/seo";
 import SchemaScript from "@/components/SchemaScript";
-import CanvasLayout from "@/layouts/page/CanvasLayout";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import AnnouncementBar from "@/components/homepage/AnnouncementBar";
+import HeroSection from "@/components/homepage/HeroSection";
+import ProblemSection from "@/components/homepage/ProblemSection";
+import FeaturesSection from "@/components/homepage/FeaturesSection";
+import WhySection from "@/components/homepage/WhySection";
+import GrowthSection from "@/components/homepage/GrowthSection";
+import CtaBanner from "@/components/homepage/CtaBanner";
 
 export const metadata = buildMetadata({
   title: {
-    absolute: "ArraySubs — WooCommerce Subscriptions & Memberships",
+    absolute: "ArraySubs — Free WooCommerce Subscription & Membership Plugin",
   },
   description:
-    "The all-in-one WooCommerce subscription and membership plugin. Recurring billing, member access, retention flows, and more.",
+    "Free WooCommerce subscription & membership plugin with automated billing, retention flows, store credit, checkout builder & analytics. One plugin replaces your entire subscription stack.",
   path: "/",
   keywords: [
-    "WooCommerce subscriptions",
-    "WooCommerce memberships",
-    "recurring billing",
-    "WordPress subscription plugin",
+    "woocommerce subscription plugin",
+    "woocommerce subscription plugin free",
+    "best woocommerce subscription plugin",
+    "woocommerce recurring payments plugin",
+    "woocommerce subscription and membership plugin",
   ],
 });
 
@@ -22,16 +31,37 @@ const homeSchema = [
   Schema.website(),
   Schema.softwareApplication({
     description:
-      "The all-in-one WooCommerce subscription and membership plugin.",
+      "Free WooCommerce subscription & membership plugin with automated billing, retention flows, store credit, checkout builder & analytics.",
   }),
+  Schema.faq([
+    {
+      question: "Is ArraySubs really free?",
+      answer:
+        "Yes. The core plugin with subscriptions, memberships, billing, customer portal, retention flow, email notifications, setup wizard, and more is completely free on WordPress.org. ArraySubs Pro adds premium modules like store credit, checkout builder, analytics, audits, and automatic payments.",
+    },
+    {
+      question: "How many plugins does ArraySubs replace?",
+      answer:
+        "ArraySubs replaces up to 6 separate plugins — subscriptions, memberships, retention, store credit, checkout customization, and analytics — all in one integrated solution.",
+    },
+  ]),
 ];
 
 export default function HomePage() {
   return (
-    <CanvasLayout>
-      <SchemaScript schema={homeSchema} />
-      <h1>ArraySubs</h1>
-      <p>Homepage — coming soon.</p>
-    </CanvasLayout>
+    <>
+      <AnnouncementBar />
+      <Header />
+      <main id="main-content">
+        <SchemaScript schema={homeSchema} />
+        <HeroSection />
+        <ProblemSection />
+        <FeaturesSection />
+        <WhySection />
+        <GrowthSection />
+        <CtaBanner />
+      </main>
+      <Footer />
+    </>
   );
 }
