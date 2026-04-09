@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { getAllContent } from '@/lib/content';
 import siteConfig from '@/site.config.json';
@@ -33,10 +34,14 @@ export default function ArticlesPage() {
               <article key={article.slug} className="article-card">
                 {article.coverImage && (
                   <div className="article-card__image">
-                    <img
+                    <Image
                       src={`/contents/${article.coverImage}`}
                       alt={article.title}
                       title={article.title}
+                      width={1200}
+                      height={675}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="article-card__media"
                       loading="lazy"
                     />
                   </div>

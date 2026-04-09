@@ -1,8 +1,21 @@
 import type { Metadata } from 'next';
+import { Funnel_Display, Funnel_Sans } from 'next/font/google';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import siteConfig from '@/site.config.json';
 import '@/styles/globals.scss';
+
+const funnelDisplay = Funnel_Display({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+});
+
+const funnelSans = Funnel_Sans({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -20,19 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
+      <body className={`${funnelDisplay.variable} ${funnelSans.variable}`}>
         <Header />
         <main>{children}</main>
         <Footer />

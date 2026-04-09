@@ -2,6 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
+import {
+  hasLocalMarkdownImports,
+  inlineLocalMarkdownImports,
+} from '@/lib/mdx-partials';
 
 export interface ContentMeta {
   title: string;
@@ -90,23 +94,27 @@ export function getContentBySlug(
 
   const stat = fs.statSync(filePath);
   const mtime = stat.mtimeMs;
+  const raw = fs.readFileSync(filePath, 'utf-8');
+  const shouldBypassCache = hasLocalMarkdownImports(raw);
 
   // Check cache
-  const cached = contentCache.get(filePath);
-  if (cached && cached.mtime === mtime) {
-    return cached.result;
+  if (!shouldBypassCache) {
+    const cached = contentCache.get(filePath);
+    if (cached && cached.mtime === mtime) {
+      return cached.result;
+    }
   }
 
-  const raw = fs.readFileSync(filePath, 'utf-8');
   const { data, content } = matter(raw);
+  const resolvedContent = inlineLocalMarkdownImports(content, filePath);
 
   // Check publish status
   const publishValue = data.publish ?? false;
   if (!isPublished(publishValue)) return null;
 
   const { slug } = resolveSlug(filePath);
-  const rt = readingTime(content);
-  const coverImage = data.coverImage || extractFirstImage(content);
+  const rt = readingTime(resolvedContent);
+  const coverImage = data.coverImage || extractFirstImage(resolvedContent);
 
   const meta: ContentMeta = {
     title: data.title || 'Untitled',
@@ -125,8 +133,11 @@ export function getContentBySlug(
     readingTime: rt.text,
   };
 
-  const result: ContentItem = { meta, content };
-  contentCache.set(filePath, { mtime, result });
+  const result: ContentItem = { meta, content: resolvedContent };
+
+  if (!shouldBypassCache) {
+    contentCache.set(filePath, { mtime, result });
+  }
 
   return result;
 }
@@ -151,13 +162,14 @@ export function getAllContent(contentType: string): ContentMeta[] {
       } else if (entry.name.endsWith('.mdx')) {
         const raw = fs.readFileSync(fullPath, 'utf-8');
         const { data, content } = matter(raw);
+        const resolvedContent = inlineLocalMarkdownImports(content, fullPath);
 
         const publishValue = data.publish ?? false;
         if (!isPublished(publishValue)) continue;
 
         const { slug } = resolveSlug(fullPath);
-        const rt = readingTime(content);
-        const coverImage = data.coverImage || extractFirstImage(content);
+        const rt = readingTime(resolvedContent);
+        const coverImage = data.coverImage || extractFirstImage(resolvedContent);
 
         items.push({
           title: data.title || 'Untitled',

@@ -5,8 +5,10 @@ import Link from 'next/link';
 
 // UI Components for MDX
 import { Section } from '@/components/ui/section';
+import { SectionHeading } from '@/components/ui/section-heading';
 import { Grid } from '@/components/ui/grid';
 import { Card } from '@/components/ui/card';
+import { FeatureCard } from '@/components/ui/feature-card';
 import { Button } from '@/components/ui/button';
 import { Flex } from '@/components/ui/flex';
 import { Badge } from '@/components/ui/badge';
@@ -63,8 +65,10 @@ export const mdxComponents: MDXComponents = {
   a: MdxLink,
   // UI components available in MDX
   Section,
+  SectionHeading,
   Grid,
   Card,
+  FeatureCard,
   Button,
   Flex,
   Badge,

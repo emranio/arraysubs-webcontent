@@ -1,4 +1,5 @@
 import React from 'react';
+import { SectionHeading } from './section-heading';
 
 interface SectionProps {
   children: React.ReactNode;
@@ -27,11 +28,7 @@ export function Section({
     <section className={`section ${bgClass} ${className}`} id={id}>
       <div className={fullWidth ? 'section__inner section__inner--full' : 'section__inner container'}>
         {(label || title || subtitle) && (
-          <div className="section__header">
-            {label && <span className="section__label">{label}</span>}
-            {title && <h2 className="section__title">{title}</h2>}
-            {subtitle && <p className="section__subtitle">{subtitle}</p>}
-          </div>
+          <SectionHeading label={label} title={title} subtitle={subtitle} />
         )}
         <div className="section__body">
           {children}
