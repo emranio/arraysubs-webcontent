@@ -46,7 +46,7 @@ export default function ArticlesPage() {
                     <span className="article-card__category">{article.category}</span>
                   )}
                   <h2 className="article-card__title">
-                    <Link href={`/articles/${article.slug}/`} title={article.title}>
+                    <Link href={`/article/${article.slug}/`} title={article.title}>
                       {article.title}
                     </Link>
                   </h2>

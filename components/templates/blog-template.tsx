@@ -9,7 +9,7 @@ interface BlogTemplateProps {
 
 export function BlogTemplate({ meta, children }: BlogTemplateProps) {
   const breadcrumbItems = [
-    { label: 'Blog', href: '/articles/' },
+    { label: 'Blog', href: '/article/' },
     { label: meta.title },
   ];
 

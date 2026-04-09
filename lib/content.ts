@@ -26,7 +26,7 @@ export interface ContentItem {
   content: string;
 }
 
-const CONTENT_DIR = path.join(process.cwd(), 'content');
+const CONTENT_DIR = path.join(process.cwd(), 'contents');
 
 // Simple in-memory cache
 const contentCache = new Map<string, { mtime: number; result: ContentItem }>();
@@ -70,6 +70,9 @@ export function getContentBySlug(
   slugParts: string[]
 ): ContentItem | null {
   // Try exact file match first, then index
+  // Skip _ prefixed slug parts (partials/fragments)
+  if (slugParts.some(part => part.startsWith('_'))) return null;
+
   const possiblePaths = [
     path.join(CONTENT_DIR, contentType, ...slugParts) + '.mdx',
     path.join(CONTENT_DIR, contentType, ...slugParts, 'index.mdx'),
@@ -138,6 +141,9 @@ export function getAllContent(contentType: string): ContentMeta[] {
     const entries = fs.readdirSync(currentDir, { withFileTypes: true });
 
     for (const entry of entries) {
+      // Skip files and directories starting with _
+      if (entry.name.startsWith('_')) continue;
+
       const fullPath = path.join(currentDir, entry.name);
 
       if (entry.isDirectory()) {
@@ -196,6 +202,9 @@ export function getAllSlugs(contentType: string): string[][] {
     const entries = fs.readdirSync(currentDir, { withFileTypes: true });
 
     for (const entry of entries) {
+      // Skip files and directories starting with _
+      if (entry.name.startsWith('_')) continue;
+
       const fullPath = path.join(currentDir, entry.name);
 
       if (entry.isDirectory()) {

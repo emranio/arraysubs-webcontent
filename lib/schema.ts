@@ -72,7 +72,7 @@ function getBlogPostSchema(meta: ContentMeta) {
     ...(meta.coverImage && {
       image: meta.coverImage.startsWith('http')
         ? meta.coverImage
-        : `${siteUrl}/content/${meta.coverImage}`,
+        : `${siteUrl}/contents/${meta.coverImage}`,
     }),
   };
 }

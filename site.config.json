@@ -19,7 +19,7 @@
             },
             {
                 "label": "Blog",
-                "href": "/articles/"
+                "href": "/article/"
             }
         ],
         "cta": [
@@ -59,7 +59,7 @@
                 "links": [
                     {
                         "label": "Blog",
-                        "href": "/articles/"
+                        "href": "/article/"
                     },
                     {
                         "label": "Support",

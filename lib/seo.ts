@@ -16,7 +16,7 @@ export function generateContentMetadata(meta: ContentMeta): Metadata {
   const ogImage = meta.coverImage
     ? meta.coverImage.startsWith('http')
       ? meta.coverImage
-      : `${siteUrl}/content/${meta.coverImage}`
+      : `${siteUrl}/contents/${meta.coverImage}`
     : undefined;
 
   return {
