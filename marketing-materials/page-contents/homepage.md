@@ -72,12 +72,6 @@ leave it blank right now.
 
 * * *
 
-### Announcement Bar (above hero)
-
-> **Tag/Badge**: EARLY ACCESS **Text**: ArraySubs Pro is here — sign up now and get 4 months of Pro free. Limited time. **Link**: Claim your free license → `/early-access/`
-
-* * *
-
 ### Eyebrow
 
 Trusted by WooCommerce Store Owners
