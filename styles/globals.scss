@@ -2,7 +2,12 @@
 // Global Reset & Base Styles
 // ============================================
 
-@use "variables";
+@use "./variables";
+@use "./layouts";
+@use "./ui";
+@use "./templates";
+@use "./sections";
+@use "./mdx";
 
 *,
 *::before,

@@ -1,7 +1,3 @@
-// ============================================
-// Homepage Styles
-// ============================================
-
 .hero {
   text-align: center;
   padding: var(--space-12) 0 var(--space-10);
@@ -64,7 +60,6 @@
   }
 }
 
-// Differentiators
 .differentiators {
   display: flex;
   flex-direction: column;
@@ -96,7 +91,6 @@
   }
 }
 
-// CTA block
 .cta-block {
   text-align: center;
   padding: var(--space-8) 0;
@@ -116,7 +110,6 @@
   }
 }
 
-// Section CTA spacing
 .section__cta {
   margin-top: var(--space-8);
 }

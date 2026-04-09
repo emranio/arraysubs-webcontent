@@ -3,11 +3,6 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import siteConfig from '@/site.config.json';
 import '@/styles/globals.scss';
-import '@/styles/components.scss';
-import '@/styles/layout.scss';
-import '@/styles/mdx.scss';
-import '@/styles/pages.scss';
-import '@/styles/homepage.scss';
 
 export const metadata: Metadata = {
   title: {

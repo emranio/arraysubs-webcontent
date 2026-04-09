@@ -1,0 +1,112 @@
+.page {
+  min-height: 60vh;
+
+  &--default,
+  &--blog {
+    padding: var(--space-4) 0 var(--space-16);
+  }
+
+  &--canvas,
+  &--blank {
+    padding: 0;
+  }
+
+  &__content {
+    max-width: 48rem;
+    margin: 0 auto;
+
+    > .mdx-content {
+      max-width: none;
+      margin: 0;
+    }
+  }
+
+  &__content--blog {
+    max-width: 56rem;
+
+    > .mdx-content {
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__header {
+    margin-bottom: var(--space-8);
+    max-width: none;
+
+    &--blog {
+      text-align: center;
+      margin-bottom: var(--space-10);
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid var(--color-border);
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.025em;
+  }
+
+  &__description {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+  }
+
+  &__category {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-3);
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    margin-top: var(--space-4);
+  }
+
+  &__author {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: center;
+    margin-top: var(--space-5);
+  }
+
+  &__tag {
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-medium);
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-bg-tertiary);
+    border-radius: var(--radius-full);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    &__content--blog {
+      max-width: 48rem;
+    }
+
+    &__meta {
+      flex-wrap: wrap;
+      gap: var(--space-2) var(--space-4);
+    }
+  }
+}
