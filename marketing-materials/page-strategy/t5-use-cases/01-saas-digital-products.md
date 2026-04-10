@@ -98,6 +98,6 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
-| After Step-by-Step | Build Your SaaS Billing | WordPress.org |
-| Sticky Footer | Download Free / View Pricing | WordPress.org / `/pricing/` |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Step-by-Step | Build Your SaaS Billing | `https://wordpress.org/plugins/arraysubs/` |
+| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |

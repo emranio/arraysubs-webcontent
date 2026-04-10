@@ -139,7 +139,7 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
-| After Setup Steps | Get Started in 5 Minutes | WordPress.org |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Setup Steps | Get Started in 5 Minutes | `https://wordpress.org/plugins/arraysubs/` |
 | After FAQ | See All Features | `/features/` |
-| Sticky Footer | Download Free / View Pricing | WordPress.org / `/pricing/` |
+| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |

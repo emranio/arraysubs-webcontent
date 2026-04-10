@@ -30,7 +30,7 @@
 
 ### 1. Hero — Neutral comparison
 ### 2. Feature Table — memberships, restriction types, dripping, shortcodes, subscriptions, pricing
-### 3. Pricing — YITH Membership $149/yr (+$189 for subscriptions) vs ArraySubs Free-$X
+### 3. Pricing — YITH Membership $149/yr (+$189 for subscriptions) vs ArraySubs free plan + pricing page for premium tiers
 ### 4. Unique Advantages — ArraySubs combines subs+memberships, retention, store credit
 ### 5. Who Should Choose — based on needs
 ### 6. FAQ (3-4 questions)

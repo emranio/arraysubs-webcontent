@@ -1,34 +1,14 @@
-# Page Plan: Contact / Support
+# External Resource Plan: Support
 
-> **URL**: `/support/`
-> **Tier**: T7 — Trust & Conversion
-> **Priority**: Week 2
-
----
-
-## SEO Meta
-
-| Field | Value |
-|-------|-------|
-| **Title Tag** | ArraySubs Support — Get Help with WooCommerce Subscriptions & Memberships |
-| **H1** | Need Help? We're Here. |
-| **Meta Description** | Get support for ArraySubs WooCommerce subscription & membership plugin. Free community support for all users. Priority support for Pro customers. |
+> **Handled off-site**: `https://support.arrayhash.com/arraysubs/`
+> **Support email**: `emran@arraysubs.com`
 
 ---
 
-## Content Blocks
+## Strategy Notes
 
-### 1. Support Options — community (WordPress.org), priority (Pro), documentation
-### 2. FAQ — most common pre-support questions with answers
-### 3. Contact Form — for Pro customers or pre-sales
-### 4. Documentation Link — "Most questions are answered in our docs"
-### 5. Community — WordPress.org support forum link
-
----
-
-## Purpose
-
-- Trust signal: active support = reliable plugin
-- Reduces bounce: catches users before they leave
-- Pre-sales conversion: answers questions that block purchase
-- GEO: "How to get support for ArraySubs" AI queries
+- Do not plan a separate on-site `/contact/` or `/support/` page for the current marketing site.
+- Primary support destination: `https://support.arrayhash.com/arraysubs/`.
+- Documentation and support should be handled from the same support center.
+- Direct email support is available at `emran@arraysubs.com`.
+- Download CTAs should point to `https://wordpress.org/plugins/arraysubs/`; support CTAs should point to the support center.

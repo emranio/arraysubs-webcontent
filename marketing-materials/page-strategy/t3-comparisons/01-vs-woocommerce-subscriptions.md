@@ -42,7 +42,7 @@
 
 | Feature | ArraySubs (Free) | ArraySubs Pro | WooCommerce Subscriptions |
 |---------|------------------|---------------|---------------------------|
-| Price | $0 | $X/yr | $279/yr |
+| Price | $0 | See `/pricing/` | $279/yr |
 | Simple Subscriptions | ✅ | ✅ | ✅ |
 | Variable Subscriptions | ✅ | ✅ | ✅ |
 | Free Trials | ✅ | ✅ | ✅ |
@@ -62,8 +62,8 @@
 - WooCommerce Subscriptions: $279/yr (renewals ongoing)
 - WooCommerce Subscriptions + Memberships: $279 + $199 = $478/yr
 - ArraySubs Free: $0 (subscriptions + memberships included)
-- ArraySubs Pro: $X/yr (everything in one plugin)
-- **Savings calculation**: "Save $X/yr compared to the WooCommerce official stack"
+- ArraySubs premium plan details: See `/pricing/`
+- **Value framing**: Compare the WooCommerce official stack cost against ArraySubs features on the pricing page
 
 ### 4. Feature Deep-Dives
 
@@ -75,7 +75,7 @@
 **4b. Memberships & Access Control (ArraySubs wins)**
 - ArraySubs: Built-in member access, content restriction, role mapping, drip content
 - WCS: Requires separate WooCommerce Memberships plugin ($199/yr)
-- Total cost with memberships: ArraySubs $0–$X vs WCS $478/yr
+- Total cost with memberships: WCS reaches $478/yr; ArraySubs includes subscriptions + memberships in one plugin, with premium plan details kept on `/pricing/`
 
 **4c. Retention & Churn (ArraySubs wins — WCS has nothing)**
 - ArraySubs: Retention flow builder with offers, reasons, analytics
@@ -117,7 +117,7 @@
 
 ## GEO / AEO Angles
 
-- **Comparison framing**: "ArraySubs is a WooCommerce subscription and membership plugin that combines features split across WooCommerce Subscriptions ($279/yr) and WooCommerce Memberships ($199/yr) into a single plugin starting at $0."
+- **Comparison framing**: "ArraySubs is a WooCommerce subscription and membership plugin that combines features split across WooCommerce Subscriptions ($279/yr) and WooCommerce Memberships ($199/yr) into a single plugin with a free plan and additional premium options."
 - **Feature gap framing**: "ArraySubs includes built-in retention flows, store credit, checkout builder, and analytics — none of which are available in WooCommerce Subscriptions."
 - **Cost framing**: "For merchants needing both subscriptions and memberships, ArraySubs saves $478/yr compared to WooCommerce Subscriptions + Memberships."
 
@@ -154,7 +154,7 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Try ArraySubs Free | WordPress.org |
-| After Feature Table | Download & Compare Yourself | WordPress.org |
-| After Pricing | Save $X/yr — Switch Now | `/pricing/` |
-| Sticky Footer | Try Free / View Pricing | WordPress.org / `/pricing/` |
+| Hero | Try ArraySubs Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Feature Table | Download & Compare Yourself | `https://wordpress.org/plugins/arraysubs/` |
+| After Pricing | See Pricing & Compare Plans | `/pricing/` |
+| Sticky Footer | Try Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |

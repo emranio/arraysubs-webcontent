@@ -104,6 +104,6 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
-| After Email Types | Set Up Subscription Emails | WordPress.org |
-| Sticky Footer | Download Free | WordPress.org |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Email Types | Set Up Subscription Emails | `https://wordpress.org/plugins/arraysubs/` |
+| Sticky Footer | Download Free | `https://wordpress.org/plugins/arraysubs/` |

@@ -128,7 +128,7 @@ Payment Due → [Active 3 days] → [On-Hold 7 days] → Cancelled
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
-| After Grace Period | Set Up Smart Billing | WordPress.org |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Grace Period | Set Up Smart Billing | `https://wordpress.org/plugins/arraysubs/` |
 | Automatic Payments | Unlock Auto-Renewals | `/pricing/` |
-| Sticky Footer | Download Free / View Pro | WordPress.org / `/pricing/` |
+| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |

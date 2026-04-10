@@ -184,7 +184,7 @@
 | `/compare/woocommerce-subscriptions/` | Problem section, Comparison section |
 | `/use-cases/*` | Use case cards |
 | `/use-cases/` | Use Cases section |
-| `/docs/` | How It Works section |
+| `https://support.arrayhash.com/arraysubs/` | How It Works section |
 
 ---
 
@@ -200,7 +200,7 @@
 | After Growth Benefits | Download Free & Start Now | Get Pro Free for 4 Months |
 | After Comparison | Switch to ArraySubs — It's Free | See Detailed Comparison |
 | Early Access Section | Claim My Free Pro License (email capture) | — |
-| After How It Works | Download Free & Start Now | Read the Documentation |
+| After How It Works | Download Free & Start Now | Open Docs & Support Center |
 | Final Banner | Download Free Plugin | Get Pro Free for 4 Months |
 
 ---

@@ -111,7 +111,7 @@ Table of actions and when they appear:
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
-| After Capabilities | Empower Your Subscribers | WordPress.org |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Capabilities | Empower Your Subscribers | `https://wordpress.org/plugins/arraysubs/` |
 | After FAQ | See All Features | `/features/` |
-| Sticky Footer | Download Free / View Pricing | WordPress.org / `/pricing/` |
+| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |

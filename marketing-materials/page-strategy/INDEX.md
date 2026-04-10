@@ -76,11 +76,11 @@
 |---|------|------|----------|
 | 1 | Early Access (Lead Capture) | [00-early-access.md](t7-trust/00-early-access.md) | Week 1 |
 | 2 | Download | [01-download.md](t7-trust/01-download.md) | Week 1 |
-| 3 | Documentation Hub | [02-documentation.md](t7-trust/02-documentation.md) | Week 3 |
+| 3 | Documentation (External Support Center) | [02-documentation.md](t7-trust/02-documentation.md) | Week 3 |
 | 4 | Changelog | [03-changelog.md](t7-trust/03-changelog.md) | Week 3 |
-| 5 | Support | [04-support.md](t7-trust/04-support.md) | Week 2 |
+| 5 | Support (External Support Center) | [04-support.md](t7-trust/04-support.md) | Week 2 |
 
-> **Note**: The Pricing page (`/pricing/`) is not publicly linked during the early access phase. All secondary CTAs point to `/early-access/` instead. When pricing launches, a pricing page plan will be added.
+> **Note**: The Pricing page (`/pricing/`) exists in the strategy, but is not publicly linked during the early access phase. Secondary CTAs point to `/early-access/` until pricing is launched publicly. Documentation and support are handled externally at `https://support.arrayhash.com/arraysubs/`, and direct plugin download should use `https://wordpress.org/plugins/arraysubs/`.
 
 ---
 

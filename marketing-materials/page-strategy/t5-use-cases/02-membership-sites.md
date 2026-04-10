@@ -69,6 +69,6 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
-| After Step-by-Step | Start Building Your Membership | WordPress.org |
-| Sticky Footer | Download Free / View Pro | WordPress.org / `/pricing/` |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Step-by-Step | Start Building Your Membership | `https://wordpress.org/plugins/arraysubs/` |
+| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |

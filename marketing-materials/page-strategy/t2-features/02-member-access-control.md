@@ -122,7 +122,7 @@ Visual cards for each restriction type:
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
-| After Shortcodes | Start Protecting Content | WordPress.org |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Shortcodes | Start Protecting Content | `https://wordpress.org/plugins/arraysubs/` |
 | Pro Extensions | Unlock Pro Features | `/pricing/` |
-| Sticky Footer | Download Free / View Pro | WordPress.org / `/pricing/` |
+| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |

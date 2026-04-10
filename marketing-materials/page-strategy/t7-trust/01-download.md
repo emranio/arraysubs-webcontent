@@ -3,6 +3,7 @@
 > **URL**: `/download/`
 > **Tier**: T7 — Trust & Conversion
 > **Priority**: Week 1
+> **Primary download destination**: `https://wordpress.org/plugins/arraysubs/`
 
 ---
 
@@ -27,11 +28,11 @@
 
 ## Content Blocks
 
-### 1. Hero — Download button (WordPress.org link) + quick feature summary
+### 1. Hero — Download button (`https://wordpress.org/plugins/arraysubs/`) + quick feature summary
 ### 2. Installation Steps — 3-step install (upload, activate, wizard)
 ### 3. What's Included Free — quick feature list
 ### 4. System Requirements — WordPress, WooCommerce, PHP versions
-### 5. Upgrade to Pro — teaser with link to pricing
+### 5. Advanced Features — teaser with link to pricing
 
 ---
 
@@ -41,5 +42,5 @@
 |--------|---------|
 | `/features/` | What's included |
 | `/features/easy-setup/` | Setup wizard |
-| `/pricing/` | Upgrade CTA |
-| `/docs/` | Documentation |
+| `/pricing/` | Advanced features CTA |
+| `https://support.arrayhash.com/arraysubs/` | Documentation & setup help |

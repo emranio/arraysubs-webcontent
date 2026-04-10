@@ -223,12 +223,13 @@ arraysubs.com/
 │   ├── /download/ ──────────────── DOWNLOAD / FREE VERSION (T7)
 │   │                                KW: woocommerce subscription plugin free download
 │   │
-│   ├── /docs/ ──────────────────── DOCUMENTATION (T7)
-│   │                                (User manual, API reference, developer docs)
+│   ├── https://support.arrayhash.com/arraysubs/ ─ DOCUMENTATION (External)
+│   │                                (User manual, setup guides, troubleshooting, Pro badges)
 │   │
 │   ├── /changelog/ ─────────────── CHANGELOG (T7)
 │   │
-│   └── /contact/ ───────────────── CONTACT / SUPPORT (T7)
+│   └── https://support.arrayhash.com/arraysubs/ ─ SUPPORT (External)
+│                                    (Support center + direct email support)
 ```
 
 ---
@@ -759,7 +760,7 @@ Each use case page targets a specific buyer persona and connects product feature
 - Once pricing launches, this page converts to a limited-time offer or redirects to `/pricing/`
 
 #### 7.2 Download — `/download/`
-- Direct link to WordPress.org listing
+- Direct link to WordPress.org listing: `https://wordpress.org/plugins/arraysubs/`
 - Feature summary of free tier
 - Upgrade path to Pro / early access
 
@@ -767,19 +768,21 @@ Each use case page targets a specific buyer persona and connects product feature
 - **Phase**: Not publicly linked during early access. Homepage and other pages link to `/early-access/` instead.
 - When pricing launches: Free vs Pro pricing table, feature comparison matrix, FAQ about pricing/licensing
 
-#### 7.4 Documentation — `/docs/`
-- Full user manual (auto-generated from user-manual project)
-- API reference
-- Developer docs
+#### 7.4 Documentation — External Support Center
+- Canonical documentation URL: `https://support.arrayhash.com/arraysubs/`
+- Use one unified manual tree in the support center
+- Clearly label premium-only topics with visible **Pro** badges/callouts
+- No separate on-site `/docs/` section planned for the marketing site
 
 #### 7.5 Changelog — `/changelog/`
 - Version history for both Free and Pro
 - Builds trust and shows active development
 
-#### 7.6 Contact / Support — `/contact/`
-- Support form
-- FAQ
-- Community links
+#### 7.6 Support — External Support Center
+- Canonical support URL: `https://support.arrayhash.com/arraysubs/`
+- Direct support email: `emran@arraysubs.com`
+- Documentation and support share the same support center
+- No separate on-site `/contact/` or `/support/` page planned for the current marketing site
 
 ---
 

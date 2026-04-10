@@ -84,6 +84,6 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
-| After Walkthrough | Get Started Now | WordPress.org |
-| Sticky Footer | Download Free | WordPress.org |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Walkthrough | Get Started Now | `https://wordpress.org/plugins/arraysubs/` |
+| Sticky Footer | Download Free | `https://wordpress.org/plugins/arraysubs/` |

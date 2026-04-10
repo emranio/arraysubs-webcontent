@@ -136,7 +136,7 @@ Customer clicks "Cancel" →
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
-| After Flow Diagram | Start Reducing Churn Today | WordPress.org |
-| After Problem Section | Get the Only Plugin with Retention Flows | WordPress.org |
-| Sticky Footer | Download Free / See All Features | WordPress.org / `/features/` |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Flow Diagram | Start Reducing Churn Today | `https://wordpress.org/plugins/arraysubs/` |
+| After Problem Section | Get the Only Plugin with Retention Flows | `https://wordpress.org/plugins/arraysubs/` |
+| Sticky Footer | Download Free / See All Features | `https://wordpress.org/plugins/arraysubs/` / `/features/` |

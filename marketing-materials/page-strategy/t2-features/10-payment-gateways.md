@@ -103,7 +103,7 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
-| After Gateway Table | Start Accepting Recurring Payments | WordPress.org |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Gateway Table | Start Accepting Recurring Payments | `https://wordpress.org/plugins/arraysubs/` |
 | Automatic Payments | Unlock Auto-Renewals | `/pricing/` |
-| Sticky Footer | Download Free / View Pro | WordPress.org / `/pricing/` |
+| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |

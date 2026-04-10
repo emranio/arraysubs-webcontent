@@ -98,6 +98,6 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
-| After Quick Actions | Take Control of Your Subscriptions | WordPress.org |
-| Sticky Footer | Download Free / See All Features | WordPress.org / `/features/` |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| After Quick Actions | Take Control of Your Subscriptions | `https://wordpress.org/plugins/arraysubs/` |
+| Sticky Footer | Download Free / See All Features | `https://wordpress.org/plugins/arraysubs/` / `/features/` |

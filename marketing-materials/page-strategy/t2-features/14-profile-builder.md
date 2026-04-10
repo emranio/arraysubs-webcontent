@@ -85,6 +85,6 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | WordPress.org |
+| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
 | Profile Builder | Unlock Profile Builder | `/pricing/` |
-| Sticky Footer | Download Free / View Pro | WordPress.org / `/pricing/` |
+| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |

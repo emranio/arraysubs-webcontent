@@ -1,43 +1,22 @@
-# Page Plan: Documentation Hub
+# External Resource Plan: Documentation
 
-> **URL**: `/docs/`
-> **Tier**: T7 — Trust & Conversion
-> **Priority**: Week 3
-
----
-
-## SEO Meta
-
-| Field | Value |
-|-------|-------|
-| **Title Tag** | ArraySubs Documentation — Guides, Setup & Developer Reference |
-| **H1** | ArraySubs Documentation |
-| **Meta Description** | Complete documentation for ArraySubs WooCommerce subscription & membership plugin. Setup guides, feature docs, developer reference, and troubleshooting. |
+> **Handled off-site**: `https://support.arrayhash.com/arraysubs/`
+> **Platform**: ArrayHash Support Center
 
 ---
 
-## Target Keywords
+## Strategy Notes
 
-| Keyword | Volume | KD | Intent | Type |
-|---------|--------|-----|--------|------|
-| arraysubs documentation | branded | — | Navigational | Primary |
-| arraysubs setup guide | branded | — | Informational | Secondary |
+- Do not plan a separate on-site `/docs/` section for `arraysubs.com`.
+- Route all documentation CTAs on the marketing site to `https://support.arrayhash.com/arraysubs/`.
+- Keep one unified manual tree under the support center.
+- Mark premium-only topics and sections with a visible **Pro** badge or callout.
+- Use the support center for onboarding, how-to guides, troubleshooting, migration help, and feature reference.
 
----
+## Primary Documentation Entry Points
 
-## Content Blocks
-
-### 1. Search Bar — search across all docs
-### 2. Getting Started — installation, setup wizard, first subscription
-### 3. Feature Guides — one doc per feature module
-### 4. Developer Reference — hooks, filters, REST API, templates
-### 5. Troubleshooting — common issues and solutions
-### 6. FAQ — most common support questions
-
----
-
-## Internal Links
-
-- Links to every feature page
-- Links to gateway setup guides
-- Links to use case guides
+- Getting Started
+- First-Time Setup
+- Essential Daily Workflows
+- Feature reference by module
+- Troubleshooting and audits/logs

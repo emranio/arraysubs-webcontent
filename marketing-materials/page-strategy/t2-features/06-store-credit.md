@@ -123,5 +123,5 @@
 |----------|-----|--------|
 | Hero | Get ArraySubs Pro | `/pricing/` |
 | After Use Cases | Unlock Store Credit | `/pricing/` |
-| After FAQ | Start with Free, Upgrade for Credit | WordPress.org + `/pricing/` |
+| After FAQ | Start with Free, Upgrade for Credit | `https://wordpress.org/plugins/arraysubs/` + `/pricing/` |
 | Sticky Footer | View Pricing | `/pricing/` |
