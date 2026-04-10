@@ -1,10 +1,10 @@
 # Page Plan: Pricing
 
-> **URL**: `/pricing/`
+> **URL**: `/plans/`
 > **Tier**: T1 — Core Landing
 > **Priority**: Week 1
 > **Est. Aggregate KW Volume**: 1,200+/mo
-> **Checkout URL placeholder**: `https://checkout.arraysubs.com/placeholder`
+> **CTA action targets**: `/plans/#live-demo` and `/plans/#get-pro`
 
 ---
 
@@ -14,7 +14,7 @@
 |-------|-------|
 | **Title Tag** | Pricing — ArraySubs WooCommerce Subscription & Membership Plugin |
 | **H1** | Simple, Transparent Pricing for WooCommerce Subscriptions & Memberships |
-| **Meta Description** | Compare ArraySubs plans, review included features, and continue to checkout when you're ready. Pricing page CTAs send users directly to the checkout URL. |
+| **Meta Description** | Compare ArraySubs plans, launch a live demo, or claim 6 months of Pro free. Time-limited early adopter offer. |
 
 ---
 
@@ -32,15 +32,16 @@
 ## Content Blocks
 
 ### 1. Hero
-- H1 + subtitle: "Compare plans, choose the right option, and continue straight to checkout."
+- H1 + subtitle: "Compare plans, launch a live demo, or claim 6 months of Pro free."
 - Quick pricing toggle: Annual / Lifetime
-- Primary CTA on hero: Continue to Checkout → `https://checkout.arraysubs.com/placeholder`
+- Primary CTA on hero: Live Demo → `/plans/#live-demo`
+- Secondary CTA on hero: Get Pro Free for 6 Months → `/plans/#get-pro`
 
 ### 2. Pricing Table
 - **Free**: Core subscription engine, billing, customer portal, member access, basic emails, shortcodes, easy setup, manage subscriptions
 - **Pro** (tiered by sites): Everything in Free + Store Credit, Retention Flow, Checkout Builder, Analytics, Audits, Automatic Payments, Feature Manager, Multi-Login, Redirect Product Page, Profile Builder Pro, Subscription Shipping, Fixed Period Membership
 - Highlight best-value plan
-- Every plan button routes to: `https://checkout.arraysubs.com/placeholder`
+- CTA Buttons: `Live Demo` → `/plans/#live-demo` and `Get Pro Free for 6 Months` → `/plans/#get-pro`
 
 ### 3. Feature Comparison Accordion
 - Expandable rows: Free has X, Pro adds Y for each of 14 modules
@@ -60,18 +61,18 @@
 - Customer reviews, install count, ratings
 
 ### 6. Final CTA
-- "Choose your plan and continue to checkout"
-- All pricing page CTA buttons route to `https://checkout.arraysubs.com/placeholder`
+- "Choose your plan, launch a live demo, or claim the early adopter offer"
+- Pricing page CTA buttons use `/plans/#live-demo` and `/plans/#get-pro`
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | Continue to Checkout | `https://checkout.arraysubs.com/placeholder` |
-| Each Plan Card | Choose Plan | `https://checkout.arraysubs.com/placeholder` |
-| Final CTA | Continue to Checkout | `https://checkout.arraysubs.com/placeholder` |
+- **Buttons**
+  - `Live Demo` → `/plans/#live-demo`
+  - `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.
 
 ---
 
@@ -97,4 +98,5 @@
 | All 14 `/features/*` pages | Accordion detail links |
 | `/compare/woocommerce-subscriptions/` | FAQ competitor answer |
 | `/` | Breadcrumb |
-| `https://checkout.arraysubs.com/placeholder` | All pricing CTAs |
+| `/plans/#live-demo` | Live demo CTA |
+| `/plans/#get-pro` | Early adopter Pro CTA |

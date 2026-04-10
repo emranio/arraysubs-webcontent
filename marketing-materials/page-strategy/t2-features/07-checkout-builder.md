@@ -36,7 +36,7 @@
 - H1 + subtitle: "The only subscription plugin with a built-in checkout builder"
 - Blue Ocean badge: "Unique to ArraySubs"
 - Screenshot: Checkout Builder admin interface
-- CTA: Get ArraySubs Pro
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Builder Overview
 - Visual drag-and-drop style checkout configuration
@@ -97,14 +97,14 @@
 | `/features/billing-renewals-and-refunds/` | "What happens after checkout →" |
 | `/features/store-credit/` | "Apply credit at checkout →" |
 | `/features/` | Breadcrumb |
-| `/pricing/` | Get Pro CTA |
+| `/plans/` | Get Pro CTA |
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | Get ArraySubs Pro | `/pricing/` |
-| After Conversion Section | Unlock the Checkout Builder | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

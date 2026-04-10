@@ -37,7 +37,7 @@
 - H1 + subtitle: "The only WooCommerce subscription plugin with built-in retention flows"
 - Blue Ocean badge: "No other subscription plugin offers this"
 - Screenshot: Retention flow builder admin screen
-- CTA: View Pricing
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. How It Works (Visual Flow)
 ```
@@ -134,9 +134,8 @@ Customer clicks "Cancel" →
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | View Pricing | `/pricing/` |
-| After Flow Diagram | View Pricing | `/pricing/` |
-| After Problem Section | Compare Plans | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+  - `Live Demo` → `/plans/#live-demo`
+  - `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

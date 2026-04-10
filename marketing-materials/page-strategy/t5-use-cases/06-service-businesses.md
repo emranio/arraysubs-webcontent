@@ -54,4 +54,4 @@
 | `/features/billing-renewals-and-refunds/` | Billing |
 | `/features/customer-portal/` | Client portal |
 | `/features/retention-flow-builder/` | Prevent cancellations |
-| `/pricing/` | CTA |
+| `/plans/` | CTA |

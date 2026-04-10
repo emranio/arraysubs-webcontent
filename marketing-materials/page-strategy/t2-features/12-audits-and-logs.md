@@ -33,7 +33,7 @@
 ### 1. Hero Section (Pro Badge)
 - H1 + subtitle: "Know exactly what happened to every subscription, when, and why"
 - Screenshot: Audit log dashboard
-- CTA: Get ArraySubs Pro
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. What Gets Logged
 - Status changes (with before/after states)
@@ -79,14 +79,14 @@
 | `/features/billing-renewals-and-refunds/` | "Billing events in the log →" |
 | `/features/manage-subscriptions/` | "Admin actions logged →" |
 | `/features/` | Breadcrumb |
-| `/pricing/` | Get Pro CTA |
+| `/plans/` | Get Pro CTA |
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | Get ArraySubs Pro | `/pricing/` |
-| After Compliance | Protect Your Business | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

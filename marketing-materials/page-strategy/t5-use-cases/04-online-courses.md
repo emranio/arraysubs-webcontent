@@ -54,4 +54,4 @@
 | `/features/subscriptions-and-recurring-products/` | Course plans |
 | `/features/customer-portal/` | Student portal |
 | `/use-cases/membership-sites/` | Related use case |
-| `/pricing/` | CTA |
+| `/plans/` | CTA |

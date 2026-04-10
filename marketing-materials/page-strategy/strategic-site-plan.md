@@ -213,7 +213,7 @@ arraysubs.com/
 │   │   ├── /strategy/ ──────────── Thought Leadership & Best Practices
 │   │   └── /glossary/ ──────────── Definitions (GEO/AEO-optimized)
 │   │
-│   ├── /pricing/ ───────────────── PRICING PAGE (T7)
+│   ├── /plans/ ─────────────────── PRICING PAGE (T7)
 │   │                                KW: arraysubs pricing, woocommerce subscription
 │   │                                    plugin pricing comparison│   │                                (Primary conversion page)
 │   │
@@ -249,14 +249,14 @@ arraysubs.com/
 | **Secondary KWs** | woocommerce subscription plugin free (1,600/mo), best woocommerce subscription plugin (1,300/mo), woocommerce recurring payments plugin (1,600/mo), subscription plugin for woocommerce (590/mo) |
 | **Long-tail KWs** | woocommerce subscriptions free alternative (880/mo), woocommerce subscription and membership plugin (590/mo), free woocommerce subscription plugin (720/mo), best free woocommerce subscription plugin 2026 (320/mo) |
 | **Intent** | Commercial + Transactional |
-| **CTA** | View Pricing / Compare Plans |
+| **CTA** | Live Demo / Get Pro Free for 6 Months |
 | **SEO Angle** | All-in-one value prop, free tier, replace entire plugin stack |
 | **GEO Angle** | Quotable stat: "Replace your entire WooCommerce subscription and membership plugin stack with one free solution" |
 | **Est. Keyword Volume** | 10,000+/mo aggregate |
-| **Phase** | Pricing-first conversion flow. All CTAs drive to `/pricing/`, and pricing routes users to checkout. |
+| **Phase** | Plans-led early adopter flow. All CTAs drive to `/plans/`, with action targets split between `#live-demo` and `#get-pro`. |
 
 **Content Blocks:**
-0. Announcement Bar — Pricing / plan comparison prompt linking to `/pricing/`
+0. Announcement Bar — Early adopter offer prompt linking to `/plans/`
 1. Hero — Value prop + CTA + trust bar (WP.org, WooCommerce 8+, gateways, HPOS)
 2. The Plugin Overload Problem — Complexity/conflict framing (no dollar amounts)
 3. Feature grid — 14 features in 4 categories with icons linking to feature pages
@@ -265,11 +265,11 @@ arraysubs.com/
 6. Comparison table — ArraySubs vs Woo Subs + Memberships (feature rows only, no price row)
 7. Use cases — 6 cards linking to use case pages
 8. Early Adopter's Thoughts — Testimonial cards (no star ratings)
-9. Pricing Spotlight — short comparison summary with CTA to `/pricing/`
+9. Pricing Spotlight — short comparison summary with CTA to `/plans/`
 10. How It Works — 3-step timeline (install, create product, grow)
 11. Works With Your WooCommerce Stack — WooCommerce-first integrations logo cloud
 12. FAQ — 11 questions, FAQPage JSON-LD (GEO-structured, no prices)
-13. Final CTA — View pricing / compare plans
+13. Final CTA — Live Demo / Get Pro Free for 6 Months
 
 ---
 
@@ -282,7 +282,7 @@ arraysubs.com/
 | **Primary KW** | arraysubs features |
 | **Secondary KWs** | woocommerce subscription features, all-in-one subscription membership plugin |
 | **Intent** | Commercial |
-| **CTA** | Explore each feature / Download Free |
+| **CTA** | Live Demo / Get Pro Free for 6 Months |
 
 **Content Blocks:**
 1. Feature category grid (Subscriptions, Memberships, Billing, Retention, Portal, etc.)
@@ -292,7 +292,7 @@ arraysubs.com/
 
 ---
 
-#### 1.3 Pricing — `/pricing/`
+#### 1.3 Pricing — `/plans/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -301,7 +301,7 @@ arraysubs.com/
 | **Primary KW** | arraysubs pricing |
 | **Secondary KWs** | woocommerce subscription plugin pricing comparison (140/mo) |
 | **Intent** | Transactional |
-| **CTA** | Buy Pro / Download Free |
+| **CTA** | Live Demo / Get Pro Free for 6 Months |
 | **SEO Angle** | Price comparison with competitors ($478/yr Woo stack vs ArraySubs) |
 
 **Content Blocks:**
@@ -754,18 +754,18 @@ Each use case page targets a specific buyer persona and connects product feature
 
 #### 7.1 Early Access — `/early-access/`
 - Optional campaign or promotional landing page
-- Not the default CTA destination in the current pricing-first funnel
-- Any global/sitewide CTA should still route to `/pricing/`
+- Not the default CTA destination in the current plans-led funnel
+- Any global/sitewide CTA should still route to `/plans/`
 
 #### 7.2 Download — `/download/`
 - Direct link to WordPress.org listing: `https://wordpress.org/plugins/arraysubs/`
 - Feature summary of free tier
-- Primary conversion CTA from this page still routes to `/pricing/`
+- Primary conversion CTA from this page still routes to `/plans/`
 
-#### 7.3 Pricing — `/pricing/`
+#### 7.3 Pricing — `/plans/`
 - **Phase**: Primary conversion page for the site
 - All site CTAs route here
-- Pricing page CTA buttons route to placeholder checkout URL: `https://checkout.arraysubs.com/placeholder`
+- Pricing page CTA buttons trigger `/plans/#live-demo` and `/plans/#get-pro`
 - Includes Free vs Pro pricing table, feature comparison matrix, FAQ about pricing/licensing
 
 #### 7.4 Documentation — External Support Center
@@ -820,7 +820,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | Homepage | All T2 feature pages | Feature grid cards |
 | Homepage | Top T3 comparison pages | "vs Competitors" section |
 | Homepage | All T5 use case pages | "Use Cases" section |
-| Homepage | `/pricing/` | CTA buttons |
+| Homepage | `/plans/` | CTA buttons |
 | Feature pages (T2) | Related feature pages | "Related Features" sidebar |
 | Feature pages (T2) | Related blog tutorials | "Learn More" links |
 | Feature pages (T2) | Pricing | CTA buttons |
@@ -892,16 +892,16 @@ Every page tier has a specific role in the conversion funnel:
 
 | Page Tier | Primary CTA | Secondary CTA |
 |-----------|------------|---------------|
-| Homepage | View Pricing | Compare Plans |
-| Feature Pages | View Pricing | Compare Plans |
-| Comparison Pages | View Pricing | Compare Plans |
-| Use Case Pages | View Pricing | Compare Plans |
-| Gateway Pages | View Pricing | Compare Plans |
-| Blog Tutorials | View Pricing | Compare Plans |
-| Blog Comparisons | View Pricing | Compare Plans |
-| Blog Strategy | View Pricing | Compare Plans |
-| Glossary | View Pricing | Compare Plans |
-| Pricing | Continue to Checkout | |
+| Homepage | Live Demo | Get Pro Free for 6 Months |
+| Feature Pages | Live Demo | Get Pro Free for 6 Months |
+| Comparison Pages | Live Demo | Get Pro Free for 6 Months |
+| Use Case Pages | Live Demo | Get Pro Free for 6 Months |
+| Gateway Pages | Live Demo | Get Pro Free for 6 Months |
+| Blog Tutorials | Live Demo | Get Pro Free for 6 Months |
+| Blog Comparisons | Live Demo | Get Pro Free for 6 Months |
+| Blog Strategy | Live Demo | Get Pro Free for 6 Months |
+| Glossary | Live Demo | Get Pro Free for 6 Months |
+| Pricing | Live Demo | Get Pro Free for 6 Months |
 
 ### Email Capture Points (Lead Gen)
 

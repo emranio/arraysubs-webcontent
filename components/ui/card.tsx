@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from './icon';
 
 interface CardProps {
   children: React.ReactNode;
@@ -21,7 +22,11 @@ export function Card({
     <div className={`card ${className}`}>
       {(icon || badge) && (
         <div className="card__header">
-          {icon && <span className="card__icon">{icon}</span>}
+          {icon && (
+            <span className="card__icon">
+              <Icon name={icon} size={20} />
+            </span>
+          )}
           {badge && <span className={`card__badge card__badge--${badge.toLowerCase().replace(/\s+/g, '-')}`}>{badge}</span>}
         </div>
       )}

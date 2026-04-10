@@ -51,4 +51,4 @@
 | `/features/payment-gateways/` | Parent |
 | `/gateways/stripe/` | Compare gateways |
 | `/gateways/paypal/` | Compare gateways |
-| `/pricing/` | Pro CTA |
+| `/plans/` | Pro CTA |

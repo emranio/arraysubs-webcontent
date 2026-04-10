@@ -134,7 +134,7 @@ For refund issues only — the form on this page is faster. Email is a fallback.
 
 | Target | Context |
 |--------|---------|
-| `/pricing/` | Pricing CTA after policy |
+| `/plans/` | Pricing CTA after policy |
 | `/privacy-policy/` | Footer cross-link |
 | `/terms-of-service/` | Footer cross-link |
 | `/contact/` | Fallback support contact |

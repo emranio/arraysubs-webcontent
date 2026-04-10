@@ -36,7 +36,7 @@
 - H1 + subtitle: "The only subscription plugin with a built-in store credit system"
 - Blue Ocean badge: "Unique to ArraySubs"
 - Screenshot: Store Credit management dashboard
-- CTA: Get ArraySubs Pro
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Store Credit Overview
 - Customer credit balances managed per user
@@ -113,15 +113,14 @@
 | `/features/checkout-builder/` | "Credit applied at checkout →" |
 | `/features/analytics/` | "Track credit impact on retention →" |
 | `/features/` | Breadcrumb |
-| `/pricing/` | Get Pro CTA |
+| `/plans/` | Get Pro CTA |
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | Get ArraySubs Pro | `/pricing/` |
-| After Use Cases | Unlock Store Credit | `/pricing/` |
-| After FAQ | Compare Plans | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

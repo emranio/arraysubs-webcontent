@@ -199,5 +199,5 @@ Email: emran@arrayhash.com
 | `/refund-policy/` | Section 6 and footer |
 | `/privacy-policy/` | Footer cross-link |
 | `/data-safety/` | Footer cross-link |
-| `/pricing/` | Licence tier reference |
+| `/plans/` | Licence tier reference |
 | `/contact/` | Dispute contact |

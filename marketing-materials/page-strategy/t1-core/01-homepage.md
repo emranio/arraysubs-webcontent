@@ -51,18 +51,18 @@
 
 ## Content Blocks
 
-> **Funnel context**: The site uses a **pricing-first conversion flow**. All primary and secondary CTAs route to `/pricing/`, and the pricing page is the only page that hands users off to checkout.
+> **Funnel context**: The site uses a **plans-led early adopter flow**. All primary and secondary CTAs route to `/plans/`, with action targets split between `/plans/#live-demo` and `/plans/#get-pro`.
 
 ### 0. Announcement Bar
-- **Badge**: PRICING
-- **Text**: "See plans, compare features, and choose the right ArraySubs option for your store."
-- **Link**: `/pricing/`
+- **Badge**: EARLY ADOPTER OFFER
+- **Text**: "Live Demo or Get Pro Free for 6 Months. Time limited offer for early adopters. No credit cards required."
+- **Link**: `/plans/`
 
 ### 1. Hero Section
 - **Headline**: H1 (above)
 - **Subheadline**: "Create subscription products, restrict member-only content, automate recurring billing, reduce churn with smart retention flows, and track MRR — all from one plugin. No duct-taping five separate tools together."
-- **Primary CTA**: View Pricing (links to `/pricing/`)
-- **Secondary CTA**: Compare Plans (links to `/pricing/`)
+- **Primary CTA**: Live Demo (links to `/plans/#live-demo`)
+- **Secondary CTA**: Get Pro Free for 6 Months (links to `/plans/#get-pro`)
 - **Trust bar**: Available on WordPress.org · WooCommerce 8+ · Stripe · PayPal · Paddle · HPOS Compatible
 - **Hero visual**: Product screenshot / short demo GIF
 
@@ -112,9 +112,9 @@
 
 ### 9. Pricing Spotlight — Choose the Right Plan
 - Short pricing preview with Free vs Pro value summary
-- Button group: "View Pricing" and "Compare Plans"
-- Reinforce that checkout happens only after users select a plan on `/pricing/`
-- Micro-copy: "See every plan detail before checkout."
+- Button group: "Live Demo" and "Get Pro Free for 6 Months"
+- Reinforce the early adopter offer and the plans-page action flow on `/plans/`
+- Micro-copy: "Time limited offer for early adopters. No credit cards required."
 
 ### 10. How It Works (3 steps)
 - Step 1: Install & Run the Wizard
@@ -146,8 +146,8 @@
 
 ### 13. Final CTA
 - "Start Building Your Subscription Business Today"
-- Primary: View Pricing → `/pricing/`
-- Secondary: Compare Plans → `/pricing/`
+- Primary: Live Demo → `/plans/#live-demo`
+- Secondary: Get Pro Free for 6 Months → `/plans/#get-pro`
 
 ---
 
@@ -164,7 +164,7 @@
 
 | Target | Context |
 |--------|---------|
-| `/pricing/` | Announcement Bar, Hero, Problem, Features, Growth Benefits, Comparison, Pricing Spotlight, How It Works, Final CTA |
+| `/plans/` | Announcement Bar, Hero, Problem, Features, Growth Benefits, Comparison, Pricing Spotlight, How It Works, Final CTA |
 | `/features/` | Feature Grid CTA |
 | `/features/subscriptions/` | Feature Card 1 |
 | `/features/billing/` | Feature Card 2 |
@@ -189,18 +189,13 @@
 
 ## CTAs
 
-> **Note**: Every CTA on the homepage routes to `/pricing/`. The pricing page is the only handoff point to checkout.
+> **Note**: Every CTA on the homepage routes to `/plans/` using the two action targets below.
 
-| Position | Primary CTA | Secondary CTA |
-|----------|------------|---------------|
-| Hero | View Pricing | Compare Plans |
-| After Problem | View Pricing | See Full Comparison |
-| After Features | View Pricing | Explore All Features |
-| After Growth Benefits | View Pricing | Compare Plans |
-| After Comparison | View Pricing | See Detailed Comparison |
-| Pricing Spotlight | View Pricing | Compare Plans |
-| After How It Works | View Pricing | Open Docs & Support Center |
-| Final Banner | View Pricing | Compare Plans |
+- **Buttons**
+  - `Live Demo` → `/plans/#live-demo`
+  - `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.
 
 ---
 

@@ -52,4 +52,4 @@
 | `/features/member-access-control/` | Restriction rules |
 | `/features/subscriptions-and-recurring-products/` | Tiers |
 | `/use-cases/membership-sites/` | Related |
-| `/pricing/` | CTA |
+| `/plans/` | CTA |

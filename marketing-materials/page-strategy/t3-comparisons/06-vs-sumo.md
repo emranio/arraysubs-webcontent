@@ -49,4 +49,4 @@
 | Target | Context |
 |--------|---------|
 | `/features/` | All features |
-| `/pricing/` | Pricing |
+| `/plans/` | Pricing |

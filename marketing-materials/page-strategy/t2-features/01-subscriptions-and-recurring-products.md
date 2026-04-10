@@ -37,7 +37,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Flexible recurring billing for any WooCommerce product — simple, variable, or virtual"
 - Screenshot: Product edit screen showing subscription options
-- CTA: View Pricing
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Product Types Supported
 - **Simple Subscription**: Single recurring product
@@ -129,7 +129,7 @@
 | `/features/customer-portal/` | "Subscribers manage their plans here →" |
 | `/features/checkout-builder/` | Pro: "Customize the subscription checkout experience →" |
 | `/features/` | Breadcrumb |
-| `/pricing/` | Free vs Pro CTA |
+| `/plans/` | Free vs Pro CTA |
 | `/use-cases/subscription-boxes/` | Use case link |
 | `/use-cases/saas-digital-products/` | Use case link |
 
@@ -137,9 +137,8 @@
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | View Pricing | `/pricing/` |
-| After Setup Steps | View Pricing | `/pricing/` |
-| After FAQ | Compare Plans | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+  - `Live Demo` → `/plans/#live-demo`
+  - `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

@@ -53,4 +53,4 @@
 |--------|---------|
 | `/features/` | All features |
 | `/features/retention-flow-builder/` | Unique feature highlight |
-| `/pricing/` | Pro comparison |
+| `/plans/` | Pro comparison |

@@ -31,7 +31,7 @@
 
 ### 1. Hero
 - H1 + subtitle: "15 feature modules. Generous free tier. One plugin."
-- CTA: View Pricing
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Feature Category Grid
 - 15 feature cards grouped into categories:
@@ -44,7 +44,7 @@
 
 ### 3. Free vs Pro Summary Table
 - All 15 features listed with checkmarks for Free / Pro availability
-- CTA: View Pricing
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 4. Comparison Row
 - "How ArraySubs compares to the competition" → links to comparison pages
@@ -56,6 +56,6 @@
 | Target | Context |
 |--------|---------|
 | All 15 `/features/*` pages | Feature cards |
-| `/pricing/` | Free vs Pro table CTA |
+| `/plans/` | Free vs Pro table CTA |
 | `/compare/woocommerce-subscriptions/` | Comparison section |
 | `/` | Breadcrumb |

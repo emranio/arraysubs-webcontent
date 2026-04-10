@@ -4,7 +4,7 @@
 > **Tier**: T7 — Trust & Conversion
 > **Priority**: Week 1
 > **Primary download destination**: `https://wordpress.org/plugins/arraysubs/`
-> **Primary conversion CTA destination**: `/pricing/`
+> **Primary conversion CTA destination**: `/plans/`
 
 ---
 
@@ -41,7 +41,7 @@
 
 | Target | Context |
 |--------|---------|
-| `/pricing/` | Primary conversion CTA |
+| `/plans/` | Primary conversion CTA |
 | `/features/` | What's included |
 | `/features/easy-setup/` | Setup wizard |
 | `https://support.arrayhash.com/arraysubs/` | Documentation & setup help |

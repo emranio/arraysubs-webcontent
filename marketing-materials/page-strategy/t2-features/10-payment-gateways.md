@@ -35,7 +35,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Works with any WooCommerce payment gateway — zero lock-in"
 - Gateway logos: Stripe, PayPal, Paddle + "all WooCommerce gateways"
-- CTA: View Pricing
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. How Payment Works
 - **Any WooCommerce Gateway**: First payment through any active gateway
@@ -95,15 +95,14 @@
 | `/gateways/paypal/` | "PayPal subscription setup guide →" |
 | `/gateways/paddle/` | "Paddle subscription setup guide →" |
 | `/features/` | Breadcrumb |
-| `/pricing/` | Pro features CTA |
+| `/plans/` | Pro features CTA |
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | View Pricing | `/pricing/` |
-| After Gateway Table | View Pricing | `/pricing/` |
-| Automatic Payments | Compare Plans | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

@@ -36,7 +36,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Billing that runs itself — so you focus on growing"
 - Visual: Billing lifecycle timeline graphic
-- CTA: View Pricing
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Renewal Engine Overview
 - Automatic invoice generation before due date (configurable hours)
@@ -120,15 +120,14 @@ Payment Due → [Active 3 days] → [On-Hold 7 days] → Cancelled
 | `/features/customer-portal/` | "Subscribers pay invoices here →" |
 | `/features/retention-flow-builder/` | "Prevent cancellations before they happen →" |
 | `/features/` | Breadcrumb |
-| `/pricing/` | Pro features CTA |
+| `/plans/` | Pro features CTA |
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | View Pricing | `/pricing/` |
-| After Grace Period | View Pricing | `/pricing/` |
-| Automatic Payments | Compare Plans | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+    - `Live Demo` → `/plans/#live-demo`
+    - `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

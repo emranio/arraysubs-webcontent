@@ -33,7 +33,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Display subscription data and member content anywhere on your site"
 - Code examples + rendered output
-- CTA: View Pricing
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Available Shortcodes
 | Shortcode | Purpose | Ownership |
@@ -77,14 +77,14 @@
 | `/features/member-access-control/` | "Full access control system →" |
 | `/features/customer-portal/` | "Customer-facing portal →" |
 | `/features/` | Breadcrumb |
-| `/pricing/` | Pro Profile Builder CTA |
+| `/plans/` | Pro Profile Builder CTA |
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | View Pricing | `/pricing/` |
-| Profile Builder | Compare Plans | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

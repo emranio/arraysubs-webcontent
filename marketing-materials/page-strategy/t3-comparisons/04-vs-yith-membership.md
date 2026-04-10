@@ -49,4 +49,4 @@
 |--------|---------|
 | `/compare/yith-subscription/` | Related comparison |
 | `/features/member-access-control/` | Membership features |
-| `/pricing/` | Pricing CTA |
+| `/plans/` | Pricing CTA |

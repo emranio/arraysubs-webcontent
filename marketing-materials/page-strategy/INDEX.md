@@ -80,7 +80,7 @@
 | 4 | Changelog | [03-changelog.md](t7-trust/03-changelog.md) | Week 3 |
 | 5 | Support (External Support Center) | [04-support.md](t7-trust/04-support.md) | Week 2 |
 
-> **Note**: The marketing funnel is now pricing-first. All site CTAs should route to `/pricing/`, and only the pricing page should hand users off to checkout. Documentation and support are handled externally at `https://support.arrayhash.com/arraysubs/`.
+> **Note**: The marketing funnel now routes site CTAs to `/plans/`, with action targets split between `/plans/#live-demo` and `/plans/#get-pro`. Documentation and support are handled externally at `https://support.arrayhash.com/arraysubs/`.
 
 ---
 

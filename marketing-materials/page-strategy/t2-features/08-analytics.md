@@ -35,7 +35,7 @@
 ### 1. Hero Section (Pro Badge)
 - H1 + subtitle: "Know your numbers — MRR, churn, LTV, all in real-time"
 - Screenshot: Analytics dashboard overview
-- CTA: Get ArraySubs Pro
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Key Metrics Dashboard
 - **MRR (Monthly Recurring Revenue)**: Real-time tracking
@@ -101,14 +101,14 @@
 | `/features/subscriptions-and-recurring-products/` | "Subscription plans being analyzed →" |
 | `/features/audits-and-logs/` | "Detailed event logs →" |
 | `/features/` | Breadcrumb |
-| `/pricing/` | Get Pro CTA |
+| `/plans/` | Get Pro CTA |
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | Get ArraySubs Pro | `/pricing/` |
-| After Key Metrics | Unlock Analytics | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

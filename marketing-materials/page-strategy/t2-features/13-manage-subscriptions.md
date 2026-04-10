@@ -33,7 +33,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Modern admin interface for subscription management"
 - Screenshot: Subscription list dashboard
-- CTA: View Pricing
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Subscription List View
 - Sortable, filterable table of all subscriptions
@@ -96,8 +96,8 @@
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | View Pricing | `/pricing/` |
-| After Quick Actions | View Pricing | `/pricing/` |
-| Sticky Footer | Compare Plans | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

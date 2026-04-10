@@ -61,14 +61,14 @@
 | `/features/store-credit/` | Reward members |
 | `/use-cases/online-courses/` | Related use case |
 | `/use-cases/content-publishers/` | Related use case |
-| `/pricing/` | CTA |
+| `/plans/` | CTA |
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | View Pricing | `/pricing/` |
-| After Step-by-Step | View Pricing | `/pricing/` |
-| Sticky Footer | Compare Plans | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

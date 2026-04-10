@@ -11,5 +11,5 @@
 - Primary support destination: `https://support.arrayhash.com/arraysubs/`.
 - Documentation and support should be handled from the same support center.
 - Direct email support is available at `emran@arraysubs.com`.
-- Product and marketing CTAs should point to `/pricing/`; support CTAs should point to the support center.
-- The pricing page should be the only page that hands users off to checkout.
+- Product and marketing CTAs should point to `/plans/`; support CTAs should point to the support center.
+- The plans page should handle the `#live-demo` and `#get-pro` CTA actions.

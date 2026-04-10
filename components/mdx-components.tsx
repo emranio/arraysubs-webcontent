@@ -13,6 +13,13 @@ import { Button } from '@/components/ui/button';
 import { Flex } from '@/components/ui/flex';
 import { Badge } from '@/components/ui/badge';
 
+// Homepage Components for MDX
+import { GrowthCard } from '@/components/homepage/growth-card';
+import { ComparisonTable } from '@/components/homepage/comparison-table';
+import { TestimonialCard } from '@/components/homepage/testimonial-card';
+import { StatsBar } from '@/components/homepage/stats-bar';
+import { EarlyAccessForm } from '@/components/homepage/early-access-form';
+
 function MdxImage(props: React.ImgHTMLAttributes<HTMLImageElement>) {
   const { src, alt, title, width, height, ...rest } = props;
   if (!src || typeof src !== 'string') return null;
@@ -72,4 +79,10 @@ export const mdxComponents: MDXComponents = {
   Button,
   Flex,
   Badge,
+  // Homepage components
+  GrowthCard,
+  ComparisonTable,
+  TestimonialCard,
+  StatsBar,
+  EarlyAccessForm,
 };

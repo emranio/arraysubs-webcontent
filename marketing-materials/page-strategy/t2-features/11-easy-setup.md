@@ -34,7 +34,7 @@
 - H1 + subtitle: "No other subscription plugin has a setup wizard"
 - Blue Ocean badge
 - Screenshot: Setup wizard in progress
-- CTA: View Pricing
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Wizard Steps Walkthrough
 - Step-by-step visual of wizard flow
@@ -76,14 +76,14 @@
 |--------|---------|
 | `/features/subscriptions-and-recurring-products/` | "Create your first subscription after setup →" |
 | `/features/` | Breadcrumb |
-| `/pricing/` | Primary CTA |
+| `/plans/` | Primary CTA |
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | View Pricing | `/pricing/` |
-| After Walkthrough | View Pricing | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

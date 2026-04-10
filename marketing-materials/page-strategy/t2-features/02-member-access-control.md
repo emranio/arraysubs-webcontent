@@ -37,7 +37,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "One restriction engine for every type of WordPress content"
 - Screenshot: Access Rules admin screen
-- CTA: View Pricing
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Restriction Types Overview
 Visual cards for each restriction type:
@@ -114,15 +114,14 @@ Visual cards for each restriction type:
 | `/use-cases/membership-sites/` | "Build a complete membership site →" |
 | `/use-cases/online-courses/` | "Use content dripping for courses →" |
 | `/features/` | Breadcrumb |
-| `/pricing/` | Pro features CTA |
+| `/plans/` | Pro features CTA |
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | View Pricing | `/pricing/` |
-| After Shortcodes | View Pricing | `/pricing/` |
-| Pro Extensions | Compare Plans | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

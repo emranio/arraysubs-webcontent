@@ -36,7 +36,7 @@
 - H1 + subtitle: "The only WooCommerce subscription plugin that shows customers exactly what each plan includes"
 - Blue Ocean badge: "Unique to ArraySubs"
 - Screenshot: Product page "What's Included" section with toggle/number/text features
-- CTA: Get ArraySubs Pro
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Feature Manager Overview
 - Define named features (entitlements) per product or per variation
@@ -121,15 +121,14 @@
 | `/features/manage-subscriptions/` | "Admin Feature Log on subscription detail →" |
 | `/use-cases/saas-digital-products/` | "SaaS use case with Feature Manager →" |
 | `/features/` | Breadcrumb |
-| `/pricing/` | Get Pro CTA |
+| `/plans/` | Get Pro CTA |
 
 ---
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | Get ArraySubs Pro | `/pricing/` |
-| After Use Cases | Unlock Feature Manager | `/pricing/` |
-| After FAQ | Compare Plans | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

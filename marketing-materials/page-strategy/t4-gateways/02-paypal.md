@@ -50,4 +50,4 @@
 | `/features/payment-gateways/` | Parent gateway page |
 | `/gateways/stripe/` | Also accept Stripe |
 | `/gateways/paddle/` | Also accept Paddle |
-| `/pricing/` | Pro CTA |
+| `/plans/` | Pro CTA |

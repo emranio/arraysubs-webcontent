@@ -35,7 +35,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Reduce support tickets — let subscribers manage their own plans"
 - Screenshot: Customer portal My Account → Subscriptions tab
-- CTA: View Pricing
+- CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
 ### 2. Portal Capabilities
 - **View Subscriptions**: List of active, paused, cancelled subscriptions
@@ -109,9 +109,8 @@ Table of actions and when they appear:
 
 ## CTA Strategy
 
-| Position | CTA | Target |
-|----------|-----|--------|
-| Hero | View Pricing | `/pricing/` |
-| After Capabilities | View Pricing | `/pricing/` |
-| After FAQ | Compare Plans | `/pricing/` |
-| Sticky Footer | View Pricing | `/pricing/` |
+- **Buttons**
+	- `Live Demo` → `/plans/#live-demo`
+	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
+- **Offer note**: Time limited offer for early adopters.
+- **Friction note**: No credit cards required.

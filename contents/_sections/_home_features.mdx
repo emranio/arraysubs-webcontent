@@ -5,55 +5,69 @@
     subtitle="15 integrated modules. Zero plugin conflicts. From free trials to MRR dashboards — built for WooCommerce store owners who want power without complexity."
   />
 
+  <h3 className="feature-category">Subscriptions &amp; Billing</h3>
   <Grid columns={3} gap="md">
-    <FeatureCard title="Subscriptions & Recurring Products" badge="Free">
-      Turn any WooCommerce product into a subscription with flexible billing cycles, free trials, sign-up fees, and per-variation configuration.
+    <FeatureCard icon="repeat" title="Subscriptions & Recurring Products" badge="Free">
+      Turn any WooCommerce product into a subscription — simple or variable — with flexible billing cycles, free trials, sign-up fees, different renewal prices, and per-variation configuration.
     </FeatureCard>
-    <FeatureCard title="Billing, Renewals & Refunds" badge="Free + Pro">
-      Automated renewal invoicing, 2-phase grace periods, skip & pause, prorated refunds, and 6 billing lifecycle email triggers.
+    <FeatureCard icon="receipt" title="Billing, Renewals & Refunds" badge="Free + Pro">
+      Automated renewal invoicing, 2-phase grace periods, skip &amp; pause, prorated refunds, renewal sync, trial management, and 6 billing lifecycle email triggers.
     </FeatureCard>
-    <FeatureCard title="Payment Gateways" badge="Free + Pro">
-      Manual renewal with any WooCommerce gateway. Automatic recurring with Stripe, PayPal, and Paddle — Pro.
+    <FeatureCard icon="credit-card" title="Payment Gateways" badge="Free + Pro">
+      Manual renewal with any WooCommerce gateway (free). Automatic recurring payments with Stripe (SCA/3DS), PayPal (billing agreements), and Paddle (merchant of record) — Pro.
     </FeatureCard>
-    <FeatureCard title="Member Access Control" badge="Free">
-      Restrict content, products, downloads, and URLs with 10 condition types, 12 operators, nested AND/OR groups, and content dripping.
+  </Grid>
+
+  <h3 className="feature-category">Memberships &amp; Access</h3>
+  <Grid columns={3} gap="md">
+    <FeatureCard icon="shield-check" title="Member Access Control" badge="Free">
+      Restrict content, products, downloads, and URLs with a powerful rules engine — 10 condition types, 12 operators, nested AND/OR groups, role mapping, member discounts, and content dripping.
     </FeatureCard>
-    <FeatureCard title="Customer Portal" badge="Free + Pro">
-      Self-service subscription hub — skip, pause, change plans, cancel, reactivate, and pay invoices without contacting support.
+    <FeatureCard icon="circle-user" title="Customer Portal" badge="Free + Pro">
+      A self-service subscription hub inside WooCommerce My Account — customers can view, skip, pause, change plans, cancel, reactivate, and pay invoices without contacting support.
     </FeatureCard>
-    <FeatureCard title="Profile Builder" badge="Free + Pro">
-      Custom profile fields, avatar uploads, My Account navigation editor, and visibility shortcodes — no code required.
+    <FeatureCard icon="user-cog" title="Profile Builder & Shortcodes" badge="Free + Pro">
+      Custom profile fields, avatar uploads, My Account navigation editor, and a library of visibility and restriction shortcodes — personalize the member experience without code.
     </FeatureCard>
-    <FeatureCard title="Retention Flow Builder" badge="Free">
-      Intercept cancellations with targeted offers — discount, pause, downgrade, or contact support — and save subscribers.
+  </Grid>
+
+  <h3 className="feature-category">Retention &amp; Revenue</h3>
+  <Grid columns={3} gap="md">
+    <FeatureCard icon="heart-handshake" title="Retention Flow Builder" badge="Free">
+      Intercept cancellations with a guided retention flow — capture reasons, present targeted offers (discount, pause, downgrade, contact support), and save subscribers before they leave.
     </FeatureCard>
-    <FeatureCard title="Store Credit System" badge="Pro">
-      Virtual wallet with 8 credit sources, auto-apply to renewals, checkout application, and expiration management.
+    <FeatureCard icon="wallet" title="Store Credit System" badge="Pro">
+      A virtual wallet with 8 credit sources, auto-apply to renewals, checkout application, expiration management, credit purchases, and 4 dedicated email notifications.
     </FeatureCard>
-    <FeatureCard title="Email Notifications" badge="Free + Pro">
-      13 customer emails, 3 admin emails, and 4 store credit emails — all triggered automatically with rich placeholders.
+    <FeatureCard icon="mail" title="Email Notifications" badge="Free + Pro">
+      13 customer emails, 3 admin emails, and 4 store credit emails — all triggered automatically by lifecycle events with rich placeholders and WooCommerce template support.
     </FeatureCard>
-    <FeatureCard title="Advanced Analytics" badge="Free + Pro">
-      40+ reports, 10 KPI cards, time-series charts, retention analytics, and a centralized reports hub.
+  </Grid>
+
+  <h3 className="feature-category">Operations &amp; Insights</h3>
+  <Grid columns={3} gap="md">
+    <FeatureCard icon="bar-chart-3" title="Advanced Analytics" badge="Free + Pro">
+      40+ reports, 10 KPI cards (MRR, churn, ARPU, trial conversions), time-series charts, retention analytics, WooCommerce order-type extension, and a centralized reports hub.
     </FeatureCard>
-    <FeatureCard title="Audits & Logs" badge="Pro">
-      Activity timeline, scheduled-job logs, and gateway health dashboard with webhook monitoring.
+    <FeatureCard icon="clipboard-list" title="Audits & Logs" badge="Pro">
+      Centralized activity timeline tracking every subscription change, scheduled-job logs for all background operations, and a gateway health dashboard with webhook monitoring.
     </FeatureCard>
-    <FeatureCard title="Checkout Builder" badge="Pro">
-      Visual drag-and-drop editor with 27 field types, multi-step layouts, and conditional logic.
+    <FeatureCard icon="layout-grid" title="Checkout Builder" badge="Pro">
+      Visual drag-and-drop checkout editor with 27 field types, multi-step layouts, conditional logic, custom design, and section-level control — no code required.
     </FeatureCard>
-    <FeatureCard title="Manage Subscriptions" badge="Free">
-      Admin dashboard with list views, status tabs, inline actions, CSV/JSON export, and manual creation.
+    <FeatureCard icon="settings-2" title="Manage Subscriptions" badge="Free">
+      Admin subscription dashboard with list views, status tabs, inline actions, CSV/JSON export, manual creation, subscription detail pages, and a 21-event notes timeline.
     </FeatureCard>
-    <FeatureCard title="Easy Setup Wizard" badge="Free">
-      9-step guided wizard with 7 business profiles. Go from install to live in under 10 minutes.
+    <FeatureCard icon="wand-2" title="Easy Setup Wizard" badge="Free">
+      A 9-step guided wizard with 7 business type profiles that configures your entire subscription engine in minutes — plus JSON export/import for backup and multi-site migration.
     </FeatureCard>
-    <FeatureCard title="Feature Manager" badge="Pro">
-      Per-plan entitlements with toggles, numeric limits, and text details. Show "What's Included" on product pages.
+    <FeatureCard icon="list-checks" title="Feature Manager" badge="Pro">
+      Define per-plan entitlements — toggle features on/off, set numeric limits, and add text details per product or variation. Show &quot;What&apos;s Included&quot; on product pages.
     </FeatureCard>
   </Grid>
 
   <Flex justify="center" gap="md" className="section__cta">
+    <Button href="/features/" variant="primary">Explore All Features</Button>
     <Button href="/download/" variant="secondary">Download Free</Button>
   </Flex>
 </Section>
