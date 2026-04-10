@@ -14,16 +14,198 @@
     "navigation": {
         "main": [
             {
+                "label": "Home",
+                "href": "/"
+            },
+            {
                 "label": "Features",
-                "href": "/features/"
+                "href": "/features/",
+                "sections": [
+                    {
+                        "title": "Feature Pages",
+                        "links": [
+                            {
+                                "label": "Subscriptions & Recurring Products",
+                                "href": "/features/subscriptions-and-recurring-products/"
+                            },
+                            {
+                                "label": "Billing, Renewals & Refunds",
+                                "href": "/features/billing-renewals-and-refunds/"
+                            },
+                            {
+                                "label": "Payment Gateways",
+                                "href": "/features/payment-gateways/"
+                            },
+                            {
+                                "label": "Member Access Control",
+                                "href": "/features/member-access-control/"
+                            },
+                            {
+                                "label": "Customer Portal",
+                                "href": "/features/customer-portal/"
+                            },
+                            {
+                                "label": "Profile Builder",
+                                "href": "/features/profile-builder/"
+                            },
+                            {
+                                "label": "Retention Flow Builder",
+                                "href": "/features/retention-flow-builder/"
+                            },
+                            {
+                                "label": "Store Credit",
+                                "href": "/features/store-credit/"
+                            },
+                            {
+                                "label": "Emails",
+                                "href": "/features/emails/"
+                            },
+                            {
+                                "label": "Analytics",
+                                "href": "/features/analytics/"
+                            },
+                            {
+                                "label": "Audits & Logs",
+                                "href": "/features/audits-and-logs/"
+                            },
+                            {
+                                "label": "Manage Subscriptions",
+                                "href": "/features/manage-subscriptions/"
+                            },
+                            {
+                                "label": "Checkout Builder",
+                                "href": "/features/checkout-builder/"
+                            },
+                            {
+                                "label": "Easy Setup",
+                                "href": "/features/easy-setup/"
+                            },
+                            {
+                                "label": "Feature Manager",
+                                "href": "/features/feature-manager/"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Gateway Pages",
+                        "links": [
+                            {
+                                "label": "Stripe",
+                                "href": "/gateways/stripe/"
+                            },
+                            {
+                                "label": "PayPal",
+                                "href": "/gateways/paypal/"
+                            },
+                            {
+                                "label": "Paddle",
+                                "href": "/gateways/paddle/"
+                            }
+                        ]
+                    }
+                ]
             },
             {
-                "label": "Pricing",
-                "href": "/plans/"
+                "label": "Compare",
+                "href": "/compare/",
+                "children": [
+                    {
+                        "label": "WooCommerce Subscriptions",
+                        "href": "/compare/woocommerce-subscriptions/"
+                    },
+                    {
+                        "label": "WooCommerce Memberships",
+                        "href": "/compare/woocommerce-memberships/"
+                    },
+                    {
+                        "label": "YITH Subscription",
+                        "href": "/compare/yith-subscription/"
+                    },
+                    {
+                        "label": "YITH Membership",
+                        "href": "/compare/yith-membership/"
+                    },
+                    {
+                        "label": "WP Swings",
+                        "href": "/compare/wp-swings/"
+                    },
+                    {
+                        "label": "SUMO Subscriptions",
+                        "href": "/compare/sumo-subscriptions/"
+                    },
+                    {
+                        "label": "WPSubscription",
+                        "href": "/compare/wpsubscription/"
+                    }
+                ]
             },
             {
-                "label": "Blog",
-                "href": "/article/"
+                "label": "Use Cases",
+                "href": "/use-cases/",
+                "children": [
+                    {
+                        "label": "SaaS & Digital Products",
+                        "href": "/use-cases/saas-digital-products/"
+                    },
+                    {
+                        "label": "Membership Sites",
+                        "href": "/use-cases/membership-sites/"
+                    },
+                    {
+                        "label": "Subscription Boxes",
+                        "href": "/use-cases/subscription-boxes/"
+                    },
+                    {
+                        "label": "Online Courses",
+                        "href": "/use-cases/online-courses/"
+                    },
+                    {
+                        "label": "Content Publishers",
+                        "href": "/use-cases/content-publishers/"
+                    },
+                    {
+                        "label": "Service Businesses",
+                        "href": "/use-cases/service-businesses/"
+                    }
+                ]
+            },
+            {
+                "label": "Business Articles",
+                "href": "/articles/"
+            },
+            {
+                "label": "Trust",
+                "href": null,
+                "children": [
+                    {
+                        "label": "Download",
+                        "href": "/download/"
+                    },
+                    {
+                        "label": "Changelog",
+                        "href": "/changelog/"
+                    },
+                    {
+                        "label": "Data Safety",
+                        "href": "/data-safety/"
+                    },
+                    {
+                        "label": "Privacy Policy",
+                        "href": "/privacy-policy/"
+                    },
+                    {
+                        "label": "Refund Policy",
+                        "href": "/refund-policy/"
+                    },
+                    {
+                        "label": "Terms of Service",
+                        "href": "/terms-of-service/"
+                    },
+                    {
+                        "label": "Contact",
+                        "href": "/contact/"
+                    }
+                ]
             }
         ],
         "cta": [
@@ -45,12 +227,12 @@
                 "title": "Product",
                 "links": [
                     {
-                        "label": "Features",
-                        "href": "/features/"
+                        "label": "Home",
+                        "href": "/"
                     },
                     {
-                        "label": "Use Cases",
-                        "href": "/use-cases/"
+                        "label": "Features",
+                        "href": "/features/"
                     },
                     {
                         "label": "Pricing",
@@ -59,19 +241,16 @@
                     {
                         "label": "Download",
                         "href": "/download/"
-                    },
-                    {
-                        "label": "Changelog",
-                        "href": "/changelog/"
                     }
                 ]
             },
+
             {
                 "title": "Resources",
                 "links": [
                     {
-                        "label": "Blog",
-                        "href": "/article/"
+                        "label": "Business Articles",
+                        "href": "/articles/"
                     },
                     {
                         "label": "Documentation",
@@ -80,27 +259,6 @@
                     {
                         "label": "Support",
                         "href": "https://support.arrayhash.com/arraysubs/"
-                    }
-                ]
-            },
-            {
-                "title": "Legal",
-                "links": [
-                    {
-                        "label": "Privacy Policy",
-                        "href": "/privacy-policy/"
-                    },
-                    {
-                        "label": "Terms of Service",
-                        "href": "/terms-of-service/"
-                    },
-                    {
-                        "label": "Refund Policy",
-                        "href": "/refund-policy/"
-                    },
-                    {
-                        "label": "Data Safety",
-                        "href": "/data-safety/"
                     }
                 ]
             },

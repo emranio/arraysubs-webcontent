@@ -46,7 +46,18 @@
 - All 15 features listed with checkmarks for Free / Pro availability
 - CTA Buttons: Live Demo + Get Pro Free for 6 Months
 
-### 4. Comparison Row
+### 4. Use Case Explorer
+- 6 cards linking to the T5 use-case pages:
+  - `/use-cases/saas-digital-products/`
+  - `/use-cases/membership-sites/`
+  - `/use-cases/subscription-boxes/`
+  - `/use-cases/online-courses/`
+  - `/use-cases/content-publishers/`
+  - `/use-cases/service-businesses/`
+- Each card includes a short business-model summary showing how the feature stack applies in practice
+- CTA Buttons: Browse All Use Cases + Talk Through Your Model
+
+### 5. Comparison Row
 - "How ArraySubs compares to the competition" → links to comparison pages
 
 ---
@@ -57,5 +68,7 @@
 |--------|---------|
 | All 15 `/features/*` pages | Feature cards |
 | `/plans/` | Free vs Pro table CTA |
+| `/use-cases/*` | Use case section cards |
+| `/use-cases/` | Use case section CTA |
 | `/compare/woocommerce-subscriptions/` | Comparison section |
 | `/` | Breadcrumb |
