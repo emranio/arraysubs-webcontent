@@ -1,0 +1,118 @@
+---
+title: "WooCommerce Manage Subscriptions — Admin Dashboard & Bulk Actions"
+description: "View, filter, search, bulk-edit, and manage all subscription details from a modern React-based admin dashboard. Status changes, renewals, customer info — all in one place. Free."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--manage-subscriptions"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Manage Subscriptions</span></p>
+    <Badge variant="free" className="landing-hero__badge">Free feature</Badge>
+    <h1 className="landing-hero__title">A Powerful Admin Dashboard to Manage All Your Subscriptions</h1>
+    <p className="landing-hero__subtitle">Modern admin interface for subscription management. View, filter, search, and bulk-edit all subscriptions from a React-based SPA. Status changes, renewal triggers, and customer navigation — all in one place.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Full subscription list with filters</Badge>
+      <Badge variant="default">Detailed subscription view</Badge>
+      <Badge variant="default">Bulk status changes</Badge>
+      <Badge variant="default">React-based modern UI</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="SUBSCRIPTION LIST"
+  title="Every subscription — filterable and searchable"
+  subtitle="The subscription list view gives you a sortable, filterable table of all subscriptions across your store — with status breakdowns at a glance."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="filter" title="Status filters">
+      Filter the list by subscription status: Active, Paused, On-Hold, Cancelled, or Expired. Quickly identify all subscriptions in a specific state for bulk action or review.
+    </Card>
+    <Card icon="search" title="Search by customer or product">
+      Search by customer name, email, order number, or subscription product to locate specific subscriptions without scrolling through a full list.
+    </Card>
+    <Card icon="sort-desc" title="Sortable columns">
+      Sort by subscription ID, customer name, product, status, start date, next renewal date, or billing amount. Useful for identifying upcoming renewals or recently active subscriptions.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="SUBSCRIPTION DETAIL"
+  title="Everything about one subscription in one screen"
+  subtitle="The subscription detail view surfaces all relevant data and available actions for a single subscription — no navigating between multiple admin screens."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="info" title="Complete subscription data">
+      Plan name, product variation, status, start date, next renewal date, billing cycle, signup fee paid, and all associated order history — visible at a glance.
+    </Card>
+    <Card icon="user" title="Customer information">
+      Customer name, email, account link, and order history for the subscription owner. Navigate directly to the WooCommerce customer profile with one click.
+    </Card>
+    <Card icon="settings-2" title="Quick status actions">
+      Pause, Resume, Cancel, Reactivate, or manually trigger a renewal directly from the detail view. Each action creates an audit log entry (Pro) with the acting admin and timestamp.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="BULK OPERATIONS"
+  title="Manage multiple subscriptions at once"
+  subtitle="Select multiple subscriptions from the list view and apply bulk actions — status changes, renewals, or exports — in one operation."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="check-square" title="Bulk status changes">
+      Select multiple subscriptions and change their status in one action — for example, bulk-reactivate a group of on-hold subscriptions after resolving a billing issue.
+    </Card>
+    <Card icon="refresh-cw" title="Bulk renewal processing">
+      Trigger manual renewal processing for a selected group of subscriptions — useful for testing, correcting missed renewals, or processing a cohort on a specific schedule.
+    </Card>
+    <Card icon="download" title="Export filtered subscriptions">
+      Export the current filtered subscription list to CSV — useful for reporting, segmenting customers for outreach, or creating offline backups of subscription data.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="FAQ"
+  title="Common questions about the subscription management dashboard"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Is the admin subscription dashboard free?</summary>
+      <div className="accordion-list__body"><p>Yes. The full subscription management dashboard — list view, detail view, bulk actions, and quick status changes — is included in the free ArraySubs core.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I bulk-edit subscription statuses?</summary>
+      <div className="accordion-list__body"><p>Yes. Select multiple subscriptions from the list view and apply a status change in one action. Bulk renewal processing and CSV export are also available from the bulk action menu.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I manually trigger a renewal from the dashboard?</summary>
+      <div className="accordion-list__body"><p>Yes. The subscription detail view has a Renew Now quick action that manually triggers the renewal process for that subscription. Useful for handling missed renewals or testing billing behaviour.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Is the interface modern and fast?</summary>
+      <div className="accordion-list__body"><p>Yes. The subscription management dashboard is a React-based Single Page Application — filter, search, and navigate between subscriptions without full page reloads. The interface is fast, responsive, and built for day-to-day admin use.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">FREE ADMIN DASHBOARD</p>
+    <h2 className="final-cta__title">Manage every subscription from one modern interface</h2>
+    <p className="final-cta__subtitle">Filter, search, bulk-edit, and action subscriptions — all in a fast React dashboard. Free in the ArraySubs core from day one.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

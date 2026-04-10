@@ -1,0 +1,159 @@
+---
+title: "WooCommerce Feature Manager — Per-Plan Entitlements for Subscriptions"
+description: "Define toggle, numeric, and text entitlements per subscription plan. Show 'What's Included' on product pages, track usage, and let customers compare plans. Pro feature."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--feature-manager"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Feature Manager</span></p>
+    <Badge variant="pro" className="landing-hero__badge">Pro feature · Unique to ArraySubs</Badge>
+    <h1 className="landing-hero__title">Define What Each Subscription Plan Includes — Feature Manager</h1>
+    <p className="landing-hero__subtitle">The only WooCommerce subscription plugin that lets you define per-plan entitlements, display them on product pages, aggregate them in the customer portal, and track usage — without a third-party entitlement service.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="pro">Toggle, numeric &amp; text entitlements</Badge>
+      <Badge variant="default">"What's Included" on product pages</Badge>
+      <Badge variant="default">Customer portal "My Features"</Badge>
+      <Badge variant="default">Usage tracking per subscriber</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="THREE FEATURE TYPES"
+  title="Model any entitlement — from on/off access to metered quotas"
+  subtitle="Three feature types cover every entitlement model used in subscription and membership businesses — from simple binary access to numeric limits to descriptive terms."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="toggle-right" title="Toggle Features">
+      On/off access flags — for example, Priority Support: ✅ or Custom Domain: ❌. Perfect for differentiating plan tiers by feature availability. Displays with checkmark or cross on product pages.
+    </Card>
+    <Card icon="hash" title="Number Features">
+      Numeric limits and quotas — for example, 5 Team Seats, 100 API Calls/month, or 50 GB Storage. Ideal for SaaS-style plans with per-tier usage limits. Supports usage tracking.
+    </Card>
+    <Card icon="type" title="Text Features">
+      Descriptive plan terms and conditions — for example, Standard SLA, Dedicated Account Manager, or 24/7 Support. Communicates qualitative plan differences clearly on product pages.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="STOREFRONT DISPLAY"
+  title="Automatic 'What's Included' section on every subscription product page"
+  subtitle="Feature Manager renders a plan comparison summary on subscription product pages automatically — no custom template work needed."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="layout" title="Product page integration">
+      A "What's Included" section renders automatically on subscription product pages, showing all defined features with their values. No custom template code needed to activate it.
+    </Card>
+    <Card icon="refresh-cw" title="Dynamic per variation">
+      Variable subscription products update the feature display dynamically when a customer selects a different plan variation — always showing the correct entitlements for the selected option.
+    </Card>
+    <Card icon="save" title="Feature templates">
+      Save a feature set as a reusable template and apply it to new subscription products with one click. Maintain consistent entitlement definitions across your subscription catalogue.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="CUSTOMER PORTAL — MY FEATURES"
+  title="Subscribers see all their active entitlements in one place"
+  subtitle="A dedicated My Features page in the customer portal aggregates all active entitlements from all the customer's active subscriptions."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="user-check" title="Per-subscription view">
+      Show feature entitlements organised by subscription — useful when customers have multiple active plans with distinct feature sets.
+    </Card>
+    <Card icon="layers" title="Combined view">
+      Aggregate entitlements across all active subscriptions into a single view. Toggle features use logical OR across subscriptions; numeric features sum across subscriptions.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="USAGE TRACKING"
+  title="Track consumption of metered entitlements"
+  subtitle="For numeric features that represent consumable quotas — API calls, downloads, team seats — Feature Manager includes usage tracking with customer-facing progress indicators."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="activity" title="Record usage">
+      Developer-friendly helper functions record usage events for numeric features against a subscriber's account — integrating with your application or plugin logic where needed.
+    </Card>
+    <Card icon="bar-chart" title="Customer-facing usage display">
+      Customers see a "Used X of Y" usage indicator for metered features in the My Features portal page — transparent, real-time entitlement consumption visibility.
+    </Card>
+    <Card icon="clipboard" title="Admin feature log">
+      The subscription detail page in the admin includes a Feature Log section showing all current entitlement values and usage data — useful for support and debugging.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="BUSINESS USE CASES"
+  title="Feature Manager in practice across different subscription models"
+  subtitle="Any business model built on per-plan entitlements benefits from a defined, displayable, trackable feature set."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="code" title="SaaS on WooCommerce">
+      Define API rate limits, team seat counts, storage quotas, and support tier labels per plan. Display them on the product page for self-serve plan comparison. Track API usage per subscriber without a separate entitlement service.
+    </Card>
+    <Card icon="book-open" title="Online courses &amp; memberships">
+      Toggle access to bonus modules, limit quiz attempts per tier, define certification eligibility, and display community access flags. Let prospective members compare tiers before subscribing.
+    </Card>
+    <Card icon="briefcase" title="Service businesses">
+      Define support level (Toggle), SLA tier (Text), dedicated contact person (Toggle), and included hours per month (Number) per service plan. Surface the comparison clearly on each plan's product page.
+    </Card>
+    <Card icon="box" title="Subscription boxes">
+      Define item count, customisation options, and shipping method per tier. Show "What's Included" prominently and update the display dynamically when customers switch between monthly and annual billing.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="FAQ"
+  title="Common questions about Feature Manager"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Is Feature Manager available in the free version?</summary>
+      <div className="accordion-list__body"><p>No. Feature Manager is a Pro feature. It requires an active ArraySubs Pro licence to define entitlements, display them on product pages, or use the customer portal My Features view.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I define different features per variation in a variable subscription?</summary>
+      <div className="accordion-list__body"><p>Yes. Each variation has its own independent feature set. A Monthly variation can have 5 Team Seats while the Annual variation has 10 Team Seats, and the product page updates dynamically when the customer selects each option.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Do other WooCommerce subscription plugins offer feature entitlements?</summary>
+      <div className="accordion-list__body"><p>No. ArraySubs is the only WooCommerce subscription plugin with a built-in feature entitlement system. Other plugins have no equivalent — stores requiring per-plan feature definitions must use separate third-party entitlement tools or build custom solutions.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I track usage of numeric features?</summary>
+      <div className="accordion-list__body"><p>Yes. Feature Manager includes developer helper functions for recording, resetting, and querying usage for numeric features tied to a subscriber's account. Usage data is visible to customers in the My Features portal and to admins in the subscription detail Feature Log.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I restrict content based on feature entitlements?</summary>
+      <div className="accordion-list__body"><p>Yes. The <code>[arraysubs_restrict]</code> shortcode supports feature-based conditions — allowing content to be visible only to subscribers with a specific feature enabled or a numeric feature value above a threshold.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">PRO FEATURE — NO COMPETITOR HAS THIS</p>
+    <h2 className="final-cta__title">Show customers exactly what their plan includes</h2>
+    <p className="final-cta__subtitle">The only WooCommerce subscription plugin with built-in per-plan entitlements. Define, display, and track feature usage — without a separate entitlement service. Available with ArraySubs Pro.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

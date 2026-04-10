@@ -1,0 +1,183 @@
+---
+title: "WooCommerce Membership Content Restriction — Role-Based Access Control"
+description: "Restrict pages, posts, custom post types, URLs, downloads, products, and WooCommerce features by subscription plan. Grant roles, drip content on schedule, and set discount rules — all free."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--member-access-control"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Member Access Control</span></p>
+    <Badge variant="free" className="landing-hero__badge">Free feature</Badge>
+    <h1 className="landing-hero__title">Protect Content, Products &amp; Downloads Based on Subscription Status</h1>
+    <p className="landing-hero__subtitle">One restriction engine for every type of WordPress content. Restrict pages, posts, custom post types, URLs, downloads, and WooCommerce products by subscription plan, status, or user role — all free.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Pages, posts &amp; custom post types</Badge>
+      <Badge variant="default">Product &amp; download restrictions</Badge>
+      <Badge variant="default">Content dripping</Badge>
+      <Badge variant="default">Role auto-assignment</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="RESTRICTION TYPES"
+  title="Restrict every part of your site from one place"
+  subtitle="The access control engine covers all content types — from WordPress pages to WooCommerce checkout options — using a single set of rules."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="file-text" title="Pages &amp; Posts">
+      Restrict any WordPress page, post, or custom post type. Visitors without access see a customizable message or are redirected to a specified URL.
+    </Card>
+    <Card icon="link" title="URL Pattern Restriction">
+      Block entire URL paths using pattern matching — useful for protecting section prefixes like <code>/members/</code> or <code>/courses/</code> without adding individual rules for each page.
+    </Card>
+    <Card icon="shopping-bag" title="Products &amp; Categories">
+      Hide WooCommerce products from the shop, restrict purchasing to active subscribers only, or show member-only pricing on specific products and categories.
+    </Card>
+    <Card icon="download" title="Downloads">
+      Control which subscribers can access WooCommerce downloadable files. Gate digital product downloads behind a specific subscription plan or status.
+    </Card>
+    <Card icon="credit-card" title="Ecommerce Restrictions">
+      Restrict checkout access, coupon usage, or specific shipping methods to qualifying members. Useful for member-only promotions or preferred shipping tiers.
+    </Card>
+    <Card icon="percent" title="Discount Rules">
+      Apply automatic discounts to orders placed by active subscribers. Offer members-only pricing without requiring separate coupon codes.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="CONDITION SYSTEM"
+  title="Combine conditions to build precise access rules"
+  subtitle="Each access rule is built from one or more conditions — and rules can combine conditions with AND or OR logic for granular control."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="key" title="Subscription Plan">
+      Restrict to customers actively subscribed to a specific subscription product — for example, only members on the Professional Plan can access certain content.
+    </Card>
+    <Card icon="activity" title="Subscription Status">
+      Restrict by status: Active, On Trial, On Hold, Cancelled, or Expired. Useful for partial access during grace periods or phased content release based on active standing.
+    </Card>
+    <Card icon="user-check" title="User Role">
+      Restrict content by WordPress user role — combine with subscription-based rules to create layered access groups. Role assignment can be automated via the Role Mapping system.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="CONTENT DRIPPING"
+  title="Unlock content on a schedule after subscription starts"
+  subtitle="Drip content progressively based on how long a subscriber has been active — perfect for structured courses or phased membership tiers."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="clock" title="Offset-based scheduling">
+      Configure each access rule with an unlock delay — for example, unlock Module 2 after 7 days and Module 3 after 14 days. The countdown starts when the subscription activates.
+    </Card>
+    <Card icon="graduation-cap" title="Course &amp; membership sequencing">
+      Build structured learning paths or progressive membership tiers where content becomes available in sequence. Subscribers see a locked state until each offset expires.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="ROLE MAPPING"
+  title="Automatically assign WordPress roles based on subscription state"
+  subtitle="When a subscription activates, the customer receives a configured role. When it expires or cancels, the role is automatically removed — no manual user management needed."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="user-plus" title="Auto-assign on activation">
+      Map each subscription plan to one or more WordPress roles. When a subscriber's plan activates, they automatically receive the corresponding role.
+    </Card>
+    <Card icon="user-minus" title="Auto-remove on expiry">
+      When a subscription cancels, expires, or moves to on-hold, the associated role is revoked automatically — no manual cleanup or scheduled job required.
+    </Card>
+    <Card icon="users" title="Plan-specific roles">
+      Different subscription plans can map to different roles — for example, a Basic plan maps to <code>member</code> and a Professional plan maps to <code>member-pro</code>.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="SHORTCODES"
+  title="Embed access control logic anywhere on your site"
+  subtitle="Use shortcodes to show or hide content inline based on subscription state — no page-level restriction needed."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="code" title="[arraysubs_restrict]">
+      Wrap any content in this shortcode to make it visible only to qualifying subscribers. Supports plan, status, and role conditions inline — content outside the shortcode remains visible to everyone.
+    </Card>
+    <Card icon="eye" title="[arraysubs_visibility]">
+      Show or hide content blocks based on logged-in state or subscription status. Useful for calls-to-action that should only appear to non-members, or member-specific navigation links.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="PRO EXTENSIONS"
+  title="Go further with Pro access control features"
+  subtitle="The free core covers all major restriction scenarios. ArraySubs Pro adds three targeted extensions for advanced requirements."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="shield-off" title="Multi-Login Prevention">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      Prevent subscribers from sharing credentials across multiple simultaneous sessions. Set a maximum concurrent session count per subscription plan to protect plan economics.
+    </Card>
+    <Card icon="toggle-right" title="Feature Manager">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      Define granular per-plan entitlements — toggle features on/off, set numeric limits like API calls or team seats, and display a "What's Included" summary on product pages.
+    </Card>
+    <Card icon="external-link" title="Redirect Product Page">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      Redirect subscription product URLs to custom landing pages or sales pages. Control exactly where customers land when they click on any subscription product from search or navigation.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="FAQ"
+  title="Common questions about member access control"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Can I restrict WooCommerce products to members only?</summary>
+      <div className="accordion-list__body"><p>Yes. You can hide products from non-subscribers, restrict purchasing to active plan holders, or apply automatic member-only pricing. Product and category restrictions are part of the free core.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Does content dripping work with the free version?</summary>
+      <div className="accordion-list__body"><p>Yes — content dripping via offset-based scheduling is a free core feature. Set an unlock delay on any access rule and content becomes available automatically after the specified time from subscription activation.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I combine subscription and role conditions?</summary>
+      <div className="accordion-list__body"><p>Yes. Each access rule supports multiple conditions combined with AND or OR logic. You can require both an active subscription and a specific role, or grant access to either condition independently.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Does it work with custom post types?</summary>
+      <div className="accordion-list__body"><p>Yes. Any registered WordPress custom post type appears in the access rule target selector. Restrict courses, documentation articles, portfolio items, or any CPT your theme or plugins create.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Is Multi-Login Prevention available in the free version?</summary>
+      <div className="accordion-list__body"><p>No. Multi-Login Prevention is a Pro extension. Core access control — including all restriction types, conditions, dripping, role mapping, and shortcodes — is free.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">FREE MEMBERSHIP ENGINE</p>
+    <h2 className="final-cta__title">Protect your content and build real membership tiers</h2>
+    <p className="final-cta__subtitle">ArraySubs combines subscriptions and memberships in one free plugin. No second plugin. No extra $199/yr.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

@@ -1,0 +1,172 @@
+---
+title: "WooCommerce Subscription Products — Recurring Billing Made Simple"
+description: "Create simple or variable recurring products with flexible billing — daily, weekly, monthly, or yearly cycles. Free trials, signup fees, and one-time shipping included."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--subscriptions"
+schema: |
+  {
+    "@type": "SoftwareApplication",
+    "name": "ArraySubs",
+    "applicationCategory": "Plugin",
+    "operatingSystem": "WordPress + WooCommerce",
+    "offers": { "@type": "Offer", "price": "0" },
+    "featureList": "Simple Subscriptions, Variable Subscriptions, Recurring Billing, Free Trials, Signup Fees"
+  }
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Subscriptions &amp; Recurring Products</span></p>
+    <Badge variant="free" className="landing-hero__badge">Free feature</Badge>
+    <h1 className="landing-hero__title">Turn Any WooCommerce Product into a Subscription</h1>
+    <p className="landing-hero__subtitle">Flexible recurring billing for any WooCommerce product — simple, variable, or virtual. Daily to yearly cycles, free trials, signup fees, and per-user limits all included in the free core.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Simple &amp; variable subscriptions</Badge>
+      <Badge variant="default">Daily to yearly billing</Badge>
+      <Badge variant="default">Free trials included</Badge>
+      <Badge variant="default">Signup fees + limits</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="PRODUCT TYPES"
+  title="Two subscription product types for every use case"
+  subtitle="Create a single recurring product or let customers choose between billing plans — everything is configurable from the standard WooCommerce product editor."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="package" title="Simple Subscription">
+      One recurring product with a fixed price and billing cycle. Perfect for box subscriptions, SaaS single-tier plans, or any offering with a single renewal price.
+    </Card>
+    <Card icon="layers" title="Variable Subscription">
+      Create multiple variations — for example Monthly and Annual plans — each with its own price, billing cycle, trial period, and signup fee. Customers pick at checkout.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="BILLING CYCLES"
+  title="Every billing interval you need"
+  subtitle="Combine any period and interval to create billing cycles that match your business model — from daily to yearly and every step in between."
+>
+  <Grid columns={4} gap="md">
+    <Card icon="calendar" title="Daily">
+      Bill customers every day, or every 2, 3, or 6 days. Ideal for day-pass access, trial access, or metered content.
+    </Card>
+    <Card icon="calendar-days" title="Weekly">
+      Weekly or bi-weekly billing. Great for curated newsletters, weekly product deliveries, or weekly service access.
+    </Card>
+    <Card icon="calendar-range" title="Monthly">
+      The most common subscription interval — monthly, every 2 months, quarterly (every 3), or bi-annually (every 6 months).
+    </Card>
+    <Card icon="calendar-check" title="Yearly">
+      Annual billing with optional savings vs monthly. Present both via variable subscription variations at a discounted yearly price.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="PRICING OPTIONS"
+  title="Signup fees, free trials, and usage limits"
+  subtitle="Layer multiple pricing options onto any subscription product to match your acquisition and conversion strategies."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="tag" title="Signup Fee">
+      Charge a one-time fee at checkout alongside the first recurring payment — ideal for onboarding, setup fees, or access deposits. Separate from the recurring price.
+    </Card>
+    <Card icon="gift" title="Free Trial">
+      Offer X days or weeks of free access before the first billing charge. Configure trial length per product. Requires a payment method on file to convert automatically when the trial ends.
+    </Card>
+    <Card icon="shield" title="Subscription Limits">
+      Restrict a subscription product to one active subscription per customer, set a fixed number of billing cycles before automatic expiry, or leave it open-ended indefinitely.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="WOOCOMMERCE INTEGRATION"
+  title="Works natively with your entire WooCommerce store"
+  subtitle="Subscription products behave like any other WooCommerce product — compatible with shipping methods, tax settings, coupons, categories, and the Store API."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="truck" title="Shipping compatible">
+      Subscription products support one-time shipping charged at initial checkout. All standard WooCommerce shipping methods work without modification.
+    </Card>
+    <Card icon="percent" title="Coupons &amp; discounts">
+      Apply standard WooCommerce coupons to subscription products. Discount the recurring price, the signup fee, or the trial-end first charge.
+    </Card>
+    <Card icon="blocks" title="Store API &amp; block checkout">
+      Fully compatible with the WooCommerce block checkout and Store API — works for headless setups and the modern WooCommerce block-based flow equally well.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="HOW TO SET UP"
+  title="Create your first subscription in under 5 minutes"
+  subtitle="Add recurring billing to any existing WooCommerce product without writing code or reconfiguring your store."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="download" title="Step 1: Install ArraySubs">
+      Install and activate the free ArraySubs plugin from the WordPress plugin directory. Run the setup wizard to configure billing defaults in a few clicks.
+    </Card>
+    <Card icon="settings-2" title="Step 2: Choose product type">
+      In the WooCommerce product editor, change the product type to Simple Subscription or Variable Subscription from the product data dropdown.
+    </Card>
+    <Card icon="check-circle" title="Step 3: Set price and cycle">
+      Enter your recurring price and billing cycle. Optionally add a signup fee, free trial, or subscription limit. Publish — your subscription product is live.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="FAQ"
+  title="Common questions about subscription products"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Can I convert existing products to subscriptions?</summary>
+      <div className="accordion-list__body"><p>Yes. Open any existing WooCommerce product and change its Product Type to Simple Subscription or Variable Subscription. Your existing product details, images, and categories carry over automatically.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I offer both monthly and yearly billing?</summary>
+      <div className="accordion-list__body"><p>Yes. Create a Variable Subscription product and add two variations — one priced monthly, one yearly — each with its own billing cycle. Customers select their preferred plan at checkout.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>How do free trials work?</summary>
+      <div className="accordion-list__body"><p>A customer who opts into a free trial provides a payment method at checkout but is not charged until the trial period ends. At expiry, the subscription automatically converts to a paid subscription and bills the saved payment method.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Is the subscription functionality free?</summary>
+      <div className="accordion-list__body"><p>Yes — creating simple and variable subscription products, configuring billing cycles, adding free trials, signup fees, and limits are all free core features of ArraySubs.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Does it work with the WooCommerce block checkout?</summary>
+      <div className="accordion-list__body"><p>Yes. ArraySubs is fully compatible with the WooCommerce Store API and block-based checkout experience. No classic-checkout workarounds needed.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can each variation in a variable subscription have its own trial?</summary>
+      <div className="accordion-list__body"><p>Yes. Each variation is configured independently — it can have its own price, billing cycle, trial length, signup fee, and limits, completely separate from other variations.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">GET STARTED FREE</p>
+    <h2 className="final-cta__title">Start selling subscription products today</h2>
+    <p className="final-cta__subtitle">Free to install. No credit card required. Add recurring billing to any WooCommerce product in minutes.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

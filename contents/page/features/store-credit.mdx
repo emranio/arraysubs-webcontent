@@ -1,0 +1,131 @@
+---
+title: "WooCommerce Store Credit for Subscriptions — Refund, Reward & Retain"
+description: "Issue, manage, and track store credit balances. Refund to credit, sell credit products, auto-apply at checkout, and use as a retention tool. Pro feature."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--store-credit"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Store Credit</span></p>
+    <Badge variant="pro" className="landing-hero__badge">Pro feature · Unique to ArraySubs</Badge>
+    <h1 className="landing-hero__title">Built-In Store Credit System for WooCommerce Subscriptions</h1>
+    <p className="landing-hero__subtitle">The only WooCommerce subscription plugin with an integrated store credit system. Issue credit, refund to credit instead of payment reversals, sell credit as a product, and let customers apply their balance at checkout.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="pro">Refund to store credit</Badge>
+      <Badge variant="default">Sell purchasable credit products</Badge>
+      <Badge variant="default">Auto-apply at checkout</Badge>
+      <Badge variant="default">Full credit ledger per customer</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="CREDIT SOURCES"
+  title="Four ways customers can earn store credit"
+  subtitle="Credit enters a customer's balance through any combination of admin issuance, refunds, purchases, or retention offers — all tracked in a single ledger."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="plus-circle" title="Admin-issued credit">
+      Grant credit to any customer directly from the admin dashboard. Useful for compensation, loyalty rewards, promotional campaigns, or manual goodwill adjustments.
+    </Card>
+    <Card icon="rotate-ccw" title="Refund to credit">
+      Process a subscription refund as store credit instead of a payment reversal. Keeps revenue within your ecosystem while satisfying the customer with an immediate balance they can spend.
+    </Card>
+    <Card icon="shopping-cart" title="Purchasable credit product">
+      Create a standard WooCommerce product that, when purchased, adds a credit balance to the buyer's account. Customers can pre-load credit for future renewals or purchases.
+    </Card>
+    <Card icon="gift" title="Retention offer credit">
+      Configure the retention flow to offer store credit as an incentive during a cancellation attempt. More impactful than a discount for customers who plan to use their balance.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="CREDIT USAGE"
+  title="Customers apply credit at checkout — automatically or manually"
+  subtitle="Credit balances apply to any WooCommerce order, including subscription renewals — giving customers flexibility in how and when they use their balance."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="shopping-bag" title="Apply at checkout">
+      Customers see their available credit balance during checkout and can choose to apply all or part of it to the current order. Works with both classic and block checkout.
+    </Card>
+    <Card icon="zap" title="Auto-apply option">
+      Enable auto-apply to automatically use available credit toward each order — reducing friction for customers who always want to use their balance first.
+    </Card>
+    <Card icon="refresh-cw" title="Cover subscription renewals">
+      Credit balances can cover subscription renewal payments — useful for customers who have pre-purchased credit or received a retention credit to prevent an upcoming churn.
+    </Card>
+    <Card icon="wallet" title="Partial credit application">
+      Credit can cover part of an order when the balance is lower than the order total. The remaining amount is charged to the customer's payment method as normal.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="BUSINESS APPLICATIONS"
+  title="Four ways store credit improves your subscription business"
+  subtitle="Store credit isn't just a refund mechanism — it's a strategic tool for retention, loyalty, and revenue preservation."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="anchor" title="Retention over refunds">
+      When a subscriber requests a refund, issuing store credit keeps the revenue inside your business while satisfying the customer. They're more likely to purchase again using a credit balance than a returned payment.
+    </Card>
+    <Card icon="star" title="Subscriber loyalty rewards">
+      Periodically grant credit to long-term subscribers as a loyalty benefit. A quarterly credit reward gives active customers a reason to stay and a reason to return if they ever lapse.
+    </Card>
+    <Card icon="tool" title="Service issue compensation">
+      Quickly resolve service complaints with a store credit grant — faster than a refund, more targeted than a discount code, and tied to your store rather than a generic payment.
+    </Card>
+    <Card icon="trending-up" title="Upgrade incentives">
+      Offer credit as an incentive for plan upgrades. Customers moving from a Basic to a Professional plan receive credit they can use on future renewals — framing the upgrade as a net gain.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="FAQ"
+  title="Common questions about store credit"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Is store credit a free feature?</summary>
+      <div className="accordion-list__body"><p>No. Store credit is a Pro feature. You need an active ArraySubs Pro licence to issue, manage, and track customer store credit balances.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can customers buy store credit?</summary>
+      <div className="accordion-list__body"><p>Yes. You can create a standard WooCommerce product configured as a credit product. When a customer purchases it, the equivalent credit amount is added to their account balance immediately.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I refund a subscription order as store credit?</summary>
+      <div className="accordion-list__body"><p>Yes. When processing a refund for a subscription renewal order, you can choose to issue the refund as store credit rather than returning the amount to the original payment method. The customer receives the credit balance immediately.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Does credit work for subscription renewal payments?</summary>
+      <div className="accordion-list__body"><p>Yes. Store credit can cover subscription renewals — either manually applied by the customer at checkout or automatically applied if auto-apply is enabled. If the credit doesn't cover the full renewal amount, the remainder is charged to the payment method.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Do other WooCommerce subscription plugins have store credit?</summary>
+      <div className="accordion-list__body"><p>No. ArraySubs is the only WooCommerce subscription plugin with an integrated store credit system. Other plugins require separate third-party credit plugins that don't natively integrate with subscription renewals or retention flows.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">PRO FEATURE</p>
+    <h2 className="final-cta__title">Keep revenue inside your store with built-in credit</h2>
+    <p className="final-cta__subtitle">Refund to credit, reward loyalty, compensate for service issues — all from one integrated system. Available with ArraySubs Pro.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

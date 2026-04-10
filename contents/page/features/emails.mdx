@@ -1,0 +1,133 @@
+---
+title: "WooCommerce Subscription Email Notifications — Automated Alerts"
+description: "Automated emails for new subscriptions, renewals, status changes, payment reminders, expiring alerts, and more. Customizable templates using WooCommerce email system. Free."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--emails"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Email Notifications</span></p>
+    <Badge variant="free" className="landing-hero__badge">Free feature</Badge>
+    <h1 className="landing-hero__title">Keep Subscribers Informed with Automated Email Notifications</h1>
+    <p className="landing-hero__subtitle">Every subscription event triggers the right email. New subscriptions, renewals, status changes, payment failures, and expiry alerts — all automated, all customizable, all using your WooCommerce email templates.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">All lifecycle events covered</Badge>
+      <Badge variant="default">Renewal reminders before due date</Badge>
+      <Badge variant="default">WooCommerce template system</Badge>
+      <Badge variant="default">Admin &amp; customer notifications</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="EMAIL TYPES"
+  title="Every subscription event has a corresponding email"
+  subtitle="Nine email notifications cover the full subscription lifecycle — from first activation to expiry — with separate customer and admin variants where appropriate."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="bell" title="New Subscription">
+      Sent to both customer and admin when a new subscription is created at checkout. Confirms the plan, billing cycle, and next payment date for the customer's records.
+    </Card>
+    <Card icon="check-circle" title="Subscription Activated">
+      Sent to the customer when a subscription moves to Active status — including reactivations after on-hold periods. Confirms full access is restored.
+    </Card>
+    <Card icon="pause-circle" title="Subscription On-Hold">
+      Notifies the customer when their subscription enters On-Hold status due to a missed payment, with a pay-now link to reactivate immediately.
+    </Card>
+    <Card icon="x-circle" title="Subscription Cancelled">
+      Sent to customer and admin when a subscription is cancelled. Includes the cancellation reason if collected via the retention flow.
+    </Card>
+    <Card icon="clock" title="Subscription Expired">
+      Notifies the customer when a fixed-length subscription reaches the end of its configured billing cycles and expires automatically.
+    </Card>
+    <Card icon="alert-circle" title="Payment Failed">
+      Sent to customer and admin when an automatic payment attempt fails. Includes a link to update payment method and a pay-now invoice link.
+    </Card>
+    <Card icon="calendar" title="Renewal Reminder">
+      Sent X days before the renewal due date — configurable timing. Helps customers prepare for upcoming charges and reduces payment failures from expired cards.
+    </Card>
+    <Card icon="receipt" title="Renewal Invoice">
+      Sent when the renewal invoice (order) is generated. Includes order details and a direct pay link for customers on manual billing.
+    </Card>
+    <Card icon="timer" title="Expiring Soon">
+      Sent to customers approaching the end of a fixed-length subscription — with an option to continue or upgrade to an open-ended plan.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="WOOCOMMERCE INTEGRATION"
+  title="Built on the WooCommerce email system you already use"
+  subtitle="Subscription emails are native WooCommerce emails — they live alongside your existing order emails and inherit your store's branding automatically."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="mail" title="Native WooCommerce emails">
+      All subscription notifications are registered as standard WooCommerce email classes. They appear in WooCommerce → Settings → Emails alongside your existing transactional emails.
+    </Card>
+    <Card icon="palette" title="Inherited branding">
+      Subscription emails use your WooCommerce email header, footer, and colour settings automatically. Changing your WooCommerce email branding updates all subscription emails at once.
+    </Card>
+    <Card icon="code" title="Template overrides">
+      Override subscription email templates in your theme using the standard WooCommerce <code>woocommerce/emails/</code> template folder override system — no plugin customiser required.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="RENEWAL REMINDERS"
+  title="Reduce involuntary churn with advance payment notice"
+  subtitle="Renewal reminder emails notify subscribers before their charge date — giving them time to update expired cards and reducing payment failures that trigger the grace period."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="calendar-clock" title="Configurable timing">
+      Set how many days before the renewal due date the reminder email is sent. Send at 7 days for a heads-up, or at 3 days for a final reminder — or both with multiple reminders.
+    </Card>
+    <Card icon="trending-down" title="Lower involuntary churn">
+      A significant portion of subscription churn is involuntary — caused by payment failures from expired or replaced cards. Reminder emails with payment update links directly reduce this category of churn.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="FAQ"
+  title="Common questions about subscription email notifications"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Are subscription email notifications free?</summary>
+      <div className="accordion-list__body"><p>Yes. All nine subscription email notification types — including renewal reminders — are included in the free ArraySubs core. No Pro licence needed for any email functionality.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I customise the email templates?</summary>
+      <div className="accordion-list__body"><p>Yes. Edit subject lines and preheaders from WooCommerce → Settings → Emails. For full template customisation, copy the subscription email template files from the ArraySubs plugin directory to your theme's <code>woocommerce/emails/</code> folder and edit them there.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I disable specific subscription emails?</summary>
+      <div className="accordion-list__body"><p>Yes. Each subscription email has an enable/disable toggle in WooCommerce → Settings → Emails. Admin notifications can be disabled independently of customer notifications.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Do the emails use my existing WooCommerce branding?</summary>
+      <div className="accordion-list__body"><p>Yes. Subscription emails inherit the header image, footer text, colour settings, and font styles configured in WooCommerce → Settings → Emails → Email template. No separate branding setup is required.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">FREE AUTOMATED EMAILS</p>
+    <h2 className="final-cta__title">Every subscription event sends the right email automatically</h2>
+    <p className="final-cta__subtitle">Renewal reminders, payment alerts, status notifications — nine email types, zero extra cost. Built on WooCommerce, customisable from day one.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

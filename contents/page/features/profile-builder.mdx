@@ -1,0 +1,124 @@
+---
+title: "WooCommerce Subscription Shortcodes & Profile Builder"
+description: "Use shortcodes to display subscription status, restrict content, show member-only sections, and build custom profile pages. Free core shortcodes + Pro profile builder."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--profile-builder"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Profile Builder &amp; Shortcodes</span></p>
+    <Badge variant="free" className="landing-hero__badge">Free + Pro</Badge>
+    <h1 className="landing-hero__title">Embed Subscription Content Anywhere with Shortcodes &amp; Profile Builder</h1>
+    <p className="landing-hero__subtitle">Display subscription status, restrict inline content, show member-only sections, and build custom profile pages — using shortcodes anywhere in WordPress, or the Pro visual Profile Builder.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Restriction shortcodes</Badge>
+      <Badge variant="free">Conditional visibility shortcodes</Badge>
+      <Badge variant="default">Auth state shortcodes</Badge>
+      <Badge variant="pro">Profile Builder (Pro)</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="CORE SHORTCODES"
+  title="Inline subscription logic on any WordPress page or post"
+  subtitle="The free shortcode set lets you embed access control and conditional visibility directly into any WordPress content — without creating restriction rules in the admin."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="lock" title="[arraysubs_restrict]">
+      Wrap any content block to make it visible only to qualifying subscribers. Accepts plan, status, and role conditions. Non-qualifying visitors see either nothing or a customisable fallback message.
+    </Card>
+    <Card icon="eye" title="[arraysubs_visibility]">
+      Show or hide content blocks conditionally based on subscription status or logged-in state. Useful for calls-to-action that should only appear to non-members, or members-only navigation elements.
+    </Card>
+    <Card icon="user" title="Auth state shortcodes">
+      Separate shortcodes for logged-in and logged-out states — display different content to authenticated users vs guests, independently of subscription status.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="SHORTCODE EXAMPLES"
+  title="Common shortcode patterns for membership sites"
+  subtitle="A few common patterns that show how shortcodes compose with subscription conditions."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="code" title="Member-only content block">
+      Use <code>[arraysubs_restrict plan=&quot;pro-plan&quot;]</code> to wrap a content block that should only appear to subscribers on a specific plan. The surrounding page content remains visible to everyone.
+    </Card>
+    <Card icon="toggle-right" title="Upgrade prompt for non-members">
+      Combine <code>[arraysubs_visibility logged_in=&quot;false&quot;]</code> with a signup call-to-action — show a compelling upgrade prompt to visitors who are browsing but haven't subscribed yet.
+    </Card>
+    <Card icon="layers" title="Plan-differentiated content">
+      Nest multiple <code>[arraysubs_restrict]</code> blocks with different plan conditions on the same page — showing Basic plan content to Basic subscribers and Professional content to Professional subscribers.
+    </Card>
+    <Card icon="refresh-cw" title="Trial status messaging">
+      Use a status condition in <code>[arraysubs_restrict status=&quot;trial&quot;]</code> to show trial-specific messaging — expiry reminders, upgrade offers, or onboarding content — only during the trial period.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="PROFILE BUILDER"
+  title="Custom My Account pages with the Pro Profile Builder"
+  subtitle="ArraySubs Pro adds a visual Profile Builder for customising the WooCommerce My Account experience with additional profile sections, custom fields, and subscription display options."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="layout" title="Custom profile layouts">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      Build custom My Account page layouts with subscription data, member details, and custom content sections — without writing PHP templates from scratch.
+    </Card>
+    <Card icon="plus-square" title="Additional profile fields">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      Add custom profile data fields to the My Account area — collect and display member-specific information alongside subscription status and billing details.
+    </Card>
+    <Card icon="eye" title="Subscription display options">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      Customise how subscription details are displayed in the My Account area — including which fields appear, how statuses are labelled, and what actions are visible.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="FAQ"
+  title="Common questions about shortcodes and Profile Builder"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Are the shortcodes available in the free version?</summary>
+      <div className="accordion-list__body"><p>Yes. The core restriction shortcodes (<code>[arraysubs_restrict]</code>, <code>[arraysubs_visibility]</code>, and auth state shortcodes) are fully free. They work on any WordPress page, post, custom post type, or widget area.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>What is the Profile Builder?</summary>
+      <div className="accordion-list__body"><p>Profile Builder is a Pro extension that lets you customise the WooCommerce My Account area — adding custom profile sections, additional fields, and control over how subscription data is displayed. It goes beyond the default Subscriptions tab provided by the free core.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I restrict content to a specific subscription plan using a shortcode?</summary>
+      <div className="accordion-list__body"><p>Yes. The <code>[arraysubs_restrict]</code> shortcode accepts a <code>plan</code> attribute specifying the subscription product ID or slug. Only customers actively subscribed to that plan will see the wrapped content.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can shortcodes be used in page builders like Elementor or Divi?</summary>
+      <div className="accordion-list__body"><p>Yes. All ArraySubs shortcodes work in any WordPress context that processes shortcodes — including Elementor, Divi, Beaver Builder, Gutenberg widgets, and standard post/page content areas.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">FREE SHORTCODES</p>
+    <h2 className="final-cta__title">Embed subscription logic anywhere on your site</h2>
+    <p className="final-cta__subtitle">Free restriction and visibility shortcodes from day one. Upgrade to Pro for Profile Builder and My Account customisation.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

@@ -1,0 +1,130 @@
+---
+title: "WooCommerce Subscription Audit Logs — Track Every Change"
+description: "Track every subscription change — status transitions, payment events, admin actions, and customer activity with a searchable audit log. Pro feature."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--audits-and-logs"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Audits &amp; Logs</span></p>
+    <Badge variant="pro" className="landing-hero__badge">Pro feature</Badge>
+    <h1 className="landing-hero__title">Complete Audit Trail for Your WooCommerce Subscriptions</h1>
+    <p className="landing-hero__subtitle">Know exactly what happened to every subscription, when, and why. Every status change, payment event, admin action, and customer activity is recorded with timestamps and user attribution.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="pro">Every event logged with timestamp</Badge>
+      <Badge variant="default">Status &amp; payment events</Badge>
+      <Badge variant="default">Admin &amp; customer actions</Badge>
+      <Badge variant="default">Searchable &amp; exportable</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="LOGGED EVENTS"
+  title="A complete record of everything that happens to a subscription"
+  subtitle="The audit log captures every significant event in a subscription's lifecycle — automatically, without any additional configuration."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="activity" title="Status transitions">
+      Every status change is logged with the before state, after state, the user who triggered it (or the system if automatic), and the precise timestamp of the transition.
+    </Card>
+    <Card icon="credit-card" title="Payment events">
+      Successful payments, failed attempts, retry events, and refunds are all captured — with payment method details, amounts, gateway responses, and timestamps.
+    </Card>
+    <Card icon="user-check" title="Admin actions">
+      Manual edits, forced status changes, renewal triggers, and any other administrative action taken from the subscription detail screen are logged with the acting admin user.
+    </Card>
+    <Card icon="user" title="Customer actions">
+      Pause requests, resume requests, cancellation attempts, offer acceptances from the retention flow, and portal payment submissions are all recorded with the customer context.
+    </Card>
+    <Card icon="receipt" title="Renewal events">
+      Invoice creation, invoice payment, overdue notices, grace period transitions, and automatic cancellation events are all logged with their triggering conditions.
+    </Card>
+    <Card icon="clock" title="Timestamps &amp; attribution">
+      Every log entry includes a precise timestamp and attributes the event to either a specific WordPress user (admin or customer), the ArraySubs system, or an external trigger like a gateway webhook.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="SEARCH & FILTER"
+  title="Find exactly the event you're looking for"
+  subtitle="The audit log dashboard is searchable and filterable — useful for investigating specific subscriptions, reviewing an admin's actions, or preparing a compliance record."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="search" title="Filter by subscription">
+      View the complete log for a specific subscription on the subscription detail page — every event in chronological order with full context.
+    </Card>
+    <Card icon="filter" title="Filter by event type">
+      Narrow results to specific event categories: status changes, payments, admin actions, customer actions, or renewal events — across all subscriptions.
+    </Card>
+    <Card icon="download" title="Export to CSV">
+      Export filtered log entries to CSV for external documentation, compliance submissions, or investigation reports.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="USE CASES"
+  title="Why subscription audit logs matter"
+  subtitle="Audit logs serve four distinct operational purposes — from day-to-day customer support to formal compliance requirements."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="headphones" title="Customer support investigation">
+      When a customer reports a billing issue or unexpected status change, the audit log shows the complete event sequence — who did what, when, and why. Resolve disputes in minutes instead of hours.
+    </Card>
+    <Card icon="shield-check" title="Dispute resolution">
+      When a customer disputes a charge or claims their subscription was cancelled without their action, the audit trail provides timestamped evidence of every event and who triggered it.
+    </Card>
+    <Card icon="clipboard" title="Compliance documentation">
+      For stores with SOC 2, GDPR, or other compliance requirements, the audit log provides the event record trail needed for data access and processing evidence.
+    </Card>
+    <Card icon="bug" title="Debugging subscription issues">
+      When a subscription behaves unexpectedly — an unexpected cancellation, a missed renewal, an incorrect status — the log gives developers the full event sequence to trace the root cause.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="FAQ"
+  title="Common questions about audit logging"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Is audit logging available in the free version?</summary>
+      <div className="accordion-list__body"><p>No. The audit log and event tracking system is a Pro feature. An active ArraySubs Pro licence is required to access the log dashboard and per-subscription event history.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>What events are logged?</summary>
+      <div className="accordion-list__body"><p>All significant subscription events are logged: status transitions (with before/after states), payment successes and failures, admin actions, customer portal actions, renewal invoice events, and grace period transitions — all with timestamps and user attribution.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I export the audit log?</summary>
+      <div className="accordion-list__body"><p>Yes. The audit log is filterable and exportable to CSV. Apply filters by subscription, event type, date range, or user before exporting to generate targeted reports.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>How long are log entries retained?</summary>
+      <div className="accordion-list__body"><p>Log retention is configurable. Set the retention period in the audit settings to balance storage requirements against compliance and investigation needs.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">PRO FEATURE</p>
+    <h2 className="final-cta__title">Know the complete history of every subscription</h2>
+    <p className="final-cta__subtitle">Timestamped audit trails for every status change, payment event, and user action. Available with ArraySubs Pro.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

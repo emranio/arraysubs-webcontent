@@ -1,0 +1,143 @@
+---
+title: "WooCommerce Subscription Analytics — MRR, Churn, LTV & Revenue Insights"
+description: "Track MRR, ARR, churn rate, customer LTV, retention rates, and revenue trends with the built-in subscription analytics dashboard. Pro feature."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--analytics"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Analytics</span></p>
+    <Badge variant="pro" className="landing-hero__badge">Pro feature</Badge>
+    <h1 className="landing-hero__title">Subscription Analytics That Help You Grow</h1>
+    <p className="landing-hero__subtitle">Know your numbers — MRR, churn, LTV, all in real-time. The built-in subscription analytics dashboard gives you the metrics that matter for a recurring revenue business, without a separate analytics tool.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="pro">MRR &amp; ARR tracking</Badge>
+      <Badge variant="default">Churn rate &amp; LTV</Badge>
+      <Badge variant="default">Revenue trends</Badge>
+      <Badge variant="default">CSV export</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="KEY METRICS"
+  title="The recurring revenue numbers that matter"
+  subtitle="The analytics dashboard surfaces six core subscription metrics — updated in near real-time with each subscription event on your store."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="trending-up" title="MRR">
+      Monthly Recurring Revenue — the normalised monthly value of all active subscriptions. Tracks growth over time and reflects plan changes, upgrades, and churn.
+    </Card>
+    <Card icon="bar-chart-2" title="ARR">
+      Annual Recurring Revenue — the projected yearly value based on current active subscriptions. Useful for reporting and forecasting conversations.
+    </Card>
+    <Card icon="trending-down" title="Churn Rate">
+      Percentage of subscriptions cancelled in a given period. Break down churn by product, plan, and cancellation reason to identify where attrition is concentrated.
+    </Card>
+    <Card icon="users" title="Active Subscribers">
+      Total count of subscriptions in Active status. Segment by product, plan, payment method, and status to understand your subscriber base composition.
+    </Card>
+    <Card icon="dollar-sign" title="Customer LTV">
+      Average lifetime value per subscriber — total revenue generated divided by subscription lifetime. Identifies which plans produce the highest-value customers.
+    </Card>
+    <Card icon="activity" title="Net Revenue Growth">
+      New MRR added minus MRR lost to churn — the net direction of your recurring revenue. Positive net growth means your subscriber base is expanding in value.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="REVENUE ANALYTICS"
+  title="Understand where your revenue comes from"
+  subtitle="Revenue charts break down income by time period, product, plan, and payment method — giving you the context to optimise pricing and plan mix."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="line-chart" title="Revenue trends over time">
+      Daily, weekly, and monthly revenue views with configurable date ranges. Compare periods side-by-side to identify seasonal patterns or the impact of pricing changes.
+    </Card>
+    <Card icon="pie-chart" title="Revenue by product &amp; plan">
+      See which subscription products and plan variations contribute the most MRR. Identify underperforming plans and products with high churn relative to acquisition.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="RETENTION INSIGHTS"
+  title="Connect churn data to your retention strategy"
+  subtitle="Analytics integrates with the retention flow data — linking cancellation reasons, offer acceptance rates, and plan-level churn to give you actionable retention intelligence."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="message-square" title="Cancellation reason distribution">
+      See which cancellation reasons your subscribers select most frequently. Distinguishes between price-driven churn, usage-driven churn, and churn from specific service issues.
+    </Card>
+    <Card icon="check-square" title="Retention offer effectiveness">
+      Track which retention offers — discount, pause, downgrade, support — get accepted most often and for which reasons. Optimise your offer mapper based on real acceptance data.
+    </Card>
+    <Card icon="users" title="Cohort retention">
+      Subscriber cohort analysis showing the percentage of subscribers from each acquisition period who remain active over time. Identifies onboarding and product-fit issues early.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="EXPORT & REPORTING"
+  title="Take your data wherever you need it"
+  subtitle="Filter by date, product, plan, or status — then export to CSV for spreadsheet analysis, board reporting, or integration with external BI tools."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="download" title="CSV export">
+      Export any filtered dataset to CSV. Subscriber lists, revenue data, churn events, and retention flow outcomes are all exportable with the active filter applied.
+    </Card>
+    <Card icon="filter" title="Date range filtering">
+      Compare any two time periods — this month vs last month, this quarter vs the same quarter last year. Custom date range selection across all analytics views.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="FAQ"
+  title="Common questions about subscription analytics"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Is the analytics dashboard available in the free version?</summary>
+      <div className="accordion-list__body"><p>No. The analytics dashboard is a Pro feature. It requires an active ArraySubs Pro licence.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>What metrics does it track?</summary>
+      <div className="accordion-list__body"><p>MRR, ARR, churn rate, customer LTV, active subscriber count, net revenue growth, revenue by product and plan, retention flow acceptance rates, cohort retention, and cancellation reason distribution.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I export the analytics data?</summary>
+      <div className="accordion-list__body"><p>Yes. All analytics views support CSV export with the active date range and filter settings applied. Export subscriber lists, revenue data, churn events, and retention data.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Does it integrate with the retention flow data?</summary>
+      <div className="accordion-list__body"><p>Yes. Cancellation reason data collected by the retention flow feeds directly into the analytics dashboard — giving you churn analysis linked to your retention offer performance and broader revenue metrics.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>How current is the data?</summary>
+      <div className="accordion-list__body"><p>Analytics update in near real-time — data reflects each subscription event (activation, renewal, cancellation, payment failure) as it occurs on your store.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">PRO FEATURE</p>
+    <h2 className="final-cta__title">Stop guessing — know your subscription metrics</h2>
+    <p className="final-cta__subtitle">MRR, churn, LTV, and retention insights — all in one dashboard. Available with ArraySubs Pro. Try free for 6 months.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

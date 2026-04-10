@@ -1,0 +1,129 @@
+---
+title: "WooCommerce Subscription Customer Portal — Self-Service Management"
+description: "Customers can view, pause, resume, cancel, upgrade, change payment methods, and manage their subscriptions — all from their WooCommerce My Account page. Free."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--customer-portal"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Customer Portal</span></p>
+    <Badge variant="free" className="landing-hero__badge">Free feature</Badge>
+    <h1 className="landing-hero__title">Give Subscribers a Self-Service Portal to Manage Everything</h1>
+    <p className="landing-hero__subtitle">Reduce support tickets — let subscribers pause, resume, cancel, pay invoices, and manage their subscriptions from their WooCommerce My Account page. No custom development required.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">My Account integration</Badge>
+      <Badge variant="default">Pause, resume &amp; cancel</Badge>
+      <Badge variant="default">Renewal invoice access</Badge>
+      <Badge variant="pro">Payment method management (Pro)</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="PORTAL CAPABILITIES"
+  title="Everything subscribers need — nothing they don't"
+  subtitle="The customer portal is scoped to the actions subscribers actually use. Clean, focused, and integrated into the WooCommerce My Account experience they already know."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="list" title="Subscription list">
+      A clear list of all active, paused, on-hold, and cancelled subscriptions — showing plan name, status, renewal date, and billing amount at a glance.
+    </Card>
+    <Card icon="file-text" title="Subscription details">
+      Each subscription has a detail view with full billing history, next payment date, payment cycle, and current status — plus all available actions for that subscription.
+    </Card>
+    <Card icon="pause" title="Pause &amp; resume">
+      Subscribers can pause an active subscription and resume it when ready. Pausing stops the renewal cycle; resuming restarts it from the next applicable billing date.
+    </Card>
+    <Card icon="x-circle" title="Cancel with retention flow">
+      Cancellation routes through the built-in retention flow if configured — showing a reason selector and a targeted retention offer before completing the cancellation.
+    </Card>
+    <Card icon="receipt" title="Pay renewal invoices">
+      Pending renewal invoices appear directly in the portal with a pay-now link. Customers can settle overdue renewals and reactivate their subscription without contacting support.
+    </Card>
+    <Card icon="credit-card" title="Update payment method">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      Subscribers can update their saved payment method directly from the portal — reducing failed renewals caused by expired or replaced cards. Available with Pro.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="MY ACCOUNT INTEGRATION"
+  title="Fits naturally inside the WooCommerce experience"
+  subtitle="The customer portal adds a Subscriptions tab to the existing WooCommerce My Account page — no new login area, no custom URLs, no extra pages to build."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="layout" title="My Account tab">
+      A Subscriptions tab is added automatically to the WooCommerce My Account navigation. Customers find their subscriptions exactly where they'd expect — next to Orders and Downloads.
+    </Card>
+    <Card icon="smartphone" title="Mobile responsive">
+      The portal inherits your WooCommerce theme's responsive styles. Subscription management works cleanly on mobile without additional configuration.
+    </Card>
+    <Card icon="blocks" title="Classic &amp; block compatible">
+      Works with both the classic WooCommerce My Account template and the block-based My Account pages introduced in recent WooCommerce versions.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="RETENTION FLOW INTEGRATION"
+  title="Cancel button becomes a retention checkpoint"
+  subtitle="When a subscriber clicks Cancel in the portal, the retention flow intercepts the request — collecting cancellation reasons and presenting a targeted offer before completing the cancellation."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="shield-check" title="Automatic intercept">
+      No additional trigger needed. If a retention flow is configured, it activates automatically whenever a subscriber initiates a cancellation from the portal.
+    </Card>
+    <Card icon="arrow-right" title="Learn more about retention flows">
+      The Retention Flow Builder lets you configure cancellation reasons, map discount offers, pause suggestions, and downgrade options to each reason. <a href="/features/retention-flow-builder/">See how it works →</a>
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="FAQ"
+  title="Common questions about the customer portal"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Can customers cancel their own subscriptions?</summary>
+      <div className="accordion-list__body"><p>Yes. The cancel action is available from the subscription detail view. If you have a retention flow configured, the customer will see a reason selector and a retention offer before the cancellation completes.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Is the customer portal free?</summary>
+      <div className="accordion-list__body"><p>Yes. The core portal — including the My Account Subscriptions tab, pause/resume/cancel actions, subscription history, and renewal invoice access — is fully free. Payment method management is a Pro feature.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Does it work with block-based My Account pages?</summary>
+      <div className="accordion-list__body"><p>Yes. The portal is compatible with both the classic WooCommerce My Account template and the newer block-based My Account experience.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I customise what customers see in the portal?</summary>
+      <div className="accordion-list__body"><p>Yes. Portal templates can be overridden in your theme using the standard WooCommerce template override system. Action hooks are also provided for adding custom content or removing specific elements.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can customers view and pay overdue renewal invoices?</summary>
+      <div className="accordion-list__body"><p>Yes. Pending and overdue renewal invoices appear in the subscription detail view with a direct pay-now link. Paying an overdue invoice immediately reactivates the subscription.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">REDUCE SUPPORT TICKETS</p>
+    <h2 className="final-cta__title">Let subscribers manage themselves</h2>
+    <p className="final-cta__subtitle">A self-service portal cuts support requests for common subscription actions by 40–60%. Free in the ArraySubs core — live on your store immediately after install.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

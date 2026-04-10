@@ -1,0 +1,153 @@
+---
+title: "WooCommerce Subscription Billing & Renewal Management"
+description: "Automated renewal invoicing, configurable grace periods, two-phase overdue handling, refund policies (full, partial, prorated, store credit), and retry-on-failure — all built in."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--billing-renewals"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Billing, Renewals &amp; Refunds</span></p>
+    <Badge variant="free" className="landing-hero__badge">Free + Pro</Badge>
+    <h1 className="landing-hero__title">Automated Billing, Smart Renewals &amp; Flexible Refund Policies</h1>
+    <p className="landing-hero__subtitle">Billing that runs itself — automated renewal invoicing, a two-phase grace period that keeps customers from falling through the cracks, and refund policies that fit your business model.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Automatic renewal invoices</Badge>
+      <Badge variant="free">Two-phase grace periods</Badge>
+      <Badge variant="default">Full, partial &amp; prorated refunds</Badge>
+      <Badge variant="pro">Auto-charge on renewal (Pro)</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="RENEWAL ENGINE"
+  title="Invoices generated automatically before each due date"
+  subtitle="Every renewal cycle produces a WooCommerce order linked to the parent subscription — compatible with your existing reporting, fulfillment, and tax workflows."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="clock" title="Configurable lead time">
+      Set how many hours before the due date a renewal invoice is generated — giving customers advance notice to ensure their payment method is ready before the charge runs.
+    </Card>
+    <Card icon="file-text" title="WooCommerce renewal orders">
+      Renewal invoices are standard WooCommerce orders. They inherit your product data, tax settings, and are visible in the normal order dashboard — no separate billing interface needed.
+    </Card>
+    <Card icon="link" title="Parent subscription link">
+      Each renewal order links directly to its parent subscription for easy navigation. Track every payment, missed renewal, and status change from one subscription detail screen.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="GRACE PERIODS"
+  title="Two-phase grace system gives customers every chance to pay"
+  subtitle="Missed a payment? The two-phase grace period keeps the subscription accessible while giving customers maximum opportunity to settle their renewal before cancellation."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="check-circle" title="Phase 1 — Active Grace">
+      After a missed payment, the subscription remains <strong>Active</strong> for a configurable number of days (default: 3). The customer retains full access and receives payment reminders.
+    </Card>
+    <Card icon="pause-circle" title="Phase 2 — On-Hold Grace">
+      If payment is still outstanding, the subscription moves to <strong>On-Hold</strong> for a second grace window (default: 7 days). Access is paused but the subscription is not yet cancelled.
+    </Card>
+    <Card icon="x-circle" title="Auto-cancellation">
+      After both grace windows expire with no payment, the subscription is automatically cancelled. At any point during either phase, paying the renewal invoice reactivates immediately.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="REFUND POLICIES"
+  title="Refund options that match how you run your business"
+  subtitle="Choose a default refund policy globally and override it per product. Multiple refund types give you the flexibility to match customer expectations and your revenue strategy."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="rotate-ccw" title="Full Refund">
+      Return the complete payment amount to the customer's original payment method. Available for any recent renewal order via the standard WooCommerce refund workflow.
+    </Card>
+    <Card icon="sliders" title="Partial Refund">
+      Specify a custom amount to refund — useful for resolving service issues with a goodwill credit while retaining a portion of the payment.
+    </Card>
+    <Card icon="calculator" title="Prorated Refund">
+      Calculate a refund based on the unused days remaining in the current billing cycle. Set it as the default policy to ensure fair refunds tied to actual service consumed.
+    </Card>
+    <Card icon="wallet" title="Store Credit Refund">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      Issue the refund amount as store credit instead of a payment reversal. Keeps revenue within your ecosystem while giving customers immediate access to a credit balance.
+    </Card>
+    <Card icon="ban" title="No Refund">
+      Configure a no-refund policy globally or per-product. Clearly communicated at checkout via the subscription terms displayed in the order summary.
+    </Card>
+    <Card icon="settings-2" title="Per-product override">
+      Set a global default refund policy and override it on individual subscription products — for example, strict no-refunds on digital access but prorated for physical box subscriptions.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="AUTOMATIC PAYMENTS"
+  title="Auto-charge on renewal with Pro"
+  subtitle="Upgrade to ArraySubs Pro to enable card-on-file automatic renewals via Stripe, PayPal, and Paddle — with retry on failure and customer-controlled auto-renew toggle."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="credit-card" title="Card-on-file renewals">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      Save the customer's payment method during initial checkout and automatically charge it on each renewal due date — no customer action needed.
+    </Card>
+    <Card icon="refresh-cw" title="Retry on failure">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      When an automatic charge fails, the system retries on a configurable schedule with exponential backoff — reducing involuntary churn from temporary card declines.
+    </Card>
+    <Card icon="toggle-right" title="Customer auto-renew toggle">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      Customers can enable or disable automatic renewal from the self-service portal. When auto-renew is off, renewal falls back to manual invoice with a pay-now link.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="FAQ"
+  title="Common questions about billing and renewals"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>How does renewal billing work?</summary>
+      <div className="accordion-list__body"><p>A renewal invoice (WooCommerce order) is generated before the due date based on your configured lead time. With manual billing (free), customers pay via a link in the renewal email. With automatic billing (Pro), the saved payment method is charged automatically.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>What happens if a payment fails?</summary>
+      <div className="accordion-list__body"><p>The two-phase grace period activates: the subscription stays Active for Phase 1 (configurable days), then moves to On-Hold for Phase 2. Payment at any point during either phase reactivates the subscription immediately. After both windows expire, the subscription cancels.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I offer prorated refunds?</summary>
+      <div className="accordion-list__body"><p>Yes. The prorated refund policy calculates the unused portion of the current billing cycle and returns that amount to the customer. You can set this as the default policy or apply it per product.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Is automatic billing (card-on-file) free?</summary>
+      <div className="accordion-list__body"><p>No. Automatic card-on-file charging is a Pro feature. Manual renewal invoicing — where customers pay via a link in their email — is fully free.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I configure grace period lengths?</summary>
+      <div className="accordion-list__body"><p>Yes. Both the Active grace window and the On-Hold grace window are configurable in days from the billing settings screen. You can also set global defaults and override them where needed.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">BILLING THAT RUNS ITSELF</p>
+    <h2 className="final-cta__title">Automate renewal billing from day one</h2>
+    <p className="final-cta__subtitle">Free manual invoicing included. Upgrade to Pro for automatic card-on-file renewals, retry logic, and store credit refunds.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

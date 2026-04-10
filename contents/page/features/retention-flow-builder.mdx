@@ -1,0 +1,151 @@
+---
+title: "WooCommerce Subscription Retention Flow — Reduce Churn & Save Cancellations"
+description: "Build cancellation intercept flows with discount offers, pause suggestions, downgrade options, and contact support — all before the cancel button. Free in ArraySubs."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--retention-flow"
+schema: |
+  {
+    "@type": "HowTo",
+    "name": "How to Reduce WooCommerce Subscription Churn with Retention Flows",
+    "step": [
+      { "@type": "HowToStep", "text": "Install ArraySubs and navigate to Retention Flow settings" },
+      { "@type": "HowToStep", "text": "Create cancellation reasons your customers might have" },
+      { "@type": "HowToStep", "text": "Map retention offers (discount, pause, downgrade, contact) to each reason" },
+      { "@type": "HowToStep", "text": "Enable the retention flow — it activates automatically in the customer portal" }
+    ]
+  }
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Retention Flow Builder</span></p>
+    <Badge variant="free" className="landing-hero__badge">Free feature · Blue Ocean</Badge>
+    <h1 className="landing-hero__title">Stop Subscribers from Cancelling with Smart Retention Flows</h1>
+    <p className="landing-hero__subtitle">The only WooCommerce subscription plugin with a built-in cancellation retention flow. Intercept cancellations, understand why customers leave, and offer the right incentive to keep them — automatically.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Cancellation intercept flow</Badge>
+      <Badge variant="default">Discount, pause, downgrade &amp; support offers</Badge>
+      <Badge variant="default">Churn reason collection</Badge>
+      <Badge variant="default">No competitor offers this</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="HOW IT WORKS"
+  title="Three steps between the cancel click and the cancellation"
+  subtitle="The retention flow activates automatically whenever a subscriber initiates a cancellation — no configuration needed beyond setting up your reasons and offers."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="mouse-pointer" title="Step 1 — Reason survey">
+      The customer selects their cancellation reason from your configured list. The reason data is saved for churn analytics and determines which retention offer appears next.
+    </Card>
+    <Card icon="gift" title="Step 2 — Retention offer">
+      Based on the selected reason, a targeted offer is shown — a discount, a pause suggestion, a cheaper plan, or a route to your support team. One offer, matched to the objection.
+    </Card>
+    <Card icon="check-circle" title="Step 3 — Accept or proceed">
+      The customer accepts the offer (subscription retained) or confirms the cancellation. The flow is respectful — customers can always complete their cancellation. No dark patterns.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="RETENTION OFFER TYPES"
+  title="Four offer types for four types of cancellation"
+  subtitle="Different customers cancel for different reasons. Map the right offer to each reason to maximise acceptance rates without offering discounts when they're not needed."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="percent" title="Discount Offer">
+      Offer a percentage or fixed-amount discount applied to the next renewal or for a set number of billing cycles. Effective for customers citing price as their primary concern.
+    </Card>
+    <Card icon="pause-circle" title="Pause Subscription">
+      Suggest pausing the subscription for a period instead of cancelling entirely. Effective for customers citing temporary circumstances — travel, budget pressure, or seasonal use.
+    </Card>
+    <Card icon="arrow-down-circle" title="Downgrade Plan">
+      Offer a cheaper subscription variant from the same product for customers who want to reduce spend but still see value. Preserves the relationship at a lower price point.
+    </Card>
+    <Card icon="headphones" title="Contact Support">
+      Route customers with service issues or complex objections directly to your support team. Keeps high-value customers in conversation rather than allowing a silent cancellation.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="CHURN DATA"
+  title="Know why your customers are cancelling"
+  subtitle="Every cancellation attempt — whether retained or completed — collects reason data you can act on to improve your product, pricing, and onboarding."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="bar-chart" title="Reason distribution">
+      See which cancellation reasons appear most frequently over time. Identify systematic issues versus one-off circumstances to prioritise product and pricing improvements.
+    </Card>
+    <Card icon="trending-up" title="Offer acceptance rates">
+      Track which retention offers are accepted most often and for which reasons. Optimise your offer mapping based on what actually keeps customers subscribed.
+    </Card>
+    <Card icon="activity" title="Analytics integration">
+      Cancellation reason data feeds directly into the ArraySubs Pro analytics dashboard — giving you churn analysis linked to your broader subscription revenue metrics.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="THE IMPACT"
+  title="Most subscription plugins let customers cancel silently"
+  subtitle="ArraySubs adds a retention checkpoint that no other WooCommerce subscription plugin provides."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="trending-down" title="Industry baseline churn">
+      Monthly churn of 5–7% is typical for subscription businesses. Reducing churn by even 1 percentage point can increase average customer lifetime value by 15–20% across your subscriber base.
+    </Card>
+    <Card icon="shield-check" title="Zero competition">
+      No other WooCommerce subscription plugin — free or paid — includes a built-in cancellation retention flow. ArraySubs is the only plugin that turns the cancel button into a retention opportunity.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="FAQ"
+  title="Common questions about retention flows"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Is the retention flow builder free?</summary>
+      <div className="accordion-list__body"><p>Yes — the retention flow builder is fully included in the free ArraySubs core. Create cancellation reasons, map retention offers, and collect churn data at no cost.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I offer different retention incentives for different cancellation reasons?</summary>
+      <div className="accordion-list__body"><p>Yes. Each cancellation reason can be mapped to a specific retention offer — discount, pause, downgrade, or support. A customer citing "too expensive" might see a discount offer, while one citing "not using it" might see a pause suggestion.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Does the flow force customers to stay?</summary>
+      <div className="accordion-list__body"><p>No. The retention flow shows one offer after the cancellation reason, then allows the customer to accept or continue with the cancellation. Customers always have a clear path to completing their cancellation — no dark patterns.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Do other WooCommerce subscription plugins have this?</summary>
+      <div className="accordion-list__body"><p>No. ArraySubs is the only WooCommerce subscription plugin — free or paid — that includes a built-in cancellation retention flow system. This feature has no equivalent in the WooCommerce plugin ecosystem.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Does it work with the customer portal?</summary>
+      <div className="accordion-list__body"><p>Yes. The retention flow is integrated directly into the subscription management portal. When a subscriber clicks cancel from their My Account Subscriptions page, the retention flow intercepts the request automatically.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">FREE — NO COMPETITOR HAS THIS</p>
+    <h2 className="final-cta__title">Turn every cancellation into a conversation</h2>
+    <p className="final-cta__subtitle">The only WooCommerce subscription plugin with a built-in retention flow. Free in the core. Active on day one.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

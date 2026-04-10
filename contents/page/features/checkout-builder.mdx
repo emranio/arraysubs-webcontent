@@ -1,0 +1,124 @@
+---
+title: "WooCommerce Subscription Checkout Builder — Customize the Buy Flow"
+description: "Customize the WooCommerce checkout for subscription products with conditional fields, order summaries, plan selectors, and subscription-aware layouts. Pro feature."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--checkout-builder"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Checkout Builder</span></p>
+    <Badge variant="pro" className="landing-hero__badge">Pro feature · Unique to ArraySubs</Badge>
+    <h1 className="landing-hero__title">Build a Subscription Checkout Experience That Converts</h1>
+    <p className="landing-hero__subtitle">The only WooCommerce subscription plugin with a built-in checkout builder. Customize subscription-specific fields, order summaries, and checkout layouts — designed for recurring product conversions.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="pro">Subscription-aware checkout layout</Badge>
+      <Badge variant="default">Custom fields with conditional logic</Badge>
+      <Badge variant="default">Plan summary &amp; trial display</Badge>
+      <Badge variant="default">Store API compatible</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="SUBSCRIPTION CHECKOUT ELEMENTS"
+  title="Display exactly what recurring buyers need to see"
+  subtitle="The checkout builder adds subscription-specific informational elements that reduce buyer hesitation and improve conversion rates for recurring products."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="list" title="Plan summary">
+      Show the selected subscription plan, recurring price, and billing cycle clearly in the order summary — ensuring buyers understand exactly what they're committing to before payment.
+    </Card>
+    <Card icon="gift" title="Trial information">
+      When a product includes a free trial, display the trial period length, the date of the first charge, and the recurring amount that will apply after trial expiry.
+    </Card>
+    <Card icon="tag" title="Signup fee breakdown">
+      Break down the total checkout amount into signup fee (one-time) and first recurring payment as separate line items — eliminating confusion about why the first order total differs from the recurring price.
+    </Card>
+    <Card icon="calendar" title="Next payment date">
+      Display when the next renewal will occur after the initial checkout. Reduces post-purchase "unexpected charge" complaints and builds trust at the point of conversion.
+    </Card>
+    <Card icon="file-text" title="Subscription terms">
+      Surface the recurring terms — billing interval, cancellation policy, and trial conditions — inline at checkout. Keeps customers informed and reduces disputes.
+    </Card>
+    <Card icon="layout" title="Mobile-optimised layouts">
+      Subscription checkout elements are responsive and designed to work cleanly on mobile — where a growing share of subscription sign-ups originate.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="CUSTOM FIELDS"
+  title="Collect the information each subscription needs at checkout"
+  subtitle="Add custom data collection fields to checkout for subscription products — with conditional logic so fields only appear when relevant."
+>
+  <Grid columns={2} gap="lg">
+    <Card icon="settings-2" title="Field types">
+      Add text inputs, dropdown selects, checkboxes, textareas, and date pickers to the checkout flow. Each field is configurable with a label, placeholder, and optional validation.
+    </Card>
+    <Card icon="toggle-right" title="Conditional visibility">
+      Set fields to appear only when specific products, plan variations, or cart conditions are met. Keep the checkout clean for most buyers while collecting targeted data for specific plans.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="STORE API COMPATIBILITY"
+  title="Works with both classic and block checkout"
+  subtitle="The checkout builder is built for the modern WooCommerce stack — compatible with the block-based checkout and Store API."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="blocks" title="Block checkout">
+      Fully compatible with the WooCommerce block-based checkout experience. Subscription elements render natively inside the block checkout layout.
+    </Card>
+    <Card icon="code" title="Store API">
+      Headless WooCommerce setups using the Store API get full access to subscription checkout data and custom field values through the standard API endpoints.
+    </Card>
+    <Card icon="monitor" title="Classic checkout">
+      Also fully compatible with the classic WooCommerce shortcode-based checkout for stores not yet using block checkout.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="FAQ"
+  title="Common questions about the checkout builder"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Is the checkout builder available in the free version?</summary>
+      <div className="accordion-list__body"><p>No. The checkout builder is a Pro feature. The standard WooCommerce checkout works with subscription products in the free version, but subscription-specific customisation requires an ArraySubs Pro licence.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Does it work with the WooCommerce block checkout?</summary>
+      <div className="accordion-list__body"><p>Yes. The checkout builder is fully compatible with the WooCommerce block-based checkout and the Store API. It works equally with classic shortcode-based checkout.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Can I add custom fields with conditional logic?</summary>
+      <div className="accordion-list__body"><p>Yes. Custom checkout fields support conditional visibility rules — fields can appear only for specific products, plan variations, or cart configurations. Field types include text, select, checkbox, textarea, and date.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Do other WooCommerce subscription plugins have a checkout builder?</summary>
+      <div className="accordion-list__body"><p>No. ArraySubs is the only WooCommerce subscription plugin with subscription-aware checkout customisation built in. Other plugins rely entirely on the default WooCommerce checkout with no subscription-specific elements.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">PRO FEATURE</p>
+    <h2 className="final-cta__title">A checkout built for subscription conversions</h2>
+    <p className="final-cta__subtitle">Subscription-specific order summaries, plan details, and custom fields — available with ArraySubs Pro. Try Pro free for 6 months.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>

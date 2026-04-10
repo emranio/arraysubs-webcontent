@@ -1,0 +1,160 @@
+---
+title: "WooCommerce Subscription Payment Gateways — Stripe, PayPal & More"
+description: "Stripe, PayPal, Paddle, and all WooCommerce-compatible gateways. Manual invoicing free, automatic card-on-file renewals with Pro. Store API & block checkout compatible."
+template: canvas
+publish: true
+bodyClass: "page-feature page-feature--payment-gateways"
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Payment Gateways</span></p>
+    <Badge variant="free" className="landing-hero__badge">Free + Pro</Badge>
+    <h1 className="landing-hero__title">Accept Recurring Payments with Any WooCommerce Gateway</h1>
+    <p className="landing-hero__subtitle">Works with any WooCommerce payment gateway — zero lock-in. Stripe, PayPal, Paddle, and every gateway your store already supports. Manual invoicing is free; automatic card-on-file renewals with Pro.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Any WooCommerce gateway for first payment</Badge>
+      <Badge variant="free">Manual renewal invoicing</Badge>
+      <Badge variant="pro">Auto-charge via Stripe, PayPal &amp; Paddle (Pro)</Badge>
+      <Badge variant="default">Store API &amp; block checkout compatible</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="HOW PAYMENT WORKS"
+  title="First payment flexible — renewals automatic or manual"
+  subtitle="Initial checkout accepts any active WooCommerce gateway. Renewals work two ways: manual invoices sent to customers (free), or auto-charge via tokenized gateways (Pro)."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="credit-card" title="Any gateway at checkout">
+      Customers complete their first subscription payment using any active WooCommerce payment gateway — Stripe, PayPal, Paddle, bank transfer, or any other method your store supports.
+    </Card>
+    <Card icon="receipt" title="Manual renewals (free)">
+      When a renewal is due, an invoice is generated and emailed to the customer with a pay-now link. The customer pays at their convenience — no card-on-file required.
+    </Card>
+    <Card icon="zap" title="Automatic renewals (Pro)">
+      With Pro, save the customer's payment method at first checkout and auto-charge it on each renewal date. Stripe, PayPal, and Paddle support full tokenization for automatic billing.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="GATEWAY SUPPORT"
+  title="Supported gateways and capabilities"
+  subtitle="Every WooCommerce-compatible gateway works for initial subscription payments and manual renewals. Automatic card-on-file renewals require Pro and a tokenization-capable gateway."
+>
+  <div className="table-scroll">
+    <table className="feature-comparison comparison-table">
+      <thead>
+        <tr>
+          <th>Gateway</th>
+          <th>First Payment</th>
+          <th>Manual Renewal (Free)</th>
+          <th>Auto Renewal (Pro)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Stripe</td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+        </tr>
+        <tr>
+          <td>PayPal</td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--included">Supported (tokenized)</span></td>
+        </tr>
+        <tr>
+          <td>Paddle</td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+        </tr>
+        <tr>
+          <td>Bank Transfer</td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--locked">Not available</span></td>
+        </tr>
+        <tr>
+          <td>Cash on Delivery</td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--locked">Not available</span></td>
+        </tr>
+        <tr>
+          <td>Any WooCommerce gateway</td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--included">Supported</span></td>
+          <td><span className="plan-status plan-status--partial">Depends on tokenization</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</Section>
+
+<Section
+  label="AUTOMATIC PAYMENTS PRO"
+  title="Card-on-file auto-renewals with Pro"
+  subtitle="ArraySubs Pro enables automatic recurring charges via tokenized payment methods — reducing involuntary churn and eliminating the manual renewal step for customers."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="lock" title="Saved payment methods">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      The customer's payment method is tokenized during the initial checkout and securely stored with the gateway. No card data stored on your server.
+    </Card>
+    <Card icon="refresh-cw" title="Retry on failure">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      When an automatic charge fails, the system retries on a configurable schedule. Customers receive email notification on each attempt with an option to update their payment method.
+    </Card>
+    <Card icon="toggle-left" title="Customer auto-renew toggle">
+      <Badge variant="pro" className="card__badge">Pro</Badge>
+      Customers can enable or disable auto-renewal from the self-service portal. When disabled, renewals fall back to manual invoice with pay-now link delivery.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="FAQ"
+  title="Common questions about payment gateways"
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item">
+      <summary>Can I use any payment gateway with ArraySubs?</summary>
+      <div className="accordion-list__body"><p>Yes. Any WooCommerce-compatible payment gateway works for initial subscription purchases and manual renewal invoices. Automatic card-on-file renewals require a tokenization-capable gateway (Stripe, PayPal, Paddle) and an ArraySubs Pro licence.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Is Stripe supported for automatic renewals?</summary>
+      <div className="accordion-list__body"><p>Yes. Stripe is fully supported with automatic card-on-file renewals when using ArraySubs Pro. The WooCommerce Stripe gateway handles tokenization during the initial checkout.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Is automatic billing (auto-charge) free?</summary>
+      <div className="accordion-list__body"><p>No. Automatic card-on-file renewal charging is a Pro feature. Manual renewal invoicing — where the customer pays via a link in their email — is fully free in the ArraySubs core.</p></div>
+    </details>
+    <details className="accordion-list__item">
+      <summary>Does it work with the WooCommerce block checkout?</summary>
+      <div className="accordion-list__body"><p>Yes. ArraySubs is fully compatible with the WooCommerce Store API and block-based checkout. Initial subscription purchases and payment tokenization work through the block checkout flow.</p></div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta container">
+    <p className="section__label">ZERO GATEWAY LOCK-IN</p>
+    <h2 className="final-cta__title">Use the gateways your customers already trust</h2>
+    <p className="final-cta__subtitle">Any WooCommerce gateway for first payment. Stripe, PayPal, and Paddle for automatic renewals with Pro. Free manual invoicing from day one.</p>
+    <Flex gap="md" justify="center" wrap className="final-cta__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+  </div>
+</Section>
