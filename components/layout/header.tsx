@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Icon } from '@/components/ui/icon';
 import siteConfig from '@/site.config.json';
 
@@ -74,6 +75,11 @@ function getSubmenuId(label: string) {
 }
 
 export function Header() {
+  const pathname = usePathname();
+  const hasMountedRef = useRef(false);
+  const [isDesktopViewport, setIsDesktopViewport] = useState(false);
+  const [desktopNavigationSuppressed, setDesktopNavigationSuppressed] = useState(false);
+  const [openDesktopSubmenu, setOpenDesktopSubmenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const navigation = siteConfig.navigation as {
@@ -93,10 +99,17 @@ export function Header() {
     const mediaQuery = window.matchMedia(DESKTOP_MEDIA_QUERY);
 
     const handleViewportChange = (event: MediaQueryList | MediaQueryListEvent) => {
+      setIsDesktopViewport(event.matches);
+
       if (event.matches) {
+        setDesktopNavigationSuppressed(false);
         setMobileMenuOpen(false);
         setOpenMobileSubmenu(null);
+        return;
       }
+
+      setDesktopNavigationSuppressed(false);
+      setOpenDesktopSubmenu(null);
     };
 
     handleViewportChange(mediaQuery);
@@ -109,9 +122,32 @@ export function Header() {
     };
   }, []);
 
-  const closeMobileNavigation = () => {
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      return;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      setMobileMenuOpen(false);
+      setOpenMobileSubmenu(null);
+      setOpenDesktopSubmenu(null);
+      setDesktopNavigationSuppressed(true);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, [pathname]);
+
+  const closeNavigation = () => {
     setMobileMenuOpen(false);
     setOpenMobileSubmenu(null);
+    setOpenDesktopSubmenu(null);
+
+    if (isDesktopViewport) {
+      setDesktopNavigationSuppressed(true);
+    }
   };
 
   const toggleMobileMenu = () => {
@@ -122,6 +158,8 @@ export function Header() {
         setOpenMobileSubmenu(null);
       }
 
+      setOpenDesktopSubmenu(null);
+
       return next;
     });
   };
@@ -130,13 +168,44 @@ export function Header() {
     setOpenMobileSubmenu((current) => (current === label ? null : label));
   };
 
+  const toggleMenuButton = (label: string) => {
+    if (isDesktopViewport) {
+      setDesktopNavigationSuppressed(false);
+      setOpenDesktopSubmenu((current) => (current === label ? null : label));
+      return;
+    }
+
+    toggleMobileSubmenu(label);
+  };
+
+  const openDesktopNavigation = (label: string, trigger: 'pointer' | 'focus' = 'pointer') => {
+    if (!isDesktopViewport || (trigger === 'pointer' && desktopNavigationSuppressed)) {
+      return;
+    }
+
+    if (trigger === 'focus') {
+      setDesktopNavigationSuppressed(false);
+    }
+
+    setOpenDesktopSubmenu(label);
+  };
+
+  const closeDesktopNavigation = () => {
+    setOpenDesktopSubmenu(null);
+  };
+
+  const releaseDesktopNavigation = () => {
+    setDesktopNavigationSuppressed(false);
+    setOpenDesktopSubmenu(null);
+  };
+
   const renderSubmenuLink = (link: NavigationLink, variant: 'card' | 'compact' = 'compact') => (
     <li key={link.href} className="header__submenu-item">
       <Link
         href={link.href}
         className={`header__submenu-link header__submenu-link--${variant}`}
         title={link.label}
-        onClick={closeMobileNavigation}
+        onClick={closeNavigation}
       >
         <span className="header__submenu-link-inner">
           <span className="header__submenu-icon" aria-hidden="true">
@@ -154,13 +223,17 @@ export function Header() {
   return (
     <header className="header">
       <div className="header__inner container">
-        <Link href="/" className="header__logo" title={siteConfig.siteName} onClick={closeMobileNavigation}>
+        <Link href="/" className="header__logo" title={siteConfig.siteName} onClick={closeNavigation}>
           <span className="header__logo-text">{siteConfig.siteName}</span>
         </Link>
 
-        <nav id="site-navigation" className={`header__nav ${mobileMenuOpen ? 'header__nav--open' : ''}`}>
+        <nav
+          id="site-navigation"
+          className={`header__nav ${mobileMenuOpen ? 'header__nav--open' : ''}`}
+          onMouseLeave={isDesktopViewport ? releaseDesktopNavigation : undefined}
+        >
           <div className="header__nav-header">
-            <Link href="/" className="header__logo" title={siteConfig.siteName} onClick={closeMobileNavigation}>
+            <Link href="/" className="header__logo" title={siteConfig.siteName} onClick={closeNavigation}>
               <span className="header__logo-text">{siteConfig.siteName}</span>
             </Link>
           </div>
@@ -170,12 +243,27 @@ export function Header() {
               const children = item.children ?? [];
               const hasSubmenu = sections.length > 0 || children.length > 0;
               const submenuId = getSubmenuId(item.label);
+              const isDesktopSubmenuOpen = openDesktopSubmenu === item.label;
               const isMobileSubmenuOpen = openMobileSubmenu === item.label;
 
               return (
                 <li
                   key={item.label}
-                  className={`header__menu-item ${hasSubmenu ? 'header__menu-item--has-children' : ''} ${sections.length > 0 ? 'header__menu-item--mega' : ''} ${isMobileSubmenuOpen ? 'header__menu-item--mobile-open' : ''}`}
+                  className={`header__menu-item ${hasSubmenu ? 'header__menu-item--has-children' : ''} ${sections.length > 0 ? 'header__menu-item--mega' : ''} ${isDesktopSubmenuOpen ? 'header__menu-item--desktop-open' : ''} ${isMobileSubmenuOpen ? 'header__menu-item--mobile-open' : ''}`}
+                  onMouseEnter={hasSubmenu ? () => openDesktopNavigation(item.label, 'pointer') : undefined}
+                  onMouseLeave={hasSubmenu ? closeDesktopNavigation : undefined}
+                  onFocusCapture={hasSubmenu ? () => openDesktopNavigation(item.label, 'focus') : undefined}
+                  onBlurCapture={
+                    hasSubmenu
+                      ? (event) => {
+                          const nextFocusTarget = event.relatedTarget;
+
+                          if (!(nextFocusTarget instanceof Node) || !event.currentTarget.contains(nextFocusTarget)) {
+                            closeDesktopNavigation();
+                          }
+                        }
+                      : undefined
+                  }
                 >
                   <div className="header__menu-link-row">
                     {item.href ? (
@@ -183,7 +271,7 @@ export function Header() {
                         href={item.href}
                         className="header__menu-link"
                         title={item.label}
-                        onClick={closeMobileNavigation}
+                        onClick={closeNavigation}
                       >
                         {item.label}
                       </Link>
@@ -192,8 +280,8 @@ export function Header() {
                         type="button"
                         className="header__menu-link header__menu-link--button"
                         title={item.label}
-                        onClick={() => toggleMobileSubmenu(item.label)}
-                        aria-expanded={hasSubmenu ? isMobileSubmenuOpen : undefined}
+                        onClick={() => toggleMenuButton(item.label)}
+                        aria-expanded={hasSubmenu ? (isDesktopViewport ? isDesktopSubmenuOpen : isMobileSubmenuOpen) : undefined}
                         aria-controls={hasSubmenu ? submenuId : undefined}
                       >
                         {item.label}
@@ -253,7 +341,7 @@ export function Header() {
                 href={item.href}
                 className={`btn btn--${item.variant} btn--sm`}
                 title={item.label}
-                onClick={closeMobileNavigation}
+                onClick={closeNavigation}
               >
                 {item.label}
               </Link>
