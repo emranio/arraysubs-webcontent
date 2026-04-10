@@ -1,0 +1,226 @@
+---
+title: "WooCommerce Recurring Service Subscriptions"
+description: "Set up recurring service billing on WooCommerce for retainers, maintenance plans, support packages, and ongoing service agreements with ArraySubs."
+template: canvas
+publish: true
+bodyClass: "page-use-case page-use-case--services"
+schema: |
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I bill recurring services with WooCommerce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ArraySubs can be used to bill recurring services such as retainers, maintenance plans, support packages, and ongoing client subscriptions through WooCommerce."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I offer monthly, quarterly, or annual service plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ArraySubs supports flexible billing intervals so service businesses can package recurring work into monthly, quarterly, or annual plans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do clients get a self-service portal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Clients can manage core subscription actions from their account area, which reduces manual administrative work for service teams."
+        }
+      }
+    ]
+  }
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/use-cases/">Use Cases</a> / <span>Service Businesses</span></p>
+    <Badge variant="new" className="landing-hero__badge">Use case • Service businesses</Badge>
+    <h1 className="landing-hero__title">Sell Recurring Services on WooCommerce with Subscription Billing</h1>
+    <p className="landing-hero__subtitle">ArraySubs gives service businesses a WooCommerce-native path to package retainers, maintenance plans, support subscriptions, and ongoing client work into clear recurring offers with predictable billing and better self-service.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Monthly, quarterly, or annual plans</Badge>
+      <Badge variant="default">Client self-service account actions</Badge>
+      <Badge variant="default">Straightforward retainer packaging</Badge>
+      <Badge variant="free">Retention flows for service churn</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="WHY SERVICE TEAMS USE THIS MODEL"
+  title="Recurring services are easier to sell when the offer is packaged clearly"
+  subtitle="Whether you run maintenance, consulting retainers, support plans, or recurring done-for-you work, subscription packaging makes the ongoing relationship easier to manage."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="briefcase" title="Package retainers cleanly">
+      Turn vague ongoing service promises into clearly named plans with defined renewal cadences and client expectations.
+    </Card>
+    <Card icon="repeat" title="Stabilize recurring revenue">
+      Monthly, quarterly, or annual billing gives you a stronger revenue base than one-off project work alone.
+    </Card>
+    <Card icon="circle-user" title="Reduce admin back-and-forth">
+      Let clients review and manage core subscription actions through their account so your team spends less time on manual billing coordination.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="ARRAYSUBS MODULES"
+  title="The feature stack that usually matters first for recurring services"
+  subtitle="Service businesses generally need clean packaging, billing reliability, and client-facing account clarity before anything else."
+>
+  <Grid columns={4} gap="md">
+    <FeatureCard badge="Free" icon="repeat" title="Subscriptions & Recurring Products" description="Create recurring service plans with flexible billing cycles, optional trials, or setup fees for onboarding-heavy work." />
+    <FeatureCard badge="Free + Pro" icon="receipt" title="Billing, Renewals & Refunds" description="Handle renewals and recurring billing behavior in a way that matches the service relationship you are selling." />
+    <FeatureCard badge="Free + Pro" icon="circle-user" title="Customer Portal" description="Give clients a self-service place to review and manage core account actions without manual coordination for every change." />
+    <FeatureCard badge="Free" icon="heart-handshake" title="Retention Flow Builder" description="Use cancellation-save logic when clients reconsider a service plan, especially if a downgrade or pause is more appropriate than a full exit." />
+  </Grid>
+
+  <Flex justify="center" gap="md" wrap className="section__cta">
+    <Button href="/features/" variant="primary">Explore All Features</Button>
+    <Button href="/contact/" variant="outline">Talk to the team</Button>
+  </Flex>
+</Section>
+
+<Section
+  label="PLAN IDEAS"
+  title="Common recurring service packages"
+  subtitle="You can keep this refreshingly simple and still look dramatically more professional to prospects."
+>
+  <Grid columns={3} gap="md">
+    <Card title="Maintenance plan" icon="settings-2">
+      <ul>
+        <li>Best for ongoing site, store, or plugin support</li>
+        <li>Usually monthly or quarterly billing</li>
+        <li>Easy to package around response windows and scope</li>
+        <li>Strong fit for recurring client relationships</li>
+      </ul>
+    </Card>
+    <Card title="Retainer" icon="briefcase">
+      <ul>
+        <li>Useful for consulting, strategy, or production support</li>
+        <li>Can combine recurring access with recurring advisory time</li>
+        <li>Works well with premium tiers</li>
+        <li>Often easiest to sell with annual anchors</li>
+      </ul>
+    </Card>
+    <Card title="Support tier" icon="users">
+      <ul>
+        <li>Bronze, Silver, and Gold style packaging</li>
+        <li>Clear differences in responsiveness or included service scope</li>
+        <li>Useful when clients grow into higher-touch relationships</li>
+        <li>Creates a natural upgrade ladder</li>
+      </ul>
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="SETUP BLUEPRINT"
+  title="How to launch recurring services with ArraySubs"
+  subtitle="This setup works especially well when you want to productize ongoing work without losing flexibility."
+>
+  <Grid columns={4} gap="md">
+    <Card title="1. Define the service plans" icon="repeat">
+      Create the subscription products that describe your retainer, maintenance, or support offers and their billing cadence.
+    </Card>
+    <Card title="2. Clarify what each tier includes" icon="list-checks">
+      Make the differences between plans obvious so prospects understand why they should choose one level over another.
+    </Card>
+    <Card title="3. Enable client self-service" icon="circle-user">
+      Give clients a clean account experience for the ongoing relationship instead of relying on ad hoc email coordination.
+    </Card>
+    <Card title="4. Protect renewal revenue" icon="heart-handshake">
+      Use retention logic when a client wants to leave, especially if a lighter plan or temporary pause could preserve the relationship.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="RELATED NEXT STEPS"
+  title="Useful paths for service-led offers"
+  subtitle="The next best page depends on whether you are validating the offer, pricing it, or preparing for retention."
+>
+  <Grid columns={3} gap="md">
+    <Card href="/features/" icon="arrow-right" title="Review feature coverage">
+      Browse the full feature hub to see how recurring billing, client account management, and retention tools combine into one workflow.
+    </Card>
+    <Card href="/article/reduce-woocommerce-subscription-churn/" icon="heart-handshake" title="Reduce churn on service plans">
+      Read the churn guide if your main concern is keeping recurring clients active longer and avoiding abrupt cancellations.
+    </Card>
+    <Card href="/plans/" icon="sparkles" title="Compare free vs Pro">
+      Use the pricing page to decide when the free core covers your service packaging and where Pro helps you scale the operation.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="FAQ"
+  title="Common recurring-service questions"
+  subtitle="The answers clients would probably ask too, if we are being honest."
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item" open>
+      <summary>Can I bill recurring services with WooCommerce?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. ArraySubs can package recurring service relationships such as retainers, maintenance plans, and ongoing support into subscription-based WooCommerce offers.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>Can I offer monthly, quarterly, or annual service plans?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. Flexible billing intervals make it practical to package service plans around the cadence that fits your delivery model.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>Do clients get a self-service portal?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. Clients can manage core subscription actions from their account area, reducing the manual admin burden on your team.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>What is the easiest way to validate the fit?</summary>
+      <div className="accordion-list__body">
+        <p>Start by modelling one recurring service package in the free core. If the structure feels right, use the pricing page to decide when Pro's broader automation and growth tooling becomes worthwhile.</p>
+      </div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta">
+    <span className="section__label">READY TO PRODUCTIZE?</span>
+    <h2 className="final-cta__title">Turn recurring services into a cleaner subscription offer</h2>
+    <p className="final-cta__body">ArraySubs helps service businesses package ongoing work more clearly, bill more predictably, and retain clients with less manual friction inside WooCommerce.</p>
+
+    <div className="final-cta__grid">
+      <div className="final-cta__card">
+        <Badge variant="default">Need a walkthrough?</Badge>
+        <h3>See the service model live</h3>
+        <p>Use the demo if you want help shaping maintenance tiers, retainers, or support packages into a cleaner recurring offer.</p>
+        <Button href="/plans/#live-demo" variant="primary" size="lg">Book a live demo</Button>
+      </div>
+
+      <div className="final-cta__card">
+        <Badge variant="free">Want to test hands-on?</Badge>
+        <h3>Start with the free core</h3>
+        <p>Create one recurring service package, validate the client account flow, and then decide whether Pro should join the party.</p>
+        <Button href="/download/" variant="outline" size="lg">Download Free</Button>
+      </div>
+    </div>
+  </div>
+</Section>

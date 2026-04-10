@@ -1,0 +1,241 @@
+---
+title: "Stripe for WooCommerce Subscriptions — Setup Guide & Auto-Renewal · ArraySubs"
+description: "Set up Stripe for WooCommerce recurring payments. Save cards on file, auto-renew subscriptions, and manage payment methods — setup guide included."
+template: canvas
+publish: true
+bodyClass: "page-gateway page-gateway--stripe"
+schema: |
+  {
+    "@type": "HowTo",
+    "name": "How to Set Up Stripe Subscriptions with ArraySubs",
+    "description": "A step-by-step guide to accepting recurring Stripe payments with WooCommerce and ArraySubs.",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Install WooCommerce Stripe Gateway", "text": "Install and activate the official WooCommerce Stripe Gateway plugin from WordPress.org." },
+      { "@type": "HowToStep", "position": 2, "name": "Connect your Stripe account", "text": "In WooCommerce → Settings → Payments, click Stripe and connect your account via OAuth." },
+      { "@type": "HowToStep", "position": 3, "name": "Enable saved payment methods", "text": "Under Stripe settings, turn on 'Save cards for subscriptions' to allow tokenized charging." },
+      { "@type": "HowToStep", "position": 4, "name": "Install ArraySubs", "text": "Install and activate ArraySubs from WordPress.org or upload the plugin manually." },
+      { "@type": "HowToStep", "position": 5, "name": "Create a subscription product", "text": "Go to Products → Add New, set the product type to Simple Subscription, and configure your billing cycle." },
+      { "@type": "HowToStep", "position": 6, "name": "Test checkout", "text": "Place a test order using Stripe's test card numbers to verify end-to-end subscription creation." }
+    ]
+  }
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero landing-hero--gateway container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <a href="/features/payment-gateways/">Payment Gateways</a> / <span>Stripe</span></p>
+    <Badge variant="default" className="landing-hero__badge">Most popular gateway for WooCommerce subscriptions</Badge>
+    <h1 className="landing-hero__title">Accept Stripe Subscription Payments with WooCommerce</h1>
+    <p className="landing-hero__subtitle">Connect Stripe to ArraySubs in minutes. Take first payments instantly. With ArraySubs Pro, Stripe auto-charges the saved card on every renewal date — no manual invoicing, no missed payments.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Free: manual renewal invoices via Stripe</Badge>
+      <Badge variant="pro">Pro: automatic card-on-file charging</Badge>
+      <Badge variant="default">SCA / 3D Secure compliant</Badge>
+      <Badge variant="default">Works with WooCommerce Stripe Gateway</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section>
+  <SectionHeading
+    label="WHAT YOU CAN DO"
+    title="Stripe + ArraySubs: everything subscription payments need"
+    subtitle="From first checkout to automatic renewal to mid-cycle payment method changes — ArraySubs handles the full Stripe subscription lifecycle inside WooCommerce."
+  />
+
+  <Grid columns={2} gap="md">
+    <Card icon="credit-card" title="Accept first payments via Stripe">
+      Every new subscriber pays through the standard WooCommerce Stripe checkout. Cards, Apple Pay, Google Pay, and Link are all supported out of the box.
+    </Card>
+    <Card icon="repeat" title="Auto-charge on renewal date (Pro)">
+      ArraySubs Pro stores the tokenized Stripe card and automatically charges it on each renewal date. No invoice emails, no waiting — immediate revenue on schedule.
+    </Card>
+    <Card icon="rotate-ccw" title="Payment retry on failure (Pro)">
+      If a charge fails, ArraySubs Pro triggers a configurable retry sequence and sends recovery emails before suspending the subscription, recovering more revenue automatically.
+    </Card>
+    <Card icon="user-cog" title="Customer updates card from portal">
+      Subscribers can update their saved Stripe payment method directly from the WooCommerce My Account portal — no admin involvement required.
+    </Card>
+    <Card icon="shield-check" title="SCA and 3D Secure compliance">
+      Stripe's 3D Secure flows are handled natively through the WooCommerce Stripe Gateway. ArraySubs orchestrates subscription creation after successful authentication.
+    </Card>
+    <Card icon="receipt" title="Prorated billing and plan changes">
+      When a subscriber upgrades or downgrades mid-cycle, ArraySubs calculates proration and processes the charge or credit through Stripe automatically.
+    </Card>
+  </Grid>
+</Section>
+
+<Section background="light">
+  <SectionHeading
+    label="SETUP GUIDE"
+    title="Set up Stripe subscriptions with ArraySubs in 6 steps"
+    subtitle="Follow this guide to go from a fresh WooCommerce install to accepting live Stripe subscription payments. Estimated time: under 15 minutes."
+  />
+
+  <div className="howto-steps">
+    <div className="howto-step">
+      <span className="howto-step__number">1</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Install the WooCommerce Stripe Gateway</h3>
+        <p>Go to <strong>Plugins → Add New</strong> in your WordPress dashboard and search for <strong>WooCommerce Stripe Gateway</strong>. Install and activate the official plugin. This is the bridge between WooCommerce orders and your Stripe account.</p>
+      </div>
+    </div>
+    <div className="howto-step">
+      <span className="howto-step__number">2</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Connect your Stripe account</h3>
+        <p>Navigate to <strong>WooCommerce → Settings → Payments</strong> and click on Stripe. Use the <strong>Connect with Stripe</strong> button to authenticate via OAuth. Your publishable and secret keys are linked automatically.</p>
+      </div>
+    </div>
+    <div className="howto-step">
+      <span className="howto-step__number">3</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Enable saved payment methods</h3>
+        <p>Inside the Stripe gateway settings, enable <strong>Save payment information to my account for future purchases</strong> (or equivalent option in your version). This is required for ArraySubs Pro to charge cards on renewal automatically.</p>
+      </div>
+    </div>
+    <div className="howto-step">
+      <span className="howto-step__number">4</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Install ArraySubs</h3>
+        <p>Go to <strong>Plugins → Add New</strong> and search for <strong>ArraySubs</strong>. Install and activate. The setup wizard will launch automatically — select your business type and follow the guided configuration.</p>
+      </div>
+    </div>
+    <div className="howto-step">
+      <span className="howto-step__number">5</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Create a subscription product</h3>
+        <p>Go to <strong>Products → Add New</strong>. In the Product Data panel, select <strong>Simple Subscription</strong> as the product type. Set your billing amount, billing cycle (weekly, monthly, yearly), and optionally configure a free trial or sign-up fee. Publish the product.</p>
+      </div>
+    </div>
+    <div className="howto-step">
+      <span className="howto-step__number">6</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Test checkout end-to-end</h3>
+        <p>Enable Stripe test mode and place a test order using card number <strong>4242 4242 4242 4242</strong>. Verify the subscription appears in <strong>ArraySubs → Subscriptions</strong> with an Active status and the correct next renewal date.</p>
+      </div>
+    </div>
+  </div>
+</Section>
+
+<Section>
+  <SectionHeading
+    label="FREE VS PRO"
+    title="Stripe works with both ArraySubs Free and Pro"
+    subtitle="Start accepting Stripe subscription payments at no cost, then unlock automatic recurring billing when you are ready to scale."
+  />
+
+  <div className="table-scroll">
+    <table className="feature-comparison">
+      <thead>
+        <tr>
+          <th>Capability</th>
+          <th>Free</th>
+          <th>Pro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Accept first payment via Stripe checkout</td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+        <tr>
+          <td>Send renewal invoice email to subscriber</td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+        <tr>
+          <td>Automatic card-on-file charging on renewal</td>
+          <td><span className="plan-status plan-status--locked">Not included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+        <tr>
+          <td>Payment retry sequence on failure</td>
+          <td><span className="plan-status plan-status--locked">Not included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+        <tr>
+          <td>Customer payment method management portal</td>
+          <td><span className="plan-status plan-status--partial">View saved card only</span></td>
+          <td><span className="plan-status plan-status--included">Full update and delete controls</span></td>
+        </tr>
+        <tr>
+          <td>Prorated mid-cycle charge via Stripe</td>
+          <td><span className="plan-status plan-status--locked">Not included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+        <tr>
+          <td>SCA / 3D Secure authentication</td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <Flex justify="center" gap="md" wrap className="section__cta">
+    <Button href="/plans/#get-pro" variant="primary" size="lg">Get Pro Free for 6 Months</Button>
+    <Button href="/plans/" variant="outline" size="lg">Compare Plans</Button>
+  </Flex>
+</Section>
+
+<Section background="light">
+  <SectionHeading
+    label="FAQ"
+    title="Stripe + ArraySubs — common questions"
+  />
+
+  <div className="faq-list">
+    <div className="faq-item">
+      <h3 className="faq-item__question">Does using Stripe with ArraySubs cost anything extra?</h3>
+      <p className="faq-item__answer">Stripe charges its standard transaction fees (typically 2.9% + 30¢ per successful card charge). ArraySubs itself does not add any additional transaction fees. The ArraySubs plugin is free; Pro is a flat annual subscription with no per-transaction markup.</p>
+    </div>
+    <div className="faq-item">
+      <h3 className="faq-item__question">Does ArraySubs support automatic Stripe renewals?</h3>
+      <p className="faq-item__answer">Yes — with ArraySubs Pro. The free tier sends renewal invoice emails and the customer pays manually. Pro stores the tokenized Stripe card and automatically charges it on the renewal date without any subscriber action required.</p>
+    </div>
+    <div className="faq-item">
+      <h3 className="faq-item__question">Does it handle 3D Secure and Strong Customer Authentication?</h3>
+      <p className="faq-item__answer">Yes. 3D Secure is handled by the WooCommerce Stripe Gateway plugin during initial checkout. ArraySubs creates the subscription after successful authentication. For automatic renewals, Stripe manages the off-session payment exemptions and SCA requirements automatically.</p>
+    </div>
+    <div className="faq-item">
+      <h3 className="faq-item__question">Can customers change their Stripe card?</h3>
+      <p className="faq-item__answer">Yes. Subscribers can update their stored payment method from the ArraySubs customer portal inside WooCommerce My Account. The new card is used on the next automatic renewal charge.</p>
+    </div>
+    <div className="faq-item">
+      <h3 className="faq-item__question">What happens if a Stripe renewal charge fails?</h3>
+      <p className="faq-item__answer">With ArraySubs Pro, a configurable retry sequence activates. ArraySubs retries the charge on a schedule, sends failed payment recovery emails to the subscriber, and suspends the subscription only after all retries are exhausted.</p>
+    </div>
+    <div className="faq-item">
+      <h3 className="faq-item__question">Which WooCommerce Stripe plugin should I use?</h3>
+      <p className="faq-item__answer">ArraySubs is tested and compatible with the official WooCommerce Stripe Gateway (by Automattic / WooCommerce). Install it from the WordPress.org plugin directory for full compatibility.</p>
+    </div>
+  </div>
+</Section>
+
+<Section>
+  <SectionHeading
+    label="OTHER GATEWAYS"
+    title="ArraySubs works with more than just Stripe"
+    subtitle="Your subscription store can accept payments via PayPal or Paddle, depending on your business model and geographic reach."
+  />
+
+  <Grid columns={2} gap="md">
+    <Card icon="arrow-right" title="ArraySubs with PayPal">
+      Accept PayPal for WooCommerce subscription payments. Free tier handles manual renewal invoicing; Pro adds automatic recurring charges via PayPal tokenization.
+      <Button href="/gateways/paypal/" variant="outline" size="sm">See PayPal integration →</Button>
+    </Card>
+    <Card icon="arrow-right" title="ArraySubs with Paddle">
+      Use Paddle as a merchant-of-record for global subscription payments. Paddle handles tax, VAT, and compliance so you do not have to.
+      <Button href="/gateways/paddle/" variant="outline" size="sm">See Paddle integration →</Button>
+    </Card>
+  </Grid>
+
+  <Flex justify="center" gap="md" wrap className="section__cta">
+    <Button href="/features/payment-gateways/" variant="outline" size="lg">All supported gateways →</Button>
+  </Flex>
+</Section>

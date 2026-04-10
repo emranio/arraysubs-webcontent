@@ -1,0 +1,318 @@
+---
+title: "Paddle for WooCommerce Subscriptions — Merchant of Record Payments · ArraySubs"
+description: "Accept subscription payments via Paddle's merchant-of-record model with WooCommerce. Paddle handles tax, compliance, and billing. Setup guide included."
+template: canvas
+publish: true
+bodyClass: "page-gateway page-gateway--paddle"
+schema: |
+  {
+    "@type": "HowTo",
+    "name": "How to Set Up Paddle Subscriptions with ArraySubs",
+    "description": "A step-by-step guide to accepting Paddle payments for WooCommerce subscriptions with ArraySubs.",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Create a Paddle seller account", "text": "Sign up at paddle.com and complete the merchant verification process." },
+      { "@type": "HowToStep", "position": 2, "name": "Install a WooCommerce Paddle plugin", "text": "Install a compatible WooCommerce Paddle gateway plugin from WordPress.org or Paddle's developer resources." },
+      { "@type": "HowToStep", "position": 3, "name": "Connect Paddle to WooCommerce", "text": "Enter your Paddle vendor ID and API key inside the gateway plugin settings." },
+      { "@type": "HowToStep", "position": 4, "name": "Install ArraySubs", "text": "Install and activate ArraySubs from WordPress.org or upload the plugin manually." },
+      { "@type": "HowToStep", "position": 5, "name": "Create a subscription product", "text": "Go to Products → Add New, set the product type to Simple Subscription, and configure your billing cycle." },
+      { "@type": "HowToStep", "position": 6, "name": "Test with Paddle sandbox", "text": "Enable Paddle sandbox mode and complete a test checkout to confirm subscription creation and renewal scheduling." }
+    ]
+  }
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero landing-hero--gateway container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <a href="/features/payment-gateways/">Payment Gateways</a> / <span>Paddle</span></p>
+    <Badge variant="default" className="landing-hero__badge">Merchant of record — Paddle handles tax and compliance</Badge>
+    <h1 className="landing-hero__title">Use Paddle as Your WooCommerce Subscription Payment Gateway</h1>
+    <p className="landing-hero__subtitle">Combine Paddle's merchant-of-record infrastructure with ArraySubs subscription management. Paddle takes responsibility for tax collection, VAT, and compliance in 200+ countries. ArraySubs handles all subscription logic inside WooCommerce — billing cycles, renewals, access control, and customer portal.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="default">Paddle is the merchant of record</Badge>
+      <Badge variant="default">Global tax and VAT handled automatically</Badge>
+      <Badge variant="free">Free: manual renewal invoicing</Badge>
+      <Badge variant="pro">Pro: automatic recurring charging</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section>
+  <SectionHeading
+    label="WHY PADDLE"
+    title="Paddle removes the operational burden of global subscription billing"
+    subtitle="For SaaS products, digital goods, and international subscription businesses, Paddle's merchant-of-record model solves problems that Stripe and PayPal require you to handle yourself."
+  />
+
+  <Grid columns={3} gap="md">
+    <Card icon="globe" title="Global tax handled for you">
+      Paddle collects and remits sales tax, VAT, and GST in every country where it is required. You receive revenue net of tax — no tax registration, filing, or compliance overhead.
+    </Card>
+    <Card icon="shield-check" title="Merchant of record protection">
+      Paddle is the legal merchant of record on every transaction. Buyer disputes, refunds, and chargebacks are handled by Paddle, not you — dramatically reducing operational risk.
+    </Card>
+    <Card icon="banknote" title="200+ countries, local payment methods">
+      Paddle supports cards, PayPal, and regional payment methods across 200+ countries. Buyers pay in their local currency without any extra configuration required on your end.
+    </Card>
+    <Card icon="repeat" title="Automatic subscription renewals (Pro)">
+      ArraySubs Pro orchestrates renewal scheduling inside WooCommerce while Paddle handles the recurring charge. Customers receive a seamless renewal experience with no interruption.
+    </Card>
+    <Card icon="receipt" title="Paddle-generated invoices">
+      Paddle issues VAT-compliant PDF invoices to subscribers automatically. This is particularly valuable for B2B customers who need invoice documentation for accounting purposes.
+    </Card>
+    <Card icon="settings-2" title="ArraySubs controls subscription logic">
+      Paddle handles the money. ArraySubs handles everything else — billing cycles, free trials, grace periods, pauses, cancellations, proration, access control, and analytics.
+    </Card>
+  </Grid>
+</Section>
+
+<Section background="light">
+  <SectionHeading
+    label="HOW IT WORKS"
+    title="Paddle payment flow with ArraySubs"
+    subtitle="Understanding the division of responsibilities between Paddle and ArraySubs helps you configure the integration correctly."
+  />
+
+  <Grid columns={2} gap="md">
+    <Card icon="credit-card" title="Initial subscription checkout">
+      The customer completes checkout through the Paddle overlay or inline checkout embedded in your WooCommerce store. Paddle processes the payment and notifies WooCommerce. ArraySubs creates the subscription record with the correct billing start date and renewal schedule.
+    </Card>
+    <Card icon="repeat" title="Automatic renewals">
+      On each renewal date, ArraySubs triggers a renewal charge through the Paddle gateway. Paddle processes the recurring payment, handles any payment authentication, and sends the tax-compliant receipt. ArraySubs updates the subscription status and extends access accordingly.
+    </Card>
+    <Card icon="rotate-ccw" title="Failed payment handling (Pro)">
+      If a Paddle charge fails, ArraySubs Pro initiates a retry sequence with subscriber recovery emails. The subscription enters a configurable grace period before suspension, giving customers time to update their payment method.
+    </Card>
+    <Card icon="user-cog" title="Customer portal">
+      Subscribers manage their subscription from the ArraySubs customer portal in WooCommerce My Account — pausing, cancelling, switching plans, and updating payment preferences. Paddle-specific payment method changes follow Paddle's update flow.
+    </Card>
+  </Grid>
+</Section>
+
+<Section>
+  <SectionHeading
+    label="SETUP GUIDE"
+    title="Set up Paddle subscriptions with ArraySubs in 6 steps"
+    subtitle="Follow this guide to go from a fresh install to accepting live Paddle subscription payments with automatic tax handling."
+  />
+
+  <div className="howto-steps">
+    <div className="howto-step">
+      <span className="howto-step__number">1</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Create a Paddle seller account</h3>
+        <p>Sign up at <strong>paddle.com</strong> and complete the merchant verification process. Paddle will review your business and product type as part of their onboarding. Once approved, you will receive access to your vendor ID and API key.</p>
+      </div>
+    </div>
+    <div className="howto-step">
+      <span className="howto-step__number">2</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Install a WooCommerce Paddle plugin</h3>
+        <p>Search the WordPress.org plugin directory or Paddle's developer documentation for a compatible WooCommerce Paddle gateway plugin. Install and activate it in your WordPress dashboard under <strong>Plugins → Add New</strong>.</p>
+      </div>
+    </div>
+    <div className="howto-step">
+      <span className="howto-step__number">3</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Connect Paddle to WooCommerce</h3>
+        <p>Go to <strong>WooCommerce → Settings → Payments</strong> and open the Paddle gateway settings. Enter your Paddle <strong>Vendor ID</strong> and <strong>API Key</strong> from your Paddle dashboard. Enable the gateway and save changes.</p>
+      </div>
+    </div>
+    <div className="howto-step">
+      <span className="howto-step__number">4</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Install ArraySubs</h3>
+        <p>Go to <strong>Plugins → Add New</strong> and search for <strong>ArraySubs</strong>. Install and activate. The setup wizard will launch and configure billing rules, email flows, and cancellation behavior based on your selected business type.</p>
+      </div>
+    </div>
+    <div className="howto-step">
+      <span className="howto-step__number">5</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Create a subscription product</h3>
+        <p>Go to <strong>Products → Add New</strong>. Set the product type to <strong>Simple Subscription</strong> and configure the price and billing interval — daily, weekly, monthly, or yearly. Optionally add a free trial or sign-up fee. Publish the product.</p>
+      </div>
+    </div>
+    <div className="howto-step">
+      <span className="howto-step__number">6</span>
+      <div className="howto-step__content">
+        <h3 className="howto-step__title">Test with Paddle sandbox</h3>
+        <p>Enable Paddle's sandbox environment in the gateway settings and complete a test subscription checkout. Confirm the subscription appears as Active in <strong>ArraySubs → Subscriptions</strong> with the correct next renewal date. Switch to live mode when ready.</p>
+      </div>
+    </div>
+  </div>
+</Section>
+
+<Section background="light">
+  <SectionHeading
+    label="PADDLE VS STRIPE VS PAYPAL"
+    title="When to choose Paddle over Stripe or PayPal"
+    subtitle="Each gateway serves different business needs. Here is how they compare for WooCommerce subscription stores."
+  />
+
+  <div className="table-scroll">
+    <table className="feature-comparison">
+      <thead>
+        <tr>
+          <th>Factor</th>
+          <th>Paddle</th>
+          <th>Stripe</th>
+          <th>PayPal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Merchant of record (Paddle pays taxes)</td>
+          <td><span className="plan-status plan-status--included">Yes</span></td>
+          <td><span className="plan-status plan-status--locked">No — you handle tax</span></td>
+          <td><span className="plan-status plan-status--locked">No — you handle tax</span></td>
+        </tr>
+        <tr>
+          <td>Global VAT and sales tax remittance</td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+          <td><span className="plan-status plan-status--partial">Requires Stripe Tax add-on</span></td>
+          <td><span className="plan-status plan-status--locked">Not handled</span></td>
+        </tr>
+        <tr>
+          <td>Buyer recognition and trust</td>
+          <td><span className="plan-status plan-status--partial">Strong among SaaS buyers</span></td>
+          <td><span className="plan-status plan-status--included">High with card payments</span></td>
+          <td><span className="plan-status plan-status--included">Very high — widely recognized</span></td>
+        </tr>
+        <tr>
+          <td>Best for product type</td>
+          <td><span className="plan-status plan-status--partial">Digital, SaaS, global</span></td>
+          <td><span className="plan-status plan-status--partial">General purpose</span></td>
+          <td><span className="plan-status plan-status--partial">Consumer and B2C</span></td>
+        </tr>
+        <tr>
+          <td>Chargeback liability</td>
+          <td><span className="plan-status plan-status--included">Paddle's responsibility</span></td>
+          <td><span className="plan-status plan-status--locked">Merchant's responsibility</span></td>
+          <td><span className="plan-status plan-status--locked">Merchant's responsibility</span></td>
+        </tr>
+        <tr>
+          <td>Automatic renewal with ArraySubs Pro</td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</Section>
+
+<Section>
+  <SectionHeading
+    label="FREE VS PRO"
+    title="Paddle works with both ArraySubs Free and Pro"
+    subtitle="Paddle's tax and compliance handling is available regardless of tier. Pro adds automatic recurring billing and payment retry."
+  />
+
+  <div className="table-scroll">
+    <table className="feature-comparison">
+      <thead>
+        <tr>
+          <th>Capability</th>
+          <th>Free</th>
+          <th>Pro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Accept first payment via Paddle checkout</td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+        <tr>
+          <td>Paddle handles VAT, tax, and compliance</td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+        <tr>
+          <td>Send renewal invoice email to subscriber</td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+        <tr>
+          <td>Automatic recurring charge on renewal date</td>
+          <td><span className="plan-status plan-status--locked">Not included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+        <tr>
+          <td>Payment retry sequence on failure</td>
+          <td><span className="plan-status plan-status--locked">Not included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+        <tr>
+          <td>Prorated mid-cycle plan change</td>
+          <td><span className="plan-status plan-status--locked">Not included</span></td>
+          <td><span className="plan-status plan-status--included">Included</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <Flex justify="center" gap="md" wrap className="section__cta">
+    <Button href="/plans/#get-pro" variant="primary" size="lg">Get Pro Free for 6 Months</Button>
+    <Button href="/plans/" variant="outline" size="lg">Compare Plans</Button>
+  </Flex>
+</Section>
+
+<Section background="light">
+  <SectionHeading
+    label="FAQ"
+    title="Paddle + ArraySubs — common questions"
+  />
+
+  <div className="faq-list">
+    <div className="faq-item">
+      <h3 className="faq-item__question">What does merchant of record mean in practice?</h3>
+      <p className="faq-item__answer">When Paddle is the merchant of record, Paddle is the legal seller on every transaction — not you. Paddle collects payment from the customer, handles chargebacks and refunds, remits applicable sales tax and VAT in each country, and pays out your revenue net of these deductions. This dramatically reduces your compliance overhead for international sales.</p>
+    </div>
+    <div className="faq-item">
+      <h3 className="faq-item__question">Do I still need to register for VAT or sales tax if I use Paddle?</h3>
+      <p className="faq-item__answer">No. Because Paddle is the merchant of record, Paddle handles tax registration and remittance on your behalf in every jurisdiction where tax is applicable. You receive your revenue net of tax — you do not file or remit separately.</p>
+    </div>
+    <div className="faq-item">
+      <h3 className="faq-item__question">Does ArraySubs support automatic Paddle renewals?</h3>
+      <p className="faq-item__answer">Yes — with ArraySubs Pro. The free tier sends renewal invoice emails and the subscriber pays via Paddle manually. Pro uses the stored payment method to automatically charge on each renewal date via the Paddle gateway.</p>
+    </div>
+    <div className="faq-item">
+      <h3 className="faq-item__question">Is Paddle suitable for physical product subscriptions?</h3>
+      <p className="faq-item__answer">Paddle is primarily designed for digital goods, SaaS products, and software. For physical product subscription boxes with shipping, Stripe or PayPal are typically a better fit since their merchant agreements are designed for physical goods.</p>
+    </div>
+    <div className="faq-item">
+      <h3 className="faq-item__question">Can customers update their Paddle payment method?</h3>
+      <p className="faq-item__answer">Yes. When a customer needs to update their payment method, the ArraySubs portal initiates Paddle's payment update flow. The updated method is used on the next automatic renewal.</p>
+    </div>
+    <div className="faq-item">
+      <h3 className="faq-item__question">Can I switch from Stripe or PayPal to Paddle later?</h3>
+      <p className="faq-item__answer">Yes. ArraySubs supports multiple gateways. You can add Paddle as an additional payment option while keeping Stripe or PayPal active. Existing subscriptions continue on their original gateway; new subscribers can choose from whichever gateways you have enabled at checkout.</p>
+    </div>
+  </div>
+</Section>
+
+<Section>
+  <SectionHeading
+    label="OTHER GATEWAYS"
+    title="Compare ArraySubs gateway integrations"
+    subtitle="Not sure Paddle is the right fit? See how Stripe and PayPal handle WooCommerce subscriptions."
+  />
+
+  <Grid columns={2} gap="md">
+    <Card icon="arrow-right" title="ArraySubs with Stripe">
+      The most widely used option for WooCommerce subscription stores. Automatic card-on-file charging, SCA compliance, and the richest payment method coverage with Pro.
+      <Button href="/gateways/stripe/" variant="outline" size="sm">See Stripe integration →</Button>
+    </Card>
+    <Card icon="arrow-right" title="ArraySubs with PayPal">
+      Accept PayPal for subscription payments. High buyer trust for consumer audiences. Manual invoicing free; automatic tokenized billing with Pro.
+      <Button href="/gateways/paypal/" variant="outline" size="sm">See PayPal integration →</Button>
+    </Card>
+  </Grid>
+
+  <Flex justify="center" gap="md" wrap className="section__cta">
+    <Button href="/features/payment-gateways/" variant="outline" size="lg">All supported gateways →</Button>
+  </Flex>
+</Section>

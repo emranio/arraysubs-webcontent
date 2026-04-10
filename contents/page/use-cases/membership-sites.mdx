@@ -1,0 +1,226 @@
+---
+title: "Build a Membership Site on WooCommerce"
+description: "Create a complete WooCommerce membership site with recurring billing, content restriction, member tiers, content dripping, self-service account management, and retention flows in ArraySubs."
+template: canvas
+publish: true
+bodyClass: "page-use-case page-use-case--membership"
+schema: |
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I build a membership site with WooCommerce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ArraySubs lets you combine recurring billing, content restriction, membership tiers, customer self-service, and retention workflows inside WooCommerce."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I drip content over time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ArraySubs includes content dripping capabilities so you can unlock content gradually based on a member's subscription timing or access rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do members get a self-service portal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Members can manage key subscription actions from their account area instead of opening a support ticket for every plan change or cancellation request."
+        }
+      }
+    ]
+  }
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/use-cases/">Use Cases</a> / <span>Membership Sites</span></p>
+    <Badge variant="new" className="landing-hero__badge">Use case • Membership sites</Badge>
+    <h1 className="landing-hero__title">Build a Complete Membership Site with WooCommerce</h1>
+    <p className="landing-hero__subtitle">ArraySubs combines recurring subscriptions, content restriction, content dripping, member self-service, and retention tooling in one WooCommerce-first setup. That means less plugin stack sprawl and a much cleaner path to a real membership business.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Content restriction and member tiers</Badge>
+      <Badge variant="free">Content dripping in the core flow</Badge>
+      <Badge variant="default">Self-service member portal</Badge>
+      <Badge variant="default">Retention workflows for churn reduction</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="WHAT MEMBERSHIP SITES NEED"
+  title="The core pieces of a durable membership business"
+  subtitle="Membership sites usually fail when billing, access, and customer management live in separate tools that never quite agree with each other."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="shield-check" title="Reliable access control">
+      Restrict pages, posts, downloads, URLs, or product experiences based on an active member relationship rather than loose manual processes.
+    </Card>
+    <Card icon="repeat" title="Tiered recurring revenue">
+      Package Silver, Gold, and Premium experiences with monthly or annual billing options that are easy for members to understand.
+    </Card>
+    <Card icon="circle-user" title="Member self-service">
+      Let people manage renewals, upgrades, downgrades, and cancellations from their account area instead of emailing your team for every request.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="ARRAYSUBS MODULES"
+  title="The feature stack that matters most for membership sites"
+  subtitle="This is the combination that turns WooCommerce from a store into a recurring-access business."
+>
+  <Grid columns={4} gap="md">
+    <FeatureCard badge="Free" icon="shield-check" title="Member Access Control" description="Restrict posts, pages, products, downloads, and URLs with rule-based logic that follows your subscription model." />
+    <FeatureCard badge="Free" icon="repeat" title="Subscriptions & Recurring Products" description="Create member plans with flexible billing intervals, trials, signup fees, and pricing structures that fit your community." />
+    <FeatureCard badge="Free + Pro" icon="circle-user" title="Customer Portal" description="Give members a self-service area for renewals, account actions, and plan management from inside WooCommerce My Account." />
+    <FeatureCard badge="Free" icon="heart-handshake" title="Retention Flow Builder" description="Catch cancellation intent before it becomes churn with save offers, pause suggestions, or alternative plan paths." />
+  </Grid>
+
+  <Flex justify="center" gap="md" wrap className="section__cta">
+    <Button href="/features/" variant="primary">Explore Feature Details</Button>
+    <Button href="/download/" variant="outline">Download Free</Button>
+  </Flex>
+</Section>
+
+<Section
+  label="PLAN IDEAS"
+  title="A simple tier structure that works for many memberships"
+  subtitle="Membership businesses often grow faster when the difference between plans is obvious, not over-engineered."
+>
+  <Grid columns={3} gap="md">
+    <Card title="Starter" icon="users">
+      <ul>
+        <li>Access to the core member library</li>
+        <li>Monthly and annual billing options</li>
+        <li>Basic community or resource access</li>
+        <li>Lowest-friction entry point</li>
+      </ul>
+    </Card>
+    <Card title="Growth" icon="rocket">
+      <ul>
+        <li>Everything in Starter</li>
+        <li>Premium content or deeper archives</li>
+        <li>Timed drips for onboarding and retention</li>
+        <li>Best option for most recurring members</li>
+      </ul>
+    </Card>
+    <Card title="VIP" icon="briefcase">
+      <ul>
+        <li>Top-tier content and premium access</li>
+        <li>Priority support or private community areas</li>
+        <li>More personalized member experience</li>
+        <li>Useful for superfans or high-touch offers</li>
+      </ul>
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="SETUP BLUEPRINT"
+  title="How to launch a membership site with ArraySubs"
+  subtitle="This sequence keeps the build practical and avoids premature complexity."
+>
+  <Grid columns={4} gap="md">
+    <Card title="1. Create member plans" icon="repeat">
+      Define the subscription products, billing intervals, and any trial or signup fee logic for each membership level.
+    </Card>
+    <Card title="2. Restrict your content" icon="lock">
+      Apply access rules to the pages, posts, downloads, or sections that should be member-only.
+    </Card>
+    <Card title="3. Add dripping where needed" icon="shuffle">
+      Release lessons, archives, or onboarding materials over time so new members are not overwhelmed on day one.
+    </Card>
+    <Card title="4. Enable retention" icon="heart-handshake">
+      Intercept cancellations with save offers, pauses, or alternative plans before a member leaves for good.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="RELATED PATHS"
+  title="Close cousins of the membership model"
+  subtitle="If your offer is more course-led or paywall-led, these pages will sharpen the fit."
+>
+  <Grid columns={3} gap="md">
+    <Card href="/use-cases/online-courses/" icon="graduation-cap" title="Online Courses">
+      Best when the member journey is built around lessons, modules, and staged course access.
+    </Card>
+    <Card href="/use-cases/content-publishers/" icon="newspaper" title="Content Publishers">
+      Best when the business model is a paywall for articles, videos, newsletters, or premium editorial content.
+    </Card>
+    <Card href="/plans/" icon="sparkles" title="See pricing paths">
+      Use the pricing page to decide whether the free core already covers your membership launch or whether Pro helps sooner.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="FAQ"
+  title="Membership-site questions merchants usually ask"
+  subtitle="The concise version, minus the marketing fog machine."
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item" open>
+      <summary>Can WooCommerce power a full membership site?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. With ArraySubs, WooCommerce can manage recurring billing, access restriction, staged access, customer self-service, and retention flows for a full membership business.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>Can I drip content over time?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. Content dripping is especially useful for onboarding sequences, premium libraries, and memberships where immediate full access would reduce perceived value or overwhelm new members.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>Can members manage their own subscriptions?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. The customer portal helps members review and manage core subscription actions without waiting for manual admin help.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>What is the fastest way to validate my setup?</summary>
+      <div className="accordion-list__body">
+        <p>Install the free core from the <a href="/download/">download page</a>, model one plan and one restriction rule, then expand once the member flow feels right.</p>
+      </div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta">
+    <span className="section__label">READY TO LAUNCH?</span>
+    <h2 className="final-cta__title">Build the membership experience — not a brittle plugin stack</h2>
+    <p className="final-cta__body">ArraySubs gives you the recurring billing, access control, and member retention foundation to launch a serious WooCommerce membership business with much less operational clutter.</p>
+
+    <div className="final-cta__grid">
+      <div className="final-cta__card">
+        <Badge variant="default">Want a walkthrough?</Badge>
+        <h3>See the member flow live</h3>
+        <p>Ideal when you want help mapping tiers, restrictions, drips, and retention behavior before launching on a real audience.</p>
+        <Button href="/plans/#live-demo" variant="primary" size="lg">Book a live demo</Button>
+      </div>
+
+      <div className="final-cta__card">
+        <Badge variant="free">Prefer hands-on first?</Badge>
+        <h3>Start with the free core</h3>
+        <p>Install ArraySubs Free, create your first member plan, and validate the access flow before deciding whether Pro is necessary for your next stage.</p>
+        <Button href="/download/" variant="outline" size="lg">Download Free</Button>
+      </div>
+    </div>
+  </div>
+</Section>

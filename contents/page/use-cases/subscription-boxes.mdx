@@ -1,0 +1,226 @@
+---
+title: "WooCommerce Subscription Boxes"
+description: "Launch a WooCommerce subscription box business with recurring billing, customer self-service, billing recovery, and churn reduction workflows powered by ArraySubs."
+template: canvas
+publish: true
+bodyClass: "page-use-case page-use-case--boxes"
+schema: |
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can ArraySubs handle physical subscription boxes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ArraySubs supports recurring billing for physical-product subscription boxes and pairs with WooCommerce shipping, account management, and renewal workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can customers pause or skip a box cycle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ArraySubs includes customer self-service controls and retention workflows that help merchants offer flexible alternatives before a cancellation happens."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work for monthly or quarterly boxes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Subscription products can be configured with billing cycles that match monthly, quarterly, or other recurring delivery schedules."
+        }
+      }
+    ]
+  }
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/use-cases/">Use Cases</a> / <span>Subscription Boxes</span></p>
+    <Badge variant="new" className="landing-hero__badge">Use case • Subscription boxes</Badge>
+    <h1 className="landing-hero__title">Run a Subscription Box Business on WooCommerce</h1>
+    <p className="landing-hero__subtitle">ArraySubs helps physical-product subscription businesses manage recurring billing, flexible customer actions, account updates, and churn reduction — all inside a WooCommerce-native flow that plays nicely with shipping and fulfillment operations.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Monthly or quarterly billing cycles</Badge>
+      <Badge variant="default">Customer account management</Badge>
+      <Badge variant="default">Failed-payment recovery foundations</Badge>
+      <Badge variant="free">Retention flows for cancellation saves</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="WHY BOX BRANDS USE SUBSCRIPTIONS"
+  title="Predictable revenue matters even more when inventory is involved"
+  subtitle="Subscription boxes are not just a billing model — they are an operations model, and flexibility is what keeps them healthy."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="package" title="Batch recurring orders">
+      Use repeatable billing intervals that align with how often you ship, pack, and replenish the box contents.
+    </Card>
+    <Card icon="circle-user" title="Give subscribers breathing room">
+      Customers are less likely to churn when they can manage key subscription actions from their account area instead of hard-cancelling immediately.
+    </Card>
+    <Card icon="heart-handshake" title="Save subscribers before they leave">
+      Cancellation interception is particularly useful for box businesses where pauses, skips, or alternative offers can rescue revenue.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="ARRAYSUBS MODULES"
+  title="The capabilities subscription-box operators usually need first"
+  subtitle="This use case is less about feature fireworks and more about keeping operations stable."
+>
+  <Grid columns={4} gap="md">
+    <FeatureCard badge="Free" icon="repeat" title="Subscriptions & Recurring Products" description="Create simple or variable subscription products with billing cycles that match your fulfillment cadence." />
+    <FeatureCard badge="Free + Pro" icon="receipt" title="Billing, Renewals & Refunds" description="Manage renewal flows, recovery behavior, and the billing edge cases that appear when physical shipments and payment timing collide." />
+    <FeatureCard badge="Free + Pro" icon="circle-user" title="Customer Portal" description="Let subscribers review and manage core subscription actions from their account page instead of relying on support every month." />
+    <FeatureCard badge="Free" icon="heart-handshake" title="Retention Flow Builder" description="Suggest pauses, softer alternatives, or support intervention when a customer heads for the cancel button." />
+  </Grid>
+
+  <Flex justify="center" gap="md" wrap className="section__cta">
+    <Button href="/features/" variant="primary">View Feature Coverage</Button>
+    <Button href="/plans/" variant="outline">See Pricing Paths</Button>
+  </Flex>
+</Section>
+
+<Section
+  label="BOX MODEL EXAMPLES"
+  title="Three common packaging strategies"
+  subtitle="The right billing interval depends on your logistics, margins, and how often customers expect delight to land on their doorstep."
+>
+  <Grid columns={3} gap="md">
+    <Card title="Monthly box" icon="package">
+      <ul>
+        <li>Best for consumables and habitual products</li>
+        <li>Highest recurring cadence</li>
+        <li>Needs strong skip or pause handling</li>
+        <li>Works well with frequent retention prompts</li>
+      </ul>
+    </Card>
+    <Card title="Quarterly box" icon="repeat">
+      <ul>
+        <li>Great for curation-led experiences</li>
+        <li>Lower operational pressure than monthly shipping</li>
+        <li>Can support higher perceived box value</li>
+        <li>Often easier for gifting models</li>
+      </ul>
+    </Card>
+    <Card title="Premium tiered box" icon="sparkles">
+      <ul>
+        <li>Different product mixes or value levels</li>
+        <li>Clear upgrade path for loyal subscribers</li>
+        <li>Useful when you want premium add-on positioning</li>
+        <li>Pairs well with annual prepaid offers</li>
+      </ul>
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="SETUP BLUEPRINT"
+  title="How to launch a subscription box with ArraySubs"
+  subtitle="A simple sequence beats a heroic configuration marathon every time."
+>
+  <Grid columns={4} gap="md">
+    <Card title="1. Define the box product" icon="package">
+      Create the subscription product and set the renewal interval that matches how often you want to ship.
+    </Card>
+    <Card title="2. Align billing and fulfillment" icon="receipt">
+      Make sure the renewal rhythm gives your team enough time to process orders, stock inventory, and coordinate delivery expectations.
+    </Card>
+    <Card title="3. Enable customer controls" icon="circle-user">
+      Give subscribers the ability to manage key actions from their account area so support does not become the bottleneck.
+    </Card>
+    <Card title="4. Add churn recovery" icon="heart-handshake">
+      Intercept cancellations with pause, skip, or support-driven alternatives that preserve future revenue.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="RELATED NEXT STEPS"
+  title="Useful resources for box businesses"
+  subtitle="A little operational clarity now prevents a lot of spreadsheet sighing later."
+>
+  <Grid columns={3} gap="md">
+    <Card href="/article/reduce-woocommerce-subscription-churn/" icon="heart-handshake" title="Reduce churn">
+      Learn the retention principles that matter most when customers cancel because of timing, budget, or box fatigue.
+    </Card>
+    <Card href="/features/" icon="arrow-right" title="Review feature coverage">
+      See the billing, portal, and retention modules that support the day-to-day realities of recurring physical deliveries.
+    </Card>
+    <Card href="/plans/" icon="sparkles" title="Validate fit with pricing">
+      Compare free and Pro paths to see when deeper billing automation or advanced growth tools start to matter.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="FAQ"
+  title="Common subscription-box questions"
+  subtitle="The short operational answers merchants usually want first."
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item" open>
+      <summary>Can ArraySubs handle physical subscription boxes?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. ArraySubs supports recurring billing for physical-product subscriptions and works alongside WooCommerce shipping and order workflows.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>Can customers pause or skip instead of cancelling?</summary>
+      <div className="accordion-list__body">
+        <p>That is a strong use case for the customer portal and retention flows. Giving customers a softer option can preserve revenue and reduce total churn.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>Does this work for monthly and quarterly boxes?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. You can configure billing intervals that match the cadence of your box model, whether that is monthly, quarterly, or another recurring pattern.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>What should I optimize first after launch?</summary>
+      <div className="accordion-list__body">
+        <p>Usually the biggest wins come from reducing involuntary and voluntary churn: smoother account management, better billing recovery, and thoughtful cancellation-save flows.</p>
+      </div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta">
+    <span className="section__label">READY TO SHIP?</span>
+    <h2 className="final-cta__title">Launch a subscription box flow your customers can actually live with</h2>
+    <p className="final-cta__body">ArraySubs helps box brands balance recurring revenue with customer flexibility, so billing and retention become assets instead of recurring headaches.</p>
+
+    <div className="final-cta__grid">
+      <div className="final-cta__card">
+        <Badge variant="default">Need to see it first?</Badge>
+        <h3>Walk through the model live</h3>
+        <p>Use the live demo if you want help mapping billing cadence, portal actions, and retention choices to your exact box workflow.</p>
+        <Button href="/plans/#live-demo" variant="primary" size="lg">Book a live demo</Button>
+      </div>
+
+      <div className="final-cta__card">
+        <Badge variant="free">Prefer to test hands-on?</Badge>
+        <h3>Start with the free core</h3>
+        <p>Install ArraySubs Free, model your first box subscription, and confirm the customer and billing flow before adding Pro-only growth tooling.</p>
+        <Button href="/download/" variant="outline" size="lg">Download Free</Button>
+      </div>
+    </div>
+  </div>
+</Section>

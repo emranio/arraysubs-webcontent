@@ -49,6 +49,10 @@
                         "href": "/features/"
                     },
                     {
+                        "label": "Use Cases",
+                        "href": "/use-cases/"
+                    },
+                    {
                         "label": "Pricing",
                         "href": "/plans/"
                     },

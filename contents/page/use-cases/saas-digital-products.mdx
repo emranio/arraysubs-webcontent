@@ -1,0 +1,226 @@
+---
+title: "WooCommerce Subscriptions for SaaS & Digital Products"
+description: "Use WooCommerce as your SaaS billing engine with tiered plans, free trials, feature-gated access, customer self-service, and retention workflows powered by ArraySubs."
+template: canvas
+publish: true
+bodyClass: "page-use-case page-use-case--saas"
+schema: |
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can WooCommerce handle SaaS subscriptions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. With ArraySubs, WooCommerce can run SaaS-style recurring billing, tiered plans, free trials, customer self-service, and plan-based access control for digital products."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I offer monthly and yearly plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ArraySubs supports flexible billing intervals so you can offer monthly and annual options from the same WooCommerce subscription setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ArraySubs support feature-based SaaS plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The free core covers access control foundations, and ArraySubs Pro adds Feature Manager for clearer per-plan entitlements and feature packaging."
+        }
+      }
+    ]
+  }
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/use-cases/">Use Cases</a> / <span>SaaS &amp; Digital Products</span></p>
+    <Badge variant="new" className="landing-hero__badge">Use case • SaaS &amp; digital products</Badge>
+    <h1 className="landing-hero__title">Sell SaaS &amp; Digital Products on WooCommerce with Recurring Billing</h1>
+    <p className="landing-hero__subtitle">ArraySubs lets WooCommerce behave like a practical SaaS billing engine: tiered plans, free trials, plan changes, feature-gated access, and customer self-service — without stitching together a small museum of plugins.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Tiered subscription products</Badge>
+      <Badge variant="default">Monthly and annual billing</Badge>
+      <Badge variant="default">Customer-managed plan changes</Badge>
+      <Badge variant="pro">Feature entitlements and credit models</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="WHY THIS MODEL WORKS"
+  title="WooCommerce can do more than one-time software sales"
+  subtitle="If your product is sold through plans, access levels, or recurring usage value, ArraySubs gives you the subscription primitives that matter most."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="repeat" title="Package clear plans">
+      Offer Basic, Pro, and Enterprise tiers with monthly or annual billing, introductory free trials, and optional setup fees for onboarding-heavy products.
+    </Card>
+    <Card icon="shield-check" title="Gate access by plan">
+      Restrict premium downloads, documentation tiers, account areas, or product experiences based on the subscriber state tied to each plan.
+    </Card>
+    <Card icon="circle-user" title="Reduce support load">
+      Give customers a self-service place to review billing, manage renewals, and handle common plan actions without involving your support team.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="ARRAYSUBS MODULES"
+  title="The features SaaS teams usually care about first"
+  subtitle="Start with the core billing and access pieces, then layer on Pro where your pricing model becomes more sophisticated."
+>
+  <Grid columns={4} gap="md">
+    <FeatureCard badge="Free" icon="repeat" title="Subscriptions & Recurring Products" description="Create tiered plans, billing cycles, trials, signup fees, and renewal rules that match how you monetize software." />
+    <FeatureCard badge="Free" icon="shield-check" title="Member Access Control" description="Gate content, downloads, and member-only resources according to the plan a customer is actively subscribed to." />
+    <FeatureCard badge="Pro" icon="list-checks" title="Feature Manager" description="Show and manage plan entitlements more clearly when your product uses seat, quota, or toggle-style differences between tiers." />
+    <FeatureCard badge="Pro" icon="wallet" title="Store Credit" description="Model prepaid credits, top-ups, or recovery offers when part of your revenue model behaves more like usage than flat access." />
+  </Grid>
+
+  <Flex justify="center" gap="md" wrap className="section__cta">
+    <Button href="/features/" variant="primary">See Feature Coverage</Button>
+    <Button href="/plans/" variant="outline">Compare Free vs Pro</Button>
+  </Flex>
+</Section>
+
+<Section
+  label="EXAMPLE PLAN SETUP"
+  title="A practical three-tier SaaS structure"
+  subtitle="You do not need a wildly complex pricing matrix to launch well; you need a plan structure customers understand and operators can manage."
+>
+  <Grid columns={3} gap="md">
+    <Card title="Basic" icon="monitor">
+      <ul>
+        <li>Monthly and annual billing options</li>
+        <li>Core product access</li>
+        <li>Starter documentation or download tier</li>
+        <li>Self-service renewals through My Account</li>
+      </ul>
+    </Card>
+    <Card title="Pro" icon="rocket">
+      <ul>
+        <li>Everything in Basic</li>
+        <li>Higher usage or richer feature access</li>
+        <li>Priority support or premium member area access</li>
+        <li>Most likely candidate for annual-plan upsells</li>
+      </ul>
+    </Card>
+    <Card title="Enterprise" icon="briefcase">
+      <ul>
+        <li>Top-tier plan packaging in WooCommerce</li>
+        <li>Optional onboarding fee for setup-heavy deployments</li>
+        <li>Tailored access logic or entitlements</li>
+        <li>Live-demo handoff through the pricing page CTA</li>
+      </ul>
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="SETUP BLUEPRINT"
+  title="How to launch a SaaS billing flow with ArraySubs"
+  subtitle="This is the fast, no-theater version of the setup sequence."
+>
+  <Grid columns={4} gap="md">
+    <Card title="1. Create the plans" icon="repeat">
+      Build your subscription products and define the billing intervals, trials, and any onboarding fees you need.
+    </Card>
+    <Card title="2. Map access rules" icon="shield-check">
+      Connect subscriber state to restricted resources such as premium downloads, private pages, or support-only content.
+    </Card>
+    <Card title="3. Enable self-service" icon="circle-user">
+      Configure the customer portal so users can manage renewals and plan actions without waiting on your team.
+    </Card>
+    <Card title="4. Add retention logic" icon="heart-handshake">
+      Catch cancellations with save offers, downgrade suggestions, or support redirection before churn becomes permanent.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="RELATED NEXT STEPS"
+  title="Continue with setup, proof, or pricing"
+  subtitle="Pick the next resource that matches whether you are still learning, validating, or buying."
+>
+  <Grid columns={3} gap="md">
+    <Card href="/article/how-to-set-up-woocommerce-subscriptions/" icon="wand-2" title="Read the setup guide">
+      Start with the practical walkthrough, then adapt the product and access rules to your own SaaS tier structure.
+    </Card>
+    <Card href="/features/" icon="arrow-right" title="Review feature coverage">
+      Browse the feature hub to see how billing, access, portal, retention, and growth tools work together.
+    </Card>
+    <Card href="/plans/" icon="sparkles" title="See free vs Pro paths">
+      Use pricing to confirm whether your model needs only the free core or Pro capabilities like Feature Manager and Store Credit.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="FAQ"
+  title="Common SaaS billing questions"
+  subtitle="Short answers, because product teams already have enough tabs open."
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item" open>
+      <summary>Can WooCommerce really be used for SaaS billing?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. ArraySubs gives WooCommerce the recurring billing, access control, self-service, and retention workflows that make a SaaS-style setup practical for many digital products.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>Can I offer both monthly and annual plans?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. A common pattern is to create matched monthly and annual subscription options for each plan tier, then steer annual buyers with stronger value positioning.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>What if my product also uses usage credits?</summary>
+      <div className="accordion-list__body">
+        <p>That is where ArraySubs Pro becomes especially useful. Store Credit can support credits-style models, while Feature Manager helps clarify what each plan includes.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>How do I reduce cancellations for SaaS plans?</summary>
+      <div className="accordion-list__body">
+        <p>Use cancellation interception, downgrade paths, and recovery offers. If you want more detail, the <a href="/article/reduce-woocommerce-subscription-churn/">subscription churn article</a> is the best companion read.</p>
+      </div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta">
+    <span className="section__label">READY TO BUILD?</span>
+    <h2 className="final-cta__title">Turn WooCommerce into a cleaner SaaS billing engine</h2>
+    <p className="final-cta__body">If your product already thinks in plans, access, and recurring value, ArraySubs gives you the WooCommerce-native path to launch faster and grow with less stack sprawl.</p>
+
+    <div className="final-cta__grid">
+      <div className="final-cta__card">
+        <Badge variant="default">Need validation?</Badge>
+        <h3>See the workflow in a live demo</h3>
+        <p>Best when you want to sanity-check plan packaging, customer portal flows, or how Pro features fit your monetization model.</p>
+        <Button href="/plans/#live-demo" variant="primary" size="lg">Book a live demo</Button>
+      </div>
+
+      <div className="final-cta__card">
+        <Badge variant="pro">Want the growth layer?</Badge>
+        <h3>Claim early adopter Pro access</h3>
+        <p>Get deeper billing automation, clearer entitlements, richer reporting, and more room to shape your SaaS pricing model as it evolves.</p>
+        <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+      </div>
+    </div>
+  </div>
+</Section>

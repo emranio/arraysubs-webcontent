@@ -1,0 +1,226 @@
+---
+title: "WooCommerce Online Course Subscriptions"
+description: "Sell online courses on WooCommerce with subscription access, content dripping, tiered student plans, self-service account management, and retention flows powered by ArraySubs."
+template: canvas
+publish: true
+bodyClass: "page-use-case page-use-case--courses"
+schema: |
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I sell courses with subscription access on WooCommerce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ArraySubs supports recurring course access on WooCommerce with billing plans, content dripping, student self-service, and gated access rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I drip course modules over time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ArraySubs can release content gradually so students unlock lessons and materials according to your chosen access schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a full LMS for basic subscription courses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not always. For many simple or membership-style course businesses, ArraySubs can handle recurring billing and access control without requiring a heavy LMS stack."
+        }
+      }
+    ]
+  }
+---
+
+<Section background="light" fullWidth>
+  <div className="landing-hero container">
+    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/use-cases/">Use Cases</a> / <span>Online Courses</span></p>
+    <Badge variant="new" className="landing-hero__badge">Use case • Online courses</Badge>
+    <h1 className="landing-hero__title">Sell Online Courses with Subscription Access on WooCommerce</h1>
+    <p className="landing-hero__subtitle">ArraySubs is a strong fit for course businesses that need recurring billing, student self-service, content dripping, and tiered access without turning the setup into a sprawling LMS expedition.</p>
+    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
+      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
+      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
+    </Flex>
+    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
+      <Badge variant="free">Tiered course-access plans</Badge>
+      <Badge variant="free">Timed content release</Badge>
+      <Badge variant="default">Student self-service in My Account</Badge>
+      <Badge variant="default">Retention flows for subscriber churn</Badge>
+    </Flex>
+  </div>
+</Section>
+
+<Section
+  label="WHY COURSE CREATORS USE THIS MODEL"
+  title="Subscriptions can smooth revenue and improve learner retention"
+  subtitle="Instead of selling one-off access only, course businesses can use subscriptions to keep students progressing, renewing, and upgrading."
+>
+  <Grid columns={3} gap="md">
+    <Card icon="graduation-cap" title="Release content in stages">
+      Drip modules or unlock lesson groups over time so students stay focused and your course library keeps its ongoing value.
+    </Card>
+    <Card icon="repeat" title="Offer clean pricing tiers">
+      Package beginner, growth, and premium access levels with monthly or annual billing that matches how you want students to commit.
+    </Card>
+    <Card icon="circle-user" title="Keep support lighter">
+      Let students manage renewals and core account actions from their account area instead of sending manual access requests every week.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="ARRAYSUBS MODULES"
+  title="The course-focused feature stack"
+  subtitle="Course businesses usually care most about recurring access, staged release, and a smoother student account experience."
+>
+  <Grid columns={4} gap="md">
+    <FeatureCard badge="Free" icon="repeat" title="Subscriptions & Recurring Products" description="Create course-access plans with monthly or annual billing, introductory trials, and clear price packaging." />
+    <FeatureCard badge="Free" icon="shield-check" title="Member Access Control" description="Restrict lessons, downloads, or premium course areas based on the subscription plan attached to each student." />
+    <FeatureCard badge="Free + Pro" icon="circle-user" title="Customer Portal" description="Give students a self-service area for renewal visibility and core account management inside WooCommerce." />
+    <FeatureCard badge="Free" icon="heart-handshake" title="Retention Flow Builder" description="Reduce churn when students consider cancelling by presenting better-fit alternatives before access ends." />
+  </Grid>
+
+  <Flex justify="center" gap="md" wrap className="section__cta">
+    <Button href="/features/" variant="primary">Explore All Features</Button>
+    <Button href="/use-cases/membership-sites/" variant="outline">See the membership use case</Button>
+  </Flex>
+</Section>
+
+<Section
+  label="COURSE PLAN IDEAS"
+  title="A practical way to package subscription-based learning"
+  subtitle="The goal is not to build the fanciest tier map on earth. The goal is to make the upgrade path obvious."
+>
+  <Grid columns={3} gap="md">
+    <Card title="Starter access" icon="graduation-cap">
+      <ul>
+        <li>Core curriculum access</li>
+        <li>Monthly and annual pricing options</li>
+        <li>Good fit for first-time learners</li>
+        <li>Simple path into the ecosystem</li>
+      </ul>
+    </Card>
+    <Card title="Growth plan" icon="rocket">
+      <ul>
+        <li>Everything in Starter</li>
+        <li>Additional lessons, resources, or archives</li>
+        <li>Strong candidate for most subscribers</li>
+        <li>Ideal place for annual-plan incentives</li>
+      </ul>
+    </Card>
+    <Card title="Premium access" icon="briefcase">
+      <ul>
+        <li>Top-tier lesson or resource access</li>
+        <li>Useful for community, coaching, or deeper support add-ons</li>
+        <li>Best for high-value learners</li>
+        <li>Can justify richer onboarding or retention touchpoints</li>
+      </ul>
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  background="light"
+  label="SETUP BLUEPRINT"
+  title="How to launch a subscription course offer with ArraySubs"
+  subtitle="A lean setup gets you to validation much faster than overbuilding the classroom on day one."
+>
+  <Grid columns={4} gap="md">
+    <Card title="1. Create the course plans" icon="repeat">
+      Build the subscription products that define who gets access, how often they pay, and which billing options are available.
+    </Card>
+    <Card title="2. Gate the course areas" icon="lock">
+      Restrict lessons, downloads, archives, or premium sections according to the student's active subscription level.
+    </Card>
+    <Card title="3. Schedule the drip" icon="shuffle">
+      Release modules over time to improve completion, reduce overwhelm, and reinforce the value of staying subscribed.
+    </Card>
+    <Card title="4. Add save flows" icon="heart-handshake">
+      Use cancellation interception to reduce dropout when students hesitate or pause progress mid-course.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="RELATED PATHS"
+  title="Nearby use cases worth exploring"
+  subtitle="Course businesses often overlap with membership and publisher models, depending on how the content is delivered."
+>
+  <Grid columns={3} gap="md">
+    <Card href="/use-cases/membership-sites/" icon="users" title="Membership Sites">
+      Best when your course library is part of a wider recurring member experience with community, archives, or resource hubs.
+    </Card>
+    <Card href="/article/how-to-set-up-woocommerce-subscriptions/" icon="wand-2" title="Follow the setup walkthrough">
+      Use the existing how-to article as the practical base layer before tailoring it to lesson access and student plan tiers.
+    </Card>
+    <Card href="/plans/" icon="sparkles" title="Check pricing options">
+      Compare free and Pro to see when deeper automation or growth features become useful for your course business.
+    </Card>
+  </Grid>
+</Section>
+
+<Section
+  label="FAQ"
+  title="Common online-course questions"
+  subtitle="The quick version for creators who would rather ship lessons than decode plugin stacks."
+>
+  <div className="accordion-list">
+    <details className="accordion-list__item" open>
+      <summary>Can I sell courses with subscription access on WooCommerce?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. ArraySubs supports recurring course access with subscription products, restricted content, student self-service, and retention flows.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>Can I drip modules over time?</summary>
+      <div className="accordion-list__body">
+        <p>Yes. Timed content release is a practical way to improve progression and keep the ongoing subscription valuable to students.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>Do I need a heavy LMS for a simple subscription course business?</summary>
+      <div className="accordion-list__body">
+        <p>Not always. For many straightforward course offers, ArraySubs can handle the recurring billing and gated-access side without requiring a full LMS stack on day one.</p>
+      </div>
+    </details>
+
+    <details className="accordion-list__item">
+      <summary>How do I reduce course churn?</summary>
+      <div className="accordion-list__body">
+        <p>Use staged content, a clear plan structure, and cancellation-save flows. The <a href="/article/reduce-woocommerce-subscription-churn/">churn guide</a> is a helpful companion once your initial setup is live.</p>
+      </div>
+    </details>
+  </div>
+</Section>
+
+<Section background="dark">
+  <div className="final-cta">
+    <span className="section__label">READY TO TEACH?</span>
+    <h2 className="final-cta__title">Launch recurring course access without overcomplicating the stack</h2>
+    <p className="final-cta__body">ArraySubs helps course creators package learning into recurring offers that are easier to sell, easier to manage, and easier to retain over time.</p>
+
+    <div className="final-cta__grid">
+      <div className="final-cta__card">
+        <Badge variant="default">Need a walkthrough?</Badge>
+        <h3>See the setup live</h3>
+        <p>Use the live demo when you want help deciding how to package course tiers, timed access, and student account workflows.</p>
+        <Button href="/plans/#live-demo" variant="primary" size="lg">Book a live demo</Button>
+      </div>
+
+      <div className="final-cta__card">
+        <Badge variant="free">Want to test it first?</Badge>
+        <h3>Start with the free core</h3>
+        <p>Model a simple course plan, restrict one lesson area, and validate the student journey before deciding whether Pro adds value for your growth stage.</p>
+        <Button href="/download/" variant="outline" size="lg">Download Free</Button>
+      </div>
+    </div>
+  </div>
+</Section>
