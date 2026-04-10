@@ -1,0 +1,86 @@
+---
+title: "ArraySubs Changelog — Version History & Release Notes"
+description: "See what's new in ArraySubs. Complete version history with new features, improvements, bug fixes, and security updates for every release."
+template: default
+publish: true
+---
+
+## ArraySubs Changelog
+
+Complete version history for ArraySubs and ArraySubs Pro. Releases follow [Keep a Changelog](https://keepachangelog.com/) conventions with categories: **Added**, **Changed**, **Fixed**, and **Security**.
+
+---
+
+## v1.1.0 — 10 April 2026
+
+**Free + Pro** — Feature release
+
+### Added
+
+- **Subscription pause** (Pro) — customers can pause active subscriptions for a configurable hold period (1–12 weeks) from the self-service portal
+- **Smart retry logic** (Pro) — automated dunning retries failed payments after 1, 3, and 7 days before marking a subscription as lapsed
+- **Store credit engine** (Pro) — issue store credit on cancellation, refund, or as a loyalty incentive; credit is applied automatically at checkout
+- **Proration on plan upgrades** (Pro) — customers upgrading mid-cycle are charged only the difference for the remaining period
+- **Segment analytics: churn by cohort** (Pro) — churn breakdown by acquisition month, product, and billing interval
+- Setup Wizard now detects existing WooCommerce subscription products and offers a one-click migration prompt
+
+### Changed
+
+- Self-service portal redesigned with a tabbed layout (Active, Paused, Cancelled)
+- Renewal reminder emails now default to 7 days and 1 day before renewal (previously 3 days only)
+- Improved performance of the subscription list query for stores with 10,000+ subscriptions
+
+### Fixed
+
+- Trial periods not applying correctly when a coupon was present at checkout
+- Cancellation webhook failing silently when the endpoint returned a non-200 response
+- Duplicate welcome emails sent when a subscription was created via the WP admin
+
+---
+
+## v1.0.1 — 28 March 2026
+
+**Free + Pro** — Patch release
+
+### Fixed
+
+- Payment method update failing for Stripe customers using 3D Secure cards
+- Membership access not removed immediately on cancellation in edge cases involving multiple overlapping products
+- PHP notice on PHP 8.3 in the analytics module (non-breaking)
+- Incorrect next billing date displayed after a free trial subscription was manually renewed from WP admin
+
+### Security
+
+- Updated dependency `wp-background-processing` to patch a low-severity CSRF vulnerability in the background task queue (does not affect subscription data — credit to WordPress security team)
+
+---
+
+## v1.0.0 — 10 March 2026
+
+**Free + Pro** — Initial public release
+
+### Added
+
+- **Core subscription engine** — create subscription products with weekly, monthly, annual, or custom billing intervals
+- **Membership access control** — gate content and WooCommerce products behind active subscription requirements
+- **Customer self-service portal** — pause, cancel, update payment method, and view billing history
+- **Automated renewal emails** — pre-renewal reminders and post-renewal receipts
+- **Payment failure notifications** — email customer and admin on failed renewal attempt
+- **Basic analytics dashboard** — MRR, active subscriber count, recent activity feed
+- **Setup Wizard** — guided onboarding for new installs
+- **WooCommerce Checkout block compatibility** — full support for the block-based checkout
+- **Stripe and PayPal gateway support** — recurring payment processing via supported WooCommerce payment gateways
+- **WooCommerce Subscriptions migration tool** (Pro) — bulk-migrate existing subscriptions with data mapping wizard
+
+---
+
+## Roadmap
+
+Have a feature request or want to vote on what's coming next? Visit the [ArraySubs feature board](https://support.arrayhash.com/arraysubs/) or open a request on [WordPress.org](https://wordpress.org/plugins/arraysubs/).
+
+Current planned work:
+
+- Annual billing discount configuration at the product level
+- Subscription gifting (send a subscription as a gift)
+- Zapier / webhook trigger improvements for third-party integrations
+- CSV export for subscription analytics
