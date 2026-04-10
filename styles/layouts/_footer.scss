@@ -25,13 +25,17 @@
     overflow: hidden;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: -5rem;
       right: -5rem;
       width: 22rem;
       height: 22rem;
-      background: radial-gradient(circle, rgba(79, 70, 229, 0.18) 0%, transparent 65%);
+      background: radial-gradient(
+        circle,
+        rgba(79, 70, 229, 0.18) 0%,
+        transparent 65%
+      );
       pointer-events: none;
     }
   }
@@ -52,7 +56,11 @@
   }
 
   &__cta-highlight {
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    background: linear-gradient(
+      90deg,
+      var(--color-primary),
+      var(--color-accent)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -177,7 +185,7 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -1px;
       left: 0;
