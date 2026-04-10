@@ -163,14 +163,6 @@ export function Header() {
             <Link href="/" className="header__logo" title={siteConfig.siteName} onClick={closeMobileNavigation}>
               <span className="header__logo-text">{siteConfig.siteName}</span>
             </Link>
-            <button
-              type="button"
-              className="header__close"
-              aria-label="Close menu"
-              onClick={closeMobileNavigation}
-            >
-              <Icon name="x" size={22} />
-            </button>
           </div>
           <ul className="header__menu">
             {navigation.main.map((item) => {
