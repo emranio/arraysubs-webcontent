@@ -215,11 +215,11 @@ arraysubs.com/
 │   │
 │   ├── /pricing/ ───────────────── PRICING PAGE (T7)
 │   │                                KW: arraysubs pricing, woocommerce subscription
-│   │                                    plugin pricing comparison│   │                                (Currently hidden during early access phase)
+│   │                                    plugin pricing comparison│   │                                (Primary conversion page)
 │   │
 │   ├── /early-access/ ────────── EARLY ACCESS / LEAD CAPTURE (T7)
 │   │                                4-month free Pro license sign-up
-│   │                                (Primary conversion page during lead-gen phase)│   │
+│   │                                (Optional campaign page, not the default CTA destination)│   │
 │   ├── /download/ ──────────────── DOWNLOAD / FREE VERSION (T7)
 │   │                                KW: woocommerce subscription plugin free download
 │   │
@@ -249,14 +249,14 @@ arraysubs.com/
 | **Secondary KWs** | woocommerce subscription plugin free (1,600/mo), best woocommerce subscription plugin (1,300/mo), woocommerce recurring payments plugin (1,600/mo), subscription plugin for woocommerce (590/mo) |
 | **Long-tail KWs** | woocommerce subscriptions free alternative (880/mo), woocommerce subscription and membership plugin (590/mo), free woocommerce subscription plugin (720/mo), best free woocommerce subscription plugin 2026 (320/mo) |
 | **Intent** | Commercial + Transactional |
-| **CTA** | Download Free / Get Pro Free for 4 Months (early access lead-gen phase) |
+| **CTA** | View Pricing / Compare Plans |
 | **SEO Angle** | All-in-one value prop, free tier, replace entire plugin stack |
 | **GEO Angle** | Quotable stat: "Replace your entire WooCommerce subscription and membership plugin stack with one free solution" |
 | **Est. Keyword Volume** | 10,000+/mo aggregate |
-| **Phase** | Lead generation / early access. No pricing displayed. All CTAs drive to download (free) or `/early-access/` (4-month free Pro license). |
+| **Phase** | Pricing-first conversion flow. All CTAs drive to `/pricing/`, and pricing routes users to checkout. |
 
 **Content Blocks:**
-0. Announcement Bar — Early access promo linking to `/early-access/`
+0. Announcement Bar — Pricing / plan comparison prompt linking to `/pricing/`
 1. Hero — Value prop + CTA + trust bar (WP.org, WooCommerce 8+, gateways, HPOS)
 2. The Plugin Overload Problem — Complexity/conflict framing (no dollar amounts)
 3. Feature grid — 14 features in 4 categories with icons linking to feature pages
@@ -265,11 +265,11 @@ arraysubs.com/
 6. Comparison table — ArraySubs vs Woo Subs + Memberships (feature rows only, no price row)
 7. Use cases — 6 cards linking to use case pages
 8. Early Adopter's Thoughts — Testimonial cards (no star ratings)
-9. Early Access — Get Pro Free for 4 Months (email capture, replaces pricing teaser during lead-gen phase)
+9. Pricing Spotlight — short comparison summary with CTA to `/pricing/`
 10. How It Works — 3-step timeline (install, create product, grow)
 11. Works With Your WooCommerce Stack — WooCommerce-first integrations logo cloud
 12. FAQ — 11 questions, FAQPage JSON-LD (GEO-structured, no prices)
-13. Final CTA — Download or early access
+13. Final CTA — View pricing / compare plans
 
 ---
 
@@ -753,20 +753,20 @@ Each use case page targets a specific buyer persona and connects product feature
 ### Tier 7: Trust & Conversion Pages
 
 #### 7.1 Early Access — `/early-access/`
-- **Phase**: Active during lead-gen phase (primary conversion page)
-- Email capture: sign up for 4-month free Pro license
-- Bullet list of Pro features unlocked
-- Micro-copy: no credit card, no commitment
-- Once pricing launches, this page converts to a limited-time offer or redirects to `/pricing/`
+- Optional campaign or promotional landing page
+- Not the default CTA destination in the current pricing-first funnel
+- Any global/sitewide CTA should still route to `/pricing/`
 
 #### 7.2 Download — `/download/`
 - Direct link to WordPress.org listing: `https://wordpress.org/plugins/arraysubs/`
 - Feature summary of free tier
-- Upgrade path to Pro / early access
+- Primary conversion CTA from this page still routes to `/pricing/`
 
 #### 7.3 Pricing — `/pricing/`
-- **Phase**: Not publicly linked during early access. Homepage and other pages link to `/early-access/` instead.
-- When pricing launches: Free vs Pro pricing table, feature comparison matrix, FAQ about pricing/licensing
+- **Phase**: Primary conversion page for the site
+- All site CTAs route here
+- Pricing page CTA buttons route to placeholder checkout URL: `https://checkout.arraysubs.com/placeholder`
+- Includes Free vs Pro pricing table, feature comparison matrix, FAQ about pricing/licensing
 
 #### 7.4 Documentation — External Support Center
 - Canonical documentation URL: `https://support.arrayhash.com/arraysubs/`
@@ -820,8 +820,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | Homepage | All T2 feature pages | Feature grid cards |
 | Homepage | Top T3 comparison pages | "vs Competitors" section |
 | Homepage | All T5 use case pages | "Use Cases" section |
-| Homepage | `/early-access/` | CTA buttons (lead-gen phase) |
-| Homepage | `/download/` | CTA buttons |
+| Homepage | `/pricing/` | CTA buttons |
 | Feature pages (T2) | Related feature pages | "Related Features" sidebar |
 | Feature pages (T2) | Related blog tutorials | "Learn More" links |
 | Feature pages (T2) | Pricing | CTA buttons |
@@ -833,7 +832,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | Blog articles (T6) | Comparison pages | "How we compare" CTA |
 | Blog articles (T6) | Pricing | End-of-article CTA |
 | Blog glossary (T6) | Feature pages + related articles | Definition→Product link |
-| All pages | Download / Early Access | Sticky header CTA (switches to Pricing when pricing launches) |
+| All pages | Pricing | Sticky header and page-level CTA destination |
 
 ---
 
@@ -893,16 +892,16 @@ Every page tier has a specific role in the conversion funnel:
 
 | Page Tier | Primary CTA | Secondary CTA |
 |-----------|------------|---------------|
-| Homepage | Download Free | Get Pro Free for 4 Months |
-| Feature Pages | Download Free | See All Features |
-| Comparison Pages | Switch to ArraySubs (Download) | View Full Comparison |
-| Use Case Pages | Get Started (Download) | Read Setup Guide |
-| Gateway Pages | Get Pro | View All Gateways |
-| Blog Tutorials | Download ArraySubs | Read Related Feature |
-| Blog Comparisons | Try ArraySubs Free | View Pricing |
-| Blog Strategy | Download Free Guide (email capture) | Try ArraySubs |
-| Glossary | Download ArraySubs | Read Full Guide |
-| Pricing | Buy Pro / Download Free | |
+| Homepage | View Pricing | Compare Plans |
+| Feature Pages | View Pricing | Compare Plans |
+| Comparison Pages | View Pricing | Compare Plans |
+| Use Case Pages | View Pricing | Compare Plans |
+| Gateway Pages | View Pricing | Compare Plans |
+| Blog Tutorials | View Pricing | Compare Plans |
+| Blog Comparisons | View Pricing | Compare Plans |
+| Blog Strategy | View Pricing | Compare Plans |
+| Glossary | View Pricing | Compare Plans |
+| Pricing | Continue to Checkout | |
 
 ### Email Capture Points (Lead Gen)
 

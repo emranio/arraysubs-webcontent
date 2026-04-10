@@ -33,7 +33,7 @@
 
 ### 1. Hero
 - H1 + Stripe logo + "The most popular way to accept subscription payments"
-- CTA: Download ArraySubs Free
+- CTA: View Pricing
 
 ### 2. What You Can Do with Stripe + ArraySubs
 - Accept first subscription payments via Stripe

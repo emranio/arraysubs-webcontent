@@ -131,5 +131,5 @@
 |----------|-----|--------|
 | Hero | Get ArraySubs Pro | `/pricing/` |
 | After Use Cases | Unlock Feature Manager | `/pricing/` |
-| After FAQ | Start with Free, Upgrade for Entitlements | `https://wordpress.org/plugins/arraysubs/` + `/pricing/` |
+| After FAQ | Compare Plans | `/pricing/` |
 | Sticky Footer | View Pricing | `/pricing/` |

@@ -37,7 +37,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "One restriction engine for every type of WordPress content"
 - Screenshot: Access Rules admin screen
-- CTA: Download Free
+- CTA: View Pricing
 
 ### 2. Restriction Types Overview
 Visual cards for each restriction type:
@@ -122,7 +122,7 @@ Visual cards for each restriction type:
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
-| After Shortcodes | Start Protecting Content | `https://wordpress.org/plugins/arraysubs/` |
-| Pro Extensions | Unlock Pro Features | `/pricing/` |
-| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |
+| Hero | View Pricing | `/pricing/` |
+| After Shortcodes | View Pricing | `/pricing/` |
+| Pro Extensions | Compare Plans | `/pricing/` |
+| Sticky Footer | View Pricing | `/pricing/` |

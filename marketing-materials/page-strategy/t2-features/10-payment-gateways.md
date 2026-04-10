@@ -35,7 +35,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Works with any WooCommerce payment gateway — zero lock-in"
 - Gateway logos: Stripe, PayPal, Paddle + "all WooCommerce gateways"
-- CTA: Download Free
+- CTA: View Pricing
 
 ### 2. How Payment Works
 - **Any WooCommerce Gateway**: First payment through any active gateway
@@ -103,7 +103,7 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
-| After Gateway Table | Start Accepting Recurring Payments | `https://wordpress.org/plugins/arraysubs/` |
-| Automatic Payments | Unlock Auto-Renewals | `/pricing/` |
-| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |
+| Hero | View Pricing | `/pricing/` |
+| After Gateway Table | View Pricing | `/pricing/` |
+| Automatic Payments | Compare Plans | `/pricing/` |
+| Sticky Footer | View Pricing | `/pricing/` |

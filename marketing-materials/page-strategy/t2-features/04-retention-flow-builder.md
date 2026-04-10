@@ -37,7 +37,7 @@
 - H1 + subtitle: "The only WooCommerce subscription plugin with built-in retention flows"
 - Blue Ocean badge: "No other subscription plugin offers this"
 - Screenshot: Retention flow builder admin screen
-- CTA: Download Free
+- CTA: View Pricing
 
 ### 2. How It Works (Visual Flow)
 ```
@@ -136,7 +136,7 @@ Customer clicks "Cancel" →
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
-| After Flow Diagram | Start Reducing Churn Today | `https://wordpress.org/plugins/arraysubs/` |
-| After Problem Section | Get the Only Plugin with Retention Flows | `https://wordpress.org/plugins/arraysubs/` |
-| Sticky Footer | Download Free / See All Features | `https://wordpress.org/plugins/arraysubs/` / `/features/` |
+| Hero | View Pricing | `/pricing/` |
+| After Flow Diagram | View Pricing | `/pricing/` |
+| After Problem Section | Compare Plans | `/pricing/` |
+| Sticky Footer | View Pricing | `/pricing/` |

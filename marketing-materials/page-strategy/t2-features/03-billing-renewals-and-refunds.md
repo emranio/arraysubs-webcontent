@@ -36,7 +36,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Billing that runs itself — so you focus on growing"
 - Visual: Billing lifecycle timeline graphic
-- CTA: Download Free
+- CTA: View Pricing
 
 ### 2. Renewal Engine Overview
 - Automatic invoice generation before due date (configurable hours)
@@ -128,7 +128,7 @@ Payment Due → [Active 3 days] → [On-Hold 7 days] → Cancelled
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
-| After Grace Period | Set Up Smart Billing | `https://wordpress.org/plugins/arraysubs/` |
-| Automatic Payments | Unlock Auto-Renewals | `/pricing/` |
-| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |
+| Hero | View Pricing | `/pricing/` |
+| After Grace Period | View Pricing | `/pricing/` |
+| Automatic Payments | Compare Plans | `/pricing/` |
+| Sticky Footer | View Pricing | `/pricing/` |

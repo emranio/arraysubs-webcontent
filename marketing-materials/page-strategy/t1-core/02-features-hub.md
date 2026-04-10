@@ -31,7 +31,7 @@
 
 ### 1. Hero
 - H1 + subtitle: "15 feature modules. Generous free tier. One plugin."
-- CTA: Download Free
+- CTA: View Pricing
 
 ### 2. Feature Category Grid
 - 15 feature cards grouped into categories:

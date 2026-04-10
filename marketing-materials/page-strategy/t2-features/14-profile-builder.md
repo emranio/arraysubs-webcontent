@@ -33,7 +33,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Display subscription data and member content anywhere on your site"
 - Code examples + rendered output
-- CTA: Download Free
+- CTA: View Pricing
 
 ### 2. Available Shortcodes
 | Shortcode | Purpose | Ownership |
@@ -85,6 +85,6 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
-| Profile Builder | Unlock Profile Builder | `/pricing/` |
-| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |
+| Hero | View Pricing | `/pricing/` |
+| Profile Builder | Compare Plans | `/pricing/` |
+| Sticky Footer | View Pricing | `/pricing/` |

@@ -154,7 +154,7 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Try ArraySubs Free | `https://wordpress.org/plugins/arraysubs/` |
-| After Feature Table | Download & Compare Yourself | `https://wordpress.org/plugins/arraysubs/` |
-| After Pricing | See Pricing & Compare Plans | `/pricing/` |
-| Sticky Footer | Try Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |
+| Hero | View Pricing | `/pricing/` |
+| After Feature Table | View Pricing | `/pricing/` |
+| After Pricing | Compare Plans | `/pricing/` |
+| Sticky Footer | View Pricing | `/pricing/` |

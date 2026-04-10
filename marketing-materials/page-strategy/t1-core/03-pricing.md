@@ -4,6 +4,7 @@
 > **Tier**: T1 — Core Landing
 > **Priority**: Week 1
 > **Est. Aggregate KW Volume**: 1,200+/mo
+> **Checkout URL placeholder**: `https://checkout.arraysubs.com/placeholder`
 
 ---
 
@@ -13,7 +14,7 @@
 |-------|-------|
 | **Title Tag** | Pricing — ArraySubs WooCommerce Subscription & Membership Plugin |
 | **H1** | Simple, Transparent Pricing for WooCommerce Subscriptions & Memberships |
-| **Meta Description** | Start free with the core subscription engine or unlock Pro features from $X/yr. No renewal fees for the first year, 30-day refund guarantee. |
+| **Meta Description** | Compare ArraySubs plans, review included features, and continue to checkout when you're ready. Pricing page CTAs send users directly to the checkout URL. |
 
 ---
 
@@ -31,13 +32,15 @@
 ## Content Blocks
 
 ### 1. Hero
-- H1 + subtitle: "Start free. Upgrade when you're ready."
+- H1 + subtitle: "Compare plans, choose the right option, and continue straight to checkout."
 - Quick pricing toggle: Annual / Lifetime
+- Primary CTA on hero: Continue to Checkout → `https://checkout.arraysubs.com/placeholder`
 
 ### 2. Pricing Table
 - **Free**: Core subscription engine, billing, customer portal, member access, basic emails, shortcodes, easy setup, manage subscriptions
 - **Pro** (tiered by sites): Everything in Free + Store Credit, Retention Flow, Checkout Builder, Analytics, Audits, Automatic Payments, Feature Manager, Multi-Login, Redirect Product Page, Profile Builder Pro, Subscription Shipping, Fixed Period Membership
 - Highlight best-value plan
+- Every plan button routes to: `https://checkout.arraysubs.com/placeholder`
 
 ### 3. Feature Comparison Accordion
 - Expandable rows: Free has X, Pro adds Y for each of 14 modules
@@ -57,8 +60,18 @@
 - Customer reviews, install count, ratings
 
 ### 6. Final CTA
-- "Start with the free plugin — upgrade anytime"
-- Download Free + Buy Pro buttons
+- "Choose your plan and continue to checkout"
+- All pricing page CTA buttons route to `https://checkout.arraysubs.com/placeholder`
+
+---
+
+## CTA Strategy
+
+| Position | CTA | Target |
+|----------|-----|--------|
+| Hero | Continue to Checkout | `https://checkout.arraysubs.com/placeholder` |
+| Each Plan Card | Choose Plan | `https://checkout.arraysubs.com/placeholder` |
+| Final CTA | Continue to Checkout | `https://checkout.arraysubs.com/placeholder` |
 
 ---
 
@@ -83,5 +96,5 @@
 | `/features/` | Feature comparison rows |
 | All 14 `/features/*` pages | Accordion detail links |
 | `/compare/woocommerce-subscriptions/` | FAQ competitor answer |
-| `/download/` | Free download CTA |
 | `/` | Breadcrumb |
+| `https://checkout.arraysubs.com/placeholder` | All pricing CTAs |

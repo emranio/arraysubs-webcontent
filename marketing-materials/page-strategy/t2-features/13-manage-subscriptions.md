@@ -33,7 +33,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Modern admin interface for subscription management"
 - Screenshot: Subscription list dashboard
-- CTA: Download Free
+- CTA: View Pricing
 
 ### 2. Subscription List View
 - Sortable, filterable table of all subscriptions
@@ -98,6 +98,6 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
-| After Quick Actions | Take Control of Your Subscriptions | `https://wordpress.org/plugins/arraysubs/` |
-| Sticky Footer | Download Free / See All Features | `https://wordpress.org/plugins/arraysubs/` / `/features/` |
+| Hero | View Pricing | `/pricing/` |
+| After Quick Actions | View Pricing | `/pricing/` |
+| Sticky Footer | Compare Plans | `/pricing/` |

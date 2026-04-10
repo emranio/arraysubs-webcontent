@@ -34,7 +34,7 @@
 - H1 + subtitle: "No other subscription plugin has a setup wizard"
 - Blue Ocean badge
 - Screenshot: Setup wizard in progress
-- CTA: Download Free
+- CTA: View Pricing
 
 ### 2. Wizard Steps Walkthrough
 - Step-by-step visual of wizard flow
@@ -76,7 +76,7 @@
 |--------|---------|
 | `/features/subscriptions-and-recurring-products/` | "Create your first subscription after setup →" |
 | `/features/` | Breadcrumb |
-| `/download/` | Download CTA |
+| `/pricing/` | Primary CTA |
 
 ---
 
@@ -84,6 +84,6 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
-| After Walkthrough | Get Started Now | `https://wordpress.org/plugins/arraysubs/` |
-| Sticky Footer | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| Hero | View Pricing | `/pricing/` |
+| After Walkthrough | View Pricing | `/pricing/` |
+| Sticky Footer | View Pricing | `/pricing/` |

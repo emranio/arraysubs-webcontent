@@ -51,18 +51,18 @@
 
 ## Content Blocks
 
-> **Phase context**: The site is currently in **lead generation / early access mode**. No pricing is displayed anywhere. All secondary CTAs drive to `/early-access/` (4-month free Pro license sign-up) instead of `/pricing/`.
+> **Funnel context**: The site uses a **pricing-first conversion flow**. All primary and secondary CTAs route to `/pricing/`, and the pricing page is the only page that hands users off to checkout.
 
 ### 0. Announcement Bar
-- **Badge**: EARLY ACCESS
-- **Text**: "ArraySubs Pro is here — sign up now and get 4 months of Pro free. Limited time."
-- **Link**: `/early-access/`
+- **Badge**: PRICING
+- **Text**: "See plans, compare features, and choose the right ArraySubs option for your store."
+- **Link**: `/pricing/`
 
 ### 1. Hero Section
 - **Headline**: H1 (above)
 - **Subheadline**: "Create subscription products, restrict member-only content, automate recurring billing, reduce churn with smart retention flows, and track MRR — all from one plugin. No duct-taping five separate tools together."
-- **Primary CTA**: Download Free (links to `/download/`)
-- **Secondary CTA**: Get Pro Free for 4 Months (links to `/early-access/`)
+- **Primary CTA**: View Pricing (links to `/pricing/`)
+- **Secondary CTA**: Compare Plans (links to `/pricing/`)
 - **Trust bar**: Available on WordPress.org · WooCommerce 8+ · Stripe · PayPal · Paddle · HPOS Compatible
 - **Hero visual**: Product screenshot / short demo GIF
 
@@ -110,11 +110,11 @@
 - No star ratings — quote + name + business context
 - Stats row: 14 modules, Free to start, < 10 min setup, 6+ plugins replaced
 
-### 9. Early Access — Get Pro Free for 4 Months
-- **Replaces old Pricing Teaser** during lead-gen phase
-- Email capture form: email input + "Claim My Free Pro License" button
-- Quick bullet list of what Pro unlocks
-- Micro-copy: "No credit card required. No commitment."
+### 9. Pricing Spotlight — Choose the Right Plan
+- Short pricing preview with Free vs Pro value summary
+- Button group: "View Pricing" and "Compare Plans"
+- Reinforce that checkout happens only after users select a plan on `/pricing/`
+- Micro-copy: "See every plan detail before checkout."
 
 ### 10. How It Works (3 steps)
 - Step 1: Install & Run the Wizard
@@ -146,8 +146,8 @@
 
 ### 13. Final CTA
 - "Start Building Your Subscription Business Today"
-- Primary: Download Free Plugin → `/download/`
-- Secondary: Get Pro Free for 4 Months → `/early-access/`
+- Primary: View Pricing → `/pricing/`
+- Secondary: Compare Plans → `/pricing/`
 
 ---
 
@@ -164,8 +164,7 @@
 
 | Target | Context |
 |--------|---------|
-| `/download/` | Hero, Problem, Features, Growth Benefits, Comparison, How It Works, Final CTA |
-| `/early-access/` | Announcement Bar, Hero, Growth Benefits, Early Access Section, Final CTA |
+| `/pricing/` | Announcement Bar, Hero, Problem, Features, Growth Benefits, Comparison, Pricing Spotlight, How It Works, Final CTA |
 | `/features/` | Feature Grid CTA |
 | `/features/subscriptions/` | Feature Card 1 |
 | `/features/billing/` | Feature Card 2 |
@@ -184,24 +183,24 @@
 | `/compare/woocommerce-subscriptions/` | Problem section, Comparison section |
 | `/use-cases/*` | Use case cards |
 | `/use-cases/` | Use Cases section |
-| `https://support.arrayhash.com/arraysubs/` | How It Works section |
+| `https://support.arrayhash.com/arraysubs/` | Supporting documentation link |
 
 ---
 
 ## CTAs
 
-> **Note**: During the early access / lead-gen phase, all secondary CTAs link to `/early-access/` instead of `/pricing/`.
+> **Note**: Every CTA on the homepage routes to `/pricing/`. The pricing page is the only handoff point to checkout.
 
 | Position | Primary CTA | Secondary CTA |
 |----------|------------|---------------|
-| Hero | Download Free | Get Pro Free for 4 Months |
-| After Problem | Download Free Plugin | See Full Comparison |
-| After Features | Explore All Features | Download Free |
-| After Growth Benefits | Download Free & Start Now | Get Pro Free for 4 Months |
-| After Comparison | Switch to ArraySubs — It's Free | See Detailed Comparison |
-| Early Access Section | Claim My Free Pro License (email capture) | — |
-| After How It Works | Download Free & Start Now | Open Docs & Support Center |
-| Final Banner | Download Free Plugin | Get Pro Free for 4 Months |
+| Hero | View Pricing | Compare Plans |
+| After Problem | View Pricing | See Full Comparison |
+| After Features | View Pricing | Explore All Features |
+| After Growth Benefits | View Pricing | Compare Plans |
+| After Comparison | View Pricing | See Detailed Comparison |
+| Pricing Spotlight | View Pricing | Compare Plans |
+| After How It Works | View Pricing | Open Docs & Support Center |
+| Final Banner | View Pricing | Compare Plans |
 
 ---
 

@@ -34,7 +34,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Every subscription event triggers the right email"
 - Screenshot: Email settings screen
-- CTA: Download Free
+- CTA: View Pricing
 
 ### 2. Email Types Available
 
@@ -104,6 +104,6 @@
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
-| After Email Types | Set Up Subscription Emails | `https://wordpress.org/plugins/arraysubs/` |
-| Sticky Footer | Download Free | `https://wordpress.org/plugins/arraysubs/` |
+| Hero | View Pricing | `/pricing/` |
+| After Email Types | View Pricing | `/pricing/` |
+| Sticky Footer | View Pricing | `/pricing/` |

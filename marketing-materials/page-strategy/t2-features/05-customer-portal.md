@@ -35,7 +35,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Reduce support tickets — let subscribers manage their own plans"
 - Screenshot: Customer portal My Account → Subscriptions tab
-- CTA: Download Free
+- CTA: View Pricing
 
 ### 2. Portal Capabilities
 - **View Subscriptions**: List of active, paused, cancelled subscriptions
@@ -111,7 +111,7 @@ Table of actions and when they appear:
 
 | Position | CTA | Target |
 |----------|-----|--------|
-| Hero | Download Free | `https://wordpress.org/plugins/arraysubs/` |
-| After Capabilities | Empower Your Subscribers | `https://wordpress.org/plugins/arraysubs/` |
-| After FAQ | See All Features | `/features/` |
-| Sticky Footer | Download Free / View Pricing | `https://wordpress.org/plugins/arraysubs/` / `/pricing/` |
+| Hero | View Pricing | `/pricing/` |
+| After Capabilities | View Pricing | `/pricing/` |
+| After FAQ | Compare Plans | `/pricing/` |
+| Sticky Footer | View Pricing | `/pricing/` |
