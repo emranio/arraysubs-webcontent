@@ -159,6 +159,19 @@ export function Header() {
         </Link>
 
         <nav id="site-navigation" className={`header__nav ${mobileMenuOpen ? 'header__nav--open' : ''}`}>
+          <div className="header__nav-header">
+            <Link href="/" className="header__logo" title={siteConfig.siteName} onClick={closeMobileNavigation}>
+              <span className="header__logo-text">{siteConfig.siteName}</span>
+            </Link>
+            <button
+              type="button"
+              className="header__close"
+              aria-label="Close menu"
+              onClick={closeMobileNavigation}
+            >
+              <Icon name="x" size={22} />
+            </button>
+          </div>
           <ul className="header__menu">
             {navigation.main.map((item) => {
               const sections = item.sections ?? [];
