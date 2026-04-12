@@ -1,6 +1,23 @@
 import type { ContentMeta } from './content';
-import { getPageRouteBreadcrumbs } from './breadcrumbs';
+import { getRouteBreadcrumbs, normalizeBreadcrumbPath } from './breadcrumbs';
 import siteConfig from '@/site.config.json';
+
+interface RouteSchemaOptions {
+  pathname: string;
+  currentLabel?: string;
+}
+
+function getSiteUrl() {
+  return process.env.NEXT_PUBLIC_SITE_URL || siteConfig.siteUrl;
+}
+
+function getContentPath(meta: ContentMeta): string {
+  if (meta.contentType === 'page') {
+    return meta.slug ? `/${meta.slug}/` : '/';
+  }
+
+  return `/${meta.contentType}/${meta.slug}/`;
+}
 
 function getOrganizationSchema() {
   return {
@@ -22,38 +39,20 @@ function getWebsiteSchema() {
   };
 }
 
-function getBreadcrumbSchema(meta: ContentMeta) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteConfig.siteUrl;
+function getBreadcrumbSchema({ pathname, currentLabel }: RouteSchemaOptions) {
+  const siteUrl = getSiteUrl();
   const items = [
     { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
   ];
 
-  if (meta.contentType !== 'page') {
+  getRouteBreadcrumbs(pathname, currentLabel).forEach((item, index) => {
     items.push({
       '@type': 'ListItem',
-      position: 2,
-      name: meta.contentType.charAt(0).toUpperCase() + meta.contentType.slice(1),
-      item: `${siteUrl}/${meta.contentType}/`,
+      position: index + 2,
+      name: item.label,
+      item: `${siteUrl}${item.href}`,
     });
-
-    if (meta.slug) {
-      items.push({
-        '@type': 'ListItem',
-        position: 3,
-        name: meta.title,
-        item: `${siteUrl}/${meta.contentType}/${meta.slug}/`,
-      });
-    }
-  } else if (meta.slug) {
-    getPageRouteBreadcrumbs(meta.slug).forEach((item, index) => {
-      items.push({
-        '@type': 'ListItem',
-        position: index + 2,
-        name: item.label,
-        item: `${siteUrl}${item.href}`,
-      });
-    });
-  }
+  });
 
   return {
     '@type': 'BreadcrumbList',
@@ -61,8 +60,10 @@ function getBreadcrumbSchema(meta: ContentMeta) {
   };
 }
 
-function getBlogPostSchema(meta: ContentMeta) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteConfig.siteUrl;
+function getBlogPostSchema(meta: ContentMeta, pathname: string) {
+  const siteUrl = getSiteUrl();
+  const normalizedPath = normalizeBreadcrumbPath(pathname);
+
   return {
     '@type': 'BlogPosting',
     headline: meta.title,
@@ -71,7 +72,7 @@ function getBlogPostSchema(meta: ContentMeta) {
     author: meta.author
       ? { '@type': 'Person', name: meta.author }
       : undefined,
-    url: `${siteUrl}/${meta.contentType}/${meta.slug}/`,
+    url: `${siteUrl}${normalizedPath}`,
     ...(meta.coverImage && {
       image: meta.coverImage.startsWith('http')
         ? meta.coverImage
@@ -80,16 +81,35 @@ function getBlogPostSchema(meta: ContentMeta) {
   };
 }
 
+function stringifySchemaGraph(schemas: object[]): string {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': schemas,
+  });
+}
+
+export function generateRouteSchemaJsonLd({ pathname, currentLabel }: RouteSchemaOptions): string {
+  return stringifySchemaGraph([
+    getOrganizationSchema(),
+    getWebsiteSchema(),
+    getBreadcrumbSchema({ pathname, currentLabel }),
+  ]);
+}
+
 export function generateSchemaJsonLd(meta: ContentMeta): string {
+  const pathname = getContentPath(meta);
   const schemas: object[] = [
     getOrganizationSchema(),
     getWebsiteSchema(),
-    getBreadcrumbSchema(meta),
+    getBreadcrumbSchema({
+      pathname,
+      currentLabel: meta.contentType === 'page' ? undefined : meta.title,
+    }),
   ];
 
   // Template-specific schemas
   if (meta.template === 'blog') {
-    schemas.push(getBlogPostSchema(meta));
+    schemas.push(getBlogPostSchema(meta, pathname));
   }
 
   // Content-specific schema from frontmatter
@@ -106,10 +126,5 @@ export function generateSchemaJsonLd(meta: ContentMeta): string {
     }
   }
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': schemas,
-  };
-
-  return JSON.stringify(jsonLd);
+  return stringifySchemaGraph(schemas);
 }
