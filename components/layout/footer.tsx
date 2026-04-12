@@ -22,10 +22,10 @@ export function Footer() {
               </p>
             </div>
             <div className="footer__cta-actions">
-              <Link href="/download/" className="footer__cta-btn footer__cta-btn--primary" title="Download ArraySubs Free">
+              <Link href="/download/" className="btn btn--primary btn--lg" title="Download ArraySubs Free">
                 Download Free
               </Link>
-              <Link href="/plans/" className="footer__cta-btn footer__cta-btn--ghost" title="View Pricing Plans">
+              <Link href="/plans/" className="btn btn--secondary btn--lg" title="View Pricing Plans">
                 View Pricing
               </Link>
             </div>
