@@ -35,7 +35,7 @@
     max-width: none;
 
     &--blog {
-      text-align: center;
+      text-align: left;
       margin-bottom: var(--space-10);
       padding-bottom: var(--space-8);
       border-bottom: 1px solid var(--color-border);
@@ -67,7 +67,7 @@
   &__meta {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: var(--space-4);
     color: var(--color-text-muted);
     font-size: var(--text-sm);
@@ -83,7 +83,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: var(--space-5);
   }
 

@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   },
   description: siteConfig.siteDescription,
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || siteConfig.siteUrl),
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -32,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${funnelDisplay.variable} ${funnelSans.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth">
+      <body suppressHydrationWarning className={`${funnelDisplay.variable} ${funnelSans.variable}`}>
         <Header />
         <main>{children}</main>
         <Footer />

@@ -3,7 +3,7 @@
 // ============================================
 
 .landing-hero {
-  text-align: center;
+  text-align: left;
   padding: var(--space-16) 0 var(--space-12);
   max-width: 72rem;
   margin: 0 auto;
@@ -37,7 +37,7 @@
 
   &__subtitle {
     max-width: 52rem;
-    margin: 0 auto var(--space-8);
+    margin: 0 0 var(--space-8);
     font-size: var(--text-lg);
     color: var(--color-text-secondary);
     line-height: var(--leading-relaxed);
@@ -45,9 +45,12 @@
 
   &__actions {
     margin-bottom: var(--space-8);
+    justify-content: flex-start;
   }
 
   &__trust {
+    justify-content: flex-start;
+
     .badge {
       max-width: 100%;
       text-align: left;
@@ -81,15 +84,15 @@
 .page-feature {
   .section__header {
     max-width: 54rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
   }
 
   .section__subtitle {
     max-width: 48rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .stats-bar {
@@ -447,15 +450,15 @@
 .page-gateway {
   .section__header {
     max-width: 54rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
   }
 
   .section__subtitle {
     max-width: 48rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
