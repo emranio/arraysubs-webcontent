@@ -9,7 +9,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 20rem minmax(0, 1fr);
-  align-items: end;
+  align-items: start;
   column-gap: var(--space-10);
   row-gap: var(--space-4);
 
@@ -39,13 +39,14 @@
     line-height: var(--leading-tight);
     padding-bottom: var(--space-6);
     margin-top: -9px;
+    color: var(--color-primary);
   }
 
   &__subtitle {
     max-width: var(--content-max-content);
     margin: 0 0 var(--space-8);
     font-size: var(--text-lg);
-    color: var(--color-text-secondary);
+    color: var(--color-primary);
     line-height: var(--leading-relaxed);
   }
 
