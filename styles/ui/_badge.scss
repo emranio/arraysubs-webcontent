@@ -8,25 +8,25 @@
   border: 1px solid var(--color-border);
   line-height: 1;
 
-  &--default {
+  &--gray {
     background-color: var(--color-bg);
     color: var(--color-text-secondary);
     border-color: var(--color-border);
   }
 
-  &--free {
+  &--green {
     background-color: #dcfce7;
     color: #15803d;
     border-color: #bbf7d0;
   }
 
-  &--pro {
+  &--indigo {
     background-color: #eef2ff;
     color: #4338ca;
     border-color: #c7d2fe;
   }
 
-  &--new {
+  &--amber {
     background-color: #fef3c7;
     color: #92400e;
     border-color: #fde68a;

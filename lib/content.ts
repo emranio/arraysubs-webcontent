@@ -6,6 +6,11 @@ import {
   hasLocalMarkdownImports,
   inlineLocalMarkdownImports,
 } from '@/lib/mdx-partials';
+import {
+  DEFAULT_BADGE_VARIANT,
+  normalizeBadgeVariant,
+  type BadgeColorVariant,
+} from '@/lib/badge-variants';
 
 export interface ContentActionButton {
   label: string;
@@ -16,7 +21,7 @@ export interface ContentActionButton {
 
 export interface ContentHeaderTag {
   label: string;
-  variant?: 'free' | 'pro' | 'new' | 'default';
+  variant?: BadgeColorVariant;
 }
 
 export interface ContentMeta {
@@ -50,7 +55,6 @@ const CONTENT_DIR = path.join(process.cwd(), 'contents');
 const VALID_TEMPLATES = new Set(['default', 'canvas', 'blank', 'blog']);
 const VALID_BUTTON_VARIANTS = new Set(['primary', 'secondary', 'outline', 'text']);
 const VALID_BUTTON_SIZES = new Set(['sm', 'md', 'lg']);
-const VALID_BADGE_VARIANTS = new Set(['free', 'pro', 'new', 'default']);
 
 // Simple in-memory cache
 const contentCache = new Map<string, { mtime: number; result: ContentItem }>();
@@ -134,7 +138,7 @@ function normalizeHeaderTags(value: unknown): ContentHeaderTag[] | undefined {
       if (typeof item === 'string') {
         const label = getStringValue(item);
 
-        return label ? { label, variant: 'default' as const } : null;
+        return label ? { label, variant: DEFAULT_BADGE_VARIANT } : null;
       }
 
       if (!item || typeof item !== 'object') {
@@ -148,11 +152,11 @@ function normalizeHeaderTags(value: unknown): ContentHeaderTag[] | undefined {
         return null;
       }
 
-      const variant = getStringValue(tag.variant);
+      const variant = normalizeBadgeVariant(tag.variant);
 
       return {
         label,
-        ...(variant && VALID_BADGE_VARIANTS.has(variant) && { variant: variant as ContentHeaderTag['variant'] }),
+        ...(variant && { variant }),
       };
     })
     .filter((item): item is ContentHeaderTag => item !== null);

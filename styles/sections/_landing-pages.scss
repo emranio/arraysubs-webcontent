@@ -14,7 +14,7 @@
     margin-bottom: var(--space-4);
 
     a {
-      color: var(--color-text-secondary);
+      color: var(--color-primary);
     }
 
     span {
@@ -41,6 +41,13 @@
     font-size: var(--text-lg);
     color: var(--color-text-secondary);
     line-height: var(--leading-relaxed);
+  }
+
+  // When inside .mdx-content (canvas template), override .mdx-content p specificity
+  .mdx-content &__subtitle {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
   }
 
   &__actions {
