@@ -449,7 +449,6 @@
 
     &__submenu-toggle-icon {
       font-size: 0.7rem;
-      transition: transform var(--transition-fast);
     }
 
     &__submenu-toggle--open &__submenu-toggle-icon {
@@ -485,7 +484,6 @@
     &__menu-item--has-children#{&}__menu-item--mobile-open > &__submenu {
       display: block;
       padding-bottom: var(--space-4);
-      animation: headerFadeIn 0.2s ease;
     }
 
     &__submenu-grid {
