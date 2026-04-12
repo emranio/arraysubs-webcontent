@@ -26,6 +26,7 @@ export interface ContentHeaderTag {
 
 export interface ContentMeta {
   title: string;
+  headline?: string;
   description: string;
   coverImage?: string;
   schema?: string;
@@ -37,6 +38,7 @@ export interface ContentMeta {
   category?: string;
   subText?: string;
   actionButtons?: ContentActionButton[];
+  headerBadge?: ContentHeaderTag;
   headerTags?: ContentHeaderTag[];
   tags?: string[];
   slug: string;
@@ -164,6 +166,32 @@ function normalizeHeaderTags(value: unknown): ContentHeaderTag[] | undefined {
   return tags.length > 0 ? tags : undefined;
 }
 
+function normalizeHeaderTag(value: unknown): ContentHeaderTag | undefined {
+  if (typeof value === 'string') {
+    const label = getStringValue(value);
+
+    return label ? { label, variant: DEFAULT_BADGE_VARIANT } : undefined;
+  }
+
+  if (!value || typeof value !== 'object') {
+    return undefined;
+  }
+
+  const tag = value as Record<string, unknown>;
+  const label = getStringValue(tag.label);
+
+  if (!label) {
+    return undefined;
+  }
+
+  const variant = normalizeBadgeVariant(tag.variant);
+
+  return {
+    label,
+    ...(variant && { variant }),
+  };
+}
+
 function normalizeSeoTags(value: unknown): string[] | undefined {
   if (!Array.isArray(value)) {
     return undefined;
@@ -195,13 +223,16 @@ function createContentMeta(
   publishValue?: boolean | string
 ): ContentMeta {
   const template = normalizeTemplate(data.template);
+  const rawHeadline = data.headline;
   const rawSubText = data.subText ?? data['sub-text'];
   const rawActionButtons = data.actionButtons ?? data['action-buttons'] ?? data.actions;
+  const rawHeaderBadge = data.headerBadge ?? data['header-badge'];
   const rawHeaderTags = data.headerTags ?? data['header-tags'] ?? (template === 'blog' ? undefined : data.tags);
   const rawSeoTags = template === 'blog' ? data.tags : data.seoTags ?? data['seo-tags'];
 
   return {
     title: getStringValue(data.title) || 'Untitled',
+    headline: getStringValue(rawHeadline),
     description: getStringValue(data.description) || '',
     coverImage,
     schema: getStringValue(data.schema),
@@ -213,6 +244,7 @@ function createContentMeta(
     category: getStringValue(data.category),
     subText: getStringValue(rawSubText),
     actionButtons: normalizeActionButtons(rawActionButtons),
+    headerBadge: normalizeHeaderTag(rawHeaderBadge),
     headerTags: normalizeHeaderTags(rawHeaderTags),
     tags: normalizeSeoTags(rawSeoTags),
     slug: slug.join('/'),

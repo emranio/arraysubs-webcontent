@@ -1,9 +1,32 @@
 ---
 title: "PayPal for WooCommerce Subscriptions — Recurring Payments Setup · ArraySubs"
 description: "Set up PayPal for WooCommerce recurring payments. Tokenized auto-renewals with Pro, manual invoicing with free. Complete setup guide."
-template: canvas
+template: default
 publish: true
 bodyClass: "page-gateway page-gateway--paypal"
+headline: "Accept PayPal Subscription Payments with WooCommerce"
+sub-text: "Let customers subscribe and pay with PayPal. ArraySubs handles manual renewal invoicing on the free tier. Upgrade to Pro for fully automatic recurring charges via PayPal tokenization — no subscriber action needed on renewal day."
+action-buttons:
+  - label: "Live Demo"
+    href: "/plans/#live-demo"
+    variant: "primary"
+    size: "lg"
+  - label: "Get Pro Free for 6 Months"
+    href: "/plans/#get-pro"
+    variant: "outline"
+    size: "lg"
+header-badge:
+  label: "Trusted by hundreds of millions of buyers worldwide"
+  variant: "default"
+header-tags:
+  - label: "Free: manual renewal invoices via PayPal"
+    variant: "free"
+  - label: "Pro: automatic tokenized recurring charges"
+    variant: "pro"
+  - label: "Works with WooCommerce PayPal Payments"
+    variant: "default"
+  - label: "Buyer trust built in"
+    variant: "default"
 schema: |
   {
     "@type": "HowTo",
@@ -19,25 +42,6 @@ schema: |
     ]
   }
 ---
-
-<Section background="light" fullWidth>
-  <div className="landing-hero landing-hero--gateway container">
-    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <a href="/features/payment-gateways/">Payment Gateways</a> / <span>PayPal</span></p>
-    <Badge variant="default" className="landing-hero__badge">Trusted by hundreds of millions of buyers worldwide</Badge>
-    <h1 className="landing-hero__title">Accept PayPal Subscription Payments with WooCommerce</h1>
-    <p className="landing-hero__subtitle">Let customers subscribe and pay with PayPal. ArraySubs handles manual renewal invoicing on the free tier. Upgrade to Pro for fully automatic recurring charges via PayPal tokenization — no subscriber action needed on renewal day.</p>
-    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
-      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
-      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
-    </Flex>
-    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
-      <Badge variant="free">Free: manual renewal invoices via PayPal</Badge>
-      <Badge variant="pro">Pro: automatic tokenized recurring charges</Badge>
-      <Badge variant="default">Works with WooCommerce PayPal Payments</Badge>
-      <Badge variant="default">Buyer trust built in</Badge>
-    </Flex>
-  </div>
-</Section>
 
 <Section>
   <SectionHeading

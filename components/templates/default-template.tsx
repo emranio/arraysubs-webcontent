@@ -16,6 +16,7 @@ function HeroBreadcrumb({ meta }: { meta: ContentMeta }) {
   const categoryLabel = isSubContent
     ? meta.contentType.charAt(0).toUpperCase() + meta.contentType.slice(1)
     : undefined;
+  const breadcrumbTitle = meta.headline || meta.title;
 
   return (
     <p className="landing-hero__breadcrumb">
@@ -29,7 +30,7 @@ function HeroBreadcrumb({ meta }: { meta: ContentMeta }) {
       {meta.slug && (
         <>
           {' / '}
-          <span>{meta.title}</span>
+          <span>{breadcrumbTitle}</span>
         </>
       )}
     </p>
@@ -37,6 +38,7 @@ function HeroBreadcrumb({ meta }: { meta: ContentMeta }) {
 }
 
 export function DefaultTemplate({ meta, children }: DefaultTemplateProps) {
+  const heroTitle = meta.headline || meta.title;
   const heroSubText = meta.subText;
 
   return (
@@ -44,7 +46,15 @@ export function DefaultTemplate({ meta, children }: DefaultTemplateProps) {
       <Section background="light" fullWidth>
         <div className="landing-hero container">
           <HeroBreadcrumb meta={meta} />
-          <h1 className="landing-hero__title">{meta.title}</h1>
+          {meta.headerBadge && (
+            <Badge
+              variant={meta.headerBadge.variant ?? 'default'}
+              className="landing-hero__badge"
+            >
+              {meta.headerBadge.label}
+            </Badge>
+          )}
+          <h1 className="landing-hero__title">{heroTitle}</h1>
 
           {heroSubText && (
             <p className="landing-hero__subtitle">{heroSubText}</p>

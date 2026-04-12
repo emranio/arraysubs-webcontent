@@ -1,9 +1,32 @@
 ---
 title: "WooCommerce Subscription Products — Recurring Billing Made Simple"
 description: "Create simple or variable recurring products with flexible billing — daily, weekly, monthly, or yearly cycles. Free trials, signup fees, and one-time shipping included."
-template: canvas
+template: default
 publish: true
 bodyClass: "page-feature page-feature--subscriptions"
+headline: "Turn Any WooCommerce Product into a Subscription"
+sub-text: "Flexible recurring billing for any WooCommerce product — simple, variable, or virtual. Daily to yearly cycles, free trials, signup fees, and per-user limits all included in the free core."
+action-buttons:
+  - label: "Live Demo"
+    href: "/plans/#live-demo"
+    variant: "primary"
+    size: "lg"
+  - label: "Get Pro Free for 6 Months"
+    href: "/plans/#get-pro"
+    variant: "outline"
+    size: "lg"
+header-badge:
+  label: "Free feature"
+  variant: "free"
+header-tags:
+  - label: "Simple & variable subscriptions"
+    variant: "free"
+  - label: "Daily to yearly billing"
+    variant: "default"
+  - label: "Free trials included"
+    variant: "default"
+  - label: "Signup fees + limits"
+    variant: "default"
 schema: |
   {
     "@type": "SoftwareApplication",
@@ -14,25 +37,6 @@ schema: |
     "featureList": "Simple Subscriptions, Variable Subscriptions, Recurring Billing, Free Trials, Signup Fees"
   }
 ---
-
-<Section background="light" fullWidth>
-  <div className="landing-hero container">
-    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <span>Subscriptions &amp; Recurring Products</span></p>
-    <Badge variant="free" className="landing-hero__badge">Free feature</Badge>
-    <h1 className="landing-hero__title">Turn Any WooCommerce Product into a Subscription</h1>
-    <p className="landing-hero__subtitle">Flexible recurring billing for any WooCommerce product — simple, variable, or virtual. Daily to yearly cycles, free trials, signup fees, and per-user limits all included in the free core.</p>
-    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
-      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
-      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
-    </Flex>
-    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
-      <Badge variant="free">Simple &amp; variable subscriptions</Badge>
-      <Badge variant="default">Daily to yearly billing</Badge>
-      <Badge variant="default">Free trials included</Badge>
-      <Badge variant="default">Signup fees + limits</Badge>
-    </Flex>
-  </div>
-</Section>
 
 <Section
   label="PRODUCT TYPES"
