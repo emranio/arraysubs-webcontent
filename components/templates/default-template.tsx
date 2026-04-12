@@ -21,7 +21,7 @@ function HomeBreadcrumbIcon() {
       fill="currentColor"
       aria-hidden="true"
       focusable="false"
-      className="landing-hero__home-icon"
+      className="breadcrumb__home-icon"
     >
       <path
         fill="currentColor"
@@ -39,8 +39,8 @@ function HeroBreadcrumb({ meta, titleText }: { meta: ContentMeta; titleText: str
   const pageBreadcrumbs = isSubContent ? [] : getPageRouteBreadcrumbs(meta.slug);
 
   return (
-    <p className="landing-hero__breadcrumb">
-      <Link href="/" title="Home" aria-label="Home" className="landing-hero__home-link">
+    <p className="breadcrumb breadcrumb--hero">
+      <Link href="/" title="Home" aria-label="Home" className="breadcrumb__home-link">
         <HomeBreadcrumbIcon />
       </Link>
       {isSubContent && categoryLabel && (
