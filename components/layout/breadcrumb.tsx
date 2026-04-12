@@ -49,7 +49,7 @@ export function Breadcrumb({
         </li>
         {items.map((item, index) => (
           <li key={index} className="breadcrumb__item">
-            <span className="breadcrumb__separator" aria-hidden="true">/</span>
+            {index > 0 && <span className="breadcrumb__separator" aria-hidden="true">/</span>}
             {item.href ? (
               <Link href={item.href} className="breadcrumb__link" title={item.label}>
                 {item.label}

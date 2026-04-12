@@ -37,7 +37,7 @@
     font-weight: var(--font-weight-semibold);
     letter-spacing: -0.04em;
     line-height: 1;
-    padding-bottom: var(--space-6);
+    padding-bottom: var(--space-12);
     margin-top: -9px;
     color: var(--color-primary);
   }
@@ -58,16 +58,26 @@
   }
 
   &__actions {
-    margin-bottom: var(--space-8);
     justify-content: flex-start;
+    padding-top: var(--space-10);
   }
 
   &__trust {
     justify-content: flex-start;
+    padding-bottom: var(--space-8);
+    margin-top: -1rem;
 
     .badge {
       max-width: 100%;
       text-align: left;
+    }
+  }
+
+  &__content > div,
+  &__content > p {
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
     }
   }
 

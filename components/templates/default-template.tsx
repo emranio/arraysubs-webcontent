@@ -96,6 +96,19 @@ export function DefaultTemplate({ meta, children }: DefaultTemplateProps) {
               <p className="page-hero__subtitle">{heroSubText}</p>
             )}
 
+            {meta.headerTags && meta.headerTags.length > 0 && (
+              <Flex gap="sm" justify="start" wrap className="page-hero__trust">
+                {meta.headerTags.map((tag, index) => (
+                  <Badge
+                    key={`${tag.label}-${index}`}
+                    variant={tag.variant ?? 'default'}
+                  >
+                    {tag.label}
+                  </Badge>
+                ))}
+              </Flex>
+            )}
+            
             {meta.actionButtons && meta.actionButtons.length > 0 && (
               <Flex gap="md" justify="start" wrap className="page-hero__actions">
                 {meta.actionButtons.map((action, index) => (
@@ -110,19 +123,6 @@ export function DefaultTemplate({ meta, children }: DefaultTemplateProps) {
                 ))}
               </Flex>
             )}
-
-            {meta.headerTags && meta.headerTags.length > 0 && (
-              <Flex gap="md" justify="start" wrap className="page-hero__trust">
-                {meta.headerTags.map((tag, index) => (
-                  <Badge
-                    key={`${tag.label}-${index}`}
-                    variant={tag.variant ?? 'default'}
-                  >
-                    {tag.label}
-                  </Badge>
-                ))}
-              </Flex>
-              )}
           </div>
         </div>
       </Section>
