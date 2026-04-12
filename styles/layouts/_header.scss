@@ -218,11 +218,7 @@
     line-height: var(--leading-relaxed);
     color: var(--color-text-secondary);
     text-decoration: none;
-    transition:
-      color var(--transition-fast),
-      border-color var(--transition-fast),
-      box-shadow var(--transition-fast),
-      transform var(--transition-fast);
+    transition: color var(--transition-fast);
 
     &--card {
       min-height: 4.25rem;
@@ -234,9 +230,6 @@
 
     &:hover {
       color: var(--color-black);
-      border-color: rgba(59, 130, 246, 0.18);
-      box-shadow: 0 0.75rem 1.5rem rgba(15, 23, 42, 0.08);
-      transform: translateY(-1px);
     }
   }
 
@@ -347,12 +340,12 @@
 @keyframes headerFadeIn {
   from {
     opacity: 0;
-    transform: translateY(-0.25rem);
+    transform: translate(-50%, -0.25rem);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
   }
 }
 
