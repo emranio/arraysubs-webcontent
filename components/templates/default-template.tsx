@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import type { ContentMeta } from '@/lib/content';
+import { getPageRouteBreadcrumbs } from '@/lib/breadcrumbs';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Flex } from '@/components/ui/flex';
@@ -16,22 +17,37 @@ function HeroBreadcrumb({ meta, titleText }: { meta: ContentMeta; titleText: str
   const categoryLabel = isSubContent
     ? meta.contentType.charAt(0).toUpperCase() + meta.contentType.slice(1)
     : undefined;
+  const pageBreadcrumbs = isSubContent ? [] : getPageRouteBreadcrumbs(meta.slug);
 
   return (
     <p className="landing-hero__breadcrumb">
-      <Link href="/">Home</Link>
-      {categoryLabel && (
+      <Link href="/" title="Home">Home</Link>
+      {isSubContent && categoryLabel && (
         <>
           {' / '}
-          <Link href={`/${meta.contentType}/`}>{categoryLabel}</Link>
+          <Link href={`/${meta.contentType}/`} title={categoryLabel}>{categoryLabel}</Link>
         </>
       )}
-      {meta.slug && (
+      {isSubContent && meta.slug && (
         <>
           {' / '}
           <span>{titleText}</span>
         </>
       )}
+      {!isSubContent && pageBreadcrumbs.map((item, index) => {
+        const isCurrent = index === pageBreadcrumbs.length - 1;
+
+        return (
+          <React.Fragment key={item.href}>
+            {' / '}
+            {isCurrent ? (
+              <span>{item.label}</span>
+            ) : (
+              <Link href={item.href} title={item.label}>{item.label}</Link>
+            )}
+          </React.Fragment>
+        );
+      })}
     </p>
   );
 }

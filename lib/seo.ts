@@ -20,7 +20,7 @@ export function generateContentMetadata(meta: ContentMeta): Metadata {
     : undefined;
 
   return {
-    title: meta.title,
+    title: `${meta.title} — ${siteConfig.siteName}`,
     description: meta.description,
     alternates: {
       canonical: canonicalUrl,

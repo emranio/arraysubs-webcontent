@@ -1,4 +1,5 @@
 import type { ContentMeta } from './content';
+import { getPageRouteBreadcrumbs } from './breadcrumbs';
 import siteConfig from '@/site.config.json';
 
 function getOrganizationSchema() {
@@ -44,11 +45,13 @@ function getBreadcrumbSchema(meta: ContentMeta) {
       });
     }
   } else if (meta.slug) {
-    items.push({
-      '@type': 'ListItem',
-      position: 2,
-      name: meta.title,
-      item: `${siteUrl}/${meta.slug}/`,
+    getPageRouteBreadcrumbs(meta.slug).forEach((item, index) => {
+      items.push({
+        '@type': 'ListItem',
+        position: index + 2,
+        name: item.label,
+        item: `${siteUrl}${item.href}`,
+      });
     });
   }
 
