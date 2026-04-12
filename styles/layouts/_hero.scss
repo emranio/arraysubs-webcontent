@@ -8,12 +8,21 @@
   max-width: var(--layout-max);
   margin: 0 auto;
   display: grid;
+  grid-template-columns: 20rem minmax(0, 1fr);
+  align-items: end;
+  column-gap: var(--space-10);
+  row-gap: var(--space-4);
+
+  .breadcrumb--hero {
+    margin-bottom: 0;
+  }
 
   &__badge {
     margin-bottom: var(--space-5);
   }
 
   &__content {
+    min-width: 0;
     text-align: left;
   }
 
@@ -22,7 +31,8 @@
     font-weight: var(--font-weight-extrabold);
     letter-spacing: -0.04em;
     line-height: var(--leading-tight);
-    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-6);
+    margin-top: -9px;
   }
 
   &__subtitle {
@@ -55,6 +65,9 @@
   }
 
   @media (max-width: 1024px) {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--space-6);
+
     &__title {
       font-size: var(--text-5xl);
     }

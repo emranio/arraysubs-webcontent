@@ -81,15 +81,15 @@ export function DefaultTemplate({ meta, children }: DefaultTemplateProps) {
       <Section background="light" fullWidth>
         <div className="page-hero container">
           <HeroBreadcrumb meta={meta} titleText={pageHeadline} />
-          {meta.headerBadge && (
-            <Badge
-              variant={meta.headerBadge.variant ?? 'default'}
-              className="page-hero__badge"
-            >
-              {meta.headerBadge.label}
-            </Badge>
-          )}
-          <div className='page-hero__content'>
+          <div className="page-hero__content">
+            {meta.headerBadge && (
+              <Badge
+                variant={meta.headerBadge.variant ?? 'default'}
+                className="page-hero__badge"
+              >
+                {meta.headerBadge.label}
+              </Badge>
+            )}
             <h1 className="page-hero__title">{pageHeadline}</h1>
 
             {heroSubText && (
@@ -123,7 +123,7 @@ export function DefaultTemplate({ meta, children }: DefaultTemplateProps) {
                 ))}
               </Flex>
               )}
-            </div>
+          </div>
         </div>
       </Section>
 
