@@ -130,42 +130,6 @@ function normalizeActionButtons(value: unknown): ContentActionButton[] | undefin
   return actions.length > 0 ? actions : undefined;
 }
 
-function normalizeHeaderTags(value: unknown): ContentHeaderTag[] | undefined {
-  if (!Array.isArray(value)) {
-    return undefined;
-  }
-
-  const tags = value
-    .map((item) => {
-      if (typeof item === 'string') {
-        const label = getStringValue(item);
-
-        return label ? { label, variant: DEFAULT_BADGE_VARIANT } : null;
-      }
-
-      if (!item || typeof item !== 'object') {
-        return null;
-      }
-
-      const tag = item as Record<string, unknown>;
-      const label = getStringValue(tag.label);
-
-      if (!label) {
-        return null;
-      }
-
-      const variant = normalizeBadgeVariant(tag.variant);
-
-      return {
-        label,
-        ...(variant && { variant }),
-      };
-    })
-    .filter((item): item is ContentHeaderTag => item !== null);
-
-  return tags.length > 0 ? tags : undefined;
-}
-
 function normalizeHeaderTag(value: unknown): ContentHeaderTag | undefined {
   if (typeof value === 'string') {
     const label = getStringValue(value);
@@ -190,6 +154,22 @@ function normalizeHeaderTag(value: unknown): ContentHeaderTag | undefined {
     label,
     ...(variant && { variant }),
   };
+}
+
+function normalizeHeaderTags(value: unknown): ContentHeaderTag[] | undefined {
+  if (!Array.isArray(value)) {
+    return undefined;
+  }
+
+  const tags = value
+    .map((item) => normalizeHeaderTag(item) ?? null)
+    .filter((item): item is ContentHeaderTag => item !== null);
+
+  return tags.length > 0 ? tags : undefined;
+}
+
+function normalizeHeaderBadge(value: unknown): ContentHeaderTag | undefined {
+  return normalizeHeaderTag(value);
 }
 
 function normalizeSeoTags(value: unknown): string[] | undefined {
@@ -244,7 +224,7 @@ function createContentMeta(
     category: getStringValue(data.category),
     subText: getStringValue(rawSubText),
     actionButtons: normalizeActionButtons(rawActionButtons),
-    headerBadge: normalizeHeaderTag(rawHeaderBadge),
+    headerBadge: normalizeHeaderBadge(rawHeaderBadge),
     headerTags: normalizeHeaderTags(rawHeaderTags),
     tags: normalizeSeoTags(rawSeoTags),
     slug: slug.join('/'),
