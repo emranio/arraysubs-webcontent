@@ -7,6 +7,18 @@ import {
   inlineLocalMarkdownImports,
 } from '@/lib/mdx-partials';
 
+export interface ContentActionButton {
+  label: string;
+  href: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'text';
+  size?: 'sm' | 'md' | 'lg';
+}
+
+export interface ContentHeaderTag {
+  label: string;
+  variant?: 'free' | 'pro' | 'new' | 'default';
+}
+
 export interface ContentMeta {
   title: string;
   description: string;
@@ -18,6 +30,9 @@ export interface ContentMeta {
   author?: string;
   date?: string;
   category?: string;
+  subText?: string;
+  actionButtons?: ContentActionButton[];
+  headerTags?: ContentHeaderTag[];
   tags?: string[];
   slug: string;
   contentType: string;
@@ -31,6 +46,11 @@ export interface ContentItem {
 }
 
 const CONTENT_DIR = path.join(process.cwd(), 'contents');
+
+const VALID_TEMPLATES = new Set(['default', 'canvas', 'blank', 'blog']);
+const VALID_BUTTON_VARIANTS = new Set(['primary', 'secondary', 'outline', 'text']);
+const VALID_BUTTON_SIZES = new Set(['sm', 'md', 'lg']);
+const VALID_BADGE_VARIANTS = new Set(['free', 'pro', 'new', 'default']);
 
 // Simple in-memory cache
 const contentCache = new Map<string, { mtime: number; result: ContentItem }>();
@@ -52,6 +72,149 @@ function extractFirstImage(content: string): string | undefined {
   if (htmlImgMatch) return htmlImgMatch[1];
 
   return undefined;
+}
+
+function getStringValue(value: unknown): string | undefined {
+  if (typeof value !== 'string') {
+    return undefined;
+  }
+
+  const trimmed = value.trim();
+
+  return trimmed ? trimmed : undefined;
+}
+
+function normalizeTemplate(value: unknown): ContentMeta['template'] {
+  return typeof value === 'string' && VALID_TEMPLATES.has(value)
+    ? (value as ContentMeta['template'])
+    : 'default';
+}
+
+function normalizeActionButtons(value: unknown): ContentActionButton[] | undefined {
+  if (!Array.isArray(value)) {
+    return undefined;
+  }
+
+  const actions = value
+    .map((item) => {
+      if (!item || typeof item !== 'object') {
+        return null;
+      }
+
+      const action = item as Record<string, unknown>;
+      const label = getStringValue(action.label);
+      const href = getStringValue(action.href);
+
+      if (!label || !href) {
+        return null;
+      }
+
+      const variant = getStringValue(action.variant);
+      const size = getStringValue(action.size);
+
+      return {
+        label,
+        href,
+        ...(variant && VALID_BUTTON_VARIANTS.has(variant) && { variant: variant as ContentActionButton['variant'] }),
+        ...(size && VALID_BUTTON_SIZES.has(size) && { size: size as ContentActionButton['size'] }),
+      };
+    })
+    .filter((item): item is ContentActionButton => item !== null);
+
+  return actions.length > 0 ? actions : undefined;
+}
+
+function normalizeHeaderTags(value: unknown): ContentHeaderTag[] | undefined {
+  if (!Array.isArray(value)) {
+    return undefined;
+  }
+
+  const tags = value
+    .map((item) => {
+      if (typeof item === 'string') {
+        const label = getStringValue(item);
+
+        return label ? { label, variant: 'default' as const } : null;
+      }
+
+      if (!item || typeof item !== 'object') {
+        return null;
+      }
+
+      const tag = item as Record<string, unknown>;
+      const label = getStringValue(tag.label);
+
+      if (!label) {
+        return null;
+      }
+
+      const variant = getStringValue(tag.variant);
+
+      return {
+        label,
+        ...(variant && VALID_BADGE_VARIANTS.has(variant) && { variant: variant as ContentHeaderTag['variant'] }),
+      };
+    })
+    .filter((item): item is ContentHeaderTag => item !== null);
+
+  return tags.length > 0 ? tags : undefined;
+}
+
+function normalizeSeoTags(value: unknown): string[] | undefined {
+  if (!Array.isArray(value)) {
+    return undefined;
+  }
+
+  const tags = value
+    .map((item) => {
+      if (typeof item === 'string') {
+        return getStringValue(item);
+      }
+
+      if (!item || typeof item !== 'object') {
+        return undefined;
+      }
+
+      return getStringValue((item as Record<string, unknown>).label);
+    })
+    .filter((item): item is string => Boolean(item));
+
+  return tags.length > 0 ? tags : undefined;
+}
+
+function createContentMeta(
+  data: Record<string, unknown>,
+  contentType: string,
+  slug: string[],
+  readingTimeText: string,
+  coverImage?: string,
+  publishValue?: boolean | string
+): ContentMeta {
+  const template = normalizeTemplate(data.template);
+  const rawSubText = data.subText ?? data['sub-text'];
+  const rawActionButtons = data.actionButtons ?? data['action-buttons'] ?? data.actions;
+  const rawHeaderTags = data.headerTags ?? data['header-tags'] ?? (template === 'blog' ? undefined : data.tags);
+  const rawSeoTags = template === 'blog' ? data.tags : data.seoTags ?? data['seo-tags'];
+
+  return {
+    title: getStringValue(data.title) || 'Untitled',
+    description: getStringValue(data.description) || '',
+    coverImage,
+    schema: getStringValue(data.schema),
+    publish: publishValue ?? false,
+    bodyClass: getStringValue(data.bodyClass),
+    template,
+    author: getStringValue(data.author),
+    date: getStringValue(data.date),
+    category: getStringValue(data.category),
+    subText: getStringValue(rawSubText),
+    actionButtons: normalizeActionButtons(rawActionButtons),
+    headerTags: normalizeHeaderTags(rawHeaderTags),
+    tags: normalizeSeoTags(rawSeoTags),
+    slug: slug.join('/'),
+    contentType,
+    readingTime: readingTimeText,
+  };
 }
 
 export function resolveSlug(filePath: string): { slug: string[]; contentType: string } {
@@ -116,22 +279,14 @@ export function getContentBySlug(
   const rt = readingTime(resolvedContent);
   const coverImage = data.coverImage || extractFirstImage(resolvedContent);
 
-  const meta: ContentMeta = {
-    title: data.title || 'Untitled',
-    description: data.description || '',
-    coverImage,
-    schema: data.schema,
-    publish: publishValue,
-    bodyClass: data.bodyClass,
-    template: data.template || 'default',
-    author: data.author,
-    date: data.date,
-    category: data.category,
-    tags: data.tags,
-    slug: slug.join('/'),
+  const meta = createContentMeta(
+    data as Record<string, unknown>,
     contentType,
-    readingTime: rt.text,
-  };
+    slug,
+    rt.text,
+    coverImage,
+    publishValue
+  );
 
   const result: ContentItem = { meta, content: resolvedContent };
 
@@ -171,22 +326,16 @@ export function getAllContent(contentType: string): ContentMeta[] {
         const rt = readingTime(resolvedContent);
         const coverImage = data.coverImage || extractFirstImage(resolvedContent);
 
-        items.push({
-          title: data.title || 'Untitled',
-          description: data.description || '',
-          coverImage,
-          schema: data.schema,
-          publish: publishValue,
-          bodyClass: data.bodyClass,
-          template: data.template || 'default',
-          author: data.author,
-          date: data.date,
-          category: data.category,
-          tags: data.tags,
-          slug: slug.join('/'),
-          contentType,
-          readingTime: rt.text,
-        });
+        items.push(
+          createContentMeta(
+            data as Record<string, unknown>,
+            contentType,
+            slug,
+            rt.text,
+            coverImage,
+            publishValue
+          )
+        );
       }
     }
   }

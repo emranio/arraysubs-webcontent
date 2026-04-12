@@ -6,7 +6,7 @@
 .hero {
   text-align: center;
   padding: var(--space-16) 0 var(--space-12);
-  max-width: 56rem;
+  max-width: var(--layout-max);
   margin: 0 auto;
 
   &__eyebrow {
@@ -23,7 +23,10 @@
     font-size: var(--text-6xl);
     font-weight: var(--font-weight-extrabold);
     line-height: var(--leading-tight);
+    max-width: var(--content-max-content);
     margin-bottom: var(--space-6);
+    margin-left: auto;
+    margin-right: auto;
     color: var(--color-black);
     letter-spacing: -0.035em;
 
@@ -43,7 +46,7 @@
     color: var(--color-text-secondary);
     line-height: var(--leading-relaxed);
     margin-bottom: var(--space-8);
-    max-width: 44rem;
+    max-width: var(--content-max-copy);
     margin-left: auto;
     margin-right: auto;
 
@@ -89,7 +92,7 @@
 }
 
 .differentiator {
-  max-width: 48rem;
+  max-width: var(--content-max-reading);
   margin: 0 auto;
 
   &__content {

@@ -3,9 +3,6 @@
 // ============================================
 
 .mdx-content {
-  max-width: 48rem;
-  margin: 0 auto;
-
   h1,
   h2,
   h3,
@@ -84,9 +81,4 @@
   > *:last-child {
     margin-bottom: 0;
   }
-}
-
-// Full-width MDX content (for canvas/homepage templates)
-.mdx-content--full {
-  max-width: none;
 }

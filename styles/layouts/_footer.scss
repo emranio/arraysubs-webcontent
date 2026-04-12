@@ -70,7 +70,7 @@
     font-size: var(--text-base);
     color: var(--color-gray-400);
     line-height: var(--leading-relaxed);
-    max-width: 40rem;
+    max-width: var(--content-max-compact);
     margin: 0;
   }
 
@@ -132,7 +132,7 @@
 
   // ─── Brand Column ─────────────────────────────────────────
   &__brand {
-    max-width: 22rem;
+    max-width: var(--content-max-brand);
   }
 
   &__logo {

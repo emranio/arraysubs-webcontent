@@ -8,11 +8,20 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
+  variant?: 'default' | 'hero';
+  className?: string;
 }
 
-export function Breadcrumb({ items }: BreadcrumbProps) {
+export function Breadcrumb({
+  items,
+  variant = 'default',
+  className = '',
+}: BreadcrumbProps) {
   return (
-    <nav className="breadcrumb" aria-label="Breadcrumb">
+    <nav
+      className={`breadcrumb ${variant === 'hero' ? 'breadcrumb--hero' : ''} ${className}`.trim()}
+      aria-label="Breadcrumb"
+    >
       <ol className="breadcrumb__list">
         <li className="breadcrumb__item">
           <Link href="/" className="breadcrumb__link" title="Home">

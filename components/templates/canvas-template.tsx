@@ -9,7 +9,7 @@ interface CanvasTemplateProps {
 export function CanvasTemplate({ meta, children }: CanvasTemplateProps) {
   return (
     <article className={`page page--canvas ${meta.bodyClass || ''}`}>
-      <div className="mdx-content mdx-content--full">
+      <div className="mdx-content">
         {children}
       </div>
     </article>

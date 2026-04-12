@@ -86,7 +86,15 @@
 
   // Layout
   --container-max: 100rem;
+  --layout-max: var(--container-max);
   --container-padding: var(--space-6);
+  --content-max-brand: min(var(--container-max), 22rem);
+  --content-max-form: min(var(--container-max), 30rem);
+  --content-max-compact: min(var(--container-max), 40rem);
+  --content-max-panel: min(var(--container-max), 42rem);
+  --content-max-copy: min(var(--container-max), 44rem);
+  --content-max-reading: min(var(--container-max), 48rem);
+  --content-max-content: min(var(--container-max), 56rem);
 
   // Border Radius
   --radius-sm: 0.375rem;

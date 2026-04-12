@@ -166,7 +166,7 @@
 // Early Access Section
 .early-access {
   text-align: center;
-  max-width: 40rem;
+  max-width: var(--content-max-compact);
   margin: 0 auto;
   padding: var(--space-4) 0;
 
@@ -190,7 +190,7 @@
 
 // Early Access Form
 .early-access-form {
-  max-width: 30rem;
+  max-width: var(--content-max-form);
   margin: 0 auto;
 
   &__field {
