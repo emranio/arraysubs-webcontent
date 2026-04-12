@@ -1,6 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
 import type { ContentMeta } from '@/lib/content';
-import { Breadcrumb } from '@/components/layout/breadcrumb';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Flex } from '@/components/ui/flex';
@@ -11,32 +11,39 @@ interface DefaultTemplateProps {
   children: React.ReactNode;
 }
 
+function HeroBreadcrumb({ meta }: { meta: ContentMeta }) {
+  const isSubContent = meta.contentType !== 'page';
+  const categoryLabel = isSubContent
+    ? meta.contentType.charAt(0).toUpperCase() + meta.contentType.slice(1)
+    : undefined;
+
+  return (
+    <p className="landing-hero__breadcrumb">
+      <Link href="/">Home</Link>
+      {categoryLabel && (
+        <>
+          {' / '}
+          <Link href={`/${meta.contentType}/`}>{categoryLabel}</Link>
+        </>
+      )}
+      {meta.slug && (
+        <>
+          {' / '}
+          <span>{meta.title}</span>
+        </>
+      )}
+    </p>
+  );
+}
+
 export function DefaultTemplate({ meta, children }: DefaultTemplateProps) {
-  const breadcrumbItems = [];
   const heroSubText = meta.subText;
-
-  if (meta.contentType !== 'page') {
-    breadcrumbItems.push({
-      label: meta.contentType.charAt(0).toUpperCase() + meta.contentType.slice(1),
-      href: `/${meta.contentType}/`,
-    });
-  }
-
-  if (meta.slug) {
-    breadcrumbItems.push({ label: meta.title });
-  }
 
   return (
     <article className={`page page--default ${meta.bodyClass || ''}`}>
       <Section background="light" fullWidth>
         <div className="landing-hero container">
-          {breadcrumbItems.length > 0 && (
-            <Breadcrumb
-              items={breadcrumbItems}
-              variant="hero"
-              className="landing-hero__breadcrumb"
-            />
-          )}
+          <HeroBreadcrumb meta={meta} />
           <h1 className="landing-hero__title">{meta.title}</h1>
 
           {heroSubText && (
