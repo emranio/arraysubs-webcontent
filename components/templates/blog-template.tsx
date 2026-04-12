@@ -45,15 +45,6 @@ export function BlogTemplate({ meta, children }: BlogTemplateProps) {
               )}
               <span className="page__reading-time">{meta.readingTime}</span>
             </div>
-            {meta.tags && meta.tags.length > 0 && (
-              <div className="page__tags">
-                {meta.tags.map((tag) => (
-                  <span key={tag} className="page__tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
           </header>
           <div className="mdx-content">
             {children}

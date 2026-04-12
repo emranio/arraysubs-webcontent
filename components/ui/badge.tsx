@@ -11,6 +11,10 @@ export function Badge({
   variant = 'default',
   className = '',
 }: BadgeProps) {
+  if (className.includes('landing-hero__badge')) {
+    return null;
+  }
+
   return (
     <span className={`badge badge--${variant} ${className}`}>
       {children}

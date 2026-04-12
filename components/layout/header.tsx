@@ -12,7 +12,7 @@ type NavigationLink = {
 };
 
 type NavigationSection = {
-  title: string;
+  title?: string;
   links: NavigationLink[];
 };
 
@@ -78,7 +78,6 @@ export function Header() {
   const pathname = usePathname();
   const hasMountedRef = useRef(false);
   const [isDesktopViewport, setIsDesktopViewport] = useState(false);
-  const [desktopNavigationSuppressed, setDesktopNavigationSuppressed] = useState(false);
   const [openDesktopSubmenu, setOpenDesktopSubmenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
@@ -102,13 +101,11 @@ export function Header() {
       setIsDesktopViewport(event.matches);
 
       if (event.matches) {
-        setDesktopNavigationSuppressed(false);
         setMobileMenuOpen(false);
         setOpenMobileSubmenu(null);
         return;
       }
 
-      setDesktopNavigationSuppressed(false);
       setOpenDesktopSubmenu(null);
     };
 
@@ -132,7 +129,6 @@ export function Header() {
       setMobileMenuOpen(false);
       setOpenMobileSubmenu(null);
       setOpenDesktopSubmenu(null);
-      setDesktopNavigationSuppressed(true);
     });
 
     return () => {
@@ -144,10 +140,6 @@ export function Header() {
     setMobileMenuOpen(false);
     setOpenMobileSubmenu(null);
     setOpenDesktopSubmenu(null);
-
-    if (isDesktopViewport) {
-      setDesktopNavigationSuppressed(true);
-    }
   };
 
   const toggleMobileMenu = () => {
@@ -170,7 +162,6 @@ export function Header() {
 
   const toggleMenuButton = (label: string) => {
     if (isDesktopViewport) {
-      setDesktopNavigationSuppressed(false);
       setOpenDesktopSubmenu((current) => (current === label ? null : label));
       return;
     }
@@ -183,10 +174,6 @@ export function Header() {
       return;
     }
 
-    if (trigger === 'focus') {
-      setDesktopNavigationSuppressed(false);
-    }
-
     setOpenDesktopSubmenu(label);
   };
 
@@ -195,12 +182,15 @@ export function Header() {
   };
 
   const releaseDesktopNavigation = () => {
-    setDesktopNavigationSuppressed(false);
     setOpenDesktopSubmenu(null);
   };
 
-  const renderSubmenuLink = (link: NavigationLink, variant: 'card' | 'compact' = 'compact') => (
-    <li key={link.href} className="header__submenu-item">
+  const renderSubmenuLink = (
+    link: NavigationLink,
+    variant: 'card' | 'compact' = 'compact',
+    keyValue?: string,
+  ) => (
+    <li key={keyValue} className="header__submenu-item">
       <Link
         href={link.href}
         className={`header__submenu-link header__submenu-link--${variant}`}
@@ -238,17 +228,18 @@ export function Header() {
             </Link>
           </div>
           <ul className="header__menu">
-            {navigation.main.map((item) => {
+            {navigation.main.map((item, itemIndex) => {
               const sections = item.sections ?? [];
               const children = item.children ?? [];
               const hasSubmenu = sections.length > 0 || children.length > 0;
               const submenuId = getSubmenuId(item.label);
               const isDesktopSubmenuOpen = openDesktopSubmenu === item.label;
               const isMobileSubmenuOpen = openMobileSubmenu === item.label;
+              const itemKey = `${item.label}-${itemIndex}`;
 
               return (
                 <li
-                  key={item.label}
+                  key={itemKey}
                   className={`header__menu-item ${hasSubmenu ? 'header__menu-item--has-children' : ''} ${sections.length > 0 ? 'header__menu-item--mega' : ''} ${isDesktopSubmenuOpen ? 'header__menu-item--desktop-open' : ''} ${isMobileSubmenuOpen ? 'header__menu-item--mobile-open' : ''}`}
                   onMouseEnter={hasSubmenu ? () => openDesktopNavigation(item.label, 'pointer') : undefined}
                   onMouseLeave={hasSubmenu ? closeDesktopNavigation : undefined}
@@ -308,23 +299,35 @@ export function Header() {
                     <div id={submenuId} className="header__submenu">
                       {sections.length > 0 ? (
                         <div className="header__submenu-grid">
-                          {sections.map((section) => (
+                          {sections.map((section, sectionIndex) => {
+                            const sectionKey = `${itemKey}-${section.title ?? 'section'}-${sectionIndex}`;
+
+                            return (
                             <div
-                              key={section.title}
+                              key={sectionKey}
                               className={`header__submenu-section ${section.links.length > 6 ? 'header__submenu-section--wide' : ''}`}
                             >
-                              <p className="header__submenu-title">{section.title}</p>
+                              {section.title && <p className="header__submenu-title">{section.title}</p>}
                               <ul
                                 className={`header__submenu-list ${section.links.length > 6 ? 'header__submenu-list--feature-cards' : 'header__submenu-list--stacked'}`}
                               >
-                                {section.links.map((link) => renderSubmenuLink(link, 'card'))}
+                                {section.links.map((link, linkIndex) => renderSubmenuLink(
+                                  link,
+                                  'card',
+                                  `${sectionKey}-${link.href}-${linkIndex}`,
+                                ))}
                               </ul>
                             </div>
-                          ))}
+                            );
+                          })}
                         </div>
                       ) : (
                         <ul className="header__submenu-list header__submenu-list--columns">
-                          {children.map((link) => renderSubmenuLink(link, 'compact'))}
+                          {children.map((link, linkIndex) => renderSubmenuLink(
+                            link,
+                            'compact',
+                            `${itemKey}-${link.href}-${linkIndex}`,
+                          ))}
                         </ul>
                       )}
                     </div>
@@ -335,9 +338,9 @@ export function Header() {
           </ul>
 
           <div className="header__actions">
-            {navigation.cta.map((item) => (
+            {navigation.cta.map((item, ctaIndex) => (
               <Link
-                key={item.href}
+                key={`${item.href}-${ctaIndex}`}
                 href={item.href}
                 className={`btn btn--${item.variant} btn--sm`}
                 title={item.label}
