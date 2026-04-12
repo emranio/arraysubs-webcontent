@@ -1,0 +1,32 @@
+// ============================================
+// FAQ — Question & answer blocks
+// ============================================
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-width: var(--content-max-content);
+  margin: 0 auto;
+}
+
+.faq-item {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg);
+
+  &__question {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-black);
+    margin-bottom: var(--space-3);
+    line-height: var(--leading-snug);
+  }
+
+  &__answer {
+    margin-bottom: 0;
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+}

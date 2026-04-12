@@ -1,0 +1,28 @@
+// ============================================
+// Comparison — Feature tables & comparison links
+// ============================================
+
+.feature-category-group {
+  + .feature-category-group {
+    margin-top: var(--space-12);
+  }
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.feature-comparison {
+  min-width: 48rem;
+
+  th,
+  td {
+    vertical-align: top;
+  }
+}
+
+.comparison-links {
+  .card__title {
+    font-size: var(--text-xl);
+  }
+}

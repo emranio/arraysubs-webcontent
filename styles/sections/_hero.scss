@@ -1,0 +1,69 @@
+// ============================================
+// Hero — Page hero block (default template)
+// ============================================
+
+.landing-hero {
+  text-align: left;
+  padding: var(--space-16) 0 var(--space-12);
+  max-width: var(--layout-max);
+  margin: 0 auto;
+
+  &__badge {
+    margin-bottom: var(--space-5);
+  }
+
+  &__title {
+    font-size: var(--text-6xl);
+    font-weight: var(--font-weight-extrabold);
+    letter-spacing: -0.04em;
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-6);
+  }
+
+  &__subtitle {
+    max-width: var(--content-max-content);
+    margin: 0 0 var(--space-8);
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+
+  // When inside .mdx-content (canvas template), override .mdx-content p specificity
+  .mdx-content &__subtitle {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+  }
+
+  &__actions {
+    margin-bottom: var(--space-8);
+    justify-content: flex-start;
+  }
+
+  &__trust {
+    justify-content: flex-start;
+
+    .badge {
+      max-width: 100%;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__title {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--space-12) 0 var(--space-10);
+
+    &__title {
+      font-size: var(--text-4xl);
+    }
+
+    &__subtitle {
+      font-size: var(--text-base);
+    }
+  }
+}

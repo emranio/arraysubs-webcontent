@@ -1,0 +1,39 @@
+// ============================================
+// Proof — Social proof grid & cards
+// ============================================
+
+.proof-grid {
+  align-items: stretch;
+}
+
+.proof-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  text-align: center;
+  height: 100%;
+
+  &__value {
+    font-size: var(--text-4xl);
+    line-height: 1;
+    color: var(--color-black);
+    letter-spacing: -0.03em;
+  }
+
+  &__label {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+}
+
+@media (max-width: 768px) {
+  .proof-card {
+    &__value {
+      font-size: var(--text-3xl);
+    }
+  }
+}
