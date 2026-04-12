@@ -16,10 +16,6 @@ export function Badge({
   variant = DEFAULT_BADGE_VARIANT,
   className = '',
 }: BadgeProps) {
-  if (className.includes('landing-hero__badge')) {
-    return null;
-  }
-
   const resolvedVariant = normalizeBadgeVariant(variant) ?? DEFAULT_BADGE_VARIANT;
 
   return (

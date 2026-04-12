@@ -11,7 +11,7 @@ interface DefaultTemplateProps {
   children: React.ReactNode;
 }
 
-function HeroBreadcrumb({ meta }: { meta: ContentMeta }) {
+function HeroBreadcrumb({ meta, titleText }: { meta: ContentMeta; titleText: string }) {
   const isSubContent = meta.contentType !== 'page';
   const categoryLabel = isSubContent
     ? meta.contentType.charAt(0).toUpperCase() + meta.contentType.slice(1)
@@ -29,7 +29,7 @@ function HeroBreadcrumb({ meta }: { meta: ContentMeta }) {
       {meta.slug && (
         <>
           {' / '}
-          <span>{meta.title}</span>
+          <span>{titleText}</span>
         </>
       )}
     </p>
@@ -37,14 +37,23 @@ function HeroBreadcrumb({ meta }: { meta: ContentMeta }) {
 }
 
 export function DefaultTemplate({ meta, children }: DefaultTemplateProps) {
+  const pageHeadline = meta.headline || meta.title;
   const heroSubText = meta.subText;
 
   return (
     <article className={`page page--default ${meta.bodyClass || ''}`}>
       <Section background="light" fullWidth>
         <div className="landing-hero container">
-          <HeroBreadcrumb meta={meta} />
-          <h1 className="landing-hero__title">{meta.title}</h1>
+          <HeroBreadcrumb meta={meta} titleText={pageHeadline} />
+          {meta.headerBadge && (
+            <Badge
+              variant={meta.headerBadge.variant ?? 'default'}
+              className="landing-hero__badge"
+            >
+              {meta.headerBadge.label}
+            </Badge>
+          )}
+          <h1 className="landing-hero__title">{pageHeadline}</h1>
 
           {heroSubText && (
             <p className="landing-hero__subtitle">{heroSubText}</p>

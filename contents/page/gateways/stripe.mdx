@@ -1,9 +1,32 @@
 ---
 title: "Stripe for WooCommerce Subscriptions — Setup Guide & Auto-Renewal · ArraySubs"
 description: "Set up Stripe for WooCommerce recurring payments. Save cards on file, auto-renew subscriptions, and manage payment methods — setup guide included."
-template: canvas
+template: default
 publish: true
 bodyClass: "page-gateway page-gateway--stripe"
+headline: "Accept Stripe Subscription Payments with WooCommerce"
+sub-text: "Connect Stripe to ArraySubs in minutes. Take first payments instantly. With ArraySubs Pro, Stripe auto-charges the saved card on every renewal date — no manual invoicing, no missed payments."
+action-buttons:
+  - label: "Live Demo"
+    href: "/plans/#live-demo"
+    variant: "primary"
+    size: "lg"
+  - label: "Get Pro Free for 6 Months"
+    href: "/plans/#get-pro"
+    variant: "outline"
+    size: "lg"
+header-badge:
+  label: "Most popular gateway for WooCommerce subscriptions"
+  variant: "default"
+header-tags:
+  - label: "Free: manual renewal invoices via Stripe"
+    variant: "free"
+  - label: "Pro: automatic card-on-file charging"
+    variant: "pro"
+  - label: "SCA / 3D Secure compliant"
+    variant: "default"
+  - label: "Works with WooCommerce Stripe Gateway"
+    variant: "default"
 schema: |
   {
     "@type": "HowTo",
@@ -19,25 +42,6 @@ schema: |
     ]
   }
 ---
-
-<Section background="light" fullWidth>
-  <div className="landing-hero landing-hero--gateway container">
-    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <a href="/features/payment-gateways/">Payment Gateways</a> / <span>Stripe</span></p>
-    <Badge variant="default" className="landing-hero__badge">Most popular gateway for WooCommerce subscriptions</Badge>
-    <h1 className="landing-hero__title">Accept Stripe Subscription Payments with WooCommerce</h1>
-    <p className="landing-hero__subtitle">Connect Stripe to ArraySubs in minutes. Take first payments instantly. With ArraySubs Pro, Stripe auto-charges the saved card on every renewal date — no manual invoicing, no missed payments.</p>
-    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
-      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
-      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
-    </Flex>
-    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
-      <Badge variant="free">Free: manual renewal invoices via Stripe</Badge>
-      <Badge variant="pro">Pro: automatic card-on-file charging</Badge>
-      <Badge variant="default">SCA / 3D Secure compliant</Badge>
-      <Badge variant="default">Works with WooCommerce Stripe Gateway</Badge>
-    </Flex>
-  </div>
-</Section>
 
 <Section>
   <SectionHeading

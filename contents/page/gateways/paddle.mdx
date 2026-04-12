@@ -1,9 +1,32 @@
 ---
 title: "Paddle for WooCommerce Subscriptions — Merchant of Record Payments · ArraySubs"
 description: "Accept subscription payments via Paddle's merchant-of-record model with WooCommerce. Paddle handles tax, compliance, and billing. Setup guide included."
-template: canvas
+template: default
 publish: true
 bodyClass: "page-gateway page-gateway--paddle"
+headline: "Use Paddle as Your WooCommerce Subscription Payment Gateway"
+sub-text: "Combine Paddle's merchant-of-record infrastructure with ArraySubs subscription management. Paddle takes responsibility for tax collection, VAT, and compliance in 200+ countries. ArraySubs handles all subscription logic inside WooCommerce — billing cycles, renewals, access control, and customer portal."
+action-buttons:
+  - label: "Live Demo"
+    href: "/plans/#live-demo"
+    variant: "primary"
+    size: "lg"
+  - label: "Get Pro Free for 6 Months"
+    href: "/plans/#get-pro"
+    variant: "outline"
+    size: "lg"
+header-badge:
+  label: "Merchant of record — Paddle handles tax and compliance"
+  variant: "default"
+header-tags:
+  - label: "Paddle is the merchant of record"
+    variant: "default"
+  - label: "Global tax and VAT handled automatically"
+    variant: "default"
+  - label: "Free: manual renewal invoicing"
+    variant: "free"
+  - label: "Pro: automatic recurring charging"
+    variant: "pro"
 schema: |
   {
     "@type": "HowTo",
@@ -19,25 +42,6 @@ schema: |
     ]
   }
 ---
-
-<Section background="light" fullWidth>
-  <div className="landing-hero landing-hero--gateway container">
-    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <a href="/features/">Features</a> / <a href="/features/payment-gateways/">Payment Gateways</a> / <span>Paddle</span></p>
-    <Badge variant="default" className="landing-hero__badge">Merchant of record — Paddle handles tax and compliance</Badge>
-    <h1 className="landing-hero__title">Use Paddle as Your WooCommerce Subscription Payment Gateway</h1>
-    <p className="landing-hero__subtitle">Combine Paddle's merchant-of-record infrastructure with ArraySubs subscription management. Paddle takes responsibility for tax collection, VAT, and compliance in 200+ countries. ArraySubs handles all subscription logic inside WooCommerce — billing cycles, renewals, access control, and customer portal.</p>
-    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
-      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
-      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
-    </Flex>
-    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
-      <Badge variant="default">Paddle is the merchant of record</Badge>
-      <Badge variant="default">Global tax and VAT handled automatically</Badge>
-      <Badge variant="free">Free: manual renewal invoicing</Badge>
-      <Badge variant="pro">Pro: automatic recurring charging</Badge>
-    </Flex>
-  </div>
-</Section>
 
 <Section>
   <SectionHeading

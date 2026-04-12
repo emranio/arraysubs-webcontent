@@ -1,9 +1,32 @@
 ---
 title: "Pricing — ArraySubs WooCommerce Subscription & Membership Plugin"
 description: "Compare ArraySubs plans, launch a live demo, or claim 6 months of Pro free. Choose from free, annual, and lifetime paths for stores that want subscriptions and memberships without stack sprawl."
-template: canvas
+template: default
 publish: true
 bodyClass: "page-plans"
+headline: "Simple, Transparent Pricing for WooCommerce Subscriptions & Memberships"
+sub-text: "Start with a real free core, then choose the Pro licence path that matches how you ship: single store, multi-site, or agency. Annual and lifetime licences are both part of the roadmap, and early adopters can lock in Pro for 6 months at zero cost today."
+action-buttons:
+  - label: "Live Demo"
+    href: "/plans/#live-demo"
+    variant: "primary"
+    size: "lg"
+  - label: "Get Pro Free for 6 Months"
+    href: "/plans/#get-pro"
+    variant: "outline"
+    size: "lg"
+header-badge:
+  label: "Early adopter offer • 6 months of Pro free • no credit card required"
+  variant: "new"
+header-tags:
+  - label: "Free core forever"
+    variant: "free"
+  - label: "Single-site to agency tiers"
+    variant: "default"
+  - label: "Annual and lifetime paths"
+    variant: "default"
+  - label: "Pro adds automation, analytics, credit, and entitlements"
+    variant: "pro"
 schema: |
   [
     {
@@ -51,28 +74,10 @@ schema: |
   ]
 ---
 
-<Section background="light" fullWidth>
-  <div className="landing-hero landing-hero--plans container">
-    <p className="landing-hero__breadcrumb"><a href="/">Home</a> / <span>Plans</span></p>
-    <Badge variant="new" className="landing-hero__badge">Early adopter offer • 6 months of Pro free • no credit card required</Badge>
-    <h1 className="landing-hero__title">Simple, Transparent Pricing for WooCommerce Subscriptions &amp; Memberships</h1>
-    <p className="landing-hero__subtitle">Start with a real free core, then choose the Pro licence path that matches how you ship: single store, multi-site, or agency. Annual and lifetime licences are both part of the roadmap, and early adopters can lock in Pro for 6 months at zero cost today.</p>
-    <div className="pricing-switcher" aria-label="Pricing modes">
-      <a href="#annual" className="pricing-switcher__link">Annual</a>
-      <a href="#lifetime" className="pricing-switcher__link">Lifetime</a>
-    </div>
-    <Flex gap="md" justify="center" wrap className="landing-hero__actions">
-      <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>
-      <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 6 Months</Button>
-    </Flex>
-    <Flex gap="md" justify="center" wrap className="landing-hero__trust">
-      <Badge variant="free">Free core forever</Badge>
-      <Badge variant="default">Single-site to agency tiers</Badge>
-      <Badge variant="default">Annual and lifetime paths</Badge>
-      <Badge variant="pro">Pro adds automation, analytics, credit, and entitlements</Badge>
-    </Flex>
-  </div>
-</Section>
+<div className="pricing-switcher" aria-label="Pricing modes">
+  <a href="#annual" className="pricing-switcher__link">Annual</a>
+  <a href="#lifetime" className="pricing-switcher__link">Lifetime</a>
+</div>
 
 <Section>
   <SectionHeading
