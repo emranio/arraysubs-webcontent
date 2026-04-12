@@ -79,49 +79,51 @@ export function DefaultTemplate({ meta, children }: DefaultTemplateProps) {
   return (
     <article className={`page page--default ${meta.bodyClass || ''}`}>
       <Section background="light" fullWidth>
-        <div className="landing-hero container">
+        <div className="page-hero container">
           <HeroBreadcrumb meta={meta} titleText={pageHeadline} />
           {meta.headerBadge && (
             <Badge
               variant={meta.headerBadge.variant ?? 'default'}
-              className="landing-hero__badge"
+              className="page-hero__badge"
             >
               {meta.headerBadge.label}
             </Badge>
           )}
-          <h1 className="landing-hero__title">{pageHeadline}</h1>
+          <div className='page-hero__content'>
+            <h1 className="page-hero__title">{pageHeadline}</h1>
 
-          {heroSubText && (
-            <p className="landing-hero__subtitle">{heroSubText}</p>
-          )}
+            {heroSubText && (
+              <p className="page-hero__subtitle">{heroSubText}</p>
+            )}
 
-          {meta.actionButtons && meta.actionButtons.length > 0 && (
-            <Flex gap="md" justify="center" wrap className="landing-hero__actions">
-              {meta.actionButtons.map((action, index) => (
-                <Button
-                  key={`${action.href}-${action.label}-${index}`}
-                  href={action.href}
-                  variant={action.variant ?? (index === 0 ? 'primary' : 'outline')}
-                  size={action.size ?? 'lg'}
-                >
-                  {action.label}
-                </Button>
-              ))}
-            </Flex>
-          )}
+            {meta.actionButtons && meta.actionButtons.length > 0 && (
+              <Flex gap="md" justify="start" wrap className="page-hero__actions">
+                {meta.actionButtons.map((action, index) => (
+                  <Button
+                    key={`${action.href}-${action.label}-${index}`}
+                    href={action.href}
+                    variant={action.variant ?? (index === 0 ? 'primary' : 'outline')}
+                    size={action.size ?? 'lg'}
+                  >
+                    {action.label}
+                  </Button>
+                ))}
+              </Flex>
+            )}
 
-          {meta.headerTags && meta.headerTags.length > 0 && (
-            <Flex gap="md" justify="center" wrap className="landing-hero__trust">
-              {meta.headerTags.map((tag, index) => (
-                <Badge
-                  key={`${tag.label}-${index}`}
-                  variant={tag.variant ?? 'default'}
-                >
-                  {tag.label}
-                </Badge>
-              ))}
-            </Flex>
-          )}
+            {meta.headerTags && meta.headerTags.length > 0 && (
+              <Flex gap="md" justify="start" wrap className="page-hero__trust">
+                {meta.headerTags.map((tag, index) => (
+                  <Badge
+                    key={`${tag.label}-${index}`}
+                    variant={tag.variant ?? 'default'}
+                  >
+                    {tag.label}
+                  </Badge>
+                ))}
+              </Flex>
+              )}
+            </div>
         </div>
       </Section>
 

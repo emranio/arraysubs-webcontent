@@ -2,14 +2,19 @@
 // Hero — Page hero block (default template)
 // ============================================
 
-.landing-hero {
+.page-hero {
   text-align: left;
   padding: var(--space-16) 0 var(--space-12);
   max-width: var(--layout-max);
   margin: 0 auto;
+  display: grid;
 
   &__badge {
     margin-bottom: var(--space-5);
+  }
+
+  &__content {
+    text-align: left;
   }
 
   &__title {
