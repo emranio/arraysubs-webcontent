@@ -14,7 +14,13 @@
   row-gap: var(--space-4);
 
   .breadcrumb--hero {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
     margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__badge {
