@@ -22,7 +22,6 @@
                 "href": "/features/",
                 "sections": [
                     {
-                        "title": "Feature Pages",
                         "links": [
                             {
                                 "label": "Subscriptions & Recurring Products",
@@ -83,12 +82,7 @@
                             {
                                 "label": "Feature Manager",
                                 "href": "/features/feature-manager/"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Gateway Pages",
-                        "links": [
+                            },
                             {
                                 "label": "Stripe",
                                 "href": "/gateways/stripe/"

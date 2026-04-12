@@ -179,7 +179,7 @@ export function Header() {
   };
 
   const openDesktopNavigation = (label: string, trigger: 'pointer' | 'focus' = 'pointer') => {
-    if (!isDesktopViewport || (trigger === 'pointer' && desktopNavigationSuppressed)) {
+    if (!isDesktopViewport) {
       return;
     }
 
