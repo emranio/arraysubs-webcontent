@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { APP_HOME_PATH, normalizeInternalHref } from '@/lib/internal-links';
 
-interface BreadcrumbItem {
+export interface BreadcrumbItem {
   label: string;
   href?: string;
   className?: string;
@@ -10,8 +10,6 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
-  variant?: 'default' | 'hero';
-  className?: string;
 }
 
 function BreadcrumbHomeIcon() {
@@ -35,14 +33,9 @@ function BreadcrumbHomeIcon() {
 
 export function Breadcrumb({
   items,
-  variant = 'default',
-  className = '',
 }: BreadcrumbProps) {
   return (
-    <nav
-      className={`breadcrumb ${variant === 'hero' ? 'breadcrumb--hero' : ''} ${className}`.trim()}
-      aria-label="Breadcrumb"
-    >
+    <nav className="breadcrumb" aria-label="Breadcrumb">
       <ol className="breadcrumb__list">
         <li className="breadcrumb__item">
           <Link href={APP_HOME_PATH} className="breadcrumb__home-link" title="Home" aria-label="Home">
@@ -50,8 +43,8 @@ export function Breadcrumb({
           </Link>
         </li>
         {items.map((item, index) => (
-          <li key={index} className="breadcrumb__item">
-            {index > 0 && <span className="breadcrumb__separator" aria-hidden="true">/</span>}
+          <li key={`${item.href ?? item.label}-${index}`} className="breadcrumb__item">
+            {index > 0 && ' / '}
             {item.href ? (
               <Link
                 href={normalizeInternalHref(item.href)}
