@@ -54,7 +54,7 @@ export function Breadcrumb({
                 {item.label}
               </Link>
             ) : (
-              <span className="breadcrumb__current" aria-current="page">
+              <span className="breadcrumb__link breadcrumb__current" aria-current="page">
                 {item.label}
               </span>
             )}

@@ -1,12 +1,12 @@
 .breadcrumb {
   display: block;
-  min-width: 0;
   max-width: 100%;
   padding: 0;
   margin-bottom: var(--space-4);
   font-size: var(--text-sm);
   font-family: var(--font-heading);
   color: var(--color-primary);
+  text-transform: lowercase;
 
   &__list {
     display: flex;
@@ -15,13 +15,16 @@
     padding: 0;
     margin: 0;
     flex-wrap: nowrap;
-    overflow: hidden;
   }
 
   &__item {
     display: flex;
     align-items: center;
     margin-bottom: 0;
+
+    &:last-child {
+      overflow: hidden;
+    }
   }
 
   &__link {
@@ -29,6 +32,7 @@
     color: var(--color-primary);
     text-decoration: none;
     transition: color var(--transition-fast);
+    margin: 0 0.3rem;
 
     &:hover {
       color: var(--color-primary);
@@ -42,6 +46,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    &:hover {
+      color: var(--color-text);
+    }
   }
 
   &__home-link {
@@ -57,7 +65,6 @@
     width: var(--text-sm);
     height: var(--text-sm);
     display: block;
-    margin-right: 0.5rem;
-    margin-top: -0.2rem;
+    margin-top: 0.1rem;
   }
 }
