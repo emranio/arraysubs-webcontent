@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { normalizeInternalHref } from '@/lib/internal-links';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -30,16 +31,28 @@ export function Button({
   );
 
   if (href) {
-    const isExternal = href.startsWith('http') || href.startsWith('//');
-    if (isExternal) {
+    const resolvedHref = normalizeInternalHref(href);
+    const opensNewTab = resolvedHref.startsWith('http') || resolvedHref.startsWith('//');
+    const shouldUseAnchor = resolvedHref.startsWith('#')
+      || resolvedHref.startsWith('?')
+      || /^[a-z][a-z0-9+.-]*:/i.test(resolvedHref)
+      || resolvedHref.startsWith('//');
+
+    if (shouldUseAnchor) {
       return (
-        <a href={href} className={classes} target="_blank" rel="noopener noreferrer" title={typeof children === 'string' ? children : ''}>
+        <a
+          href={resolvedHref}
+          className={classes}
+          title={typeof children === 'string' ? children : ''}
+          {...(opensNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        >
           {content}
         </a>
       );
     }
+
     return (
-      <Link href={href} className={classes} title={typeof children === 'string' ? children : ''}>
+      <Link href={resolvedHref} className={classes} title={typeof children === 'string' ? children : ''}>
         {content}
       </Link>
     );

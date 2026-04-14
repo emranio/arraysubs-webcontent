@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { APP_HOME_PATH, normalizeInternalHref } from '@/lib/internal-links';
 import siteConfig from '@/site.config.json';
 
 export function Footer() {
@@ -22,10 +23,10 @@ export function Footer() {
               </p>
             </div>
             <div className="footer__cta-actions">
-              <Link href="/download/" className="btn btn--primary btn--lg" title="Download ArraySubs Free">
+              <Link href={normalizeInternalHref('/download/')} className="btn btn--primary btn--lg" title="Download ArraySubs Free">
                 Download Free
               </Link>
-              <Link href="/plans/" className="btn btn--secondary btn--lg" title="View Pricing Plans">
+              <Link href={normalizeInternalHref('/plans/')} className="btn btn--secondary btn--lg" title="View Pricing Plans">
                 View Pricing
               </Link>
             </div>
@@ -38,7 +39,7 @@ export function Footer() {
         <div className="container">
           <div className="footer__grid">
             <div className="footer__brand">
-              <Link href="/" className="footer__logo" title={siteConfig.siteName}>
+              <Link href={APP_HOME_PATH} className="footer__logo" title={siteConfig.siteName}>
                 <span className="footer__logo-text">{siteConfig.siteName}</span>
               </Link>
               <p className="footer__description">{siteConfig.siteDescription}</p>
@@ -50,7 +51,7 @@ export function Footer() {
                 <ul className="footer__links">
                   {column.links.map((link) => (
                     <li key={`${column.title}-${link.label}-${link.href}`}>
-                      <Link href={link.href} className="footer__link" title={link.label}>
+                      <Link href={normalizeInternalHref(link.href)} className="footer__link" title={link.label}>
                         {link.label}
                       </Link>
                     </li>

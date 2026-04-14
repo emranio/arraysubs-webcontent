@@ -1,5 +1,6 @@
 import type { ContentMeta } from './content';
 import { getRouteBreadcrumbs, normalizeBreadcrumbPath } from './breadcrumbs';
+import { APP_HOME_PATH } from './internal-links';
 import siteConfig from '@/site.config.json';
 
 interface RouteSchemaOptions {
@@ -42,7 +43,7 @@ function getWebsiteSchema() {
 function getBreadcrumbSchema({ pathname, currentLabel }: RouteSchemaOptions) {
   const siteUrl = getSiteUrl();
   const items = [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}${APP_HOME_PATH}` },
   ];
 
   getRouteBreadcrumbs(pathname, currentLabel).forEach((item, index) => {

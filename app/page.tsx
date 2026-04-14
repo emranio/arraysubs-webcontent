@@ -1,32 +1,38 @@
-import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getContentBySlug } from '@/lib/content';
-import { generateContentMetadata } from '@/lib/seo';
-import { generateSchemaJsonLd } from '@/lib/schema';
-import { TemplateWrapper } from '@/components/templates/template-wrapper';
-import { MDXRenderer } from '@/components/mdx-renderer';
+import { Button } from '@/components/ui/button';
+import { Section } from '@/components/ui/section';
+import { APP_HOME_PATH } from '@/lib/internal-links';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const content = getContentBySlug('page', []);
-  if (!content) return {};
-  return generateContentMetadata(content.meta);
-}
+export const metadata: Metadata = {
+  title: 'Coming Soon',
+  description: 'ArraySubs is getting a refreshed front door. The full product site is live under /arraysubs/.',
+  alternates: {
+    canonical: '/',
+  },
+};
 
-export default async function HomePage() {
-  const content = getContentBySlug('page', []);
-  if (!content) notFound();
-
-  const schemaJsonLd = generateSchemaJsonLd(content.meta);
-
+export default function HomePage() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schemaJsonLd }}
-      />
-      <TemplateWrapper meta={content.meta}>
-        <MDXRenderer source={content.content} />
-      </TemplateWrapper>
-    </>
+    <article className="page page--default">
+      <Section background="light" fullWidth>
+        <div className="page-hero container">
+          <div className="page-hero__content">
+            <p className="page-hero__subtitle">ArraySubs</p>
+            <h1 className="page-hero__title">Coming soon.</h1>
+            <p className="page-hero__subtitle">
+              We&apos;re setting up a streamlined entry page right now. The full ArraySubs site is already live if you want the good stuff immediately.
+            </p>
+            <div className="page-hero__actions">
+              <Button href={APP_HOME_PATH} size="lg">
+                Visit ArraySubs
+              </Button>
+              <Button href="/contact/" variant="outline" size="lg">
+                Contact us
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Section>
+    </article>
   );
 }

@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Icon } from '@/components/ui/icon';
+import { APP_HOME_PATH, normalizeInternalHref } from '@/lib/internal-links';
 import siteConfig from '@/site.config.json';
 
 type NavigationLink = {
@@ -169,7 +170,7 @@ export function Header() {
     toggleMobileSubmenu(label);
   };
 
-  const openDesktopNavigation = (label: string, trigger: 'pointer' | 'focus' = 'pointer') => {
+  const openDesktopNavigation = (label: string) => {
     if (!isDesktopViewport) {
       return;
     }
@@ -192,7 +193,7 @@ export function Header() {
   ) => (
     <li key={keyValue} className="header__submenu-item">
       <Link
-        href={link.href}
+        href={normalizeInternalHref(link.href)}
         className={`header__submenu-link header__submenu-link--${variant}`}
         title={link.label}
         onClick={closeNavigation}
@@ -213,7 +214,7 @@ export function Header() {
   return (
     <header className="header">
       <div className="header__inner container">
-        <Link href="/" className="header__logo" title={siteConfig.siteName} onClick={closeNavigation}>
+        <Link href={APP_HOME_PATH} className="header__logo" title={siteConfig.siteName} onClick={closeNavigation}>
           <span className="header__logo-text">{siteConfig.siteName}</span>
         </Link>
 
@@ -223,7 +224,7 @@ export function Header() {
           onMouseLeave={isDesktopViewport ? releaseDesktopNavigation : undefined}
         >
           <div className="header__nav-header">
-            <Link href="/" className="header__logo" title={siteConfig.siteName} onClick={closeNavigation}>
+            <Link href={APP_HOME_PATH} className="header__logo" title={siteConfig.siteName} onClick={closeNavigation}>
               <span className="header__logo-text">{siteConfig.siteName}</span>
             </Link>
           </div>
@@ -241,9 +242,9 @@ export function Header() {
                 <li
                   key={itemKey}
                   className={`header__menu-item ${hasSubmenu ? 'header__menu-item--has-children' : ''} ${sections.length > 0 ? 'header__menu-item--mega' : ''} ${isDesktopSubmenuOpen ? 'header__menu-item--desktop-open' : ''} ${isMobileSubmenuOpen ? 'header__menu-item--mobile-open' : ''}`}
-                  onMouseEnter={hasSubmenu ? () => openDesktopNavigation(item.label, 'pointer') : undefined}
+                  onMouseEnter={hasSubmenu ? () => openDesktopNavigation(item.label) : undefined}
                   onMouseLeave={hasSubmenu ? closeDesktopNavigation : undefined}
-                  onFocusCapture={hasSubmenu ? () => openDesktopNavigation(item.label, 'focus') : undefined}
+                  onFocusCapture={hasSubmenu ? () => openDesktopNavigation(item.label) : undefined}
                   onBlurCapture={
                     hasSubmenu
                       ? (event) => {
@@ -259,7 +260,7 @@ export function Header() {
                   <div className="header__menu-link-row">
                     {item.href ? (
                       <Link
-                        href={item.href}
+                        href={normalizeInternalHref(item.href)}
                         className="header__menu-link"
                         title={item.label}
                         onClick={closeNavigation}
@@ -341,7 +342,7 @@ export function Header() {
             {navigation.cta.map((item, ctaIndex) => (
               <Link
                 key={`${item.href}-${ctaIndex}`}
-                href={item.href}
+                href={normalizeInternalHref(item.href)}
                 className={`btn btn--${item.variant} btn--sm`}
                 title={item.label}
                 onClick={closeNavigation}

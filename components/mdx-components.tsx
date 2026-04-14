@@ -12,6 +12,7 @@ import { FeatureCard } from '@/components/ui/feature-card';
 import { Button } from '@/components/ui/button';
 import { Flex } from '@/components/ui/flex';
 import { Badge } from '@/components/ui/badge';
+import { normalizeInternalHref } from '@/lib/internal-links';
 
 // Homepage Components for MDX
 import { GrowthCard } from '@/components/homepage/growth-card';
@@ -51,17 +52,28 @@ function MdxLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   if (!href) return <span>{children}</span>;
 
   const titleText = title || (typeof children === 'string' ? children : '');
+  const resolvedHref = normalizeInternalHref(href);
+  const opensNewTab = resolvedHref.startsWith('http') || resolvedHref.startsWith('//');
+  const shouldUseAnchor = resolvedHref.startsWith('#')
+    || resolvedHref.startsWith('?')
+    || /^[a-z][a-z0-9+.-]*:/i.test(resolvedHref)
+    || resolvedHref.startsWith('//');
 
-  if (href.startsWith('http') || href.startsWith('//')) {
+  if (shouldUseAnchor) {
     return (
-      <a href={href} title={titleText} target="_blank" rel="noopener noreferrer" {...rest}>
+      <a
+        href={resolvedHref}
+        title={titleText}
+        {...(opensNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        {...rest}
+      >
         {children}
       </a>
     );
   }
 
   return (
-    <Link href={href} title={titleText} {...rest}>
+    <Link href={resolvedHref} title={titleText} {...rest}>
       {children}
     </Link>
   );

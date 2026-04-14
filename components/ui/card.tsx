@@ -1,5 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 import { Icon } from './icon';
+import { normalizeInternalHref } from '@/lib/internal-links';
 
 interface CardProps {
   children: React.ReactNode;
@@ -38,10 +40,24 @@ export function Card({
   );
 
   if (href) {
+    const resolvedHref = normalizeInternalHref(href);
+    const shouldUseAnchor = resolvedHref.startsWith('#')
+      || resolvedHref.startsWith('?')
+      || /^[a-z][a-z0-9+.-]*:/i.test(resolvedHref)
+      || resolvedHref.startsWith('//');
+
+    if (shouldUseAnchor) {
+      return (
+        <a href={resolvedHref} className="card__link" title={title || ''}>
+          {content}
+        </a>
+      );
+    }
+
     return (
-      <a href={href} className="card__link" title={title || ''}>
+      <Link href={resolvedHref} className="card__link" title={title || ''}>
         {content}
-      </a>
+      </Link>
     );
   }
 

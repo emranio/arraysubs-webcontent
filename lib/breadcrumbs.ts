@@ -1,4 +1,5 @@
 import siteConfig from '@/site.config.json';
+import { APP_HOME_PATH, normalizeInternalHref } from '@/lib/internal-links';
 
 export interface RouteBreadcrumbItem {
   label: string;
@@ -40,7 +41,7 @@ function normalizeRoutePath(pathname: string): string {
 function collectRouteLabels(items: NavigationItem[], labels: Map<string, string>) {
   for (const item of items) {
     if (item.href) {
-      labels.set(normalizeRoutePath(item.href), item.label);
+      labels.set(normalizeRoutePath(normalizeInternalHref(item.href)), item.label);
     }
 
     if (item.children) {
@@ -92,25 +93,30 @@ export function getPageRouteBreadcrumbs(slug: string): RouteBreadcrumbItem[] {
     .map((segment) => segment.trim())
     .filter(Boolean);
 
-  return segments.map((segment, index) => ({
+  const baseSegments = segments[0] === 'arraysubs' ? ['arraysubs'] : [];
+  const visibleSegments = baseSegments.length > 0 ? segments.slice(1) : segments;
+
+  return visibleSegments.map((segment, index) => ({
     label: formatBreadcrumbSegment(segment),
-    href: `/${segments.slice(0, index + 1).join('/')}/`,
+    href: `/${[...baseSegments, ...visibleSegments.slice(0, index + 1)].join('/')}/`,
   }));
 }
 
 export function getRouteBreadcrumbs(pathname: string, currentLabel?: string): RouteBreadcrumbItem[] {
   const normalizedPath = normalizeRoutePath(pathname);
 
-  if (normalizedPath === '/') {
+  if (normalizedPath === '/' || normalizedPath === APP_HOME_PATH) {
     return [];
   }
 
   const segments = normalizedPath.split('/').filter(Boolean);
+  const baseSegments = segments[0] === 'arraysubs' ? ['arraysubs'] : [];
+  const visibleSegments = baseSegments.length > 0 ? segments.slice(1) : segments;
 
-  return segments.map((segment, index) => {
-    const href = `/${segments.slice(0, index + 1).join('/')}/`;
+  return visibleSegments.map((segment, index) => {
+    const href = `/${[...baseSegments, ...visibleSegments.slice(0, index + 1)].join('/')}/`;
     const fallbackLabel = toTitleCase(formatBreadcrumbSegment(segment));
-    const isCurrent = index === segments.length - 1;
+    const isCurrent = index === visibleSegments.length - 1;
 
     return {
       href,

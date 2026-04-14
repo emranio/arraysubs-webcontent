@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { APP_HOME_PATH } from '@/lib/internal-links';
 
 export default function NotFound() {
   return (
@@ -12,7 +13,7 @@ export default function NotFound() {
             The page you&apos;re looking for doesn&apos;t exist, was moved, or the link is just being dramatic.
           </p>
           <div className="not-found__actions">
-            <Button href="/" size="lg">
+            <Button href={APP_HOME_PATH} size="lg">
               Go back home
             </Button>
             <Button href="/article/" variant="outline" size="lg">

@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Flex } from '@/components/ui/flex';
 import { Section } from '@/components/ui/section';
+import { APP_HOME_PATH, normalizeInternalHref } from '@/lib/internal-links';
 
 interface DefaultTemplateProps {
   meta: ContentMeta;
@@ -40,12 +41,12 @@ function HeroBreadcrumb({ meta, titleText }: { meta: ContentMeta; titleText: str
 
   return (
     <p className="breadcrumb breadcrumb--hero">
-      <Link href="/" title="Home" aria-label="Home" className="breadcrumb__home-link">
+      <Link href={APP_HOME_PATH} title="Home" aria-label="Home" className="breadcrumb__home-link">
         <HomeBreadcrumbIcon />
       </Link>
       {isSubContent && categoryLabel && (
         <>
-          <Link href={`/${meta.contentType}/`} title={categoryLabel}>{categoryLabel}</Link>
+          <Link href={normalizeInternalHref(`/${meta.contentType}/`)} title={categoryLabel}>{categoryLabel}</Link>
         </>
       )}
       {isSubContent && meta.slug && (
@@ -63,7 +64,7 @@ function HeroBreadcrumb({ meta, titleText }: { meta: ContentMeta; titleText: str
             {isCurrent ? (
               <span>{item.label}</span>
             ) : (
-              <Link href={item.href} title={item.label}>{item.label}</Link>
+              <Link href={normalizeInternalHref(item.href)} title={item.label}>{item.label}</Link>
             )}
           </React.Fragment>
         );
