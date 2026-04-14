@@ -4,7 +4,14 @@ import { APP_HOME_PATH, normalizeInternalHref } from '@/lib/internal-links';
 export interface RouteBreadcrumbItem {
   label: string;
   href: string;
+  className?: string;
 }
+
+const ARRAYSUBS_BREADCRUMB: RouteBreadcrumbItem = {
+  label: 'arraysubs',
+  href: APP_HOME_PATH,
+  className: 'breadcrumb__section',
+};
 
 interface NavigationItem {
   label: string;
@@ -96,10 +103,16 @@ export function getPageRouteBreadcrumbs(slug: string): RouteBreadcrumbItem[] {
   const baseSegments = segments[0] === 'arraysubs' ? ['arraysubs'] : [];
   const visibleSegments = baseSegments.length > 0 ? segments.slice(1) : segments;
 
-  return visibleSegments.map((segment, index) => ({
+  const items: RouteBreadcrumbItem[] = visibleSegments.map((segment, index) => ({
     label: formatBreadcrumbSegment(segment),
     href: `/${[...baseSegments, ...visibleSegments.slice(0, index + 1)].join('/')}/`,
   }));
+
+  if (baseSegments.length > 0) {
+    items.unshift(ARRAYSUBS_BREADCRUMB);
+  }
+
+  return items;
 }
 
 export function getRouteBreadcrumbs(pathname: string, currentLabel?: string): RouteBreadcrumbItem[] {
@@ -113,7 +126,7 @@ export function getRouteBreadcrumbs(pathname: string, currentLabel?: string): Ro
   const baseSegments = segments[0] === 'arraysubs' ? ['arraysubs'] : [];
   const visibleSegments = baseSegments.length > 0 ? segments.slice(1) : segments;
 
-  return visibleSegments.map((segment, index) => {
+  const items: RouteBreadcrumbItem[] = visibleSegments.map((segment, index) => {
     const href = `/${[...baseSegments, ...visibleSegments.slice(0, index + 1)].join('/')}/`;
     const fallbackLabel = toTitleCase(formatBreadcrumbSegment(segment));
     const isCurrent = index === visibleSegments.length - 1;
@@ -123,4 +136,10 @@ export function getRouteBreadcrumbs(pathname: string, currentLabel?: string): Ro
       label: getRouteLabel(href) ?? (isCurrent && currentLabel ? currentLabel : fallbackLabel),
     };
   });
+
+  if (baseSegments.length > 0) {
+    items.unshift(ARRAYSUBS_BREADCRUMB);
+  }
+
+  return items;
 }

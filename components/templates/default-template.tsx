@@ -64,7 +64,13 @@ function HeroBreadcrumb({ meta, titleText }: { meta: ContentMeta; titleText: str
             {isCurrent ? (
               <span>{item.label}</span>
             ) : (
-              <Link href={normalizeInternalHref(item.href)} title={item.label}>{item.label}</Link>
+              <Link
+                href={normalizeInternalHref(item.href)}
+                title={item.label}
+                {...(item.className ? { className: item.className } : {})}
+              >
+                {item.label}
+              </Link>
             )}
           </React.Fragment>
         );

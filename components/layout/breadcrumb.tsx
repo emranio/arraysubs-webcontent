@@ -5,6 +5,7 @@ import { APP_HOME_PATH, normalizeInternalHref } from '@/lib/internal-links';
 interface BreadcrumbItem {
   label: string;
   href?: string;
+  className?: string;
 }
 
 interface BreadcrumbProps {
@@ -52,7 +53,11 @@ export function Breadcrumb({
           <li key={index} className="breadcrumb__item">
             {index > 0 && <span className="breadcrumb__separator" aria-hidden="true">/</span>}
             {item.href ? (
-              <Link href={normalizeInternalHref(item.href)} className="breadcrumb__link" title={item.label}>
+              <Link
+                href={normalizeInternalHref(item.href)}
+                className={`breadcrumb__link${item.className ? ` ${item.className}` : ''}`}
+                title={item.label}
+              >
                 {item.label}
               </Link>
             ) : (
