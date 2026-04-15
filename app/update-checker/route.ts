@@ -7,7 +7,7 @@ import { buildCorsHeaders } from '@/lib/cors';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const LOG_FILE_PATH = path.join(process.cwd(), 'ping-data.txt');
+const LOG_FILE_PATH = process.env.PING_DATA_FILE ?? path.join(process.cwd(), 'ping-data.txt');
 const REQUIRED_FIELDS = ['plugin_version', 'site_title', 'site_url', 'site_email'] as const;
 const WORDPRESS_USER_AGENT_SITE_URL_PATTERN = /^WordPress\/[\d.]+;\s+(\S+)/iu;
 const SUPPORTED_SITE_PROTOCOLS = new Set(['http:', 'https:']);
