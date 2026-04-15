@@ -9,6 +9,8 @@ export const dynamic = 'force-dynamic';
 
 const LOG_FILE_PATH = path.join(process.cwd(), 'ping-data.txt');
 const REQUIRED_FIELDS = ['plugin_version', 'site_title', 'site_url', 'site_email'] as const;
+const WORDPRESS_USER_AGENT_SITE_URL_PATTERN = /^WordPress\/[\d.]+;\s+(\S+)/iu;
+const SUPPORTED_SITE_PROTOCOLS = new Set(['http:', 'https:']);
 
 type RequiredField = (typeof REQUIRED_FIELDS)[number];
 
@@ -138,17 +140,17 @@ async function parsePayload(request: Request): Promise<ParseResult> {
   try {
     const parsedUrl = new URL(normalizedPayload.site_url);
 
-    if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+    if (!isSupportedSiteProtocol(parsedUrl.protocol)) {
       throw new Error('Unsupported protocol.');
     }
 
-    if (process.env.NODE_ENV === 'production' && isUnsafeHost(parsedUrl.hostname)) {
-      return {
-        success: false,
-        message: 'Local and private site URLs are not accepted in production.',
-        status: 422,
-      };
-    }
+    // if (process.env.NODE_ENV === 'production' && isUnsafeHost(parsedUrl.hostname)) {
+    //   return {
+    //     success: false,
+    //     message: 'Local and private site URLs are not accepted in production.',
+    //     status: 422,
+    //   };
+    // }
 
     normalizedPayload.site_url = parsedUrl.toString();
   } catch {
@@ -169,7 +171,7 @@ async function verifyWordPressRequest(siteUrl: string, userAgent: string | null)
   if (!isWordPressUserAgent(userAgent)) {
     return {
       valid: false,
-      reason: 'The request user agent does not match a WordPress site.',
+      reason: 'WTF you doing bruh??. C541',
     };
   }
 
@@ -178,18 +180,18 @@ async function verifyWordPressRequest(siteUrl: string, userAgent: string | null)
   if (!userAgentIncludesHost(userAgent, normalizedSiteUrl.hostname)) {
     return {
       valid: false,
-      reason: 'The request user agent does not match the reported site URL.',
+      reason: 'WTF you doing bruh??. C542',
     };
   }
 
-  const looksLikeWordPress = await isWordPressSite(normalizedSiteUrl);
+  // const looksLikeWordPress = await isWordPressSite(normalizedSiteUrl);
 
-  if (!looksLikeWordPress) {
-    return {
-      valid: false,
-      reason: 'The reported site URL could not be verified as a WordPress site.',
-    };
-  }
+  // if (!looksLikeWordPress) {
+  //   return {
+  //     valid: false,
+  //     reason: 'WTF you doing bruh??. C543',
+  //   };
+  // }
 
   return {
     valid: true,
@@ -261,21 +263,41 @@ function isValidEmail(value: string): boolean {
 }
 
 function isWordPressUserAgent(userAgent: string | null): userAgent is string {
-  return typeof userAgent === 'string' && /^WordPress\/[\d.]+;\shttps?:\/\//iu.test(userAgent.trim());
+  return getWordPressSiteUrlFromUserAgent(userAgent) !== null;
 }
 
 function userAgentIncludesHost(userAgent: string, expectedHost: string): boolean {
-  const match = userAgent.match(/^WordPress\/[\d.]+;\s(https?:\/\/\S+)/iu);
+  const userAgentSiteUrl = getWordPressSiteUrlFromUserAgent(userAgent);
+
+  if (!userAgentSiteUrl) {
+    return false;
+  }
+
+  return userAgentSiteUrl.hostname.toLowerCase() === expectedHost.trim().toLowerCase();
+}
+
+function getWordPressSiteUrlFromUserAgent(userAgent: string | null): URL | null {
+  if (typeof userAgent !== 'string') {
+    return null;
+  }
+
+  const match = userAgent.trim().match(WORDPRESS_USER_AGENT_SITE_URL_PATTERN);
 
   if (!match) {
-    return false;
+    return null;
   }
 
   try {
-    return new URL(match[1]).hostname === expectedHost;
+    const siteUrl = new URL(match[1]);
+
+    return isSupportedSiteProtocol(siteUrl.protocol) ? siteUrl : null;
   } catch {
-    return false;
+    return null;
   }
+}
+
+function isSupportedSiteProtocol(protocol: string): boolean {
+  return SUPPORTED_SITE_PROTOCOLS.has(protocol);
 }
 
 function isUnsafeHost(hostname: string): boolean {
