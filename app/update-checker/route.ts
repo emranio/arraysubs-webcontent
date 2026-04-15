@@ -2,6 +2,8 @@ import { appendFile } from 'node:fs/promises';
 import path from 'node:path';
 import { NextResponse } from 'next/server';
 
+import { buildCorsHeaders } from '@/lib/cors';
+
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
@@ -21,6 +23,13 @@ type VerificationResult = {
   reason: string;
 };
 
+export async function OPTIONS() {
+  return new Response(null, {
+    status: 204,
+    headers: buildCorsHeaders(),
+  });
+}
+
 export async function POST(request: Request) {
   const parsedPayload = await parsePayload(request);
 
@@ -32,6 +41,7 @@ export async function POST(request: Request) {
       },
       {
         status: parsedPayload.status,
+        headers: buildCorsHeaders(),
       }
     );
   }
@@ -49,6 +59,7 @@ export async function POST(request: Request) {
       },
       {
         status: 403,
+        headers: buildCorsHeaders(),
       }
     );
   }
@@ -61,7 +72,12 @@ export async function POST(request: Request) {
 
   await appendFile(LOG_FILE_PATH, `${JSON.stringify(entry)}\n`, 'utf8');
 
-  return NextResponse.json({ success: true });
+  return NextResponse.json(
+    { success: true },
+    {
+      headers: buildCorsHeaders(),
+    }
+  );
 }
 
 async function parsePayload(request: Request): Promise<ParseResult> {

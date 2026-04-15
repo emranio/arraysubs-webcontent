@@ -7,11 +7,18 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "start:prod": "bun .next/standalone/server.js",
+    "pm2:start": "bunx --bun pm2 start ecosystem.config.cjs --env production",
+    "pm2:restart": "bunx --bun pm2 restart arrayhash-com-next --update-env",
+    "pm2:stop": "bunx --bun pm2 delete arrayhash-com-next",
+    "pm2:logs": "bunx --bun pm2 logs arrayhash-com-next",
+    "pm2:save": "bunx --bun pm2 save",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "lucide-react": "^1.8.0",
     "next": "^16.2.3",
+    "pm2": "^6.0.14",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },
