@@ -36,7 +36,7 @@ jobs:
             bun run build
 
             echo "==> Reloading PM2"
-            bunx --bun pm2 restart arrayhash-com-next --update-env
+            bunx --bun pm2 startOrReload ecosystem.config.cjs --env production --update-env
             bunx --bun pm2 save
 
             echo "==> Done"

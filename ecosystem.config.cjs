@@ -7,7 +7,8 @@ module.exports = {
     {
       name: 'arrayhash-com-next',
       cwd: __dirname,
-      script: '.next/standalone/server.js',
+      script: 'node_modules/next/dist/bin/next',
+      args: 'start',
       interpreter: bunBinary,
       exec_mode: 'fork',
       instances: 1,
