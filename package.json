@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public",
+    "build": "next build",
     "start": "next start",
-    "start:prod": "bun .next/standalone/server.js",
+    "start:prod": "bun run start",
     "pm2:start": "bunx --bun pm2 start ecosystem.config.cjs --env production",
     "pm2:restart": "bunx --bun pm2 restart arrayhash-com-next --update-env",
     "pm2:stop": "bunx --bun pm2 delete arrayhash-com-next",
