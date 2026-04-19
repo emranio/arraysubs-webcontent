@@ -50,6 +50,22 @@ All MDX files, images, videos, and PDFs live under `/content/`. The directory st
 
 The `page` content type is special — it maps directly to the root without the `/page/` prefix.
 
+### MDX Content Authoring
+
+**Prefer Markdown syntax over React components wherever possible.** Use React components only when native Markdown cannot express the required structure or semantics.
+
+| Content need | Use |
+|---|---|
+| Headings, paragraphs, lists, blockquotes | Markdown syntax |
+| Bold, italic, inline code, links, images | Markdown syntax |
+| Tables | Markdown GFM table syntax |
+| Horizontal rules, line breaks | Markdown syntax |
+| Complex UI sections, custom layouts, interactive elements | React component |
+
+Examples:
+- ✅ `## Heading`, `**bold**`, `![alt](img.jpg)`, `- list item`
+- ❌ `<h2>Heading</h2>`, `<strong>bold</strong>`, `<img src="img.jpg" />`
+
 ### MDX Frontmatter Schema
 
 Every MDX file has YAML frontmatter with these fields:
