@@ -1,8 +1,8 @@
-import { appendFile } from 'node:fs/promises';
 import path from 'node:path';
 import { NextResponse } from 'next/server';
 
 import { buildCorsHeaders } from '@/lib/cors';
+import { type PingLogEntry, upsertPingLogEntry } from '@/lib/ping-log';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -66,13 +66,13 @@ export async function POST(request: Request) {
     );
   }
 
-  const entry = {
+  const entry: PingLogEntry = {
     received_at: new Date().toISOString(),
     ...parsedPayload.data,
     user_agent: request.headers.get('user-agent') ?? '',
   };
 
-  await appendFile(LOG_FILE_PATH, `${JSON.stringify(entry)}\n`, 'utf8');
+  await upsertPingLogEntry(LOG_FILE_PATH, entry);
 
   return NextResponse.json(
     { success: true },
