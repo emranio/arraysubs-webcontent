@@ -5,6 +5,7 @@ interface SectionHeadingProps {
   title?: string;
   subtitle?: string;
   className?: string;
+  layout?: 'centered' | 'split';
 }
 
 export function SectionHeading({
@@ -12,9 +13,26 @@ export function SectionHeading({
   title,
   subtitle,
   className = '',
+  layout = 'split',
 }: SectionHeadingProps) {
   if (!label && !title && !subtitle) {
     return null;
+  }
+
+  if (layout === 'split') {
+    return (
+      <div className={`section__header section__header--split ${className}`.trim()}>
+        <div className="section__header-left">
+          {label && <span className="section__label">{label}</span>}
+          {title && <h2 className="section__title">{title}</h2>}
+        </div>
+        {subtitle && (
+          <div className="section__header-right">
+            <p className="section__subtitle">{subtitle}</p>
+          </div>
+        )}
+      </div>
+    );
   }
 
   return (

@@ -58,6 +58,39 @@
     max-width: var(--content-max-reading);
     margin-left: auto;
     margin-right: auto;
+
+    &--split {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-10);
+      text-align: left;
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
+
+      .section__header-left {
+        flex: 1 1 50%;
+        text-align: left;
+      }
+
+      .section__header-right {
+        flex: 1 1 50%;
+        text-align: right;
+
+        .section__subtitle {
+          margin-top: 0;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
+        gap: var(--space-4);
+
+        .section__header-right {
+          text-align: left;
+        }
+      }
+    }
   }
 
   &__label {
