@@ -67,6 +67,19 @@
       text-align: left;
       max-width: 80%;
     }
+
+    @media (max-width: 1024px) {
+      margin-bottom: var(--space-8);
+
+      &--left-part {
+        max-width: 100%;
+      }
+
+      &--right-part {
+        justify-content: flex-start;
+        margin-top: var(--space-6);
+      }
+    }
   }
 
   &__label {
@@ -94,6 +107,16 @@
     font-size: var(--text-lg);
     color: var(--color-text-secondary);
     line-height: var(--leading-relaxed);
+  }
+
+  @media (max-width: 1024px) {
+    &__title {
+      font-size: var(--text-4xl);
+    }
+
+    &__subtitle {
+      max-width: 100%;
+    }
   }
 }
 
