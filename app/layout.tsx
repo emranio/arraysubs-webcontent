@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
-import { Funnel_Display, Funnel_Sans } from 'next/font/google';
+import { Hanken_Grotesk, Familjen_Grotesk } from 'next/font/google';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import siteConfig from '@/site.config.json';
 import '@/styles/globals.scss';
 
-const funnelDisplay = Funnel_Display({
+const bodyFont = Hanken_Grotesk({
   subsets: ['latin'],
-  variable: '--font-heading',
+  variable: '--font-body',
   display: 'swap',
 });
 
-const funnelSans = Funnel_Sans({
+const headingFont = Familjen_Grotesk({
   subsets: ['latin'],
-  variable: '--font-body',
+  variable: '--font-heading',
   display: 'swap',
 });
 
@@ -37,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body suppressHydrationWarning className={`${funnelDisplay.variable} ${funnelSans.variable}`}>
+      <body suppressHydrationWarning className={`${headingFont.variable} ${bodyFont.variable}`}>
         <Header />
         <main>{children}</main>
         <Footer />
