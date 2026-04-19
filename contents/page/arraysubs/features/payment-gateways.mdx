@@ -50,56 +50,14 @@ header-tags:
   title="Supported gateways and capabilities"
   subtitle="Every WooCommerce-compatible gateway works for initial subscription payments and manual renewals. Automatic card-on-file renewals require Pro and a tokenization-capable gateway."
 >
-  <div className="table-scroll table-container">
-    <table className="feature-comparison comparison-table">
-      <thead>
-        <tr>
-          <th>Gateway</th>
-          <th>First Payment</th>
-          <th>Manual Renewal (Free)</th>
-          <th>Auto Renewal (Pro)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Stripe</td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-        </tr>
-        <tr>
-          <td>PayPal</td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--included">Supported (tokenized)</span></td>
-        </tr>
-        <tr>
-          <td>Paddle</td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-        </tr>
-        <tr>
-          <td>Bank Transfer</td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--locked">Not available</span></td>
-        </tr>
-        <tr>
-          <td>Cash on Delivery</td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--locked">Not available</span></td>
-        </tr>
-        <tr>
-          <td>Any WooCommerce gateway</td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--included">Supported</span></td>
-          <td><span className="plan-status plan-status--partial">Depends on tokenization</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  | Gateway | First Payment | Manual Renewal (Free) | Auto Renewal (Pro) |
+  | --- | --- | --- | --- |
+  | Stripe | ✅ Supported | ✅ Supported | ✅ Supported |
+  | PayPal | ✅ Supported | ✅ Supported | ✅ Supported (tokenized) |
+  | Paddle | ✅ Supported | ✅ Supported | ✅ Supported |
+  | Bank Transfer | ✅ Supported | ✅ Supported | ❌ Not available |
+  | Cash on Delivery | ✅ Supported | ✅ Supported | ❌ Not available |
+  | Any WooCommerce gateway | ✅ Supported | ✅ Supported | ⚠️ Depends on tokenization |
 </Section>
 
 <Section

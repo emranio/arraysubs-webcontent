@@ -129,49 +129,14 @@ schema: |
     subtitle="Manual renewal invoicing is included free. Automatic recurring billing via PayPal tokenization requires Pro."
   />
 
-  <div className="table-scroll table-container">
-    <table className="feature-comparison">
-      <thead>
-        <tr>
-          <th>Capability</th>
-          <th>Free</th>
-          <th>Pro</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Accept first payment via PayPal checkout</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Send renewal invoice email to subscriber</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Automatic tokenized charge on renewal date</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Payment retry sequence on failure</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Customer payment method management portal</td>
-          <td><span className="plan-status plan-status--partial">View saved token only</span></td>
-          <td><span className="plan-status plan-status--included">Full update and delete controls</span></td>
-        </tr>
-        <tr>
-          <td>Prorated mid-cycle charge via PayPal</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  | Capability | Free | Pro |
+  | --- | --- | --- |
+  | Accept first payment via PayPal checkout | ✅ Included | ✅ Included |
+  | Send renewal invoice email to subscriber | ✅ Included | ✅ Included |
+  | Automatic tokenized charge on renewal date | ❌ Not included | ✅ Included |
+  | Payment retry sequence on failure | ❌ Not included | ✅ Included |
+  | Customer payment method management portal | ⚠️ View saved token only | ✅ Full update and delete controls |
+  | Prorated mid-cycle charge via PayPal | ❌ Not included | ✅ Included |
 
   <Flex justify="center" gap="md" wrap className="section__cta">
     <Button href="/plans/#get-pro" variant="primary" size="lg">Get Pro Free for 6 Months</Button>

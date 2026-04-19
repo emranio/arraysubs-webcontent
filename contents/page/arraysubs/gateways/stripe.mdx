@@ -129,54 +129,15 @@ schema: |
     subtitle="Start accepting Stripe subscription payments at no cost, then unlock automatic recurring billing when you are ready to scale."
   />
 
-  <div className="table-scroll table-container">
-    <table className="feature-comparison">
-      <thead>
-        <tr>
-          <th>Capability</th>
-          <th>Free</th>
-          <th>Pro</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Accept first payment via Stripe checkout</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Send renewal invoice email to subscriber</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Automatic card-on-file charging on renewal</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Payment retry sequence on failure</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Customer payment method management portal</td>
-          <td><span className="plan-status plan-status--partial">View saved card only</span></td>
-          <td><span className="plan-status plan-status--included">Full update and delete controls</span></td>
-        </tr>
-        <tr>
-          <td>Prorated mid-cycle charge via Stripe</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>SCA / 3D Secure authentication</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  | Capability | Free | Pro |
+  | --- | --- | --- |
+  | Accept first payment via Stripe checkout | ✅ Included | ✅ Included |
+  | Send renewal invoice email to subscriber | ✅ Included | ✅ Included |
+  | Automatic card-on-file charging on renewal | ❌ Not included | ✅ Included |
+  | Payment retry sequence on failure | ❌ Not included | ✅ Included |
+  | Customer payment method management portal | ⚠️ View saved card only | ✅ Full update and delete controls |
+  | Prorated mid-cycle charge via Stripe | ❌ Not included | ✅ Included |
+  | SCA / 3D Secure authentication | ✅ Included | ✅ Included |
 
   <Flex justify="center" gap="md" wrap className="section__cta">
     <Button href="/plans/#get-pro" variant="primary" size="lg">Get Pro Free for 6 Months</Button>

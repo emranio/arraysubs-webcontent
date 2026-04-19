@@ -43,6 +43,15 @@
     margin: var(--space-8) 0;
   }
 
+  table {
+    margin: var(--space-8) 0;
+
+    th,
+    td {
+      font-size: var(--text-sm);
+    }
+  }
+
   a:not(.btn) {
     font-weight: var(--font-weight-medium);
     color: var(--color-primary);
