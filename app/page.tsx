@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <article className="page page--default">
-      <Section background="light" fullWidth>
+      <Section  fullWidth>
         <div className="page-hero container">
           <div className="page-hero__content">
             <p className="page-hero__subtitle">ArraySubs</p>
