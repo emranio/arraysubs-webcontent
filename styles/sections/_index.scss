@@ -1,5 +1,7 @@
-@use "./homepage";
-@use "./homepage-proof";
+@use "./hero";
+@use "./features";
+@use "./differentiators";
+@use "./growth";
 @use "./pricing";
 @use "./comparison";
 @use "./accordion";
@@ -79,4 +81,8 @@
     color: var(--color-text-secondary);
     line-height: var(--leading-relaxed);
   }
+}
+
+.section__cta {
+  margin-top: var(--space-10);
 }

@@ -1,0 +1,20 @@
+// ============================================
+// Features — Section category headings
+// ============================================
+
+.page .feature-category {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  line-height: 1.4;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}

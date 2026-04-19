@@ -1,0 +1,38 @@
+<div className="comparison-table-wrapper">
+  <table className="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        {comparisonColumns.map((column) => (
+          <th key={column}>{column}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {comparisonRows.map((row) => (
+        <tr key={row.feature}>
+          <td className="comparison-table__feature">{row.feature}</td>
+          {row.values.map((value, index) => (
+            <td key={`${row.feature}-${comparisonColumns[index]}`} className="comparison-table__cell">
+              {value === true ? (
+                <Icon name="check" size={18} className="comparison-table__check" />
+              ) : value === false ? (
+                <Icon name="x" size={18} className="comparison-table__x" />
+              ) : (
+                <span className="comparison-table__partial">{value}</span>
+              )}
+            </td>
+          ))}
+        </tr>
+      ))}
+      <tr className="comparison-table__footer">
+        <td className="comparison-table__feature"><strong>{comparisonFooter.feature}</strong></td>
+        {comparisonFooter.values.map((value, index) => (
+          <td key={`${comparisonFooter.feature}-${comparisonColumns[index]}`} className="comparison-table__cell">
+            <strong>{value}</strong>
+          </td>
+        ))}
+      </tr>
+    </tbody>
+  </table>
+</div>

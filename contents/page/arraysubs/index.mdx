@@ -20,27 +20,291 @@ schema: |
   ]
 ---
 
-import HomeHero from '../../_sections/_home_hero.mdx'
-import HomeFeatures from '../../_sections/_home_features.mdx'
-import HomeDifferentiators from '../../_sections/_home_differentiators.mdx'
-import HomeGrowth from '../../_sections/_home_growth.mdx'
-import HomeComparison from '../../_sections/_home_comparison.mdx'
-import HomeUseCases from '../../_sections/_home_use_cases.mdx'
-import HomeTestimonials from '../../_sections/_home_testimonials.mdx'
-import HomeCta from '../../_sections/_home_cta.mdx'
+import HeroSection from '../../_sections/_hero.mdx'
+import FeaturesSection from '../../_sections/_features.mdx'
+import DifferentiatorsSection from '../../_sections/_differentiators.mdx'
+import GrowthSection from '../../_sections/_growth.mdx'
+import ComparisonSection from '../../_sections/_comparison.mdx'
+import UseCasesSection from '../../_sections/_use-cases.mdx'
+import TestimonialsSection from '../../_sections/_testimonials.mdx'
+import CtaSection from '../../_sections/_cta.mdx'
 
-<HomeHero />
+export const growthCards = [
+  {
+    icon: `rotate-ccw`,
+    title: `Recover Revenue You're Losing Today`,
+    outcome: `Fewer silent cancellations. More recovered payments. Higher lifetime value.`,
+    body: `Most stores lose subscribers silently — payment fails, grace period expires, subscription cancelled. ArraySubs stacks the odds in your favor with a 2-phase grace period that keeps access active while you collect the payment, automatic retry that re-attempts failed charges, and auto-downgrade that moves a customer to a cheaper plan instead of cancelling outright.`,
+  },
+  {
+    icon: `heart-handshake`,
+    title: `Turn Cancellations Into Saves`,
+    outcome: `Lower churn rate. Actionable cancellation insights. More subscribers saved automatically.`,
+    body: `When a subscriber clicks Cancel, most plugins just cancel. ArraySubs intercepts that moment with a full Retention Flow — the customer selects their reason, sees a targeted offer (a discount, a pause, a downgrade, or a direct line to support), and has every reason to stay. You learn exactly why people want to leave.`,
+  },
+  {
+    icon: `user-check`,
+    title: `Let Customers Self-Serve (and Love It)`,
+    outcome: `Fewer support tickets. Higher customer satisfaction. More time for growth.`,
+    body: `The customer portal puts full subscription control in your customers' hands — skip the next renewal, pause indefinitely, switch plans with automatic proration, cancel with undo support, pay outstanding invoices, and update payment methods. No support tickets needed.`,
+  },
+  {
+    icon: `shield-check`,
+    title: `Gate Content With Surgical Precision`,
+    outcome: `Precisely targeted access. Complex membership tiers without complex workarounds.`,
+    body: `10 condition types, 12 operators, full AND/OR group nesting. Restrict pages, posts, custom post types, products, downloads, and entire URL patterns. Layer on content dripping to release gated material on a schedule. Map WordPress roles automatically based on active plans.`,
+  },
+  {
+    icon: `shuffle`,
+    title: `Offer Every Customer Their Perfect Plan`,
+    outcome: `Match every budget. Grow revenue per customer. Reduce plan-fit churn.`,
+    body: `Create simple and variable subscription products — each variation with its own billing cycle, trial period, sign-up fee, and renewal price. Customers upgrade, downgrade, or crossgrade anytime with automatic proration. Add different renewal pricing to reward long-term subscribers.`,
+  },
+  {
+    icon: `wallet`,
+    title: `Reward Loyalty and Reduce Refunds`,
+    outcome: `Turn refunds into retained revenue. Incentivize renewals. Increase lifetime value.`,
+    body: `Convert refunds into wallet balance that customers spend on their next renewal or purchase. Credits come from 8 sources — admin adjustments, refunds, loyalty rewards, renewals, purchases, promotions, referrals, and dedicated credit purchase products. Set expiration dates to create urgency.`,
+  },
+  {
+    icon: `layout-grid`,
+    title: `Convert More at Checkout`,
+    outcome: `Higher conversion rates. Checkout flows tailored to your business. Zero developer dependency.`,
+    body: `A visual drag-and-drop checkout editor with 27 field types — text, select, radio, checkbox, date, file upload, and more. Build multi-step flows, add conditional logic, and customize the design with section-level control. All without touching a single line of code.`,
+  },
+  {
+    icon: `bar-chart-3`,
+    title: `Know Your Numbers Without Extra Tools`,
+    outcome: `Full business intelligence built into the same plugin that powers your subscriptions.`,
+    body: `40+ reports, 10 KPI cards with real-time metrics (MRR, churn, ARPU, trial conversions), audit logs with full before/after details, gateway health dashboard, and scheduled-job monitoring. No extra analytics plugin needed.`,
+  },
+  {
+    icon: `lock`,
+    title: `Protect Revenue Per Seat`,
+    outcome: `Each subscription pays for itself. No free riders. Protected per-seat revenue.`,
+    body: `Credential sharing is invisible revenue loss. Multi-Login Prevention detects concurrent sessions and enforces your session policy — so each subscription means one active user. No more silent access leakage eating into your membership revenue.`,
+  },
+  {
+    icon: `rocket`,
+    title: `Launch Faster Than You Think`,
+    outcome: `Under 10 minutes from install to live. Zero guesswork configuration.`,
+    body: `The 9-step setup wizard asks about your business type and auto-configures billing rules, checkout behavior, cancellation policy, access control, emails, and advanced features in one pass. Export the entire configuration as JSON for multi-site migration.`,
+  },
+  {
+    icon: `list-checks`,
+    title: `Show Customers What They're Paying For`,
+    outcome: `Transparent plans. Fewer support tickets. Higher upgrade rates.`,
+    body: `Feature Manager defines per-plan entitlements (toggles, numeric limits, text details) and renders a "What's Included" section on product pages. Variable products update features per variation. Usage tracking shows "Used X of Y" in real time.`,
+  },
+]
 
-<HomeFeatures />
+export const comparisonColumns = [
+  `ArraySubs Free`,
+  `ArraySubs Pro`,
+  `Woo Subscriptions + Memberships`,
+]
 
-<HomeDifferentiators />
+export const comparisonRows = [
+  {
+    feature: `Subscription Products (Simple & Variable)`,
+    values: [true, true, true],
+  },
+  {
+    feature: `Flexible Billing Cycles (D/W/M/Y)`,
+    values: [true, true, true],
+  },
+  {
+    feature: `Free Trials`,
+    values: [true, true, true],
+  },
+  {
+    feature: `Sign-up Fees`,
+    values: [true, true, true],
+  },
+  {
+    feature: `Different Renewal Price`,
+    values: [true, true, false],
+  },
+  {
+    feature: `Plan Switching (Upgrade/Downgrade/Crossgrade)`,
+    values: [true, true, `Limited`],
+  },
+  {
+    feature: `3 Proration Methods`,
+    values: [true, true, `Partial`],
+  },
+  {
+    feature: `Skip Next Renewal`,
+    values: [true, true, false],
+  },
+  {
+    feature: `Pause / Vacation Mode`,
+    values: [true, true, `Suspend only`],
+  },
+  {
+    feature: `2-Phase Grace Period`,
+    values: [true, true, `Basic`],
+  },
+  {
+    feature: `Renewal Sync`,
+    values: [true, true, true],
+  },
+  {
+    feature: `Content Restriction (10 conditions, AND/OR)`,
+    values: [true, true, `Basic rules`],
+  },
+  {
+    feature: `Content Dripping`,
+    values: [true, true, true],
+  },
+  {
+    feature: `Role Mapping`,
+    values: [true, true, false],
+  },
+  {
+    feature: `URL Restriction (4 patterns)`,
+    values: [true, true, false],
+  },
+  {
+    feature: `Member Discounts`,
+    values: [true, true, true],
+  },
+  {
+    feature: `Customer Self-Service Portal`,
+    values: [true, true, true],
+  },
+  {
+    feature: `Retention Flow Builder`,
+    values: [true, true, false],
+  },
+  {
+    feature: `Email Notifications (20 emails)`,
+    values: [true, true, `Basic`],
+  },
+  {
+    feature: `Easy Setup Wizard (9 steps)`,
+    values: [true, true, false],
+  },
+  {
+    feature: `Manage Subscriptions Dashboard`,
+    values: [true, true, true],
+  },
+  {
+    feature: `Profile Builder & Shortcodes`,
+    values: [true, true, false],
+  },
+  {
+    feature: `Coupon Integration`,
+    values: [true, true, true],
+  },
+  {
+    feature: `Store Credit System`,
+    values: [false, true, false],
+  },
+  {
+    feature: `Checkout Builder (27 field types)`,
+    values: [false, true, false],
+  },
+  {
+    feature: `Advanced Analytics (MRR, Churn, ARPU)`,
+    values: [`Retention only`, true, `Basic reports`],
+  },
+  {
+    feature: `Audit Logs & Activity Timeline`,
+    values: [false, true, false],
+  },
+  {
+    feature: `Gateway Health Dashboard`,
+    values: [false, true, false],
+  },
+  {
+    feature: `Automatic Payments (Stripe, PayPal, Paddle)`,
+    values: [`Manual only`, true, `Stripe, PayPal`],
+  },
+  {
+    feature: `Paddle (Merchant of Record)`,
+    values: [false, true, false],
+  },
+  {
+    feature: `Auto-Retry Failed Payments`,
+    values: [false, true, true],
+  },
+  {
+    feature: `Auto-Downgrade on Failure`,
+    values: [false, true, false],
+  },
+  {
+    feature: `Multi-Login Prevention`,
+    values: [false, true, false],
+  },
+  {
+    feature: `Feature Manager (per-plan entitlements)`,
+    values: [false, true, false],
+  },
+  {
+    feature: `Fixed Period Membership Product`,
+    values: [true, true, false],
+  },
+  {
+    feature: `HPOS Compatible`,
+    values: [true, true, true],
+  },
+]
 
-<HomeGrowth />
+export const comparisonFooter = {
+  feature: `Plugins Required`,
+  values: [`1`, `1 + addon`, `2 separate plugins`],
+}
 
-<HomeComparison />
+export const testimonials = [
+  {
+    quote: `We replaced two separate subscription and membership plugins with ArraySubs. The Retention Flow alone made switching worth it — and the free tier covers more than what we were paying for.`,
+    name: `Early Adopter`,
+    context: `SaaS / Membership Site`,
+  },
+  {
+    quote: `The setup wizard had us running in under 10 minutes. No other subscription plugin was this easy to configure — and the free tier covers more than most paid plugins.`,
+    name: `Early Adopter`,
+    context: `Digital Products`,
+  },
+  {
+    quote: `I run a subscription box business. Skip, pause, and renewal sync are features I couldn't find in any free plugin. ArraySubs has them all built in.`,
+    name: `Early Adopter`,
+    context: `Subscription Boxes`,
+  },
+]
 
-<HomeUseCases />
+export const statsBarItems = [
+  {
+    value: `15`,
+    label: `Built-in features`,
+  },
+  {
+    value: `Free`,
+    label: `No credit card required`,
+  },
+  {
+    value: `< 10 min`,
+    label: `With the setup wizard`,
+  },
+  {
+    value: `6+`,
+    label: `Plugins replaced`,
+  },
+]
 
-<HomeTestimonials />
+<HeroSection />
 
-<HomeCta />
+<FeaturesSection />
+
+<DifferentiatorsSection />
+
+<GrowthSection />
+
+<ComparisonSection />
+
+<UseCasesSection />
+
+<TestimonialsSection />
+
+<CtaSection />

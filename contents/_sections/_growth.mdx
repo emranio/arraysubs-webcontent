@@ -1,0 +1,27 @@
+<Section>
+  <SectionHeading
+    label="GROWTH ENGINE"
+    title="Built to Grow Your Business at Max"
+    subtitle="Every feature in ArraySubs exists for one reason — to grow your subscription revenue, protect it from churn, and free you from busywork. Here's how."
+  />
+
+  <Grid columns={2} gap="lg">
+    {growthCards.map((card) => (
+      <div key={card.title} className="growth-card">
+        <div className="growth-card__icon">
+          <Icon name={card.icon} size={24} />
+        </div>
+        <h3 className="growth-card__title">{card.title}</h3>
+        <div className="growth-card__body">
+          <p>{card.body}</p>
+        </div>
+        <p className="growth-card__outcome">{card.outcome}</p>
+      </div>
+    ))}
+  </Grid>
+
+  <Flex justify="center" gap="md" className="section__cta">
+    <Button href="/download/" variant="primary" size="lg">Download Free &amp; Start Now</Button>
+    <Button href="/plans/#get-pro" variant="outline" size="lg">Get Pro Free for 4 Months</Button>
+  </Flex>
+</Section>
