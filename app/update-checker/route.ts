@@ -199,6 +199,60 @@ async function verifyWordPressRequest(siteUrl: string, userAgent: string | null)
   };
 }
 
+async function isWordPressSite(siteUrl: URL): Promise<boolean> {
+  const restUrl = new URL('/wp-json/', siteUrl);
+
+  try {
+    const restResponse = await fetch(restUrl, {
+      headers: {
+        Accept: 'application/json',
+      },
+      redirect: 'follow',
+      cache: 'no-store',
+      signal: AbortSignal.timeout(5000),
+    });
+
+    if (restResponse.ok) {
+      const contentType = restResponse.headers.get('content-type') ?? '';
+
+      if (contentType.includes('application/json')) {
+        const data = (await restResponse.json()) as Record<string, unknown>;
+
+        if (
+          (Array.isArray(data.namespaces) && data.namespaces.length > 0) ||
+          typeof data.routes === 'object' ||
+          typeof data.home === 'string' ||
+          typeof data.name === 'string'
+        ) {
+          return true;
+        }
+      }
+    }
+  } catch {
+    // Fall back to the homepage check below.
+  }
+
+  try {
+    const pageResponse = await fetch(siteUrl, {
+      headers: {
+        Accept: 'text/html',
+      },
+      redirect: 'follow',
+      cache: 'no-store',
+      signal: AbortSignal.timeout(5000),
+    });
+
+    if (!pageResponse.ok) {
+      return false;
+    }
+
+    const pageHtml = await pageResponse.text();
+
+    return /wp-content|wp-includes|wp-json/i.test(pageHtml);
+  } catch {
+    return false;
+  }
+}
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -244,4 +298,33 @@ function getWordPressSiteUrlFromUserAgent(userAgent: string | null): URL | null 
 
 function isSupportedSiteProtocol(protocol: string): boolean {
   return SUPPORTED_SITE_PROTOCOLS.has(protocol);
+}
+
+function isUnsafeHost(hostname: string): boolean {
+  const normalizedHost = hostname.trim().toLowerCase();
+
+  if (
+    normalizedHost === 'localhost' ||
+    normalizedHost === '0.0.0.0' ||
+    normalizedHost === '::1' ||
+    normalizedHost.endsWith('.local')
+  ) {
+    return true;
+  }
+
+  if (/^(10\.|127\.|169\.254\.|192\.168\.)/u.test(normalizedHost)) {
+    return true;
+  }
+
+  const privateRangeMatch = normalizedHost.match(/^172\.(\d{1,3})\./u);
+
+  if (privateRangeMatch) {
+    const secondOctet = Number(privateRangeMatch[1]);
+
+    if (secondOctet >= 16 && secondOctet <= 31) {
+      return true;
+    }
+  }
+
+  return /^fe80:|^fc00:|^fd00:/u.test(normalizedHost);
 }
