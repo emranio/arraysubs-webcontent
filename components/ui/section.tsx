@@ -7,7 +7,7 @@ interface SectionProps {
   label?: string;
   title?: string;
   subtitle?: string;
-  background?: 'white' | 'light' | 'dark';
+  background?: 'default' | 'primary' | 'dark';
   fullWidth?: boolean;
   id?: string;
 }
@@ -18,7 +18,7 @@ export function Section({
   label,
   title,
   subtitle,
-  background = 'white',
+  background = 'default',
   fullWidth = false,
   id,
 }: SectionProps) {

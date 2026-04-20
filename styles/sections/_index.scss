@@ -13,20 +13,36 @@
 .section {
   padding: var(--space-16) 0;
 
-  &--white {
-    background-color: var(--color-bg);
-  }
+  &--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--space-20);
+    border: none;
+    border-radius: var(--radius-2xl);
 
-  &--light {
-    background-color: var(--color-bg-secondary);
+    * {
+      color: var(--color-white);
+    }
+    .section__label {
+      color: var(--color-white);
+    }
+    .btn--outline {
+      color: var(--color-white);
+      border-color: var(--color-white);
+
+      &:hover {
+        background-color: var(--color-white);
+        border-color: var(--color-white);
+        color: var(--color-primary);
+      }
+    }
   }
 
   &--dark {
     background-color: var(--color-secondary);
     color: var(--color-text-inverse);
 
-    .section__title,
-    .section__subtitle {
+    * {
       color: var(--color-text-inverse);
     }
 
