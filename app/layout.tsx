@@ -40,7 +40,7 @@ export default function RootLayout({
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID?.trim();
 
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body suppressHydrationWarning className={`${headingFont.variable} ${bodyFont.variable}`}>
         {gtmId ? (
           <Suspense fallback={null}>
