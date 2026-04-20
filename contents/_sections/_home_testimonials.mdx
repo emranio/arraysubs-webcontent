@@ -1,3 +1,28 @@
+export const testimonials = [
+  {
+    quote: `We replaced two separate subscription and membership plugins with ArraySubs. The Retention Flow alone made switching worth it — and the free tier covers more than what we were paying for.`,
+    name: `Early Adopter`,
+    context: `SaaS / Membership Site`,
+  },
+  {
+    quote: `The setup wizard had us running in under 10 minutes. No other subscription plugin was this easy to configure — and the free tier covers more than most paid plugins.`,
+    name: `Early Adopter`,
+    context: `Digital Products`,
+  },
+  {
+    quote: `I run a subscription box business. Skip, pause, and renewal sync are features I couldn't find in any free plugin. ArraySubs has them all built in.`,
+    name: `Early Adopter`,
+    context: `Subscription Boxes`,
+  },
+];
+
+export const stats = [
+  { value: `15`, label: `Built-in features` },
+  { value: `Free`, label: `No credit card required` },
+  { value: `< 10 min`, label: `With the setup wizard` },
+  { value: `6+`, label: `Plugins replaced` },
+];
+
 <Section>
   <SectionHeading
     label="EARLY ADOPTERS"
@@ -5,22 +30,26 @@
   />
 
   <Grid columns={3} gap="md">
-    <TestimonialCard
-      quote="We replaced two separate subscription and membership plugins with ArraySubs. The Retention Flow alone made switching worth it — and the free tier covers more than what we were paying for."
-      name="Early Adopter"
-      context="SaaS / Membership Site"
-    />
-    <TestimonialCard
-      quote="The setup wizard had us running in under 10 minutes. No other subscription plugin was this easy to configure — and the free tier covers more than most paid plugins."
-      name="Early Adopter"
-      context="Digital Products"
-    />
-    <TestimonialCard
-      quote="I run a subscription box business. Skip, pause, and renewal sync are features I couldn't find in any free plugin. ArraySubs has them all built in."
-      name="Early Adopter"
-      context="Subscription Boxes"
-    />
+    {testimonials.map((testimonial) => (
+      <div key={`${testimonial.name}-${testimonial.context}`} className="testimonial-card">
+        <blockquote className="testimonial-card__quote">{testimonial.quote}</blockquote>
+        <div className="testimonial-card__author">
+          <div className="testimonial-card__avatar" />
+          <div>
+            <p className="testimonial-card__name">{testimonial.name}</p>
+            <p className="testimonial-card__context">{testimonial.context}</p>
+          </div>
+        </div>
+      </div>
+    ))}
   </Grid>
 
-  <StatsBar />
+  <div className="stats-bar">
+    {stats.map((stat) => (
+      <div key={stat.label} className="stats-bar__item">
+        <span className="stats-bar__value">{stat.value}</span>
+        <span className="stats-bar__label">{stat.label}</span>
+      </div>
+    ))}
+  </div>
 </Section>

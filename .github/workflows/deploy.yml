@@ -43,3 +43,10 @@ jobs:
             bunx --bun pm2 save
 
             echo "==> Done"
+
+      - name: Purge Cloudflare Cache
+        run: |
+          curl -s -X POST "${{ secrets.CF_PURGE_CACHE_URL }}" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}'

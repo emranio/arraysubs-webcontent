@@ -7,15 +7,15 @@ import { Footer } from '@/components/layout/footer';
 import siteConfig from '@/site.config.json';
 import '@/styles/globals.scss';
 
-const funnelDisplay = Funnel_Display({
+const bodyFont = Funnel_Sans({
   subsets: ['latin'],
-  variable: '--font-heading',
+  variable: '--font-body',
   display: 'swap',
 });
 
-const funnelSans = Funnel_Sans({
+const headingFont = Funnel_Display({
   subsets: ['latin'],
-  variable: '--font-body',
+  variable: '--font-heading',
   display: 'swap',
 });
 
@@ -41,7 +41,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body suppressHydrationWarning className={`${funnelDisplay.variable} ${funnelSans.variable}`}>
+      <body suppressHydrationWarning className={`${headingFont.variable} ${bodyFont.variable}`}>
         {gtmId ? (
           <Suspense fallback={null}>
             <GoogleTagManagerTracker gtmId={gtmId} />

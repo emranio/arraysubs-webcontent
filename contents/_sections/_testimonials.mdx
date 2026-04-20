@@ -1,0 +1,25 @@
+import StatsBar from './_stats-bar.mdx'
+
+<Section>
+  <SectionHeading
+    label="EARLY ADOPTERS"
+    title="What Early Adopters Are Saying"
+  />
+
+  <Grid columns={3} gap="md">
+    {testimonials.map((testimonial) => (
+      <div key={`${testimonial.name}-${testimonial.context}`} className="testimonial-card">
+        <blockquote className="testimonial-card__quote">{testimonial.quote}</blockquote>
+        <div className="testimonial-card__author">
+          <div className="testimonial-card__avatar" />
+          <div>
+            <p className="testimonial-card__name">{testimonial.name}</p>
+            <p className="testimonial-card__context">{testimonial.context}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </Grid>
+
+  <StatsBar />
+</Section>

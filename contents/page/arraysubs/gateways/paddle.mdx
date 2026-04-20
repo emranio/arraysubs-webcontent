@@ -69,7 +69,7 @@ schema: |
   </Grid>
 </Section>
 
-<Section background="light">
+<Section >
   <SectionHeading
     label="HOW IT WORKS"
     title="Paddle payment flow with ArraySubs"
@@ -145,63 +145,21 @@ schema: |
   </div>
 </Section>
 
-<Section background="light">
+<Section >
   <SectionHeading
     label="PADDLE VS STRIPE VS PAYPAL"
     title="When to choose Paddle over Stripe or PayPal"
     subtitle="Each gateway serves different business needs. Here is how they compare for WooCommerce subscription stores."
   />
 
-  <div className="table-scroll">
-    <table className="feature-comparison">
-      <thead>
-        <tr>
-          <th>Factor</th>
-          <th>Paddle</th>
-          <th>Stripe</th>
-          <th>PayPal</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Merchant of record (Paddle pays taxes)</td>
-          <td><span className="plan-status plan-status--included">Yes</span></td>
-          <td><span className="plan-status plan-status--locked">No — you handle tax</span></td>
-          <td><span className="plan-status plan-status--locked">No — you handle tax</span></td>
-        </tr>
-        <tr>
-          <td>Global VAT and sales tax remittance</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--partial">Requires Stripe Tax add-on</span></td>
-          <td><span className="plan-status plan-status--locked">Not handled</span></td>
-        </tr>
-        <tr>
-          <td>Buyer recognition and trust</td>
-          <td><span className="plan-status plan-status--partial">Strong among SaaS buyers</span></td>
-          <td><span className="plan-status plan-status--included">High with card payments</span></td>
-          <td><span className="plan-status plan-status--included">Very high — widely recognized</span></td>
-        </tr>
-        <tr>
-          <td>Best for product type</td>
-          <td><span className="plan-status plan-status--partial">Digital, SaaS, global</span></td>
-          <td><span className="plan-status plan-status--partial">General purpose</span></td>
-          <td><span className="plan-status plan-status--partial">Consumer and B2C</span></td>
-        </tr>
-        <tr>
-          <td>Chargeback liability</td>
-          <td><span className="plan-status plan-status--included">Paddle's responsibility</span></td>
-          <td><span className="plan-status plan-status--locked">Merchant's responsibility</span></td>
-          <td><span className="plan-status plan-status--locked">Merchant's responsibility</span></td>
-        </tr>
-        <tr>
-          <td>Automatic renewal with ArraySubs Pro</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  | Factor | Paddle | Stripe | PayPal |
+  | --- | --- | --- | --- |
+  | Merchant of record (Paddle pays taxes) | ✅ Yes | ❌ No — you handle tax | ❌ No — you handle tax |
+  | Global VAT and sales tax remittance | ✅ Included | ⚠️ Requires Stripe Tax add-on | ❌ Not handled |
+  | Buyer recognition and trust | ⚠️ Strong among SaaS buyers | ✅ High with card payments | ✅ Very high — widely recognized |
+  | Best for product type | ⚠️ Digital, SaaS, global | ⚠️ General purpose | ⚠️ Consumer and B2C |
+  | Chargeback liability | ✅ Paddle's responsibility | ❌ Merchant's responsibility | ❌ Merchant's responsibility |
+  | Automatic renewal with ArraySubs Pro | ✅ Included | ✅ Included | ✅ Included |
 </Section>
 
 <Section>
@@ -211,49 +169,14 @@ schema: |
     subtitle="Paddle's tax and compliance handling is available regardless of tier. Pro adds automatic recurring billing and payment retry."
   />
 
-  <div className="table-scroll">
-    <table className="feature-comparison">
-      <thead>
-        <tr>
-          <th>Capability</th>
-          <th>Free</th>
-          <th>Pro</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Accept first payment via Paddle checkout</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Paddle handles VAT, tax, and compliance</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Send renewal invoice email to subscriber</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Automatic recurring charge on renewal date</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Payment retry sequence on failure</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Prorated mid-cycle plan change</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  | Capability | Free | Pro |
+  | --- | --- | --- |
+  | Accept first payment via Paddle checkout | ✅ Included | ✅ Included |
+  | Paddle handles VAT, tax, and compliance | ✅ Included | ✅ Included |
+  | Send renewal invoice email to subscriber | ✅ Included | ✅ Included |
+  | Automatic recurring charge on renewal date | ❌ Not included | ✅ Included |
+  | Payment retry sequence on failure | ❌ Not included | ✅ Included |
+  | Prorated mid-cycle plan change | ❌ Not included | ✅ Included |
 
   <Flex justify="center" gap="md" wrap className="section__cta">
     <Button href="/plans/#get-pro" variant="primary" size="lg">Get Pro Free for 6 Months</Button>
@@ -261,7 +184,7 @@ schema: |
   </Flex>
 </Section>
 
-<Section background="light">
+<Section >
   <SectionHeading
     label="FAQ"
     title="Paddle + ArraySubs — common questions"

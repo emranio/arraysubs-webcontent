@@ -45,7 +45,7 @@ export function DefaultTemplate({ meta, children }: DefaultTemplateProps) {
 
   return (
     <article className={`page page--default ${meta.bodyClass || ''}`}>
-      <Section background="light" fullWidth>
+      <Section  fullWidth>
         <div className="page-hero container">
           <Breadcrumb items={breadcrumbItems} />
           <div className="page-hero__content">

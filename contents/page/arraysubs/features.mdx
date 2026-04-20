@@ -25,6 +25,27 @@ header-tags:
     variant: "gray"
 ---
 
+import StatsBar from '../../_sections/_stats-bar.mdx'
+
+export const statsBarItems = [
+  {
+    value: `15`,
+    label: `Built-in features`,
+  },
+  {
+    value: `Free`,
+    label: `No credit card required`,
+  },
+  {
+    value: `< 10 min`,
+    label: `With the setup wizard`,
+  },
+  {
+    value: `6+`,
+    label: `Plugins replaced`,
+  },
+]
+
 <Section>
   <SectionHeading
     label="AT A GLANCE"
@@ -82,7 +103,7 @@ header-tags:
   </div>
 </Section>
 
-<Section background="light">
+<Section >
   <SectionHeading
     label="USE CASES"
     title="Match the feature stack to the way you actually sell"
@@ -116,101 +137,30 @@ header-tags:
   </Flex>
 </Section>
 
-<Section background="light">
+<Section >
   <SectionHeading
     label="FREE VS PRO"
     title="See how the free core and Pro layer fit together"
     subtitle="ArraySubs Free is not a teaser. It is a real production-ready core. Pro adds automation, revenue recovery, reporting depth, and plan-level control for stores ready to scale."
   />
 
-  <div className="table-scroll">
-    <table className="feature-comparison">
-      <thead>
-        <tr>
-          <th>Module</th>
-          <th>Free</th>
-          <th>Pro</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Subscriptions &amp; recurring products</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Billing, renewals &amp; refunds</td>
-          <td><span className="plan-status plan-status--partial">Manual renewals + core billing flows</span></td>
-          <td><span className="plan-status plan-status--included">Adds automation and deeper billing controls</span></td>
-        </tr>
-        <tr>
-          <td>Payment gateways</td>
-          <td><span className="plan-status plan-status--partial">Any WooCommerce gateway for first payment + manual renewal</span></td>
-          <td><span className="plan-status plan-status--included">Adds automatic recurring payments</span></td>
-        </tr>
-        <tr>
-          <td>Member access control</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Customer portal</td>
-          <td><span className="plan-status plan-status--partial">Core self-service controls</span></td>
-          <td><span className="plan-status plan-status--included">Adds richer payment and account workflows</span></td>
-        </tr>
-        <tr>
-          <td>Profile builder &amp; shortcodes</td>
-          <td><span className="plan-status plan-status--partial">Shortcodes and basic visibility tools</span></td>
-          <td><span className="plan-status plan-status--included">Adds advanced profile builder features</span></td>
-        </tr>
-        <tr>
-          <td>Retention flow builder</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Store credit system</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Email notifications</td>
-          <td><span className="plan-status plan-status--partial">Core lifecycle emails</span></td>
-          <td><span className="plan-status plan-status--included">Adds deeper automation and Pro-only flows</span></td>
-        </tr>
-        <tr>
-          <td>Analytics</td>
-          <td><span className="plan-status plan-status--partial">Core reporting surfaces</span></td>
-          <td><span className="plan-status plan-status--included">Full growth analytics dashboard</span></td>
-        </tr>
-        <tr>
-          <td>Audits &amp; logs</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Manage subscriptions</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Checkout builder</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Easy setup wizard</td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-        <tr>
-          <td>Feature manager</td>
-          <td><span className="plan-status plan-status--locked">Not included</span></td>
-          <td><span className="plan-status plan-status--included">Included</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  | Module | Free | Pro |
+  | --- | --- | --- |
+  | Subscriptions & recurring products | ✅ Included | ✅ Included |
+  | Billing, renewals & refunds | ⚠️ Manual renewals + core billing flows | ✅ Adds automation and deeper billing controls |
+  | Payment gateways | ⚠️ Any WooCommerce gateway for first payment + manual renewal | ✅ Adds automatic recurring payments |
+  | Member access control | ✅ Included | ✅ Included |
+  | Customer portal | ⚠️ Core self-service controls | ✅ Adds richer payment and account workflows |
+  | Profile builder & shortcodes | ⚠️ Shortcodes and basic visibility tools | ✅ Adds advanced profile builder features |
+  | Retention flow builder | ✅ Included | ✅ Included |
+  | Store credit system | ❌ Not included | ✅ Included |
+  | Email notifications | ⚠️ Core lifecycle emails | ✅ Adds deeper automation and Pro-only flows |
+  | Analytics | ⚠️ Core reporting surfaces | ✅ Full growth analytics dashboard |
+  | Audits & logs | ❌ Not included | ✅ Included |
+  | Manage subscriptions | ✅ Included | ✅ Included |
+  | Checkout builder | ❌ Not included | ✅ Included |
+  | Easy setup wizard | ✅ Included | ✅ Included |
+  | Feature manager | ❌ Not included | ✅ Included |
 
   <Flex justify="center" gap="md" wrap className="section__cta">
     <Button href="/plans/#live-demo" variant="primary" size="lg">Live Demo</Button>

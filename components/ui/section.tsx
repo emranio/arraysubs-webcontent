@@ -26,7 +26,7 @@ export function Section({
 
   return (
     <section className={`section ${bgClass} ${className}`} id={id}>
-      <div className={fullWidth ? 'section__inner section__inner--full' : 'section__inner container'}>
+      <div className={fullWidth ? 'section__inner section__inner--full' : 'section__inner'}>
         {(label || title || subtitle) && (
           <SectionHeading label={label} title={title} subtitle={subtitle} />
         )}

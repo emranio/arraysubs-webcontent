@@ -17,11 +17,6 @@
     }
   }
 
-  h2 {
-    padding-bottom: var(--space-3);
-    border-bottom: 1px solid var(--color-border);
-  }
-
   p {
     color: var(--color-text-secondary);
     font-size: var(--text-base);
@@ -46,6 +41,15 @@
   img {
     border-radius: var(--radius-xl);
     margin: var(--space-8) 0;
+  }
+
+  table {
+    margin: var(--space-8) 0;
+
+    th,
+    td {
+      font-size: var(--text-sm);
+    }
   }
 
   a:not(.btn) {
