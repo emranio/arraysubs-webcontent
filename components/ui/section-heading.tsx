@@ -24,7 +24,12 @@ export function SectionHeading({
         {title && <h2 className="section__title">{title}</h2>}
       </div>
       <div className='section__header--right-part'>
-        {subtitle && <p className="section__subtitle">{subtitle}</p>}
+        {subtitle && (
+          <p className="section__subtitle">
+            <span aria-hidden="true" className="section__subtitle-arrow" />
+            <span className="section__subtitle-text">{subtitle}</span>
+          </p>
+        )}
       </div>
     </div>
   );
