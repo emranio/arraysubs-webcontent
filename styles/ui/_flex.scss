@@ -45,6 +45,10 @@
     justify-content: space-around;
   }
 
+  &--gap-xs {
+    gap: var(--space-1);
+  }
+
   &--gap-sm {
     gap: var(--space-2);
   }

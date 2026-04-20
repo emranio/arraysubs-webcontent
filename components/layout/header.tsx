@@ -113,10 +113,19 @@ export function Header() {
     handleViewportChange(mediaQuery);
 
     const listener = (event: MediaQueryListEvent) => handleViewportChange(event);
-    mediaQuery.addEventListener('change', listener);
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', listener);
+
+      return () => {
+        mediaQuery.removeEventListener('change', listener);
+      };
+    }
+
+    mediaQuery.addListener(listener);
 
     return () => {
-      mediaQuery.removeEventListener('change', listener);
+      mediaQuery.removeListener(listener);
     };
   }, []);
 
