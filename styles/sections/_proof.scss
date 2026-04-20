@@ -25,7 +25,7 @@
   }
 
   &__label {
-    color: var(--color-text-secondary);
+    color: var(--color-text);
     line-height: var(--leading-relaxed);
   }
 }
@@ -116,6 +116,6 @@
 
   &__label {
     font-size: var(--text-sm);
-    color: var(--color-text-secondary);
+    color: var(--color-text);
   }
 }

@@ -36,7 +36,7 @@
   }
 
   &__body {
-    color: var(--color-text-secondary);
+    color: var(--color-text);
     font-size: var(--text-sm);
     line-height: var(--leading-relaxed);
     margin-bottom: var(--space-4);
@@ -47,11 +47,9 @@
   }
 
   &__outcome {
-    font-size: var(--text-xs);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-success);
-    padding-top: var(--space-3);
-    border-top: 1px solid var(--color-border);
-    margin: 0;
+    font-weight: var(--font-weight-semibold) !important;
+    color: var(--color-primary) !important;
+    padding-top: var(--space-3) !important;
+    margin: 0 !important;
   }
 }

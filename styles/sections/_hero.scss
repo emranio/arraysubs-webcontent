@@ -43,7 +43,7 @@
 
   &__subtitle {
     font-size: var(--text-lg);
-    color: var(--color-text-secondary);
+    color: var(--color-text);
     line-height: var(--leading-relaxed);
     margin-bottom: var(--space-8);
     max-width: var(--content-max-copy);
@@ -61,7 +61,7 @@
     .badge {
       font-size: var(--text-xs);
       padding: 0.375rem 1rem;
-      color: var(--color-text-secondary);
+      color: var(--color-text);
     }
   }
 }

@@ -8,6 +8,7 @@ interface FeatureCardProps {
   icon?: string;
   className?: string;
   description?: string;
+  variant?: 'highlight' | 'primary';
   children?: React.ReactNode;
 }
 
@@ -18,6 +19,7 @@ export function FeatureCard({
   icon,
   className = '',
   description,
+  variant,
   children,
 }: FeatureCardProps) {
   const content = description ? <p>{description}</p> : children;
@@ -28,7 +30,7 @@ export function FeatureCard({
       badge={badge}
       href={href}
       icon={icon}
-      className={`feature-card ${className}`.trim()}
+      className={`feature-card ${variant ? `card--${variant}` : ''} ${className}`.trim()}
     >
       {content}
     </Card>

@@ -87,7 +87,7 @@
 
   &__note {
     margin: 0;
-    color: var(--color-text-secondary);
+    color: var(--color-text);
     line-height: var(--leading-relaxed);
   }
 
@@ -100,7 +100,7 @@
 
     li {
       margin-bottom: 0;
-      color: var(--color-text-secondary);
+      color: var(--color-text);
     }
   }
 }
