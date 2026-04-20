@@ -4,9 +4,9 @@
 .page-hero-section {
   background: radial-gradient(
     72.64% 70.35% at 27.36% 83.61%,
-    rgba(239, 250, 255, 0.7) 0,
-    rgba(252, 238, 255, 0.7) 85.97%,
-    rgba(238, 237, 255, 0.7) 100%
+    rgba(239, 250, 255, 1) 0,
+    rgba(252, 238, 255, 1) 85.97%,
+    rgba(238, 237, 255, 1) 100%
   );
 
   position: relative;
@@ -29,15 +29,13 @@
     }
   }
   .page-wave-shape {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    height: auto;
+    height: 10rem;
     pointer-events: none;
+    margin-bottom: -4.5rem !important;
 
-    & path {
-      fill: var(--color-background);
+    & > path {
+      fill: var(--color-body-bg);
     }
   }
 }

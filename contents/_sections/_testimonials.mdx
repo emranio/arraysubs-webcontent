@@ -6,7 +6,7 @@ import StatsBar from './_stats-bar.mdx'
     title="What Early Adopters Are Saying"
   />
 
-  <Grid columns={3} gap="md">
+  <Grid columns={3} gap="sm">
     {testimonials.map((testimonial) => (
       <div key={`${testimonial.name}-${testimonial.context}`} className="testimonial-card">
         <blockquote className="testimonial-card__quote">{testimonial.quote}</blockquote>
