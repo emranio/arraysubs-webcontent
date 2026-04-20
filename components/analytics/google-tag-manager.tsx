@@ -69,16 +69,11 @@ export function GoogleTagManagerTracker({ gtmId }: GoogleTagManagerTrackerProps)
     const currentPath = search ? `${pathname}?${search}` : pathname;
     const currentLocation = window.location.href;
 
-    if (lastTrackedPathRef.current === null) {
-      lastTrackedPathRef.current = currentPath;
-      previousLocationRef.current = currentLocation;
-      return;
-    }
-
     if (lastTrackedPathRef.current === currentPath) {
       return;
     }
 
+    const isFirstPageView = lastTrackedPathRef.current === null;
     lastTrackedPathRef.current = currentPath;
 
     window.dataLayer = window.dataLayer || [];
@@ -87,7 +82,7 @@ export function GoogleTagManagerTracker({ gtmId }: GoogleTagManagerTrackerProps)
       page_title: document.title,
       page_path: currentPath,
       page_location: currentLocation,
-      page_referrer: previousLocationRef.current ?? document.referrer,
+      page_referrer: isFirstPageView ? document.referrer : (previousLocationRef.current ?? document.referrer),
     });
 
     previousLocationRef.current = currentLocation;
