@@ -35,6 +35,7 @@
 
   // Background
   --color-bg: #ffffff;
+  --color-bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   --color-bg-secondary: #f8fafc;
   --color-bg-tertiary: #f1f5f9;
 
@@ -102,6 +103,8 @@
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
+  --radius-4xl: 2rem;
+  --radius-6xl: 2.5rem;
   --radius-full: 9999px;
 
   // Transitions

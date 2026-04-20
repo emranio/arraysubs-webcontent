@@ -43,6 +43,7 @@
     margin: var(--space-8) 0;
   }
 
+  .responsive-table,
   table {
     margin: var(--space-8) 0;
 
@@ -50,6 +51,10 @@
     td {
       font-size: var(--text-sm);
     }
+  }
+
+  .responsive-table table {
+    margin: 0;
   }
 
   a:not(.btn) {

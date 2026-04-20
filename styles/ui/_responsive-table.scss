@@ -1,0 +1,141 @@
+.responsive-table {
+  --responsive-table-columns: 1;
+  margin: var(--space-8) 0;
+
+  &__scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: var(--radius-xl);
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__table {
+    width: max(100%, calc(var(--responsive-table-columns) * 8rem));
+    min-width: 100%;
+    margin: 0;
+    overflow: visible;
+  }
+
+  &--dense &__table {
+    width: max(100%, calc(var(--responsive-table-columns) * 9rem));
+  }
+
+  &__table th,
+  &__table td {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  &__table th:first-child,
+  &__table td:first-child {
+    min-width: 14rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .responsive-table {
+    &__table th,
+    &__table td {
+      min-width: 6.5rem;
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--text-xs);
+    }
+
+    &__table th:first-child,
+    &__table td:first-child {
+      min-width: 12rem;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .responsive-table--stackable {
+    .responsive-table__scroll {
+      overflow: visible;
+      border-radius: 0;
+    }
+
+    .responsive-table__table,
+    .responsive-table__table tbody,
+    .responsive-table__table tr,
+    .responsive-table__table td,
+    .responsive-table__table tbody th {
+      display: block;
+      width: 100%;
+    }
+
+    .responsive-table__table {
+      width: 100%;
+      min-width: 0;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .responsive-table__table caption {
+      display: block;
+      margin-bottom: var(--space-3);
+    }
+
+    .responsive-table__table thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .responsive-table__table tbody {
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .responsive-table__table tbody tr {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background-color: var(--color-bg);
+      box-shadow: 0 0 0 1px rgb(15 23 42 / 0.02);
+    }
+
+    .responsive-table__table tbody td,
+    .responsive-table__table tbody th {
+      display: grid;
+      grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr);
+      gap: var(--space-3);
+      align-items: start;
+      min-width: 0;
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+      background-color: var(--color-bg);
+    }
+
+    .responsive-table__table tbody td::before,
+    .responsive-table__table tbody th::before {
+      content: attr(data-label);
+      font-size: var(--text-xs);
+      line-height: var(--leading-snug);
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--color-text);
+    }
+
+    .responsive-table__table tbody tr > :last-child {
+      border-bottom: none;
+    }
+
+    .responsive-table__table tbody tr:hover td,
+    .responsive-table__table tbody tr:hover th {
+      background-color: var(--color-bg);
+    }
+  }
+}

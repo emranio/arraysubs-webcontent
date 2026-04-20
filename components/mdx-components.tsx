@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Flex } from '@/components/ui/flex';
 import { Badge } from '@/components/ui/badge';
 import { Icon } from '@/components/ui/icon';
+import { ResponsiveTable } from '@/components/ui/responsive-table';
 import { normalizeInternalHref } from '@/lib/internal-links';
 
 // Reusable content components for MDX
@@ -79,6 +80,7 @@ function MdxLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
 export const mdxComponents: MDXComponents = {
   img: MdxImage,
   a: MdxLink,
+  table: ResponsiveTable,
   // UI components available in MDX
   Section,
   SectionHeading,
