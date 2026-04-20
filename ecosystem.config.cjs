@@ -1,26 +1,29 @@
-const path = require('node:path');
+// eslint-disable-next-line @typescript-eslint/no-require-imports -- PM2 loads this config as CommonJS.
+const path = require("node:path");
 
-const bunBinary = process.env.BUN_BIN || path.join(process.env.HOME || '/root', '.bun', 'bin', 'bun');
+const bunBinary =
+  process.env.BUN_BIN ||
+  path.join(process.env.HOME || "/root", ".bun", "bin", "bun");
 
 module.exports = {
   apps: [
     {
-      name: 'arrayhash-com-next',
+      name: "arrayhash-com-next",
       cwd: __dirname,
-      script: 'node_modules/next/dist/bin/next',
-      args: 'start',
+      script: "node_modules/next/dist/bin/next",
+      args: "start",
       interpreter: bunBinary,
-      exec_mode: 'fork',
+      exec_mode: "fork",
       instances: 1,
       autorestart: true,
       watch: false,
-      max_memory_restart: '1G',
+      max_memory_restart: "1G",
       merge_logs: true,
       time: true,
       env_production: {
-        NODE_ENV: 'production',
-        HOSTNAME: '0.0.0.0',
-        PORT: '9986',
+        NODE_ENV: "production",
+        HOSTNAME: "0.0.0.0",
+        PORT: "9986",
       },
     },
   ],

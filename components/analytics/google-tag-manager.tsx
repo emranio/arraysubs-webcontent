@@ -58,7 +58,6 @@ export function GoogleTagManagerTracker({ gtmId }: GoogleTagManagerTrackerProps)
       events.forEach((evt) => window.removeEventListener(evt, handler));
       window.clearTimeout(timer);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gtmId]);
 
   useEffect(() => {
