@@ -1,4 +1,6 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
+import { GoogleTagManagerTracker } from '@/components/analytics/google-tag-manager';
 import { Funnel_Display, Funnel_Sans } from 'next/font/google';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
@@ -35,9 +37,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID?.trim();
+
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body suppressHydrationWarning className={`${funnelDisplay.variable} ${funnelSans.variable}`}>
+        {gtmId ? (
+          <Suspense fallback={null}>
+            <GoogleTagManagerTracker gtmId={gtmId} />
+          </Suspense>
+        ) : null}
         <Header />
         <main>{children}</main>
         <Footer />

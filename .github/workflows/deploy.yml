@@ -29,6 +29,9 @@ jobs:
             echo "==> Pulling latest code"
             git pull origin main
 
+            echo "==> Copying .env.production to .env"
+            cp .env.production .env
+
             echo "==> Installing dependencies"
             bun install --frozen-lockfile
 
