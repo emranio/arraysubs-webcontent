@@ -11,14 +11,29 @@
 @use "./faq";
 
 .section {
-  padding: var(--space-16) 0;
+  padding: var(--space-16) var(--container-padding);
+  margin: 0 3px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+    border-radius: var(--radius-2xl);
+  }
 
   &--primary {
-    background-color: var(--color-primary);
     color: var(--color-white);
-    padding: var(--space-20);
     border: none;
-    border-radius: var(--radius-2xl);
+
+    &::after {
+      background-color: var(--color-primary);
+    }
 
     * {
       color: var(--color-white);
@@ -39,8 +54,11 @@
   }
 
   &--dark {
-    background-color: var(--color-secondary);
     color: var(--color-text-inverse);
+
+    &::after {
+      background-color: var(--color-secondary);
+    }
 
     * {
       color: var(--color-text-inverse);
@@ -59,12 +77,6 @@
         border-color: var(--color-white);
         color: var(--color-secondary);
       }
-    }
-  }
-
-  &__inner {
-    &--full {
-      width: 100%;
     }
   }
 
