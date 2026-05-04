@@ -1,6 +1,8 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const GMT_PLUS_SIX_OFFSET_MS = 6 * 60 * 60 * 1000;
+const EXCLUDED_EMAIL_LOCAL_PART_LENGTH = 8;
+const EXCLUDED_EMAIL_LOCAL_PART_DOMAIN_EXCEPTIONS = new Set(['gmail', 'hotmail', 'yahoo', 'icloud']);
 const PING_LOG_SEPARATOR = ' | ';
 
 export type PingLogEntry = {
@@ -33,18 +35,23 @@ export function normalizePingLogContent(existingContent: string): string {
     .map((line) => line.trim())
     .filter((line) => line.length > 0);
 
-  if (lines.length === 0) {
+  const normalizedLines = lines
+    .map((line) => normalizePingLogLine(line))
+    .filter((line) => !shouldExcludePingLogLine(line));
+
+  if (normalizedLines.length === 0) {
     return '';
   }
 
-  return `${lines.map((line) => normalizePingLogLine(line)).join('\n')}\n`;
+  return `${normalizedLines.join('\n')}\n`;
 }
 
 export function mergePingLogContent(existingContent: string, nextEntry: PingLogEntry): string {
-  const nextSiteKey = getSiteKey(nextEntry.site_url);
+  const nextEmailKey = getEmailKey(nextEntry.site_email);
+  const shouldExcludeNextEntry = shouldExcludePingLogEmail(nextEntry.site_email);
 
-  if (!nextSiteKey) {
-    throw new Error('Ping log entries must include a valid site_url.');
+  if (!nextEmailKey) {
+    throw new Error('Ping log entries must include a valid site_email.');
   }
 
   const lines = existingContent
@@ -54,28 +61,25 @@ export function mergePingLogContent(existingContent: string, nextEntry: PingLogE
 
   const nextLine = formatPingLogLine(nextEntry);
   const mergedLines: string[] = [];
-  let replacedExistingEntry = false;
 
   for (const line of lines) {
-    const existingSiteKey = getSiteKeyFromLine(line);
+    const existingEmailKey = getEmailKeyFromLine(line);
     const normalizedLine = normalizePingLogLine(line);
 
-    if (existingSiteKey !== nextSiteKey) {
-      mergedLines.push(normalizedLine);
+    if (shouldExcludePingLogEmailKey(existingEmailKey)) {
       continue;
     }
 
-    if (!replacedExistingEntry) {
-      mergedLines.push(nextLine);
-      replacedExistingEntry = true;
+    if (existingEmailKey !== nextEmailKey) {
+      mergedLines.push(normalizedLine);
     }
   }
 
-  if (!replacedExistingEntry) {
+  if (!shouldExcludeNextEntry) {
     mergedLines.push(nextLine);
   }
 
-  return `${mergedLines.join('\n')}\n`;
+  return mergedLines.length > 0 ? `${mergedLines.join('\n')}\n` : '';
 }
 
 export function formatPingLogLine(entry: PingLogEntry): string {
@@ -85,7 +89,7 @@ export function formatPingLogLine(entry: PingLogEntry): string {
 
   return [
       pluginVersion,
-      entry.site_email,
+      entry.site_email.trim(),
       formatTimestampForGmtPlusSix(entry.received_at),
       entry.site_url,
       entry.site_title,
@@ -104,20 +108,20 @@ async function readPingLogFile(logFilePath: string): Promise<string> {
   }
 }
 
-function getSiteKeyFromLine(line: string): string | null {
+function getEmailKeyFromLine(line: string): string | null {
   const parsedJsonLine = parseJsonPingLogLine(line);
 
   if (parsedJsonLine) {
-    return getSiteKey(parsedJsonLine.site_url);
+    return getEmailKey(parsedJsonLine.site_email);
   }
 
   const segments = line.split(PING_LOG_SEPARATOR);
 
-  if (segments.length < 5) {
+  if (segments.length < 2) {
     return null;
   }
 
-  return getSiteKey(segments[2]);
+  return getEmailKey(segments[1]);
 }
 
 function normalizePingLogLine(line: string): string {
@@ -153,12 +157,40 @@ function parseJsonPingLogLine(line: string): PingLogEntry | null {
   }
 }
 
-function getSiteKey(siteUrl: string): string | null {
-  try {
-    return new URL(siteUrl).host.trim().toLowerCase();
-  } catch {
-    return null;
+function getEmailKey(siteEmail: string): string | null {
+  const normalizedEmail = siteEmail.trim().toLowerCase();
+
+  return normalizedEmail.length > 0 ? normalizedEmail : null;
+}
+
+function shouldExcludePingLogLine(line: string): boolean {
+  return shouldExcludePingLogEmailKey(getEmailKeyFromLine(line));
+}
+
+function shouldExcludePingLogEmail(siteEmail: string): boolean {
+  return shouldExcludePingLogEmailKey(getEmailKey(siteEmail));
+}
+
+function shouldExcludePingLogEmailKey(emailKey: string | null): boolean {
+  if (!emailKey) {
+    return false;
   }
+
+  const atSymbolIndex = emailKey.indexOf('@');
+
+  if (atSymbolIndex <= 0) {
+    return false;
+  }
+
+  const localPart = emailKey.slice(0, atSymbolIndex);
+  const domainPart = emailKey.slice(atSymbolIndex + 1);
+  const domainLabel = domainPart.split('.', 1)[0];
+
+  if (EXCLUDED_EMAIL_LOCAL_PART_DOMAIN_EXCEPTIONS.has(domainLabel)) {
+    return false;
+  }
+
+  return localPart.length === EXCLUDED_EMAIL_LOCAL_PART_LENGTH;
 }
 
 function formatTimestampForGmtPlusSix(receivedAt: string): string {
