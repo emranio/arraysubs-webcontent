@@ -26,8 +26,9 @@ jobs:
 
             cd ${{ secrets.DEPLOY_PATH }}
 
-            echo "==> Pulling latest code"
-            git pull origin main
+            echo "==> Syncing latest code"
+            git fetch --prune origin main
+            git reset --hard "${{ github.sha }}"
 
             echo "==> Copying .env.production to .env"
             cp .env.production .env
