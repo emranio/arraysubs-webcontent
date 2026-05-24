@@ -1,6 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const GMT_PLUS_SIX_OFFSET_MS = 6 * 60 * 60 * 1000;
+const PING_LOG_RETENTION_MS = 5 * 24 * 60 * 60 * 1000;
 const EXCLUDED_EMAIL_LOCAL_PART_LENGTH = 8;
 const EXCLUDED_EMAIL_LOCAL_PART_DOMAIN_EXCEPTIONS = new Set(['gmail', 'hotmail', 'yahoo', 'icloud']);
 const PING_LOG_SEPARATOR = ' | ';
@@ -48,6 +49,7 @@ export function normalizePingLogContent(existingContent: string): string {
 
 export function mergePingLogContent(existingContent: string, nextEntry: PingLogEntry): string {
   const nextEmailKey = getEmailKey(nextEntry.site_email);
+  const nextSiteKey = getSiteKey(nextEntry.site_url);
   const shouldExcludeNextEntry = shouldExcludePingLogEmail(nextEntry.site_email);
 
   if (!nextEmailKey) {
@@ -60,18 +62,36 @@ export function mergePingLogContent(existingContent: string, nextEntry: PingLogE
     .filter((line) => line.length > 0);
 
   const nextLine = formatPingLogLine(nextEntry);
+  const existingEntries = lines.map((line) => ({
+    emailKey: getEmailKeyFromLine(line),
+    normalizedLine: normalizePingLogLine(line),
+    receivedAtTime: getReceivedAtTimeFromLine(line),
+    siteKey: getSiteKeyFromLine(line),
+  }));
+  const isNewSite =
+    !shouldExcludeNextEntry &&
+    nextSiteKey !== null &&
+    !existingEntries.some(
+      (entry) => entry.siteKey === nextSiteKey && !shouldExcludePingLogEmailKey(entry.emailKey)
+    );
+  const retentionCutoffTime = isNewSite ? getRetentionCutoffTime(nextEntry.received_at) : null;
   const mergedLines: string[] = [];
 
-  for (const line of lines) {
-    const existingEmailKey = getEmailKeyFromLine(line);
-    const normalizedLine = normalizePingLogLine(line);
-
-    if (shouldExcludePingLogEmailKey(existingEmailKey)) {
+  for (const existingEntry of existingEntries) {
+    if (shouldExcludePingLogEmailKey(existingEntry.emailKey)) {
       continue;
     }
 
-    if (existingEmailKey !== nextEmailKey) {
-      mergedLines.push(normalizedLine);
+    if (
+      retentionCutoffTime !== null &&
+      existingEntry.receivedAtTime !== null &&
+      existingEntry.receivedAtTime < retentionCutoffTime
+    ) {
+      continue;
+    }
+
+    if (existingEntry.emailKey !== nextEmailKey) {
+      mergedLines.push(existingEntry.normalizedLine);
     }
   }
 
@@ -124,6 +144,38 @@ function getEmailKeyFromLine(line: string): string | null {
   return getEmailKey(segments[1]);
 }
 
+function getSiteKeyFromLine(line: string): string | null {
+  const parsedJsonLine = parseJsonPingLogLine(line);
+
+  if (parsedJsonLine) {
+    return getSiteKey(parsedJsonLine.site_url);
+  }
+
+  const segments = line.split(PING_LOG_SEPARATOR);
+
+  if (segments.length < 4) {
+    return null;
+  }
+
+  return getSiteKey(segments[3]);
+}
+
+function getReceivedAtTimeFromLine(line: string): number | null {
+  const parsedJsonLine = parseJsonPingLogLine(line);
+
+  if (parsedJsonLine) {
+    return parsePingLogTimestamp(parsedJsonLine.received_at);
+  }
+
+  const segments = line.split(PING_LOG_SEPARATOR);
+
+  if (segments.length < 3) {
+    return null;
+  }
+
+  return parsePingLogTimestamp(segments[2]);
+}
+
 function normalizePingLogLine(line: string): string {
   const parsedJsonLine = parseJsonPingLogLine(line);
 
@@ -161,6 +213,20 @@ function getEmailKey(siteEmail: string): string | null {
   const normalizedEmail = siteEmail.trim().toLowerCase();
 
   return normalizedEmail.length > 0 ? normalizedEmail : null;
+}
+
+function getSiteKey(siteUrl: string): string | null {
+  const normalizedSiteUrl = siteUrl.trim();
+
+  if (normalizedSiteUrl.length === 0) {
+    return null;
+  }
+
+  try {
+    return new URL(normalizedSiteUrl).hostname.toLowerCase();
+  } catch {
+    return normalizedSiteUrl.toLowerCase();
+  }
 }
 
 function shouldExcludePingLogLine(line: string): boolean {
@@ -210,6 +276,62 @@ function formatTimestampForGmtPlusSix(receivedAt: string): string {
   const meridiem = hours >= 12 ? 'PM' : 'AM';
 
   return `${year}-${month}-${day} ${twelveHour}:${minutes}${meridiem}`;
+}
+
+function getRetentionCutoffTime(receivedAt: string): number | null {
+  const receivedAtTime = parsePingLogTimestamp(receivedAt);
+
+  return receivedAtTime === null ? null : receivedAtTime - PING_LOG_RETENTION_MS;
+}
+
+function parsePingLogTimestamp(timestamp: string): number | null {
+  const gmtPlusSixTimestamp = parseGmtPlusSixTimestamp(timestamp);
+
+  if (gmtPlusSixTimestamp !== null) {
+    return gmtPlusSixTimestamp;
+  }
+
+  const parsedDate = new Date(timestamp);
+  const parsedTime = parsedDate.getTime();
+
+  return Number.isNaN(parsedTime) ? null : parsedTime;
+}
+
+function parseGmtPlusSixTimestamp(timestamp: string): number | null {
+  const match = timestamp
+    .trim()
+    .match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{1,2}):(\d{2})\s*(AM|PM)$/iu);
+
+  if (!match) {
+    return null;
+  }
+
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const twelveHour = Number(match[4]);
+  const minute = Number(match[5]);
+  const meridiem = match[6].toUpperCase();
+
+  if (twelveHour < 1 || twelveHour > 12 || minute < 0 || minute > 59) {
+    return null;
+  }
+
+  const hour = (twelveHour % 12) + (meridiem === 'PM' ? 12 : 0);
+  const gmtPlusSixTime = Date.UTC(year, month - 1, day, hour, minute);
+  const parsedDate = new Date(gmtPlusSixTime);
+
+  if (
+    parsedDate.getUTCFullYear() !== year ||
+    parsedDate.getUTCMonth() !== month - 1 ||
+    parsedDate.getUTCDate() !== day ||
+    parsedDate.getUTCHours() !== hour ||
+    parsedDate.getUTCMinutes() !== minute
+  ) {
+    return null;
+  }
+
+  return gmtPlusSixTime - GMT_PLUS_SIX_OFFSET_MS;
 }
 
 function isFileNotFoundError(error: unknown): error is NodeJS.ErrnoException {
