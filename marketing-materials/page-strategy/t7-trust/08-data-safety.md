@@ -1,6 +1,6 @@
 # Page Plan: Data Safety
 
-> **URL**: `/data-safety/`
+> **URL**: `/trust-center/data-safety/`
 > **Tier**: T7 — Trust & Legal
 > **Priority**: Week 1
 > **Template**: `default`
@@ -15,7 +15,7 @@
 | **Title Tag** | Data Safety & GDPR Compliance — ArrayHash / ArraySubs |
 | **H1** | Data Safety |
 | **Meta Description** | How ArrayHash protects your data. GDPR, UK GDPR, CCPA, LGPD, PIPEDA compliant. We use Google Analytics only — no other tracking. |
-| **Canonical** | `https://arraysubs.com/data-safety/` |
+| **Canonical** | `https://arrayhash.com/trust-center/data-safety/` |
 | **Index** | Yes |
 
 ---
@@ -23,14 +23,14 @@
 ## Purpose
 
 This page provides a plain-language summary of data safety for both:
-1. **Visitors to this website** (arraysubs.com)
+1. **Visitors to this website** (arrayhash.com)
 2. **Merchants using the ArraySubs plugin** on their own WooCommerce store
 
 These are two distinct contexts with different data flows.
 
 ---
 
-## Section 1: Website (arraysubs.com)
+## Section 1: Website (arrayhash.com)
 
 ### What Data Is Collected
 
@@ -113,7 +113,7 @@ No other sub-processors have access to personal data from this website.
 
 ## Data Subject Rights
 
-You may exercise any of the following rights by emailing emran@arrayhash.com:
+You may exercise any of the following rights by emailing emran@arraysubs.com:
 
 | Right | Description |
 |-------|-------------|
@@ -169,7 +169,7 @@ This page is reviewed whenever there is a change to data processing practices. T
 ## Contact
 
 **ArrayHash**  
-Email: emran@arrayhash.com  
+Email: emran@arraysubs.com  
 Response time: within 30 days for data rights requests; typically much faster for general questions.
 
 ---
@@ -187,7 +187,7 @@ Response time: within 30 days for data rights requests; typically much faster fo
 9. **Your rights** — rights table with instructions to email
 10. **Security measures** — HTTPS, access controls, no CRM
 11. **Breach response** — 72-hour notification commitment
-12. **Contact block** — emran@arrayhash.com
+12. **Contact block** — emran@arraysubs.com
 
 ---
 
@@ -195,7 +195,7 @@ Response time: within 30 days for data rights requests; typically much faster fo
 
 | Target | Context |
 |--------|---------|
-| `/privacy-policy/` | Full privacy policy detail |
-| `/terms-of-service/` | Footer cross-link |
-| `/refund-policy/` | Footer cross-link |
-| `/contact/` | Data rights requests |
+| `/trust-center/privacy-policy/` | Full privacy policy detail |
+| `/trust-center/terms-of-service/` | Footer cross-link |
+| `/trust-center/refund-policy/` | Footer cross-link |
+| `/trust-center/contact/` | Data rights requests |

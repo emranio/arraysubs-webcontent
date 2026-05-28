@@ -1,6 +1,6 @@
 # Page Plan: Privacy Policy
 
-> **URL**: `/privacy-policy/`
+> **URL**: `/trust-center/privacy-policy/`
 > **Tier**: T7 — Trust & Legal
 > **Priority**: Week 1
 > **Template**: `default`
@@ -15,7 +15,7 @@
 | **Title Tag** | Privacy Policy — ArrayHash / ArraySubs |
 | **H1** | Privacy Policy |
 | **Meta Description** | ArrayHash's privacy policy for the ArraySubs plugin website. Learn what data we collect, how we use it, and your rights under GDPR and similar laws. |
-| **Canonical** | `https://arraysubs.com/privacy-policy/` |
+| **Canonical** | `https://arrayhash.com/trust-center/privacy-policy/` |
 | **Index** | Yes |
 
 ---
@@ -24,10 +24,10 @@
 
 **Data Controller:** ArrayHash  
 **Owner:** Emran  
-**Contact:** emran@arrayhash.com  
+**Contact:** emran@arraysubs.com  
 **Effective Date:** April 10, 2026
 
-This policy covers the marketing website `arraysubs.com` only. The ArraySubs WordPress plugin itself operates entirely within the user's own WordPress installation; no plugin telemetry is sent to ArrayHash servers.
+This policy covers the marketing website `arrayhash.com` (including `arrayhash.com/deals/arraysubs/`) only. The ArraySubs WordPress plugin itself operates entirely within the user's own WordPress installation; no plugin telemetry is sent to ArrayHash servers.
 
 ---
 
@@ -102,7 +102,7 @@ You have the right to:
 - **Object** — object to processing based on legitimate interests
 - **Withdraw consent** — at any time, without affecting prior processing
 
-To exercise any right, email **emran@arrayhash.com**. We will respond within 30 days.
+To exercise any right, email **emran@arraysubs.com**. We will respond within 30 days.
 
 If you are in the EU/EEA, you may also lodge a complaint with your local supervisory authority.
 
@@ -133,7 +133,7 @@ We may update this policy. Material changes will be noted with a revised "Last R
 ## Contact
 
 **ArrayHash**  
-Email: emran@arrayhash.com
+Email: emran@arraysubs.com
 
 ---
 
@@ -148,7 +148,7 @@ Email: emran@arrayhash.com
 7. **Children's privacy** — under 16 statement
 8. **Retention table**
 9. **Changes notice**
-10. **Contact block** — emran@arrayhash.com
+10. **Contact block** — emran@arraysubs.com
 
 ---
 
@@ -156,6 +156,6 @@ Email: emran@arrayhash.com
 
 | Target | Context |
 |--------|---------|
-| `/terms-of-service/` | Cross-link in footer |
-| `/refund-policy/` | Cross-link in footer |
-| `/contact/` | Exercise data rights |
+| `/trust-center/terms-of-service/` | Cross-link in footer |
+| `/trust-center/refund-policy/` | Cross-link in footer |
+| `/trust-center/contact/` | Exercise data rights |

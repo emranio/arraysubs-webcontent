@@ -47,7 +47,7 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/payment-gateways/` | Parent gateway page |
+| `/deals/arraysubs/features/payment-gateways/` | Parent gateway page |
 | `/gateways/stripe/` | Also accept Stripe |
 | `/gateways/paddle/` | Also accept Paddle |
-| `/plans/` | Pro CTA |
+| `/deals/arraysubs/plans/` | Pro CTA |

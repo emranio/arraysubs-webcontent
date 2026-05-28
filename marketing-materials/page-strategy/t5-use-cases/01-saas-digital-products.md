@@ -1,6 +1,6 @@
 # Page Plan: SaaS & Digital Products
 
-> **URL**: `/use-cases/saas-digital-products/`
+> **URL**: `/deals/arraysubs/use-cases/saas-digital-products/`
 > **Tier**: T5 — Use Case
 > **Priority**: Week 5
 
@@ -83,21 +83,21 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/subscriptions-and-recurring-products/` | Tiered plans |
-| `/features/member-access-control/` | Feature gating |
-| `/features/store-credit/` | Credits model |
-| `/features/retention-flow-builder/` | Churn prevention |
-| `/features/analytics/` | SaaS metrics |
-| `/features/feature-manager/` | Plan entitlements & usage limits |
-| `/features/` | All features |
-| `/plans/` | CTA |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | Tiered plans |
+| `/deals/arraysubs/features/member-access-control/` | Feature gating |
+| `/deals/arraysubs/features/store-credit/` | Credits model |
+| `/deals/arraysubs/features/retention-flow-builder/` | Churn prevention |
+| `/deals/arraysubs/features/analytics/` | SaaS metrics |
+| `/deals/arraysubs/features/feature-manager/` | Plan entitlements & usage limits |
+| `/deals/arraysubs/features/` | All features |
+| `/deals/arraysubs/plans/` | CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

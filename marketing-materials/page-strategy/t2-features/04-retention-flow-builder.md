@@ -1,6 +1,6 @@
 # Page Plan: Retention Flow Builder
 
-> **URL**: `/features/retention-flow-builder/`
+> **URL**: `/deals/arraysubs/features/retention-flow-builder/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 2 (Blue Ocean — zero SEO competition)
 > **Ownership**: Core (arraysubs) — free feature
@@ -37,7 +37,7 @@
 - H1 + subtitle: "The only WooCommerce subscription plugin with built-in retention flows"
 - Blue Ocean badge: "No other subscription plugin offers this"
 - Screenshot: Retention flow builder admin screen
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. How It Works (Visual Flow)
 ```
@@ -122,20 +122,20 @@ Customer clicks "Cancel" →
 
 | Target | Context |
 |--------|---------|
-| `/features/customer-portal/` | "Where customers encounter the retention flow →" |
-| `/features/subscriptions-and-recurring-products/` | "Create the subscription plans →" |
-| `/features/billing-renewals-and-refunds/` | "Billing behind the scenes →" |
-| `/features/analytics/` | Pro: "Track retention effectiveness →" |
-| `/features/emails/` | "Send follow-up emails →" |
-| `/features/store-credit/` | Pro: "Offer store credit as retention incentive →" |
-| `/features/` | Breadcrumb |
+| `/deals/arraysubs/features/customer-portal/` | "Where customers encounter the retention flow →" |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | "Create the subscription plans →" |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | "Billing behind the scenes →" |
+| `/deals/arraysubs/features/analytics/` | Pro: "Track retention effectiveness →" |
+| `/deals/arraysubs/features/emails/` | "Send follow-up emails →" |
+| `/deals/arraysubs/features/store-credit/` | Pro: "Offer store credit as retention incentive →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-  - `Live Demo` → `/plans/#live-demo`
-  - `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+  - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+  - `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

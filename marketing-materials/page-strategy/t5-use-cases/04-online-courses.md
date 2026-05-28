@@ -1,6 +1,6 @@
 # Page Plan: Online Courses
 
-> **URL**: `/use-cases/online-courses/`
+> **URL**: `/deals/arraysubs/use-cases/online-courses/`
 > **Tier**: T5 — Use Case
 > **Priority**: Week 5
 
@@ -50,8 +50,8 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/member-access-control/` | Content dripping detail |
-| `/features/subscriptions-and-recurring-products/` | Course plans |
-| `/features/customer-portal/` | Student portal |
-| `/use-cases/membership-sites/` | Related use case |
-| `/plans/` | CTA |
+| `/deals/arraysubs/features/member-access-control/` | Content dripping detail |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | Course plans |
+| `/deals/arraysubs/features/customer-portal/` | Student portal |
+| `/deals/arraysubs/use-cases/membership-sites/` | Related use case |
+| `/deals/arraysubs/plans/` | CTA |

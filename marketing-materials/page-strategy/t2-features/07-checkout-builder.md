@@ -1,6 +1,6 @@
 # Page Plan: Checkout Builder
 
-> **URL**: `/features/checkout-builder/`
+> **URL**: `/deals/arraysubs/features/checkout-builder/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 3
 > **Ownership**: Pro (arraysubspro) — premium feature
@@ -36,7 +36,7 @@
 - H1 + subtitle: "The only subscription plugin with a built-in checkout builder"
 - Blue Ocean badge: "Unique to ArraySubs"
 - Screenshot: Checkout Builder admin interface
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Builder Overview
 - Visual drag-and-drop style checkout configuration
@@ -92,19 +92,19 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/subscriptions-and-recurring-products/` | "Create the subscription products →" |
-| `/features/payment-gateways/` | "Payment methods at checkout →" |
-| `/features/billing-renewals-and-refunds/` | "What happens after checkout →" |
-| `/features/store-credit/` | "Apply credit at checkout →" |
-| `/features/` | Breadcrumb |
-| `/plans/` | Get Pro CTA |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | "Create the subscription products →" |
+| `/deals/arraysubs/features/payment-gateways/` | "Payment methods at checkout →" |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | "What happens after checkout →" |
+| `/deals/arraysubs/features/store-credit/` | "Apply credit at checkout →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
+| `/deals/arraysubs/plans/` | Get Pro CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

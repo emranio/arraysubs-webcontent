@@ -1,6 +1,6 @@
 # Page Plan: Features Hub
 
-> **URL**: `/features/`
+> **URL**: `/deals/arraysubs/features/`
 > **Tier**: T1 — Core Landing
 > **Priority**: Week 1
 > **Est. Aggregate KW Volume**: 500+/mo
@@ -31,7 +31,7 @@
 
 ### 1. Hero
 - H1 + subtitle: "15 feature modules. Generous free tier. One plugin."
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Feature Category Grid
 - 15 feature cards grouped into categories:
@@ -44,16 +44,16 @@
 
 ### 3. Free vs Pro Summary Table
 - All 15 features listed with checkmarks for Free / Pro availability
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 4. Use Case Explorer
 - 6 cards linking to the T5 use-case pages:
-  - `/use-cases/saas-digital-products/`
-  - `/use-cases/membership-sites/`
-  - `/use-cases/subscription-boxes/`
-  - `/use-cases/online-courses/`
-  - `/use-cases/content-publishers/`
-  - `/use-cases/service-businesses/`
+  - `/deals/arraysubs/use-cases/saas-digital-products/`
+  - `/deals/arraysubs/use-cases/membership-sites/`
+  - `/deals/arraysubs/use-cases/subscription-boxes/`
+  - `/deals/arraysubs/use-cases/online-courses/`
+  - `/deals/arraysubs/use-cases/content-publishers/`
+  - `/deals/arraysubs/use-cases/service-businesses/`
 - Each card includes a short business-model summary showing how the feature stack applies in practice
 - CTA Buttons: Browse All Use Cases + Talk Through Your Model
 
@@ -66,9 +66,9 @@
 
 | Target | Context |
 |--------|---------|
-| All 15 `/features/*` pages | Feature cards |
-| `/plans/` | Free vs Pro table CTA |
-| `/use-cases/*` | Use case section cards |
-| `/use-cases/` | Use case section CTA |
-| `/compare/woocommerce-subscriptions/` | Comparison section |
+| All 15 `/deals/arraysubs/features/*` pages | Feature cards |
+| `/deals/arraysubs/plans/` | Free vs Pro table CTA |
+| `/deals/arraysubs/use-cases/*` | Use case section cards |
+| `/deals/arraysubs/use-cases/` | Use case section CTA |
+| `/deals/arraysubs/compare/woocommerce-subscriptions/` | Comparison section |
 | `/` | Breadcrumb |

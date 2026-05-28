@@ -1,6 +1,6 @@
 # Page Plan: Membership Sites
 
-> **URL**: `/use-cases/membership-sites/`
+> **URL**: `/deals/arraysubs/use-cases/membership-sites/`
 > **Tier**: T5 — Use Case
 > **Priority**: Week 4
 
@@ -54,21 +54,21 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/member-access-control/` | Content restriction details |
-| `/features/subscriptions-and-recurring-products/` | Subscription plans |
-| `/features/customer-portal/` | Member portal |
-| `/features/retention-flow-builder/` | Retain members |
-| `/features/store-credit/` | Reward members |
-| `/use-cases/online-courses/` | Related use case |
-| `/use-cases/content-publishers/` | Related use case |
-| `/plans/` | CTA |
+| `/deals/arraysubs/features/member-access-control/` | Content restriction details |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | Subscription plans |
+| `/deals/arraysubs/features/customer-portal/` | Member portal |
+| `/deals/arraysubs/features/retention-flow-builder/` | Retain members |
+| `/deals/arraysubs/features/store-credit/` | Reward members |
+| `/deals/arraysubs/use-cases/online-courses/` | Related use case |
+| `/deals/arraysubs/use-cases/content-publishers/` | Related use case |
+| `/deals/arraysubs/plans/` | CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

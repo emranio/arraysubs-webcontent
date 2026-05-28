@@ -1,6 +1,6 @@
 # Page Plan: Service Businesses
 
-> **URL**: `/use-cases/service-businesses/`
+> **URL**: `/deals/arraysubs/use-cases/service-businesses/`
 > **Tier**: T5 — Use Case
 > **Priority**: Week 6
 
@@ -50,8 +50,8 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/subscriptions-and-recurring-products/` | Service plans |
-| `/features/billing-renewals-and-refunds/` | Billing |
-| `/features/customer-portal/` | Client portal |
-| `/features/retention-flow-builder/` | Prevent cancellations |
-| `/plans/` | CTA |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | Service plans |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | Billing |
+| `/deals/arraysubs/features/customer-portal/` | Client portal |
+| `/deals/arraysubs/features/retention-flow-builder/` | Prevent cancellations |
+| `/deals/arraysubs/plans/` | CTA |

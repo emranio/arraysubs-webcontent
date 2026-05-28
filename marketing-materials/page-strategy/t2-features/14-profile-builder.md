@@ -1,6 +1,6 @@
 # Page Plan: Profile Builder & Shortcodes
 
-> **URL**: `/features/profile-builder/`
+> **URL**: `/deals/arraysubs/features/profile-builder/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 4
 > **Ownership**: Core (arraysubs) — shortcodes free; Pro — Profile Builder advanced features
@@ -33,7 +33,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Display subscription data and member content anywhere on your site"
 - Code examples + rendered output
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Available Shortcodes
 | Shortcode | Purpose | Ownership |
@@ -74,17 +74,17 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/member-access-control/` | "Full access control system →" |
-| `/features/customer-portal/` | "Customer-facing portal →" |
-| `/features/` | Breadcrumb |
-| `/plans/` | Pro Profile Builder CTA |
+| `/deals/arraysubs/features/member-access-control/` | "Full access control system →" |
+| `/deals/arraysubs/features/customer-portal/` | "Customer-facing portal →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
+| `/deals/arraysubs/plans/` | Pro Profile Builder CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

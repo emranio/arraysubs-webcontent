@@ -1,6 +1,6 @@
 # Page Plan: Feature Manager
 
-> **URL**: `/features/feature-manager/`
+> **URL**: `/deals/arraysubs/features/feature-manager/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 4
 > **Ownership**: Pro (arraysubspro) — premium feature
@@ -36,7 +36,7 @@
 - H1 + subtitle: "The only WooCommerce subscription plugin that shows customers exactly what each plan includes"
 - Blue Ocean badge: "Unique to ArraySubs"
 - Screenshot: Product page "What's Included" section with toggle/number/text features
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Feature Manager Overview
 - Define named features (entitlements) per product or per variation
@@ -113,22 +113,22 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/subscriptions-and-recurring-products/` | "Define features on subscription products →" |
-| `/features/customer-portal/` | "Customers see features in My Account →" |
-| `/features/member-access-control/` | "Restrict content by feature entitlement →" |
-| `/features/retention-flow-builder/` | "Communicate plan value to prevent churn →" |
-| `/features/analytics/` | "Track feature adoption in analytics →" |
-| `/features/manage-subscriptions/` | "Admin Feature Log on subscription detail →" |
-| `/use-cases/saas-digital-products/` | "SaaS use case with Feature Manager →" |
-| `/features/` | Breadcrumb |
-| `/plans/` | Get Pro CTA |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | "Define features on subscription products →" |
+| `/deals/arraysubs/features/customer-portal/` | "Customers see features in My Account →" |
+| `/deals/arraysubs/features/member-access-control/` | "Restrict content by feature entitlement →" |
+| `/deals/arraysubs/features/retention-flow-builder/` | "Communicate plan value to prevent churn →" |
+| `/deals/arraysubs/features/analytics/` | "Track feature adoption in analytics →" |
+| `/deals/arraysubs/features/manage-subscriptions/` | "Admin Feature Log on subscription detail →" |
+| `/deals/arraysubs/use-cases/saas-digital-products/` | "SaaS use case with Feature Manager →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
+| `/deals/arraysubs/plans/` | Get Pro CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

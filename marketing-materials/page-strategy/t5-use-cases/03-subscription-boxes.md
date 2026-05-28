@@ -1,6 +1,6 @@
 # Page Plan: Subscription Boxes
 
-> **URL**: `/use-cases/subscription-boxes/`
+> **URL**: `/deals/arraysubs/use-cases/subscription-boxes/`
 > **Tier**: T5 — Use Case
 > **Priority**: Week 5
 
@@ -50,8 +50,8 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/subscriptions-and-recurring-products/` | Product setup |
-| `/features/billing-renewals-and-refunds/` | Billing |
-| `/features/customer-portal/` | Customer management |
-| `/features/retention-flow-builder/` | Churn reduction |
-| `/plans/` | CTA |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | Product setup |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | Billing |
+| `/deals/arraysubs/features/customer-portal/` | Customer management |
+| `/deals/arraysubs/features/retention-flow-builder/` | Churn reduction |
+| `/deals/arraysubs/plans/` | CTA |

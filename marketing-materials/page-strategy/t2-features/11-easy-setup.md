@@ -1,6 +1,6 @@
 # Page Plan: Easy Setup Wizard
 
-> **URL**: `/features/easy-setup/`
+> **URL**: `/deals/arraysubs/features/easy-setup/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 3
 > **Ownership**: Core (arraysubs) — free feature (Blue Ocean)
@@ -34,7 +34,7 @@
 - H1 + subtitle: "No other subscription plugin has a setup wizard"
 - Blue Ocean badge
 - Screenshot: Setup wizard in progress
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Wizard Steps Walkthrough
 - Step-by-step visual of wizard flow
@@ -74,16 +74,16 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/subscriptions-and-recurring-products/` | "Create your first subscription after setup →" |
-| `/features/` | Breadcrumb |
-| `/plans/` | Primary CTA |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | "Create your first subscription after setup →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
+| `/deals/arraysubs/plans/` | Primary CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

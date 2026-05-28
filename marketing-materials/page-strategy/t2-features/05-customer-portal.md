@@ -1,6 +1,6 @@
 # Page Plan: Customer Portal
 
-> **URL**: `/features/customer-portal/`
+> **URL**: `/deals/arraysubs/features/customer-portal/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 2
 > **Ownership**: Core (arraysubs) — free feature; Pro extends with payment method management toggle
@@ -35,7 +35,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Reduce support tickets — let subscribers manage their own plans"
 - Screenshot: Customer portal My Account → Subscriptions tab
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Portal Capabilities
 - **View Subscriptions**: List of active, paused, cancelled subscriptions
@@ -98,19 +98,19 @@ Table of actions and when they appear:
 
 | Target | Context |
 |--------|---------|
-| `/features/retention-flow-builder/` | "Retention flows intercept cancellations →" |
-| `/features/subscriptions-and-recurring-products/` | "Create the subscription plans →" |
-| `/features/billing-renewals-and-refunds/` | "How renewal invoices work →" |
-| `/features/payment-gateways/` | "Supported payment methods →" |
-| `/features/profile-builder/` | Pro: "Customize My Account pages →" |
-| `/features/` | Breadcrumb |
+| `/deals/arraysubs/features/retention-flow-builder/` | "Retention flows intercept cancellations →" |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | "Create the subscription plans →" |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | "How renewal invoices work →" |
+| `/deals/arraysubs/features/payment-gateways/` | "Supported payment methods →" |
+| `/deals/arraysubs/features/profile-builder/` | Pro: "Customize My Account pages →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

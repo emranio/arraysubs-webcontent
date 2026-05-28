@@ -1,6 +1,6 @@
 # Page Plan: Homepage
 
-> **URL**: `/`
+> **URL**: `/deals/arraysubs/`
 > **Tier**: T1 — Core Landing
 > **Priority**: Week 1
 > **Est. Aggregate KW Volume**: 10,000+/mo
@@ -51,18 +51,18 @@
 
 ## Content Blocks
 
-> **Funnel context**: The site uses a **plans-led early adopter flow**. All primary and secondary CTAs route to `/plans/`, with action targets split between `/plans/#live-demo` and `/plans/#get-pro`.
+> **Funnel context**: The site uses a **plans-led early adopter flow**. All primary and secondary CTAs route to `/deals/arraysubs/plans/`, with action targets split between `/deals/arraysubs/plans/#live-demo` and `/deals/arraysubs/plans/#get-pro`.
 
 ### 0. Announcement Bar
 - **Badge**: EARLY ADOPTER OFFER
-- **Text**: "Live Demo or Get Pro Free for 6 Months. Time limited offer for early adopters. No credit cards required."
-- **Link**: `/plans/`
+- **Text**: "Live Demo or Get Pro - Free [No Strings Attached]. Time limited early bird offer. No credit cards required."
+- **Link**: `/deals/arraysubs/plans/`
 
 ### 1. Hero Section
 - **Headline**: H1 (above)
 - **Subheadline**: "Create subscription products, restrict member-only content, automate recurring billing, reduce churn with smart retention flows, and track MRR — all from one plugin. No duct-taping five separate tools together."
-- **Primary CTA**: Live Demo (links to `/plans/#live-demo`)
-- **Secondary CTA**: Get Pro Free for 6 Months (links to `/plans/#get-pro`)
+- **Primary CTA**: Live Demo (links to `/deals/arraysubs/plans/#live-demo`)
+- **Secondary CTA**: Get Pro - Free [No Strings Attached] (links to `/deals/arraysubs/plans/#get-pro`)
 - **Trust bar**: Available on WordPress.org · WooCommerce 8+ · Stripe · PayPal · Paddle · HPOS Compatible
 - **Hero visual**: Product screenshot / short demo GIF
 
@@ -99,11 +99,11 @@
 ### 6. Side-by-Side Comparison Table
 - ArraySubs Free vs ArraySubs Pro vs WooCommerce Subscriptions + Memberships
 - ~35 feature rows (no price row, no dollar amounts)
-- CTA: "See Full Comparison" → `/compare/woocommerce-subscriptions/`
+- CTA: "See Full Comparison" → `/deals/arraysubs/compare/woocommerce-subscriptions/`
 
 ### 7. Use Case Cards (6)
 - SaaS, Membership Sites, Subscription Boxes, Online Courses, Publishers, Services
-- Each links to `/use-cases/{slug}/`
+- Each links to `/deals/arraysubs/use-cases/{slug}/`
 
 ### 8. Early Adopter's Thoughts
 - Testimonial cards (placeholder templates until real feedback arrives)
@@ -112,9 +112,9 @@
 
 ### 9. Pricing Spotlight — Choose the Right Plan
 - Short pricing preview with Free vs Pro value summary
-- Button group: "Live Demo" and "Get Pro Free for 6 Months"
-- Reinforce the early adopter offer and the plans-page action flow on `/plans/`
-- Micro-copy: "Time limited offer for early adopters. No credit cards required."
+- Button group: "Live Demo" and "Get Pro - Free [No Strings Attached]"
+- Reinforce the early adopter offer and the plans-page action flow on `/deals/arraysubs/plans/`
+- Micro-copy: "Time limited early bird offer. No credit cards required."
 
 ### 10. How It Works (3 steps)
 - Step 1: Install & Run the Wizard
@@ -146,8 +146,8 @@
 
 ### 13. Final CTA
 - "Start Building Your Subscription Business Today"
-- Primary: Live Demo → `/plans/#live-demo`
-- Secondary: Get Pro Free for 6 Months → `/plans/#get-pro`
+- Primary: Live Demo → `/deals/arraysubs/plans/#live-demo`
+- Secondary: Get Pro - Free [No Strings Attached] → `/deals/arraysubs/plans/#get-pro`
 
 ---
 
@@ -164,37 +164,37 @@
 
 | Target | Context |
 |--------|---------|
-| `/plans/` | Announcement Bar, Hero, Problem, Features, Growth Benefits, Comparison, Pricing Spotlight, How It Works, Final CTA |
-| `/features/` | Feature Grid CTA |
-| `/features/subscriptions/` | Feature Card 1 |
-| `/features/billing/` | Feature Card 2 |
-| `/features/payment-gateways/` | Feature Card 3 |
-| `/features/membership/` | Feature Card 4 |
-| `/features/customer-portal/` | Feature Card 5 |
-| `/features/profile-builder/` | Feature Card 6 |
-| `/features/retention/` | Feature Card 7 |
-| `/features/store-credit/` | Feature Card 8 |
-| `/features/emails/` | Feature Card 9 |
-| `/features/analytics/` | Feature Card 10 |
-| `/features/audits/` | Feature Card 11 |
-| `/features/checkout-builder/` | Feature Card 12 |
-| `/features/manage-subscriptions/` | Feature Card 13 |
-| `/features/easy-setup/` | Feature Card 14 |
-| `/compare/woocommerce-subscriptions/` | Problem section, Comparison section |
-| `/use-cases/*` | Use case cards |
-| `/use-cases/` | Use Cases section |
+| `/deals/arraysubs/plans/` | Announcement Bar, Hero, Problem, Features, Growth Benefits, Comparison, Pricing Spotlight, How It Works, Final CTA |
+| `/deals/arraysubs/features/` | Feature Grid CTA |
+| `/deals/arraysubs/features/subscriptions/` | Feature Card 1 |
+| `/deals/arraysubs/features/billing/` | Feature Card 2 |
+| `/deals/arraysubs/features/payment-gateways/` | Feature Card 3 |
+| `/deals/arraysubs/features/membership/` | Feature Card 4 |
+| `/deals/arraysubs/features/customer-portal/` | Feature Card 5 |
+| `/deals/arraysubs/features/profile-builder/` | Feature Card 6 |
+| `/deals/arraysubs/features/retention/` | Feature Card 7 |
+| `/deals/arraysubs/features/store-credit/` | Feature Card 8 |
+| `/deals/arraysubs/features/emails/` | Feature Card 9 |
+| `/deals/arraysubs/features/analytics/` | Feature Card 10 |
+| `/deals/arraysubs/features/audits/` | Feature Card 11 |
+| `/deals/arraysubs/features/checkout-builder/` | Feature Card 12 |
+| `/deals/arraysubs/features/manage-subscriptions/` | Feature Card 13 |
+| `/deals/arraysubs/features/easy-setup/` | Feature Card 14 |
+| `/deals/arraysubs/compare/woocommerce-subscriptions/` | Problem section, Comparison section |
+| `/deals/arraysubs/use-cases/*` | Use case cards |
+| `/deals/arraysubs/use-cases/` | Use Cases section |
 | `https://support.arrayhash.com/arraysubs/` | Supporting documentation link |
 
 ---
 
 ## CTAs
 
-> **Note**: Every CTA on the homepage routes to `/plans/` using the two action targets below.
+> **Note**: Every CTA on the homepage routes to `/deals/arraysubs/plans/` using the two action targets below.
 
 - **Buttons**
-  - `Live Demo` → `/plans/#live-demo`
-  - `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+  - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+  - `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.
 
 ---

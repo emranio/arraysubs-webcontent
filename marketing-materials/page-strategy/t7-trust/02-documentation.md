@@ -7,7 +7,7 @@
 
 ## Strategy Notes
 
-- Do not plan a separate on-site `/docs/` section for `arraysubs.com`.
+- Do not plan a separate on-site `/docs/` section for `arrayhash.com`.
 - Route all documentation CTAs on the marketing site to `https://support.arrayhash.com/arraysubs/`.
 - Keep one unified manual tree under the support center.
 - Mark premium-only topics and sections with a visible **Pro** badge or callout.

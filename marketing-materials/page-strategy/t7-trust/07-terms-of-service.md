@@ -1,6 +1,6 @@
 # Page Plan: Terms of Service
 
-> **URL**: `/terms-of-service/`
+> **URL**: `/trust-center/terms-of-service/`
 > **Tier**: T7 — Trust & Legal
 > **Priority**: Week 1
 > **Template**: `default`
@@ -16,7 +16,7 @@
 | **Title Tag** | Terms of Service — ArrayHash / ArraySubs |
 | **H1** | Terms of Service |
 | **Meta Description** | Read the terms governing your use of the ArraySubs website and ArraySubs Pro plugin licence. Clear, plain-language terms from ArrayHash. |
-| **Canonical** | `https://arraysubs.com/terms-of-service/` |
+| **Canonical** | `https://arrayhash.com/trust-center/terms-of-service/` |
 | **Index** | Yes |
 
 ---
@@ -25,7 +25,7 @@
 
 **Service Provider:** ArrayHash  
 **Owner:** Emran  
-**Contact:** emran@arrayhash.com  
+**Contact:** emran@arraysubs.com  
 **Effective Date:** April 10, 2026
 
 By using this website or purchasing ArraySubs Pro, you agree to these terms.
@@ -38,9 +38,9 @@ By using this website or purchasing ArraySubs Pro, you agree to these terms.
 |------|---------|
 | "ArrayHash" / "We" / "Us" | The business trading as ArrayHash, owned by Emran |
 | "ArraySubs" | The free WordPress plugin available at wordpress.org/plugins/arraysubs/ |
-| "ArraySubs Pro" | The premium licence sold at arraysubs.com |
+| "ArraySubs Pro" | The premium licence sold at arrayhash.com/deals/arraysubs/ |
 | "You" / "User" | Any person or entity accessing this website or purchasing a licence |
-| "Website" | arraysubs.com and all its subpages |
+| "Website" | arrayhash.com (including arrayhash.com/deals/arraysubs/ and arrayhash.com/trust-center/) |
 
 ---
 
@@ -84,7 +84,7 @@ The free version is distributed under GPL-2.0 via the WordPress plugin repositor
 
 ## 6. Refunds
 
-Refund terms are governed by the separate **[Refund Policy](/refund-policy/)**.
+Refund terms are governed by the separate **[Refund Policy](/trust-center/refund-policy/)**.
 
 Summary: 60-day full automatic refund, no questions asked.
 
@@ -147,7 +147,7 @@ ArraySubs Pro integrates with third-party services (WooCommerce, Stripe, PayPal,
 
 These terms are governed by applicable law. In the event of a dispute, both parties agree to attempt resolution by email within 30 days before pursuing formal proceedings.
 
-Contact: emran@arrayhash.com
+Contact: emran@arraysubs.com
 
 ---
 
@@ -172,7 +172,7 @@ If any provision of these terms is found unenforceable, the remaining provisions
 ## Contact
 
 **ArrayHash**  
-Email: emran@arrayhash.com
+Email: emran@arraysubs.com
 
 ---
 
@@ -196,8 +196,8 @@ Email: emran@arrayhash.com
 
 | Target | Context |
 |--------|---------|
-| `/refund-policy/` | Section 6 and footer |
-| `/privacy-policy/` | Footer cross-link |
-| `/data-safety/` | Footer cross-link |
-| `/plans/` | Licence tier reference |
-| `/contact/` | Dispute contact |
+| `/trust-center/refund-policy/` | Section 6 and footer |
+| `/trust-center/privacy-policy/` | Footer cross-link |
+| `/trust-center/data-safety/` | Footer cross-link |
+| `/deals/arraysubs/plans/` | Licence tier reference |
+| `/trust-center/contact/` | Dispute contact |

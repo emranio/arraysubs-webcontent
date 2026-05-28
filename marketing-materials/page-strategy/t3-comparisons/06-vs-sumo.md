@@ -1,6 +1,6 @@
 # Page Plan: ArraySubs vs SUMO Subscriptions
 
-> **URL**: `/compare/sumo-subscriptions/`
+> **URL**: `/deals/arraysubs/compare/sumo-subscriptions/`
 > **Tier**: T3 — Comparison
 > **Priority**: Week 5
 
@@ -48,5 +48,5 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/` | All features |
-| `/plans/` | Pricing |
+| `/deals/arraysubs/features/` | All features |
+| `/deals/arraysubs/plans/` | Pricing |

@@ -1,6 +1,6 @@
 # Page Plan: Changelog
 
-> **URL**: `/changelog/`
+> **URL**: `/deals/arraysubs/changelog/`
 > **Tier**: T7 — Trust & Conversion
 > **Priority**: Week 3
 

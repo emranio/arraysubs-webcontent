@@ -1,6 +1,6 @@
 # Page Plan: ArraySubs vs YITH Membership
 
-> **URL**: `/compare/yith-membership/`
+> **URL**: `/deals/arraysubs/compare/yith-membership/`
 > **Tier**: T3 — Comparison
 > **Priority**: Week 4
 
@@ -47,6 +47,6 @@
 
 | Target | Context |
 |--------|---------|
-| `/compare/yith-subscription/` | Related comparison |
-| `/features/member-access-control/` | Membership features |
-| `/plans/` | Pricing CTA |
+| `/deals/arraysubs/compare/yith-subscription/` | Related comparison |
+| `/deals/arraysubs/features/member-access-control/` | Membership features |
+| `/deals/arraysubs/plans/` | Pricing CTA |

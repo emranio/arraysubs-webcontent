@@ -1,10 +1,10 @@
 # Page Plan: Download / Get Started
 
-> **URL**: `/download/`
+> **URL**: `/deals/arraysubs/download/`
 > **Tier**: T7 — Trust & Conversion
 > **Priority**: Week 1
 > **Primary download destination**: `https://wordpress.org/plugins/arraysubs/`
-> **Primary conversion CTA destination**: `/plans/`
+> **Primary conversion CTA destination**: `/deals/arraysubs/plans/`
 
 ---
 
@@ -41,8 +41,8 @@
 
 | Target | Context |
 |--------|---------|
-| `/plans/` | Primary conversion CTA |
-| `/features/` | What's included |
-| `/features/easy-setup/` | Setup wizard |
+| `/deals/arraysubs/plans/` | Primary conversion CTA |
+| `/deals/arraysubs/features/` | What's included |
+| `/deals/arraysubs/features/easy-setup/` | Setup wizard |
 | `https://support.arrayhash.com/arraysubs/` | Documentation & setup help |
 | `https://wordpress.org/plugins/arraysubs/` | External download listing reference |

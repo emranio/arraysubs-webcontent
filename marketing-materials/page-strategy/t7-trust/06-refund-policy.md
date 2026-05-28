@@ -1,6 +1,6 @@
 # Page Plan: Refund Policy
 
-> **URL**: `/refund-policy/`
+> **URL**: `/trust-center/refund-policy/`
 > **Tier**: T7 — Trust & Legal
 > **Priority**: Week 1
 > **Template**: `default`
@@ -15,7 +15,7 @@
 | **Title Tag** | Refund Policy — 60-Day Money-Back Guarantee | ArraySubs |
 | **H1** | 60-Day Money-Back Guarantee |
 | **Meta Description** | ArraySubs Pro offers a full 60-day no-questions-asked refund. Submit the form, get your money back automatically. No hoops to jump through. |
-| **Canonical** | `https://arraysubs.com/refund-policy/` |
+| **Canonical** | `https://arrayhash.com/trust-center/refund-policy/` |
 | **Index** | Yes |
 
 ---
@@ -24,7 +24,7 @@
 
 **Sold by:** ArrayHash  
 **Owner:** Emran  
-**Contact:** emran@arrayhash.com  
+**Contact:** emran@arraysubs.com  
 **Effective Date:** April 10, 2026
 
 ArraySubs Pro is sold with a **60-day full refund guarantee**. We believe in the product — if it is not right for you, you should not be stuck with it.
@@ -48,7 +48,7 @@ ArraySubs Pro is sold with a **60-day full refund guarantee**. We believe in the
 | Renewals already used for the active period and past 60 days from renewal date | Consumed service |
 | Chargebacks or disputes filed with your bank before requesting a refund | See note below |
 
-> **Note on chargebacks**: Filing a chargeback before requesting a refund may result in suspension of the associated licence. Please contact emran@arrayhash.com first — we always resolve issues directly and promptly.
+> **Note on chargebacks**: Filing a chargeback before requesting a refund may result in suspension of the associated licence. Please contact emran@arraysubs.com first — we always resolve issues directly and promptly.
 
 ---
 
@@ -56,7 +56,7 @@ ArraySubs Pro is sold with a **60-day full refund guarantee**. We believe in the
 
 The refund process is **fully automatic**:
 
-1. Navigate to the refund request form at **`arraysubs.com/refund-policy/`** (form embedded on this page)
+1. Navigate to the refund request form at **`arrayhash.com/trust-center/refund-policy/`** (form embedded on this page)
 2. Fill in: order email address, order number, and purchase date
 3. Submit the form
 4. Refund is processed immediately — no manual review, no approval wait
@@ -90,7 +90,7 @@ If you were charged for a licence renewal and decide the product is no longer ne
 
 ## Exceptional Circumstances
 
-If a technical issue with our payment processor prevents the automatic refund from completing, email **emran@arrayhash.com** with your order number and we will process it manually within 2 business days.
+If a technical issue with our payment processor prevents the automatic refund from completing, email **emran@arraysubs.com** with your order number and we will process it manually within 2 business days.
 
 ---
 
@@ -103,7 +103,7 @@ If you are an EU or UK consumer, you also have statutory rights including a 14-d
 ## Contact
 
 **ArrayHash**  
-Email: emran@arrayhash.com
+Email: emran@arraysubs.com
 
 For refund issues only — the form on this page is faster. Email is a fallback.
 
@@ -117,7 +117,7 @@ For refund issues only — the form on this page is faster. Email is a fallback.
 4. **Full policy terms** — eligibility, window, exclusions
 5. **After your refund** — licence deactivation, free version still available
 6. **EU/UK statutory rights note**
-7. **Contact block** — emran@arrayhash.com as fallback
+7. **Contact block** — emran@arraysubs.com as fallback
 
 ---
 
@@ -134,7 +134,7 @@ For refund issues only — the form on this page is faster. Email is a fallback.
 
 | Target | Context |
 |--------|---------|
-| `/plans/` | Pricing CTA after policy |
-| `/privacy-policy/` | Footer cross-link |
-| `/terms-of-service/` | Footer cross-link |
-| `/contact/` | Fallback support contact |
+| `/deals/arraysubs/plans/` | Pricing CTA after policy |
+| `/trust-center/privacy-policy/` | Footer cross-link |
+| `/trust-center/terms-of-service/` | Footer cross-link |
+| `/trust-center/contact/` | Fallback support contact |

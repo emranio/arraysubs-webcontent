@@ -1,6 +1,6 @@
 # Page Plan: Advanced Analytics
 
-> **URL**: `/features/analytics/`
+> **URL**: `/deals/arraysubs/features/analytics/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 3
 > **Ownership**: Pro (arraysubspro) — premium feature; admin SPA pages in core
@@ -35,7 +35,7 @@
 ### 1. Hero Section (Pro Badge)
 - H1 + subtitle: "Know your numbers — MRR, churn, LTV, all in real-time"
 - Screenshot: Analytics dashboard overview
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Key Metrics Dashboard
 - **MRR (Monthly Recurring Revenue)**: Real-time tracking
@@ -96,19 +96,19 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/retention-flow-builder/` | "Retention data feeds analytics →" |
-| `/features/billing-renewals-and-refunds/` | "Revenue data from billing →" |
-| `/features/subscriptions-and-recurring-products/` | "Subscription plans being analyzed →" |
-| `/features/audits-and-logs/` | "Detailed event logs →" |
-| `/features/` | Breadcrumb |
-| `/plans/` | Get Pro CTA |
+| `/deals/arraysubs/features/retention-flow-builder/` | "Retention data feeds analytics →" |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | "Revenue data from billing →" |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | "Subscription plans being analyzed →" |
+| `/deals/arraysubs/features/audits-and-logs/` | "Detailed event logs →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
+| `/deals/arraysubs/plans/` | Get Pro CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

@@ -1,6 +1,6 @@
 # Page Plan: Member Access Control
 
-> **URL**: `/features/member-access-control/`
+> **URL**: `/deals/arraysubs/features/member-access-control/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 2
 > **Ownership**: Core (arraysubs) — free feature; Pro extends with Multi-Login Prevention, Feature Manager, Redirect Product Page
@@ -37,7 +37,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "One restriction engine for every type of WordPress content"
 - Screenshot: Access Rules admin screen
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Restriction Types Overview
 Visual cards for each restriction type:
@@ -107,21 +107,21 @@ Visual cards for each restriction type:
 
 | Target | Context |
 |--------|---------|
-| `/features/subscriptions-and-recurring-products/` | "Create the plans members subscribe to →" |
-| `/features/customer-portal/` | "Where members manage their subscriptions →" |
-| `/features/store-credit/` | Pro: "Reward members with store credit →" |
-| `/features/retention-flow-builder/` | "Keep members from cancelling →" |
-| `/use-cases/membership-sites/` | "Build a complete membership site →" |
-| `/use-cases/online-courses/` | "Use content dripping for courses →" |
-| `/features/` | Breadcrumb |
-| `/plans/` | Pro features CTA |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | "Create the plans members subscribe to →" |
+| `/deals/arraysubs/features/customer-portal/` | "Where members manage their subscriptions →" |
+| `/deals/arraysubs/features/store-credit/` | Pro: "Reward members with store credit →" |
+| `/deals/arraysubs/features/retention-flow-builder/` | "Keep members from cancelling →" |
+| `/deals/arraysubs/use-cases/membership-sites/` | "Build a complete membership site →" |
+| `/deals/arraysubs/use-cases/online-courses/` | "Use content dripping for courses →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
+| `/deals/arraysubs/plans/` | Pro features CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

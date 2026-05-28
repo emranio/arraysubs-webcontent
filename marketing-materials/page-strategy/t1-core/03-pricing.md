@@ -1,10 +1,10 @@
 # Page Plan: Pricing
 
-> **URL**: `/plans/`
+> **URL**: `/deals/arraysubs/plans/`
 > **Tier**: T1 — Core Landing
 > **Priority**: Week 1
 > **Est. Aggregate KW Volume**: 1,200+/mo
-> **CTA action targets**: `/plans/#live-demo` and `/plans/#get-pro`
+> **CTA action targets**: `/deals/arraysubs/plans/#live-demo` and `/deals/arraysubs/plans/#get-pro`
 
 ---
 
@@ -13,8 +13,8 @@
 | Field | Value |
 |-------|-------|
 | **Title Tag** | Pricing — ArraySubs WooCommerce Subscription & Membership Plugin |
-| **H1** | Simple, Transparent Pricing for WooCommerce Subscriptions & Memberships |
-| **Meta Description** | Compare ArraySubs plans, launch a live demo, or claim 6 months of Pro free. Time-limited early adopter offer. |
+| **H1** | Get ArraySubs Pro Free — Limited Time Early Bird Offer |
+| **Meta Description** | Claim your free ArraySubs Pro license. No pricing table, no credit card. Submit your details and get your 3-month Pro license by email. Limited time early bird offer. |
 
 ---
 
@@ -32,20 +32,21 @@
 ## Content Blocks
 
 ### 1. Hero
-- H1 + subtitle: "Compare plans, launch a live demo, or claim 6 months of Pro free."
-- Quick pricing toggle: Annual / Lifetime
-- Primary CTA on hero: Live Demo → `/plans/#live-demo`
-- Secondary CTA on hero: Get Pro Free for 6 Months → `/plans/#get-pro`
+- H1 + subtitle: "Limited time early bird offer. Submit your details, get your free 3-month Pro license by email."
+- Primary CTA on hero: Live Demo → `/deals/arraysubs/plans/#live-demo`
+- Secondary CTA on hero: Get Pro - Free [No Strings Attached] → `/deals/arraysubs/plans/#get-pro`
 
-### 2. Pricing Table
-- **Free**: Core subscription engine, billing, customer portal, member access, basic emails, shortcodes, easy setup, manage subscriptions
-- **Pro** (tiered by sites): Everything in Free + Store Credit, Retention Flow, Checkout Builder, Analytics, Audits, Automatic Payments, Feature Manager, Multi-Login, Redirect Product Page, Profile Builder Pro, Subscription Shipping, Fixed Period Membership
-- Highlight best-value plan
-- CTA Buttons: `Live Demo` → `/plans/#live-demo` and `Get Pro Free for 6 Months` → `/plans/#get-pro`
+### 2. Early Bird Offer Form
+- **Headline**: "Get ArraySubs Pro — Free for 3 Months"
+- **Sub-copy**: "Limited time early bird offer. No pricing table. No credit card. Submit your details, get an email with your account and download links for both ArraySubs and ArraySubs Pro."
+- **Form fields**: Name, Email, Website URL
+- **CTA button**: "Get Pro - Free [No Strings Attached]"
+- **Micro-copy**: "Limited time early bird offer · 3-month Pro license · No credit card required"
 
-### 3. Feature Comparison Accordion
-- Expandable rows: Free has X, Pro adds Y for each of 14 modules
-- Each row links to feature detail page
+### 3. What's Included in Pro
+- Expandable list of all Pro features (14 modules)
+- Each item links to the relevant feature page
+- Framing: "Here's what you unlock when you claim your free Pro license"
 
 ### 4. FAQ
 
@@ -55,38 +56,24 @@
 | How does ArraySubs compare to WooCommerce Subscriptions? | WooCommerce Subscriptions costs $279/yr for just subscriptions; ArraySubs includes memberships, retention, store credit, and more |
 | Do I need both plugins? | Pro extends the free core. You never lose free features |
 | What payment methods are supported? | Stripe, PayPal, Paddle, and all WooCommerce-compatible gateways |
-| Is there a refund policy? | 30-day money-back guarantee |
+| Is there a refund policy? | 60-day no-questions-asked money-back guarantee |
 
 ### 5. Social Proof Strip
 - Customer reviews, install count, ratings
 
 ### 6. Final CTA
 - "Choose your plan, launch a live demo, or claim the early adopter offer"
-- Pricing page CTA buttons use `/plans/#live-demo` and `/plans/#get-pro`
+- Pricing page CTA buttons use `/deals/arraysubs/plans/#live-demo` and `/deals/arraysubs/plans/#get-pro`
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-  - `Live Demo` → `/plans/#live-demo`
-  - `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+  - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+  - `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.
-
----
-
-## Structured Data
-
-```json
-{
-  "@type": "Product",
-  "name": "ArraySubs Pro",
-  "offers": [
-    { "@type": "Offer", "price": "X", "priceCurrency": "USD" }
-  ]
-}
-```
 
 ---
 
@@ -94,9 +81,9 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/` | Feature comparison rows |
-| All 14 `/features/*` pages | Accordion detail links |
-| `/compare/woocommerce-subscriptions/` | FAQ competitor answer |
-| `/` | Breadcrumb |
-| `/plans/#live-demo` | Live demo CTA |
-| `/plans/#get-pro` | Early adopter Pro CTA |
+| `/deals/arraysubs/features/` | Feature comparison rows |
+| All 14 `/deals/arraysubs/features/*` pages | Accordion detail links |
+| `/deals/arraysubs/compare/woocommerce-subscriptions/` | FAQ competitor answer |
+| `/deals/arraysubs/` | Breadcrumb |
+| `/deals/arraysubs/plans/#live-demo` | Live demo CTA |
+| `/deals/arraysubs/plans/#get-pro` | Early adopter Pro CTA |

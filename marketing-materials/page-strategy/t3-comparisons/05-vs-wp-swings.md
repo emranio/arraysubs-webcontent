@@ -1,6 +1,6 @@
 # Page Plan: ArraySubs vs WP Swings Subscriptions
 
-> **URL**: `/compare/wp-swings/`
+> **URL**: `/deals/arraysubs/compare/wp-swings/`
 > **Tier**: T3 — Comparison
 > **Priority**: Week 5
 
@@ -51,6 +51,6 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/` | All features |
-| `/features/retention-flow-builder/` | Unique feature highlight |
-| `/plans/` | Pro comparison |
+| `/deals/arraysubs/features/` | All features |
+| `/deals/arraysubs/features/retention-flow-builder/` | Unique feature highlight |
+| `/deals/arraysubs/plans/` | Pro comparison |

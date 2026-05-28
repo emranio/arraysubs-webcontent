@@ -1,6 +1,6 @@
 # Page Plan: Audits & Logs
 
-> **URL**: `/features/audits-and-logs/`
+> **URL**: `/deals/arraysubs/features/audits-and-logs/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 4
 > **Ownership**: Pro (arraysubspro) — premium feature
@@ -33,7 +33,7 @@
 ### 1. Hero Section (Pro Badge)
 - H1 + subtitle: "Know exactly what happened to every subscription, when, and why"
 - Screenshot: Audit log dashboard
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. What Gets Logged
 - Status changes (with before/after states)
@@ -75,18 +75,18 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/analytics/` | "Analytics aggregates audit data →" |
-| `/features/billing-renewals-and-refunds/` | "Billing events in the log →" |
-| `/features/manage-subscriptions/` | "Admin actions logged →" |
-| `/features/` | Breadcrumb |
-| `/plans/` | Get Pro CTA |
+| `/deals/arraysubs/features/analytics/` | "Analytics aggregates audit data →" |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | "Billing events in the log →" |
+| `/deals/arraysubs/features/manage-subscriptions/` | "Admin actions logged →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
+| `/deals/arraysubs/plans/` | Get Pro CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

@@ -1,6 +1,6 @@
 # Page Plan: ArraySubs vs WooCommerce Subscriptions
 
-> **URL**: `/compare/woocommerce-subscriptions/`
+> **URL**: `/deals/arraysubs/compare/woocommerce-subscriptions/`
 > **Tier**: T3 — Comparison
 > **Priority**: Week 2 (high-intent traffic)
 > **Est. Aggregate KW Volume**: 5,500+/mo
@@ -36,13 +36,13 @@
 ### 1. Hero Section
 - H1 + brief neutral intro: "We built ArraySubs because we thought WooCommerce stores deserved more — here's how both options stack up."
 - Quick verdict box: Key difference in 1 sentence
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. At-a-Glance Comparison Table
 
 | Feature | ArraySubs (Free) | ArraySubs Pro | WooCommerce Subscriptions |
 |---------|------------------|---------------|---------------------------|
-| Price | $0 | See `/plans/` | $279/yr |
+| Price | $0 | See `/deals/arraysubs/plans/` | $279/yr |
 | Simple Subscriptions | ✅ | ✅ | ✅ |
 | Variable Subscriptions | ✅ | ✅ | ✅ |
 | Free Trials | ✅ | ✅ | ✅ |
@@ -62,7 +62,7 @@
 - WooCommerce Subscriptions: $279/yr (renewals ongoing)
 - WooCommerce Subscriptions + Memberships: $279 + $199 = $478/yr
 - ArraySubs Free: $0 (subscriptions + memberships included)
-- ArraySubs premium plan details: See `/plans/`
+- ArraySubs premium plan details: See `/deals/arraysubs/plans/`
 - **Value framing**: Compare the WooCommerce official stack cost against ArraySubs features on the pricing page
 
 ### 4. Feature Deep-Dives
@@ -75,7 +75,7 @@
 **4b. Memberships & Access Control (ArraySubs wins)**
 - ArraySubs: Built-in member access, content restriction, role mapping, drip content
 - WCS: Requires separate WooCommerce Memberships plugin ($199/yr)
-- Total cost with memberships: WCS reaches $478/yr; ArraySubs includes subscriptions + memberships in one plugin, with premium plan details kept on `/plans/`
+- Total cost with memberships: WCS reaches $478/yr; ArraySubs includes subscriptions + memberships in one plugin, with premium plan details kept on `/deals/arraysubs/plans/`
 
 **4c. Retention & Churn (ArraySubs wins — WCS has nothing)**
 - ArraySubs: Retention flow builder with offers, reasons, analytics
@@ -140,20 +140,20 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/` | "See all ArraySubs features →" |
-| `/features/retention-flow-builder/` | Retention section |
-| `/features/store-credit/` | Store credit section |
-| `/features/member-access-control/` | Membership comparison |
-| `/plans/` | Pricing comparison CTA |
-| `/compare/woocommerce-memberships/` | Related comparison |
-| `/download/` | Try free CTA |
+| `/deals/arraysubs/features/` | "See all ArraySubs features →" |
+| `/deals/arraysubs/features/retention-flow-builder/` | Retention section |
+| `/deals/arraysubs/features/store-credit/` | Store credit section |
+| `/deals/arraysubs/features/member-access-control/` | Membership comparison |
+| `/deals/arraysubs/plans/` | Pricing comparison CTA |
+| `/deals/arraysubs/compare/woocommerce-memberships/` | Related comparison |
+| `/deals/arraysubs/download/` | Try free CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-  - `Live Demo` → `/plans/#live-demo`
-  - `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+  - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+  - `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

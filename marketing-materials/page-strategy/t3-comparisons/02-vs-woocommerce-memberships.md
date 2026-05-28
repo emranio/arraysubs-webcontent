@@ -1,6 +1,6 @@
 # Page Plan: ArraySubs vs WooCommerce Memberships
 
-> **URL**: `/compare/woocommerce-memberships/`
+> **URL**: `/deals/arraysubs/compare/woocommerce-memberships/`
 > **Tier**: T3 — Comparison
 > **Priority**: Week 2
 
@@ -37,7 +37,7 @@
 
 | Feature | ArraySubs (Free) | ArraySubs Pro | WooCommerce Memberships |
 |---------|------------------|---------------|--------------------------|
-| Price | $0 | See `/plans/` | $199/yr (+$279 for subscriptions) |
+| Price | $0 | See `/deals/arraysubs/plans/` | $199/yr (+$279 for subscriptions) |
 | Content Restriction | ✅ | ✅ | ✅ |
 | Role Mapping | ✅ | ✅ | ✅ |
 | Content Dripping | ✅ | ✅ | ✅ |
@@ -51,7 +51,7 @@
 
 ### 3. The Two-Plugin Problem
 - WCM + WCS = $478/yr for subscriptions + memberships
-- ArraySubs includes a free plan, with premium plan details kept on `/plans/`
+- ArraySubs includes a free plan, with premium plan details kept on `/deals/arraysubs/plans/`
 - Maintenance overhead of two plugins vs one
 
 ### 4. Membership Features Comparison
@@ -88,7 +88,7 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/member-access-control/` | Membership feature detail |
-| `/compare/woocommerce-subscriptions/` | Related comparison |
-| `/features/` | All features |
-| `/plans/` | Pricing CTA |
+| `/deals/arraysubs/features/member-access-control/` | Membership feature detail |
+| `/deals/arraysubs/compare/woocommerce-subscriptions/` | Related comparison |
+| `/deals/arraysubs/features/` | All features |
+| `/deals/arraysubs/plans/` | Pricing CTA |

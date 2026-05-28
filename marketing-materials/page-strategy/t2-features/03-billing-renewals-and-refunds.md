@@ -1,6 +1,6 @@
 # Page Plan: Billing, Renewals & Refunds
 
-> **URL**: `/features/billing-renewals-and-refunds/`
+> **URL**: `/deals/arraysubs/features/billing-renewals-and-refunds/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 2
 > **Ownership**: Core (arraysubs) — renewal engine, invoicing, grace periods; Pro — Automatic Payments
@@ -36,7 +36,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Billing that runs itself — so you focus on growing"
 - Visual: Billing lifecycle timeline graphic
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Renewal Engine Overview
 - Automatic invoice generation before due date (configurable hours)
@@ -113,21 +113,21 @@ Payment Due → [Active 3 days] → [On-Hold 7 days] → Cancelled
 
 | Target | Context |
 |--------|---------|
-| `/features/subscriptions-and-recurring-products/` | "Create subscription products →" |
-| `/features/payment-gateways/` | "Supported payment methods →" |
-| `/features/store-credit/` | Pro: "Refund to store credit →" |
-| `/features/emails/` | "Renewal reminder emails →" |
-| `/features/customer-portal/` | "Subscribers pay invoices here →" |
-| `/features/retention-flow-builder/` | "Prevent cancellations before they happen →" |
-| `/features/` | Breadcrumb |
-| `/plans/` | Pro features CTA |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | "Create subscription products →" |
+| `/deals/arraysubs/features/payment-gateways/` | "Supported payment methods →" |
+| `/deals/arraysubs/features/store-credit/` | Pro: "Refund to store credit →" |
+| `/deals/arraysubs/features/emails/` | "Renewal reminder emails →" |
+| `/deals/arraysubs/features/customer-portal/` | "Subscribers pay invoices here →" |
+| `/deals/arraysubs/features/retention-flow-builder/` | "Prevent cancellations before they happen →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
+| `/deals/arraysubs/plans/` | Pro features CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-    - `Live Demo` → `/plans/#live-demo`
-    - `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+    - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+    - `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

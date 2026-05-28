@@ -1,6 +1,6 @@
 # Page Plan: Manage Subscriptions
 
-> **URL**: `/features/manage-subscriptions/`
+> **URL**: `/deals/arraysubs/features/manage-subscriptions/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 3
 > **Ownership**: Core (arraysubs) — free feature
@@ -33,7 +33,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Modern admin interface for subscription management"
 - Screenshot: Subscription list dashboard
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Subscription List View
 - Sortable, filterable table of all subscriptions
@@ -85,19 +85,19 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/subscriptions-and-recurring-products/` | "Create subscription products →" |
-| `/features/billing-renewals-and-refunds/` | "Billing details per subscription →" |
-| `/features/audits-and-logs/` | Pro: "See the audit trail →" |
-| `/features/analytics/` | Pro: "Dashboard-level analytics →" |
-| `/features/manage-members/` | "Manage member profiles →" |
-| `/features/` | Breadcrumb |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | "Create subscription products →" |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | "Billing details per subscription →" |
+| `/deals/arraysubs/features/audits-and-logs/` | Pro: "See the audit trail →" |
+| `/deals/arraysubs/features/analytics/` | Pro: "Dashboard-level analytics →" |
+| `/deals/arraysubs/features/manage-members/` | "Manage member profiles →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

@@ -1,6 +1,6 @@
 # Page Plan: Store Credit System
 
-> **URL**: `/features/store-credit/`
+> **URL**: `/deals/arraysubs/features/store-credit/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 3
 > **Ownership**: Pro (arraysubspro) — premium feature; admin SPA pages in core
@@ -36,7 +36,7 @@
 - H1 + subtitle: "The only subscription plugin with a built-in store credit system"
 - Blue Ocean badge: "Unique to ArraySubs"
 - Screenshot: Store Credit management dashboard
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Store Credit Overview
 - Customer credit balances managed per user
@@ -107,20 +107,20 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/billing-renewals-and-refunds/` | "How credit interacts with refund policies →" |
-| `/features/retention-flow-builder/` | "Offer credit as a retention incentive →" |
-| `/features/customer-portal/` | "Customers see credit in their portal →" |
-| `/features/checkout-builder/` | "Credit applied at checkout →" |
-| `/features/analytics/` | "Track credit impact on retention →" |
-| `/features/` | Breadcrumb |
-| `/plans/` | Get Pro CTA |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | "How credit interacts with refund policies →" |
+| `/deals/arraysubs/features/retention-flow-builder/` | "Offer credit as a retention incentive →" |
+| `/deals/arraysubs/features/customer-portal/` | "Customers see credit in their portal →" |
+| `/deals/arraysubs/features/checkout-builder/` | "Credit applied at checkout →" |
+| `/deals/arraysubs/features/analytics/` | "Track credit impact on retention →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
+| `/deals/arraysubs/plans/` | Get Pro CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

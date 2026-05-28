@@ -1,6 +1,6 @@
 # Page Plan: Content Publishers
 
-> **URL**: `/use-cases/content-publishers/`
+> **URL**: `/deals/arraysubs/use-cases/content-publishers/`
 > **Tier**: T5 — Use Case
 > **Priority**: Week 6
 
@@ -49,7 +49,7 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/member-access-control/` | Restriction rules |
-| `/features/subscriptions-and-recurring-products/` | Tiers |
-| `/use-cases/membership-sites/` | Related |
-| `/plans/` | CTA |
+| `/deals/arraysubs/features/member-access-control/` | Restriction rules |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | Tiers |
+| `/deals/arraysubs/use-cases/membership-sites/` | Related |
+| `/deals/arraysubs/plans/` | CTA |

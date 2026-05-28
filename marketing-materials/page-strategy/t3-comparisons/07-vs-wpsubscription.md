@@ -1,6 +1,6 @@
 # Page Plan: ArraySubs vs WPSubscription
 
-> **URL**: `/compare/wpsubscription/`
+> **URL**: `/deals/arraysubs/compare/wpsubscription/`
 > **Tier**: T3 — Comparison
 > **Priority**: Week 5
 
@@ -46,5 +46,5 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/` | All features |
-| `/plans/` | Pricing |
+| `/deals/arraysubs/features/` | All features |
+| `/deals/arraysubs/plans/` | Pricing |

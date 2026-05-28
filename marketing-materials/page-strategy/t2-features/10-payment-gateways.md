@@ -1,6 +1,6 @@
 # Page Plan: Payment Gateways
 
-> **URL**: `/features/payment-gateways/`
+> **URL**: `/deals/arraysubs/features/payment-gateways/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 3
 > **Ownership**: Core (arraysubs) — free checkout & manual billing; Pro — Automatic Payments with tokenized gateways
@@ -35,7 +35,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Works with any WooCommerce payment gateway — zero lock-in"
 - Gateway logos: Stripe, PayPal, Paddle + "all WooCommerce gateways"
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. How Payment Works
 - **Any WooCommerce Gateway**: First payment through any active gateway
@@ -88,21 +88,21 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/billing-renewals-and-refunds/` | "How the billing cycle works →" |
-| `/features/customer-portal/` | "Customers manage payment methods →" |
-| `/features/checkout-builder/` | Pro: "Customize the payment checkout →" |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | "How the billing cycle works →" |
+| `/deals/arraysubs/features/customer-portal/` | "Customers manage payment methods →" |
+| `/deals/arraysubs/features/checkout-builder/` | Pro: "Customize the payment checkout →" |
 | `/gateways/stripe/` | "Stripe subscription setup guide →" |
 | `/gateways/paypal/` | "PayPal subscription setup guide →" |
 | `/gateways/paddle/` | "Paddle subscription setup guide →" |
-| `/features/` | Breadcrumb |
-| `/plans/` | Pro features CTA |
+| `/deals/arraysubs/features/` | Breadcrumb |
+| `/deals/arraysubs/plans/` | Pro features CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

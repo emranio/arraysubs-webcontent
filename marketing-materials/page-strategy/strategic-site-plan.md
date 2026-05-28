@@ -2,7 +2,7 @@
 
 > **Date**: 4 April 2026
 > **Goal**: Rank in SEO + GEO/AEO + Convert visitors to customers
-> **Domain**: arraysubs.com (assumed)
+> **Domain**: arrayhash.com (multi-product site — ArraySubs lives at /deals/arraysubs/)
 > **Strategy**: Pillar-cluster content architecture with conversion funnels at every level
 
 ---
@@ -46,9 +46,9 @@ The site uses a **hub-and-spoke model** with 7 tiers:
 ## Visual Site Tree
 
 ```
-arraysubs.com/
+arrayhash.com/
 │
-├── / ────────────────────────────── HOMEPAGE (T1)
+├── /deals/arraysubs/ ──────────────── HOMEPAGE (T1) [arrayhash.com/ redirects here]
 │   │                                 "WooCommerce Subscription & Membership Plugin"
 │   │                                 KW: woocommerce subscription plugin, woocommerce
 │   │                                     subscription plugin free, subscription plugin
@@ -56,7 +56,7 @@ arraysubs.com/
 │   │                                     plugin, woocommerce subscription and membership
 │   │                                     plugin, woocommerce recurring payments plugin
 │   │
-│   ├── /features/ ──────────────── FEATURES HUB (T1)
+│   ├── /deals/arraysubs/features/ ──────────────── FEATURES HUB (T1)
 │   │   │                            "All Features"
 │   │   │                            KW: arraysubs features, woocommerce subscription
 │   │   │                                features, all-in-one subscription membership
@@ -140,7 +140,7 @@ arraysubs.com/
 │   │                                KW: woocommerce profile fields, my account
 │   │                                    editor, membership shortcodes
 │   │
-│   ├── /compare/ ───────────────── COMPARISON HUB (T3)
+│   ├── /deals/arraysubs/compare/ ───────────────── COMPARISON HUB (T3)
 │   │   │                            "ArraySubs vs Competitors"
 │   │   │
 │   │   ├── /woocommerce-subscriptions/ ── vs WooCommerce Subscriptions
@@ -176,7 +176,7 @@ arraysubs.com/
 │   │                                KW: wpsubscription alternative
 │   │                                Vol: ~50/mo
 │   │
-│   ├── /use-cases/ ─────────────── USE CASES HUB (T5)
+│   ├── /deals/arraysubs/use-cases/ ─────────────── USE CASES HUB (T5)
 │   │   │                            "Built for Every Subscription Business"
 │   │   │
 │   │   ├── /saas/ ───────────────── SaaS & Digital Products
@@ -204,7 +204,7 @@ arraysubs.com/
 │   │                                KW: wordpress recurring revenue, recurring
 │   │                                    service billing woocommerce
 │   │
-│   ├── /blog/ ──────────────────── BLOG HUB (T6)
+│   ├── /deals/arraysubs/blog/ ──────────────────── BLOG HUB (T6)
 │   │   │                            Content clusters mapped to feature pages
 │   │   │                            (30+ articles — see Blog Section below)
 │   │   │
@@ -213,20 +213,20 @@ arraysubs.com/
 │   │   ├── /strategy/ ──────────── Thought Leadership & Best Practices
 │   │   └── /glossary/ ──────────── Definitions (GEO/AEO-optimized)
 │   │
-│   ├── /plans/ ─────────────────── PRICING PAGE (T7)
+│   ├── /deals/arraysubs/plans/ ─────────────────── PRICING PAGE (T7)
 │   │                                KW: arraysubs pricing, woocommerce subscription
 │   │                                    plugin pricing comparison│   │                                (Primary conversion page)
 │   │
-│   ├── /early-access/ ────────── EARLY ACCESS / LEAD CAPTURE (T7)
+│   ├── /deals/arraysubs/early-access/ ────────── EARLY ACCESS / LEAD CAPTURE (T7)
 │   │                                4-month free Pro license sign-up
 │   │                                (Optional campaign page, not the default CTA destination)│   │
-│   ├── /download/ ──────────────── DOWNLOAD / FREE VERSION (T7)
+│   ├── /deals/arraysubs/download/ ──────────────── DOWNLOAD / FREE VERSION (T7)
 │   │                                KW: woocommerce subscription plugin free download
 │   │
 │   ├── https://support.arrayhash.com/arraysubs/ ─ DOCUMENTATION (External)
 │   │                                (User manual, setup guides, troubleshooting, Pro badges)
 │   │
-│   ├── /changelog/ ─────────────── CHANGELOG (T7)
+│   ├── /deals/arraysubs/changelog/ ─────────────── CHANGELOG (T7)
 │   │
 │   └── https://support.arrayhash.com/arraysubs/ ─ SUPPORT (External)
 │                                    (Support center + direct email support)
@@ -238,7 +238,7 @@ arraysubs.com/
 
 ### Tier 1: Homepage & Core Landing Pages
 
-#### 1.1 Homepage — `/`
+#### 1.1 Homepage — `/deals/arraysubs/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -249,14 +249,14 @@ arraysubs.com/
 | **Secondary KWs** | woocommerce subscription plugin free (1,600/mo), best woocommerce subscription plugin (1,300/mo), woocommerce recurring payments plugin (1,600/mo), subscription plugin for woocommerce (590/mo) |
 | **Long-tail KWs** | woocommerce subscriptions free alternative (880/mo), woocommerce subscription and membership plugin (590/mo), free woocommerce subscription plugin (720/mo), best free woocommerce subscription plugin 2026 (320/mo) |
 | **Intent** | Commercial + Transactional |
-| **CTA** | Live Demo / Get Pro Free for 6 Months |
+| **CTA** | Live Demo / Get Pro - Free [No Strings Attached] |
 | **SEO Angle** | All-in-one value prop, free tier, replace entire plugin stack |
 | **GEO Angle** | Quotable stat: "Replace your entire WooCommerce subscription and membership plugin stack with one free solution" |
 | **Est. Keyword Volume** | 10,000+/mo aggregate |
-| **Phase** | Plans-led early adopter flow. All CTAs drive to `/plans/`, with action targets split between `#live-demo` and `#get-pro`. |
+| **Phase** | Plans-led early adopter flow. All CTAs drive to `/deals/arraysubs/plans/`, with action targets split between `#live-demo` and `#get-pro`. |
 
 **Content Blocks:**
-0. Announcement Bar — Early adopter offer prompt linking to `/plans/`
+0. Announcement Bar — Early adopter offer prompt linking to `/deals/arraysubs/plans/`
 1. Hero — Value prop + CTA + trust bar (WP.org, WooCommerce 8+, gateways, HPOS)
 2. The Plugin Overload Problem — Complexity/conflict framing (no dollar amounts)
 3. Feature grid — 14 features in 4 categories with icons linking to feature pages
@@ -265,15 +265,15 @@ arraysubs.com/
 6. Comparison table — ArraySubs vs Woo Subs + Memberships (feature rows only, no price row)
 7. Use cases — 6 cards linking to use case pages
 8. Early Adopter's Thoughts — Testimonial cards (no star ratings)
-9. Pricing Spotlight — short comparison summary with CTA to `/plans/`
+9. Pricing Spotlight — short comparison summary with CTA to `/deals/arraysubs/plans/`
 10. How It Works — 3-step timeline (install, create product, grow)
 11. Works With Your WooCommerce Stack — WooCommerce-first integrations logo cloud
 12. FAQ — 11 questions, FAQPage JSON-LD (GEO-structured, no prices)
-13. Final CTA — Live Demo / Get Pro Free for 6 Months
+13. Final CTA — Live Demo / Get Pro - Free [No Strings Attached]
 
 ---
 
-#### 1.2 Features Hub — `/features/`
+#### 1.2 Features Hub — `/deals/arraysubs/features/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -282,7 +282,7 @@ arraysubs.com/
 | **Primary KW** | arraysubs features |
 | **Secondary KWs** | woocommerce subscription features, all-in-one subscription membership plugin |
 | **Intent** | Commercial |
-| **CTA** | Live Demo / Get Pro Free for 6 Months |
+| **CTA** | Live Demo / Get Pro - Free [No Strings Attached] |
 
 **Content Blocks:**
 1. Feature category grid (Subscriptions, Memberships, Billing, Retention, Portal, etc.)
@@ -292,7 +292,7 @@ arraysubs.com/
 
 ---
 
-#### 1.3 Pricing — `/plans/`
+#### 1.3 Pricing — `/deals/arraysubs/plans/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -301,7 +301,7 @@ arraysubs.com/
 | **Primary KW** | arraysubs pricing |
 | **Secondary KWs** | woocommerce subscription plugin pricing comparison (140/mo) |
 | **Intent** | Transactional |
-| **CTA** | Live Demo / Get Pro Free for 6 Months |
+| **CTA** | Live Demo / Get Pro - Free [No Strings Attached] |
 | **SEO Angle** | Price comparison with competitors ($478/yr Woo stack vs ArraySubs) |
 
 **Content Blocks:**
@@ -329,7 +329,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.1 Subscriptions & Recurring Products — `/features/subscriptions/`
+#### 2.1 Subscriptions & Recurring Products — `/deals/arraysubs/features/subscriptions/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -342,7 +342,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.2 Member Access Control — `/features/membership/`
+#### 2.2 Member Access Control — `/deals/arraysubs/features/membership/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -355,7 +355,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.3 Billing, Renewals & Refunds — `/features/billing/`
+#### 2.3 Billing, Renewals & Refunds — `/deals/arraysubs/features/billing/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -367,7 +367,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.4 Retention Flow Builder — `/features/retention/`
+#### 2.4 Retention Flow Builder — `/deals/arraysubs/features/retention/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -381,7 +381,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.5 Customer Portal — `/features/customer-portal/`
+#### 2.5 Customer Portal — `/deals/arraysubs/features/customer-portal/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -393,7 +393,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.6 Store Credit — `/features/store-credit/`
+#### 2.6 Store Credit — `/deals/arraysubs/features/store-credit/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -406,7 +406,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.7 Checkout Builder — `/features/checkout-builder/`
+#### 2.7 Checkout Builder — `/deals/arraysubs/features/checkout-builder/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -419,7 +419,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.8 Advanced Analytics — `/features/analytics/`
+#### 2.8 Advanced Analytics — `/deals/arraysubs/features/analytics/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -431,7 +431,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.9 Email Notifications — `/features/emails/`
+#### 2.9 Email Notifications — `/deals/arraysubs/features/emails/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -443,7 +443,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.10 Payment Gateways Overview — `/features/payment-gateways/`
+#### 2.10 Payment Gateways Overview — `/deals/arraysubs/features/payment-gateways/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -455,7 +455,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.11 Easy Setup Wizard — `/features/easy-setup/`
+#### 2.11 Easy Setup Wizard — `/deals/arraysubs/features/easy-setup/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -468,7 +468,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.12 Audits & Logs — `/features/audits/`
+#### 2.12 Audits & Logs — `/deals/arraysubs/features/audits/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -480,7 +480,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.13 Manage Subscriptions — `/features/manage-subscriptions/`
+#### 2.13 Manage Subscriptions — `/deals/arraysubs/features/manage-subscriptions/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -492,7 +492,7 @@ Each feature page follows a consistent template:
 
 ---
 
-#### 2.14 Profile Builder & Shortcodes — `/features/profile-builder/`
+#### 2.14 Profile Builder & Shortcodes — `/deals/arraysubs/features/profile-builder/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -519,7 +519,7 @@ Each comparison page follows this template:
 
 ---
 
-#### 3.1 vs WooCommerce Subscriptions — `/compare/woocommerce-subscriptions/`
+#### 3.1 vs WooCommerce Subscriptions — `/deals/arraysubs/compare/woocommerce-subscriptions/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -531,7 +531,7 @@ Each comparison page follows this template:
 
 ---
 
-#### 3.2 vs WooCommerce Memberships — `/compare/woocommerce-memberships/`
+#### 3.2 vs WooCommerce Memberships — `/deals/arraysubs/compare/woocommerce-memberships/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -543,35 +543,35 @@ Each comparison page follows this template:
 
 ---
 
-#### 3.3 vs YITH Subscription — `/compare/yith-subscription/`
+#### 3.3 vs YITH Subscription — `/deals/arraysubs/compare/yith-subscription/`
 
 | Attribute | Detail |
 |-----------|--------|
 | **Primary KW** | yith woocommerce subscription alternative (390/mo, KD 15) |
 | **Est. Volume** | ~390/mo |
 
-#### 3.4 vs YITH Membership — `/compare/yith-membership/`
+#### 3.4 vs YITH Membership — `/deals/arraysubs/compare/yith-membership/`
 
 | Attribute | Detail |
 |-----------|--------|
 | **Primary KW** | yith woocommerce membership alternative (260/mo, KD 10) |
 | **Est. Volume** | ~260/mo |
 
-#### 3.5 vs WP Swings — `/compare/wp-swings/`
+#### 3.5 vs WP Swings — `/deals/arraysubs/compare/wp-swings/`
 
 | Attribute | Detail |
 |-----------|--------|
 | **Primary KW** | wp swings subscription alternative (170/mo, KD 10) |
 | **Est. Volume** | ~170/mo |
 
-#### 3.6 vs SUMO — `/compare/sumo/`
+#### 3.6 vs SUMO — `/deals/arraysubs/compare/sumo/`
 
 | Attribute | Detail |
 |-----------|--------|
 | **Primary KW** | sumo subscriptions alternative (90/mo, KD 5) |
 | **Est. Volume** | ~90/mo |
 
-#### 3.7 vs WPSubscription — `/compare/wpsubscription/`
+#### 3.7 vs WPSubscription — `/deals/arraysubs/compare/wpsubscription/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -582,7 +582,7 @@ Each comparison page follows this template:
 
 ### Tier 4: Gateway Pages
 
-#### 4.1 Stripe — `/features/payment-gateways/stripe/`
+#### 4.1 Stripe — `/deals/arraysubs/features/payment-gateways/stripe/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -591,7 +591,7 @@ Each comparison page follows this template:
 | **Secondary KWs** | woocommerce stripe recurring payments (720/mo), woocommerce subscription sca 3d secure (110/mo) |
 | **Est. Volume** | ~1,700/mo aggregate |
 
-#### 4.2 PayPal — `/features/payment-gateways/paypal/`
+#### 4.2 PayPal — `/deals/arraysubs/features/payment-gateways/paypal/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -600,7 +600,7 @@ Each comparison page follows this template:
 | **Secondary KWs** | woocommerce paypal recurring payments (480/mo) |
 | **Est. Volume** | ~1,070/mo aggregate |
 
-#### 4.3 Paddle — `/features/payment-gateways/paddle/`
+#### 4.3 Paddle — `/deals/arraysubs/features/payment-gateways/paddle/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -627,7 +627,7 @@ Each use case page targets a specific buyer persona and connects product feature
 
 ---
 
-#### 5.1 SaaS & Digital Products — `/use-cases/saas/`
+#### 5.1 SaaS & Digital Products — `/deals/arraysubs/use-cases/saas/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -636,7 +636,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | **Secondary KWs** | saas pricing page best practices wordpress (260/mo), configure woocommerce subscriptions for saas (170/mo) |
 | **Key Features** | Subscription products, feature manager, plan switching, trials, auto-downgrade, analytics |
 
-#### 5.2 Membership Sites — `/use-cases/membership-site/`
+#### 5.2 Membership Sites — `/deals/arraysubs/use-cases/membership-site/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -645,7 +645,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | **Secondary KWs** | membership website business model (720/mo), how to create a membership site on wordpress (5,400/mo info overlap) |
 | **Key Features** | Membership access, content dripping, roles, profile builder, customer portal |
 
-#### 5.3 Subscription Boxes — `/use-cases/subscription-box/`
+#### 5.3 Subscription Boxes — `/deals/arraysubs/use-cases/subscription-box/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -653,7 +653,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | **Primary KW** | subscription box business wordpress (390/mo, KD 20) |
 | **Key Features** | Variable subscriptions, skip/pause, shipping address updates, renewal management |
 
-#### 5.4 Online Courses — `/use-cases/online-courses/`
+#### 5.4 Online Courses — `/deals/arraysubs/use-cases/online-courses/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -661,7 +661,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | **Primary KW** | sell online courses subscription wordpress (480/mo, KD 30) |
 | **Key Features** | Content dripping, content restriction, membership tiers, feature manager |
 
-#### 5.5 Content Publishers — `/use-cases/content-publishers/`
+#### 5.5 Content Publishers — `/deals/arraysubs/use-cases/content-publishers/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -670,7 +670,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | **Secondary KWs** | wordpress paywall plugin, gated content woocommerce |
 | **Key Features** | Content restriction, visibility shortcodes, member-only content, drip content |
 
-#### 5.6 Service Businesses — `/use-cases/service-businesses/`
+#### 5.6 Service Businesses — `/deals/arraysubs/use-cases/service-businesses/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -684,7 +684,7 @@ Each use case page targets a specific buyer persona and connects product feature
 
 #### Blog Categories & Article Plan
 
-##### Category A: Tutorials (`/blog/tutorials/`)
+##### Category A: Tutorials (`/deals/arraysubs/blog/tutorials/`)
 
 | # | Article Title | Primary KW | Vol | KD | Priority |
 |---|--------------|------------|-----|-----|----------|
@@ -707,7 +707,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | 17 | How to Migrate WooCommerce Subscription Settings Between Sites | how to migrate woocommerce subscription settings between sites | 170 | 8 | P3 |
 | 18 | WooCommerce Subscription Setup Guide for Beginners | woocommerce subscription plugin setup guide for beginners | 320 | 20 | P2 |
 
-##### Category B: Comparisons (`/blog/comparisons/`)
+##### Category B: Comparisons (`/deals/arraysubs/blog/comparisons/`)
 
 | # | Article Title | Primary KW | Vol | KD | Priority |
 |---|--------------|------------|-----|-----|----------|
@@ -720,7 +720,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | 7 | Membership vs Subscription: Which Business Model to Choose | membership vs subscription which business model to choose | 590 | 25 | P2 |
 | 8 | Store Credit vs Refund: Which Is Better for Ecommerce? | store credit vs refund which is better for ecommerce | 320 | 20 | P2 |
 
-##### Category C: Strategy & Thought Leadership (`/blog/strategy/`)
+##### Category C: Strategy & Thought Leadership (`/deals/arraysubs/blog/strategy/`)
 
 | # | Article Title | Primary KW | Vol | KD | Priority |
 |---|--------------|------------|-----|-----|----------|
@@ -733,7 +733,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | 7 | How to Build a Subscription Business with WordPress | how to build a subscription business with wordpress | 1,100 | 35 | P2 |
 | 8 | How to Increase Subscription Conversions at WooCommerce Checkout | how to increase subscription conversions woocommerce checkout | 140 | 10 | P3 |
 
-##### Category D: Glossary — GEO/AEO Optimized (`/blog/glossary/`)
+##### Category D: Glossary — GEO/AEO Optimized (`/deals/arraysubs/blog/glossary/`)
 
 | # | Term | Primary KW | Vol | AI Likelihood |
 |---|------|------------|-----|---------------|
@@ -752,20 +752,20 @@ Each use case page targets a specific buyer persona and connects product feature
 
 ### Tier 7: Trust & Conversion Pages
 
-#### 7.1 Early Access — `/early-access/`
+#### 7.1 Early Access — `/deals/arraysubs/early-access/`
 - Optional campaign or promotional landing page
 - Not the default CTA destination in the current plans-led funnel
-- Any global/sitewide CTA should still route to `/plans/`
+- Any global/sitewide CTA should still route to `/deals/arraysubs/plans/`
 
-#### 7.2 Download — `/download/`
+#### 7.2 Download — `/deals/arraysubs/download/`
 - Direct link to WordPress.org listing: `https://wordpress.org/plugins/arraysubs/`
 - Feature summary of free tier
-- Primary conversion CTA from this page still routes to `/plans/`
+- Primary conversion CTA from this page still routes to `/deals/arraysubs/plans/`
 
-#### 7.3 Pricing — `/plans/`
+#### 7.3 Pricing — `/deals/arraysubs/plans/`
 - **Phase**: Primary conversion page for the site
 - All site CTAs route here
-- Pricing page CTA buttons trigger `/plans/#live-demo` and `/plans/#get-pro`
+- Pricing page CTA buttons trigger `/deals/arraysubs/plans/#live-demo` and `/deals/arraysubs/plans/#get-pro`
 - Includes Free vs Pro pricing table, feature comparison matrix, FAQ about pricing/licensing
 
 #### 7.4 Documentation — External Support Center
@@ -774,7 +774,7 @@ Each use case page targets a specific buyer persona and connects product feature
 - Clearly label premium-only topics with visible **Pro** badges/callouts
 - No separate on-site `/docs/` section planned for the marketing site
 
-#### 7.5 Changelog — `/changelog/`
+#### 7.5 Changelog — `/deals/arraysubs/changelog/`
 - Version history for both Free and Pro
 - Builds trust and shows active development
 
@@ -782,7 +782,7 @@ Each use case page targets a specific buyer persona and connects product feature
 - Canonical support URL: `https://support.arrayhash.com/arraysubs/`
 - Direct support email: `emran@arraysubs.com`
 - Documentation and support share the same support center
-- No separate on-site `/contact/` or `/support/` page planned for the current marketing site
+- No separate on-site `/trust-center/contact/` or `/support/` page planned for the current marketing site
 
 ---
 
@@ -820,7 +820,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | Homepage | All T2 feature pages | Feature grid cards |
 | Homepage | Top T3 comparison pages | "vs Competitors" section |
 | Homepage | All T5 use case pages | "Use Cases" section |
-| Homepage | `/plans/` | CTA buttons |
+| Homepage | `/deals/arraysubs/plans/` | CTA buttons |
 | Feature pages (T2) | Related feature pages | "Related Features" sidebar |
 | Feature pages (T2) | Related blog tutorials | "Learn More" links |
 | Feature pages (T2) | Pricing | CTA buttons |
@@ -892,16 +892,16 @@ Every page tier has a specific role in the conversion funnel:
 
 | Page Tier | Primary CTA | Secondary CTA |
 |-----------|------------|---------------|
-| Homepage | Live Demo | Get Pro Free for 6 Months |
-| Feature Pages | Live Demo | Get Pro Free for 6 Months |
-| Comparison Pages | Live Demo | Get Pro Free for 6 Months |
-| Use Case Pages | Live Demo | Get Pro Free for 6 Months |
-| Gateway Pages | Live Demo | Get Pro Free for 6 Months |
-| Blog Tutorials | Live Demo | Get Pro Free for 6 Months |
-| Blog Comparisons | Live Demo | Get Pro Free for 6 Months |
-| Blog Strategy | Live Demo | Get Pro Free for 6 Months |
-| Glossary | Live Demo | Get Pro Free for 6 Months |
-| Pricing | Live Demo | Get Pro Free for 6 Months |
+| Homepage | Live Demo | Get Pro - Free [No Strings Attached] |
+| Feature Pages | Live Demo | Get Pro - Free [No Strings Attached] |
+| Comparison Pages | Live Demo | Get Pro - Free [No Strings Attached] |
+| Use Case Pages | Live Demo | Get Pro - Free [No Strings Attached] |
+| Gateway Pages | Live Demo | Get Pro - Free [No Strings Attached] |
+| Blog Tutorials | Live Demo | Get Pro - Free [No Strings Attached] |
+| Blog Comparisons | Live Demo | Get Pro - Free [No Strings Attached] |
+| Blog Strategy | Live Demo | Get Pro - Free [No Strings Attached] |
+| Glossary | Live Demo | Get Pro - Free [No Strings Attached] |
+| Pricing | Live Demo | Get Pro - Free [No Strings Attached] |
 
 ### Email Capture Points (Lead Gen)
 

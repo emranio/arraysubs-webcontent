@@ -48,7 +48,7 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/payment-gateways/` | Parent |
+| `/deals/arraysubs/features/payment-gateways/` | Parent |
 | `/gateways/stripe/` | Compare gateways |
 | `/gateways/paypal/` | Compare gateways |
-| `/plans/` | Pro CTA |
+| `/deals/arraysubs/plans/` | Pro CTA |

@@ -1,6 +1,6 @@
 # Page Plan: Subscriptions & Recurring Products
 
-> **URL**: `/features/subscriptions-and-recurring-products/`
+> **URL**: `/deals/arraysubs/features/subscriptions-and-recurring-products/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 2
 > **Ownership**: Core (arraysubs) — free feature
@@ -37,7 +37,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Flexible recurring billing for any WooCommerce product — simple, variable, or virtual"
 - Screenshot: Product edit screen showing subscription options
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Product Types Supported
 - **Simple Subscription**: Single recurring product
@@ -124,21 +124,21 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/billing-renewals-and-refunds/` | "See how renewals and invoices work →" |
-| `/features/payment-gateways/` | "Supported payment methods →" |
-| `/features/customer-portal/` | "Subscribers manage their plans here →" |
-| `/features/checkout-builder/` | Pro: "Customize the subscription checkout experience →" |
-| `/features/` | Breadcrumb |
-| `/plans/` | Free vs Pro CTA |
-| `/use-cases/subscription-boxes/` | Use case link |
-| `/use-cases/saas-digital-products/` | Use case link |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | "See how renewals and invoices work →" |
+| `/deals/arraysubs/features/payment-gateways/` | "Supported payment methods →" |
+| `/deals/arraysubs/features/customer-portal/` | "Subscribers manage their plans here →" |
+| `/deals/arraysubs/features/checkout-builder/` | Pro: "Customize the subscription checkout experience →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
+| `/deals/arraysubs/plans/` | Free vs Pro CTA |
+| `/deals/arraysubs/use-cases/subscription-boxes/` | Use case link |
+| `/deals/arraysubs/use-cases/saas-digital-products/` | Use case link |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-  - `Live Demo` → `/plans/#live-demo`
-  - `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+  - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+  - `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

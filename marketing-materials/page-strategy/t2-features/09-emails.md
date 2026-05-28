@@ -1,6 +1,6 @@
 # Page Plan: Email Notifications
 
-> **URL**: `/features/emails/`
+> **URL**: `/deals/arraysubs/features/emails/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 3
 > **Ownership**: Core (arraysubs) — free feature
@@ -34,7 +34,7 @@
 ### 1. Hero Section
 - H1 + subtitle: "Every subscription event triggers the right email"
 - Screenshot: Email settings screen
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. Email Types Available
 
@@ -93,17 +93,17 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/billing-renewals-and-refunds/` | "How renewal invoicing triggers emails →" |
-| `/features/customer-portal/` | "Subscribers manage email preferences →" |
-| `/features/subscriptions-and-recurring-products/` | "Create the subscriptions →" |
-| `/features/` | Breadcrumb |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | "How renewal invoicing triggers emails →" |
+| `/deals/arraysubs/features/customer-portal/` | "Subscribers manage email preferences →" |
+| `/deals/arraysubs/features/subscriptions-and-recurring-products/` | "Create the subscriptions →" |
+| `/deals/arraysubs/features/` | Breadcrumb |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/plans/#live-demo`
-	- `Get Pro Free for 6 Months` → `/plans/#get-pro`
-- **Offer note**: Time limited offer for early adopters.
+	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
+	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+- **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

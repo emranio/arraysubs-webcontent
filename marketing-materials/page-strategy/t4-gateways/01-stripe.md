@@ -33,7 +33,7 @@
 
 ### 1. Hero
 - H1 + Stripe logo + "The most popular way to accept subscription payments"
-- CTA Buttons: Live Demo + Get Pro Free for 6 Months
+- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 
 ### 2. What You Can Do with Stripe + ArraySubs
 - Accept first subscription payments via Stripe
@@ -86,8 +86,8 @@
 
 | Target | Context |
 |--------|---------|
-| `/features/payment-gateways/` | Parent: "All supported gateways →" |
-| `/features/billing-renewals-and-refunds/` | "How billing works →" |
+| `/deals/arraysubs/features/payment-gateways/` | Parent: "All supported gateways →" |
+| `/deals/arraysubs/features/billing-renewals-and-refunds/` | "How billing works →" |
 | `/gateways/paypal/` | "Also accept PayPal →" |
 | `/gateways/paddle/` | "Also accept Paddle →" |
-| `/plans/` | Pro auto-renew CTA |
+| `/deals/arraysubs/plans/` | Pro auto-renew CTA |
