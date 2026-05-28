@@ -108,8 +108,20 @@ Import from the barrel: `import { Button, SectionTitle, … } from "@/components
 | `Slider` | `children`, `label` | Scroll-snap carousel + labelled controls |
 
 ### Forms (`@/components/ui` → form primitives)
-`Field` (label + description + error + ARIA wiring), `Input`, `Textarea`,
-`Select`, `Checkbox`, `Range`, `LeadForm` (validated lead-capture demo).
+All controls are **custom-designed** (no native browser appearance) and accessible:
+
+- `Field` — label + description + error + ARIA wiring (`aria-labelledby/describedby/invalid/required`).
+- `Input`, `Textarea`, `Range` — text + range inputs.
+- `Checkbox`, `Radio`, `RadioGroup` — custom box/circle via the `peer` pattern.
+- `Switch` — `role="switch"` toggle (controlled or uncontrolled).
+- `Select` — custom single-select listbox combobox (full keyboard nav).
+- `Multiselect` — custom multi-select listbox (`aria-multiselectable`).
+- `LeadForm` — validated lead-capture demo.
+- `MultiStepForm` — multi-step flow with an accessible stepper + focus management.
+
+`Select`/`Multiselect`/`RadioGroup` take `options={{label,value}[]}` and support
+controlled (`value`/`onChange`) or uncontrolled (`defaultValue`) use. Wrap
+single controls in `<Field>`; `Checkbox`/`Radio`/`Switch` carry their own label.
 
 ```tsx
 <Field label="Work email" required error={err} description="We'll send your key here.">

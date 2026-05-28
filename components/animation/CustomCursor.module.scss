@@ -6,25 +6,36 @@
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 9999;
-  border-radius: 50%;
   will-change: transform;
-  mix-blend-mode: difference;
 }
 
+// Center dot: bigger, keeps the inverting (difference) effect, morphs shape.
 .dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: #fff;
+  z-index: 9999;
+  width: 1rem;
+  height: 1rem;
+  mix-blend-mode: difference;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  path {
+    fill: #fff;
+  }
 }
 
+// Trailing ring: smaller, solid brand-dark outline, NO blend effect.
 .ring {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 0.09375rem solid #fff;
+  z-index: 9998;
+  width: 1.875rem;
+  height: 1.875rem;
+  border: 0.09375rem solid var(--color-dark);
+  border-radius: 50%;
 }
 
-// Never show on touch devices or when motion is reduced.
+// Never show on touch devices or when motion is reduced (native cursor only).
 @media (hover: none), (pointer: coarse) {
   .dot,
   .ring {

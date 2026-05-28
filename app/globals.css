@@ -200,15 +200,6 @@
    CUSTOM UTILITIES
    ========================================================================== */
 
-/* Hide the native cursor only when the JS custom cursor is active and the
-   device has a fine pointer (mouse). Touch/keyboard users keep the native one. */
-@media (hover: hover) and (pointer: fine) {
-  body[data-custom-cursor="on"],
-  body[data-custom-cursor="on"] * {
-    cursor: none;
-  }
-}
-
 /* Text with a soft highlight marker behind it */
 @utility marker-highlight {
   background-image: linear-gradient(

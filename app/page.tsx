@@ -27,11 +27,15 @@ import {
   IconCard,
   Input,
   LeadForm,
+  MultiStepForm,
+  Multiselect,
   Range,
+  RadioGroup,
   Section,
   SectionTitle,
   Select,
   Slider,
+  Switch,
   Tabs,
   Textarea,
 } from "@/components/ui";
@@ -181,6 +185,14 @@ const TESTIMONIALS = [
     name: "Early adopter",
     context: "Service business",
   },
+];
+
+const FEATURE_OPTIONS = [
+  { label: "Subscriptions", value: "subscriptions" },
+  { label: "Memberships", value: "memberships" },
+  { label: "Store credit", value: "store-credit" },
+  { label: "Analytics", value: "analytics" },
+  { label: "Retention flow", value: "retention" },
 ];
 
 export default function DesignSystemPage() {
@@ -349,13 +361,21 @@ export default function DesignSystemPage() {
               <Button variant="outline" magnetic>
                 Outline
               </Button>
-              <Button variant="ghost">Ghost</Button>
+              <Button variant="ghost" magnetic>
+                Ghost
+              </Button>
             </DemoRow>
 
             <DemoRow label="Sizes">
-              <Button size="sm">Small</Button>
-              <Button size="md">Medium</Button>
-              <Button size="lg">Large</Button>
+              <Button size="sm" magnetic>
+                Small
+              </Button>
+              <Button size="md" magnetic>
+                Medium
+              </Button>
+              <Button size="lg" magnetic>
+                Large
+              </Button>
             </DemoRow>
 
             <DemoRow label="With icons">
@@ -364,6 +384,7 @@ export default function DesignSystemPage() {
               </Button>
               <Button
                 variant="outline"
+                magnetic
                 iconLeft={<Download className="size-5" />}
               >
                 Download
@@ -375,7 +396,7 @@ export default function DesignSystemPage() {
               <Button variant="outline" disabled>
                 Disabled
               </Button>
-              <Button href="#components" variant="ghost">
+              <Button href="#components" variant="ghost" magnetic>
                 As a link
               </Button>
             </DemoRow>
@@ -554,19 +575,20 @@ export default function DesignSystemPage() {
           <div className="mt-12 grid gap-12 lg:grid-cols-2">
             <div className="flex flex-col gap-6">
               <h3 className="text-sm font-semibold tracking-wider text-muted uppercase">
-                Controls
+                Inputs
               </h3>
               <Field label="Text input" description="A standard single-line input.">
                 <Input placeholder="jane@store.com" />
               </Field>
-              <Field label="Select">
-                <Select defaultValue="">
-                  <option value="" disabled>
-                    Choose an option…
-                  </option>
-                  <option>Subscriptions</option>
-                  <option>Memberships</option>
-                </Select>
+              <Field label="Select (custom)">
+                <Select placeholder="Choose a feature…" options={FEATURE_OPTIONS} />
+              </Field>
+              <Field label="Multi-select (custom)">
+                <Multiselect
+                  placeholder="Pick a few features…"
+                  defaultValue={["subscriptions"]}
+                  options={FEATURE_OPTIONS}
+                />
               </Field>
               <Field label="Textarea">
                 <Textarea placeholder="Tell us about your store…" />
@@ -581,9 +603,40 @@ export default function DesignSystemPage() {
               >
                 <Input defaultValue="not-an-email" />
               </Field>
-              <Checkbox label="I agree to the terms and conditions." />
             </div>
 
+            <div className="flex flex-col gap-6">
+              <h3 className="text-sm font-semibold tracking-wider text-muted uppercase">
+                Toggles &amp; choices
+              </h3>
+              <RadioGroup
+                legend="Billing cycle"
+                name="cycle-demo"
+                defaultValue="monthly"
+                options={[
+                  { label: "Monthly", value: "monthly" },
+                  { label: "Yearly — save 20%", value: "yearly" },
+                ]}
+              />
+              <div className="flex flex-col gap-4">
+                <Switch
+                  label="Automatic renewals"
+                  description="Charge the saved method each cycle."
+                  defaultChecked
+                />
+                <Switch label="Email me product updates" />
+              </div>
+              <div className="flex flex-col gap-3">
+                <Checkbox
+                  label="I agree to the terms and conditions."
+                  defaultChecked
+                />
+                <Checkbox label="Subscribe to the newsletter." />
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 grid items-start gap-12 lg:grid-cols-2">
             <div className="flex flex-col gap-6">
               <h3 className="text-sm font-semibold tracking-wider text-muted uppercase">
                 Lead capture
@@ -591,6 +644,12 @@ export default function DesignSystemPage() {
               <div className="rounded-2xl border border-border bg-background p-6 sm:p-8">
                 <LeadForm />
               </div>
+            </div>
+            <div className="flex flex-col gap-6">
+              <h3 className="text-sm font-semibold tracking-wider text-muted uppercase">
+                Multi-step form
+              </h3>
+              <MultiStepForm />
             </div>
           </div>
         </Container>
