@@ -1,0 +1,52 @@
+@use "sass:map";
+
+// Shared SCSS helpers for *.module.scss component styles.
+// Import with:  @use "../../styles/mixins" as *;
+// Design tokens live in app/globals.css as CSS custom properties — reference
+// them with var(--token). Always express sizes in rem.
+
+$breakpoints: (
+  sm: 40rem,
+  md: 48rem,
+  lg: 64rem,
+  xl: 80rem,
+  page: 87.5rem,
+);
+
+// min-width media query: @include up(md) { ... }
+@mixin up($name) {
+  @if map.has-key($breakpoints, $name) {
+    @media (min-width: map.get($breakpoints, $name)) {
+      @content;
+    }
+  } @else {
+    @error "Unknown breakpoint: #{$name}";
+  }
+}
+
+// Only run on devices with a real pointer (mouse) — used to gate cursor FX.
+@mixin fine-pointer {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+// Honor the user's reduced-motion preference.
+@mixin reduce-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+// Accessible visually-hidden (screen-reader only).
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

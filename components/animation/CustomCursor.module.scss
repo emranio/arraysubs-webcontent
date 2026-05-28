@@ -1,0 +1,40 @@
+@use "../../styles/mixins" as *;
+
+.dot,
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #fff;
+}
+
+.ring {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.09375rem solid #fff;
+}
+
+// Never show on touch devices or when motion is reduced.
+@media (hover: none), (pointer: coarse) {
+  .dot,
+  .ring {
+    display: none;
+  }
+}
+
+@include reduce-motion {
+  .dot,
+  .ring {
+    display: none;
+  }
+}

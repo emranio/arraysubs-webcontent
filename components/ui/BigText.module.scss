@@ -1,0 +1,37 @@
+@use "../../styles/mixins" as *;
+
+.text {
+  --fill-progress: 0%;
+  --bt-base: var(--color-border-strong);
+  --bt-fill: var(--color-dark);
+
+  display: block;
+  background-image: linear-gradient(var(--bt-fill), var(--bt-fill)),
+    linear-gradient(var(--bt-base), var(--bt-base));
+  background-repeat: no-repeat;
+  background-size:
+    var(--fill-progress) 100%,
+    100% 100%;
+  background-position: left center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+// Graceful fallback where background-clip: text is unsupported.
+@supports not (background-clip: text) {
+  .text {
+    background: none;
+    color: var(--bt-fill);
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
+// Reduced motion: BigText sets --fill-progress to 100% from JS; ensure the
+// fill is fully visible even before JS runs.
+@include reduce-motion {
+  .text {
+    --fill-progress: 100%;
+  }
+}
