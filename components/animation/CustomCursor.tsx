@@ -59,7 +59,7 @@ const SHAPES = {
   circle: roundedPolygon(9, 10, 100),
   triangle: roundedPolygon(10, 3, 2.6),
   square: roundedPolygon(10, 4, 3.4, -Math.PI / 4),
-  star: roundedPolygon(10, 5, 1.3, -Math.PI / 2, 0.45),
+  hexagon: roundedPolygon(10, 6, 2.6, 0),
 };
 type ShapeKey = keyof typeof SHAPES;
 const SHAPE_KEYS = Object.keys(SHAPES) as ShapeKey[];
@@ -67,7 +67,7 @@ const SHAPE_KEYS = Object.keys(SHAPES) as ShapeKey[];
 /**
  * GSAP cursor companion that follows the system pointer (the native cursor stays
  * visible). A small solid ring trails the pointer; an inverting dot tracks it
- * tightly and morphs into random rounded shapes (triangle/square/star/circle)
+ * tightly and morphs into random rounded shapes (triangle/square/hexagon/circle)
  * on fast movement, settling back to a circle when motion slows. Disabled on
  * touch devices and under reduced motion.
  */
