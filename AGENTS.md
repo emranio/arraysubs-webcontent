@@ -124,8 +124,9 @@ Import alias: `@/*` → repo root (e.g. `@/components/ui`, `@/lib/seo`).
 - **All motion respects `prefers-reduced-motion`.** GSAP helpers in `lib/gsap.ts`
   (`prefersReducedMotion`, `hasFinePointer`) gate every effect; CSS also clamps
   transitions/animations. Never add motion that ignores this.
-- Maintain WCAG AA contrast. Dark text (`--color-foreground`) on light; the lime
-  `highlight`/`primary` are **backgrounds with dark text**, never text on white.
+- Maintain WCAG AA contrast. Dark text (`--color-foreground`) on light; the
+  purple `primary`/`primary-strong` are **backgrounds with on-dark text**.
+  `highlight` is a light tint that uses dark text.
 
 ## Motion patterns (GSAP)
 

@@ -18,7 +18,7 @@ type OfferCardProps = {
   metaValue: ReactNode;
   /** Optional small suffix after the value (e.g., "USD", "forever"). */
   metaSuffix?: string;
-  /** Pin the card to the "hover" look — primary border, lime number chip, filled arrow. */
+  /** Pin the card to the "hover" look — primary border, number chip, filled arrow. */
   featured?: boolean;
   /** When set, the whole card becomes a link to this href. */
   href?: string;
@@ -30,7 +30,7 @@ type OfferCardProps = {
 /**
  * Numbered offer / tier card.
  *
- * The "colored" look (primary border, lime number chip, filled CTA arrow) is a
+ * The "colored" look (primary border, number chip, filled CTA arrow) is a
  * proper **hover state** by default — every card animates into it on hover.
  * Pass `featured` to pin a card in that look statically (e.g., for promos).
  */
@@ -64,7 +64,7 @@ export function OfferCard({
       )}
     >
       <div className="flex items-start justify-between gap-4">
-        {/* Number — slides between faint text and a lime chip with dark text. */}
+        {/* Number — slides between faint text and a primary chip. */}
         <span className="relative inline-flex font-display text-base font-bold tabular-nums">
           <span
             aria-hidden="true"
@@ -77,8 +77,8 @@ export function OfferCard({
             className={cn(
               "relative px-1 transition-colors duration-200",
               featured
-                ? "text-dark"
-                : "text-faint group-hover/offer:text-dark",
+                ? "text-on-dark"
+                : "text-faint group-hover/offer:text-on-dark",
             )}
           >
             {numStr}
@@ -130,14 +130,14 @@ export function OfferCard({
           </div>
         </div>
 
-        {/* Arrow CTA — switches from outline to a filled lime pill on hover. */}
+        {/* Arrow CTA — switches from outline to a filled primary pill on hover. */}
         <span
           aria-hidden="true"
           className={cn(
             "inline-flex size-12 shrink-0 items-center justify-center rounded-full border transition-colors duration-200",
             featured
-              ? "border-primary bg-primary text-dark"
-              : "border-border-strong bg-background text-foreground group-hover/offer:border-primary group-hover/offer:bg-primary group-hover/offer:text-dark",
+              ? "border-primary bg-primary text-on-dark"
+              : "border-border-strong bg-background text-foreground group-hover/offer:border-primary group-hover/offer:bg-primary group-hover/offer:text-on-dark",
           )}
         >
           <ArrowUpRight className="size-5 transition-transform duration-200 group-hover/offer:-translate-y-0.5 group-hover/offer:translate-x-0.5" />

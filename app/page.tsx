@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { createMetadata } from "@/lib/seo";
+import { siteColors } from "@/lib/colors";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
 import {
   Accordion,
@@ -57,27 +58,27 @@ export const metadata: Metadata = createMetadata({
 });
 
 const BRAND_COLORS: [string, string, string][] = [
-  ["Highlight", "--color-highlight", "#e1ff51"],
-  ["Primary", "--color-primary", "#c2e82e"],
-  ["Primary strong", "--color-primary-strong", "#a9d016"],
-  ["Dark", "--color-dark", "#01171a"],
-  ["Dark 2", "--color-dark-2", "#013b43"],
+  ["Highlight", "--color-highlight", siteColors.highlight],
+  ["Primary", "--color-primary", siteColors.primary],
+  ["Primary strong", "--color-primary-strong", siteColors.primaryStrong],
+  ["Dark", "--color-dark", siteColors.dark],
+  ["Dark 2", "--color-dark-2", siteColors.dark2],
 ];
 
 const NEUTRAL_COLORS: [string, string, string][] = [
-  ["Background", "--color-background", "#ffffff"],
-  ["Surface", "--color-surface", "#f5f8f2"],
-  ["Surface 2", "--color-surface-2", "#eef2e8"],
-  ["Foreground", "--color-foreground", "#01171a"],
-  ["Muted", "--color-muted", "#4a5f63"],
-  ["Faint", "--color-faint", "#7c8f92"],
-  ["Border", "--color-border", "#e3e9e3"],
-  ["Border strong", "--color-border-strong", "#c9d3cb"],
+  ["Background", "--color-background", siteColors.background],
+  ["Surface", "--color-surface", siteColors.surface],
+  ["Surface 2", "--color-surface-2", siteColors.surface2],
+  ["Foreground", "--color-foreground", siteColors.foreground],
+  ["Muted", "--color-muted", siteColors.muted],
+  ["Faint", "--color-faint", siteColors.faint],
+  ["Border", "--color-border", siteColors.border],
+  ["Border strong", "--color-border-strong", siteColors.borderStrong],
 ];
 
 const FEEDBACK_COLORS: [string, string, string][] = [
-  ["Danger", "--color-danger", "#c2362b"],
-  ["Success", "--color-success", "#1f7a4d"],
+  ["Danger", "--color-danger", siteColors.danger],
+  ["Success", "--color-success", siteColors.success],
 ];
 
 const DISPLAY_SIZES: [string, string][] = [
@@ -308,7 +309,7 @@ export default function DesignSystemPage() {
           <SectionTitle
             eyebrow="Foundations"
             title="Color"
-            subtitle="A focused palette built from the lime highlight and the deep teal dark. Primary is a deeper highlight for actions; the dark anchors text and dark sections."
+            subtitle="A focused purple palette built from #873EFF. Primary carries actions, light tints carry soft surfaces, and the dark purple anchors text and dark sections."
           />
           <div className="mt-12 flex flex-col gap-10">
             <ColorGroup title="Brand" colors={BRAND_COLORS} />
@@ -512,7 +513,7 @@ export default function DesignSystemPage() {
           <SectionTitle
             eyebrow="Components"
             title="Offer cards"
-            subtitle="Numbered tier / package cards with a title, eyebrow, footer stat and arrow CTA. Hover a card for the primary border, lime number chip and filled arrow."
+            subtitle="Numbered tier / package cards with a title, eyebrow, footer stat and arrow CTA. Hover a card for the primary border, number chip and filled arrow."
           />
           <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2">
             <OfferCard

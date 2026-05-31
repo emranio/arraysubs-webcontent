@@ -22,35 +22,35 @@ All colors are CSS custom properties; Tailwind generates `bg-*`, `text-*`,
 ### Brand
 | Token | Hex | Utility | Use |
 | --- | --- | --- | --- |
-| `--color-highlight` | `#e1ff51` | `*-highlight` | Bright accent / marker, badges, hero shape |
-| `--color-primary` | `#c2e82e` | `*-primary` | Primary action color (deeper highlight) |
-| `--color-primary-strong` | `#a9d016` | `*-primary-strong` | Primary hover/active |
-| `--color-dark` | `#01171a` | `*-dark` | Text, dark sections, dark buttons |
-| `--color-dark-2` | `#013b43` | `*-dark-2` | Elevated surface on dark |
+| `--color-highlight` | `#EFE7FF` | `*-highlight` | Light purple accent / marker, badges, hero shape |
+| `--color-primary` | `#873EFF` | `*-primary` | Primary action color |
+| `--color-primary-strong` | `#6F22E6` | `*-primary-strong` | Primary hover/active |
+| `--color-dark` | `#12002B` | `*-dark` | Text, dark sections, dark buttons |
+| `--color-dark-2` | `#26005C` | `*-dark-2` | Elevated surface on dark |
 
 ### Neutral (light)
 | Token | Hex | Use |
 | --- | --- | --- |
-| `--color-background` | `#ffffff` | Page background |
-| `--color-surface` | `#f5f8f2` | Subtle section / card surface |
-| `--color-surface-2` | `#eef2e8` | Deeper surface (segmented controls) |
-| `--color-foreground` | `#01171a` | Body + heading text |
-| `--color-muted` | `#4a5f63` | Secondary text (AA on white) |
-| `--color-faint` | `#7c8f92` | Tertiary text, placeholders, code labels |
-| `--color-border` | `#e3e9e3` | Default borders |
-| `--color-border-strong` | `#c9d3cb` | Emphasized borders |
+| `--color-background` | `#FFFFFF` | Page background |
+| `--color-surface` | `#F8F5FF` | Subtle section / card surface |
+| `--color-surface-2` | `#F0E9FF` | Deeper surface (segmented controls) |
+| `--color-foreground` | `#12002B` | Body + heading text |
+| `--color-muted` | `#5B4778` | Secondary text (AA on white) |
+| `--color-faint` | `#8D7AAA` | Tertiary text, placeholders, code labels |
+| `--color-border` | `#DED2F4` | Default borders |
+| `--color-border-strong` | `#C5ADEF` | Emphasized borders |
 
 ### On dark
-`--color-on-dark` `#f1f7f1` · `--color-on-dark-muted` `#9fb6b8` ·
-`--color-on-dark-border` `#14474f`. Apply the `on-dark` class (or `Section
+`--color-on-dark` `#F6F0FF` · `--color-on-dark-muted` `#CBB8EE` ·
+`--color-on-dark-border` `#3C1A72`. Apply the `on-dark` class (or `Section
 surface="dark"`) so the focus ring switches to highlight.
 
 ### Feedback
-`--color-danger` `#c2362b` · `--color-success` `#1f7a4d`.
+`--color-danger` `#B83A7A` · `--color-success` `#6040DB`.
 
-**Contrast rules:** `highlight`, `primary` and `primary-strong` are light — only
-use them as **backgrounds with dark text**, never as text on white. Dark sections
-use `on-dark` text.
+**Contrast rules:** `highlight` is light and uses dark text. `primary` and
+`primary-strong` use light `on-dark` text when they are backgrounds. Dark
+sections use `on-dark` text.
 
 ---
 
@@ -73,7 +73,7 @@ use `on-dark` text.
 `text-xl` 1.25 · `text-2xl` 1.5 · `text-3xl` 1.875 · `text-4xl` 2.25 …up to `text-6xl`.
 
 Body copy is `text-base`/`text-lg`; secondary text adds `text-muted`. Use
-`marker-highlight` for a lime highlighter bar behind inline text.
+`marker-highlight` for a purple-tint highlighter bar behind inline text.
 
 ---
 
@@ -150,7 +150,7 @@ style — never a second component. Example: a new "soft" button is
 - [ ] Inner page has `<Breadcrumbs>`; homepage/landing has `<Hero>` (no breadcrumb).
 - [ ] Forms use `<Field>`; errors use `role="alert"`; success uses `role="status"`.
 - [ ] Images have `alt`; decorative elements are `aria-hidden`.
-- [ ] AA contrast; lime colors only as backgrounds with dark text.
+- [ ] AA contrast; primary purple uses `on-dark` text when used as a background.
 - [ ] Motion gated by `prefers-reduced-motion`.
 - [ ] FAQ sections include `FAQPage` JSON-LD.
 

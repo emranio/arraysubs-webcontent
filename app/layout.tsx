@@ -8,6 +8,7 @@ import { CustomCursor } from "@/components/animation/CustomCursor";
 import { ScrollBackground } from "@/components/animation/ScrollBackground";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { siteColors } from "@/lib/colors";
 
 const fontDisplay = Funnel_Display({
   subsets: ["latin"],
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#ffffff",
+  themeColor: siteColors.background,
   colorScheme: "light",
 };
 

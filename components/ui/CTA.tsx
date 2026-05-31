@@ -6,14 +6,14 @@ type Surface = "highlight" | "primary" | "dark" | "surface";
 
 const surfaces: Record<Surface, string> = {
   highlight: "bg-highlight text-dark",
-  primary: "bg-primary text-dark",
+  primary: "bg-primary text-on-dark",
   dark: "bg-dark text-on-dark on-dark",
   surface: "bg-surface text-foreground",
 };
 
-/** Decorative lime-on-lime shapes for the bright surfaces (flat, no gradient). */
+/** Decorative tone-on-tone shapes for the bright surfaces (flat, no gradient). */
 const BRIGHT_DECOR: Partial<Record<Surface, { topRight: string; bottomLeft: string }>> = {
-  // Mirrors the Hero `highlight` tone: lime bg with deeper-lime primary shapes.
+  // Mirrors the Hero `highlight` tone: light tint bg with primary shapes.
   highlight: { topRight: "bg-primary", bottomLeft: "bg-primary" },
   primary: { topRight: "bg-highlight", bottomLeft: "bg-highlight" },
 };
@@ -32,7 +32,7 @@ type CTAProps = {
 
 /**
  * Reusable call-to-action panel. Bright surfaces (`highlight`, `primary`) get
- * a pair of oversized lime-on-lime decorative circles for visual depth — no
+ * a pair of oversized tone-on-tone decorative circles for visual depth — no
  * gradients, all flat tones.
  */
 export function CTA({

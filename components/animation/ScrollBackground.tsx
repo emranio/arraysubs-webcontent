@@ -7,14 +7,10 @@ import {
   ScrollTrigger,
   useGSAP,
 } from "@/lib/gsap";
+import { scrollBackgroundThemes } from "@/lib/colors";
 
 /** Background + foreground pairs keyed by the `data-scroll-bg` value. */
-const THEMES = {
-  light: { bg: "#ffffff", fg: "#01171a" },
-  surface: { bg: "#f5f8f2", fg: "#01171a" },
-  dark: { bg: "#01171a", fg: "#f1f7f1" },
-  highlight: { bg: "#e1ff51", fg: "#01171a" },
-} as const;
+const THEMES = scrollBackgroundThemes;
 
 type ThemeKey = keyof typeof THEMES;
 

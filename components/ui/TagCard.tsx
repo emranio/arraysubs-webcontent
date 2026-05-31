@@ -10,7 +10,7 @@ type TagCardProps = {
   tag: string;
   title: ReactNode;
   description: ReactNode;
-  /** Color of the tag pill. Default: highlight (lime). */
+  /** Color of the tag pill. Default: highlight. */
   tagTone?: TagTone;
   /** When set, the whole card becomes a link. */
   href?: string;
@@ -36,11 +36,11 @@ const tagBg: Record<TagTone, string> = {
 /**
  * Tag-pill feature card.
  *
- * Rest: surface with a lime/gold/primary pill on top, dark title + muted
+ * Rest: surface with a highlight/gold/primary pill on top, dark title + muted
  * description, faint arrow bottom-right.
  *
- * Hover (or `active`): the cell fills dark (deep teal), the title flips to
- * light, the description goes muted-on-dark, and the arrow brightens to lime
+ * Hover (or `active`): the cell fills dark, the title flips to light, the
+ * description goes muted-on-dark, and the arrow brightens to primary
  * and nudges up-right.
  *
  * `bare` removes the border + rounding so cards tile seamlessly in a grid.

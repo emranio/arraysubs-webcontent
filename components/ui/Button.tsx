@@ -38,9 +38,9 @@ type ButtonProps = OwnProps &
   );
 
 const variants: Record<Variant, string> = {
-  primary: "bg-primary text-dark hover:bg-primary-strong",
+  primary: "bg-primary text-on-dark hover:bg-primary-strong",
   dark: "bg-dark text-on-dark hover:bg-dark-2",
-  highlight: "bg-highlight text-dark hover:bg-primary",
+  highlight: "bg-highlight text-dark hover:bg-primary hover:text-on-dark",
   // outline + ghost inherit currentColor, so they adapt to light/dark surfaces.
   outline: "border-2 border-current hover:bg-current/10",
   ghost: "hover:bg-current/10",

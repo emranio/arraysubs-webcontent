@@ -28,7 +28,7 @@ type HeroProps = {
 const tones: Record<Tone, { bg: string; decor: string }> = {
   default: { bg: "", decor: "bg-highlight" },
   highlight: { bg: "bg-highlight text-dark", decor: "bg-primary" },
-  primary: { bg: "bg-primary text-dark", decor: "bg-highlight" },
+  primary: { bg: "bg-primary text-on-dark", decor: "bg-highlight" },
 };
 
 /**
