@@ -27,6 +27,8 @@ import {
   IconCard,
   Input,
   LeadForm,
+  Manifesto,
+  type ManifestoLine,
   MultiStepForm,
   Multiselect,
   Range,
@@ -37,6 +39,7 @@ import {
   Slider,
   Switch,
   Tabs,
+  Testimonials,
   Textarea,
 } from "@/components/ui";
 
@@ -195,6 +198,73 @@ const FEATURE_OPTIONS = [
   { label: "Retention flow", value: "retention" },
 ];
 
+const MANIFESTO_LINES: ManifestoLine[] = [
+  [
+    { type: "text", text: "The" },
+    {
+      type: "pill",
+      icon: <Repeat className="size-6 sm:size-8 lg:size-10" />,
+      label: "Recurring",
+      color: "highlight",
+    },
+    { type: "text", text: "Complete Subscription", color: "highlight" },
+  ],
+  [
+    { type: "text", text: "& Membership" },
+    {
+      type: "pill",
+      icon: <ShieldCheck className="size-6 sm:size-8 lg:size-10" />,
+      label: "Members",
+      color: "gold",
+    },
+    { type: "text", text: "Engine for", color: "gold" },
+  ],
+  [
+    { type: "text", text: "Ambitious" },
+    {
+      type: "pill",
+      icon: <HeartHandshake className="size-6 sm:size-8 lg:size-10" />,
+      label: "Retention",
+      color: "primary",
+    },
+    { type: "text", text: "WooCommerce", color: "highlight" },
+  ],
+  [
+    { type: "text", text: "Stores", color: "gold" },
+    {
+      type: "pill",
+      icon: <BarChart3 className="size-6 sm:size-8 lg:size-10" />,
+      label: "Analytics",
+      color: "white",
+    },
+    { type: "text", text: "Today!" },
+  ],
+];
+
+const WPORG_REVIEWS = [
+  {
+    quote:
+      "Working with ArraySubs has been a game-changer for our store. The Retention Flow alone saved more subscriptions than we expected — and the free tier covers more than our old paid stack.",
+    name: "Esther Howard",
+    context: "WooCommerce store owner",
+    rating: 5,
+  },
+  {
+    quote:
+      "The setup wizard had us live in under ten minutes. Skip, pause and renewal sync are features I couldn't find in any other free subscription plugin.",
+    name: "Marvin McKinney",
+    context: "Subscription box founder",
+    rating: 5,
+  },
+  {
+    quote:
+      "One plugin replaced four. Subscriptions, memberships, store credit and analytics finally share the same data layer — zero conflicts since we switched.",
+    name: "Jenny Wilson",
+    context: "Membership site owner",
+    rating: 5,
+  },
+];
+
 export default function DesignSystemPage() {
   return (
     <>
@@ -244,7 +314,7 @@ export default function DesignSystemPage() {
       </Section>
 
       {/* ---- Foundations: typography ----------------------------------- */}
-      <Section>
+      <Section id="typography">
         <Container>
           <SectionTitle
             eyebrow="Foundations"
@@ -322,7 +392,7 @@ export default function DesignSystemPage() {
       </Section>
 
       {/* ---- Big display text (scroll-fill) ---------------------------- */}
-      <Section surface="surface">
+      <Section id="big-text" surface="surface">
         <Container>
           <SectionTitle
             eyebrow="Foundations"
@@ -405,7 +475,7 @@ export default function DesignSystemPage() {
       </Section>
 
       {/* ---- Components: section titles + icon cards ------------------- */}
-      <Section surface="surface">
+      <Section id="cards" surface="surface">
         <Container>
           <SectionTitle
             eyebrow="Components"
@@ -432,7 +502,7 @@ export default function DesignSystemPage() {
       </Section>
 
       {/* ---- Components: accordion + tabs ------------------------------ */}
-      <Section>
+      <Section id="accordion">
         <Container>
           <div className="grid gap-16 lg:grid-cols-2">
             <div>
@@ -495,7 +565,7 @@ export default function DesignSystemPage() {
       </Section>
 
       {/* ---- Components: slider ---------------------------------------- */}
-      <Section surface="surface">
+      <Section id="slider" surface="surface">
         <Container>
           <SectionTitle
             eyebrow="Components"
@@ -529,8 +599,18 @@ export default function DesignSystemPage() {
         </Container>
       </Section>
 
+      {/* ---- Feature manifesto (dark editorial section) ----------------- */}
+      <Manifesto id="manifesto" lines={MANIFESTO_LINES} />
+
+      {/* ---- Testimonials (WordPress.org reviews) ---------------------- */}
+      <Section id="testimonials">
+        <Container>
+          <Testimonials items={WPORG_REVIEWS} />
+        </Container>
+      </Section>
+
       {/* ---- Components: CTA panels ------------------------------------ */}
-      <Section>
+      <Section id="cta-panels">
         <Container>
           <SectionTitle
             eyebrow="Components"
@@ -637,7 +717,7 @@ export default function DesignSystemPage() {
           </div>
 
           <div className="mt-12 grid items-start gap-12 lg:grid-cols-2">
-            <div className="flex flex-col gap-6">
+            <div id="lead-capture" className="flex flex-col gap-6 scroll-mt-32">
               <h3 className="text-sm font-semibold tracking-wider text-muted uppercase">
                 Lead capture
               </h3>
@@ -645,7 +725,7 @@ export default function DesignSystemPage() {
                 <LeadForm />
               </div>
             </div>
-            <div className="flex flex-col gap-6">
+            <div id="multistep" className="flex flex-col gap-6 scroll-mt-32">
               <h3 className="text-sm font-semibold tracking-wider text-muted uppercase">
                 Multi-step form
               </h3>
@@ -696,6 +776,7 @@ export default function DesignSystemPage() {
 
       {/* ---- Motion: scroll-reactive background band ------------------- */}
       <Section
+        id="scroll-bg"
         surface="transparent"
         scrollBg="dark"
         className="flex min-h-[80vh] items-center"

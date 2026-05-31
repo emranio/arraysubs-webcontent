@@ -11,7 +11,7 @@ import { Magnetic } from "@/components/animation/Magnetic";
 
 /** Style variants are named by their look, per the design-system convention. */
 type Variant = "primary" | "dark" | "highlight" | "outline" | "ghost";
-type Size = "sm" | "md" | "lg";
+type Size = "xs" | "sm" | "md" | "lg";
 
 type OwnProps = {
   variant?: Variant;
@@ -47,6 +47,7 @@ const variants: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, string> = {
+  xs: "h-9 px-4 text-sm",
   sm: "h-10 px-5 text-sm",
   md: "h-12 px-7 text-base",
   lg: "h-14 px-8 text-lg",
@@ -68,7 +69,7 @@ export function Button({
     : "transition-[transform,background-color,border-color,color] duration-200 ease-out hover:-translate-y-0.5";
 
   const classes = cn(
-    "group inline-flex items-center justify-center gap-2 rounded-pill font-semibold whitespace-nowrap select-none",
+    "group inline-flex cursor-pointer items-center justify-center gap-2 rounded-pill font-semibold whitespace-nowrap select-none",
     "disabled:pointer-events-none disabled:opacity-50",
     motion,
     variants[variant],

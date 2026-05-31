@@ -96,16 +96,18 @@ Import from the barrel: `import { Button, SectionTitle, … } from "@/components
 | `Section` | `surface`, `spacing`, `scrollBg`, `as` | Semantic section + surface theme |
 | `SectionTitle` | `eyebrow`, `title`, `subtitle`, `align`, `as`, `size` | Eyebrow + heading + sub text |
 | `Eyebrow` | `withLine` | Uppercase label |
-| `Button` | `variant` (`primary`/`dark`/`highlight`/`outline`/`ghost`), `size` (`sm/md/lg`), `magnetic`, `href`, `iconLeft/Right`, `fullWidth` | Renders `<button>` or Next `<Link>` |
+| `Button` | `variant` (`primary`/`dark`/`highlight`/`outline`/`ghost`), `size` (`xs/sm/md/lg`), `magnetic`, `href`, `iconLeft/Right`, `fullWidth` | Renders `<button>` or Next `<Link>` |
 | `Badge` | `tone` (`neutral/primary/dark/highlight/outline`) | Free/Pro/New pills |
 | `Breadcrumbs` | `items`, `withSchema` | Inner pages only; emits BreadcrumbList JSON-LD |
 | `IconCard` | `icon`, `title`, `description`, `href`, `badge` | Becomes a link when `href` set |
 | `CTA` | `surface`, `eyebrow`, `title`, `subtitle`, `actions`, `microcopy` | Reusable CTA band |
 | `Hero` | `eyebrow`, `title`, `subtitle`, `actions`, `trust`, `media`, `headingLevel` | Landing hero, cursor parallax, no breadcrumb |
+| `Manifesto` | `lines`, `description` | Dark editorial feature statement: big mixed-color text + inline pills |
 | `BigText` | `size`, `variant` (`ink/highlight/primary`), `align`, `as` | Scroll-fill display heading |
 | `Accordion` | `items`, `allowMultiple`, `defaultOpen` | ARIA disclosure, animated, `inert` when closed |
 | `Tabs` | `tabs`, `defaultIndex`, `label` | ARIA tabs, arrow-key nav, fade panel |
 | `Slider` | `children`, `label` | Scroll-snap carousel + labelled controls |
+| `Testimonials` | `items`, `label` | Single-quote review carousel with avatar, 5-star rating + prev/next |
 
 ### Forms (`@/components/ui` → form primitives)
 All controls are **custom-designed** (no native browser appearance) and accessible:

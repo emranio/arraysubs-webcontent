@@ -9,10 +9,12 @@ export { Breadcrumbs, type BreadcrumbItem } from "./Breadcrumbs";
 export { IconCard } from "./IconCard";
 export { CTA } from "./CTA";
 export { Hero } from "./Hero";
+export { Manifesto, type ManifestoLine } from "./Manifesto";
 export { BigText } from "./BigText";
 export { Accordion, type AccordionItemData } from "./Accordion";
 export { Tabs, type TabItem } from "./Tabs";
 export { Slider } from "./Slider";
+export { Testimonials, type TestimonialItem } from "./Testimonials";
 
 // Form controls
 export { Field } from "./form/Field";
