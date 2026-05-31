@@ -7,6 +7,7 @@ export { Button } from "./Button";
 export { Badge } from "./Badge";
 export { Breadcrumbs, type BreadcrumbItem } from "./Breadcrumbs";
 export { IconCard } from "./IconCard";
+export { OfferCard } from "./OfferCard";
 export { CTA } from "./CTA";
 export { Hero } from "./Hero";
 export { Manifesto, type ManifestoLine } from "./Manifesto";

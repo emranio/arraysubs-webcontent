@@ -26,6 +26,7 @@ import {
   Hero,
   IconCard,
   Input,
+  OfferCard,
   LeadForm,
   Manifesto,
   type ManifestoLine,
@@ -55,7 +56,7 @@ const BRAND_COLORS: [string, string, string][] = [
   ["Highlight", "--color-highlight", "#e1ff51"],
   ["Primary", "--color-primary", "#c2e82e"],
   ["Primary strong", "--color-primary-strong", "#a9d016"],
-  ["Dark", "--color-dark", "#00272c"],
+  ["Dark", "--color-dark", "#01171a"],
   ["Dark 2", "--color-dark-2", "#013b43"],
 ];
 
@@ -63,7 +64,7 @@ const NEUTRAL_COLORS: [string, string, string][] = [
   ["Background", "--color-background", "#ffffff"],
   ["Surface", "--color-surface", "#f5f8f2"],
   ["Surface 2", "--color-surface-2", "#eef2e8"],
-  ["Foreground", "--color-foreground", "#00272c"],
+  ["Foreground", "--color-foreground", "#01171a"],
   ["Muted", "--color-muted", "#4a5f63"],
   ["Faint", "--color-faint", "#7c8f92"],
   ["Border", "--color-border", "#e3e9e3"],
@@ -498,6 +499,44 @@ export default function DesignSystemPage() {
               />
             ))}
           </ScrollReveal>
+        </Container>
+      </Section>
+
+      {/* ---- Components: offer cards ----------------------------------- */}
+      <Section id="offer-cards">
+        <Container>
+          <SectionTitle
+            eyebrow="Components"
+            title="Offer cards"
+            subtitle="Numbered tier / package cards with a title, eyebrow, footer stat and arrow CTA. Mark one as featured to set it apart with a primary border, a lime number chip and a filled arrow."
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            <OfferCard
+              number={1}
+              badge="Free forever"
+              title="ArraySubs Free Core"
+              eyebrow="Always shipping on WordPress.org"
+              description="The foundation for any subscription store — recurring billing, member access, the customer portal and the Retention Flow Builder, free forever."
+              metaLabel="Price"
+              metaValue="$0"
+              metaSuffix="forever"
+              href="#cta"
+              cta="Download the free plugin"
+            />
+            <OfferCard
+              number={2}
+              badge="Limited early access"
+              title="ArraySubs Pro"
+              eyebrow="Unlock the full subscription stack"
+              description="Adds store credit, the visual checkout builder, automatic payments (Stripe / PayPal / Paddle), advanced analytics and audit logs."
+              metaLabel="Early access"
+              metaValue="4 months"
+              metaSuffix="free"
+              featured
+              href="#cta"
+              cta="Claim a Pro license"
+            />
+          </div>
         </Container>
       </Section>
 

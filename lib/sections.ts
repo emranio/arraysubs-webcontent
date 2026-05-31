@@ -19,6 +19,7 @@ export const SECTIONS: SectionCategory[] = [
     items: [
       { label: "Buttons", href: "#components" },
       { label: "Section titles & icon cards", href: "#cards" },
+      { label: "Offer cards", href: "#offer-cards" },
       { label: "Accordion & Tabs", href: "#accordion" },
       { label: "Slider", href: "#slider" },
       { label: "Testimonials", href: "#testimonials" },

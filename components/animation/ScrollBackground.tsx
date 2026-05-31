@@ -10,10 +10,10 @@ import {
 
 /** Background + foreground pairs keyed by the `data-scroll-bg` value. */
 const THEMES = {
-  light: { bg: "#ffffff", fg: "#00272c" },
-  surface: { bg: "#f5f8f2", fg: "#00272c" },
-  dark: { bg: "#00272c", fg: "#f1f7f1" },
-  highlight: { bg: "#e1ff51", fg: "#00272c" },
+  light: { bg: "#ffffff", fg: "#01171a" },
+  surface: { bg: "#f5f8f2", fg: "#01171a" },
+  dark: { bg: "#01171a", fg: "#f1f7f1" },
+  highlight: { bg: "#e1ff51", fg: "#01171a" },
 } as const;
 
 type ThemeKey = keyof typeof THEMES;

@@ -25,7 +25,7 @@ All colors are CSS custom properties; Tailwind generates `bg-*`, `text-*`,
 | `--color-highlight` | `#e1ff51` | `*-highlight` | Bright accent / marker, badges, hero shape |
 | `--color-primary` | `#c2e82e` | `*-primary` | Primary action color (deeper highlight) |
 | `--color-primary-strong` | `#a9d016` | `*-primary-strong` | Primary hover/active |
-| `--color-dark` | `#00272c` | `*-dark` | Text, dark sections, dark buttons |
+| `--color-dark` | `#01171a` | `*-dark` | Text, dark sections, dark buttons |
 | `--color-dark-2` | `#013b43` | `*-dark-2` | Elevated surface on dark |
 
 ### Neutral (light)
@@ -34,7 +34,7 @@ All colors are CSS custom properties; Tailwind generates `bg-*`, `text-*`,
 | `--color-background` | `#ffffff` | Page background |
 | `--color-surface` | `#f5f8f2` | Subtle section / card surface |
 | `--color-surface-2` | `#eef2e8` | Deeper surface (segmented controls) |
-| `--color-foreground` | `#00272c` | Body + heading text |
+| `--color-foreground` | `#01171a` | Body + heading text |
 | `--color-muted` | `#4a5f63` | Secondary text (AA on white) |
 | `--color-faint` | `#7c8f92` | Tertiary text, placeholders, code labels |
 | `--color-border` | `#e3e9e3` | Default borders |
@@ -100,6 +100,7 @@ Import from the barrel: `import { Button, SectionTitle, … } from "@/components
 | `Badge` | `tone` (`neutral/primary/dark/highlight/outline`) | Free/Pro/New pills |
 | `Breadcrumbs` | `items`, `withSchema` | Inner pages only; emits BreadcrumbList JSON-LD |
 | `IconCard` | `icon`, `title`, `description`, `href`, `badge` | Becomes a link when `href` set |
+| `OfferCard` | `number`, `badge`, `title`, `eyebrow`, `description`, `metaLabel`, `metaValue`, `metaSuffix`, `featured`, `href` | Numbered tier/offer card with eyebrow + footer stat + arrow CTA |
 | `CTA` | `surface`, `eyebrow`, `title`, `subtitle`, `actions`, `microcopy` | Reusable CTA band |
 | `Hero` | `eyebrow`, `title`, `subtitle`, `actions`, `trust`, `media`, `headingLevel` | Landing hero, cursor parallax, no breadcrumb |
 | `Manifesto` | `lines`, `description` | Dark editorial feature statement: big mixed-color text + inline pills |
