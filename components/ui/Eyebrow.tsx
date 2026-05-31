@@ -17,7 +17,7 @@ export function Eyebrow({ children, withLine = true, className }: EyebrowProps) 
       )}
     >
       {withLine && (
-        <span aria-hidden="true" className="h-px w-8 bg-current opacity-50" />
+        <span aria-hidden="true" className="opacity-50">/</span>
       )}
       {children}
     </span>

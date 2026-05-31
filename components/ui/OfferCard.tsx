@@ -18,9 +18,9 @@ type OfferCardProps = {
   metaValue: ReactNode;
   /** Optional small suffix after the value (e.g., "USD", "forever"). */
   metaSuffix?: string;
-  /** Featured = primary-color border + filled CTA arrow + prominent number chip. */
+  /** Pin the card to the "hover" look — primary border, lime number chip, filled arrow. */
   featured?: boolean;
-  /** When set, the whole card and its CTA become a link to this href. */
+  /** When set, the whole card becomes a link to this href. */
   href?: string;
   /** Accessible label for the CTA arrow. */
   cta?: string;
@@ -30,11 +30,9 @@ type OfferCardProps = {
 /**
  * Numbered offer / tier card.
  *
- * Layout: `/NN` number top-left + optional badge top-right, big title with an
- * optional uppercase eyebrow, description, divider, then a footer with a
- * label/value pair on the left and an arrow CTA on the right. `featured` swaps
- * the neutral border for a primary-color border and fills the CTA, and renders
- * the number as a lime chip.
+ * The "colored" look (primary border, lime number chip, filled CTA arrow) is a
+ * proper **hover state** by default — every card animates into it on hover.
+ * Pass `featured` to pin a card in that look statically (e.g., for promos).
  */
 export function OfferCard({
   number,
@@ -52,42 +50,41 @@ export function OfferCard({
 }: OfferCardProps) {
   const numStr = `/${String(number).padStart(2, "0")}`;
 
-  const arrow = (
-    <span
-      aria-hidden="true"
-      className={cn(
-        "inline-flex size-12 shrink-0 items-center justify-center rounded-full transition-colors",
-        featured
-          ? "bg-primary text-dark group-hover/offer:bg-primary-strong"
-          : "border border-border-strong text-foreground group-hover/offer:border-dark",
-      )}
-    >
-      <ArrowUpRight className="size-5" />
-    </span>
-  );
-
-  const numberChip = featured ? (
-    <span className="inline-flex items-center rounded-md bg-primary px-2 py-1 font-display text-base font-bold text-dark tabular-nums">
-      {numStr}
-    </span>
-  ) : (
-    <span className="font-display text-base font-bold text-faint tabular-nums">
-      {numStr}
-    </span>
-  );
+  /** Returns classes that apply at rest, on hover, and statically when featured. */
+  const at = (rest: string, active: string) =>
+    featured ? active : cn(rest, active.replace(/(^|\s)/g, "$1group-hover/offer:"));
 
   const Body = (
     <article
       className={cn(
-        "group/offer relative flex h-full flex-col rounded-2xl bg-background p-6 transition-colors sm:p-8",
-        featured
-          ? "border-2 border-primary"
-          : "border border-border hover:border-border-strong",
+        // 2px border always so there's no layout shift between states.
+        "group/offer relative flex h-full flex-col rounded-2xl border-2 bg-background p-6 transition-colors duration-200 sm:p-8",
+        featured ? "border-primary" : "border-border hover:border-primary",
         className,
       )}
     >
       <div className="flex items-start justify-between gap-4">
-        {numberChip}
+        {/* Number — slides between faint text and a lime chip with dark text. */}
+        <span className="relative inline-flex font-display text-base font-bold tabular-nums">
+          <span
+            aria-hidden="true"
+            className={cn(
+              "absolute inset-0 -mx-1 rounded-md bg-primary transition-opacity duration-200",
+              featured ? "opacity-100" : "opacity-0 group-hover/offer:opacity-100",
+            )}
+          />
+          <span
+            className={cn(
+              "relative px-1 transition-colors duration-200",
+              featured
+                ? "text-dark"
+                : "text-faint group-hover/offer:text-dark",
+            )}
+          >
+            {numStr}
+          </span>
+        </span>
+
         {badge && (
           <span className="inline-flex items-center rounded-pill border border-border-strong px-3 py-1 text-xs font-semibold tracking-wider text-muted uppercase">
             {badge}
@@ -102,8 +99,10 @@ export function OfferCard({
       {eyebrow && (
         <p
           className={cn(
-            "mt-3 text-xs font-semibold tracking-[0.18em] uppercase",
-            featured ? "text-foreground" : "text-muted",
+            "mt-3 text-xs font-semibold tracking-[0.18em] uppercase transition-colors duration-200",
+            featured
+              ? "text-foreground"
+              : "text-muted group-hover/offer:text-foreground",
           )}
         >
           {eyebrow}
@@ -130,7 +129,19 @@ export function OfferCard({
             )}
           </div>
         </div>
-        {arrow}
+
+        {/* Arrow CTA — switches from outline to a filled lime pill on hover. */}
+        <span
+          aria-hidden="true"
+          className={cn(
+            "inline-flex size-12 shrink-0 items-center justify-center rounded-full border transition-colors duration-200",
+            featured
+              ? "border-primary bg-primary text-dark"
+              : "border-border-strong bg-background text-foreground group-hover/offer:border-primary group-hover/offer:bg-primary group-hover/offer:text-dark",
+          )}
+        >
+          <ArrowUpRight className="size-5 transition-transform duration-200 group-hover/offer:-translate-y-0.5 group-hover/offer:translate-x-0.5" />
+        </span>
       </div>
     </article>
   );

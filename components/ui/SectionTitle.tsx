@@ -22,8 +22,8 @@ type SectionTitleProps = {
 
 const sizes: Record<Size, string> = {
   sm: "text-2xl sm:text-3xl",
-  md: "text-3xl sm:text-4xl",
-  lg: "text-4xl sm:text-display-sm",
+  md: "-ml-[3px] text-3xl sm:text-4xl",
+  lg: "-ml-[3px] text-4xl sm:text-display-sm",
   display: "text-display-sm sm:text-display",
 };
 

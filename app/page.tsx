@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   ArrowRight,
+  ArrowUpRight,
   BarChart3,
   Download,
   HeartHandshake,
@@ -27,6 +28,9 @@ import {
   IconCard,
   Input,
   OfferCard,
+  Statement,
+  StepCard,
+  TagCard,
   LeadForm,
   Manifesto,
   type ManifestoLine,
@@ -508,7 +512,7 @@ export default function DesignSystemPage() {
           <SectionTitle
             eyebrow="Components"
             title="Offer cards"
-            subtitle="Numbered tier / package cards with a title, eyebrow, footer stat and arrow CTA. Mark one as featured to set it apart with a primary border, a lime number chip and a filled arrow."
+            subtitle="Numbered tier / package cards with a title, eyebrow, footer stat and arrow CTA. Hover a card for the primary border, lime number chip and filled arrow."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             <OfferCard
@@ -532,10 +536,125 @@ export default function DesignSystemPage() {
               metaLabel="Early access"
               metaValue="4 months"
               metaSuffix="free"
-              featured
               href="#cta"
               cta="Claim a Pro license"
             />
+          </div>
+        </Container>
+      </Section>
+
+      {/* ---- Components: step cards ------------------------------------ */}
+      <Section id="step-cards" surface="surface">
+        <Container>
+          <SectionTitle
+            eyebrow="Components"
+            title="Step cards"
+            subtitle="Numbered process steps for engagement flows, onboarding or how-it-works rows. Hover any card — the border deepens and a primary accent bar slides in under the number."
+          />
+          <ScrollReveal
+            stagger={0.08}
+            y={0}
+            className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          >
+            <StepCard
+              number={1}
+              title="30-min fit call"
+              description="We learn your store, your stack and what you're trying to ship. If we're not a fit, we say so up front."
+            />
+            <StepCard
+              number={2}
+              title="1-page proposal"
+              description="Scope, deliverables, timeline and license terms. No fluff — sent within 48 hours."
+            />
+            <StepCard
+              number={3}
+              title="Kickoff in 7 days"
+              description="Async-first, weekly steering and daily Slack overlap. Your team stays in the loop, never blocked."
+            />
+            <StepCard
+              number={4}
+              title="Ship → review → refund window"
+              description="Day 14 you decide: keep going, adjust scope, or walk with a full refund."
+            />
+          </ScrollReveal>
+        </Container>
+      </Section>
+
+      {/* ---- Components: tag cards ------------------------------------- */}
+      <Section id="tag-cards">
+        <Container>
+          <SectionTitle
+            eyebrow="Components"
+            title="Tag cards"
+            subtitle="Tag-pill feature tiles in a seamless connected grid — hairline dividers, no gaps. Hover any cell to watch it fill with the dark state."
+          />
+          <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-border">
+            <div className="grid gap-px sm:grid-cols-2 lg:grid-cols-4">
+              <TagCard
+                bare
+                tag="Battle-tested"
+                tagTone="highlight"
+                title="Subscriptions at scale"
+                description="Simple and variable products, trials, sign-up fees and per-variation billing — proven on real WooCommerce stores."
+                href="#tag-cards"
+              />
+              <TagCard
+                bare
+                tag="Day-one stack"
+                tagTone="primary"
+                title="Member access"
+                description="A 10-condition rules engine with role mapping, content dripping and four URL pattern types — no add-ons required."
+                href="#tag-cards"
+              />
+              <TagCard
+                bare
+                tag="ROI-first"
+                tagTone="highlight"
+                title="Retention flow"
+                description="Intercept cancellations with targeted offers — discount, pause, downgrade or support. A category first, free in the core."
+                href="#tag-cards"
+              />
+              <TagCard
+                bare
+                tag="Edge"
+                tagTone="gold"
+                title="Analytics & audits"
+                description="40+ reports, 10 KPI cards, a 21-event audit timeline and a gateway health dashboard."
+                href="#tag-cards"
+              />
+              <TagCard
+                bare
+                tag="Specialty"
+                tagTone="highlight"
+                title="Store credit"
+                description="A virtual wallet with 8 credit sources, auto-apply to renewals and checkout, plus expiry management."
+                href="#tag-cards"
+              />
+              <TagCard
+                bare
+                tag="Cost-aware"
+                tagTone="primary"
+                title="Checkout builder"
+                description="Drag-and-drop checkout with 27 field types, multi-step layouts and conditional logic. No code."
+                href="#tag-cards"
+              />
+              <TagCard
+                bare
+                tag="Recurring"
+                tagTone="highlight"
+                title="Automatic payments"
+                description="Stripe, PayPal and Paddle with SCA/3DS, billing agreements and merchant-of-record support."
+                href="#tag-cards"
+              />
+              <TagCard
+                bare
+                tag="C-level"
+                tagTone="gold"
+                title="Customer portal"
+                description="Self-service skip, pause, plan switch, cancel and reactivate — fewer support tickets, happier members."
+                href="#tag-cards"
+              />
+            </div>
           </div>
         </Container>
       </Section>
@@ -641,45 +760,36 @@ export default function DesignSystemPage() {
       {/* ---- Feature manifesto (dark editorial section) ----------------- */}
       <Manifesto id="manifesto" lines={MANIFESTO_LINES} />
 
+      {/* ---- Editorial statement -------------------------------------- */}
+      <Section id="statement" surface="surface">
+        <Container>
+          <Statement
+            eyebrow="Statement"
+            heading={[
+              { text: "Built for stores that " },
+              { text: "ship subscriptions, memberships and retention", italic: true },
+              { text: " — without the " },
+              { text: "plugin sprawl.", italic: true },
+            ]}
+            description="We obsess over the unglamorous stuff so your stack stays small, your data stays clean, and your team ships features instead of patching plugin conflicts."
+            cta={
+              <Button
+                variant="dark"
+                size="md"
+                magnetic
+                iconRight={<ArrowUpRight className="size-5" />}
+              >
+                Learn more
+              </Button>
+            }
+          />
+        </Container>
+      </Section>
+
       {/* ---- Testimonials (WordPress.org reviews) ---------------------- */}
       <Section id="testimonials">
         <Container>
           <Testimonials items={WPORG_REVIEWS} />
-        </Container>
-      </Section>
-
-      {/* ---- Components: CTA panels ------------------------------------ */}
-      <Section id="cta-panels">
-        <Container>
-          <SectionTitle
-            eyebrow="Components"
-            title="Call to action"
-            subtitle="The CTA band is a single reusable component with surface variants."
-          />
-          <div className="mt-12 grid gap-8">
-            <CTA
-              surface="dark"
-              eyebrow="Early access"
-              title="Start building your subscription business today"
-              subtitle="Install the free core, run the wizard, and have your first subscription live in minutes."
-              actions={
-                <>
-                  <Button
-                    variant="primary"
-                    size="lg"
-                    magnetic
-                    iconRight={<ArrowRight className="size-5" />}
-                  >
-                    Get Pro — Free
-                  </Button>
-                  <Button variant="outline" size="lg">
-                    Live Demo
-                  </Button>
-                </>
-              }
-              microcopy="Free forever. No credit card required."
-            />
-          </div>
         </Container>
       </Section>
 
@@ -782,8 +892,9 @@ export default function DesignSystemPage() {
             title="Hero"
             subtitle="The landing hero used by the homepage and product landing pages (no breadcrumb). Move your cursor over it to feel the parallax."
           />
-          <div className="mt-12 overflow-hidden rounded-2xl border border-border">
+          <div className="mt-12 overflow-hidden rounded-2xl">
             <Hero
+              tone="highlight"
               headingLevel="h3"
               eyebrow="Trusted by WooCommerce store owners"
               title="One plugin for subscriptions, memberships & retention"
@@ -791,7 +902,7 @@ export default function DesignSystemPage() {
               actions={
                 <>
                   <Button
-                    variant="primary"
+                    variant="dark"
                     size="lg"
                     magnetic
                     iconRight={<ArrowRight className="size-5" />}
@@ -878,7 +989,7 @@ export default function DesignSystemPage() {
                 <Button variant="dark" size="lg" magnetic>
                   Claim My Free Pro License
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" magnetic>
                   Live Demo
                 </Button>
               </>

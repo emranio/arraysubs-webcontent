@@ -100,10 +100,13 @@ Import from the barrel: `import { Button, SectionTitle, … } from "@/components
 | `Badge` | `tone` (`neutral/primary/dark/highlight/outline`) | Free/Pro/New pills |
 | `Breadcrumbs` | `items`, `withSchema` | Inner pages only; emits BreadcrumbList JSON-LD |
 | `IconCard` | `icon`, `title`, `description`, `href`, `badge` | Becomes a link when `href` set |
-| `OfferCard` | `number`, `badge`, `title`, `eyebrow`, `description`, `metaLabel`, `metaValue`, `metaSuffix`, `featured`, `href` | Numbered tier/offer card with eyebrow + footer stat + arrow CTA |
+| `OfferCard` | `number`, `badge`, `title`, `eyebrow`, `description`, `metaLabel`, `metaValue`, `metaSuffix`, `featured`, `href` | Numbered tier card — colored treatment is a hover state; `featured` pins it on |
+| `StepCard` | `number`, `title`, `description` | Numbered process step — big number, accent bar slides in on hover |
+| `TagCard` | `tag`, `title`, `description`, `tagTone`, `href`, `active` | Tag-pill feature tile — fills dark on hover; `active` pins the look on |
 | `CTA` | `surface`, `eyebrow`, `title`, `subtitle`, `actions`, `microcopy` | Reusable CTA band |
 | `Hero` | `eyebrow`, `title`, `subtitle`, `actions`, `trust`, `media`, `headingLevel` | Landing hero, cursor parallax, no breadcrumb |
 | `Manifesto` | `lines`, `description` | Dark editorial feature statement: big mixed-color text + inline pills |
+| `Statement` | `eyebrow`, `heading`, `description`, `cta` | Editorial two-column statement, regular + italic mix; words fade-up on scroll |
 | `BigText` | `size`, `variant` (`ink/highlight/primary`), `align`, `as` | Scroll-fill display heading |
 | `Accordion` | `items`, `allowMultiple`, `defaultOpen` | ARIA disclosure, animated, `inert` when closed |
 | `Tabs` | `tabs`, `defaultIndex`, `label` | ARIA tabs, arrow-key nav, fade panel |

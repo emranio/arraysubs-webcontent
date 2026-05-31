@@ -6,6 +6,8 @@ import { cn } from "@/lib/cn";
 import { Container } from "./Container";
 import { Eyebrow } from "./Eyebrow";
 
+type Tone = "default" | "highlight" | "primary";
+
 type HeroProps = {
   eyebrow?: ReactNode;
   title: ReactNode;
@@ -18,7 +20,15 @@ type HeroProps = {
   media?: ReactNode;
   /** Heading element for the title — keep h1 on real pages. */
   headingLevel?: ElementType;
+  /** Visual tone — applies a flat brand background + matching decorative shape. */
+  tone?: Tone;
   className?: string;
+};
+
+const tones: Record<Tone, { bg: string; decor: string }> = {
+  default: { bg: "", decor: "bg-highlight" },
+  highlight: { bg: "bg-highlight text-dark", decor: "bg-primary" },
+  primary: { bg: "bg-primary text-dark", decor: "bg-highlight" },
 };
 
 /**
@@ -34,9 +44,11 @@ export function Hero({
   trust,
   media,
   headingLevel: Heading = "h1",
+  tone = "default",
   className,
 }: HeroProps) {
   const rootRef = useRef<HTMLDivElement>(null);
+  const { bg, decor } = tones[tone];
 
   useEffect(() => {
     const root = rootRef.current;
@@ -74,6 +86,7 @@ export function Hero({
       ref={rootRef}
       className={cn(
         "relative isolate overflow-hidden pt-28 pb-20 sm:pt-32 lg:pb-28",
+        bg,
         className,
       )}
     >
@@ -81,8 +94,22 @@ export function Hero({
       <div
         aria-hidden="true"
         data-parallax="-30"
-        className="pointer-events-none absolute -top-28 -right-28 -z-10 size-[26rem] rounded-full bg-highlight"
+        className={cn(
+          "pointer-events-none absolute -top-28 -right-28 -z-10 size-[26rem] rounded-full",
+          decor,
+        )}
       />
+      {/* Second decorative shape — only on colored tones for richer depth. */}
+      {tone !== "default" && (
+        <div
+          aria-hidden="true"
+          data-parallax="-18"
+          className={cn(
+            "pointer-events-none absolute -bottom-32 -left-24 -z-10 size-[22rem] rounded-full opacity-70",
+            decor,
+          )}
+        />
+      )}
 
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
@@ -92,7 +119,12 @@ export function Hero({
               {title}
             </Heading>
             {subtitle && (
-              <p className="max-w-xl text-lg text-muted text-pretty sm:text-xl">
+              <p
+                className={cn(
+                  "max-w-xl text-lg text-pretty sm:text-xl",
+                  tone === "default" ? "text-muted" : "opacity-80",
+                )}
+              >
                 {subtitle}
               </p>
             )}
@@ -102,7 +134,14 @@ export function Hero({
               </div>
             )}
             {trust && (
-              <div className="mt-4 text-sm text-muted">{trust}</div>
+              <div
+                className={cn(
+                  "mt-4 text-sm",
+                  tone === "default" ? "text-muted" : "opacity-70",
+                )}
+              >
+                {trust}
+              </div>
             )}
           </div>
 
@@ -118,7 +157,7 @@ export function Hero({
 /** Lightweight browser-window mockup used when no media is provided. */
 function HeroMediaPlaceholder() {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-surface">
+    <div className="overflow-hidden rounded-xl border border-border bg-surface text-foreground">
       <div className="flex items-center gap-2 border-b border-border bg-background px-4 py-3">
         <span className="size-3 rounded-full bg-border-strong" />
         <span className="size-3 rounded-full bg-border-strong" />

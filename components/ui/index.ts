@@ -8,6 +8,8 @@ export { Badge } from "./Badge";
 export { Breadcrumbs, type BreadcrumbItem } from "./Breadcrumbs";
 export { IconCard } from "./IconCard";
 export { OfferCard } from "./OfferCard";
+export { StepCard } from "./StepCard";
+export { TagCard } from "./TagCard";
 export { CTA } from "./CTA";
 export { Hero } from "./Hero";
 export { Manifesto, type ManifestoLine } from "./Manifesto";
@@ -15,6 +17,7 @@ export { BigText } from "./BigText";
 export { Accordion, type AccordionItemData } from "./Accordion";
 export { Tabs, type TabItem } from "./Tabs";
 export { Slider } from "./Slider";
+export { Statement, type StatementSegment } from "./Statement";
 export { Testimonials, type TestimonialItem } from "./Testimonials";
 
 // Form controls

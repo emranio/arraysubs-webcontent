@@ -2,13 +2,19 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { Eyebrow } from "./Eyebrow";
 
-type Surface = "dark" | "primary" | "highlight" | "surface";
+type Surface = "highlight" | "primary" | "dark" | "surface";
 
 const surfaces: Record<Surface, string> = {
-  dark: "bg-dark text-on-dark on-dark",
-  primary: "bg-primary text-dark",
   highlight: "bg-highlight text-dark",
+  primary: "bg-primary text-dark",
+  dark: "bg-dark text-on-dark on-dark",
   surface: "bg-surface text-foreground",
+};
+
+/** Decorative lime-on-lime shapes for the bright surfaces (flat, no gradient). */
+const BRIGHT_DECOR: Partial<Record<Surface, { topRight: string; bottomLeft: string }>> = {
+  highlight: { topRight: "bg-primary", bottomLeft: "bg-primary-strong" },
+  primary: { topRight: "bg-highlight", bottomLeft: "bg-primary-strong" },
 };
 
 type CTAProps = {
@@ -23,16 +29,22 @@ type CTAProps = {
   className?: string;
 };
 
-/** Reusable call-to-action panel (rounded band). Drop into any Container. */
+/**
+ * Reusable call-to-action panel. Bright surfaces (`highlight`, `primary`) get
+ * a pair of oversized lime-on-lime decorative circles for visual depth — no
+ * gradients, all flat tones.
+ */
 export function CTA({
   eyebrow,
   title,
   subtitle,
   actions,
   microcopy,
-  surface = "dark",
+  surface = "primary",
   className,
 }: CTAProps) {
+  const decor = BRIGHT_DECOR[surface];
+
   return (
     <div
       data-surface={surface === "dark" ? "dark" : undefined}
@@ -42,7 +54,26 @@ export function CTA({
         className,
       )}
     >
-      <div className="mx-auto flex max-w-2xl flex-col items-center gap-5">
+      {decor && (
+        <>
+          <span
+            aria-hidden="true"
+            className={cn(
+              "pointer-events-none absolute -top-32 -right-20 size-[26rem] rounded-full",
+              decor.topRight,
+            )}
+          />
+          <span
+            aria-hidden="true"
+            className={cn(
+              "pointer-events-none absolute -bottom-32 -left-24 size-[22rem] rounded-full opacity-60",
+              decor.bottomLeft,
+            )}
+          />
+        </>
+      )}
+
+      <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-5">
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
         <h2 className="font-display text-3xl text-balance sm:text-display-sm">
           {title}
