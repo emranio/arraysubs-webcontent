@@ -85,8 +85,12 @@ Import alias: `@/*` → repo root (e.g. `@/components/ui`, `@/lib/seo`).
 2. **rem everywhere.** Never hard-code `px`. Tailwind's spacing/size scale is rem;
    in SCSS and inline styles use rem. `1rem = 16px`.
 3. **1400px max page width.** Wrap page content in `<Container>` (`max-w-page`).
-4. **100% flat design.** No box-shadows, no gradients, no blurs, no glows.
-   Separate elements with **borders** and **surface colors**. (See DESIGN.md.)
+4. **100% flat design.** No box-shadows, no gradients, no glows. Separate
+   elements with **borders** and **surface colors**. (See DESIGN.md.)
+   *Exception:* the sticky **header**, the desktop **mega menu**, and the
+   **mobile fullscreen menu** use a frosted **backdrop-blur** background
+   (`bg-background/80 backdrop-blur-md`) — the one place blur is allowed. Never
+   add blur to content elements (cards, sections, etc.).
 5. **Design tokens are the single source of truth** — defined in `app/globals.css`
    `@theme`. Use the generated utilities (`bg-primary`, `text-dark`,
    `text-display-lg`, `max-w-page`, `rounded-pill`…) or `var(--color-*)` in SCSS.

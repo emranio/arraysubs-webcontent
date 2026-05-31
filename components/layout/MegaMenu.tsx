@@ -50,7 +50,7 @@ export function MegaMenu({ open, onClose, triggerRef }: MegaMenuProps) {
       ref={panelRef}
       role="dialog"
       aria-label="Sections"
-      className="absolute inset-x-0 top-full z-40 hidden border-b border-border bg-background lg:block"
+      className="absolute inset-x-0 top-full z-40 hidden border-b border-border bg-background/80 backdrop-blur-md lg:block"
     >
       <Container>
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-10 md:grid-cols-4">

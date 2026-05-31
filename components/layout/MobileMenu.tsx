@@ -98,7 +98,7 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
       role="dialog"
       aria-modal="true"
       aria-label="Sections"
-      className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-background lg:hidden"
+      className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-background/85 backdrop-blur-xl lg:hidden"
     >
       <Container className="flex flex-1 flex-col">
         <div className="grid gap-10 py-24 sm:grid-cols-2">

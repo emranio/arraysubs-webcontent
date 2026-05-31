@@ -34,9 +34,13 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background">
-      <Container>
-        <div className="relative z-[70] flex h-18 items-center justify-between gap-6 py-3">
+    <header className="sticky top-0 z-50">
+      {/* Frosted bar — full-width. The blur lives HERE, not on <header>, so the
+          fixed MobileMenu stays viewport-sized and the MegaMenu (a sibling, not
+          a descendant of this blurred layer) can run its own backdrop-blur. */}
+      <div className="relative z-[70] border-b border-border bg-background/80 backdrop-blur-md">
+        <Container>
+          <div className="flex h-16 items-center justify-between gap-6 py-3">
           <Link
             href="/"
             onClick={close}
@@ -118,7 +122,8 @@ export function SiteHeader() {
             </button>
           </div>
         </div>
-      </Container>
+        </Container>
+      </div>
 
       <div id="mega-menu">
         <MegaMenu
