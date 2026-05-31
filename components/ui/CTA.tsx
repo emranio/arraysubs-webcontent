@@ -13,8 +13,9 @@ const surfaces: Record<Surface, string> = {
 
 /** Decorative lime-on-lime shapes for the bright surfaces (flat, no gradient). */
 const BRIGHT_DECOR: Partial<Record<Surface, { topRight: string; bottomLeft: string }>> = {
-  highlight: { topRight: "bg-primary", bottomLeft: "bg-primary-strong" },
-  primary: { topRight: "bg-highlight", bottomLeft: "bg-primary-strong" },
+  // Mirrors the Hero `highlight` tone: lime bg with deeper-lime primary shapes.
+  highlight: { topRight: "bg-primary", bottomLeft: "bg-primary" },
+  primary: { topRight: "bg-highlight", bottomLeft: "bg-highlight" },
 };
 
 type CTAProps = {
@@ -59,14 +60,14 @@ export function CTA({
           <span
             aria-hidden="true"
             className={cn(
-              "pointer-events-none absolute -top-32 -right-20 size-[26rem] rounded-full",
+              "pointer-events-none absolute -top-28 -right-28 size-[26rem] rounded-full",
               decor.topRight,
             )}
           />
           <span
             aria-hidden="true"
             className={cn(
-              "pointer-events-none absolute -bottom-32 -left-24 size-[22rem] rounded-full opacity-60",
+              "pointer-events-none absolute -bottom-32 -left-24 size-[22rem] rounded-full opacity-70",
               decor.bottomLeft,
             )}
           />

@@ -97,6 +97,16 @@ Import alias: `@/*` → repo root (e.g. `@/components/ui`, `@/lib/seo`).
    (`<Button variant="outline">`), not a new component.
 7. **Fonts:** `font-display` (Funnel Display) for headings, `font-sans`
    (Funnel Sans) for body. Headings already default to Funnel Display.
+8. **Card grid gaps.** *Separated* card grids — cards with their own rounded
+   border (IconCard, OfferCard, StepCard) — use a tight `gap-[0.1875rem]` (3px)
+   for columns and rows; never `gap-4`/`gap-6`. *Connected* card grids — square,
+   borderless cells inside a `bg-border`-tinted, `overflow-hidden rounded-2xl`
+   container (e.g. Tag cards) — use **`gap-px`** so each divider is a single
+   crisp 1px hairline. Never use a thicker gap in a connected grid: 3px+ between
+   square cells reads as a doubled border.
+9. **1px borders on grid cards.** Card borders are always 1px (`border`), never
+   `border-2`. With rule 8 this guarantees every grid divider is a single 1px
+   line, never doubled.
 
 ## Accessibility (must pass)
 

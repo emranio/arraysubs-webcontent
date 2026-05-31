@@ -31,7 +31,7 @@ export function StepCard({
   return (
     <article
       className={cn(
-        "group/step relative flex h-full flex-col overflow-hidden rounded-2xl border-2 border-border bg-background px-6 py-5 transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-dark sm:px-8 sm:py-6",
+        "group/step relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-background px-6 py-5 transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-dark sm:px-8 sm:py-6",
         className,
       )}
     >

@@ -58,7 +58,7 @@ export function OfferCard({
     <article
       className={cn(
         // 2px border always so there's no layout shift between states.
-        "group/offer relative flex h-full flex-col rounded-2xl border-2 bg-background p-6 transition-colors duration-200 sm:p-8",
+        "group/offer relative flex h-full flex-col rounded-2xl border bg-background p-6 transition-colors duration-200 sm:p-8",
         featured ? "border-primary" : "border-border hover:border-primary",
         className,
       )}

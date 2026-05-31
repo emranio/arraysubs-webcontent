@@ -56,7 +56,7 @@ export function TagCard({
   bare = false,
   className,
 }: TagCardProps) {
-  const shape = bare ? "" : "rounded-2xl border-2";
+  const shape = bare ? "" : "rounded-2xl border";
 
   const surface = active
     ? cn("bg-dark text-on-dark on-dark", !bare && "border-dark")

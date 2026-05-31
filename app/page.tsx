@@ -490,7 +490,7 @@ export default function DesignSystemPage() {
           />
           <ScrollReveal
             stagger={0.08}
-            className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            className="mt-14 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3"
           >
             {FEATURES.map((feature) => (
               <IconCard
@@ -514,7 +514,7 @@ export default function DesignSystemPage() {
             title="Offer cards"
             subtitle="Numbered tier / package cards with a title, eyebrow, footer stat and arrow CTA. Hover a card for the primary border, lime number chip and filled arrow."
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2">
             <OfferCard
               number={1}
               badge="Free forever"
@@ -554,7 +554,7 @@ export default function DesignSystemPage() {
           <ScrollReveal
             stagger={0.08}
             y={0}
-            className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+            className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-4"
           >
             <StepCard
               number={1}
@@ -980,7 +980,7 @@ export default function DesignSystemPage() {
       <Section id="cta">
         <Container>
           <CTA
-            surface="primary"
+            surface="highlight"
             eyebrow="Get started"
             title="Get ArraySubs Pro free for 4 months"
             subtitle="No strings attached. We'll send your license key immediately — no credit card required."
