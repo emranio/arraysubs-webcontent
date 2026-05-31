@@ -762,6 +762,7 @@ export default function DesignSystemPage() {
                   <Button
                     variant="outline"
                     size="lg"
+                    magnetic
                     iconLeft={<Download className="size-5" />}
                   >
                     Download Free

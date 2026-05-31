@@ -77,16 +77,11 @@ export function Hero({
         className,
       )}
     >
-      {/* Decorative, cursor-reactive flat shapes (no blur, no gradient) */}
+      {/* Decorative, cursor-reactive flat shape (no blur, no gradient) */}
       <div
         aria-hidden="true"
         data-parallax="-30"
         className="pointer-events-none absolute -top-28 -right-28 -z-10 size-[26rem] rounded-full bg-highlight"
-      />
-      <div
-        aria-hidden="true"
-        data-parallax="-18"
-        className="pointer-events-none absolute -bottom-32 -left-24 -z-10 size-[22rem] rounded-full border-2 border-primary"
       />
 
       <Container>

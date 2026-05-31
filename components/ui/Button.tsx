@@ -80,7 +80,11 @@ export function Button({
 
   const inner = (
     <>
-      {iconLeft && <span className="inline-flex shrink-0">{iconLeft}</span>}
+      {iconLeft && (
+        <span className="inline-flex shrink-0 transition-transform duration-200 group-hover:-translate-x-1">
+          {iconLeft}
+        </span>
+      )}
       <span>{children}</span>
       {iconRight && (
         <span className="inline-flex shrink-0 transition-transform duration-200 group-hover:translate-x-1">

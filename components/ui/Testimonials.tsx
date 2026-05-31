@@ -51,36 +51,64 @@ export function Testimonials({
 }: TestimonialsProps) {
   const [index, setIndex] = useState(0);
   const direction = useRef(1);
+  /** Prevents overlapping transitions when a user clicks rapidly. */
+  const transitioning = useRef(false);
   const mainRef = useRef<HTMLDivElement>(null);
   const authorRef = useRef<HTMLDivElement>(null);
   const count = items.length;
   const item = items[index];
   const rating = item.rating ?? 5;
 
+  const SLIDE = 32;
+
   const go = (dir: 1 | -1) => {
+    if (transitioning.current) return;
     direction.current = dir;
-    setIndex((current) => (current + dir + count) % count);
+    if (prefersReducedMotion()) {
+      setIndex((current) => (current + dir + count) % count);
+      return;
+    }
+    transitioning.current = true;
+    // Fade + slide the CURRENT slide out — opposite to the travel direction.
+    const targets = [mainRef.current, authorRef.current].filter(Boolean);
+    gsap.to(targets, {
+      autoAlpha: 0,
+      x: -SLIDE * dir,
+      duration: 0.3,
+      ease: "power2.in",
+      overwrite: "auto",
+      onComplete: () => {
+        // Swap content. useGSAP[index] handles the IN animation from the
+        // opposite side — the block teleports across while invisible.
+        setIndex((current) => (current + dir + count) % count);
+      },
+    });
   };
 
   useGSAP(
     () => {
-      if (prefersReducedMotion()) return;
+      if (prefersReducedMotion()) {
+        transitioning.current = false;
+        return;
+      }
       registerGsap();
-      // Move the whole block as one piece — smooth, no per-element stagger.
-      if (mainRef.current) {
-        gsap.fromTo(
-          mainRef.current,
-          { autoAlpha: 0, x: 28 * direction.current },
-          { autoAlpha: 1, x: 0, duration: 0.45, ease: "power2.out" },
-        );
-      }
-      if (authorRef.current) {
-        gsap.fromTo(
-          authorRef.current,
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 0.45, ease: "power2.out" },
-        );
-      }
+      const startX = SLIDE * direction.current;
+      // The two refs share a single tween so they never desync.
+      const targets = [mainRef.current, authorRef.current].filter(Boolean);
+      gsap.fromTo(
+        targets,
+        { autoAlpha: 0, x: startX },
+        {
+          autoAlpha: 1,
+          x: 0,
+          duration: 0.55,
+          ease: "power2.out",
+          overwrite: "auto",
+          onComplete: () => {
+            transitioning.current = false;
+          },
+        },
+      );
     },
     { dependencies: [index] },
   );

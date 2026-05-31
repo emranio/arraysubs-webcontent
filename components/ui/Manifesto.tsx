@@ -48,17 +48,23 @@ const pillBg: Record<Color, string> = {
 };
 
 /**
- * Editorial dark-background feature statement: big mixed-color display text
- * across several lines, divided horizontally, with vertical capsule "pills"
- * inline that carry a feature icon + a floating "@label" badge above.
+ * Editorial dark-background feature statement.
  *
  * Motion (skipped under reduced-motion):
- *  - On scroll into view, each line glides up as one piece (no per-segment
- *    stagger, so it never reflows or feels jumpy).
- *  - Dividers expand left → right.
- *  - Pills pop in with a soft back-ease, then gently float forever.
+ *   - On scroll into view, every letter slides up ~16px and fades in with a
+ *     small stagger so the section reveals as one continuous cascade.
+ *   - Pills are part of the same cascade, then idle-float forever.
+ *   - Dividers fade in subtly underneath the lines.
+ *
+ * Accessibility: the underlying text is exposed once via an sr-only node and the
+ * animated per-letter spans are aria-hidden, so screen readers don't see "T-h-e".
  */
-export function Manifesto({ lines, description, className, id }: ManifestoProps) {
+export function Manifesto({
+  lines,
+  description,
+  className,
+  id,
+}: ManifestoProps) {
   const rootRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -67,67 +73,54 @@ export function Manifesto({ lines, description, className, id }: ManifestoProps)
       if (!root || prefersReducedMotion()) return;
       registerGsap();
 
-      const lineEls = root.querySelectorAll<HTMLElement>("[data-mf-line]");
-      const dividerEls = root.querySelectorAll<HTMLElement>("[data-mf-divider]");
-      const pillEls = root.querySelectorAll<HTMLElement>("[data-mf-pill]");
+      const reveal = root.querySelectorAll<HTMLElement>("[data-mf-reveal]");
+      const dividers = root.querySelectorAll<HTMLElement>("[data-mf-divider]");
+      const pills = root.querySelectorAll<HTMLElement>("[data-mf-pill]");
 
-      // Pin the hidden state synchronously (useLayoutEffect under the hood)
-      // so there is no flash of visible content before the reveal fires.
-      gsap.set(lineEls, { autoAlpha: 0, y: 50 });
-      gsap.set(dividerEls, { scaleX: 0 });
-      gsap.set(pillEls, { scale: 0.7 });
+      // Pin the hidden state synchronously (no flash before the reveal fires).
+      gsap.set(reveal, { autoAlpha: 0, y: 16 });
+      gsap.set(dividers, { autoAlpha: 0 });
+
+      const STAGGER = 0.035;
+      const DURATION = 1.0;
 
       const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: root,
-          start: "top 75%",
-          once: true,
-        },
+        scrollTrigger: { trigger: root, start: "top 80%", once: true },
       });
 
       tl.to(
-        lineEls,
+        reveal,
         {
           autoAlpha: 1,
           y: 0,
-          duration: 0.85,
+          duration: DURATION,
           ease: "power3.out",
-          stagger: 0.12,
+          stagger: STAGGER,
         },
         0,
       );
 
       tl.to(
-        dividerEls,
+        dividers,
         {
-          scaleX: 1,
-          duration: 0.7,
+          autoAlpha: 1,
+          duration: 1.4,
           ease: "power2.out",
-          stagger: 0.12,
+          stagger: 0.5,
         },
         0.2,
       );
 
-      tl.to(
-        pillEls,
-        {
-          scale: 1,
-          duration: 0.65,
-          ease: "back.out(1.6)",
-          stagger: 0.12,
-        },
-        0.25,
-      );
-
-      // Gentle, organic float on each pill (slightly different timing per pill).
-      pillEls.forEach((pill, i) => {
+      // Idle-float starts once the cascade is over (plus a small buffer).
+      const revealEnd = reveal.length * STAGGER + DURATION + 0.2;
+      pills.forEach((pill, i) => {
         gsap.to(pill, {
           y: -6,
-          duration: 2.2 + i * 0.25,
+          duration: 2.4 + i * 0.3,
           yoyo: true,
           repeat: -1,
           ease: "sine.inOut",
-          delay: 1.3 + i * 0.15,
+          delay: revealEnd + i * 0.15,
         });
       });
     },
@@ -143,13 +136,10 @@ export function Manifesto({ lines, description, className, id }: ManifestoProps)
               {i > 0 && (
                 <div
                   data-mf-divider
-                  className="h-px w-full origin-left bg-on-dark-border"
+                  className="h-px w-full bg-on-dark-border"
                 />
               )}
-              <div
-                data-mf-line
-                className="flex flex-wrap items-center gap-x-3 gap-y-3 py-5 font-display text-5xl leading-[0.9] font-bold tracking-tight will-change-transform sm:gap-x-5 sm:py-7 sm:text-6xl md:text-7xl lg:py-9 lg:text-8xl"
-              >
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-3 py-5 font-display text-5xl leading-[0.9] font-bold tracking-tight sm:gap-x-5 sm:py-7 sm:text-6xl md:text-7xl lg:py-9 lg:text-8xl">
                 {line.map((segment, j) =>
                   segment.type === "text" ? (
                     <span
@@ -159,7 +149,23 @@ export function Manifesto({ lines, description, className, id }: ManifestoProps)
                         textColor[segment.color ?? "white"],
                       )}
                     >
-                      {segment.text}
+                      {/* Single accessible string; per-letter spans are visual only. */}
+                      <span className="sr-only">{segment.text}</span>
+                      <span aria-hidden="true">
+                        {[...segment.text].map((char, k) =>
+                          char === " " ? (
+                            <span key={k}> </span>
+                          ) : (
+                            <span
+                              key={k}
+                              data-mf-reveal
+                              className="inline-block"
+                            >
+                              {char}
+                            </span>
+                          ),
+                        )}
+                      </span>
                     </span>
                   ) : (
                     <ManifestoPill
@@ -197,6 +203,7 @@ function ManifestoPill({
   return (
     <span
       data-mf-pill
+      data-mf-reveal
       className="relative inline-flex shrink-0 text-dark will-change-transform"
     >
       <span
