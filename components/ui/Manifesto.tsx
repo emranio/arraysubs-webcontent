@@ -206,7 +206,7 @@ function ManifestoPill({
       data-mf-reveal
       className={cn(
         "relative inline-flex shrink-0 will-change-transform",
-        color === "primary" ? "text-on-dark" : "text-dark",
+        color === "primary" || color === "gold" ? "text-on-dark" : "text-dark",
       )}
     >
       <span

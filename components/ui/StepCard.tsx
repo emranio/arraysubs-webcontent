@@ -31,7 +31,7 @@ export function StepCard({
   return (
     <article
       className={cn(
-        "group/step relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-background px-6 py-5 transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-dark sm:px-8 sm:py-6",
+        "group/step relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-background px-6 py-5 transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-primary sm:px-8 sm:py-6",
         className,
       )}
     >
@@ -44,14 +44,14 @@ export function StepCard({
             "inline-block font-display text-6xl leading-[0.85] font-bold tracking-tight tabular-nums sm:text-7xl",
             "text-transparent transition-colors duration-500 ease-out",
             "[-webkit-text-stroke:0.125rem_var(--color-foreground)]",
-            "group-hover/step:text-foreground",
+            "group-hover/step:text-primary",
           )}
         >
           {numStr}
         </span>
         <ArrowUpRight
           aria-hidden="true"
-          className="size-5 shrink-0 -translate-y-1 text-faint opacity-0 transition-[transform,opacity,color] duration-300 group-hover/step:translate-x-0.5 group-hover/step:translate-y-0 group-hover/step:text-foreground group-hover/step:opacity-100"
+          className="size-5 shrink-0 -translate-y-1 text-faint opacity-0 transition-[transform,opacity,color] duration-300 group-hover/step:translate-x-0.5 group-hover/step:translate-y-0 group-hover/step:text-primary group-hover/step:opacity-100"
         />
       </div>
 

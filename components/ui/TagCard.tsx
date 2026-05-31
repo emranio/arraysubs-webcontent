@@ -33,6 +33,12 @@ const tagBg: Record<TagTone, string> = {
   gold: "bg-gold",
 };
 
+const tagText: Record<TagTone, string> = {
+  highlight: "text-dark",
+  primary: "text-on-dark",
+  gold: "text-on-dark",
+};
+
 /**
  * Tag-pill feature card.
  *
@@ -77,8 +83,9 @@ export function TagCard({
     >
       <span
         className={cn(
-          "inline-flex w-fit items-center rounded-pill px-3 py-1 text-xs font-semibold tracking-wider text-dark uppercase",
+          "inline-flex w-fit items-center rounded-pill px-3 py-1 text-xs font-semibold tracking-wider uppercase",
           tagBg[tagTone],
+          tagText[tagTone],
         )}
       >
         {tag}
@@ -104,8 +111,8 @@ export function TagCard({
         className={cn(
           "absolute right-6 bottom-6 size-5 transition-all duration-300 sm:right-8 sm:bottom-8",
           active
-            ? "text-primary"
-            : "text-faint group-hover/tag:translate-x-1 group-hover/tag:-translate-y-1 group-hover/tag:text-primary",
+            ? "text-on-dark"
+            : "text-faint group-hover/tag:translate-x-1 group-hover/tag:-translate-y-1 group-hover/tag:text-on-dark",
         )}
       />
     </article>

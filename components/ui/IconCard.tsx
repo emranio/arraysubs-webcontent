@@ -37,7 +37,7 @@ export function IconCard({
         {icon && (
           <span
             aria-hidden="true"
-            className="inline-flex size-12 shrink-0 items-center justify-center rounded-lg bg-surface text-dark transition-colors duration-300 group-hover:bg-primary"
+            className="inline-flex size-12 shrink-0 items-center justify-center rounded-lg bg-surface text-dark transition-colors duration-300 group-hover:bg-primary group-hover:text-on-dark"
           >
             {icon}
           </span>

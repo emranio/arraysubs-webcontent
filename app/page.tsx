@@ -981,7 +981,7 @@ export default function DesignSystemPage() {
       <Section id="cta">
         <Container>
           <CTA
-            surface="highlight"
+            surface="primary"
             eyebrow="Get started"
             title="Get ArraySubs Pro free for 4 months"
             subtitle="No strings attached. We'll send your license key immediately — no credit card required."

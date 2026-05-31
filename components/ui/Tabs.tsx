@@ -99,7 +99,7 @@ export function Tabs({
               className={cn(
                 "rounded-pill px-5 py-2 text-sm font-semibold transition-colors duration-200",
                 selected
-                  ? "bg-dark text-on-dark"
+                  ? "bg-primary text-on-dark"
                   : "text-muted hover:text-foreground",
               )}
             >

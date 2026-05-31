@@ -15,7 +15,6 @@ const surfaces: Record<Surface, string> = {
 const BRIGHT_DECOR: Partial<Record<Surface, { topRight: string; bottomLeft: string }>> = {
   // Mirrors the Hero `highlight` tone: light tint bg with primary shapes.
   highlight: { topRight: "bg-primary", bottomLeft: "bg-primary" },
-  primary: { topRight: "bg-highlight", bottomLeft: "bg-highlight" },
 };
 
 type CTAProps = {
@@ -45,6 +44,7 @@ export function CTA({
   className,
 }: CTAProps) {
   const decor = BRIGHT_DECOR[surface];
+  const onPrimarySurface = surface === "primary" || surface === "dark";
 
   return (
     <div
@@ -75,7 +75,11 @@ export function CTA({
       )}
 
       <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-5">
-        {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+        {eyebrow && (
+          <Eyebrow className={onPrimarySurface ? "text-on-dark" : undefined}>
+            {eyebrow}
+          </Eyebrow>
+        )}
         <h2 className="font-display text-3xl text-balance sm:text-display-sm">
           {title}
         </h2>
