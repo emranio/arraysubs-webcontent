@@ -7,7 +7,6 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from "react";
-import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap";
 import { cn } from "@/lib/cn";
 
 export type TabItem = { label: string; content: ReactNode };
@@ -22,7 +21,8 @@ type TabsProps = {
 
 /**
  * WAI-ARIA tabs with roving tabindex and full keyboard support
- * (Left/Right/Up/Down/Home/End). The active panel fades in via GSAP.
+ * (Left/Right/Up/Down/Home/End). Panels stay mounted and crossfade smoothly
+ * so content changes do not remount abruptly.
  */
 export function Tabs({
   tabs,
@@ -33,19 +33,6 @@ export function Tabs({
   const [active, setActive] = useState(defaultIndex);
   const baseId = useId();
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const panelRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      if (prefersReducedMotion() || !panelRef.current) return;
-      gsap.fromTo(
-        panelRef.current,
-        { autoAlpha: 0, y: 8 },
-        { autoAlpha: 1, y: 0, duration: 0.4, ease: "power2.out" },
-      );
-    },
-    { dependencies: [active], scope: panelRef },
-  );
 
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const count = tabs.length;
@@ -109,23 +96,30 @@ export function Tabs({
         })}
       </div>
 
-      {tabs.map((tab, index) => {
-        const selected = index === active;
-        return (
-          <div
-            key={index}
-            role="tabpanel"
-            id={`${baseId}-panel-${index}`}
-            aria-labelledby={`${baseId}-tab-${index}`}
-            hidden={!selected}
-            tabIndex={0}
-            ref={selected ? panelRef : undefined}
-            className="rounded-md focus-visible:outline-none"
-          >
-            {selected && tab.content}
-          </div>
-        );
-      })}
+      <div className="grid rounded-md">
+        {tabs.map((tab, index) => {
+          const selected = index === active;
+          return (
+            <div
+              key={index}
+              role="tabpanel"
+              id={`${baseId}-panel-${index}`}
+              aria-labelledby={`${baseId}-tab-${index}`}
+              aria-hidden={!selected}
+              inert={selected ? undefined : true}
+              tabIndex={selected ? 0 : -1}
+              className={cn(
+                "col-start-1 row-start-1 rounded-md transition-opacity duration-200 ease-out focus-visible:outline-none",
+                selected
+                  ? "pointer-events-auto opacity-100"
+                  : "pointer-events-none opacity-0",
+              )}
+            >
+              {tab.content}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
