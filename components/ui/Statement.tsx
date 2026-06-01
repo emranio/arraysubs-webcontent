@@ -88,14 +88,14 @@ export function Statement({
           </p>
         )}
         {description && (
-          <p className="text-base text-muted">
+          <p className="text-base text-muted [text-wrap:wrap]">
             {description}
           </p>
         )}
       </div>
 
       <div className="flex flex-col gap-10">
-        <h2 className="font-display text-4xl leading-[1.05] font-medium sm:text-5xl md:text-6xl lg:text-[4.5rem]">
+        <h2 className="font-display text-4xl leading-[1.05] font-medium [text-wrap:wrap] sm:text-5xl md:text-6xl lg:text-[4.5rem]">
           {/* Single accessible string for screen readers */}
           <span className="sr-only">
             {heading.map((seg) => seg.text).join("")}
