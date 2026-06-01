@@ -111,6 +111,9 @@ Import alias: `@/*` → repo root (e.g. `@/components/ui`, `@/lib/seo`).
 9. **1px borders on grid cards.** Card borders are always 1px (`border`), never
    `border-2`. With rule 8 this guarantees every grid divider is a single 1px
    line, never doubled.
+10. **Button layers.** Buttons use the shared pressed style and default to
+    `layers="3layer"`. On primary-colored sections, set `layers="2layer"` so
+    the rear shadow layer is removed.
 
 ## Accessibility (must pass)
 

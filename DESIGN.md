@@ -37,6 +37,7 @@ All colors are CSS custom properties; Tailwind generates `bg-*`, `text-*`,
 | `--color-foreground` | `#12002B` | Body + heading text |
 | `--color-muted` | `#3F2A5C` | High-contrast secondary text |
 | `--color-faint` | `#6A548A` | Tertiary text, placeholders, code labels |
+| `--color-dark-edge` | `#5F32A8` | Lighter Dark 2 edge layer for dark pressed buttons |
 | `--color-border` | `#DED2F4` | Default borders |
 | `--color-border-strong` | `#C5ADEF` | Emphasized borders |
 
@@ -99,7 +100,7 @@ Import from the barrel: `import { Button, SectionTitle, … } from "@/components
 | `Section` | `surface`, `spacing`, `scrollBg`, `as` | Semantic section + surface theme |
 | `SectionTitle` | `eyebrow`, `title`, `subtitle`, `align`, `as`, `size` | Eyebrow + heading + sub text |
 | `Eyebrow` | `withLine` | Uppercase label |
-| `Button` | `variant` (`primary`/`dark`/`highlight`/`outline`/`ghost`), `size` (`xs/sm/md/lg`), `magnetic`, `href`, `iconLeft/Right`, `fullWidth` | Renders `<button>` or Next `<Link>` |
+| `Button` | `variant` (`primary`/`dark`/`highlight`/`outline`/`ghost`), `size` (`xs/sm/md/lg`), `layers` (`3layer/2layer`), `magnetic`, `href`, `iconLeft/Right`, `fullWidth` | Renders `<button>` or Next `<Link>` |
 | `Badge` | `tone` (`neutral/primary/dark/highlight/outline`) | Free/Pro/New pills |
 | `Breadcrumbs` | `items`, `withSchema` | Inner pages only; emits BreadcrumbList JSON-LD |
 | `IconCard` | `icon`, `title`, `description`, `href`, `badge` | Becomes a link when `href` set |
@@ -142,6 +143,11 @@ single controls in `<Field>`; `Checkbox`/`Radio`/`Switch` carry their own label.
 One component, many looks. Add a new look as a `variant` value named by its
 style — never a second component. Example: a new "soft" button is
 `<Button variant="soft">`, defined in the `variants` map in `Button.tsx`.
+
+### Button layer rule
+Buttons default to the 3-layer pressed style. Use `layers="2layer"` for buttons
+placed on primary-colored sections so the rear shadow layer is removed and the
+CTA stays clean against the saturated background.
 
 ---
 

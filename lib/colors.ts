@@ -12,6 +12,7 @@ export const siteColors = {
   foreground: "#12002B",
   muted: "#3F2A5C",
   faint: "#6A548A",
+  darkEdge: "#5F32A8",
   border: "#DED2F4",
   borderStrong: "#C5ADEF",
   danger: "#B83A7A",

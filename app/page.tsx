@@ -71,6 +71,7 @@ const NEUTRAL_COLORS: [string, string, string][] = [
   ["Foreground", "--color-foreground", siteColors.foreground],
   ["Muted", "--color-muted", siteColors.muted],
   ["Faint", "--color-faint", siteColors.faint],
+  ["Dark edge", "--color-dark-edge", siteColors.darkEdge],
   ["Border", "--color-border", siteColors.border],
   ["Border strong", "--color-border-strong", siteColors.borderStrong],
 ];
@@ -327,12 +328,7 @@ export default function DesignSystemPage() {
                 <Button size="lg" magnetic>
                   Live Demo
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  magnetic
-                  className="border-border-strong text-primary"
-                >
+                <Button variant="outline" size="lg" magnetic>
                   Get Pro Free for 4 Months
                 </Button>
               </div>
@@ -510,9 +506,12 @@ export default function DesignSystemPage() {
               <Button variant="outline" disabled>
                 Disabled
               </Button>
-              <Button href="#components" variant="ghost" magnetic>
+              <a
+                href="#components"
+                className="font-semibold text-primary underline decoration-current underline-offset-4"
+              >
                 As a link
-              </Button>
+              </a>
             </DemoRow>
           </div>
         </Container>
@@ -1084,10 +1083,10 @@ export default function DesignSystemPage() {
             subtitle="No strings attached. We'll send your license key immediately — no credit card required."
             actions={
               <>
-                <Button variant="dark" size="lg" magnetic>
+                <Button variant="dark" size="lg" layers="2layer" magnetic>
                   Claim My Free Pro License
                 </Button>
-                <Button variant="outline" size="lg" magnetic>
+                <Button variant="outline" size="lg" layers="2layer" magnetic>
                   Live Demo
                 </Button>
               </>
