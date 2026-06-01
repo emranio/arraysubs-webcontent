@@ -10,7 +10,7 @@ The visual language and component contract for the site. Tokens live in
 - **rem-based & responsive.** `1rem = 16px`. Display sizes scale fluidly with `clamp()`.
 - **Accessible by default.** WCAG AA contrast, full keyboard support, `prefers-reduced-motion` honored.
 - **Reusable.** Generic component names; styles selected via `variant` props.
-- **Max content width 1400px** via `<Container>`.
+- **Max content width 100rem** via `<Container>`.
 
 ---
 
@@ -82,7 +82,7 @@ inline text.
 
 ## Layout, radii, motion
 
-- **Container:** `<Container width="page|wide|narrow|prose">`. `page` = `max-w-page` (1400px), gutters `px-6 sm:px-8`.
+- **Container:** `<Container width="page|wide|narrow|prose">`. `page` = fluid `max-w-page` (100rem), gutters `px-6 sm:px-8`.
 - **Section:** `<Section surface spacing scrollBg>` — surfaces `default|surface|dark|highlight|transparent`; spacing `sm|md|lg`.
 - **Radii:** `rounded-{xs,sm,md,lg,xl,2xl}` (0.375 → 2rem) and `rounded-pill`.
 - **Motion tokens:** `--ease-out-expo`, `--ease-in-out-smooth`. All GSAP/CSS motion is disabled under `prefers-reduced-motion`.
@@ -95,7 +95,7 @@ Import from the barrel: `import { Button, SectionTitle, … } from "@/components
 
 | Component | Key props | Notes |
 | --- | --- | --- |
-| `Container` | `as`, `width` | Centered 1400px wrapper |
+| `Container` | `as`, `width` | Centered fluid wrapper with a 100rem max |
 | `Section` | `surface`, `spacing`, `scrollBg`, `as` | Semantic section + surface theme |
 | `SectionTitle` | `eyebrow`, `title`, `subtitle`, `align`, `as`, `size` | Eyebrow + heading + sub text |
 | `Eyebrow` | `withLine` | Uppercase label |

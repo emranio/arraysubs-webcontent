@@ -76,7 +76,7 @@ export function Statement({
     <div
       ref={rootRef}
       className={cn(
-        "grid gap-12 lg:grid-cols-[1fr_1.8fr] lg:gap-20",
+        "grid gap-12 lg:grid-cols-[20rem_minmax(0,1fr)] lg:gap-20",
         className,
       )}
     >
@@ -88,14 +88,14 @@ export function Statement({
           </p>
         )}
         {description && (
-          <p className="max-w-md text-base text-muted text-pretty">
+          <p className="text-base text-muted">
             {description}
           </p>
         )}
       </div>
 
       <div className="flex flex-col gap-10">
-        <h2 className="font-display text-4xl leading-[1.05] font-medium text-balance sm:text-5xl md:text-6xl lg:text-[4.5rem]">
+        <h2 className="font-display text-4xl leading-[1.05] font-medium sm:text-5xl md:text-6xl lg:text-[4.5rem]">
           {/* Single accessible string for screen readers */}
           <span className="sr-only">
             {heading.map((seg) => seg.text).join("")}

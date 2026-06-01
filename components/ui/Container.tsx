@@ -3,7 +3,7 @@ import { cn } from "@/lib/cn";
 
 type ContainerProps = {
   as?: ElementType;
-  /** page = 1400px max. */
+  /** page = fluid width with a 100rem max. */
   width?: "page" | "wide" | "narrow" | "prose";
   className?: string;
   children: ReactNode;
@@ -17,7 +17,7 @@ const widths: Record<NonNullable<ContainerProps["width"]>, string> = {
   prose: "max-w-2xl",
 };
 
-/** Centered, gutter-padded content wrapper. Max page width is 1400px. */
+/** Centered, gutter-padded content wrapper. Max page width is 100rem. */
 export function Container({
   as: Tag = "div",
   width = "page",

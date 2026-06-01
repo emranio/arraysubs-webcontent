@@ -66,7 +66,7 @@
   --text-display-xl--font-weight: 700;
 
   /* ---- Layout ----------------------------------------------------------- */
-  --container-page: 87.5rem; /* 1400px max page container                  */
+  --container-page: 100rem; /* fluid page container max width             */
   --spacing-gutter: 1.5rem; /* default horizontal page padding             */
 
   /* ---- Radii ------------------------------------------------------------ */

@@ -84,7 +84,7 @@ Import alias: `@/*` → repo root (e.g. `@/components/ui`, `@/lib/seo`).
    `dark` surface, but there is no theme toggle.)
 2. **rem everywhere.** Never hard-code `px`. Tailwind's spacing/size scale is rem;
    in SCSS and inline styles use rem. `1rem = 16px`.
-3. **1400px max page width.** Wrap page content in `<Container>` (`max-w-page`).
+3. **100rem fluid max page width.** Wrap page content in `<Container>` (`max-w-page`).
 4. **100% flat design.** No box-shadows, no gradients, no glows. Separate
    elements with **borders** and **surface colors**. (See DESIGN.md.)
    *Exception:* the sticky **header**, the desktop **mega menu**, and the

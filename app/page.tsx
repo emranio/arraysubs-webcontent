@@ -292,13 +292,13 @@ export default function DesignSystemPage() {
               </p>
             </div>
 
-            <div className="max-w-[78rem]">
-              <h1 className="font-display text-6xl leading-none font-semibold text-primary text-balance sm:text-[5rem] lg:text-[5.875rem] xl:text-[6.5rem]">
+            <div>
+              <h1 className="font-display text-6xl leading-none font-semibold text-primary [text-wrap:wrap] sm:text-[5rem] lg:text-[5.875rem] xl:text-[6.5rem]">
                 Everything You Need to Run Subscriptions &amp; Memberships on
                 WooCommerce
               </h1>
 
-              <p className="mt-10 max-w-5xl text-lg leading-8 text-dark text-pretty sm:text-xl">
+              <p className="mt-10 text-lg leading-8 text-dark [text-wrap:wrap] sm:text-xl">
                 ArraySubs combines subscription billing, membership access,
                 retention tooling, checkout control, analytics, and plan
                 entitlements in one WooCommerce-first product. Start with the
@@ -306,7 +306,7 @@ export default function DesignSystemPage() {
                 automation and growth features.
               </p>
 
-              <ul className="mt-9 flex max-w-6xl flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-dark sm:text-base">
+              <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-dark sm:text-base">
                 {[
                   "Free subscriptions + memberships",
                   "Manual renewals with any WooCommerce gateway",
