@@ -61,6 +61,7 @@ export default function RootLayout({
     <html
       lang={site.lang}
       className={`${fontDisplay.variable} ${fontSans.variable}`}
+      data-scroll-behavior="smooth"
     >
       <body className="antialiased" suppressHydrationWarning>
         <a

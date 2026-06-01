@@ -9,8 +9,8 @@ import {
   registerGsap,
   useGSAP,
 } from "@/lib/gsap";
+import { HEADER_NAV_ITEMS } from "@/lib/navigation";
 import { Container } from "@/components/ui/Container";
-import { SECTIONS } from "@/lib/sections";
 
 type MobileMenuProps = {
   open: boolean;
@@ -20,9 +20,8 @@ type MobileMenuProps = {
 };
 
 /**
- * Fullscreen overlay menu for mobile/tablet (below lg). Lists every section
- * on the design-system page, grouped by category, so the visitor can jump to
- * any component. The header toggle floats above the overlay as the close X.
+ * Fullscreen overlay menu for mobile/tablet (below lg). The header toggle
+ * floats above the overlay as the close X.
  */
 export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -97,41 +96,29 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
       ref={overlayRef}
       role="dialog"
       aria-modal="true"
-      aria-label="Sections"
+      aria-label="Primary menu"
       className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-background/85 backdrop-blur-xl lg:hidden"
     >
       <Container className="flex flex-1 flex-col">
-        <div className="grid gap-10 py-24 sm:grid-cols-2">
-          {SECTIONS.map((category) => (
-            <nav
-              key={category.title}
-              aria-label={category.title}
-              data-menu-item
-              className="flex flex-col gap-4"
-            >
-              <h3 className="text-xs font-semibold tracking-widest text-muted uppercase">
-                {category.title}
-              </h3>
-              <ul className="flex flex-col gap-2">
-                {category.items.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      onClick={onClose}
-                      className="group flex items-center justify-between gap-3 rounded-md py-2 text-xl font-display font-bold text-foreground transition-colors hover:text-primary-strong"
-                    >
-                      <span>{item.label}</span>
-                      <ArrowUpRight
-                        aria-hidden="true"
-                        className="size-5 shrink-0 text-faint transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary-strong"
-                      />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          ))}
-        </div>
+        <nav aria-label="Primary" className="py-24">
+          <ul className="flex flex-col gap-3">
+            {HEADER_NAV_ITEMS.map((item) => (
+              <li key={item.href} data-menu-item>
+                <Link
+                  href={item.href}
+                  onClick={onClose}
+                  className="group flex items-center justify-between gap-3 rounded-md py-3 text-xl font-display font-bold text-foreground transition-colors hover:text-primary-strong"
+                >
+                  <span>{item.label}</span>
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="size-5 shrink-0 text-faint transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary-strong"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </Container>
     </div>
   );

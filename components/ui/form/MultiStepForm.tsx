@@ -56,14 +56,16 @@ export function MultiStepForm({ className }: { className?: string }) {
   const [errors, setErrors] = useState<{ email?: string; terms?: string }>({});
 
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const mounted = useRef(false);
+  const pendingHeadingFocus = useRef(false);
 
-  // Move focus to the step heading on change (but not on first render).
+  // Move focus after user-triggered step changes only. React Strict Mode can
+  // run mount effects twice in development, so a plain "skip first render" ref
+  // would still focus this deep form demo on initial page navigation.
   useEffect(() => {
-    if (!mounted.current) {
-      mounted.current = true;
+    if (!pendingHeadingFocus.current) {
       return;
     }
+    pendingHeadingFocus.current = false;
     headingRef.current?.focus();
   }, [step, done]);
 
@@ -76,10 +78,12 @@ export function MultiStepForm({ className }: { className?: string }) {
       return;
     }
     setErrors({});
+    pendingHeadingFocus.current = true;
     setStep((s) => Math.min(s + 1, STEPS.length - 1));
   };
   const back = () => {
     setErrors({});
+    pendingHeadingFocus.current = true;
     setStep((s) => Math.max(s - 1, 0));
   };
   const submit = () => {

@@ -5,10 +5,16 @@ import { gsap, hasFinePointer, prefersReducedMotion } from "@/lib/gsap";
 import { cn } from "@/lib/cn";
 import { Container } from "./Container";
 import { Eyebrow } from "./Eyebrow";
+import { Breadcrumbs, type BreadcrumbItem } from "./Breadcrumbs";
 
 type Tone = "default" | "highlight" | "primary";
+type Variant = "split" | "compact";
 
 type PageHeroProps = {
+  /** Optional breadcrumb items for inner pages. */
+  breadcrumbs?: BreadcrumbItem[];
+  /** Emit BreadcrumbList JSON-LD when breadcrumbs are present. */
+  withBreadcrumbSchema?: boolean;
   eyebrow?: ReactNode;
   title: ReactNode;
   subtitle?: ReactNode;
@@ -16,10 +22,12 @@ type PageHeroProps = {
   actions?: ReactNode;
   /** Trust badges / logo row beneath the actions. */
   trust?: ReactNode;
-  /** Right-column visual. A placeholder mockup is shown if omitted. */
-  media?: ReactNode;
+  /** Right-column visual. A placeholder mockup is shown if omitted; false hides it. */
+  media?: ReactNode | false;
   /** Heading element for the title — keep h1 on real pages. */
   headingLevel?: ElementType;
+  /** Split is the default marketing hero; compact is a simple page header. */
+  variant?: Variant;
   /** Visual tone — applies a flat brand background + matching decorative shape. */
   tone?: Tone;
   className?: string;
@@ -33,10 +41,13 @@ const tones: Record<Tone, { bg: string; decor: string }> = {
 
 /**
  * Landing hero used by the homepage and product landing pages (these omit
- * breadcrumbs). Decorative layers drift with the cursor (GSAP mouse parallax);
- * disabled for touch and reduced-motion users.
+ * breadcrumbs), plus compact page headers for inner pages. Decorative layers
+ * drift with the cursor (GSAP mouse parallax); disabled for touch and
+ * reduced-motion users.
  */
 export function PageHero({
+  breadcrumbs,
+  withBreadcrumbSchema = true,
   eyebrow,
   title,
   subtitle,
@@ -44,11 +55,14 @@ export function PageHero({
   trust,
   media,
   headingLevel: Heading = "h1",
+  variant = "split",
   tone = "default",
   className,
 }: PageHeroProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const { bg, decor } = tones[tone];
+  const isCompact = variant === "compact";
+  const hasMedia = isCompact ? media !== false && media != null : media !== false;
 
   useEffect(() => {
     const root = rootRef.current;
@@ -85,7 +99,8 @@ export function PageHero({
     <div
       ref={rootRef}
       className={cn(
-        "relative isolate overflow-hidden pt-28 pb-20 sm:pt-32 lg:pb-28",
+        "relative isolate overflow-hidden pt-28 sm:pt-32",
+        isCompact ? "pb-12 lg:pb-16" : "pb-20 lg:pb-28",
         bg,
         className,
       )}
@@ -112,8 +127,21 @@ export function PageHero({
       )}
 
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        <div
+          className={cn(
+            "grid items-center gap-12",
+            hasMedia
+              ? "lg:grid-cols-[1.05fr_0.95fr] lg:gap-16"
+              : "max-w-4xl",
+          )}
+        >
           <div className="flex flex-col items-start gap-6">
+            {breadcrumbs && (
+              <Breadcrumbs
+                items={breadcrumbs}
+                withSchema={withBreadcrumbSchema}
+              />
+            )}
             {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
             <Heading className="font-display text-display-sm text-balance sm:text-display">
               {title}
@@ -145,9 +173,11 @@ export function PageHero({
             )}
           </div>
 
-          <div data-parallax="14" className="relative">
-            {media ?? <PageHeroMediaPlaceholder />}
-          </div>
+          {hasMedia && (
+            <div data-parallax="14" className="relative">
+              {media ?? <PageHeroMediaPlaceholder />}
+            </div>
+          )}
         </div>
       </Container>
     </div>

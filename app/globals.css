@@ -104,7 +104,6 @@
   html {
     font-size: 100%; /* 1rem = 16px — scale the whole UI from here */
     -webkit-text-size-adjust: 100%;
-    scroll-behavior: smooth;
     /* space for sticky header when jumping to anchors */
     scroll-padding-top: 6rem;
   }

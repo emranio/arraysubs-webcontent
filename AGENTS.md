@@ -1,184 +1,433 @@
 # AGENTS.md
 
-Guidance for AI agents (and humans) working in this repository. Read this
-before adding pages or components. Pair it with [DESIGN.md](./DESIGN.md) for the
-visual system.
+Single source of truth for agents and humans working in this repository. There
+is no separate design guide. Keep this file current when the design system
+changes.
 
 ---
 
-## What this is
+## Product Context
 
-The marketing site for **ArraySubs** — a free, all-in-one WooCommerce
-subscription & membership plugin — built on the umbrella brand **ArrayHash**
-(`arrayhash.com`). It is a brand-new **Next.js** app that is being built design
-system first.
+This is the ArrayHash marketing site for ArraySubs, a WooCommerce subscription
+and membership product.
 
-**Current stage:** only one page exists — the **Design System** at `/`
-(`app/page.tsx`). It is a living catalog of every reusable element. We polish the
-system here before building the real marketing pages. The design-system route is
-`noindex` and will be replaced by the real homepage later.
+Current working routes:
 
-Marketing copy, SEO keywords, the full site map and page strategy live in
-[`marketing-materials/`](./marketing-materials/) — read those when building real
-pages.
+- `/design-system/` - live catalog for the visual system, reusable components,
+  motion patterns, forms, cards, surfaces and CTA treatments.
+- `/default-page/` - baseline inner-page layout: compact `PageHero`, breadcrumbs
+  and standard page-width content.
+- `/` - temporary placeholder until the real homepage ships.
 
----
+Marketing copy, SEO keywords, sitemap strategy and page-specific content live in
+`marketing-materials/`. Read those before building real marketing pages.
 
 ## Stack
 
 | Concern | Choice |
 | --- | --- |
-| Framework | Next.js 16 (App Router, Turbopack) |
+| Framework | Next.js 16, App Router, Turbopack |
 | UI | React 19 |
-| Styling | Tailwind CSS v4 (CSS-first `@theme`) + SCSS modules |
-| Animation | GSAP 3 (+ ScrollTrigger) via `@gsap/react` |
+| Styling | Tailwind CSS v4, CSS-first `@theme`, SCSS modules when needed |
+| Animation | GSAP 3, ScrollTrigger, `@gsap/react` |
 | Icons | `lucide-react` |
-| Language | TypeScript (strict) |
-| Class utility | `clsx` + `tailwind-merge` → `cn()` |
+| Language | TypeScript strict |
+| Class merging | `clsx` + `tailwind-merge` via `cn()` |
 
 ## Commands
 
 ```bash
-npm run dev        # start dev server (http://localhost:3000)
-npm run build      # production build (also type-checks)
+npm run dev        # start dev server at http://localhost:3000
 npm run typecheck  # tsc --noEmit
+npm run build      # production build and type validation
 ```
 
-> Note: the npm cache had root-owned files from an old npm bug. If `npm install`
-> fails with `EACCES` on `~/.npm`, install with a fresh cache:
-> `npm install --cache /tmp/arrayhash-npm-cache`.
+If `npm install` fails with `EACCES` from old root-owned npm cache files, use:
 
----
-
-## Directory map
-
+```bash
+npm install --cache /tmp/arrayhash-npm-cache
 ```
+
+## Key Files
+
+```txt
 app/
-  layout.tsx        Root layout: fonts, metadata, providers, header/footer, skip link
-  page.tsx          The Design System page (temporary homepage, noindex)
-  globals.css       Tailwind v4 import + @theme design tokens + base layer
-  robots.ts         robots.txt
-  sitemap.ts        sitemap.xml
+  layout.tsx              Root layout, fonts, metadata, providers, header/footer
+  globals.css             Tailwind import, @theme tokens, base layer
+  design-system/page.tsx  Live design-system catalog
+  default-page/page.tsx   Baseline inner-page example
+  not-found.tsx           Light-only 404 page
 components/
-  ui/               Reusable UI library (see DESIGN.md). Barrel: components/ui/index.ts
-  ui/form/          Form primitives (Field, Input, Select, Textarea, Checkbox, Range, LeadForm)
-  animation/        GSAP effects: CustomCursor, Magnetic, ScrollReveal, ScrollBackground
-  layout/           SiteHeader, SiteFooter
-  seo/              JsonLd component
+  ui/                     Reusable UI library, exported from components/ui/index.ts
+  ui/form/                Field and custom form primitives
+  animation/              GSAP helpers and page motion patterns
+  layout/                 SiteHeader, MobileMenu, SiteFooter
+  seo/                    JsonLd
 lib/
-  cn.ts             className merge helper
-  site.ts           Central site config (name, url, brand, description…)
-  seo.ts            createMetadata() + JSON-LD schema builders
-  gsap.ts           GSAP registration + reduced-motion / pointer helpers
+  cn.ts                   Class merge helper
+  colors.ts               Token mirror for JS and scroll backgrounds
+  gsap.ts                 GSAP registration and motion guards
+  navigation.ts           Header and mobile menu links
+  seo.ts                  Metadata and JSON-LD helpers
+  site.ts                 Site config
 styles/
-  _mixins.scss      Shared SCSS mixins (breakpoints, reduced-motion, visually-hidden)
+  _mixins.scss            Shared SCSS mixins
 ```
 
-Import alias: `@/*` → repo root (e.g. `@/components/ui`, `@/lib/seo`).
+Use the `@/*` alias for repo-root imports.
 
 ---
 
-## Non-negotiable conventions
+## Absolute Rules
 
-1. **Light mode only.** No dark-mode variants. (Dark *sections* exist via the
-   `dark` surface, but there is no theme toggle.)
-2. **rem everywhere.** Never hard-code `px`. Tailwind's spacing/size scale is rem;
-   in SCSS and inline styles use rem. `1rem = 16px`.
-3. **100rem fluid max page width.** Wrap page content in `<Container>` (`max-w-page`).
-4. **100% flat design.** No box-shadows, no gradients, no glows. Separate
-   elements with **borders** and **surface colors**. (See DESIGN.md.)
-   *Exception:* the sticky **header**, the desktop **mega menu**, and the
-   **mobile fullscreen menu** use a frosted **backdrop-blur** background
-   (`bg-background/80 backdrop-blur-md`) — the one place blur is allowed. Never
-   add blur to content elements (cards, sections, etc.).
-5. **Design tokens are the single source of truth** — defined in `app/globals.css`
-   `@theme`. Use the generated utilities (`bg-primary`, `text-dark`,
-   `text-display-lg`, `max-w-page`, `rounded-pill`…) or `var(--color-*)` in SCSS.
-   Do not invent ad-hoc hex values in components.
-6. **Components are generically named and 100% reusable.** Name by *what it is*
-   (`Button`, `Accordion`, `IconCard`), never by where it's used. When the same
-   element has multiple looks, expose a **`variant` prop named by the style**
-   (`<Button variant="outline">`), not a new component.
-7. **Fonts:** `font-display` (Funnel Display) for headings, `font-sans`
-   (Funnel Sans) for body. Headings already default to Funnel Display.
-8. **Card grid gaps.** *Separated* card grids — cards with their own rounded
-   border (IconCard, OfferCard, StepCard) — use a tight `gap-[0.1875rem]` (3px)
-   for columns and rows; never `gap-4`/`gap-6`. *Connected* card grids — square,
-   borderless cells inside a `bg-border`-tinted, `overflow-hidden rounded-2xl`
-   container (e.g. Tag cards) — use **`gap-px`** so each divider is a single
-   crisp 1px hairline. Never use a thicker gap in a connected grid: 3px+ between
-   square cells reads as a doubled border.
-9. **1px borders on grid cards.** Card borders are always 1px (`border`), never
-   `border-2`. With rule 8 this guarantees every grid divider is a single 1px
-   line, never doubled.
-10. **Button layers.** Buttons use the shared pressed style and default to
-    `layers="3layer"`. On primary-colored sections, set `layers="2layer"` so
-    the rear shadow layer is removed.
+1. Light theme only. Do not add dark mode, theme toggles, `dark:` Tailwind
+   variants, mode detectors, or `prefers-color-scheme` CSS. A `dark` surface is
+   a fixed content treatment, not a user theme.
+2. Use rem-based sizing. Do not hard-code `px` in components or SCSS. Tailwind
+   arbitrary values must also be rem unless the existing API requires a unitless
+   or CSS-native value.
+3. Unless explicitly specified otherwise, every page title header must use the
+   shared `PageHero` component. Do not create page-local hero/title-header
+   markup.
+4. Unless explicitly specified otherwise, every page content area must use
+   `Container` with the design-system `max-w-page` width. Do not invent custom
+   page-level max widths.
+5. Flat design only. No CSS shadows, drop shadows, glows, glass cards,
+   decorative blur, or decorative gradients. Separate surfaces with background
+   tokens, borders, spacing and layout.
+6. The only blur exceptions are the sticky header bar and mobile fullscreen
+   menu: `bg-background/80 backdrop-blur-md` or the existing mobile-menu blur.
+   Do not use blur on cards, content panels, sections, heroes, CTAs or forms.
+7. Use tokens from `app/globals.css` and generated utilities such as
+   `bg-primary`, `text-muted`, `border-border`, `max-w-page` and
+   `rounded-pill`. Do not add inline hex values or ad hoc colors in components.
+8. Components must be reusable and generically named by what they are. Add new
+   looks with typed `variant`, `tone`, `surface` or `size` props instead of
+   making page-specific duplicate components.
+9. Import reusable UI from `@/components/ui`. Do not rebuild buttons, cards,
+   tabs, accordions, breadcrumbs, form fields, containers or section headings in
+   page files.
+10. Preserve accessibility: one `h1` per page, semantic landmarks, labelled navs,
+    visible focus rings, keyboard-operated controls, ARIA for interactive
+    widgets and reduced-motion support.
 
-## Accessibility (must pass)
+---
 
-- Semantic landmarks: one `<main id="main">`, `<header>`, `<footer>`, `<nav>` with
-  `aria-label`. Keep a single `<h1>` per page; nest headings in order.
-- Every interactive control is keyboard operable with a visible focus ring
-  (handled globally via `:focus-visible`). Don't remove outlines.
-- Accordions/Tabs/Sliders ship correct ARIA — reuse the components, don't rebuild.
-- Forms: wrap controls in `<Field>` so label, description, error and
-  `aria-describedby`/`aria-invalid` are wired automatically.
-- **All motion respects `prefers-reduced-motion`.** GSAP helpers in `lib/gsap.ts`
-  (`prefersReducedMotion`, `hasFinePointer`) gate every effect; CSS also clamps
-  transitions/animations. Never add motion that ignores this.
-- Maintain WCAG AA contrast. Dark text (`--color-foreground`) on light; the
-  purple `primary`/`primary-strong` are **backgrounds with on-dark text**.
-  `highlight` is a light tint that uses dark text.
-- Secondary copy must favor readability over softness. Use `--color-muted` /
-  `text-muted` for paragraphs, subtitles and card descriptions; reserve
-  `--color-faint` / `text-faint` for short labels, placeholders and metadata.
+## Page Assembly
 
-## Motion patterns (GSAP)
+Use this shape for ordinary inner pages unless a spec says otherwise:
 
-Reuse the building blocks in `components/animation/`:
+```tsx
+import { Container, PageHero, Section } from "@/components/ui";
 
-- `CustomCursor` (mouse-follow dot+ring, mix-blend) — mounted once in layout.
-- `Magnetic` — wrap a button/element for the magnet pull. `<Button magnetic>` does this.
-- `ScrollReveal` — fade/rise on scroll; supports `stagger` for children.
-- `ScrollBackground` — page bg/text color tween; opt a section in with
-  `<Section surface="transparent" scrollBg="dark">`.
-- `BigText` — oversized heading whose text "inks in" on scroll.
-- `Hero` — landing hero with cursor parallax.
+export default function ExamplePage() {
+  return (
+    <>
+      <PageHero
+        variant="compact"
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Example", href: "/example/" },
+        ]}
+        eyebrow="Category"
+        title="Example Page"
+        subtitle="Short page summary in readable secondary copy."
+      />
 
-Register plugins via `registerGsap()` inside an effect — never at module top level.
+      <Section spacing="md">
+        <Container>
+          {/* page content */}
+        </Container>
+      </Section>
+    </>
+  );
+}
+```
 
-## SEO / GEO
+Page rules:
 
-- Per-page metadata: `export const metadata = createMetadata({ title, description, path, noindex? })` from `lib/seo.ts`.
-- Structured data: build with `organizationSchema()`, `websiteSchema()`,
-  `softwareApplicationSchema()`, `breadcrumbSchema()`, `faqSchema()` and render via
-  `<JsonLd data={…} />`. Add `FAQPage` JSON-LD to any FAQ section.
-- **Breadcrumbs vs Hero:** inner pages get `<Breadcrumbs>` (emits BreadcrumbList
-  JSON-LD). The homepage and product landing pages get a `<Hero>` and **no
-  breadcrumb**.
-- Update `app/sitemap.ts` when a new indexable page ships.
-- Write quotable, direct-answer copy and use comparison tables / definition
-  blocks — the content strategy targets AI answer engines (see marketing-materials).
+- Use `PageHero variant="compact"` for default inner pages. It owns the page
+  title, breadcrumb trail, intro copy, optional actions and standard top spacing.
+- Use `PageHero variant="split"` only for landing/product pages that need a
+  right-column visual or stronger campaign header.
+- Pass breadcrumb items to `PageHero`; do not manually render `Breadcrumbs` in
+  page files unless a component-level exception is needed.
+- Put content inside full-bleed `Section` bands, then `Container` inside each
+  section.
+- The default content width is `Container` width `page` (`max-w-page`, 100rem).
+  Use `wide`, `narrow` or `prose` only for a specific local content reason, not
+  as a page wrapper replacement.
+- Do not place page sections inside card-like wrappers. Sections are full-width
+  bands; cards are repeated content items or framed tools only.
 
-## Brand facts
+## Layout And Surfaces
 
-- Product is always written **ArraySubs** (one word). Umbrella site is **ArrayHash**.
-- URL structure: product pages under `/deals/arraysubs/`, trust/legal under
-  `/trust-center/`. `arrayhash.com/` will redirect to the product landing.
-- Primary CTA copy: **"Get Pro — Free [No Strings Attached]"**; secondary: **"Live Demo"**.
-  Early-access offer: 4 months of Pro free, no credit card. No pricing tables during
-  the early-access phase.
-- Support email: `emran@arraysubs.com`. Docs/support live at
-  `support.arrayhash.com`. **Do not reference a GitHub repo anywhere.**
+`Section` is the standard full-bleed band component.
 
-## Do / Don't
+Use `surface` intentionally:
 
-- ✅ Add new looks as `variant` props; extend `@theme` tokens for new colors.
-- ✅ Keep components presentational and reusable; pass content via props/children.
-- ✅ Test real UI in the browser (golden path + keyboard + reduced motion) before
-  claiming done.
-- ❌ No shadows/gradients/blurs (flat design).
-- ❌ No `px` literals, no inline hex, no second component for a style variant.
-- ❌ Don't add a theme toggle or dark mode.
-- ❌ Don't mention a GitHub repository.
+- `default` - white page band. Its contextual `bg-card` becomes the purple-tint
+  surface. Use for normal editorial content, text sections and card grids that
+  need tinted cards.
+- `surface` - pale purple band. Its contextual `bg-card` becomes white. Use to
+  alternate pacing after white sections and to make dense component groups feel
+  separated.
+- `highlight` - light purple emphasis band with dark text. Use for lighter
+  decision or offer moments.
+- `primary` - saturated purple band with `text-on-dark`. Use for final CTA or
+  high-priority action bands. Buttons on this surface should use
+  `layers="2layer"`.
+- `dark` - fixed dark-purple editorial surface with `text-on-dark`. Use
+  sparingly for manifesto, risk, trust or high-focus storytelling sections.
+- `transparent` with `scrollBg` - use only for scroll-driven tone sequences
+  managed by `ScrollBackground`.
+
+Surface pairing rules:
+
+- Use `bg-card` for cards and panels so cards automatically invert correctly
+  between white and tinted sections.
+- Use `text-foreground` for primary text on light surfaces, `text-muted` for
+  paragraph/supporting copy, and `text-faint` only for short labels, metadata and
+  placeholders.
+- On `primary` and `dark` surfaces, use `text-on-dark`,
+  `text-on-dark-muted`, `border-on-dark-border` and the `on-dark` focus-ring
+  context.
+- Do not stack colored cards on colored sections unless the component already
+  handles the contrast. Prefer contextual `bg-card`.
+
+## Color Tokens
+
+Brand tokens:
+
+- `highlight` (`#EFE7FF`) - pale purple tint for soft surfaces, markers and
+  light emphasis.
+- `primary` (`#873EFF`) - main CTA/action color, icons, active states and
+  saturated CTA surfaces.
+- `primary-strong` (`#6F22E6`) - hover/active version of primary.
+- `dark` (`#12002B`) - body text, dark sections and dark buttons.
+- `dark-2` (`#321167`) - dark-surface secondary tone.
+
+Neutral tokens:
+
+- `background` - white page background.
+- `surface` and `card` - contextual light-purple or white surfaces depending on
+  the parent section.
+- `foreground` - primary text.
+- `muted` - readable secondary copy.
+- `faint` - labels, placeholders and low-priority metadata.
+- `border` and `border-strong` - separators and control/card outlines.
+
+Feedback tokens:
+
+- `danger` - validation and destructive/error text.
+- `success` - success states.
+- `gold` currently maps to primary purple for ratings.
+
+Do not add a new color because one page feels different. First try existing
+surface, card, border, text and badge combinations. Add a token only when the
+design system needs a reusable semantic color.
+
+## Typography
+
+- Body font is `font-sans` (Funnel Sans). Headings use `font-display` (Funnel
+  Display).
+- Use existing text utilities and display tokens. Do not invent one-off
+  viewport-based font sizing.
+- Page titles use `PageHero`; its title style is `text-display-sm` scaling to
+  `text-display`.
+- Large landing headlines in the current design-system intro can use explicit
+  display-scale classes, but ordinary page headers should not duplicate that
+  markup.
+- Section headings use `SectionTitle` with `size="lg"` by default. Use `md` for
+  two-column component demos and `display` only for major editorial moments.
+- Body copy is usually `text-base`, `text-lg`, or `sm:text-xl` for leads. Use
+  `leading-8` for long readable paragraphs.
+- Use `text-muted` for paragraphs, subtitles and descriptions. Use `text-faint`
+  only for short code labels, helper labels and metadata.
+- Keep headings balanced with existing `text-balance`; keep paragraphs readable
+  with `text-pretty`.
+- Use `Eyebrow` for small section labels instead of hand-written uppercase label
+  styling.
+
+## Cards And Grids
+
+The design system is flat and dense. Cards do not use shadows.
+
+Use existing card components:
+
+- `IconCard` - feature/module cards with icon, title, description, optional
+  badge and optional whole-card link.
+- `OfferCard` - tier/package/offer cards with sequence number, badge, eyebrow,
+  description, stat and arrow CTA.
+- `StepCard` - numbered process/how-it-works cards with large outlined numbers.
+- `TagCard` - capability tiles with a tag pill; use `bare` when tiling in a
+  connected-looking grid.
+- `Testimonials` - full review carousel.
+- `Slider` - scroll-snap carousel shell for repeated cards.
+
+Grid rules:
+
+- Separated card grids use `gap-[0.1875rem]`. This is the established tight
+  design-system rhythm.
+- Do not use loose `gap-4`, `gap-6` or `gap-8` between cards unless the cards
+  are not visually part of one grid.
+- Cards use `bg-card`, not hard-coded white/tint, so parent section surfaces
+  control contrast.
+- Card rounding is usually `rounded-xl` or `rounded-2xl`; compact controls use
+  `rounded-md`; pills use `rounded-pill`.
+- Card borders are at most `border` (1px) unless the existing form/control
+  component intentionally uses `border-2` for an input indicator.
+- Hover motion may translate cards slightly or change fills. It must remain
+  simple, token-based and reduced-motion safe. Do not add shadows to hover
+  states.
+- Do not nest cards inside cards. If content needs grouping inside a card, use
+  borders, dividers, spacing or typography.
+
+## Buttons, Links And CTAs
+
+Use `Button` for actions.
+
+Button variants:
+
+- `primary` - main action on light surfaces.
+- `dark` - strong action, especially on light/highlight backgrounds.
+- `highlight` - light-purple action with dark text.
+- `outline` - secondary action.
+- `ghost` - low-emphasis action.
+
+Button rules:
+
+- Buttons default to `layers="3layer"`. This uses flat token-colored layers, not
+  CSS `box-shadow`.
+- On `primary` sections or saturated CTA bands, use `layers="2layer"`.
+- Use `magnetic` only on prominent CTAs or design-system demos, never on every
+  tiny utility action.
+- Use `iconLeft` and `iconRight` with `lucide-react` icons for clearer actions.
+- Keep button text short enough to fit at mobile widths.
+- Use `CTA` for repeated final-action bands. Use `flat` when the parent
+  `Section surface` already owns the background.
+
+## Forms
+
+Use the form primitives exported from `@/components/ui`.
+
+- Wrap standalone inputs in `Field` so label, description, error,
+  `aria-describedby`, `aria-invalid` and required state are wired correctly.
+- Use `Input`, `Textarea`, `Range`, `Checkbox`, `RadioGroup`, `Switch`,
+  `Select`, `Multiselect`, `LeadForm` and `MultiStepForm` instead of native
+  browser-default controls in page files.
+- `Select` and `Multiselect` are custom accessible listbox controls. Do not
+  replace them with native selects unless explicitly requested.
+- Error text uses `danger`; success panels use `success` and appropriate live
+  region behavior from the existing components.
+- Do not add browser-default appearances, custom focus removal or unlabeled
+  controls.
+
+## Motion And Interaction
+
+Motion must support the content, not decorate it.
+
+Use existing helpers:
+
+- `CustomCursor` - mounted once in layout.
+- `Magnetic` - button hover pull; already integrated through `Button magnetic`.
+- `ScrollReveal` - fade/rise reveal on scroll, with optional stagger.
+- `ScrollBackground` - page background/text tone changes for sections with
+  `surface="transparent"` and `scrollBg`.
+- `BigText` - oversized scroll-fill text.
+- `PageHero` - pointer parallax on decorative flat shapes.
+- `Manifesto`, `Statement`, `Testimonials`, `Accordion`, `Tabs` and form
+  controls already include their own interaction patterns.
+
+Motion rules:
+
+- Register GSAP only inside effects with `registerGsap()`. Never register at
+  module top level.
+- Gate pointer effects with `hasFinePointer()` and all animation with
+  `prefersReducedMotion()`.
+- Do not animate layout in a way that causes text overlap or content jumps.
+- Do not auto-focus controls or headings on route load. Only move focus after a
+  user-triggered step change, menu open, modal open or validation event.
+- Keep durations modest and easing consistent with existing helpers.
+
+## Header, Navigation And Footer
+
+- Header navigation is a simple link list from `lib/navigation.ts`. Do not add a
+  mega menu unless explicitly requested.
+- The sticky header is allowed to use a frosted background and border. Keep it
+  flat and compact.
+- The mobile menu is a fullscreen dialog below `lg`, with trapped focus, Escape
+  close and body-scroll lock.
+- Header and footer content still use `Container`.
+- Footer is a fixed dark surface with on-dark text and simple link columns.
+
+## SEO And Content
+
+- Use `createMetadata({ title, description, path, noindex? })` for page
+  metadata.
+- Use JSON-LD helpers from `lib/seo.ts`: `organizationSchema`,
+  `websiteSchema`, `softwareApplicationSchema`, `breadcrumbSchema` and
+  `faqSchema`.
+- `PageHero` breadcrumbs emit breadcrumb JSON-LD by default. Set
+  `withBreadcrumbSchema={false}` only for non-indexed utility pages such as 404.
+- Update `app/sitemap.ts` when an indexable page ships.
+- Use direct, answerable copy. Favor specific claims, comparison tables,
+  definition blocks and FAQ sections where appropriate.
+- Read `marketing-materials/` before writing real product, trust, comparison or
+  support pages.
+
+## Brand And Offer Facts
+
+- Product name: `ArraySubs`.
+- Umbrella brand: `ArrayHash`.
+- Product pages live under `/deals/arraysubs/`.
+- Trust/legal pages live under `/trust-center/`.
+- Primary CTA: `Get Pro - Free [No Strings Attached]`.
+- Secondary CTA: `Live Demo`.
+- Early-access offer: 4 months of Pro free, no credit card, no pricing table
+  during the early-access phase.
+- Support email: `emran@arraysubs.com`.
+- Docs/support: `support.arrayhash.com`.
+- Do not reference a GitHub repository in public marketing copy.
+
+## Accessibility Checklist
+
+Every page must satisfy:
+
+- One `<main id="main">`.
+- One `<h1>`, supplied by `PageHero` unless explicitly specified otherwise.
+- Heading levels in order.
+- `<header>`, `<footer>` and labelled `<nav>` landmarks.
+- Visible `:focus-visible` ring; never remove outlines.
+- Keyboard support for menus, tabs, accordions, sliders and form controls.
+- Decorative elements marked `aria-hidden`.
+- Images have useful `alt` text unless decorative.
+- Forms use labels and announced errors/status messages.
+- AA contrast across all surfaces.
+- Motion respects reduced-motion settings.
+
+## Build And Verification
+
+Before saying a UI task is done:
+
+1. Run `npm run typecheck`.
+2. Run `npm run build` for page/layout/component changes with real UI impact.
+3. Run `git diff --check`.
+4. Verify affected pages in the browser at desktop and mobile widths.
+5. For new pages, check route load, header navigation, scroll position, one
+   `h1`, `PageHero`, breadcrumbs, content container width and no console errors.
+
+## Do Not Do
+
+- Do not create another design guide file. Keep design-system instructions here.
+- Do not use dark mode, theme toggles, mode detection or `prefers-color-scheme`.
+- Do not use `px`, inline hex colors, CSS shadows, decorative gradients, glows
+  or content blur.
+- Do not create one-off page heroes, section title blocks, button styles, cards
+  or form controls.
+- Do not use large loose card-grid gaps for design-system card grids.
+- Do not hide the native system pointer.
+- Do not put cards inside cards.
+- Do not add decorative blobs, orbs, bokeh, glass panels or glossy effects.
+- Do not add a landing-page marketing wrapper when the task is to build an
+  actual page, tool, form or component.
