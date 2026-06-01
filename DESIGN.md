@@ -26,17 +26,17 @@ All colors are CSS custom properties; Tailwind generates `bg-*`, `text-*`,
 | `--color-primary` | `#873EFF` | `*-primary` | Primary action color |
 | `--color-primary-strong` | `#6F22E6` | `*-primary-strong` | Primary hover/active |
 | `--color-dark` | `#12002B` | `*-dark` | Text, dark sections, dark buttons |
-| `--color-dark-2` | `#26005C` | `*-dark-2` | Elevated surface on dark |
+| `--color-dark-2` | `#321167` | `*-dark-2` | Primary-tinted elevated surface on dark |
 
 ### Neutral (light)
 | Token | Hex | Use |
 | --- | --- | --- |
 | `--color-background` | `#FFFFFF` | Page background |
-| `--color-surface` | `#F8F5FF` | Subtle section / card surface |
-| `--color-surface-2` | `#F0E9FF` | Deeper surface (segmented controls) |
+| `--color-surface` | `#F0E9FF` | Subtle section surface and default card tint on white |
+| `--color-card` | `#F0E9FF` | Contextual card token; sections override it |
 | `--color-foreground` | `#12002B` | Body + heading text |
-| `--color-muted` | `#5B4778` | Secondary text (AA on white) |
-| `--color-faint` | `#8D7AAA` | Tertiary text, placeholders, code labels |
+| `--color-muted` | `#3F2A5C` | High-contrast secondary text |
+| `--color-faint` | `#6A548A` | Tertiary text, placeholders, code labels |
 | `--color-border` | `#DED2F4` | Default borders |
 | `--color-border-strong` | `#C5ADEF` | Emphasized borders |
 
@@ -50,7 +50,9 @@ surface="dark"`) so the focus ring switches to highlight.
 
 **Contrast rules:** `highlight` is light and uses dark text. `primary` and
 `primary-strong` use light `on-dark` text when they are backgrounds. Dark
-sections use `on-dark` text.
+sections use `on-dark` text. Secondary copy must stay dark and readable:
+paragraphs, subtitles and card descriptions use `text-muted`; reserve
+`text-faint` for short labels, placeholders and small metadata only.
 
 ---
 
@@ -72,8 +74,9 @@ sections use `on-dark` text.
 `text-xs` 0.75 · `text-sm` 0.875 · `text-base` 1 · `text-lg` 1.125 ·
 `text-xl` 1.25 · `text-2xl` 1.5 · `text-3xl` 1.875 · `text-4xl` 2.25 …up to `text-6xl`.
 
-Body copy is `text-base`/`text-lg`; secondary text adds `text-muted`. Use
-`marker-highlight` for a purple-tint highlighter bar behind inline text.
+Body copy is `text-base`/`text-lg`; secondary text adds `text-muted`, never
+`text-faint`. Use `marker-highlight` for a purple-tint highlighter bar behind
+inline text.
 
 ---
 
@@ -102,7 +105,7 @@ Import from the barrel: `import { Button, SectionTitle, … } from "@/components
 | `IconCard` | `icon`, `title`, `description`, `href`, `badge` | Becomes a link when `href` set |
 | `OfferCard` | `number`, `badge`, `title`, `eyebrow`, `description`, `metaLabel`, `metaValue`, `metaSuffix`, `featured`, `href` | Numbered tier card — colored treatment is a hover state; `featured` pins it on |
 | `StepCard` | `number`, `title`, `description` | Numbered process step — big number, accent bar slides in on hover |
-| `TagCard` | `tag`, `title`, `description`, `tagTone`, `href`, `active` | Tag-pill feature tile — fills dark on hover; `active` pins the look on |
+| `TagCard` | `tag`, `title`, `description`, `href`, `active` | Tag-pill feature tile with primary tag — fills dark on hover; `active` pins the look on |
 | `CTA` | `surface`, `eyebrow`, `title`, `subtitle`, `actions`, `microcopy` | Reusable CTA band |
 | `Hero` | `eyebrow`, `title`, `subtitle`, `actions`, `trust`, `media`, `headingLevel` | Landing hero, cursor parallax, no breadcrumb |
 | `Manifesto` | `lines`, `description` | Dark editorial feature statement: big mixed-color text + inline pills |

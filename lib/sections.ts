@@ -40,8 +40,7 @@ export const SECTIONS: SectionCategory[] = [
   {
     title: "Motion",
     items: [
-      { label: "Hero parallax", href: "#motion" },
-      { label: "Scroll background", href: "#scroll-bg" },
+      { label: "Tone sequence", href: "#scroll-bg" },
       { label: "Get Pro — Free", href: "#cta" },
     ],
   },

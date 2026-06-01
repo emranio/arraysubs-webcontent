@@ -2,9 +2,10 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { ArrayHashMark } from "./ArrayHashMark";
 
 type OfferCardProps = {
-  /** Sequence number — rendered as /01 etc. */
+  /** Sequence number — rendered with the ArrayHash marker, e.g. [hash]01. */
   number: number;
   /** Top-right pill (e.g., "Free", "4 weeks", "Limited"). */
   badge?: ReactNode;
@@ -18,7 +19,7 @@ type OfferCardProps = {
   metaValue: ReactNode;
   /** Optional small suffix after the value (e.g., "USD", "forever"). */
   metaSuffix?: string;
-  /** Pin the card to the "hover" look — primary border, number chip, filled arrow. */
+  /** Pin the card to the "hover" look — number chip and filled arrow. */
   featured?: boolean;
   /** When set, the whole card becomes a link to this href. */
   href?: string;
@@ -30,8 +31,8 @@ type OfferCardProps = {
 /**
  * Numbered offer / tier card.
  *
- * The "colored" look (primary border, number chip, filled CTA arrow) is a
- * proper **hover state** by default — every card animates into it on hover.
+ * The "colored" look (number chip and filled CTA arrow) is a proper **hover
+ * state** by default — every card animates into it on hover.
  * Pass `featured` to pin a card in that look statically (e.g., for promos).
  */
 export function OfferCard({
@@ -48,18 +49,12 @@ export function OfferCard({
   cta = "Learn more",
   className,
 }: OfferCardProps) {
-  const numStr = `/${String(number).padStart(2, "0")}`;
-
-  /** Returns classes that apply at rest, on hover, and statically when featured. */
-  const at = (rest: string, active: string) =>
-    featured ? active : cn(rest, active.replace(/(^|\s)/g, "$1group-hover/offer:"));
+  const numStr = String(number).padStart(2, "0");
 
   const Body = (
     <article
       className={cn(
-        // 2px border always so there's no layout shift between states.
-        "group/offer relative flex h-full flex-col rounded-2xl border bg-background p-6 transition-colors duration-200 sm:p-8",
-        featured ? "border-primary" : "border-border hover:border-primary",
+        "group/offer relative flex h-full flex-col rounded-2xl bg-card p-6 text-foreground sm:p-8",
         className,
       )}
     >
@@ -75,12 +70,13 @@ export function OfferCard({
           />
           <span
             className={cn(
-              "relative px-1 transition-colors duration-200",
+              "relative inline-flex items-center gap-1 px-1 transition-colors duration-200",
               featured
                 ? "text-on-dark"
                 : "text-faint group-hover/offer:text-on-dark",
             )}
           >
+            <ArrayHashMark className="text-[0.82em]" />
             {numStr}
           </span>
         </span>
@@ -115,15 +111,15 @@ export function OfferCard({
 
       <div className="mt-6 flex items-end justify-between gap-4">
         <div className="flex flex-col">
-          <span className="text-xs font-semibold tracking-[0.18em] text-faint uppercase">
+          <span className="text-xs font-semibold tracking-[0.18em] text-primary uppercase">
             {metaLabel}
           </span>
           <div className="mt-1 flex items-baseline gap-1.5">
-            <span className="font-display text-2xl font-bold sm:text-3xl">
+            <span className="font-display text-2xl font-bold text-primary sm:text-3xl">
               {metaValue}
             </span>
             {metaSuffix && (
-              <span className="text-sm font-medium text-muted">
+              <span className="text-sm font-medium text-primary">
                 {metaSuffix}
               </span>
             )}
@@ -137,7 +133,7 @@ export function OfferCard({
             "inline-flex size-12 shrink-0 items-center justify-center rounded-full border transition-colors duration-200",
             featured
               ? "border-primary bg-primary text-on-dark"
-              : "border-border-strong bg-background text-foreground group-hover/offer:border-primary group-hover/offer:bg-primary group-hover/offer:text-on-dark",
+              : "border-border-strong bg-card text-foreground group-hover/offer:border-primary group-hover/offer:bg-primary group-hover/offer:text-on-dark",
           )}
         >
           <ArrowUpRight className="size-5 transition-transform duration-200 group-hover/offer:-translate-y-0.5 group-hover/offer:translate-x-0.5" />

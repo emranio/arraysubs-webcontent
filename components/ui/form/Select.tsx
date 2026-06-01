@@ -204,7 +204,7 @@ export function Select({
                 onPointerEnter={() => setActive(index)}
                 className={cn(
                   "flex cursor-pointer items-center justify-between gap-2 px-4 py-2.5 text-sm",
-                  isActive && "bg-surface-2",
+                  isActive && "bg-surface",
                   isSelected && "font-medium",
                 )}
               >

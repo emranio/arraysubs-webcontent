@@ -8,6 +8,7 @@ import {
   useGSAP,
 } from "@/lib/gsap";
 import { cn } from "@/lib/cn";
+import { ArrayHashMark } from "./ArrayHashMark";
 
 export type StatementSegment = {
   text: string;
@@ -16,7 +17,7 @@ export type StatementSegment = {
 };
 
 type StatementProps = {
-  /** Small accent above/beside the heading (e.g. "About"). Rendered as "/Label". */
+  /** Small accent above/beside the heading. */
   eyebrow?: string;
   /** Mixed-style heading — an array of text + italic segments. */
   heading: StatementSegment[];
@@ -30,9 +31,9 @@ type StatementProps = {
 /**
  * Editorial two-column statement.
  *
- * Left column: a `/Label` eyebrow at the top and a supporting paragraph at the
- * bottom. Right column: an oversized heading that mixes regular and italic
- * runs, plus an optional CTA.
+ * Left column: an ArrayHash-marked eyebrow at the top and a supporting
+ * paragraph at the bottom. Right column: an oversized heading that mixes
+ * regular and italic runs, plus an optional CTA.
  *
  * Scroll animation: every WORD in the heading is wrapped in its own span and
  * slides up + fades in with a small stagger when the section enters the
@@ -81,8 +82,8 @@ export function Statement({
     >
       <div className="flex flex-col justify-between gap-10">
         {eyebrow && (
-          <p className="font-display text-2xl tracking-tight">
-            <span className="text-faint">/</span>
+          <p className="inline-flex items-center gap-2 font-display text-2xl tracking-tight">
+            <ArrayHashMark className="text-faint text-[0.7em]" />
             <em className="font-medium not-italic">{eyebrow}</em>
           </p>
         )}

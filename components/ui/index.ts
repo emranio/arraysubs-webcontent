@@ -1,6 +1,7 @@
 // Barrel export for the reusable UI library.
 export { Container } from "./Container";
 export { Section } from "./Section";
+export { ArrayHashMark } from "./ArrayHashMark";
 export { Eyebrow } from "./Eyebrow";
 export { SectionTitle } from "./SectionTitle";
 export { Button } from "./Button";

@@ -11,8 +11,17 @@ const surfaces: Record<Surface, string> = {
   surface: "bg-surface text-foreground",
 };
 
+const flatSurfaces: Record<Surface, string> = {
+  highlight: "text-dark",
+  primary: "text-on-dark on-dark",
+  dark: "text-on-dark on-dark",
+  surface: "text-foreground",
+};
+
 /** Decorative tone-on-tone shapes for the bright surfaces (flat, no gradient). */
-const BRIGHT_DECOR: Partial<Record<Surface, { topRight: string; bottomLeft: string }>> = {
+const BRIGHT_DECOR: Partial<
+  Record<Surface, { topRight: string; bottomLeft: string }>
+> = {
   // Mirrors the Hero `highlight` tone: light tint bg with primary shapes.
   highlight: { topRight: "bg-primary", bottomLeft: "bg-primary" },
 };
@@ -26,6 +35,8 @@ type CTAProps = {
   /** Reassurance line under the actions. */
   microcopy?: ReactNode;
   surface?: Surface;
+  /** Drops the panel fill/rounding so the parent section owns the background. */
+  flat?: boolean;
   className?: string;
 };
 
@@ -41,17 +52,24 @@ export function CTA({
   actions,
   microcopy,
   surface = "primary",
+  flat = false,
   className,
 }: CTAProps) {
-  const decor = BRIGHT_DECOR[surface];
+  const decor = flat ? undefined : BRIGHT_DECOR[surface];
   const onPrimarySurface = surface === "primary" || surface === "dark";
 
   return (
     <div
       data-surface={surface === "dark" ? "dark" : undefined}
       className={cn(
-        "relative isolate overflow-hidden rounded-2xl px-6 py-14 text-center sm:px-12 sm:py-20",
-        surfaces[surface],
+        "relative isolate text-center",
+        flat
+          ? "px-0 py-0"
+          : cn(
+              "overflow-hidden rounded-2xl px-6 py-14 sm:px-12 sm:py-20",
+              surfaces[surface],
+            ),
+        flat && flatSurfaces[surface],
         className,
       )}
     >

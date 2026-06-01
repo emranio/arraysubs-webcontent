@@ -1,11 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
 import {
   gsap,
   prefersReducedMotion,
-  registerGsap,
-  ScrollTrigger,
-  useGSAP,
 } from "@/lib/gsap";
 import { scrollBackgroundThemes } from "@/lib/colors";
 
@@ -15,63 +13,93 @@ const THEMES = scrollBackgroundThemes;
 type ThemeKey = keyof typeof THEMES;
 
 /**
- * Smoothly tweens the page background + text color as sections cross the
- * viewport center. Mark participating sections with
- * `data-scroll-bg="dark|highlight|surface|light"`. Their content should use the
- * inherited color (Section `surface="transparent"`) so it flips for contrast.
- * Skipped entirely under reduced motion.
+ * Keeps the page-level tone in sync with the scroll stage currently occupying
+ * the viewport focus point. Mark participating sections with
+ * `data-scroll-bg="dark|highlight|surface|light"`. Their content should use
+ * inherited color (Section `surface="transparent"`) so it stays readable while
+ * the page background changes.
  */
 export function ScrollBackground() {
-  useGSAP(() => {
-    registerGsap();
-    if (prefersReducedMotion()) return;
+  useEffect(() => {
+    const body = document.body;
+    const reduceMotion = prefersReducedMotion();
+    let activeKey: ThemeKey | null = null;
+    let activeTween: gsap.core.Tween | null = null;
 
-    const sections = gsap.utils.toArray<HTMLElement>("[data-scroll-bg]");
-    if (sections.length === 0) return;
+    const scrollSections = () =>
+      gsap.utils.toArray<HTMLElement>("[data-scroll-bg]");
 
-    const tween = (key: ThemeKey, instant = false) => {
+    const sectionKey = (section: HTMLElement): ThemeKey => {
+      const key = section.dataset.scrollBg as ThemeKey | undefined;
+      return key && key in THEMES ? key : "light";
+    };
+
+    const themeAtFocusPoint = (): ThemeKey => {
+      const focusY = window.innerHeight * 0.5;
+      let key: ThemeKey = "light";
+
+      for (const section of scrollSections()) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= focusY && rect.bottom >= focusY) {
+          key = sectionKey(section);
+        }
+      }
+
+      return key;
+    };
+
+    const paint = (key: ThemeKey, instant = false) => {
+      if (key === activeKey && !instant) return;
+      activeKey = key;
       const theme = THEMES[key] ?? THEMES.light;
-      gsap.to(document.body, {
+
+      activeTween?.kill();
+      if (instant || reduceMotion) {
+        gsap.set(body, {
+          backgroundColor: theme.bg,
+          color: theme.fg,
+        });
+        return;
+      }
+
+      activeTween = gsap.to(body, {
         backgroundColor: theme.bg,
         color: theme.fg,
-        duration: instant ? 0 : 0.6,
-        ease: "power2.out",
+        duration: 0.55,
+        ease: "power3.out",
         overwrite: "auto",
       });
     };
 
-    const triggers = sections.map((section) => {
-      const key = (section.dataset.scrollBg as ThemeKey) || "light";
-      return ScrollTrigger.create({
-        trigger: section,
-        // `top center` is too late — content is already in view by then.
-        // `top 80%` fires as the band enters the lower 20% of the viewport.
-        start: "top 80%",
-        end: "bottom 20%",
-        onEnter: () => tween(key),
-        onEnterBack: () => tween(key),
+    const sync = (instant = false) => paint(themeAtFocusPoint(), instant);
+    let frame: number | null = null;
+
+    const scheduleSync = (instant = false) => {
+      if (frame !== null) window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(() => {
+        frame = null;
+        sync(instant);
       });
-    });
-
-    // Sync the body to whichever band is active at mount time. Without this,
-    // a reload (or deep-link) mid-band leaves the body at default colors
-    // because onEnter only fires on a state CHANGE during scroll.
-    const syncInitial = () => {
-      const scrollY = window.scrollY;
-      let activeKey: ThemeKey | null = null;
-      for (let i = 0; i < triggers.length; i++) {
-        // The most-recently-passed band wins — that's the one we're "inside".
-        if (triggers[i].start <= scrollY) {
-          activeKey = (sections[i].dataset.scrollBg as ThemeKey) || "light";
-        }
-      }
-      if (activeKey) tween(activeKey, true);
     };
-    // Defer one frame so ScrollTrigger has finished computing `start`/`end`.
-    requestAnimationFrame(syncInitial);
 
-    return () => triggers.forEach((trigger) => trigger.kill());
-  });
+    const onScroll = () => scheduleSync();
+    const onResize = () => scheduleSync(true);
+    const observer = new MutationObserver(() => scheduleSync(true));
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    observer.observe(body, { childList: true, subtree: true });
+    scheduleSync(true);
+
+    return () => {
+      if (frame !== null) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+      observer.disconnect();
+      activeTween?.kill();
+      gsap.set(body, { clearProps: "backgroundColor,color" });
+    };
+  }, []);
 
   return null;
 }

@@ -41,7 +41,7 @@ export function LeadForm({ className }: { className?: string }) {
       <div
         role="status"
         className={cn(
-          "flex flex-col items-center gap-3 rounded-xl border border-success/30 bg-success/5 p-8 text-center",
+          "flex flex-col items-center gap-3 rounded-xl bg-success/5 p-8 text-center",
           className,
         )}
       >

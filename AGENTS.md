@@ -127,6 +127,9 @@ Import alias: `@/*` → repo root (e.g. `@/components/ui`, `@/lib/seo`).
 - Maintain WCAG AA contrast. Dark text (`--color-foreground`) on light; the
   purple `primary`/`primary-strong` are **backgrounds with on-dark text**.
   `highlight` is a light tint that uses dark text.
+- Secondary copy must favor readability over softness. Use `--color-muted` /
+  `text-muted` for paragraphs, subtitles and card descriptions; reserve
+  `--color-faint` / `text-faint` for short labels, placeholders and metadata.
 
 ## Motion patterns (GSAP)
 

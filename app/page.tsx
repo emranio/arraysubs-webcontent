@@ -16,16 +16,15 @@ import { siteColors } from "@/lib/colors";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
 import {
   Accordion,
+  ArrayHashMark,
   Badge,
   BigText,
-  Breadcrumbs,
   Button,
   Checkbox,
   Container,
   CTA,
   Eyebrow,
   Field,
-  Hero,
   IconCard,
   Input,
   OfferCard,
@@ -67,8 +66,8 @@ const BRAND_COLORS: [string, string, string][] = [
 
 const NEUTRAL_COLORS: [string, string, string][] = [
   ["Background", "--color-background", siteColors.background],
+  ["Card", "--color-card", siteColors.card],
   ["Surface", "--color-surface", siteColors.surface],
-  ["Surface 2", "--color-surface-2", siteColors.surface2],
   ["Foreground", "--color-foreground", siteColors.foreground],
   ["Muted", "--color-muted", siteColors.muted],
   ["Faint", "--color-faint", siteColors.faint],
@@ -275,30 +274,69 @@ export default function DesignSystemPage() {
   return (
     <>
       {/* ---- Page intro ------------------------------------------------- */}
-      <Section spacing="md" className="pt-28 sm:pt-32">
+      <Section
+        spacing="none"
+        surface="surface"
+        className="flex min-h-[44rem] items-center pt-28 pb-16 sm:pt-32 sm:pb-20 lg:min-h-[50rem]"
+      >
         <Container>
-          <Breadcrumbs
-            className="mb-8"
-            items={[
-              { name: "Home", href: "/" },
-              { name: "Design System", href: "/" },
-            ]}
-          />
-          <Eyebrow>Foundations &amp; components</Eyebrow>
-          <h1 className="mt-5 font-display text-display-sm text-balance sm:text-display">
-            The ArrayHash Design System
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted text-pretty sm:text-xl">
-            A living library of reusable, accessible, SEO-ready building blocks.
-            Every element is generically named, variant-driven and 100% reusable
-            on any page — built with Funnel Display, Funnel Sans and rem units.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Badge tone="dark">Light mode</Badge>
-            <Badge tone="neutral">1400px container</Badge>
-            <Badge tone="neutral">rem units</Badge>
-            <Badge tone="outline">WCAG-minded</Badge>
-            <Badge tone="primary">GSAP motion</Badge>
+          <div className="grid gap-10 lg:grid-cols-[16rem_1fr] lg:items-start">
+            <div className="lg:pt-3">
+              <p className="inline-flex items-center gap-2 text-sm font-medium text-primary">
+                <ArrayHashMark className="text-[0.95em]" />
+                <span>arraysubs</span>
+                <span aria-hidden="true" className="text-muted">
+                  /
+                </span>
+                <span className="text-foreground">features</span>
+              </p>
+            </div>
+
+            <div className="max-w-[78rem]">
+              <h1 className="font-display text-6xl leading-none font-semibold text-primary text-balance sm:text-[5rem] lg:text-[5.875rem] xl:text-[6.5rem]">
+                Everything You Need to Run Subscriptions &amp; Memberships on
+                WooCommerce
+              </h1>
+
+              <p className="mt-10 max-w-5xl text-lg leading-8 text-dark text-pretty sm:text-xl">
+                ArraySubs combines subscription billing, membership access,
+                retention tooling, checkout control, analytics, and plan
+                entitlements in one WooCommerce-first product. Start with the
+                generous free tier, then layer on Pro when you need deeper
+                automation and growth features.
+              </p>
+
+              <ul className="mt-9 flex max-w-6xl flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-dark sm:text-base">
+                {[
+                  "Free subscriptions + memberships",
+                  "Manual renewals with any WooCommerce gateway",
+                  "Single plugin instead of a stitched stack",
+                  "Pro adds automation, credit, analytics, and entitlements",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="inline-flex items-center gap-2 text-pretty"
+                  >
+                    <ArrayHashMark className="text-[0.78em] opacity-75" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-11 flex flex-wrap items-center gap-4">
+                <Button size="lg" magnetic>
+                  Live Demo
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  magnetic
+                  className="border-border-strong text-primary"
+                >
+                  Get Pro Free for 4 Months
+                </Button>
+              </div>
+            </div>
           </div>
         </Container>
       </Section>
@@ -513,7 +551,7 @@ export default function DesignSystemPage() {
           <SectionTitle
             eyebrow="Components"
             title="Offer cards"
-            subtitle="Numbered tier / package cards with a title, eyebrow, footer stat and arrow CTA. Hover a card for the primary border, number chip and filled arrow."
+            subtitle="Numbered tier / package cards with a title, eyebrow, footer stat and arrow CTA. Hover a card for the number chip and filled arrow."
           />
           <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2">
             <OfferCard
@@ -550,7 +588,7 @@ export default function DesignSystemPage() {
           <SectionTitle
             eyebrow="Components"
             title="Step cards"
-            subtitle="Numbered process steps for engagement flows, onboarding or how-it-works rows. Hover any card — the border deepens and a primary accent bar slides in under the number."
+            subtitle="Numbered process steps for engagement flows, onboarding or how-it-works rows. Hover any card to lift it and fill the outlined number."
           />
           <ScrollReveal
             stagger={0.08}
@@ -587,14 +625,13 @@ export default function DesignSystemPage() {
           <SectionTitle
             eyebrow="Components"
             title="Tag cards"
-            subtitle="Tag-pill feature tiles in a seamless connected grid — hairline dividers, no gaps. Hover any cell to watch it fill with the dark state."
+            subtitle="Tag-pill feature tiles in a quiet grid with subtle card surfaces. Hover any cell to watch it fill with the dark state."
           />
-          <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-border">
-            <div className="grid gap-px sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12">
+            <div className="grid overflow-hidden rounded-2xl gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-4">
               <TagCard
                 bare
                 tag="Battle-tested"
-                tagTone="highlight"
                 title="Subscriptions at scale"
                 description="Simple and variable products, trials, sign-up fees and per-variation billing — proven on real WooCommerce stores."
                 href="#tag-cards"
@@ -602,7 +639,6 @@ export default function DesignSystemPage() {
               <TagCard
                 bare
                 tag="Day-one stack"
-                tagTone="primary"
                 title="Member access"
                 description="A 10-condition rules engine with role mapping, content dripping and four URL pattern types — no add-ons required."
                 href="#tag-cards"
@@ -610,7 +646,6 @@ export default function DesignSystemPage() {
               <TagCard
                 bare
                 tag="ROI-first"
-                tagTone="highlight"
                 title="Retention flow"
                 description="Intercept cancellations with targeted offers — discount, pause, downgrade or support. A category first, free in the core."
                 href="#tag-cards"
@@ -618,7 +653,6 @@ export default function DesignSystemPage() {
               <TagCard
                 bare
                 tag="Edge"
-                tagTone="gold"
                 title="Analytics & audits"
                 description="40+ reports, 10 KPI cards, a 21-event audit timeline and a gateway health dashboard."
                 href="#tag-cards"
@@ -626,7 +660,6 @@ export default function DesignSystemPage() {
               <TagCard
                 bare
                 tag="Specialty"
-                tagTone="highlight"
                 title="Store credit"
                 description="A virtual wallet with 8 credit sources, auto-apply to renewals and checkout, plus expiry management."
                 href="#tag-cards"
@@ -634,7 +667,6 @@ export default function DesignSystemPage() {
               <TagCard
                 bare
                 tag="Cost-aware"
-                tagTone="primary"
                 title="Checkout builder"
                 description="Drag-and-drop checkout with 27 field types, multi-step layouts and conditional logic. No code."
                 href="#tag-cards"
@@ -642,7 +674,6 @@ export default function DesignSystemPage() {
               <TagCard
                 bare
                 tag="Recurring"
-                tagTone="highlight"
                 title="Automatic payments"
                 description="Stripe, PayPal and Paddle with SCA/3DS, billing agreements and merchant-of-record support."
                 href="#tag-cards"
@@ -650,7 +681,6 @@ export default function DesignSystemPage() {
               <TagCard
                 bare
                 tag="C-level"
-                tagTone="gold"
                 title="Customer portal"
                 description="Self-service skip, pause, plan switch, cancel and reactivate — fewer support tickets, happier members."
                 href="#tag-cards"
@@ -736,7 +766,7 @@ export default function DesignSystemPage() {
               {TESTIMONIALS.map((item, i) => (
                 <figure
                   key={i}
-                  className="flex h-full flex-col justify-between gap-6 rounded-xl border border-border bg-background p-6"
+                  className="flex h-full flex-col justify-between gap-6 rounded-xl bg-card p-6 text-foreground"
                 >
                   <blockquote className="text-lg text-pretty">
                     “{item.quote}”
@@ -871,7 +901,7 @@ export default function DesignSystemPage() {
               <h3 className="text-sm font-semibold tracking-wider text-muted uppercase">
                 Lead capture
               </h3>
-              <div className="rounded-2xl border border-border bg-background p-6 sm:p-8">
+              <div className="rounded-2xl bg-card p-6 text-foreground sm:p-8">
                 <LeadForm />
               </div>
             </div>
@@ -885,103 +915,170 @@ export default function DesignSystemPage() {
         </Container>
       </Section>
 
-      {/* ---- Motion: hero --------------------------------------------- */}
-      <Section id="motion">
+      {/* ---- Motion: scroll tone sequence ------------------------------ */}
+      <Section
+        id="scroll-bg"
+        surface="transparent"
+        scrollBg="surface"
+        className="flex min-h-screen items-center"
+      >
         <Container>
-          <SectionTitle
-            eyebrow="Patterns"
-            title="Hero"
-            subtitle="The landing hero used by the homepage and product landing pages (no breadcrumb). Move your cursor over it to feel the parallax."
-          />
-          <div className="mt-12 overflow-hidden rounded-2xl">
-            <Hero
-              tone="highlight"
-              headingLevel="h3"
-              eyebrow="Trusted by WooCommerce store owners"
-              title="One plugin for subscriptions, memberships & retention"
-              subtitle="Create subscription products, restrict member content, automate billing and reduce churn — all from a single free plugin."
-              actions={
-                <>
-                  <Button
-                    variant="dark"
-                    size="lg"
-                    magnetic
-                    iconRight={<ArrowRight className="size-5" />}
-                  >
-                    Get Pro — Free
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    magnetic
-                    iconLeft={<Download className="size-5" />}
-                  >
-                    Download Free
-                  </Button>
-                </>
-              }
-              trust="WordPress.org · WooCommerce 8+ · Stripe · PayPal · Paddle · HPOS"
-            />
+          <div className="grid items-end gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="max-w-2xl">
+              <Eyebrow>Motion pattern</Eyebrow>
+              <h2 className="mt-5 font-display text-display-sm text-balance">
+                A tone shift for each decision point
+              </h2>
+              <p className="mt-5 text-lg text-pretty opacity-75 sm:text-xl">
+                Use the page surface as a pacing device: quiet for overview,
+                dark for risk, bright for action, then clean again for the next
+                workflow.
+              </p>
+            </div>
+
+            <div className="grid gap-[0.1875rem] sm:grid-cols-3">
+              <MotionPanel label="01" title="Overview">
+                Start with a low-contrast surface that keeps product detail easy
+                to scan.
+              </MotionPanel>
+              <MotionPanel label="02" title="Risk">
+                Shift into a focused state when churn, payment failure or access
+                changes need attention.
+              </MotionPanel>
+              <MotionPanel label="03" title="Action">
+                Move into the offer moment without adding extra visual chrome.
+              </MotionPanel>
+            </div>
           </div>
         </Container>
       </Section>
 
-      {/* ---- Motion: scroll-reactive background band ------------------- */}
       <Section
-        id="scroll-bg"
         surface="transparent"
         scrollBg="dark"
-        className="flex min-h-[80vh] items-center"
+        className="flex min-h-screen items-center"
       >
-        <Container width="narrow">
-          <p className="text-sm font-semibold tracking-[0.18em] uppercase opacity-70">
-            Motion · Scroll background
-          </p>
-          <h2 className="mt-4 font-display text-display-sm text-balance">
-            The background reacts to scroll
-          </h2>
-          <p className="mt-5 text-lg text-pretty opacity-80">
-            As each band crosses the center of the viewport, the page background
-            and text color tween together with GSAP ScrollTrigger. Content here
-            uses the inherited color, so it stays readable through every shift.
-          </p>
+        <Container>
+          <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.18em] uppercase opacity-65">
+                <span>02</span>
+                <ArrayHashMark className="text-[0.9em]" />
+                <span>Risk window</span>
+              </p>
+              <h2 className="mt-5 font-display text-display-sm text-balance">
+                Put the critical state in its own room
+              </h2>
+              <p className="mt-5 max-w-xl text-lg text-pretty opacity-75 sm:text-xl">
+                A darker tone is reserved for moments where the store owner must
+                understand impact before choosing a save path.
+              </p>
+            </div>
+
+            <div className="grid gap-[0.1875rem] md:grid-cols-3">
+              <MotionPanel label="Signal" title="Cancel intent">
+                Plan, billing cycle and customer history stay visible before the
+                choice is made.
+              </MotionPanel>
+              <MotionPanel label="Impact" title="Revenue at risk">
+                The number is framed plainly, without a chart competing for
+                attention.
+              </MotionPanel>
+              <MotionPanel label="Next" title="Save path">
+                The action appears after context, not before it.
+              </MotionPanel>
+            </div>
+          </div>
         </Container>
       </Section>
 
       <Section
         surface="transparent"
         scrollBg="highlight"
-        className="flex min-h-[80vh] items-center justify-center text-center"
+        className="flex min-h-screen items-center"
       >
-        <Container width="narrow">
-          <BigText size="display" variant="ink" align="center">
-            Light. Dark. Bright.
-          </BigText>
+        <Container>
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr]">
+            <div className="grid gap-[0.1875rem] sm:grid-cols-2">
+              <MotionPanel label="Offer" title="Pause">
+                Give the customer a lower-friction option when cancellation is
+                about timing.
+              </MotionPanel>
+              <MotionPanel label="Offer" title="Downgrade">
+                Keep access alive with a smaller commitment.
+              </MotionPanel>
+              <MotionPanel label="Offer" title="Discount">
+                Use sparingly, with the reason and expiry attached.
+              </MotionPanel>
+              <MotionPanel label="Offer" title="Support">
+                Route complex cases to a human before the subscription is lost.
+              </MotionPanel>
+            </div>
+
+            <div>
+              <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.18em] uppercase opacity-65">
+                <span>03</span>
+                <ArrayHashMark className="text-[0.9em]" />
+                <span>Action surface</span>
+              </p>
+              <h2 className="mt-5 font-display text-display-sm text-balance">
+                Let the offer moment feel lighter
+              </h2>
+              <p className="mt-5 max-w-xl text-lg text-pretty opacity-75 sm:text-xl">
+                The bright stage signals that the user has moved from diagnosis
+                into a choice set.
+              </p>
+            </div>
+          </div>
         </Container>
       </Section>
 
       <Section
         surface="transparent"
         scrollBg="light"
-        className="flex min-h-[70vh] items-center"
+        className="flex min-h-[80vh] items-center"
       >
-        <Container width="narrow">
-          <h2 className="font-display text-display-sm text-balance">
-            …and smoothly back to light.
-          </h2>
-          <p className="mt-5 text-lg text-pretty opacity-80">
-            All motion respects <code>prefers-reduced-motion</code> — when it is
-            on, the cursor, magnets, parallax, reveals and background shifts are
-            disabled and content renders fully visible.
-          </p>
+        <Container>
+          <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+            <div>
+              <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.18em] uppercase opacity-65">
+                <span>04</span>
+                <ArrayHashMark className="text-[0.9em]" />
+                <span>Reset</span>
+              </p>
+              <h2 className="mt-5 font-display text-display-sm text-balance">
+                Return to the workspace
+              </h2>
+              <p className="mt-5 max-w-xl text-lg text-pretty opacity-75 sm:text-xl">
+                Once the decision is complete, the interface settles back into
+                the standard light surface so the next task is easy to read.
+              </p>
+            </div>
+
+            <div className="grid gap-[0.1875rem] sm:grid-cols-3">
+              <MotionPanel label="State" title="Readable">
+                Text uses the page foreground, so the section stays legible
+                throughout the sequence.
+              </MotionPanel>
+              <MotionPanel label="Motion" title="Reduced">
+                Motion-sensitive users get instant tone changes instead of
+                animated tweens.
+              </MotionPanel>
+              <MotionPanel label="System" title="Reusable">
+                Any section can opt into the sequence with the same surface
+                tokens.
+              </MotionPanel>
+            </div>
+          </div>
         </Container>
       </Section>
 
       {/* ---- Final CTA ------------------------------------------------- */}
-      <Section id="cta">
+      <Section id="cta" surface="primary">
         <Container>
           <CTA
             surface="primary"
+            flat
             eyebrow="Get started"
             title="Get ArraySubs Pro free for 4 months"
             subtitle="No strings attached. We'll send your license key immediately — no credit card required."
@@ -1022,7 +1119,7 @@ function ColorGroup({
         {colors.map(([name, varName, hex]) => (
           <div
             key={varName}
-            className="overflow-hidden rounded-lg border border-border bg-background"
+            className="overflow-hidden rounded-lg bg-card text-foreground"
           >
             <div className="h-20" style={{ backgroundColor: `var(${varName})` }} />
             <div className="flex flex-col gap-0.5 p-3">
@@ -1047,6 +1144,28 @@ function DemoRow({
     <div className="grid gap-4 sm:grid-cols-[8rem_1fr] sm:items-center">
       <code className="text-xs text-faint">{label}</code>
       <div className="flex flex-wrap items-center gap-4">{children}</div>
+    </div>
+  );
+}
+
+function MotionPanel({
+  label,
+  title,
+  children,
+}: {
+  label: string;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="rounded-2xl bg-card p-6 text-foreground">
+      <p className="text-xs font-semibold tracking-[0.18em] uppercase opacity-60">
+        {label}
+      </p>
+      <h3 className="mt-4 font-display text-2xl leading-tight font-bold text-balance">
+        {title}
+      </h3>
+      <p className="mt-3 text-base text-pretty opacity-75">{children}</p>
     </div>
   );
 }

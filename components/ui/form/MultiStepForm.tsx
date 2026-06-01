@@ -96,7 +96,7 @@ export function MultiStepForm({ className }: { className?: string }) {
       <div
         role="status"
         className={cn(
-          "flex flex-col items-center gap-3 rounded-2xl border border-success/30 bg-success/5 p-8 text-center",
+          "flex flex-col items-center gap-3 rounded-2xl bg-success/5 p-8 text-center",
           className,
         )}
       >
@@ -114,7 +114,7 @@ export function MultiStepForm({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "rounded-2xl border border-border bg-background p-6 sm:p-8",
+        "rounded-2xl bg-card p-6 text-foreground sm:p-8",
         className,
       )}
     >

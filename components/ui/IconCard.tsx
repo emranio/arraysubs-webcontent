@@ -25,9 +25,9 @@ export function IconCard({
   className,
 }: IconCardProps) {
   const classes = cn(
-    "group relative flex h-full flex-col gap-5 rounded-xl border border-border bg-background p-6",
-    "transition-[transform,border-color] duration-300 ease-out",
-    href && "hover:-translate-y-1 hover:border-dark",
+    "group relative flex h-full flex-col gap-5 rounded-xl bg-card p-6 text-foreground",
+    "transition-transform duration-300 ease-out",
+    href && "hover:-translate-y-1",
     className,
   );
 

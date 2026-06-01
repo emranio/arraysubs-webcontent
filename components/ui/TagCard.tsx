@@ -3,15 +3,11 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 
-type TagTone = "highlight" | "primary" | "gold";
-
 type TagCardProps = {
   /** Uppercase pill at the top (e.g., "BATTLE-TESTED"). */
   tag: string;
   title: ReactNode;
   description: ReactNode;
-  /** Color of the tag pill. Default: highlight. */
-  tagTone?: TagTone;
   /** When set, the whole card becomes a link. */
   href?: string;
   /** Accessible label for the arrow CTA. */
@@ -19,56 +15,41 @@ type TagCardProps = {
   /** Pin the card to its hover/active look statically. */
   active?: boolean;
   /**
-   * Cell mode: drop the card's own border + rounding so it sits flush inside a
-   * connected grid (the grid's `gap-px` over a tinted container draws the
-   * hairline dividers). Use for the seamless capabilities-grid layout.
+   * Cell mode: drop the card's own rounding so it sits flush inside a connected
+   * grid. Use for the seamless capabilities-grid layout.
    */
   bare?: boolean;
   className?: string;
 };
 
-const tagBg: Record<TagTone, string> = {
-  highlight: "bg-highlight",
-  primary: "bg-primary",
-  gold: "bg-gold",
-};
-
-const tagText: Record<TagTone, string> = {
-  highlight: "text-dark",
-  primary: "text-on-dark",
-  gold: "text-on-dark",
-};
-
 /**
  * Tag-pill feature card.
  *
- * Rest: surface with a highlight/gold/primary pill on top, dark title + muted
- * description, faint arrow bottom-right.
+ * Rest: surface with a primary pill on top, dark title + muted description,
+ * faint arrow bottom-right.
  *
  * Hover (or `active`): the cell fills dark, the title flips to light, the
  * description goes muted-on-dark, and the arrow brightens to primary
  * and nudges up-right.
  *
- * `bare` removes the border + rounding so cards tile seamlessly in a grid.
+ * `bare` removes the rounding so cards tile seamlessly in a grid.
  */
 export function TagCard({
   tag,
   title,
   description,
-  tagTone = "highlight",
   href,
   cta = "Learn more",
   active = false,
   bare = false,
   className,
 }: TagCardProps) {
-  const shape = bare ? "" : "rounded-2xl border";
+  const shape = bare ? "" : "rounded-2xl";
 
   const surface = active
-    ? cn("bg-dark text-on-dark on-dark", !bare && "border-dark")
+    ? "bg-dark text-on-dark on-dark"
     : cn(
-        "bg-background text-foreground hover:bg-dark hover:text-on-dark",
-        !bare && "border-border hover:border-dark",
+        "bg-card text-foreground hover:bg-dark hover:text-on-dark",
       );
 
   const Body = (
@@ -82,11 +63,7 @@ export function TagCard({
       )}
     >
       <span
-        className={cn(
-          "inline-flex w-fit items-center rounded-pill px-3 py-1 text-xs font-semibold tracking-wider uppercase",
-          tagBg[tagTone],
-          tagText[tagTone],
-        )}
+        className="inline-flex w-fit items-center rounded-pill bg-primary px-3 py-1 text-xs font-semibold tracking-wider text-on-dark uppercase"
       >
         {tag}
       </span>

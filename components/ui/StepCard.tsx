@@ -16,9 +16,9 @@ type StepCardProps = {
  * Layout: a hover arrow on the top row, an oversized **outlined** display
  * number, then the title and description.
  *
- * Hover state: the card lifts, the border deepens, the arrow fades + slides in,
- * and the giant outlined number fills in solid (-webkit-text-stroke +
- * transparent fill → currentColor fill).
+ * Hover state: the card lifts, the arrow fades in, and the giant
+ * outlined number fills in solid (-webkit-text-stroke + transparent fill →
+ * currentColor fill).
  */
 export function StepCard({
   number,
@@ -31,7 +31,7 @@ export function StepCard({
   return (
     <article
       className={cn(
-        "group/step relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-background px-6 py-5 transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-primary sm:px-8 sm:py-6",
+        "group/step relative flex h-full flex-col overflow-hidden rounded-2xl bg-card px-6 py-5 text-foreground transition-transform duration-300 ease-out hover:-translate-y-1 sm:px-8 sm:py-6",
         className,
       )}
     >
@@ -51,7 +51,7 @@ export function StepCard({
         </span>
         <ArrowUpRight
           aria-hidden="true"
-          className="size-5 shrink-0 -translate-y-1 text-faint opacity-0 transition-[transform,opacity,color] duration-300 group-hover/step:translate-x-0.5 group-hover/step:translate-y-0 group-hover/step:text-primary group-hover/step:opacity-100"
+          className="size-5 shrink-0 text-primary opacity-0 transition-opacity duration-200 group-hover/step:opacity-100"
         />
       </div>
 
