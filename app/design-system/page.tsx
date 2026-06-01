@@ -28,6 +28,7 @@ import {
   IconCard,
   Input,
   OfferCard,
+  PageHero,
   Statement,
   StepCard,
   TagCard,
@@ -275,67 +276,36 @@ export default function DesignSystemPage() {
   return (
     <>
       {/* ---- Page intro ------------------------------------------------- */}
-      <Section
-        spacing="none"
-        surface="surface"
-        className="flex min-h-[44rem] items-center pt-28 pb-16 sm:pt-32 sm:pb-20 lg:min-h-[50rem]"
-      >
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[16rem_1fr] lg:items-start">
-            <div className="lg:pt-3">
-              <p className="inline-flex items-center gap-2 text-sm font-medium text-primary">
-                <ArrayHashMark className="text-[0.95em]" />
-                <span>arraysubs</span>
-                <span aria-hidden="true" className="text-muted">
-                  /
-                </span>
-                <span className="text-foreground">features</span>
-              </p>
-            </div>
-
-            <div>
-              <h1 className="font-display text-6xl leading-none font-semibold text-primary [text-wrap:wrap] sm:text-[5rem] lg:text-[5.875rem] xl:text-[6.5rem]">
-                Everything You Need to Run Subscriptions &amp; Memberships on
-                WooCommerce
-              </h1>
-
-              <p className="mt-10 text-lg leading-8 text-dark [text-wrap:wrap] sm:text-xl">
-                ArraySubs combines subscription billing, membership access,
-                retention tooling, checkout control, analytics, and plan
-                entitlements in one WooCommerce-first product. Start with the
-                generous free tier, then layer on Pro when you need deeper
-                automation and growth features.
-              </p>
-
-              <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-dark sm:text-base">
-                {[
-                  "Free subscriptions + memberships",
-                  "Manual renewals with any WooCommerce gateway",
-                  "Single plugin instead of a stitched stack",
-                  "Pro adds automation, credit, analytics, and entitlements",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="inline-flex items-center gap-2 text-pretty"
-                  >
-                    <ArrayHashMark className="text-[0.78em] opacity-75" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-11 flex flex-wrap items-center gap-4">
-                <Button size="lg" magnetic>
-                  Live Demo
-                </Button>
-                <Button variant="outline" size="lg" magnetic>
-                  Get Pro Free for 4 Months
-                </Button>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <PageHero
+        breadcrumbs={[
+          { name: "arraysubs", href: "/" },
+          { name: "features", href: "/design-system/" },
+        ]}
+        withBreadcrumbSchema={false}
+        title={
+          <>
+            Everything You Need to Run Subscriptions &amp; Memberships on
+            WooCommerce
+          </>
+        }
+        subtitle="ArraySubs combines subscription billing, membership access, retention tooling, checkout control, analytics, and plan entitlements in one WooCommerce-first product. Start with the generous free tier, then layer on Pro when you need deeper automation and growth features."
+        highlights={[
+          "Free subscriptions + memberships",
+          "Manual renewals with any WooCommerce gateway",
+          "Single plugin instead of a stitched stack",
+          "Pro adds automation, credit, analytics, and entitlements",
+        ]}
+        actions={
+          <>
+            <Button size="lg" magnetic>
+              Live Demo
+            </Button>
+            <Button variant="outline" size="lg" magnetic>
+              Get Pro Free for 4 Months
+            </Button>
+          </>
+        }
+      />
 
       {/* ---- Foundations: color ---------------------------------------- */}
       <Section id="foundations" surface="surface">

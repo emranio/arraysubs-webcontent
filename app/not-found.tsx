@@ -9,13 +9,11 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <PageHero
-      variant="compact"
       breadcrumbs={[
         { name: "Home", href: "/" },
         { name: "404", href: "/404/" },
       ]}
       withBreadcrumbSchema={false}
-      eyebrow="404"
       title="Page not found"
       subtitle="The page you requested does not exist or has moved."
       actions={

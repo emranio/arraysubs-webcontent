@@ -15,8 +15,8 @@ Current working routes:
 
 - `/design-system/` - live catalog for the visual system, reusable components,
   motion patterns, forms, cards, surfaces and CTA treatments.
-- `/default-page/` - baseline inner-page layout: compact `PageHero`, breadcrumbs
-  and standard page-width content.
+- `/default-page/` - baseline inner-page layout using the same `PageHero`
+  treatment as the design-system page, plus standard page-width content.
 - `/` - temporary placeholder until the real homepage ships.
 
 Marketing copy, SEO keywords, sitemap strategy and page-specific content live in
@@ -124,7 +124,6 @@ export default function ExamplePage() {
   return (
     <>
       <PageHero
-        variant="compact"
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Example", href: "/example/" },
@@ -146,10 +145,10 @@ export default function ExamplePage() {
 
 Page rules:
 
-- Use `PageHero variant="compact"` for default inner pages. It owns the page
-  title, breadcrumb trail, intro copy, optional actions and standard top spacing.
-- Use `PageHero variant="split"` only for landing/product pages that need a
-  right-column visual or stronger campaign header.
+- Use `PageHero` for the design-system intro treatment on every page by default:
+  pale full-width auto-height surface, reduced vertical padding, top-aligned
+  content, narrow left rail, mark/slash breadcrumb style, oversized purple title,
+  intro copy, optional proof points and actions.
 - Pass breadcrumb items to `PageHero`; do not manually render `Breadcrumbs` in
   page files unless a component-level exception is needed.
 - Put content inside full-bleed `Section` bands, then `Container` inside each
@@ -233,8 +232,9 @@ design system needs a reusable semantic color.
   Display).
 - Use existing text utilities and display tokens. Do not invent one-off
   viewport-based font sizing.
-- Page titles use `PageHero`; its title style is `text-display-sm` scaling to
-  `text-display`.
+- Page titles use `PageHero`; its title style matches the design-system intro:
+  huge purple `font-display` text starting at `text-6xl` and scaling through
+  rem-based display sizes on larger screens.
 - Large landing headlines in the current design-system intro can use explicit
   display-scale classes, but ordinary page headers should not duplicate that
   markup.
@@ -335,7 +335,8 @@ Use existing helpers:
 - `ScrollBackground` - page background/text tone changes for sections with
   `surface="transparent"` and `scrollBg`.
 - `BigText` - oversized scroll-fill text.
-- `PageHero` - pointer parallax on decorative flat shapes.
+- `PageHero` - shared page-title header matching the design-system intro
+  treatment.
 - `Manifesto`, `Statement`, `Testimonials`, `Accordion`, `Tabs` and form
   controls already include their own interaction patterns.
 

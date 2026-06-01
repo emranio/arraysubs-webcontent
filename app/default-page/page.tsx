@@ -13,12 +13,10 @@ export default function DefaultPage() {
   return (
     <>
       <PageHero
-        variant="compact"
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Default Page", href: "/default-page/" },
         ]}
-        eyebrow="Default"
         title="Default Page"
         subtitle="A light-only inner page header using the shared PageHero component and the standard page-width container."
       />

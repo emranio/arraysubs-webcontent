@@ -10,7 +10,6 @@ type ErrorPageProps = {
 export default function ErrorPage({ reset }: ErrorPageProps) {
   return (
     <PageHero
-      variant="compact"
       eyebrow="Error"
       title="Something went wrong"
       subtitle="The page could not load. Try again or return to the design system."
