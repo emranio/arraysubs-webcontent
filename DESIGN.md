@@ -108,7 +108,7 @@ Import from the barrel: `import { Button, SectionTitle, … } from "@/components
 | `StepCard` | `number`, `title`, `description` | Numbered process step — big number, accent bar slides in on hover |
 | `TagCard` | `tag`, `title`, `description`, `href`, `active` | Tag-pill feature tile with primary tag — fills dark on hover; `active` pins the look on |
 | `CTA` | `surface`, `eyebrow`, `title`, `subtitle`, `actions`, `microcopy` | Reusable CTA band |
-| `Hero` | `eyebrow`, `title`, `subtitle`, `actions`, `trust`, `media`, `headingLevel` | Landing hero, cursor parallax, no breadcrumb |
+| `PageHero` | `eyebrow`, `title`, `subtitle`, `actions`, `trust`, `media`, `headingLevel` | Landing hero, cursor parallax, no breadcrumb |
 | `Manifesto` | `lines`, `description` | Dark editorial feature statement: big mixed-color text + inline pills |
 | `Statement` | `eyebrow`, `heading`, `description`, `cta` | Editorial two-column statement, regular + italic mix; words fade-up on scroll |
 | `BigText` | `size`, `variant` (`ink/highlight/primary`), `align`, `as` | Scroll-fill display heading |
@@ -156,7 +156,7 @@ CTA stays clean against the saturated background.
 - [ ] Exactly one `<h1>`; headings nested in order.
 - [ ] Content inside landmarks (`main`, `header`, `footer`, labelled `nav`).
 - [ ] All controls keyboard reachable; focus ring visible (don't disable outlines).
-- [ ] Inner page has `<Breadcrumbs>`; homepage/landing has `<Hero>` (no breadcrumb).
+- [ ] Inner page has `<Breadcrumbs>`; homepage/landing has `<PageHero>` (no breadcrumb).
 - [ ] Forms use `<Field>`; errors use `role="alert"`; success uses `role="status"`.
 - [ ] Images have `alt`; decorative elements are `aria-hidden`.
 - [ ] AA contrast; primary purple uses `on-dark` text when used as a background.

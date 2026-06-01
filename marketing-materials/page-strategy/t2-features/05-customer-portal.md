@@ -32,7 +32,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "Reduce support tickets — let subscribers manage their own plans"
 - Screenshot: Customer portal My Account → Subscriptions tab
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]

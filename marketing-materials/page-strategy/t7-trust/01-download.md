@@ -29,7 +29,7 @@
 
 ## Content Blocks
 
-### 1. Hero — pricing CTA + WordPress.org availability note
+### 1. PageHero — pricing CTA + WordPress.org availability note
 ### 2. Installation Steps — 3-step install (upload, activate, wizard)
 ### 3. What's Included Free — quick feature list
 ### 4. System Requirements — WordPress, WooCommerce, PHP versions

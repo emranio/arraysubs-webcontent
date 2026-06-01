@@ -27,7 +27,7 @@
 
 ## Content Blocks
 
-### 1. Hero — newer competitor comparison
+### 1. PageHero — newer competitor comparison
 ### 2. Feature Table — subscriptions, memberships, retention, store credit, analytics
 ### 3. Pricing — both offer free/pro models
 ### 4. Feature Depth Comparison — where ArraySubs offers more

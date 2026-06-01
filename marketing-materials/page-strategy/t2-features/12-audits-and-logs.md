@@ -30,7 +30,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section (Pro Badge)
+### 1. PageHero Section (Pro Badge)
 - H1 + subtitle: "Know exactly what happened to every subscription, when, and why"
 - Screenshot: Audit log dashboard
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]

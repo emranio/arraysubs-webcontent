@@ -12,7 +12,7 @@ export { OfferCard } from "./OfferCard";
 export { StepCard } from "./StepCard";
 export { TagCard } from "./TagCard";
 export { CTA } from "./CTA";
-export { Hero } from "./Hero";
+export { PageHero } from "./PageHero";
 export { Manifesto, type ManifestoLine } from "./Manifesto";
 export { BigText } from "./BigText";
 export { Accordion, type AccordionItemData } from "./Accordion";

@@ -32,7 +32,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section (Pro Badge)
+### 1. PageHero Section (Pro Badge)
 - H1 + subtitle: "The only subscription plugin with a built-in store credit system"
 - Blue Ocean badge: "Unique to ArraySubs"
 - Screenshot: Store Credit management dashboard

@@ -34,7 +34,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "Flexible recurring billing for any WooCommerce product — simple, variable, or virtual"
 - Screenshot: Product edit screen showing subscription options
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]

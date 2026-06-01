@@ -30,7 +30,7 @@
 
 ## Content Blocks
 
-### 1. Hero — "One plugin. Full membership site."
+### 1. PageHero — "One plugin. Full membership site."
 ### 2. What a Membership Site Needs — checklist of requirements ArraySubs covers
 ### 3. Content Restriction — pages, posts, CPTs, URLs, downloads
 ### 4. Member Tiers & Plans — variable subscriptions for Silver/Gold/Platinum

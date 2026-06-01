@@ -31,7 +31,7 @@
 
 ## Content Blocks
 
-### 1. Hero
+### 1. PageHero
 - H1 + Stripe logo + "The most popular way to accept subscription payments"
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 

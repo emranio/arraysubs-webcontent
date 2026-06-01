@@ -30,7 +30,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "No other subscription plugin has a setup wizard"
 - Blue Ocean badge
 - Screenshot: Setup wizard in progress

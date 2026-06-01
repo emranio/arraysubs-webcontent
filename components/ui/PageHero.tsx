@@ -8,7 +8,7 @@ import { Eyebrow } from "./Eyebrow";
 
 type Tone = "default" | "highlight" | "primary";
 
-type HeroProps = {
+type PageHeroProps = {
   eyebrow?: ReactNode;
   title: ReactNode;
   subtitle?: ReactNode;
@@ -36,7 +36,7 @@ const tones: Record<Tone, { bg: string; decor: string }> = {
  * breadcrumbs). Decorative layers drift with the cursor (GSAP mouse parallax);
  * disabled for touch and reduced-motion users.
  */
-export function Hero({
+export function PageHero({
   eyebrow,
   title,
   subtitle,
@@ -46,7 +46,7 @@ export function Hero({
   headingLevel: Heading = "h1",
   tone = "default",
   className,
-}: HeroProps) {
+}: PageHeroProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const { bg, decor } = tones[tone];
 
@@ -146,7 +146,7 @@ export function Hero({
           </div>
 
           <div data-parallax="14" className="relative">
-            {media ?? <HeroMediaPlaceholder />}
+            {media ?? <PageHeroMediaPlaceholder />}
           </div>
         </div>
       </Container>
@@ -155,7 +155,7 @@ export function Hero({
 }
 
 /** Lightweight browser-window mockup used when no media is provided. */
-function HeroMediaPlaceholder() {
+function PageHeroMediaPlaceholder() {
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-surface text-foreground">
       <div className="flex items-center gap-2 border-b border-border bg-background px-4 py-3">

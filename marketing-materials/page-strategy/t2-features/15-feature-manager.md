@@ -32,7 +32,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section (Pro Badge)
+### 1. PageHero Section (Pro Badge)
 - H1 + subtitle: "The only WooCommerce subscription plugin that shows customers exactly what each plan includes"
 - Blue Ocean badge: "Unique to ArraySubs"
 - Screenshot: Product page "What's Included" section with toggle/number/text features

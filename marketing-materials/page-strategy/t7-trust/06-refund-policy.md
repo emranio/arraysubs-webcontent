@@ -111,7 +111,7 @@ For refund issues only — the form on this page is faster. Email is a fallback.
 
 ## Content Blocks (Page Layout)
 
-1. **Hero / Guarantee badge** — "60-Day Money-Back Guarantee. No questions asked."
+1. **PageHero / Guarantee badge** — "60-Day Money-Back Guarantee. No questions asked."
 2. **How it works** — 3-step visual: fill form → submit → refund issued automatically
 3. **Refund form** — embedded form (order email, order number, purchase date, submit button)
 4. **Full policy terms** — eligibility, window, exclusions

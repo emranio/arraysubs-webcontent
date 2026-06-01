@@ -29,7 +29,7 @@
 
 ## Content Blocks
 
-### 1. Hero
+### 1. PageHero
 - Neutral comparison intro
 
 ### 2. Feature Comparison Table

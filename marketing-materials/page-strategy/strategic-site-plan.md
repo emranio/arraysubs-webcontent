@@ -257,7 +257,7 @@ arrayhash.com/
 
 **Content Blocks:**
 0. Announcement Bar — Early adopter offer prompt linking to `/deals/arraysubs/plans/`
-1. Hero — Value prop + CTA + trust bar (WP.org, WooCommerce 8+, gateways, HPOS)
+1. PageHero — Value prop + CTA + trust bar (WP.org, WooCommerce 8+, gateways, HPOS)
 2. The Plugin Overload Problem — Complexity/conflict framing (no dollar amounts)
 3. Feature grid — 14 features in 4 categories with icons linking to feature pages
 4. Why Store Owners Switch — 3 differentiators (All-in-One Architecture, Generous Free Tier, Retention-First Design)
@@ -318,7 +318,7 @@ arrayhash.com/
 Each feature page follows a consistent template:
 
 **Template Structure:**
-1. Hero — Feature name + one-liner + screenshot/demo
+1. PageHero — Feature name + one-liner + screenshot/demo
 2. Problem the feature solves
 3. Key capabilities (visual list with screenshots)
 4. Free vs Pro breakdown (if applicable)
@@ -509,7 +509,7 @@ Each feature page follows a consistent template:
 Each comparison page follows this template:
 
 **Template Structure:**
-1. Hero — "ArraySubs vs [Competitor]" + verdict summary
+1. PageHero — "ArraySubs vs [Competitor]" + verdict summary
 2. Side-by-side feature matrix (30+ rows)
 3. Pricing comparison
 4. What [Competitor] is missing
@@ -617,7 +617,7 @@ Each comparison page follows this template:
 Each use case page targets a specific buyer persona and connects product features to their business model.
 
 **Template Structure:**
-1. Hero — "ArraySubs for [Business Type]"
+1. PageHero — "ArraySubs for [Business Type]"
 2. Business model explanation
 3. Which ArraySubs features solve their specific problems
 4. Step-by-step setup guide for their use case

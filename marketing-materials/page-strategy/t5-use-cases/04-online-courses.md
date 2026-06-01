@@ -29,7 +29,7 @@
 
 ## Content Blocks
 
-### 1. Hero — "Subscription-based courses without a full LMS"
+### 1. PageHero — "Subscription-based courses without a full LMS"
 ### 2. Content Dripping for Courses — schedule module releases over time
 ### 3. Tiered Access — free/basic/premium course levels via variable subscriptions
 ### 4. Student Portal — manage subscription from My Account

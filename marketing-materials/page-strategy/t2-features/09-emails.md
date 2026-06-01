@@ -31,7 +31,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "Every subscription event triggers the right email"
 - Screenshot: Email settings screen
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]

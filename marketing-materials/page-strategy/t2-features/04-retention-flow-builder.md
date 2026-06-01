@@ -33,7 +33,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "The only WooCommerce subscription plugin with built-in retention flows"
 - Blue Ocean badge: "No other subscription plugin offers this"
 - Screenshot: Retention flow builder admin screen

@@ -30,7 +30,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "Display subscription data and member content anywhere on your site"
 - Code examples + rendered output
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]

@@ -30,7 +30,7 @@
 
 ## Content Blocks
 
-### 1. Hero — "Turn WooCommerce into your SaaS billing engine"
+### 1. PageHero — "Turn WooCommerce into your SaaS billing engine"
 ### 2. SaaS Billing Model
 - Tiered plans (Basic, Pro, Enterprise via variable subscriptions)
 - Monthly / Annual billing

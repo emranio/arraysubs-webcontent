@@ -33,7 +33,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + brief neutral intro: "We built ArraySubs because we thought WooCommerce stores deserved more — here's how both options stack up."
 - Quick verdict box: Key difference in 1 sentence
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]

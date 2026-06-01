@@ -33,7 +33,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "Billing that runs itself — so you focus on growing"
 - Visual: Billing lifecycle timeline graphic
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]

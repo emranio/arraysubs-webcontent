@@ -31,7 +31,7 @@
 
 ## Content Blocks
 
-### 1. Hero
+### 1. PageHero
 - H1 + subtitle: "Limited time early bird offer. Submit your details, get your free 3-month Pro license by email."
 - Primary CTA on hero: Live Demo → `/deals/arraysubs/plans/#live-demo`
 - Secondary CTA on hero: Get Pro - Free [No Strings Attached] → `/deals/arraysubs/plans/#get-pro`

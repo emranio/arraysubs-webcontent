@@ -32,7 +32,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "Works with any WooCommerce payment gateway — zero lock-in"
 - Gateway logos: Stripe, PayPal, Paddle + "all WooCommerce gateways"
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]

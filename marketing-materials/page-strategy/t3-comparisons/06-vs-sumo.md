@@ -28,7 +28,7 @@
 
 ## Content Blocks
 
-### 1. Hero — marketplace vs dedicated plugin comparison
+### 1. PageHero — marketplace vs dedicated plugin comparison
 ### 2. Feature Table — core subscriptions, memberships, retention, store credit, analytics
 ### 3. Pricing Model — one-time CodeCanyon vs annual/free for ArraySubs
 ### 4. Support & Updates — CodeCanyon model vs dedicated support

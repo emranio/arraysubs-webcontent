@@ -32,7 +32,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section (Pro Badge)
+### 1. PageHero Section (Pro Badge)
 - H1 + subtitle: "Know your numbers — MRR, churn, LTV, all in real-time"
 - Screenshot: Analytics dashboard overview
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]

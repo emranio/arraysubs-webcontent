@@ -29,7 +29,7 @@
 
 ## Content Blocks
 
-### 1. Hero — "Launch your subscription box on WooCommerce"
+### 1. PageHero — "Launch your subscription box on WooCommerce"
 ### 2. Box Configuration — simple or variable subscriptions, billing cycles
 ### 3. Shipping Integration — WooCommerce shipping methods, one-time shipping option
 ### 4. Customer Management — portal for pausing, skipping, cancelling

@@ -34,7 +34,7 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "One restriction engine for every type of WordPress content"
 - Screenshot: Access Rules admin screen
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]

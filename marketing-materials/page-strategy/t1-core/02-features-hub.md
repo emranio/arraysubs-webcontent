@@ -29,7 +29,7 @@
 
 ## Content Blocks
 
-### 1. Hero
+### 1. PageHero
 - H1 + subtitle: "15 feature modules. Generous free tier. One plugin."
 - CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
 

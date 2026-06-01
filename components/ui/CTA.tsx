@@ -22,7 +22,7 @@ const flatSurfaces: Record<Surface, string> = {
 const BRIGHT_DECOR: Partial<
   Record<Surface, { topRight: string; bottomLeft: string }>
 > = {
-  // Mirrors the Hero `highlight` tone: light tint bg with primary shapes.
+  // Mirrors the PageHero `highlight` tone: light tint bg with primary shapes.
   highlight: { topRight: "bg-primary", bottomLeft: "bg-primary" },
 };
 
@@ -66,9 +66,9 @@ export function CTA({
         flat
           ? "px-0 py-0"
           : cn(
-              "overflow-hidden rounded-2xl px-6 py-14 sm:px-12 sm:py-20",
-              surfaces[surface],
-            ),
+            "overflow-hidden rounded-2xl px-6 py-14 sm:px-12 sm:py-20",
+            surfaces[surface],
+          ),
         flat && flatSurfaces[surface],
         className,
       )}

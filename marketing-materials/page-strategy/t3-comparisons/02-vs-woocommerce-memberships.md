@@ -30,7 +30,7 @@
 
 ## Content Blocks
 
-### 1. Hero
+### 1. PageHero
 - H1 + intro: "WooCommerce Memberships needs WooCommerce Subscriptions to handle recurring billing. ArraySubs does both."
 
 ### 2. Side-by-Side Feature Table

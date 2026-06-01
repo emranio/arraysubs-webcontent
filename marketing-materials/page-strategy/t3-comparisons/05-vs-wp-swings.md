@@ -28,7 +28,7 @@
 
 ## Content Blocks
 
-### 1. Hero — Free vs Free comparison angle
+### 1. PageHero — Free vs Free comparison angle
 ### 2. Feature Table
 - Both: free subscriptions, recurring billing
 - ArraySubs unique: Memberships, retention flows, setup wizard, modern React admin
