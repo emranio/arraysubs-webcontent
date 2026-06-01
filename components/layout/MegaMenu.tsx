@@ -49,7 +49,7 @@ export function MegaMenu({ open, onClose, triggerRef }: MegaMenuProps) {
     <div
       ref={panelRef}
       role="dialog"
-      aria-label="Sections"
+      aria-label="Design system"
       className="absolute inset-x-0 top-full z-40 hidden border-b border-border bg-background/80 backdrop-blur-md lg:block"
     >
       <Container>
