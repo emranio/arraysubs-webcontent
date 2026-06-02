@@ -17,7 +17,7 @@ export { Manifesto, type ManifestoLine } from "./Manifesto";
 export { BigText } from "./BigText";
 export { Accordion, type AccordionItemData } from "./Accordion";
 export { Tabs, type TabItem } from "./Tabs";
-export { Slider } from "./Slider";
+export { Marqueue } from "./Marqueue";
 export { Statement, type StatementSegment } from "./Statement";
 export { Testimonials, type TestimonialItem } from "./Testimonials";
 export { ModuleShowcase } from "./ModuleShowcase";

@@ -34,6 +34,7 @@ import {
   TagCard,
   LeadForm,
   Manifesto,
+  Marqueue,
   ModuleShowcase,
   type ManifestoLine,
   MultiStepForm,
@@ -43,7 +44,6 @@ import {
   Section,
   SectionTitle,
   Select,
-  Slider,
   Switch,
   Tabs,
   Testimonials,
@@ -53,7 +53,7 @@ import {
 export const metadata: Metadata = createMetadata({
   title: "Design System",
   description:
-    "The ArrayHash design system — reusable, accessible, SEO-ready building blocks: typography, color, buttons, cards, accordions, tabs, sliders, forms and motion.",
+    "The ArrayHash design system — reusable, accessible, SEO-ready building blocks: typography, color, buttons, cards, accordions, tabs, marquees, forms and motion.",
   path: "/",
   noindex: true,
 });
@@ -726,16 +726,16 @@ export default function DesignSystemPage() {
         </Container>
       </Section>
 
-      {/* ---- Components: slider ---------------------------------------- */}
-      <Section id="slider" surface="surface">
+      {/* ---- Components: marqueue -------------------------------------- */}
+      <Section id="marqueue" surface="surface">
         <Container>
           <SectionTitle
             eyebrow="Components"
-            title="Slider"
-            subtitle="A slow-moving carousel that drifts automatically, responds to page scroll, and fades at the edges."
+            title="Marqueue"
+            subtitle="A slow-moving marquee shell for any repeated content. Each child renders as one drifting item."
           />
           <div className="mt-12">
-            <Slider label="What early adopters say">
+            <Marqueue label="What early adopters say">
               {TESTIMONIALS.map((item, i) => (
                 <figure
                   key={i}
@@ -756,7 +756,7 @@ export default function DesignSystemPage() {
                   </figcaption>
                 </figure>
               ))}
-            </Slider>
+            </Marqueue>
           </div>
         </Container>
       </Section>

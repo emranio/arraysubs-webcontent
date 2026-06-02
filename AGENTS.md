@@ -270,7 +270,7 @@ Use existing card components:
 - `TagCard` - capability tiles with a tag pill; use `bare` when tiling in a
   connected-looking grid.
 - `Testimonials` - full review carousel.
-- `Slider` - scroll-snap carousel shell for repeated cards.
+- `Marqueue` - slow-moving marquee shell for arbitrary repeated content.
 
 Grid rules:
 

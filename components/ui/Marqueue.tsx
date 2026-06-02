@@ -10,10 +10,10 @@ import {
 } from "@/lib/gsap";
 import { cn } from "@/lib/cn";
 
-type SliderProps = {
-  /** Each child becomes a slide. */
+type MarqueueProps = {
+  /** Each child becomes one marqueued item and can contain any React content. */
   children: ReactNode;
-  /** Accessible name for the carousel. */
+  /** Accessible name for the moving content region. */
   label: string;
   className?: string;
 };
@@ -26,15 +26,15 @@ const edgeFadeStyle: CSSProperties = {
 };
 
 /**
- * Slow-moving, accessible carousel. It drifts automatically, responds to page
- * scroll, and fades at the edges with a mask. Reduced-motion users get a static
- * row.
+ * Slow-moving, accessible marquee for arbitrary repeated content. It drifts
+ * automatically, responds to page scroll, and fades at the edges with a mask.
+ * Reduced-motion users get a static row.
  */
-export function Slider({ children, label, className }: SliderProps) {
+export function Marqueue({ children, label, className }: MarqueueProps) {
   const rootRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLUListElement>(null);
   const motion = useRef({ auto: 0, scroll: 0, width: 0 });
-  const slides = Children.toArray(children);
+  const items = Children.toArray(children);
 
   useGSAP(
     () => {
@@ -85,26 +85,26 @@ export function Slider({ children, label, className }: SliderProps) {
         resizeObserver.disconnect();
       };
     },
-    { scope: rootRef, dependencies: [slides.length] },
+    { scope: rootRef, dependencies: [items.length] },
   );
 
-  const renderSlides = (duplicated = false) =>
-    slides.map((slide, index) => (
+  const renderItems = (duplicated = false) =>
+    items.map((item, index) => (
       <li
         key={`${duplicated ? "duplicate" : "primary"}-${index}`}
         aria-hidden={duplicated || undefined}
-        aria-roledescription={duplicated ? undefined : "slide"}
-        aria-label={duplicated ? undefined : `${index + 1} of ${slides.length}`}
+        aria-roledescription={duplicated ? undefined : "marquee item"}
+        aria-label={duplicated ? undefined : `${index + 1} of ${items.length}`}
         className="w-[min(85vw,30rem)] shrink-0 sm:w-[27rem] lg:w-[30rem]"
       >
-        {slide}
+        {item}
       </li>
     ));
 
   return (
     <section
       ref={rootRef}
-      aria-roledescription="carousel"
+      aria-roledescription="marquee"
       aria-label={label}
       className={cn("flex min-w-0 max-w-full flex-col", className)}
     >
@@ -116,8 +116,8 @@ export function Slider({ children, label, className }: SliderProps) {
           ref={trackRef}
           className="flex w-max min-w-full gap-[0.1875rem] will-change-transform"
         >
-          {renderSlides()}
-          {renderSlides(true)}
+          {renderItems()}
+          {renderItems(true)}
         </ul>
       </div>
     </section>
