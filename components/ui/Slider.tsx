@@ -33,11 +33,11 @@ export function Slider({ children, label, className }: SliderProps) {
     <section
       aria-roledescription="carousel"
       aria-label={label}
-      className={cn("flex flex-col gap-5", className)}
+      className={cn("flex min-w-0 max-w-full flex-col gap-5", className)}
     >
       <ul
         ref={trackRef}
-        className="flex snap-x snap-mandatory gap-[0.1875rem] overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex min-w-0 max-w-full snap-x snap-mandatory gap-[0.1875rem] overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {slides.map((slide, index) => (
           <li

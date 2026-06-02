@@ -93,7 +93,7 @@ export function BigText({
       style={variantVars[variant]}
       className={cn(
         styles.text,
-        "font-display",
+        "max-w-full break-words font-display [overflow-wrap:anywhere]",
         sizeClass[size],
         align === "center" && "text-center",
         className,

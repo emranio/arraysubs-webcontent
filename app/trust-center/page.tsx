@@ -84,8 +84,8 @@ export default function TrustCenterPage() {
           { name: "Home", href: "/" },
           { name: "Trust Center", href: "/trust-center/" },
         ]}
-        title="Trust Center"
-        subtitle="Clear policies for ArrayHash, ArraySubs, website analytics, payment processing, licensing, refunds, privacy rights, and accessibility."
+        title="Trust Center — Everything legal and operational in one place"
+        subtitle="Clear policies for ArrayHash, ArraySubs, website analytics, payment processing, licensing, refunds, privacy rights, and accessibility. These pages explain what ArrayHash collects on this website, what payment and licensing providers process, and what ArraySubs does not send from your WordPress site."
         highlights={[
           "GA4, Stripe and Freemius disclosed",
           "No plugin telemetry or WooCommerce store metrics",
@@ -95,12 +95,6 @@ export default function TrustCenterPage() {
 
       <Section surface="default" spacing="md">
         <Container>
-          <SectionTitle
-            eyebrow="Policies"
-            title="Everything legal and operational in one place"
-            subtitle="These pages explain what ArrayHash collects on this website, what payment and licensing providers process, and what ArraySubs does not send from your WordPress site."
-            align="center"
-          />
           <div className="mt-12 grid gap-[0.1875rem] md:grid-cols-2 xl:grid-cols-3">
             {TRUST_ITEMS.map((item) => (
               <IconCard

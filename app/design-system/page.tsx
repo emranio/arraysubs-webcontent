@@ -34,6 +34,7 @@ import {
   TagCard,
   LeadForm,
   Manifesto,
+  ModuleShowcase,
   type ManifestoLine,
   MultiStepForm,
   Multiselect,
@@ -301,11 +302,14 @@ export default function DesignSystemPage() {
               Live Demo
             </Button>
             <Button variant="outline" size="lg" magnetic>
-              Get ArraySubs Pro for 4 Months — Free
+              Get Pro Access — Free
             </Button>
           </>
         }
       />
+
+      {/* ---- Module showcase ------------------------------------------ */}
+      <ModuleShowcase />
 
       {/* ---- Foundations: color ---------------------------------------- */}
       <Section id="foundations" surface="surface">

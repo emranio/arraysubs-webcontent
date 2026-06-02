@@ -20,6 +20,7 @@ export { Tabs, type TabItem } from "./Tabs";
 export { Slider } from "./Slider";
 export { Statement, type StatementSegment } from "./Statement";
 export { Testimonials, type TestimonialItem } from "./Testimonials";
+export { ModuleShowcase } from "./ModuleShowcase";
 
 // Form controls
 export { Field } from "./form/Field";

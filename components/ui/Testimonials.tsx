@@ -120,11 +120,11 @@ export function Testimonials({
     <section
       aria-roledescription="carousel"
       aria-label="Testimonials"
-      className={cn("relative overflow-hidden", className)}
+      className={cn("relative isolate overflow-hidden", className)}
     >
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 font-display text-[18vw] leading-none font-bold tracking-tight whitespace-nowrap text-dark/[0.08] uppercase select-none"
+        className="pointer-events-none absolute top-1/2 left-1/2 z-0 w-full -translate-x-1/2 -translate-y-1/2 overflow-hidden text-center font-display text-[18vw] leading-none font-bold tracking-tight whitespace-nowrap text-dark/[0.08] uppercase select-none"
       >
         {label}
       </span>
@@ -132,7 +132,7 @@ export function Testimonials({
       <div
         aria-live="polite"
         aria-atomic="true"
-        className="flex flex-col items-center text-center"
+        className="relative z-10 flex flex-col items-center text-center"
       >
         <div ref={mainRef} className="flex w-full flex-col items-center">
           <div className="size-28 overflow-hidden rounded-2xl bg-dark sm:size-36">

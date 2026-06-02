@@ -78,10 +78,10 @@ export function PageHero({
       >
         <Container>
           <div className="grid gap-10 lg:grid-cols-[16rem_1fr] lg:items-start">
-            <div className="lg:pt-3">{rail}</div>
+            <div className="min-w-0 lg:pt-3">{rail}</div>
 
-            <div>
-              <Heading className="font-display text-6xl leading-none font-semibold text-primary [text-wrap:wrap] sm:text-[5rem] lg:text-[5.875rem] xl:text-[6.5rem]">
+            <div className="min-w-0">
+              <Heading className="break-words font-display text-6xl leading-none font-semibold text-primary [text-wrap:wrap] sm:text-[5rem] lg:text-[5.875rem] xl:text-[6.5rem]">
                 {title}
               </Heading>
 
