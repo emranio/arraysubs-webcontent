@@ -3,6 +3,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   BarChart3,
+  Camera,
   Download,
   HeartHandshake,
   LayoutGrid,
@@ -25,6 +26,8 @@ import {
   CTA,
   Eyebrow,
   Field,
+  Gallery,
+  type GalleryItem,
   IconCard,
   Input,
   OfferCard,
@@ -195,6 +198,63 @@ const TESTIMONIALS = [
       "Store credit turned our refunds into retained revenue. Lifetime value went up immediately.",
     name: "Early adopter",
     context: "Service business",
+  },
+];
+
+const GALLERY_IMAGES: GalleryItem[] = [
+  {
+    src: "https://picsum.photos/id/104/760/520",
+    originalSrc: "https://picsum.photos/id/104/3840/2160",
+    alt: "Editorial demo image with warm color and open negative space",
+    title: "Photo by Dyaa Eldin via Lorem Picsum",
+  },
+  {
+    src: "https://picsum.photos/id/1062/520/620",
+    originalSrc: "https://picsum.photos/id/1062/5000/3334",
+    alt: "Editorial demo portrait framed in natural light",
+    title: "Photo by Matthew Wiebe via Lorem Picsum",
+  },
+  {
+    src: "https://picsum.photos/id/1084/760/520",
+    originalSrc: "https://picsum.photos/id/1084/4579/3271",
+    alt: "Editorial demo image with a bold outdoor composition",
+    title: "Photo by Jay Ruzesky via Lorem Picsum",
+  },
+  {
+    src: "https://picsum.photos/id/433/1200/1200",
+    originalSrc: "https://picsum.photos/id/433/4752/3168",
+    alt: "Large central gallery demo image with a blue sky background",
+    title: "Photo by Thomas Lefebvre via Lorem Picsum",
+  },
+  {
+    src: "https://picsum.photos/id/292/420/420",
+    originalSrc: "https://picsum.photos/id/292/3852/2556",
+    alt: "Small square editorial demo image",
+    title: "Photo by Webvilla via Lorem Picsum",
+  },
+  {
+    src: "https://picsum.photos/id/1005/900/700",
+    originalSrc: "https://picsum.photos/id/1005/5000/3333",
+    alt: "Wide editorial demo portrait with warm foreground color",
+    title: "Photo by Matthew Wiebe via Lorem Picsum",
+  },
+  {
+    src: "https://picsum.photos/id/1027/420/420",
+    originalSrc: "https://picsum.photos/id/1027/2848/4272",
+    alt: "Small square editorial demo portrait",
+    title: "Photo by Roksolana Zasiadko via Lorem Picsum",
+  },
+  {
+    src: "https://picsum.photos/id/237/620/620",
+    originalSrc: "https://picsum.photos/id/237/3500/2095",
+    alt: "Square editorial demo image with a centered subject",
+    title: "Photo by André Spieker via Lorem Picsum",
+  },
+  {
+    src: "https://picsum.photos/id/1025/760/560",
+    originalSrc: "https://picsum.photos/id/1025/4951/3301",
+    alt: "Editorial demo image with a playful close-up subject",
+    title: "Photo by Matthew Wiebe via Lorem Picsum",
   },
 ];
 
@@ -757,6 +817,42 @@ export default function DesignSystemPage() {
                 </figure>
               ))}
             </Marqueue>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ---- Components: gallery --------------------------------------- */}
+      <Section id="gallery">
+        <Container>
+          <SectionTitle
+            eyebrow="Components"
+            title="Gallery"
+            subtitle="A horizontally stacked image gallery for large collections. Images scale and follow the pointer on hover, then open the original image in a popup."
+          />
+          <div className="mt-12">
+            <Gallery
+              items={GALLERY_IMAGES}
+              label="Free image demo gallery"
+              caption={
+                <div className="flex flex-col gap-5">
+                  <span
+                    aria-hidden="true"
+                    className="inline-flex size-16 items-center justify-center rounded-full bg-dark text-on-dark"
+                  >
+                    <Camera className="size-7" />
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-muted">Instagram</p>
+                    <h3 className="mt-2 font-display text-5xl break-words text-foreground sm:text-6xl">
+                      @ArrayHash
+                    </h3>
+                  </div>
+                  <p className="max-w-sm text-lg leading-8 text-muted">
+                    Become part of our product stories. Join the adventure.
+                  </p>
+                </div>
+              }
+            />
           </div>
         </Container>
       </Section>

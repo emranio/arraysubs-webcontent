@@ -271,6 +271,8 @@ Use existing card components:
   connected-looking grid.
 - `Testimonials` - full review carousel.
 - `Marqueue` - slow-moving marquee shell for arbitrary repeated content.
+- `Gallery` - horizontally stacked image gallery with hover movement and popup
+  preview.
 
 Grid rules:
 

@@ -21,6 +21,7 @@ export { Marqueue } from "./Marqueue";
 export { Statement, type StatementSegment } from "./Statement";
 export { Testimonials, type TestimonialItem } from "./Testimonials";
 export { ModuleShowcase } from "./ModuleShowcase";
+export { Gallery, type GalleryItem } from "./Gallery";
 
 // Form controls
 export { Field } from "./form/Field";

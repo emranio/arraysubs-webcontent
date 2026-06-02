@@ -17,6 +17,9 @@ type LetterRevealTextProps = {
   delay?: number;
   stagger?: number;
   y?: number;
+  mode?: "play" | "scrub";
+  start?: string;
+  end?: string;
   ariaHidden?: boolean;
   id?: string;
   style?: CSSProperties;
@@ -30,6 +33,9 @@ export function LetterRevealText({
   delay = 0,
   stagger = 0.025,
   y = 0.8,
+  mode = "play",
+  start = "top 85%",
+  end = "top 48%",
   ariaHidden = false,
   id,
   style,
@@ -43,23 +49,39 @@ export function LetterRevealText({
       if (!el || prefersReducedMotion()) return;
 
       const letters = el.querySelectorAll<HTMLElement>("[data-letter]");
-      gsap.fromTo(
-        letters,
-        { autoAlpha: 0, y: y * 16 },
-        {
+      gsap.set(letters, { autoAlpha: 0, y: y * 16 });
+
+      if (mode === "scrub") {
+        gsap.to(letters, {
           autoAlpha: 1,
           y: 0,
-          duration: 0.55,
-          delay,
-          ease: "power3.out",
+          duration: 1,
+          ease: "none",
           stagger,
           scrollTrigger: {
             trigger: el,
-            start: "top 85%",
-            once: true,
+            start,
+            end,
+            scrub: 0.7,
+            invalidateOnRefresh: true,
           },
+        });
+        return;
+      }
+
+      gsap.to(letters, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.7,
+        delay,
+        ease: "power3.out",
+        stagger,
+        scrollTrigger: {
+          trigger: el,
+          start,
+          once: true,
         },
-      );
+      });
     },
     { scope: ref },
   );
@@ -78,7 +100,7 @@ export function LetterRevealText({
           <span
             key={`${character}-${index}`}
             data-letter
-            className={cn("inline-block", charClassName)}
+            className={cn("inline-block will-change-transform", charClassName)}
           >
             {character === " " ? "\u00A0" : character}
           </span>

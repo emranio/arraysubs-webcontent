@@ -20,7 +20,14 @@ export function ModuleShowcase({ moduleCount = 19 }: ModuleShowcaseProps) {
       <Container className="grid min-h-[calc(100svh-4rem)] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[minmax(0,1.08fr)_minmax(24rem,0.72fr)] lg:gap-16 lg:py-24">
         <div className="flex flex-col font-display">
           <Eyebrow className="mb-6 font-display normal-case tracking-normal">
-            <LetterRevealText text="Available Modules" delay={0.05} />
+            <LetterRevealText
+              text="Available Modules"
+              mode="scrub"
+              start="top 92%"
+              end="top 54%"
+              y={1.1}
+              stagger={0.035}
+            />
           </Eyebrow>
 
           <h2
@@ -32,23 +39,32 @@ export function ModuleShowcase({ moduleCount = 19 }: ModuleShowcaseProps) {
               text="Available"
               ariaHidden
               className="block"
-              delay={0.12}
-              stagger={0.018}
+              mode="scrub"
+              start="top 92%"
+              end="top 44%"
+              y={1.35}
+              stagger={0.035}
             />
             <span className="block whitespace-nowrap">
               <LetterRevealText
                 text="Modules"
                 ariaHidden
                 className="inline text-primary"
-                delay={0.26}
-                stagger={0.018}
+                mode="scrub"
+                start="top 90%"
+                end="top 42%"
+                y={1.35}
+                stagger={0.035}
               />
               <LetterRevealText
                 text=" for"
                 ariaHidden
                 className="inline"
-                delay={0.39}
-                stagger={0.018}
+                mode="scrub"
+                start="top 90%"
+                end="top 42%"
+                y={1.35}
+                stagger={0.035}
               />
             </span>
             <span className="block">
@@ -56,24 +72,33 @@ export function ModuleShowcase({ moduleCount = 19 }: ModuleShowcaseProps) {
                 text="Woo"
                 ariaHidden
                 className="inline"
-                delay={0.46}
-                stagger={0.018}
+                mode="scrub"
+                start="top 88%"
+                end="top 40%"
+                y={1.35}
+                stagger={0.035}
               />
               <span className="sm:hidden"><br /></span>
               <LetterRevealText
                 text="Commerce"
                 ariaHidden
                 className="inline"
-                delay={0.52}
-                stagger={0.018}
+                mode="scrub"
+                start="top 88%"
+                end="top 40%"
+                y={1.35}
+                stagger={0.035}
               />
             </span>
             <LetterRevealText
               text="Stores"
               ariaHidden
               className="block"
-              delay={0.66}
-              stagger={0.018}
+              mode="scrub"
+              start="top 86%"
+              end="top 38%"
+              y={1.35}
+              stagger={0.035}
             />
           </h2>
 
