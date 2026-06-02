@@ -83,7 +83,7 @@ export function ModuleShowcase({ moduleCount = 19 }: ModuleShowcaseProps) {
           >
             <span className="sr-only">{moduleCount}+ available modules</span>
             <img
-              src="/shapes/module-count-3d.png"
+              src="/shapes/module-count-3d.webp"
               alt=""
               width={1448}
               height={1086}
