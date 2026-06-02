@@ -6,6 +6,16 @@ import { site } from "@/lib/site";
  * The design-system page is intentionally excluded (noindex).
  */
 export default function sitemap(): MetadataRoute.Sitemap {
+  const trustRoutes = [
+    ["/trust-center/", 0.7],
+    ["/trust-center/privacy-policy/", 0.6],
+    ["/trust-center/refund-policy/", 0.6],
+    ["/trust-center/terms-of-service/", 0.6],
+    ["/trust-center/data-safety/", 0.6],
+    ["/trust-center/gdpr-ccpa-compliance/", 0.6],
+    ["/trust-center/accessibility-compliance/", 0.6],
+  ] as const;
+
   return [
     {
       url: `${site.url}/`,
@@ -19,5 +29,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    ...trustRoutes.map(([path, priority]) => ({
+      url: `${site.url}${path}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority,
+    })),
   ];
 }

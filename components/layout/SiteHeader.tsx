@@ -71,7 +71,13 @@ export function SiteHeader() {
                 })}
               </nav>
 
-              <Button href="#cta" size="xs" magnetic onClick={close}>
+              <Button
+                href="#cta"
+                size="xs"
+                magnetic
+                onClick={close}
+                className="hidden sm:inline-flex"
+              >
                 Get Pro Access — Free
               </Button>
 

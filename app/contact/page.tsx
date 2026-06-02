@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, LifeBuoy, Mail } from "lucide-react";
 import { createMetadata, faqSchema } from "@/lib/seo";
+import { site } from "@/lib/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
 import {
@@ -18,7 +19,7 @@ import {
 export const metadata: Metadata = createMetadata({
   title: "Contact",
   description:
-    "Get in touch with the ArraySubs team. Email us, reach out on Facebook or X, or send a message — we read every one and reply within one business day.",
+    "Get in touch with the ArraySubs team. Email us, reach out on Facebook or X, or share your contact details so we can reply within one business day.",
   path: "/contact/",
 });
 
@@ -59,7 +60,7 @@ export default function ContactPage() {
           { name: "Contact", href: "/contact/" },
         ]}
         title="Let's talk."
-        subtitle="Evaluating ArraySubs, stuck on setup, or just want to share feedback? We read every message and reply fast — no bots, no ticket maze."
+        subtitle="Evaluating ArraySubs, stuck on setup, or just want to share feedback? Share your contact details or email us directly. We reply fast, no bots, no ticket maze."
         highlights={[
           "Replies within 1 business day",
           "Talk to the team, not a bot",
@@ -70,7 +71,7 @@ export default function ContactPage() {
             <Button
               size="lg"
               magnetic
-              href="mailto:emran@arrayhash.com"
+              href={`mailto:${site.email}`}
               iconLeft={<Mail className="size-5" />}
             >
               Email us
@@ -95,11 +96,11 @@ export default function ContactPage() {
             {/* Message form */}
             <div className="h-full rounded-2xl bg-card p-6 text-foreground sm:p-8">
               <h2 className="font-display text-2xl sm:text-3xl">
-                Send us a message
+                Share your contact details
               </h2>
               <p className="mt-2 text-muted">
-                Fill this out and we&apos;ll get back to you within one business
-                day.
+                This form collects only your name, country and email. We&apos;ll
+                use it to reply within one business day.
               </p>
               <ContactForm className="mt-8" />
             </div>
@@ -120,8 +121,8 @@ export default function ContactPage() {
               <IconCard
                 icon={<Mail className="size-6" />}
                 title="Email us"
-                description="emran@arrayhash.com"
-                href="mailto:emran@arrayhash.com"
+                description={site.email}
+                href={`mailto:${site.email}`}
               />
               <IconCard
                 icon={<FacebookIcon className="size-6" />}

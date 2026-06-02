@@ -3,29 +3,31 @@
 import { useRef, useState, type FormEvent } from "react";
 import { ArrowLeft, CheckCircle2, Send } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { site } from "@/lib/site";
 import { Button } from "../Button";
 import { Field } from "./Field";
 import { Input } from "./Input";
-import { Textarea } from "./Textarea";
 import { Select } from "./Select";
-import { Checkbox } from "./Checkbox";
 
-const TOPICS = [
-  { label: "General question", value: "general" },
-  { label: "Sales & pricing", value: "sales" },
-  { label: "Technical support", value: "support" },
-  { label: "Partnership or press", value: "partnership" },
-  { label: "Product feedback", value: "feedback" },
+const COUNTRIES = [
+  { label: "United States", value: "united-states" },
+  { label: "United Kingdom", value: "united-kingdom" },
+  { label: "Canada", value: "canada" },
+  { label: "Australia", value: "australia" },
+  { label: "Bangladesh", value: "bangladesh" },
+  { label: "Germany", value: "germany" },
+  { label: "France", value: "france" },
+  { label: "India", value: "india" },
+  { label: "Other", value: "other" },
 ];
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
-type Errors = { name?: string; email?: string; message?: string };
+type Errors = { name?: string; email?: string; country?: string };
 
 /**
- * Contact form. Client-side validated demo matching the LeadForm pattern: inline
- * field errors, first-invalid focus and an aria-live success state. No backend
- * wired yet — submission resolves to the confirmation panel.
+ * Contact form. Client-side validated form matching the LeadForm pattern with
+ * inline field errors and an aria-live success state.
  */
 export function ContactForm({ className }: { className?: string }) {
   const [status, setStatus] = useState<"idle" | "success">("idle");
@@ -34,7 +36,6 @@ export function ContactForm({ className }: { className?: string }) {
 
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
-  const messageRef = useRef<HTMLTextAreaElement>(null);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -42,22 +43,19 @@ export function ContactForm({ className }: { className?: string }) {
     const data = new FormData(form);
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
-    const message = String(data.get("message") ?? "").trim();
+    const country = String(data.get("country") ?? "").trim();
 
     const next: Errors = {};
     if (!name) next.name = "Please enter your name.";
     if (!email) next.email = "Please enter your email address.";
     else if (!EMAIL_RE.test(email)) next.email = "Enter a valid email address.";
-    if (!message) next.message = "Please enter a message.";
-    else if (message.length < 10)
-      next.message = "Tell us a little more (at least 10 characters).";
+    if (!country) next.country = "Please choose your country.";
 
     setErrors(next);
 
     if (Object.keys(next).length > 0) {
       if (next.name) nameRef.current?.focus();
       else if (next.email) emailRef.current?.focus();
-      else messageRef.current?.focus();
       return;
     }
 
@@ -76,9 +74,9 @@ export function ContactForm({ className }: { className?: string }) {
         )}
       >
         <CheckCircle2 aria-hidden="true" className="size-10 text-success" />
-        <h3 className="font-display text-xl">Message sent</h3>
+        <h3 className="font-display text-xl">Details received</h3>
         <p className="text-muted">
-          Thanks for reaching out — we&apos;ll reply to{" "}
+          Thanks for reaching out. We&apos;ll reply to{" "}
           <span className="font-medium text-foreground">{sentTo}</span> within one
           business day.
         </p>
@@ -91,7 +89,7 @@ export function ContactForm({ className }: { className?: string }) {
             setErrors({});
           }}
         >
-          Send another message
+          Send another request
         </Button>
       </div>
     );
@@ -116,7 +114,7 @@ export function ContactForm({ className }: { className?: string }) {
         label="Email"
         required
         error={errors.email}
-        description="We'll only use this to reply."
+        description="We'll only use this to reply or manage your request."
       >
         <Input
           ref={emailRef}
@@ -127,23 +125,18 @@ export function ContactForm({ className }: { className?: string }) {
         />
       </Field>
 
-      <Field label="Topic">
-        <Select name="topic" placeholder="What's this about?" options={TOPICS} />
-      </Field>
-
-      <Field label="Message" required error={errors.message}>
-        <Textarea
-          ref={messageRef}
-          name="message"
-          rows={5}
-          placeholder="How can we help?"
+      <Field
+        label="Country"
+        required
+        error={errors.country}
+        description="Used for support routing and privacy/compliance context."
+      >
+        <Select
+          name="country"
+          placeholder="Choose your country"
+          options={COUNTRIES}
         />
       </Field>
-
-      <Checkbox
-        name="consent"
-        label="Send me occasional product updates. No spam — unsubscribe anytime."
-      />
 
       <Button
         type="submit"
@@ -153,16 +146,16 @@ export function ContactForm({ className }: { className?: string }) {
         fullWidth
         iconRight={<Send className="size-5" />}
       >
-        Send message
+        Send request
       </Button>
 
       <p className="text-center text-sm text-muted">
         Prefer email? Write to{" "}
         <a
-          href="mailto:emran@arrayhash.com"
+          href={`mailto:${site.email}`}
           className="font-medium text-foreground underline decoration-primary decoration-2 underline-offset-4 hover:decoration-dark"
         >
-          emran@arrayhash.com
+          {site.email}
         </a>
       </p>
     </form>
