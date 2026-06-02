@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { FEATURES } from "@/app/deals/arraysubs/features/_data";
+import { USE_CASES } from "@/app/deals/arraysubs/use-cases/_data";
 
 /**
  * Add a route entry here when a new indexable page ships.
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const dealsRoutes = [
     ["/deals/arraysubs/pricing/", 0.8],
     ["/deals/arraysubs/features/", 0.8],
+    ["/deals/arraysubs/use-cases/", 0.8],
   ] as const;
 
   const trustRoutes = [
@@ -43,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...FEATURES.map((feature) => ({
       url: `${site.url}/deals/arraysubs/features/${feature.slug}/`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...USE_CASES.map((useCase) => ({
+      url: `${site.url}/deals/arraysubs/use-cases/${useCase.slug}/`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,

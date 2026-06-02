@@ -51,6 +51,8 @@ export type Feature = {
   metaDescription: string;
   h1: string;
   heroSubtitle: string;
+  /** Short hashtag-style proof points shown under the hero subtitle. */
+  heroHighlights: string[];
   /** Definition-style lead paragraph (answerable for GEO/AI extraction). */
   intro: string;
   capabilities: FeatureCapability[];
@@ -83,8 +85,13 @@ export const FEATURES: Feature[] = [
     h1: "Turn any WooCommerce product into a subscription",
     heroSubtitle:
       "Create simple or variable recurring products with flexible billing cycles, free trials, sign-up fees, and upgrade or downgrade plan switching — all in the free core.",
+    heroHighlights: [
+      "Simple & variable products",
+      "Daily-to-yearly billing",
+      "Plan switching with proration",
+    ],
     intro:
-      "ArraySubs subscription products let you sell anything on a recurring basis. Choose daily, weekly, monthly, yearly, or custom billing cycles, add free trials and sign-up fees, set different renewal prices, and let customers switch plans with automatic proration. Pricing is locked at purchase, so product changes never affect existing subscribers.",
+      "ArraySubs subscription products let you ==sell anything on a recurring basis==. Choose daily, weekly, monthly, yearly, or custom billing cycles, add free trials and sign-up fees, set different renewal prices, and let customers ==switch plans with automatic proration==. ==Pricing is locked at purchase==, so product changes never affect existing subscribers.",
     capabilities: [
       {
         title: "Simple & variable products",
@@ -160,8 +167,13 @@ export const FEATURES: Feature[] = [
     h1: "Protect content, products, and downloads by subscription",
     heroSubtitle:
       "The most powerful access-control engine in any WooCommerce subscription plugin — 10 condition types, 12 operators, nested AND/OR logic, and seven rule categories.",
+    heroHighlights: [
+      "10 conditions, 12 operators",
+      "Nested AND/OR rules",
+      "Role mapping & content dripping",
+    ],
     intro:
-      "Member Access Control decides exactly what each subscriber can see, buy, download, and reach. Build rules from 10 condition types and 12 operators, nest them with AND/OR logic, map WordPress roles by subscription status, gate URLs and downloads, and drip content on a schedule — all without code.",
+      "Member Access Control decides exactly what each subscriber can see, buy, download, and reach. Build rules from ==10 condition types and 12 operators==, nest them with AND/OR logic, ==map WordPress roles by subscription status==, gate URLs and downloads, and drip content on a schedule — ==all without code==.",
     capabilities: [
       {
         title: "10 condition types",
@@ -233,8 +245,13 @@ export const FEATURES: Feature[] = [
     h1: "Automated billing, smart renewals, and flexible refunds",
     heroSubtitle:
       "A renewal engine that recovers failed payments with a two-phase grace period, lets customers skip and pause, and refunds fairly with proration.",
+    heroHighlights: [
+      "Two-phase grace period",
+      "Skip & pause renewals",
+      "Prorated refunds",
+    ],
     intro:
-      "The billing engine generates renewal invoices six hours before they're due, routes them to manual or automatic payment, and protects revenue with a two-phase grace period that keeps access active while it recovers a failed charge. Customers can skip or pause, and you can refund prorated, full, or partial amounts.",
+      "The billing engine generates renewal invoices six hours before they're due, routes them to manual or automatic payment, and protects revenue with a ==two-phase grace period== that keeps access active while it ==recovers a failed charge==. Customers can ==skip or pause==, and you can refund prorated, full, or partial amounts.",
     capabilities: [
       {
         title: "Renewal engine",
@@ -310,8 +327,13 @@ export const FEATURES: Feature[] = [
     h1: "Stop subscribers from cancelling with smart retention flows",
     heroSubtitle:
       "When a customer clicks cancel, intercept the moment with a guided flow that captures their reason and offers a discount, a pause, a downgrade, or support — before they leave.",
+    heroHighlights: [
+      "3-step cancellation flow",
+      "4 retention offer types",
+      "Built-in save analytics",
+    ],
     intro:
-      "The Retention Flow Builder turns the cancel button into a save opportunity. A three-step modal asks why the customer is leaving, then shows targeted offers based on that reason. Every interaction feeds retention analytics so you can see your save rate and optimize over time. It's included free — no other WooCommerce subscription plugin ships it.",
+      "The Retention Flow Builder turns the cancel button into a ==save opportunity==. A three-step modal asks why the customer is leaving, then shows ==targeted offers based on that reason==. Every interaction feeds retention analytics so you can see your save rate and optimize over time. It's ==included free== — no other WooCommerce subscription plugin ships it.",
     capabilities: [
       {
         title: "3-step cancellation flow",
@@ -378,8 +400,13 @@ export const FEATURES: Feature[] = [
     h1: "Give subscribers a self-service portal to manage everything",
     heroSubtitle:
       "A complete subscription hub inside WooCommerce My Account — customers manage their own plans without ever opening a support ticket.",
+    heroHighlights: [
+      "Self-service My Account",
+      "Plan switch, skip & pause",
+      "Fewer support tickets",
+    ],
     intro:
-      "The customer portal puts subscribers in control. From My Account they can view every subscription and its history, switch plans with a proration preview, skip a renewal, pause, cancel with an undo option, reactivate, and — with Pro — update payment methods, shipping, store credit, and entitlements. Self-service means fewer tickets and happier customers.",
+      "The customer portal puts subscribers ==in control==. From My Account they can view every subscription and its history, ==switch plans with a proration preview==, skip a renewal, pause, cancel with an undo option, reactivate, and — with Pro — update payment methods, shipping, store credit, and entitlements. Self-service means ==fewer tickets and happier customers==.",
     capabilities: [
       {
         title: "My Subscriptions list & detail",
@@ -455,8 +482,13 @@ export const FEATURES: Feature[] = [
     h1: "A built-in store credit system for WooCommerce subscriptions",
     heroSubtitle:
       "Turn refunds into retained revenue and reward loyalty with a virtual wallet that auto-applies to renewals and orders.",
+    heroHighlights: [
+      "8 credit sources",
+      "Auto-applies to renewals",
+      "Purchasable top-ups",
+    ],
     intro:
-      "Store Credit gives every customer a wallet they can earn, buy, and spend across subscriptions and orders. Credit can come from eight sources — downgrades, refunds, admin adjustments, promotions, and purchasable top-ups — and auto-applies to renewals. Refund to credit to avoid card friction, set expiration to create urgency, and keep customers informed with four dedicated emails.",
+      "Store Credit gives every customer a ==wallet they can earn, buy, and spend== across subscriptions and orders. Credit can come from eight sources — downgrades, refunds, admin adjustments, promotions, and purchasable top-ups — and ==auto-applies to renewals==. ==Refund to credit to avoid card friction==, set expiration to create urgency, and keep customers informed with four dedicated emails.",
     capabilities: [
       {
         title: "Two credit levels",
@@ -532,8 +564,13 @@ export const FEATURES: Feature[] = [
     h1: "Build a subscription checkout that converts",
     heroSubtitle:
       "A visual, drag-and-drop checkout editor with 27 field types, multi-step flows, and conditional logic — brand-perfect checkout without touching code.",
+    heroHighlights: [
+      "27 field types",
+      "Multi-step checkout",
+      "Conditional field logic",
+    ],
     intro:
-      "The Checkout Builder lets you design the checkout your store needs. Drag from 27 field types, split the form into multiple steps, show or hide fields with conditional logic, and style everything from a design panel. Custom fields flow through the whole subscription lifecycle — initial order, renewals, and the customer portal.",
+      "The Checkout Builder lets you design the checkout your store needs. Drag from ==27 field types==, split the form into multiple steps, ==show or hide fields with conditional logic==, and style everything from a design panel. Custom fields ==flow through the whole subscription lifecycle== — initial order, renewals, and the customer portal.",
     capabilities: [
       {
         title: "27 field types",
@@ -609,8 +646,13 @@ export const FEATURES: Feature[] = [
     h1: "Subscription analytics that help you grow",
     heroSubtitle:
       "Know your MRR, churn, and retention at a glance — with a free Reports Hub and retention analytics, and a Pro performance dashboard built into WooCommerce.",
+    heroHighlights: [
+      "MRR, churn & ARPU",
+      "40+ subscription reports",
+      "Performance dashboard",
+    ],
     intro:
-      "ArraySubs answers the questions that matter: how fast am I growing, who's churning, and is my retention working? The free core ships a Reports Hub linking 40+ reports plus retention analytics. Pro adds a performance dashboard with 10 KPIs, six trend charts, and five leaderboards, and extends WooCommerce's own Analytics with subscription data.",
+      "ArraySubs answers the questions that matter: how fast am I growing, who's churning, and is my retention working? The free core ships a Reports Hub linking ==40+ reports plus retention analytics==. Pro adds a performance dashboard with ==10 KPIs, six trend charts, and five leaderboards==, and extends ==WooCommerce's own Analytics== with subscription data.",
     capabilities: [
       {
         title: "Reports Hub (Free)",
@@ -686,8 +728,13 @@ export const FEATURES: Feature[] = [
     h1: "Keep subscribers informed with automated emails",
     heroSubtitle:
       "Sixteen lifecycle emails in the free core — renewals, payments, trials, cancellations — all built on the WooCommerce email framework and fully customizable.",
+    heroHighlights: [
+      "16 lifecycle emails",
+      "50+ placeholders",
+      "Renewal reminders",
+    ],
     intro:
-      "Every subscription event triggers the right email automatically. The free core ships 13 customer emails and 3 admin emails covering the full lifecycle, and Pro adds four store-credit emails. Each one inherits your WooCommerce template, supports HTML or plain text, and exposes 50+ placeholders so the subject, heading, and content match your brand.",
+      "Every subscription event triggers the right email automatically. The free core ships ==13 customer emails and 3 admin emails== covering the full lifecycle, and Pro adds ==four store-credit emails==. Each one inherits your WooCommerce template, supports HTML or plain text, and exposes ==50+ placeholders== so the subject, heading, and content match your brand.",
     capabilities: [
       {
         title: "13 customer emails",
@@ -754,8 +801,13 @@ export const FEATURES: Feature[] = [
     h1: "Accept recurring payments with any gateway",
     heroSubtitle:
       "Manual renewals work with any WooCommerce gateway out of the box. Add automatic billing with Stripe, PayPal, or Paddle in Pro.",
+    heroHighlights: [
+      "Any WooCommerce gateway",
+      "Stripe, PayPal & Paddle",
+      "Automatic recurring billing",
+    ],
     intro:
-      "ArraySubs handles subscription checkout for free with any WooCommerce payment gateway using manual renewals. Pro adds fully automatic recurring payments through Stripe (with SCA/3DS and card auto-update), PayPal billing agreements, and Paddle as merchant of record — plus a customer auto-renew toggle and a gateway health dashboard.",
+      "ArraySubs handles subscription checkout for free with ==any WooCommerce payment gateway== using manual renewals. Pro adds ==fully automatic recurring payments== through Stripe (with SCA/3DS and card auto-update), PayPal billing agreements, and Paddle as ==merchant of record== — plus a customer auto-renew toggle and a gateway health dashboard.",
     capabilities: [
       {
         title: "Subscription checkout (Free)",
@@ -826,8 +878,13 @@ export const FEATURES: Feature[] = [
     h1: "Set up WooCommerce subscriptions in minutes",
     heroSubtitle:
       "A 9-step wizard with seven business-type profiles configures billing, checkout, retention, access, and emails for you — then export and import settings as JSON.",
+    heroHighlights: [
+      "9-step setup wizard",
+      "7 business profiles",
+      "JSON export & import",
+    ],
     intro:
-      "The setup hub gets a new store live fast. Answer nine guided steps — the wizard adapts to your business type (SaaS, box, membership, content, services, nonprofit, or custom) and applies sensible defaults to billing, checkout, retention, access control, and emails. Export your configuration as JSON for backup or migration, and import selectively across eight sections.",
+      "The setup hub gets a new store live fast. Answer ==nine guided steps== — the wizard ==adapts to your business type== (SaaS, box, membership, content, services, nonprofit, or custom) and applies sensible defaults to billing, checkout, retention, access control, and emails. Export your configuration as ==JSON for backup or migration==, and import selectively across eight sections.",
     capabilities: [
       {
         title: "9-step wizard",
@@ -898,8 +955,13 @@ export const FEATURES: Feature[] = [
     h1: "A complete audit trail for your subscriptions",
     heroSubtitle:
       "See every change, every scheduled job, and every gateway interaction — so nothing happens in the dark.",
+    heroHighlights: [
+      "Activity audit timeline",
+      "Scheduled-job logs",
+      "Gateway health dashboard",
+    ],
     intro:
-      "Audits & Logs gives operators total visibility. The activity audit records changes across eight entity types with old-to-new diffs and author roles, scheduled-job logs expose every background job and its status, and the gateway health dashboard shows whether your webhooks are connected — turning silent failures into things you can see and fix.",
+      "Audits & Logs gives operators ==total visibility==. The activity audit records changes across ==eight entity types== with old-to-new diffs and author roles, scheduled-job logs expose every background job and its status, and the gateway health dashboard shows whether your webhooks are connected — turning ==silent failures into things you can see and fix==.",
     capabilities: [
       {
         title: "Activity audits",
@@ -966,8 +1028,13 @@ export const FEATURES: Feature[] = [
     h1: "A powerful dashboard to manage every subscription",
     heroSubtitle:
       "List, search, create, edit, and manage every subscription from one admin interface — with full lifecycle control and a detailed audit trail.",
+    heroHighlights: [
+      "List, search & export",
+      "17-card detail view",
+      "21 automated notes",
+    ],
     intro:
-      "Manage Subscriptions is mission control for your recurring revenue. Browse and search across seven status tabs, create or edit any subscription, and open a detail view with 17 information cards (plus conditional cards for gateways, checkout fields, and shipping). Six lifecycle statuses, a two-phase grace period, and 21 automated notes keep everything auditable.",
+      "Manage Subscriptions is ==mission control for your recurring revenue==. Browse and search across seven status tabs, create or edit any subscription, and open a detail view with ==17 information cards== (plus conditional cards for gateways, checkout fields, and shipping). Six lifecycle statuses, a two-phase grace period, and ==21 automated notes== keep everything auditable.",
     capabilities: [
       {
         title: "List, search & export",
@@ -1034,8 +1101,13 @@ export const FEATURES: Feature[] = [
     h1: "Personalize the member experience with profiles & shortcodes",
     heroSubtitle:
       "Custom profile fields, avatar uploads, a drag-and-drop My Account editor, and a library of shortcodes — a polished member area without code.",
+    heroHighlights: [
+      "Custom profile fields",
+      "Avatar uploads",
+      "My Account editor",
+    ],
     intro:
-      "Profile Builder shapes the member experience. Add custom profile fields (six types) that appear in My Account and the admin, let customers upload avatars that replace Gravatar site-wide, reorder and rename the My Account menu, and gate or personalize content with restriction and visibility shortcodes.",
+      "Profile Builder shapes the member experience. Add ==custom profile fields== (six types) that appear in My Account and the admin, let customers upload avatars that ==replace Gravatar site-wide==, reorder and rename the My Account menu, and gate or personalize content with ==restriction and visibility shortcodes==.",
     capabilities: [
       {
         title: "Custom profile fields",
@@ -1102,8 +1174,13 @@ export const FEATURES: Feature[] = [
     h1: "Define what each subscription plan includes",
     heroSubtitle:
       "Set per-plan entitlements — toggles, numeric limits, and text details — then show 'What's included' on the storefront and meter usage. Pro.",
+    heroHighlights: [
+      "Per-plan entitlements",
+      "'What's included' display",
+      "Usage tracking",
+    ],
     intro:
-      "Feature Manager makes plan value explicit. Define entitlements per product or variation as toggles (on/off), numbers (limits), or text (descriptions), render a 'What's included' section on the product page, aggregate entitlements in the portal, and track usage for metered features like API calls or seats — fewer pre-sale questions, clearer upgrades.",
+      "Feature Manager makes ==plan value explicit==. Define entitlements per product or variation as toggles (on/off), numbers (limits), or text (descriptions), render a 'What's included' section on the product page, aggregate entitlements in the portal, and ==track usage for metered features like API calls or seats== — fewer pre-sale questions, ==clearer upgrades==.",
     capabilities: [
       {
         title: "3 entitlement types",

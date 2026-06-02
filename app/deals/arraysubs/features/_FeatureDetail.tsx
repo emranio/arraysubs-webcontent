@@ -13,6 +13,8 @@ import {
   SectionTitle,
 } from "@/components/ui";
 import { getFeature, type Feature, type FeatureTier } from "./_data";
+import { useCasesForFeature } from "../use-cases/_data";
+import { highlight } from "../_highlight";
 
 const GET_PRO = "/deals/arraysubs/pricing/#get-pro";
 
@@ -26,6 +28,7 @@ export function FeatureDetail({ feature }: { feature: Feature }) {
   const related = feature.related
     .map((slug) => getFeature(slug))
     .filter((item): item is Feature => Boolean(item));
+  const useCases = useCasesForFeature(feature.slug);
 
   return (
     <>
@@ -41,18 +44,16 @@ export function FeatureDetail({ feature }: { feature: Feature }) {
         ]}
         title={feature.h1}
         subtitle={feature.heroSubtitle}
+        highlights={[feature.tier, ...feature.heroHighlights]}
         actions={
-          <div className="flex flex-col items-start gap-4">
-            <Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>
-            <Button
-              href={GET_PRO}
-              size="lg"
-              magnetic
-              iconRight={<ArrowRight className="size-5" />}
-            >
-              Get Pro — Free
-            </Button>
-          </div>
+          <Button
+            href={GET_PRO}
+            size="lg"
+            magnetic
+            iconRight={<ArrowRight className="size-5" />}
+          >
+            Get Pro — Free
+          </Button>
         }
       />
 
@@ -61,7 +62,7 @@ export function FeatureDetail({ feature }: { feature: Feature }) {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-center">
             <p className="text-xl leading-9 text-muted text-pretty sm:text-2xl sm:leading-10">
-              {feature.intro}
+              {highlight(feature.intro)}
             </p>
             <ul className="grid grid-cols-2 gap-[0.1875rem]">
               {feature.stats.map((stat) => (
@@ -138,6 +139,31 @@ export function FeatureDetail({ feature }: { feature: Feature }) {
                   description={item.cardDescription}
                   href={`/deals/arraysubs/features/${item.slug}/`}
                   badge={<Badge tone={tierTone(item.tier)}>{item.tier}</Badge>}
+                />
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* ---- Use cases (feature -> use cases) --------------------------- */}
+      {useCases.length > 0 && (
+        <Section surface="default" spacing="md">
+          <Container>
+            <SectionTitle
+              eyebrow="Built for"
+              title="Use cases this powers"
+              subtitle="Business models that rely on this module."
+              align="center"
+            />
+            <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
+              {useCases.map((useCase) => (
+                <IconCard
+                  key={useCase.slug}
+                  icon={<useCase.icon className="size-6" />}
+                  title={useCase.name}
+                  description={useCase.cardDescription}
+                  href={`/deals/arraysubs/use-cases/${useCase.slug}/`}
                 />
               ))}
             </div>
