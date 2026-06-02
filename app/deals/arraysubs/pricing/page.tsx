@@ -354,8 +354,8 @@ export default function ArraySubsPricingPage() {
 
             {/* "All features" CTA — fills the empty cells (spans 2 cols on lg). */}
             <ScrollFillCard
-              href="#compare"
-              aria-label="See all features — compare Free vs Pro"
+              href="/deals/arraysubs/features/"
+              aria-label="Explore all ArraySubs features"
               className="group flex h-full flex-col justify-between gap-10 overflow-hidden rounded-xl bg-dark p-8 text-on-dark focus-visible:outline-highlight sm:p-10 lg:col-span-2"
             >
               <span className="flex flex-wrap items-center gap-x-6 gap-y-4">

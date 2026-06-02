@@ -1,12 +1,16 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
+import { FEATURES } from "@/app/deals/arraysubs/features/_data";
 
 /**
  * Add a route entry here when a new indexable page ships.
  * The design-system page is intentionally excluded (noindex).
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const dealsRoutes = [["/deals/arraysubs/pricing/", 0.8]] as const;
+  const dealsRoutes = [
+    ["/deals/arraysubs/pricing/", 0.8],
+    ["/deals/arraysubs/features/", 0.8],
+  ] as const;
 
   const trustRoutes = [
     ["/trust-center/", 0.7],
@@ -36,6 +40,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority,
+    })),
+    ...FEATURES.map((feature) => ({
+      url: `${site.url}/deals/arraysubs/features/${feature.slug}/`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
     ...trustRoutes.map(([path, priority]) => ({
       url: `${site.url}${path}`,
