@@ -35,7 +35,7 @@
 ### 1. PageHero Section (Pro Badge)
 - H1 + subtitle: "Know your numbers — MRR, churn, LTV, all in real-time"
 - Screenshot: Analytics dashboard overview
-- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
+- CTA Buttons: Live Demo + Get ArraySubs Pro for 4 Months — Free
 
 ### 2. Key Metrics Dashboard
 - **MRR (Monthly Recurring Revenue)**: Real-time tracking
@@ -109,6 +109,6 @@
 
 - **Buttons**
 	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

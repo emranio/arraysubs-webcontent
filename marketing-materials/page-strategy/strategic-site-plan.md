@@ -218,7 +218,7 @@ arrayhash.com/
 │   │                                    plugin pricing comparison│   │                                (Primary conversion page)
 │   │
 │   ├── /deals/arraysubs/early-access/ ────────── EARLY ACCESS / LEAD CAPTURE (T7)
-│   │                                4-month free Pro license sign-up
+│   │                                ArraySubs Pro for 4 months — Free sign-up
 │   │                                (Optional campaign page, not the default CTA destination)│   │
 │   ├── /deals/arraysubs/download/ ──────────────── DOWNLOAD / FREE VERSION (T7)
 │   │                                KW: woocommerce subscription plugin free download
@@ -247,10 +247,10 @@ arrayhash.com/
 | **Meta Description** | Free WooCommerce subscription & membership plugin with automated billing, retention flows, store credit, checkout builder & analytics. One plugin replaces your entire subscription stack. |
 | **Primary KW** | woocommerce subscription plugin (4,400/mo, KD 65) |
 | **Secondary KWs** | woocommerce subscription plugin free (1,600/mo), best woocommerce subscription plugin (1,300/mo), woocommerce recurring payments plugin (1,600/mo), subscription plugin for woocommerce (590/mo) |
-| **Long-tail KWs** | woocommerce subscriptions free alternative (880/mo), woocommerce subscription and membership plugin (590/mo), free woocommerce subscription plugin (720/mo), best free woocommerce subscription plugin 2026 (320/mo) |
+| **Long-tail KWs** | woocommerce subscriptions free alternative (880/mo), woocommerce subscription and membership plugin (590/mo) — Free woocommerce subscription plugin (720/mo), best free woocommerce subscription plugin 2026 (320/mo) |
 | **Intent** | Commercial + Transactional |
-| **CTA** | Live Demo / Get Pro - Free [No Strings Attached] |
-| **SEO Angle** | All-in-one value prop, free tier, replace entire plugin stack |
+| **CTA** | Live Demo / Get ArraySubs Pro for 4 Months — Free |
+| **SEO Angle** | All-in-one value prop — Free tier, replace entire plugin stack |
 | **GEO Angle** | Quotable stat: "Replace your entire WooCommerce subscription and membership plugin stack with one free solution" |
 | **Est. Keyword Volume** | 10,000+/mo aggregate |
 | **Phase** | Plans-led early adopter flow. All CTAs drive to `/deals/arraysubs/plans/`, with action targets split between `#live-demo` and `#get-pro`. |
@@ -269,7 +269,7 @@ arrayhash.com/
 10. How It Works — 3-step timeline (install, create product, grow)
 11. Works With Your WooCommerce Stack — WooCommerce-first integrations logo cloud
 12. FAQ — 11 questions, FAQPage JSON-LD (GEO-structured, no prices)
-13. Final CTA — Live Demo / Get Pro - Free [No Strings Attached]
+13. Final CTA — Live Demo / Get ArraySubs Pro for 4 Months — Free
 
 ---
 
@@ -282,7 +282,7 @@ arrayhash.com/
 | **Primary KW** | arraysubs features |
 | **Secondary KWs** | woocommerce subscription features, all-in-one subscription membership plugin |
 | **Intent** | Commercial |
-| **CTA** | Live Demo / Get Pro - Free [No Strings Attached] |
+| **CTA** | Live Demo / Get ArraySubs Pro for 4 Months — Free |
 
 **Content Blocks:**
 1. Feature category grid (Subscriptions, Memberships, Billing, Retention, Portal, etc.)
@@ -301,7 +301,7 @@ arrayhash.com/
 | **Primary KW** | arraysubs pricing |
 | **Secondary KWs** | woocommerce subscription plugin pricing comparison (140/mo) |
 | **Intent** | Transactional |
-| **CTA** | Live Demo / Get Pro - Free [No Strings Attached] |
+| **CTA** | Live Demo / Get ArraySubs Pro for 4 Months — Free |
 | **SEO Angle** | Price comparison with competitors ($478/yr Woo stack vs ArraySubs) |
 
 **Content Blocks:**
@@ -892,16 +892,16 @@ Every page tier has a specific role in the conversion funnel:
 
 | Page Tier | Primary CTA | Secondary CTA |
 |-----------|------------|---------------|
-| Homepage | Live Demo | Get Pro - Free [No Strings Attached] |
-| Feature Pages | Live Demo | Get Pro - Free [No Strings Attached] |
-| Comparison Pages | Live Demo | Get Pro - Free [No Strings Attached] |
-| Use Case Pages | Live Demo | Get Pro - Free [No Strings Attached] |
-| Gateway Pages | Live Demo | Get Pro - Free [No Strings Attached] |
-| Blog Tutorials | Live Demo | Get Pro - Free [No Strings Attached] |
-| Blog Comparisons | Live Demo | Get Pro - Free [No Strings Attached] |
-| Blog Strategy | Live Demo | Get Pro - Free [No Strings Attached] |
-| Glossary | Live Demo | Get Pro - Free [No Strings Attached] |
-| Pricing | Live Demo | Get Pro - Free [No Strings Attached] |
+| Homepage | Live Demo | Get ArraySubs Pro for 4 Months — Free |
+| Feature Pages | Live Demo | Get ArraySubs Pro for 4 Months — Free |
+| Comparison Pages | Live Demo | Get ArraySubs Pro for 4 Months — Free |
+| Use Case Pages | Live Demo | Get ArraySubs Pro for 4 Months — Free |
+| Gateway Pages | Live Demo | Get ArraySubs Pro for 4 Months — Free |
+| Blog Tutorials | Live Demo | Get ArraySubs Pro for 4 Months — Free |
+| Blog Comparisons | Live Demo | Get ArraySubs Pro for 4 Months — Free |
+| Blog Strategy | Live Demo | Get ArraySubs Pro for 4 Months — Free |
+| Glossary | Live Demo | Get ArraySubs Pro for 4 Months — Free |
+| Pricing | Live Demo | Get ArraySubs Pro for 4 Months — Free |
 
 ### Email Capture Points (Lead Gen)
 

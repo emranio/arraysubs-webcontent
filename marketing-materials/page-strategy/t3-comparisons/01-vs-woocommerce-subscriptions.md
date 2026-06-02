@@ -36,7 +36,7 @@
 ### 1. PageHero Section
 - H1 + brief neutral intro: "We built ArraySubs because we thought WooCommerce stores deserved more — here's how both options stack up."
 - Quick verdict box: Key difference in 1 sentence
-- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
+- CTA Buttons: Live Demo + Get ArraySubs Pro for 4 Months — Free
 
 ### 2. At-a-Glance Comparison Table
 
@@ -154,6 +154,6 @@
 
 - **Buttons**
   - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-  - `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

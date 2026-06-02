@@ -72,7 +72,7 @@ export function SiteHeader() {
               </nav>
 
               <Button href="#cta" size="xs" magnetic onClick={close}>
-                Get Pro — Free
+                Get Pro Access — Free
               </Button>
 
               {/* Hamburger / X toggle for mobile/tablet */}
@@ -94,24 +94,24 @@ export function SiteHeader() {
                 <span aria-hidden="true" className="relative block size-5">
                   <span
                     className={cn(
-	                      "absolute left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-current transition-all duration-300 ease-out",
-	                      open
-	                        ? "top-1/2 -mt-px w-4 rotate-45"
-	                        : "top-[0.1875rem] w-[1.125rem] group-hover:w-5",
+                      "absolute left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-current transition-all duration-300 ease-out",
+                      open
+                        ? "top-1/2 -mt-px w-4 rotate-45"
+                        : "top-[0.1875rem] w-[1.125rem] group-hover:w-5",
                     )}
-                  />
-	                  <span
-	                    className={cn(
-	                      "absolute top-1/2 left-1/2 -mt-px h-0.5 w-[1.125rem] -translate-x-1/2 rounded-full bg-current transition-all duration-300 ease-out",
-	                      open && "scale-x-0 opacity-0",
-	                    )}
                   />
                   <span
                     className={cn(
-	                      "absolute left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-current transition-all duration-300 ease-out",
-	                      open
-	                        ? "top-1/2 -mt-px w-4 -rotate-45"
-	                        : "top-[0.9375rem] w-[1.125rem] group-hover:w-5",
+                      "absolute top-1/2 left-1/2 -mt-px h-0.5 w-[1.125rem] -translate-x-1/2 rounded-full bg-current transition-all duration-300 ease-out",
+                      open && "scale-x-0 opacity-0",
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "absolute left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-current transition-all duration-300 ease-out",
+                      open
+                        ? "top-1/2 -mt-px w-4 -rotate-45"
+                        : "top-[0.9375rem] w-[1.125rem] group-hover:w-5",
                     )}
                   />
                 </span>

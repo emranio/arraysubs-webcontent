@@ -30,9 +30,9 @@
 ## Content Blocks
 
 ### 1. PageHero — "Paywall your content with WooCommerce"
-### 2. Paywall Models — hard paywall, metered paywall, freemium
+### 2. Paywall Models — hard paywall, metered paywall — Freemium
 ### 3. Content Types — articles, videos, downloads, premium sections
-### 4. Subscriber Tiers — free, basic, premium via subscription plans
+### 4. Subscriber Tiers — Free, basic, premium via subscription plans
 ### 5. Revenue Optimization — retention flows + store credit
 ### 6. Step-by-Step: Set Up a Content Paywall
 ### 7. FAQ

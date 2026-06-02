@@ -13,7 +13,7 @@
 | Field | Value |
 |-------|-------|
 | **Title Tag** | Pricing — ArraySubs WooCommerce Subscription & Membership Plugin |
-| **H1** | Get ArraySubs Pro Free — Limited Time Early Bird Offer |
+| **H1** | Get ArraySubs Pro for 4 Months — Free — Limited Time Early Bird Offer |
 | **Meta Description** | Claim your free ArraySubs Pro license. No pricing table, no credit card. Submit your details and get your 3-month Pro license by email. Limited time early bird offer. |
 
 ---
@@ -34,19 +34,19 @@
 ### 1. PageHero
 - H1 + subtitle: "Limited time early bird offer. Submit your details, get your free 3-month Pro license by email."
 - Primary CTA on hero: Live Demo → `/deals/arraysubs/plans/#live-demo`
-- Secondary CTA on hero: Get Pro - Free [No Strings Attached] → `/deals/arraysubs/plans/#get-pro`
+- Secondary CTA on hero: Get ArraySubs Pro for 4 Months — Free → `/deals/arraysubs/plans/#get-pro`
 
 ### 2. Early Bird Offer Form
-- **Headline**: "Get ArraySubs Pro — Free for 3 Months"
+- **Headline**: "Get ArraySubs Pro for 4 Months — Free"
 - **Sub-copy**: "Limited time early bird offer. No pricing table. No credit card. Submit your details, get an email with your account and download links for both ArraySubs and ArraySubs Pro."
 - **Form fields**: Name, Email, Website URL
-- **CTA button**: "Get Pro - Free [No Strings Attached]"
+- **CTA button**: "Get ArraySubs Pro for 4 Months — Free"
 - **Micro-copy**: "Limited time early bird offer · 3-month Pro license · No credit card required"
 
 ### 3. What's Included in Pro
 - Expandable list of all Pro features (14 modules)
 - Each item links to the relevant feature page
-- Framing: "Here's what you unlock when you claim your free Pro license"
+- Framing: "Here's what you unlock when you claim your Pro license — Free"
 
 ### 4. FAQ
 
@@ -71,7 +71,7 @@
 
 - **Buttons**
   - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-  - `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 import { gsap, hasFinePointer, prefersReducedMotion } from "@/lib/gsap";
+import { cn } from "@/lib/cn";
 
 type MagneticProps = {
   children: ReactNode;
@@ -58,7 +59,7 @@ export function Magnetic({ children, strength = 0.4, className }: MagneticProps)
   return (
     <span
       ref={ref}
-      className={className}
+      className={cn("relative z-10 hover:z-30 focus-within:z-30", className)}
       style={{ display: "inline-flex", willChange: "transform" }}
     >
       {children}

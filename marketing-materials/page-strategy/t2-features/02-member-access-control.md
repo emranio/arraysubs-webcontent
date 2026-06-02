@@ -3,7 +3,7 @@
 > **URL**: `/deals/arraysubs/features/member-access-control/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 2
-> **Ownership**: Core (arraysubs) — free feature; Pro extends with Multi-Login Prevention, Feature Manager, Redirect Product Page
+> **Ownership**: Core (arraysubs) — Free feature; Pro extends with Multi-Login Prevention, Feature Manager, Redirect Product Page
 
 ---
 
@@ -37,7 +37,7 @@
 ### 1. PageHero Section
 - H1 + subtitle: "One restriction engine for every type of WordPress content"
 - Screenshot: Access Rules admin screen
-- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
+- CTA Buttons: Live Demo + Get ArraySubs Pro for 4 Months — Free
 
 ### 2. Restriction Types Overview
 Visual cards for each restriction type:
@@ -122,6 +122,6 @@ Visual cards for each restriction type:
 
 - **Buttons**
 	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

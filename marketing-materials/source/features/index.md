@@ -538,7 +538,7 @@
 - Refund-to-Store-Credit option (Pro)
 
 ### 12.6 18 Real-World Use Cases
-- Price-sensitive subscriber, seasonal member, overwhelmed user downgrading, tech problem resolution, newsletter pause, post-price-increase exodus, annual subscriber alternatives, subscription box burnout, free trial conversion rescue, entrepreneur downsizing, holiday season pause, B2B ROI review, competitor counter-offer, first-month risk, content consumer habit break, budget reset subscriber, parent seasonal subscription, multi-subscription consolidation
+- Price-sensitive subscriber, seasonal member, overwhelmed user downgrading, tech problem resolution, newsletter pause, post-price-increase exodus, annual subscriber alternatives, subscription box burnout — Free trial conversion rescue, entrepreneur downsizing, holiday season pause, B2B ROI review, competitor counter-offer, first-month risk, content consumer habit break, budget reset subscriber, parent seasonal subscription, multi-subscription consolidation
 - Retention math: 40% save rate example recovering $7,200/year
 
 ---

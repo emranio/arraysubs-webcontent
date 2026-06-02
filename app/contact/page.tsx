@@ -91,9 +91,9 @@ export default function ContactPage() {
       {/* ---- Form + direct channels ----------------------------------- */}
       <Section surface="surface" spacing="md">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)] lg:gap-12">
+          <div className="grid items-stretch gap-[0.1875rem] lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]">
             {/* Message form */}
-            <div className="rounded-2xl bg-card p-6 text-foreground sm:p-8">
+            <div className="h-full rounded-2xl bg-card p-6 text-foreground sm:p-8">
               <h2 className="font-display text-2xl sm:text-3xl">
                 Send us a message
               </h2>
@@ -105,44 +105,43 @@ export default function ContactPage() {
             </div>
 
             {/* Direct channels */}
-            <div>
-              <h2 className="font-display text-2xl sm:text-3xl">
-                Other ways to reach us
-              </h2>
-              <p className="mt-2 text-muted">
-                Pick whatever&apos;s easiest — they all reach the same small team.
-              </p>
-              <ScrollReveal
-                stagger={0.08}
-                y={1}
-                className="mt-8 grid gap-[0.1875rem]"
-              >
-                <IconCard
-                  icon={<Mail className="size-6" />}
-                  title="Email us"
-                  description="emran@arrayhash.com"
-                  href="mailto:emran@arrayhash.com"
+            <ScrollReveal
+              y={1}
+              className="grid h-full content-start gap-[0.1875rem]"
+            >
+              <div className="rounded-2xl bg-card p-6 text-foreground sm:p-8">
+                <SectionTitle
+                  title="Other ways to reach us"
+                  subtitle="Pick whatever's easiest — they all reach the same small team."
+                  size="sm"
+                  className="gap-2"
                 />
-                <IconCard
-                  icon={<FacebookIcon className="size-6" />}
-                  title="Facebook"
-                  description="facebook.com/arrayhash"
-                  href="https://www.facebook.com/arrayhash"
-                />
-                <IconCard
-                  icon={<XIcon className="size-6" />}
-                  title="X (Twitter)"
-                  description="x.com/arrayhash"
-                  href="https://x.com/arrayhash"
-                />
-                <IconCard
-                  icon={<LifeBuoy className="size-6" />}
-                  title="Help Center"
-                  description="support.arrayhash.com"
-                  href="https://support.arrayhash.com/arraysubs/"
-                />
-              </ScrollReveal>
-            </div>
+              </div>
+              <IconCard
+                icon={<Mail className="size-6" />}
+                title="Email us"
+                description="emran@arrayhash.com"
+                href="mailto:emran@arrayhash.com"
+              />
+              <IconCard
+                icon={<FacebookIcon className="size-6" />}
+                title="Facebook"
+                description="facebook.com/arrayhash"
+                href="https://www.facebook.com/arrayhash"
+              />
+              <IconCard
+                icon={<XIcon className="size-6" />}
+                title="X (Twitter)"
+                description="x.com/arrayhash"
+                href="https://x.com/arrayhash"
+              />
+              <IconCard
+                icon={<LifeBuoy className="size-6" />}
+                title="Help Center"
+                description="support.arrayhash.com"
+                href="https://support.arrayhash.com/arraysubs/"
+              />
+            </ScrollReveal>
           </div>
         </Container>
       </Section>
@@ -170,12 +169,12 @@ export default function ContactPage() {
             surface="primary"
             flat
             eyebrow="Or just try it"
-            title="Get ArraySubs Pro free for 4 months"
+            title="Get ArraySubs Pro for 4 months — Free"
             subtitle="No credit card, no strings. We're here whenever you need a hand."
             actions={
               <>
                 <Button variant="dark" size="lg" layers="2layer" magnetic>
-                  Claim My Free Pro License
+                  Claim My Pro License — Free
                 </Button>
                 <Button variant="outline" size="lg" layers="2layer" magnetic>
                   Live Demo

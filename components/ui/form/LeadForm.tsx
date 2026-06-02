@@ -10,7 +10,7 @@ import { Select } from "./Select";
 import { Checkbox } from "./Checkbox";
 
 /**
- * Lead-capture form (the "Get Pro — Free" flow). Client-side validated demo:
+ * Lead-capture form (the "Get Pro Access — Free" flow). Client-side validated demo:
  * shows inline errors and an aria-live success state. No backend wired yet.
  */
 export function LeadForm({ className }: { className?: string }) {
@@ -48,7 +48,7 @@ export function LeadForm({ className }: { className?: string }) {
         <CheckCircle2 aria-hidden="true" className="size-10 text-success" />
         <h3 className="font-display text-xl">You&apos;re on the list</h3>
         <p className="text-muted">
-          Check your inbox — your free Pro license key is on its way.
+          Check your inbox — your Pro license key is on its way — Free for 4 months.
         </p>
         <Button variant="ghost" size="sm" onClick={() => setStatus("idle")}>
           Submit another
@@ -110,7 +110,7 @@ export function LeadForm({ className }: { className?: string }) {
         fullWidth
         iconRight={<ArrowRight className="size-5" />}
       >
-        Claim My Free Pro License
+        Claim My Pro License — Free
       </Button>
 
       <p className="text-center text-sm text-muted">

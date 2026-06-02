@@ -55,14 +55,14 @@
 
 ### 0. Announcement Bar
 - **Badge**: EARLY ADOPTER OFFER
-- **Text**: "Live Demo or Get Pro - Free [No Strings Attached]. Time limited early bird offer. No credit cards required."
+- **Text**: "Live Demo or Get ArraySubs Pro for 4 Months — Free. Time limited early bird offer. No credit cards required."
 - **Link**: `/deals/arraysubs/plans/`
 
 ### 1. Hero Section
 - **Headline**: H1 (above)
 - **Subheadline**: "Create subscription products, restrict member-only content, automate recurring billing, reduce churn with smart retention flows, and track MRR — all from one plugin. No duct-taping five separate tools together."
 - **Primary CTA**: Live Demo (links to `/deals/arraysubs/plans/#live-demo`)
-- **Secondary CTA**: Get Pro - Free [No Strings Attached] (links to `/deals/arraysubs/plans/#get-pro`)
+- **Secondary CTA**: Get ArraySubs Pro for 4 Months — Free (links to `/deals/arraysubs/plans/#get-pro`)
 - **Trust bar**: Available on WordPress.org · WooCommerce 8+ · Stripe · PayPal · Paddle · HPOS Compatible
 - **Hero visual**: Product screenshot / short demo GIF
 
@@ -108,11 +108,11 @@
 ### 8. Early Adopter's Thoughts
 - Testimonial cards (placeholder templates until real feedback arrives)
 - No star ratings — quote + name + business context
-- Stats row: 14 modules, Free to start, < 10 min setup, 6+ plugins replaced
+- Stats row: 14 modules — Free to start, < 10 min setup, 6+ plugins replaced
 
 ### 9. Pricing Spotlight — Choose the Right Plan
 - Short pricing preview with Free vs Pro value summary
-- Button group: "Live Demo" and "Get Pro - Free [No Strings Attached]"
+- Button group: "Live Demo" and "Get ArraySubs Pro for 4 Months — Free"
 - Reinforce the early adopter offer and the plans-page action flow on `/deals/arraysubs/plans/`
 - Micro-copy: "Time limited early bird offer. No credit cards required."
 
@@ -147,7 +147,7 @@
 ### 13. Final CTA
 - "Start Building Your Subscription Business Today"
 - Primary: Live Demo → `/deals/arraysubs/plans/#live-demo`
-- Secondary: Get Pro - Free [No Strings Attached] → `/deals/arraysubs/plans/#get-pro`
+- Secondary: Get ArraySubs Pro for 4 Months — Free → `/deals/arraysubs/plans/#get-pro`
 
 ---
 
@@ -193,7 +193,7 @@
 
 - **Buttons**
   - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-  - `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.
 

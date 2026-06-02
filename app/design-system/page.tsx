@@ -301,7 +301,7 @@ export default function DesignSystemPage() {
               Live Demo
             </Button>
             <Button variant="outline" size="lg" magnetic>
-              Get Pro Free for 4 Months
+              Get ArraySubs Pro for 4 Months — Free
             </Button>
           </>
         }
@@ -460,7 +460,7 @@ export default function DesignSystemPage() {
 
             <DemoRow label="With icons">
               <Button iconRight={<ArrowRight className="size-5" />} magnetic>
-                Get Pro — Free
+                Get Pro Access — Free
               </Button>
               <Button
                 variant="outline"
@@ -528,7 +528,7 @@ export default function DesignSystemPage() {
               badge="Free forever"
               title="ArraySubs Free Core"
               eyebrow="Always shipping on WordPress.org"
-              description="The foundation for any subscription store — recurring billing, member access, the customer portal and the Retention Flow Builder, free forever."
+              description="The foundation for any subscription store — recurring billing, member access, the customer portal and the Retention Flow Builder — Free forever."
               metaLabel="Price"
               metaValue="$0"
               metaSuffix="forever"
@@ -616,7 +616,7 @@ export default function DesignSystemPage() {
                 bare
                 tag="ROI-first"
                 title="Retention flow"
-                description="Intercept cancellations with targeted offers — discount, pause, downgrade or support. A category first, free in the core."
+                description="Intercept cancellations with targeted offers — discount, pause, downgrade or support. A category first — Free in the core."
                 href="#tag-cards"
               />
               <TagCard
@@ -1049,12 +1049,12 @@ export default function DesignSystemPage() {
             surface="primary"
             flat
             eyebrow="Get started"
-            title="Get ArraySubs Pro free for 4 months"
+            title="Get ArraySubs Pro for 4 months — Free"
             subtitle="No strings attached. We'll send your license key immediately — no credit card required."
             actions={
               <>
                 <Button variant="dark" size="lg" layers="2layer" magnetic>
-                  Claim My Free Pro License
+                  Claim My Pro License — Free
                 </Button>
                 <Button variant="outline" size="lg" layers="2layer" magnetic>
                   Live Demo

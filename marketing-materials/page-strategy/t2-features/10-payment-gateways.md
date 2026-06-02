@@ -3,7 +3,7 @@
 > **URL**: `/deals/arraysubs/features/payment-gateways/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 3
-> **Ownership**: Core (arraysubs) — free checkout & manual billing; Pro — Automatic Payments with tokenized gateways
+> **Ownership**: Core (arraysubs) — Free checkout & manual billing; Pro — Automatic Payments with tokenized gateways
 
 ---
 
@@ -35,7 +35,7 @@
 ### 1. PageHero Section
 - H1 + subtitle: "Works with any WooCommerce payment gateway — zero lock-in"
 - Gateway logos: Stripe, PayPal, Paddle + "all WooCommerce gateways"
-- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
+- CTA Buttons: Live Demo + Get ArraySubs Pro for 4 Months — Free
 
 ### 2. How Payment Works
 - **Any WooCommerce Gateway**: First payment through any active gateway
@@ -103,6 +103,6 @@
 
 - **Buttons**
 	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

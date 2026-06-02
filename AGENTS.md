@@ -107,7 +107,11 @@ Use the `@/*` alias for repo-root imports.
 9. Import reusable UI from `@/components/ui`. Do not rebuild buttons, cards,
    tabs, accordions, breadcrumbs, form fields, containers or section headings in
    page files.
-10. Preserve accessibility: one `h1` per page, semantic landmarks, labelled navs,
+10. Card and panel groups must use one consistent tight gap:
+    `gap-[0.1875rem]` for adjacent cards in the same visual group, including
+    card grids, stacked cards and side-by-side card columns. Do not mix loose
+    outer gaps with tight inner card gaps.
+11. Preserve accessibility: one `h1` per page, semantic landmarks, labelled navs,
     visible focus rings, keyboard-operated controls, ARIA for interactive
     widgets and reduced-motion support.
 
@@ -267,10 +271,14 @@ Use existing card components:
 
 Grid rules:
 
-- Separated card grids use `gap-[0.1875rem]`. This is the established tight
-  design-system rhythm.
-- Do not use loose `gap-4`, `gap-6` or `gap-8` between cards unless the cards
-  are not visually part of one grid.
+- Separated card grids, stacked cards and side-by-side card columns use
+  `gap-[0.1875rem]`. This is the established tight design-system rhythm and it
+  must stay consistent across every adjacent card in the same visual group.
+- Do not use loose `gap-4`, `gap-6`, `gap-8`, `gap-10` or larger spacing between
+  cards unless the cards are not visually part of one group.
+- Do not stagger or independently translate adjacent cards inside a tight card
+  group. Reveal the group as one unit so the visible gap remains consistent
+  during motion.
 - Cards use `bg-card`, not hard-coded white/tint, so parent section surfaces
   control contrast.
 - Card rounding is usually `rounded-xl` or `rounded-2xl`; compact controls use
@@ -383,9 +391,9 @@ Motion rules:
 - Umbrella brand: `ArrayHash`.
 - Product pages live under `/deals/arraysubs/`.
 - Trust/legal pages live under `/trust-center/`.
-- Primary CTA: `Get Pro - Free [No Strings Attached]`.
+- Primary CTA: `Get ArraySubs Pro for 4 Months — Free`.
 - Secondary CTA: `Live Demo`.
-- Early-access offer: 4 months of Pro free, no credit card, no pricing table
+- Early-access offer: ArraySubs Pro for 4 months — Free, no credit card, no pricing table
   during the early-access phase.
 - Support email: `emran@arraysubs.com`.
 - Docs/support: `support.arrayhash.com`.
@@ -409,14 +417,22 @@ Every page must satisfy:
 
 ## Build And Verification
 
+Verification should scale with the risk of the change. Do not run
+`npm run build` on every small iteration just because a UI file changed.
+
 Before saying a UI task is done:
 
 1. Run `npm run typecheck`.
-2. Run `npm run build` for page/layout/component changes with real UI impact.
-3. Run `git diff --check`.
-4. Verify affected pages in the browser at desktop and mobile widths.
+2. Run `git diff --check`.
+3. Verify affected pages in the browser at desktop and mobile widths.
+4. Run `npm run build` only for new pages, route changes, metadata/sitemap
+   changes, root layout/provider changes, shared component API changes, or
+   changes with a realistic production-build risk. For small copy, spacing,
+   styling and browser-comment fixes, skip build unless typecheck or browser
+   verification exposes a production-only concern.
 5. For new pages, check route load, header navigation, scroll position, one
    `h1`, `PageHero`, breadcrumbs, content container width and no console errors.
+6. If build is intentionally skipped, mention that in the final response.
 
 ## Do Not Do
 

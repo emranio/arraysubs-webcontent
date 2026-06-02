@@ -3,7 +3,7 @@
 > **URL**: `/deals/arraysubs/features/retention-flow-builder/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 2 (Blue Ocean — zero SEO competition)
-> **Ownership**: Core (arraysubs) — free feature
+> **Ownership**: Core (arraysubs) — Free feature
 
 ---
 
@@ -37,7 +37,7 @@
 - H1 + subtitle: "The only WooCommerce subscription plugin with built-in retention flows"
 - Blue Ocean badge: "No other subscription plugin offers this"
 - Screenshot: Retention flow builder admin screen
-- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
+- CTA Buttons: Live Demo + Get ArraySubs Pro for 4 Months — Free
 
 ### 2. How It Works (Visual Flow)
 ```
@@ -136,6 +136,6 @@ Customer clicks "Cancel" →
 
 - **Buttons**
   - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-  - `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

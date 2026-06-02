@@ -46,7 +46,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Compatibility | HPOS, Cart/Checkout blocks |
 | Website | woocommerce.com/products/woocommerce-subscriptions/ |
 
-**Core capabilities**: Recurring payments, free trials, sign-up fees, variable subscriptions, renewal sync, subscription coupons, subscriber self-service (suspend/cancel/upgrade/downgrade), multiple subscriptions in cart, 25+ payment gateway integrations, automatic rebilling on failure, renewal notifications, reports, gifting.
+**Core capabilities**: Recurring payments — Free trials, sign-up fees, variable subscriptions, renewal sync, subscription coupons, subscriber self-service (suspend/cancel/upgrade/downgrade), multiple subscriptions in cart, 25+ payment gateway integrations, automatic rebilling on failure, renewal notifications, reports, gifting.
 
 **Limitations**: No membership/access control (requires separate $199/yr plugin), no retention flow, no store credit, no checkout builder, no advanced analytics, no audit logs. Reviews criticize: expensive, missing cancellation periods, compatibility issues, poor front-end usability.
 
@@ -102,7 +102,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Version | 3.0.7 |
 | Website | wordpress.org/plugins/membership-for-woocommerce/ |
 
-**Core capabilities**: Membership plans (lifetime/limited), content restriction, product/category restriction, cart discounts (fixed/percentage), free shipping for members, BuddyPress integration, community features, SMS/WhatsApp notifications (Twilio), reCAPTCHA, member dashboard, data export/import, APIs, shortcodes.
+**Core capabilities**: Membership plans (lifetime/limited), content restriction, product/category restriction, cart discounts (fixed/percentage) — Free shipping for members, BuddyPress integration, community features, SMS/WhatsApp notifications (Twilio), reCAPTCHA, member dashboard, data export/import, APIs, shortcodes.
 
 **Pro additions**: Custom emails, show discounts to non-members, detailed reports, advanced content restriction, templates.
 
@@ -124,7 +124,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Version | 1.9.2 |
 | Website | wpsubscription.co |
 
-**Core capabilities (Free)**: Simple product subscriptions, flexible billing cycles (daily/weekly/monthly/yearly), free trial support, subscription management dashboard, customer self-service portal.
+**Core capabilities (Free)**: Simple product subscriptions, flexible billing cycles (daily/weekly/monthly/yearly) — Free trial support, subscription management dashboard, customer self-service portal.
 
 **Pro additions**: Simple + variable products, automatic Stripe recurring payments, advanced per-product customization, sign-up fees, pending cancellation (end-of-period), installment/split payments, role-based product visibility, grace period, delivery schedules, synchronized scheduling, digital file access control, REST API, upgrade/downgrade options.
 
@@ -148,7 +148,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Last Changelog | v3.9 (April 2017) |
 | Website | fantasticplugins.com |
 
-**Core capabilities**: Simple/variable/grouped product subscriptions, order subscriptions for non-subscription products, subscription payment synchronization, prorated amounts for synchronized subscriptions, mixed cart (subscription + non-subscription), inbuilt PayPal (Reference Transaction, Subscriptions API, Adaptive Payment) + Stripe gateways, manual renewal via any WooCommerce gateway, multi-quantity subscriptions, subscription limits (per product, per site), free/paid trials, pause/cancel by subscriber and admin, auto/manual renewal switching, variation switching, admin manual subscription creation, renewal date modification, log history, payment reminder emails, payment overdue/grace system, bulk update, master transaction log, coupon discount for renewals.
+**Core capabilities**: Simple/variable/grouped product subscriptions, order subscriptions for non-subscription products, subscription payment synchronization, prorated amounts for synchronized subscriptions, mixed cart (subscription + non-subscription), inbuilt PayPal (Reference Transaction, Subscriptions API, Adaptive Payment) + Stripe gateways, manual renewal via any WooCommerce gateway, multi-quantity subscriptions, subscription limits (per product, per site) — Free/paid trials, pause/cancel by subscriber and admin, auto/manual renewal switching, variation switching, admin manual subscription creation, renewal date modification, log history, payment reminder emails, payment overdue/grace system, bulk update, master transaction log, coupon discount for renewals.
 
 **Compatibility**: SUMO Reward Points, SUMO Memberships, SUMO Coupons, SUMO Donations, SUMO Affiliates, Recover Abandoned Cart.
 
@@ -209,7 +209,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Rating | 4.47★ (93 reviews on YITH) |
 | Website | yithemes.com/themes/plugins/yith-woocommerce-membership/ |
 
-**Core capabilities**: Unlimited plans with permission rules, auto-assign membership on registration, private shop (Privalia-style hidden products), hide pages/posts from non-members, limited content preview (newspaper model), Gutenberg "Members-only content starts here" block, file download restriction (PDFs, images, audio, video), alternative content for non-members (Gutenberg blocks), free shipping for members, per-plan member discounts (percentage), download credit system (for stock image/resource platforms), YITH Subscription integration for recurring billing, content dripping (gradual release), membership/download monitoring dashboard, My Account membership section, email notifications (creation, 10-day expiry warning, expired, canceled).
+**Core capabilities**: Unlimited plans with permission rules, auto-assign membership on registration, private shop (Privalia-style hidden products), hide pages/posts from non-members, limited content preview (newspaper model), Gutenberg "Members-only content starts here" block, file download restriction (PDFs, images, audio, video), alternative content for non-members (Gutenberg blocks) — Free shipping for members, per-plan member discounts (percentage), download credit system (for stock image/resource platforms), YITH Subscription integration for recurring billing, content dripping (gradual release), membership/download monitoring dashboard, My Account membership section, email notifications (creation, 10-day expiry warning, expired, canceled).
 
 **Limitations**: Premium-only (no free tier, no WordPress.org listing), requires YITH Subscription for recurring payments (€199.99 + €179.99 = €379.98/yr combined), no retention flow, no store credit, no checkout builder, no analytics beyond monitoring dashboard, no audit logs, no role mapping, no advanced rules engine, no URL pattern restriction, locked into YITH ecosystem for full functionality.
 
