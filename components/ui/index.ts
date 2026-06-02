@@ -12,6 +12,13 @@ export { OfferCard } from "./OfferCard";
 export { StepCard } from "./StepCard";
 export { TagCard } from "./TagCard";
 export { CTA } from "./CTA";
+export {
+  ComparisonTable,
+  type ComparisonCell,
+  type ComparisonColumn,
+  type ComparisonGroup,
+  type ComparisonRow,
+} from "./ComparisonTable";
 export { PageHero } from "./PageHero";
 export { Manifesto, type ManifestoLine } from "./Manifesto";
 export { BigText } from "./BigText";

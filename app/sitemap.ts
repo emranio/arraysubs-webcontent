@@ -6,6 +6,8 @@ import { site } from "@/lib/site";
  * The design-system page is intentionally excluded (noindex).
  */
 export default function sitemap(): MetadataRoute.Sitemap {
+  const dealsRoutes = [["/deals/arraysubs/pricing/", 0.8]] as const;
+
   const trustRoutes = [
     ["/trust-center/", 0.7],
     ["/trust-center/privacy-policy/", 0.6],
@@ -29,6 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    ...dealsRoutes.map(([path, priority]) => ({
+      url: `${site.url}${path}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority,
+    })),
     ...trustRoutes.map(([path, priority]) => ({
       url: `${site.url}${path}`,
       lastModified: new Date(),
