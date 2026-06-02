@@ -124,7 +124,7 @@ export function Testimonials({
     >
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 z-0 w-full -translate-x-1/2 -translate-y-1/2 overflow-hidden text-center font-display text-[18vw] leading-none font-bold tracking-tight whitespace-nowrap text-dark/[0.08] uppercase select-none"
+        className="pointer-events-none absolute top-10 left-1/2 z-0 w-full -translate-x-1/2 overflow-hidden text-center font-display text-[18vw] leading-none font-bold tracking-tight whitespace-nowrap text-dark/[0.08] uppercase select-none sm:top-12"
       >
         {label}
       </span>

@@ -1,7 +1,13 @@
 "use client";
 
-import { Children, useRef, type ReactNode } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Children, useRef, type CSSProperties, type ReactNode } from "react";
+import {
+  gsap,
+  prefersReducedMotion,
+  registerGsap,
+  ScrollTrigger,
+  useGSAP,
+} from "@/lib/gsap";
 import { cn } from "@/lib/cn";
 
 type SliderProps = {
@@ -12,62 +18,107 @@ type SliderProps = {
   className?: string;
 };
 
+const edgeFadeStyle: CSSProperties = {
+  WebkitMaskImage:
+    "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+  maskImage:
+    "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+};
+
 /**
- * Touch-friendly, accessible carousel built on native scroll-snap (so it works
- * without JS) with labelled previous/next controls.
+ * Slow-moving, accessible carousel. It drifts automatically, responds to page
+ * scroll, and fades at the edges with a mask. Reduced-motion users get a static
+ * row.
  */
 export function Slider({ children, label, className }: SliderProps) {
+  const rootRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLUListElement>(null);
+  const motion = useRef({ auto: 0, scroll: 0, width: 0 });
   const slides = Children.toArray(children);
 
-  const scrollByDirection = (direction: 1 | -1) => {
-    const track = trackRef.current;
-    if (!track) return;
-    track.scrollBy({ left: track.clientWidth * 0.8 * direction, behavior: "smooth" });
-  };
+  useGSAP(
+    () => {
+      registerGsap();
+      const root = rootRef.current;
+      const track = trackRef.current;
+      if (!root || !track || prefersReducedMotion()) return;
 
-  const controlClasses =
-    "inline-flex size-11 items-center justify-center rounded-full border border-border-strong text-foreground transition-colors duration-200 hover:bg-dark hover:text-on-dark";
+      const update = () => {
+        const width = motion.current.width;
+        if (width <= 0) return;
+        const x = -((motion.current.auto + motion.current.scroll) % width);
+        gsap.set(track, { x });
+      };
+
+      const measure = () => {
+        motion.current.width = track.scrollWidth / 2;
+        update();
+      };
+
+      measure();
+      const resizeObserver = new ResizeObserver(measure);
+      resizeObserver.observe(track);
+
+      const scrollTrigger = ScrollTrigger.create({
+        trigger: root,
+        start: "top bottom",
+        end: "bottom top",
+        onUpdate: (self) => {
+          const width = motion.current.width;
+          motion.current.scroll = self.progress * Math.min(width * 0.24, 18 * 16);
+          update();
+        },
+      });
+
+      const tick = (_time: number, deltaTime: number) => {
+        const width = motion.current.width;
+        if (width <= 0) return;
+        motion.current.auto = (motion.current.auto + (deltaTime / 1000) * 24) % width;
+        update();
+      };
+
+      gsap.ticker.add(tick);
+
+      return () => {
+        gsap.ticker.remove(tick);
+        scrollTrigger.kill();
+        resizeObserver.disconnect();
+      };
+    },
+    { scope: rootRef, dependencies: [slides.length] },
+  );
+
+  const renderSlides = (duplicated = false) =>
+    slides.map((slide, index) => (
+      <li
+        key={`${duplicated ? "duplicate" : "primary"}-${index}`}
+        aria-hidden={duplicated || undefined}
+        aria-roledescription={duplicated ? undefined : "slide"}
+        aria-label={duplicated ? undefined : `${index + 1} of ${slides.length}`}
+        className="w-[min(85vw,30rem)] shrink-0 sm:w-[27rem] lg:w-[30rem]"
+      >
+        {slide}
+      </li>
+    ));
 
   return (
     <section
+      ref={rootRef}
       aria-roledescription="carousel"
       aria-label={label}
-      className={cn("flex min-w-0 max-w-full flex-col gap-5", className)}
+      className={cn("flex min-w-0 max-w-full flex-col", className)}
     >
-      <ul
-        ref={trackRef}
-        className="flex min-w-0 max-w-full snap-x snap-mandatory gap-[0.1875rem] overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      <div
+        className="-mx-6 overflow-hidden px-6 sm:-mx-8 sm:px-8"
+        style={edgeFadeStyle}
       >
-        {slides.map((slide, index) => (
-          <li
-            key={index}
-            aria-roledescription="slide"
-            aria-label={`${index + 1} of ${slides.length}`}
-            className="flex-[0_0_85%] snap-start sm:flex-[0_0_46%] lg:flex-[0_0_31.5%]"
-          >
-            {slide}
-          </li>
-        ))}
-      </ul>
-
-      <div className="flex items-center gap-3">
-        <button
-          type="button"
-          onClick={() => scrollByDirection(-1)}
-          aria-label="Previous slides"
-          className={controlClasses}
+        <ul
+          ref={trackRef}
+          className="flex w-max min-w-full gap-[0.1875rem] will-change-transform"
         >
-          <ArrowLeft aria-hidden="true" className="size-5" />
-        </button>
-        <button
-          type="button"
-          onClick={() => scrollByDirection(1)}
-          aria-label="Next slides"
-          className={controlClasses}
-        >
-          <ArrowRight aria-hidden="true" className="size-5" />
-        </button>
+          {renderSlides()}
+          {renderSlides(true)}
+        </ul>
       </div>
     </section>
   );

@@ -732,7 +732,7 @@ export default function DesignSystemPage() {
           <SectionTitle
             eyebrow="Components"
             title="Slider"
-            subtitle="A touch-friendly, accessible carousel built on native scroll-snap with labelled controls."
+            subtitle="A slow-moving carousel that drifts automatically, responds to page scroll, and fades at the edges."
           />
           <div className="mt-12">
             <Slider label="What early adopters say">
