@@ -50,13 +50,13 @@ export function SiteFooter() {
       <Container>
         <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.6fr_repeat(4,1fr)]">
           <div className="flex max-w-xs flex-col gap-4">
-            <span className="flex items-center gap-2 font-display text-xl font-bold">
-              <span
-                aria-hidden="true"
-                className="inline-block size-5 rounded-[0.3rem] bg-primary"
-              />
-              {site.name}
-            </span>
+            <img
+              src={site.logo}
+              alt={site.name}
+              width={1351}
+              height={309}
+              className="h-[1.875rem] w-auto"
+            />
             <p className="text-sm text-on-dark-muted">
               The all-in-one WooCommerce subscription &amp; membership platform.
               One plugin, generous free tier.

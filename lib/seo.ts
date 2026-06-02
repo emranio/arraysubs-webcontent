@@ -76,7 +76,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: site.brand,
     url: site.url,
-    logo: `${site.url}/logo.png`,
+    logo: `${site.url}${site.logo}`,
     sameAs: [...site.sameAs],
     contactPoint: {
       "@type": "ContactPoint",

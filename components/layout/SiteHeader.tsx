@@ -36,14 +36,18 @@ export function SiteHeader() {
             <Link
               href="/"
               onClick={close}
-              className="flex items-center gap-2 font-display text-xl font-bold tracking-tight"
+              className="flex items-center"
               aria-label={`${site.name} home`}
             >
-              <span
-                aria-hidden="true"
-                className="inline-block size-5 rounded-[0.3rem] bg-primary"
+              <img
+                src={site.logo}
+                alt=""
+                width={1351}
+                height={309}
+                decoding="async"
+                fetchPriority="high"
+                className="h-[1.55rem] w-auto sm:h-[1.75rem]"
               />
-              {site.name}
             </Link>
 
             <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">

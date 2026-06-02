@@ -114,6 +114,9 @@ Use the `@/*` alias for repo-root imports.
 11. Preserve accessibility: one `h1` per page, semantic landmarks, labelled navs,
     visible focus rings, keyboard-operated controls, ARIA for interactive
     widgets and reduced-motion support.
+12. Serve images directly from `public/` with root-relative URLs. Do not use
+    `next/image`, image optimizer URLs, or any implementation that emits
+    `/_next/image`; keep Next image optimization disabled globally.
 
 ---
 

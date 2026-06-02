@@ -17,6 +17,9 @@ export const site = {
   titleTemplate: "%s — ArraySubs",
   description:
     "Free WooCommerce subscription & membership plugin with automated billing, retention flows, store credit, checkout builder & analytics. One plugin replaces your entire subscription stack.",
+  /** Public brand assets. */
+  logo: "/arrayhash-logo.webp",
+  favicon: "/arrayhash-favicon.webp",
   /** Default social share image (1200x630). Add the asset to /public. */
   ogImage: "/og/default.png",
   /** External profiles for the Organization sameAs graph. */

@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.brand,
   alternates: { canonical: "/" },
+  icons: {
+    icon: [{ url: site.favicon, type: "image/webp" }],
+    shortcut: [{ url: site.favicon, type: "image/webp" }],
+  },
   openGraph: {
     type: "website",
     siteName: site.brand,

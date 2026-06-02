@@ -11,18 +11,22 @@ u can find contents and copies from marketing materials. << use these as referen
 dont create a huuuuuuge laaaarge mega file container tons of lines of all marketing content.
 instead create a /marketing/ dir, there create multiple small files for specific type of informations
 15:43
-/trust-center/ > redirects to > /trust-center/privacy-policy/
+
 ---
-for data 3rd party >> we're using only gogole analytics, nothing else. 
----
-create another pages for gdpr complience + us similiar one, and accissiblity compliance. 
 CTA, FAQ << can be different for page to page. like home page's FAQ and pricing page's FAQ wont be same. same for the CTA. use the same component. but the text content must be different.
 this is a multi product site. make sure to isolate the arraysubs content properly.
 ---
-important: make sure u use all available components and sections to design a page, so that a page has a nice flavour.
+important: make sure u use only available components and sections to design a page from "design system" page, so that a page has a nice flavour.
 focus on the creative design as ur first priority. change the text content and page layout sections as u need to achieve ur goal. 
 for product main landing page. design a highly convertible and animated modern hero section, design and write copy for this special section from ground up. for other pages, use default PageHero
 
 ---
-keep the "design system" page and header menu intact, we need that. properly match the colors of sections, texts, cards from references.
+no need to design the header menu, just keep stacking menu items there, i will organize later.
 ---
+
+
+
+
+
+now we're making arraysubs related pages, it's a product of arrayhash. i have multiple products as well. so properly isolate all arraysubs pages into a arraysubs directory.
+
