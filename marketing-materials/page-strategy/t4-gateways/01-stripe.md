@@ -90,4 +90,4 @@
 | `/deals/arraysubs/features/billing-renewals-and-refunds/` | "How billing works →" |
 | `/gateways/paypal/` | "Also accept PayPal →" |
 | `/gateways/paddle/` | "Also accept Paddle →" |
-| `/deals/arraysubs/plans/` | Pro auto-renew CTA |
+| `/deals/arraysubs/pricings/` | Pro auto-renew CTA |

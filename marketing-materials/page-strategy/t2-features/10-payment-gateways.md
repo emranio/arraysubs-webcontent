@@ -95,14 +95,14 @@
 | `/gateways/paypal/` | "PayPal subscription setup guide →" |
 | `/gateways/paddle/` | "Paddle subscription setup guide →" |
 | `/deals/arraysubs/features/` | Breadcrumb |
-| `/deals/arraysubs/plans/` | Pro features CTA |
+| `/deals/arraysubs/pricings/` | Pro features CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
+	- `Live Demo` → `/deals/arraysubs/pricings/#live-demo`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/pricings/`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

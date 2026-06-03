@@ -7,23 +7,11 @@ import { site } from "@/lib/site";
 import { Button } from "../Button";
 import { Field } from "./Field";
 import { Input } from "./Input";
-import { Select } from "./Select";
-
-const COUNTRIES = [
-  { label: "United States", value: "united-states" },
-  { label: "United Kingdom", value: "united-kingdom" },
-  { label: "Canada", value: "canada" },
-  { label: "Australia", value: "australia" },
-  { label: "Bangladesh", value: "bangladesh" },
-  { label: "Germany", value: "germany" },
-  { label: "France", value: "france" },
-  { label: "India", value: "india" },
-  { label: "Other", value: "other" },
-];
+import { Textarea } from "./Textarea";
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
-type Errors = { name?: string; email?: string; country?: string };
+type Errors = { name?: string; email?: string; subject?: string; body?: string };
 
 /**
  * Contact form. Client-side validated form matching the LeadForm pattern with
@@ -36,6 +24,8 @@ export function ContactForm({ className }: { className?: string }) {
 
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
+  const subjectRef = useRef<HTMLInputElement>(null);
+  const bodyRef = useRef<HTMLTextAreaElement>(null);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -43,19 +33,23 @@ export function ContactForm({ className }: { className?: string }) {
     const data = new FormData(form);
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
-    const country = String(data.get("country") ?? "").trim();
+    const subject = String(data.get("subject") ?? "").trim();
+    const body = String(data.get("body") ?? "").trim();
 
     const next: Errors = {};
     if (!name) next.name = "Please enter your name.";
     if (!email) next.email = "Please enter your email address.";
     else if (!EMAIL_RE.test(email)) next.email = "Enter a valid email address.";
-    if (!country) next.country = "Please choose your country.";
+    if (!subject) next.subject = "Please enter a subject.";
+    if (!body) next.body = "Please enter your message.";
 
     setErrors(next);
 
     if (Object.keys(next).length > 0) {
       if (next.name) nameRef.current?.focus();
       else if (next.email) emailRef.current?.focus();
+      else if (next.subject) subjectRef.current?.focus();
+      else if (next.body) bodyRef.current?.focus();
       return;
     }
 
@@ -125,16 +119,26 @@ export function ContactForm({ className }: { className?: string }) {
         />
       </Field>
 
+      <Field label="Subject" required error={errors.subject}>
+        <Input
+          ref={subjectRef}
+          name="subject"
+          autoComplete="off"
+          placeholder="Billing, setup, partnership..."
+        />
+      </Field>
+
       <Field
-        label="Country"
+        label="Email body"
         required
-        error={errors.country}
-        description="Used for support routing and privacy/compliance context."
+        error={errors.body}
+        description="Share the details we should read before replying."
       >
-        <Select
-          name="country"
-          placeholder="Choose your country"
-          options={COUNTRIES}
+        <Textarea
+          ref={bodyRef}
+          name="body"
+          rows={5}
+          placeholder="Tell us what you need help with..."
         />
       </Field>
 

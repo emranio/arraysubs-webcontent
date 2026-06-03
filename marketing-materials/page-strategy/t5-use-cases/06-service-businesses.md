@@ -54,4 +54,4 @@
 | `/deals/arraysubs/features/billing-renewals-and-refunds/` | Billing |
 | `/deals/arraysubs/features/customer-portal/` | Client portal |
 | `/deals/arraysubs/features/retention-flow-builder/` | Prevent cancellations |
-| `/deals/arraysubs/plans/` | CTA |
+| `/deals/arraysubs/pricings/` | CTA |

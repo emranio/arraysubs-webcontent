@@ -22,7 +22,7 @@ import {
 } from "./_data";
 import { highlight } from "../_highlight";
 
-const GET_PRO = "/deals/arraysubs/pricing/#get-pro";
+const GET_PRO = "/deals/arraysubs/pricing/";
 const ALTERNATIVES = "/deals/arraysubs/alternatives";
 
 /** Visual treatment per "who wins this difference" verdict. */

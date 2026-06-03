@@ -21,7 +21,7 @@ export const metadata: Metadata = createMetadata({
   path: "/deals/arraysubs/use-cases/",
 });
 
-const GET_PRO = "/deals/arraysubs/pricing/#get-pro";
+const GET_PRO = "/deals/arraysubs/pricing/";
 
 export default function UseCasesHubPage() {
   return (

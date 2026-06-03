@@ -77,14 +77,14 @@
 | `/deals/arraysubs/features/member-access-control/` | "Full access control system →" |
 | `/deals/arraysubs/features/customer-portal/` | "Customer-facing portal →" |
 | `/deals/arraysubs/features/` | Breadcrumb |
-| `/deals/arraysubs/plans/` | Pro Profile Builder CTA |
+| `/deals/arraysubs/pricings/` | Pro Profile Builder CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
+	- `Live Demo` → `/deals/arraysubs/pricings/#live-demo`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/pricings/`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

@@ -52,4 +52,4 @@
 | `/deals/arraysubs/features/member-access-control/` | Restriction rules |
 | `/deals/arraysubs/features/subscriptions-and-recurring-products/` | Tiers |
 | `/deals/arraysubs/use-cases/membership-sites/` | Related |
-| `/deals/arraysubs/plans/` | CTA |
+| `/deals/arraysubs/pricings/` | CTA |

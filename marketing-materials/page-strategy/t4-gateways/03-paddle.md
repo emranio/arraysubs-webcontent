@@ -51,4 +51,4 @@
 | `/deals/arraysubs/features/payment-gateways/` | Parent |
 | `/gateways/stripe/` | Compare gateways |
 | `/gateways/paypal/` | Compare gateways |
-| `/deals/arraysubs/plans/` | Pro CTA |
+| `/deals/arraysubs/pricings/` | Pro CTA |

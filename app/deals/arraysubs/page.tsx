@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Link from "next/link";
 import {
-  ArrowDownRight,
   ArrowRight,
-  ArrowUpRight,
   BarChart3,
   Boxes,
   Check,
@@ -13,7 +10,6 @@ import {
   Layers,
   LayoutGrid,
   Lock,
-  Repeat,
   Rocket,
   RotateCcw,
   ShieldCheck,
@@ -54,6 +50,7 @@ import {
   type FeatureTier,
 } from "@/app/deals/arraysubs/features/_data";
 import { USE_CASES } from "@/app/deals/arraysubs/use-cases/_data";
+import { HeroProofPanel } from "./_components/HeroProofPanel";
 
 export const metadata: Metadata = {
   ...createMetadata({
@@ -68,7 +65,7 @@ export const metadata: Metadata = {
 };
 
 /* ---- Routes (match the shipped deal pages) -------------------------------- */
-const GET_PRO = "/deals/arraysubs/pricing/#get-pro";
+const GET_PRO = "/deals/arraysubs/pricing/";
 const FEATURES_URL = "/deals/arraysubs/features/";
 const USE_CASES_URL = "/deals/arraysubs/use-cases/";
 const COMPARE_URL = "/deals/arraysubs/alternatives/";
@@ -130,15 +127,7 @@ const USE_CASE_BLURB: Record<string, string> = {
     "Sell retainers and maintenance plans clients can pause when life happens.",
 };
 
-/* ---- Hero umbrella visual ------------------------------------------------- */
-const HERO_PILLARS: { icon: ReactNode; label: string; tier: "Free" | "Pro" }[] = [
-  { icon: <Repeat className="size-5" />, label: "Subscriptions", tier: "Free" },
-  { icon: <ShieldCheck className="size-5" />, label: "Memberships", tier: "Free" },
-  { icon: <HeartHandshake className="size-5" />, label: "Retention flow", tier: "Free" },
-  { icon: <Wallet className="size-5" />, label: "Store credit", tier: "Pro" },
-];
-
-const TRUST = ["WordPress.org", "WooCommerce 8+", "Stripe · PayPal · Paddle", "HPOS compatible"];
+const HERO_GATEWAYS = ["Stripe", "PayPal", "Paddle", "500+ Woo gateways - Even local ones"];
 
 /* ---- The 6-plugin problem ------------------------------------------------- */
 const OLD_STACK = [
@@ -357,7 +346,7 @@ const STEPS = [
 ];
 
 const INTEGRATIONS: { group: string; items: string[] }[] = [
-  { group: "Payment gateways", items: ["Stripe", "PayPal", "Paddle", "+ any Woo gateway (manual)"] },
+  { group: "Payment gateways", items: ["Stripe", "PayPal", "Paddle", "+ 500+ Woo gateway (manual)"] },
   { group: "Funnel builders", items: ["FunnelKit", "CartFlows", "OptimizeFunnels"] },
   { group: "CRM & email", items: ["FluentCRM", "Groundhogg", "Jetpack CRM", "HubSpot", "Mailchimp", "Klaviyo"] },
   { group: "Affiliate", items: ["AffiliateWP", "SliceWP"] },
@@ -434,92 +423,68 @@ export default function ArraySubsLanding() {
   return (
     <>
       {/* ====== 1. HERO (bespoke) ========================================= */}
-      <section className="section-surface relative overflow-hidden bg-surface text-foreground">
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-40 -right-24 size-[42rem] rounded-full bg-primary/10 blur-3xl"
-        />
-        <Container className="relative grid gap-14 pt-20 pb-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-12 lg:pt-24 lg:pb-24">
-          {/* Copy */}
-          <div className="min-w-0">
-            <span className="inline-flex items-center gap-2 rounded-pill border border-border bg-background px-4 py-1.5 text-sm font-medium text-muted">
-              <Sparkles className="size-4 text-primary" />
-              Free on WordPress.org · Pro in early access
-            </span>
-            <h1 className="mt-6 font-display text-5xl leading-[1.03] font-bold tracking-tight text-balance text-foreground sm:text-6xl lg:text-[4.25rem]">
-              Sell subscriptions, gate memberships, and{" "}
-              <span className="text-primary">stop churn</span> — from one free
-              WooCommerce plugin.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-muted text-pretty sm:text-xl">
-              ArraySubs replaces five disconnected tools with one integrated
-              plugin — so you launch in minutes, recover failed payments
-              automatically, and turn cancellations into saves.
-            </p>
-            <div className="mt-9 flex flex-wrap items-center gap-4">
-              <Button
-                href={GET_PRO}
-                size="lg"
-                magnetic
-                iconRight={<ArrowRight className="size-5" />}
-              >
-                Get Pro — Free for 4 months
-              </Button>
-              <Button href={FEATURES_URL} variant="outline" size="lg" magnetic>
-                Explore features
-              </Button>
+      <section className="section-surface relative overflow-hidden text-foreground [--color-card:var(--color-background)] [--section-bg:var(--color-surface)]">
+        <Container className="relative flex flex-col pt-20 pb-16 lg:pt-24 lg:pb-24">
+          <div className="flex flex-col gap-8">
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.35fr)] lg:items-stretch">
+              <div className="min-w-0">
+                <h1 className="font-display text-5xl leading-[1.03] font-bold tracking-tight text-balance text-foreground sm:text-6xl lg:text-[4.5rem] min-[75rem]:text-[5.5rem] 2xl:text-[6rem]">
+                  Sell subscriptions, gate memberships, and{" "}
+                  <span className="text-primary">stop churn</span>{" "}
+                  <span className="block py-2">
+                    — from one free WooCommerce plugin.
+                  </span>
+                </h1>
+              </div>
+
+              <div className="flex h-full flex-col rounded-xl bg-card p-5 sm:p-6">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-pill bg-surface px-3 py-1 text-xs font-semibold text-dark uppercase">
+                    <Wallet className="size-3.5 text-primary" />
+                    Payment gateways
+                  </span>
+                </div>
+                <p className="mt-4 text-base leading-7 text-muted">
+                  Automate recurring billing with Stripe, PayPal and Paddle in
+                  Pro. The free core still supports manual renewals through any
+                  WooCommerce gateway.
+                </p>
+                <ul className="mt-5 flex flex-wrap gap-[0.1875rem]">
+                  {HERO_GATEWAYS.map((gateway) => (
+                    <li
+                      key={gateway}
+                      className="inline-flex items-center gap-1.5 rounded-pill bg-surface px-3 py-2 text-xs font-semibold text-foreground"
+                    >
+                      <Check className="size-3.5 text-primary" />
+                      {gateway}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-auto pt-5 text-sm leading-6 font-medium text-muted">
+                  Stripe gets first-class support for the full subscription
+                  lifecycle: SCA/3DS, off-session renewals, saved cards, retry
+                  recovery, card updates and gateway health in one plugin.
+                </p>
+              </div>
             </div>
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-muted">
-              {TRUST.map((t) => (
-                <li key={t} className="inline-flex items-center gap-2">
-                  <Check className="size-4 text-primary" />
-                  {t}
-                </li>
-              ))}
-            </ul>
           </div>
 
-          {/* Umbrella product visual */}
-          <div className="relative min-w-0">
-            <div className="rounded-3xl border border-border bg-card p-5 sm:p-6">
-              <div className="flex items-center justify-between">
-                <span className="flex items-center gap-2">
-                  <span aria-hidden="true" className="flex gap-1.5">
-                    <span className="size-2.5 rounded-full bg-border-strong" />
-                    <span className="size-2.5 rounded-full bg-border-strong" />
-                    <span className="size-2.5 rounded-full bg-border-strong" />
-                  </span>
-                  <span className="text-sm font-medium text-muted">
-                    ArraySubs · Dashboard
-                  </span>
-                </span>
-                <Badge tone="primary">Live</Badge>
-              </div>
+          <div className="mt-[0.1875rem]">
+            <HeroProofPanel />
+          </div>
 
-              <div className="mt-5 grid grid-cols-3 gap-3">
-                <Kpi label="MRR" value="$12,480" delta="+18%" dir="up" />
-                <Kpi label="Churn" value="2.1%" delta="-0.6pt" dir="down" />
-                <Kpi label="Saves" value="34" delta="this mo" />
-              </div>
-
-              <div className="mt-3 grid grid-cols-2 gap-3">
-                {HERO_PILLARS.map((p) => (
-                  <Pillar key={p.label} icon={p.icon} label={p.label} tier={p.tier} />
-                ))}
-              </div>
-            </div>
-
-            {/* floating proof toasts (desktop only) */}
-            <div className="absolute -left-4 bottom-10 hidden items-center gap-2 rounded-pill border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground lg:inline-flex">
-              <span className="inline-flex size-5 items-center justify-center rounded-full bg-primary text-on-dark">
-                <Check className="size-3.5" />
-              </span>
-              Renewal recovered
-            </div>
-            <div className="absolute -top-4 -right-3 hidden items-center gap-2 rounded-pill border border-on-dark-border bg-dark px-4 py-2 text-sm font-semibold text-on-dark lg:inline-flex">
-              <HeartHandshake className="size-4 text-highlight" />
-              Save offer accepted
-            </div>
+          <div className="mt-14 flex flex-wrap items-center gap-4">
+            <Button
+              href={GET_PRO}
+              size="lg"
+              magnetic
+              iconRight={<ArrowRight className="size-5" />}
+            >
+              Get Pro — Free for 4 months
+            </Button>
+            <Button href={FEATURES_URL} variant="outline" size="lg" magnetic>
+              Explore features
+            </Button>
           </div>
         </Container>
       </section>
@@ -935,69 +900,5 @@ export default function ArraySubsLanding() {
 
       <JsonLd data={softwareApplicationSchema()} />
     </>
-  );
-}
-
-/* ============================================================================
-   Hero visual helpers (page-only)
-   ========================================================================== */
-
-function Kpi({
-  label,
-  value,
-  delta,
-  dir,
-}: {
-  label: string;
-  value: string;
-  delta: string;
-  dir?: "up" | "down";
-}) {
-  return (
-    <div className="rounded-xl bg-surface p-3">
-      <span className="text-xs font-medium text-faint">{label}</span>
-      <span className="mt-1 block font-display text-lg leading-none font-bold text-foreground">
-        {value}
-      </span>
-      <span
-        className={cn(
-          "mt-1.5 inline-flex items-center gap-0.5 text-xs font-semibold",
-          dir ? "text-primary" : "text-faint",
-        )}
-      >
-        {dir === "up" && <ArrowUpRight className="size-3" />}
-        {dir === "down" && <ArrowDownRight className="size-3" />}
-        {delta}
-      </span>
-    </div>
-  );
-}
-
-function Pillar({
-  icon,
-  label,
-  tier,
-}: {
-  icon: ReactNode;
-  label: string;
-  tier: "Free" | "Pro";
-}) {
-  return (
-    <div className="flex items-center gap-3 rounded-xl border border-border bg-background p-3">
-      <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-surface text-primary">
-        {icon}
-      </span>
-      <span className="flex min-w-0 flex-col">
-        <span className="truncate text-sm font-semibold text-foreground">{label}</span>
-        <span
-          className={cn(
-            "text-xs font-medium",
-            tier === "Pro" ? "text-faint" : "text-primary",
-          )}
-        >
-          {tier}
-        </span>
-      </span>
-    </div>
   );
 }

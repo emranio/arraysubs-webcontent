@@ -61,14 +61,14 @@
 | `/deals/arraysubs/features/store-credit/` | Reward members |
 | `/deals/arraysubs/use-cases/online-courses/` | Related use case |
 | `/deals/arraysubs/use-cases/content-publishers/` | Related use case |
-| `/deals/arraysubs/plans/` | CTA |
+| `/deals/arraysubs/pricings/` | CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
+	- `Live Demo` → `/deals/arraysubs/pricings/#live-demo`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/pricings/`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

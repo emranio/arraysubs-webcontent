@@ -42,7 +42,7 @@
 
 | Feature | ArraySubs (Free) | ArraySubs Pro | WooCommerce Subscriptions |
 |---------|------------------|---------------|---------------------------|
-| Price | $0 | See `/deals/arraysubs/plans/` | $279/yr |
+| Price | $0 | See `/deals/arraysubs/pricings/` | $279/yr |
 | Simple Subscriptions | ✅ | ✅ | ✅ |
 | Variable Subscriptions | ✅ | ✅ | ✅ |
 | Free Trials | ✅ | ✅ | ✅ |
@@ -62,7 +62,7 @@
 - WooCommerce Subscriptions: $279/yr (renewals ongoing)
 - WooCommerce Subscriptions + Memberships: $279 + $199 = $478/yr
 - ArraySubs Free: $0 (subscriptions + memberships included)
-- ArraySubs premium plan details: See `/deals/arraysubs/plans/`
+- ArraySubs premium plan details: See `/deals/arraysubs/pricings/`
 - **Value framing**: Compare the WooCommerce official stack cost against ArraySubs features on the pricing page
 
 ### 4. Feature Deep-Dives
@@ -75,7 +75,7 @@
 **4b. Memberships & Access Control (ArraySubs wins)**
 - ArraySubs: Built-in member access, content restriction, role mapping, drip content
 - WCS: Requires separate WooCommerce Memberships plugin ($199/yr)
-- Total cost with memberships: WCS reaches $478/yr; ArraySubs includes subscriptions + memberships in one plugin, with premium plan details kept on `/deals/arraysubs/plans/`
+- Total cost with memberships: WCS reaches $478/yr; ArraySubs includes subscriptions + memberships in one plugin, with premium plan details kept on `/deals/arraysubs/pricings/`
 
 **4c. Retention & Churn (ArraySubs wins — WCS has nothing)**
 - ArraySubs: Retention flow builder with offers, reasons, analytics
@@ -144,7 +144,7 @@
 | `/deals/arraysubs/features/retention-flow-builder/` | Retention section |
 | `/deals/arraysubs/features/store-credit/` | Store credit section |
 | `/deals/arraysubs/features/member-access-control/` | Membership comparison |
-| `/deals/arraysubs/plans/` | Pricing comparison CTA |
+| `/deals/arraysubs/pricings/` | Pricing comparison CTA |
 | `/deals/arraysubs/compare/woocommerce-memberships/` | Related comparison |
 | `/deals/arraysubs/download/` | Try free CTA |
 
@@ -153,7 +153,7 @@
 ## CTA Strategy
 
 - **Buttons**
-  - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
+  - `Live Demo` → `/deals/arraysubs/pricings/#live-demo`
+  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/pricings/`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

@@ -76,14 +76,14 @@
 |--------|---------|
 | `/deals/arraysubs/features/subscriptions-and-recurring-products/` | "Create your first subscription after setup →" |
 | `/deals/arraysubs/features/` | Breadcrumb |
-| `/deals/arraysubs/plans/` | Primary CTA |
+| `/deals/arraysubs/pricings/` | Primary CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
+	- `Live Demo` → `/deals/arraysubs/pricings/#live-demo`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/pricings/`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

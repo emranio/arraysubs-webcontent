@@ -120,14 +120,14 @@ Payment Due → [Active 3 days] → [On-Hold 7 days] → Cancelled
 | `/deals/arraysubs/features/customer-portal/` | "Subscribers pay invoices here →" |
 | `/deals/arraysubs/features/retention-flow-builder/` | "Prevent cancellations before they happen →" |
 | `/deals/arraysubs/features/` | Breadcrumb |
-| `/deals/arraysubs/plans/` | Pro features CTA |
+| `/deals/arraysubs/pricings/` | Pro features CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-    - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-    - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
+    - `Live Demo` → `/deals/arraysubs/pricings/#live-demo`
+    - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/pricings/`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

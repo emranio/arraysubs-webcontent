@@ -99,8 +99,8 @@ export default function ContactPage() {
                 Share your contact details
               </h2>
               <p className="mt-2 text-muted">
-                This form collects only your name, country and email. We&apos;ll
-                use it to reply within one business day.
+                This form collects only your name, email, subject and message.
+                We&apos;ll use it to reply within one business day.
               </p>
               <ContactForm className="mt-8" />
             </div>

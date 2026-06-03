@@ -49,4 +49,4 @@
 | Target | Context |
 |--------|---------|
 | `/deals/arraysubs/features/` | All features |
-| `/deals/arraysubs/plans/` | Pricing |
+| `/deals/arraysubs/pricings/` | Pricing |

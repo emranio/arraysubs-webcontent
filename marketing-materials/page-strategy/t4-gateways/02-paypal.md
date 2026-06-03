@@ -50,4 +50,4 @@
 | `/deals/arraysubs/features/payment-gateways/` | Parent gateway page |
 | `/gateways/stripe/` | Also accept Stripe |
 | `/gateways/paddle/` | Also accept Paddle |
-| `/deals/arraysubs/plans/` | Pro CTA |
+| `/deals/arraysubs/pricings/` | Pro CTA |

@@ -38,7 +38,7 @@ export const metadata: Metadata = createMetadata({
   path: "/deals/arraysubs/alternatives/",
 });
 
-const GET_PRO = "/deals/arraysubs/pricing/#get-pro";
+const GET_PRO = "/deals/arraysubs/pricing/";
 
 /* Compact "ArraySubs vs the field" differentiator matrix. */
 /** Bare tick. The optional arg is ignored — no note text beside checks. */

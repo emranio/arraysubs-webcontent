@@ -51,18 +51,18 @@
 
 ## Content Blocks
 
-> **Funnel context**: The site uses a **plans-led early adopter flow**. All primary and secondary CTAs route to `/deals/arraysubs/plans/`, with action targets split between `/deals/arraysubs/plans/#live-demo` and `/deals/arraysubs/plans/#get-pro`.
+> **Funnel context**: The site uses a **plans-led early adopter flow**. All primary and secondary CTAs route to `/deals/arraysubs/pricings/`, with action targets split between `/deals/arraysubs/pricings/#live-demo` and `/deals/arraysubs/pricings/`.
 
 ### 0. Announcement Bar
 - **Badge**: EARLY ADOPTER OFFER
 - **Text**: "Live Demo or Get ArraySubs Pro for 4 Months — Free. Time limited early bird offer. No credit cards required."
-- **Link**: `/deals/arraysubs/plans/`
+- **Link**: `/deals/arraysubs/pricings/`
 
 ### 1. Hero Section
 - **Headline**: H1 (above)
 - **Subheadline**: "Create subscription products, restrict member-only content, automate recurring billing, reduce churn with smart retention flows, and track MRR — all from one plugin. No duct-taping five separate tools together."
-- **Primary CTA**: Live Demo (links to `/deals/arraysubs/plans/#live-demo`)
-- **Secondary CTA**: Get ArraySubs Pro for 4 Months — Free (links to `/deals/arraysubs/plans/#get-pro`)
+- **Primary CTA**: Live Demo (links to `/deals/arraysubs/pricings/#live-demo`)
+- **Secondary CTA**: Get ArraySubs Pro for 4 Months — Free (links to `/deals/arraysubs/pricings/`)
 - **Trust bar**: Available on WordPress.org · WooCommerce 8+ · Stripe · PayPal · Paddle · HPOS Compatible
 - **Hero visual**: Product screenshot / short demo GIF
 
@@ -113,7 +113,7 @@
 ### 9. Pricing Spotlight — Choose the Right Plan
 - Short pricing preview with Free vs Pro value summary
 - Button group: "Live Demo" and "Get ArraySubs Pro for 4 Months — Free"
-- Reinforce the early adopter offer and the plans-page action flow on `/deals/arraysubs/plans/`
+- Reinforce the early adopter offer and the plans-page action flow on `/deals/arraysubs/pricings/`
 - Micro-copy: "Time limited early bird offer. No credit cards required."
 
 ### 10. How It Works (3 steps)
@@ -146,8 +146,8 @@
 
 ### 13. Final CTA
 - "Start Building Your Subscription Business Today"
-- Primary: Live Demo → `/deals/arraysubs/plans/#live-demo`
-- Secondary: Get ArraySubs Pro for 4 Months — Free → `/deals/arraysubs/plans/#get-pro`
+- Primary: Live Demo → `/deals/arraysubs/pricings/#live-demo`
+- Secondary: Get ArraySubs Pro for 4 Months — Free → `/deals/arraysubs/pricings/`
 
 ---
 
@@ -164,7 +164,7 @@
 
 | Target | Context |
 |--------|---------|
-| `/deals/arraysubs/plans/` | Announcement Bar, Hero, Problem, Features, Growth Benefits, Comparison, Pricing Spotlight, How It Works, Final CTA |
+| `/deals/arraysubs/pricings/` | Announcement Bar, Hero, Problem, Features, Growth Benefits, Comparison, Pricing Spotlight, How It Works, Final CTA |
 | `/deals/arraysubs/features/` | Feature Grid CTA |
 | `/deals/arraysubs/features/subscriptions/` | Feature Card 1 |
 | `/deals/arraysubs/features/billing/` | Feature Card 2 |
@@ -189,11 +189,11 @@
 
 ## CTAs
 
-> **Note**: Every CTA on the homepage routes to `/deals/arraysubs/plans/` using the two action targets below.
+> **Note**: Every CTA on the homepage routes to `/deals/arraysubs/pricings/` using the two action targets below.
 
 - **Buttons**
-  - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
+  - `Live Demo` → `/deals/arraysubs/pricings/#live-demo`
+  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/pricings/`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.
 

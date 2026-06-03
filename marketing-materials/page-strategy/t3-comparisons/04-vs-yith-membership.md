@@ -49,4 +49,4 @@
 |--------|---------|
 | `/deals/arraysubs/compare/yith-subscription/` | Related comparison |
 | `/deals/arraysubs/features/member-access-control/` | Membership features |
-| `/deals/arraysubs/plans/` | Pricing CTA |
+| `/deals/arraysubs/pricings/` | Pricing CTA |

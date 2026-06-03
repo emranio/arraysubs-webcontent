@@ -158,9 +158,19 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
                 <Link
                   href={item.href}
                   onClick={onClose}
+                  aria-label={
+                    item.badge ? `${item.label} ${item.badge}` : undefined
+                  }
                   className="group flex items-center justify-between gap-3 rounded-md py-3 text-xl font-display font-bold text-foreground transition-colors hover:text-primary-strong"
                 >
-                  <span>{item.label}</span>
+                  <span className="flex min-w-0 items-center gap-2">
+                    <span>{item.label}</span>
+                    {item.badge && (
+                      <span className="rounded-pill border border-border bg-surface px-2 py-1 text-xs leading-none font-semibold text-primary uppercase">
+                        {item.badge}
+                      </span>
+                    )}
+                  </span>
                   <ArrowUpRight
                     aria-hidden="true"
                     className="size-5 shrink-0 text-faint transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary-strong"

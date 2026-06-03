@@ -199,5 +199,5 @@ Email: emran@arraysubs.com
 | `/trust-center/refund-policy/` | Section 6 and footer |
 | `/trust-center/privacy-policy/` | Footer cross-link |
 | `/trust-center/data-safety/` | Footer cross-link |
-| `/deals/arraysubs/plans/` | Licence tier reference |
+| `/deals/arraysubs/pricings/` | Licence tier reference |
 | `/trust-center/contact/` | Dispute contact |

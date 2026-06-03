@@ -953,7 +953,7 @@ export default function DesignSystemPage() {
                   description="Charge the saved method each cycle."
                   defaultChecked
                 />
-                <Switch label="Email me product updates" />
+                <Switch label="Email me product & security updates. No spam — unsubscribe anytime." />
               </div>
               <div className="flex flex-col gap-3">
                 <Checkbox

@@ -1,10 +1,10 @@
 # Page Plan: Pricing
 
-> **URL**: `/deals/arraysubs/plans/`
+> **URL**: `/deals/arraysubs/pricings/`
 > **Tier**: T1 — Core Landing
 > **Priority**: Week 1
 > **Est. Aggregate KW Volume**: 1,200+/mo
-> **CTA action targets**: `/deals/arraysubs/plans/#live-demo` and `/deals/arraysubs/plans/#get-pro`
+> **CTA action targets**: `/deals/arraysubs/pricings/#live-demo` and `/deals/arraysubs/pricings/`
 
 ---
 
@@ -33,8 +33,8 @@
 
 ### 1. PageHero
 - H1 + subtitle: "Limited time early bird offer. Submit your details, get your free 3-month Pro license by email."
-- Primary CTA on hero: Live Demo → `/deals/arraysubs/plans/#live-demo`
-- Secondary CTA on hero: Get ArraySubs Pro for 4 Months — Free → `/deals/arraysubs/plans/#get-pro`
+- Primary CTA on hero: Live Demo → `/deals/arraysubs/pricings/#live-demo`
+- Secondary CTA on hero: Get ArraySubs Pro for 4 Months — Free → `/deals/arraysubs/pricings/`
 
 ### 2. Early Bird Offer Form
 - **Headline**: "Get ArraySubs Pro for 4 Months — Free"
@@ -63,15 +63,15 @@
 
 ### 6. Final CTA
 - "Choose your plan, launch a live demo, or claim the early adopter offer"
-- Pricing page CTA buttons use `/deals/arraysubs/plans/#live-demo` and `/deals/arraysubs/plans/#get-pro`
+- Pricing page CTA buttons use `/deals/arraysubs/pricings/#live-demo` and `/deals/arraysubs/pricings/`
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-  - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
+  - `Live Demo` → `/deals/arraysubs/pricings/#live-demo`
+  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/pricings/`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.
 
@@ -85,5 +85,5 @@
 | All 14 `/deals/arraysubs/features/*` pages | Accordion detail links |
 | `/deals/arraysubs/compare/woocommerce-subscriptions/` | FAQ competitor answer |
 | `/deals/arraysubs/` | Breadcrumb |
-| `/deals/arraysubs/plans/#live-demo` | Live demo CTA |
-| `/deals/arraysubs/plans/#get-pro` | Early adopter Pro CTA |
+| `/deals/arraysubs/pricings/#live-demo` | Live demo CTA |
+| `/deals/arraysubs/pricings/` | Early adopter Pro CTA |

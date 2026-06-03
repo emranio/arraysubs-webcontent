@@ -16,7 +16,7 @@ import { getFeature, type Feature, type FeatureTier } from "./_data";
 import { useCasesForFeature } from "../use-cases/_data";
 import { highlight } from "../_highlight";
 
-const GET_PRO = "/deals/arraysubs/pricing/#get-pro";
+const GET_PRO = "/deals/arraysubs/pricing/";
 
 const tierTone = (tier: FeatureTier) => (tier === "Free" ? "highlight" : "primary");
 

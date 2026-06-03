@@ -54,4 +54,4 @@
 | `/deals/arraysubs/features/subscriptions-and-recurring-products/` | Course plans |
 | `/deals/arraysubs/features/customer-portal/` | Student portal |
 | `/deals/arraysubs/use-cases/membership-sites/` | Related use case |
-| `/deals/arraysubs/plans/` | CTA |
+| `/deals/arraysubs/pricings/` | CTA |

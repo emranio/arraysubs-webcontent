@@ -14,7 +14,12 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false); // mobile fullscreen menu
   const toggleRef = useRef<HTMLButtonElement>(null);
   const wasOpen = useRef(false);
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
+  const isArraySubsPath =
+    pathname === "/deals/arraysubs" || pathname.startsWith("/deals/arraysubs/");
+  const logoSubtitle = isArraySubsPath
+    ? `${site.brand} - Subscription Manager for WooCommerce`
+    : `Plugins, Code, and Commerce Solutions for WordPress`;
 
   // Return focus to the toggle when the mobile menu closes.
   useEffect(() => {
@@ -48,7 +53,7 @@ export function SiteHeader() {
             <Link
               href="/"
               onClick={close}
-              className="flex items-center"
+              className="flex min-w-0 flex-col items-start gap-[0.125rem]"
               aria-label={`${site.name} home`}
             >
               <img
@@ -58,14 +63,17 @@ export function SiteHeader() {
                 height={120}
                 decoding="async"
                 fetchPriority="high"
-                className="h-[1.55rem] w-auto sm:h-[1.75rem]"
+                className="h-[1.35rem] w-auto sm:h-[1.5rem]"
               />
+              <span className="max-w-[15.25rem] truncate text-[0.5625rem] leading-none font-medium tracking-normal text-faint sm:max-w-[18rem] sm:text-[0.625rem] lg:max-w-[15.25rem] xl:max-w-none xl:text-[0.6875rem]">
+                {logoSubtitle}
+              </span>
             </Link>
 
             <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
               <nav
                 aria-label="Primary"
-                className="hidden items-center gap-5 lg:flex"
+                className="hidden items-center gap-3 xl:gap-5 lg:flex"
               >
                 {HEADER_NAV_ITEMS.map((item) => {
                   const isCurrent =
@@ -76,19 +84,27 @@ export function SiteHeader() {
                       key={item.href}
                       href={item.href}
                       aria-current={isCurrent ? "page" : undefined}
+                      aria-label={
+                        item.badge ? `${item.label} ${item.badge}` : undefined
+                      }
                       className={cn(
-                        "text-sm font-medium transition-colors hover:text-foreground",
+                        "inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-medium transition-colors hover:text-foreground",
                         isCurrent ? "text-foreground" : "text-muted",
                       )}
                     >
-                      {item.label}
+                      <span>{item.label}</span>
+                      {item.badge && (
+                        <span className="mt-[-0.875rem] ml-[-0.4375rem] rounded-pill border border-border bg-surface px-1.5 py-0.5 text-[0.625rem] leading-none font-semibold text-primary uppercase">
+                          {item.badge}
+                        </span>
+                      )}
                     </Link>
                   );
                 })}
               </nav>
 
               <Button
-                href="#cta"
+                href="/deals/arraysubs/pricing/"
                 size="xs"
                 magnetic
                 onClick={close}

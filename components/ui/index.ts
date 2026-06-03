@@ -35,6 +35,7 @@ export { Field } from "./form/Field";
 export { Input } from "./form/Input";
 export { Textarea } from "./form/Textarea";
 export { Select, type SelectOption } from "./form/Select";
+export { CountrySelect } from "./form/CountrySelect";
 export { Multiselect, type MultiselectOption } from "./form/Multiselect";
 export { Checkbox } from "./form/Checkbox";
 export { Radio } from "./form/Radio";

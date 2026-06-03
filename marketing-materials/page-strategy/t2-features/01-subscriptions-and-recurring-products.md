@@ -129,7 +129,7 @@
 | `/deals/arraysubs/features/customer-portal/` | "Subscribers manage their plans here →" |
 | `/deals/arraysubs/features/checkout-builder/` | Pro: "Customize the subscription checkout experience →" |
 | `/deals/arraysubs/features/` | Breadcrumb |
-| `/deals/arraysubs/plans/` | Free vs Pro CTA |
+| `/deals/arraysubs/pricings/` | Free vs Pro CTA |
 | `/deals/arraysubs/use-cases/subscription-boxes/` | Use case link |
 | `/deals/arraysubs/use-cases/saas-digital-products/` | Use case link |
 
@@ -138,7 +138,7 @@
 ## CTA Strategy
 
 - **Buttons**
-  - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
+  - `Live Demo` → `/deals/arraysubs/pricings/#live-demo`
+  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/pricings/`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

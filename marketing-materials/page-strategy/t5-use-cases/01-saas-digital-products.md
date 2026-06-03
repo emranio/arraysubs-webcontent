@@ -90,14 +90,14 @@
 | `/deals/arraysubs/features/analytics/` | SaaS metrics |
 | `/deals/arraysubs/features/feature-manager/` | Plan entitlements & usage limits |
 | `/deals/arraysubs/features/` | All features |
-| `/deals/arraysubs/plans/` | CTA |
+| `/deals/arraysubs/pricings/` | CTA |
 
 ---
 
 ## CTA Strategy
 
 - **Buttons**
-	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
+	- `Live Demo` → `/deals/arraysubs/pricings/#live-demo`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/pricings/`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

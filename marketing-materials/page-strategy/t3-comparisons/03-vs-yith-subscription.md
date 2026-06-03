@@ -43,7 +43,7 @@
 ### 3. Pricing
 - YITH Subscription: $189/yr
 - YITH Subscription + Membership: $189 + $149 = $338/yr
-- ArraySubs: Free plan + premium details on `/deals/arraysubs/plans/`
+- ArraySubs: Free plan + premium details on `/deals/arraysubs/pricings/`
 
 ### 4. Unique ArraySubs Advantages
 - All-in-one: No need for multiple YITH plugins
@@ -70,4 +70,4 @@
 |--------|---------|
 | `/deals/arraysubs/compare/yith-membership/` | Related comparison |
 | `/deals/arraysubs/features/` | All features |
-| `/deals/arraysubs/plans/` | Pricing CTA |
+| `/deals/arraysubs/pricings/` | Pricing CTA |

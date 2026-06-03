@@ -8,6 +8,13 @@ import { Field } from "./Field";
 import { Input } from "./Input";
 import { Select } from "./Select";
 import { Checkbox } from "./Checkbox";
+import { CountrySelect } from "./CountrySelect";
+
+type LeadFormErrors = {
+  name?: string;
+  email?: string;
+  country?: string;
+};
 
 /**
  * Lead-capture form (the "Get Pro Access — Free" flow). Client-side validated demo:
@@ -15,23 +22,38 @@ import { Checkbox } from "./Checkbox";
  */
 export function LeadForm({ className }: { className?: string }) {
   const [status, setStatus] = useState<"idle" | "success">("idle");
-  const [emailError, setEmailError] = useState<string>();
+  const [errors, setErrors] = useState<LeadFormErrors>({});
+  const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
+  const countryRef = useRef<HTMLInputElement>(null);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
-    const email = String(new FormData(form).get("email") ?? "").trim();
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const country = String(data.get("country") ?? "").trim();
     const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
 
+    const next: LeadFormErrors = {};
+    if (!name) next.name = "Please enter your full name.";
     if (!emailOk) {
-      setEmailError(
-        email ? "Enter a valid email address." : "Please enter your email address.",
-      );
-      emailRef.current?.focus();
+      next.email = email
+        ? "Enter a valid email address."
+        : "Please enter your email address.";
+    }
+    if (!country) next.country = "Please choose your country.";
+
+    setErrors(next);
+
+    if (Object.keys(next).length > 0) {
+      if (next.name) nameRef.current?.focus();
+      else if (next.email) emailRef.current?.focus();
+      else if (next.country) countryRef.current?.focus();
       return;
     }
-    setEmailError(undefined);
+
     setStatus("success");
     form.reset();
   };
@@ -63,14 +85,19 @@ export function LeadForm({ className }: { className?: string }) {
       onSubmit={onSubmit}
       className={cn("flex flex-col gap-5", className)}
     >
-      <Field label="Full name">
-        <Input name="name" autoComplete="name" placeholder="Jane Doe" />
+      <Field label="Full name" required error={errors.name}>
+        <Input
+          ref={nameRef}
+          name="name"
+          autoComplete="name"
+          placeholder="Jane Doe"
+        />
       </Field>
 
       <Field
         label="Work email"
         required
-        error={emailError}
+        error={errors.email}
         description="We'll send your license key here."
       >
         <Input
@@ -82,24 +109,36 @@ export function LeadForm({ className }: { className?: string }) {
         />
       </Field>
 
-      <Field label="Business type">
-        <Select
-          name="business"
-          placeholder="Select your business type…"
-          options={[
-            { label: "SaaS & Digital Products", value: "saas" },
-            { label: "Membership Site", value: "membership" },
-            { label: "Subscription Box", value: "box" },
-            { label: "Online Courses", value: "courses" },
-            { label: "Content & Publishing", value: "content" },
-            { label: "Service Business", value: "service" },
-          ]}
-        />
-      </Field>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field label="Business type">
+          <Select
+            name="business"
+            placeholder="Business type"
+            options={[
+              { label: "SaaS & Digital Products", value: "saas" },
+              { label: "Membership Site", value: "membership" },
+              { label: "Subscription Box", value: "box" },
+              { label: "Online Courses", value: "courses" },
+              { label: "Content & Publishing", value: "content" },
+              { label: "Service Business", value: "service" },
+              { label: "Non-Profit Organization", value: "nonprofit" },
+              { label: "Other", value: "other" },
+            ]}
+          />
+        </Field>
+
+        <Field label="Country" required error={errors.country}>
+          <CountrySelect
+            ref={countryRef}
+            name="country"
+            placeholder="Search country..."
+          />
+        </Field>
+      </div>
 
       <Checkbox
         name="consent"
-        label="Email me product updates. No spam — unsubscribe anytime."
+        label="Email me product & security updates. No spam — unsubscribe anytime."
       />
 
       <Button

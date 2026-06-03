@@ -53,4 +53,4 @@
 |--------|---------|
 | `/deals/arraysubs/features/` | All features |
 | `/deals/arraysubs/features/retention-flow-builder/` | Unique feature highlight |
-| `/deals/arraysubs/plans/` | Pro comparison |
+| `/deals/arraysubs/pricings/` | Pro comparison |

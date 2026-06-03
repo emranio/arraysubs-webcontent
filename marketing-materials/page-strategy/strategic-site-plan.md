@@ -213,7 +213,7 @@ arrayhash.com/
 │   │   ├── /strategy/ ──────────── Thought Leadership & Best Practices
 │   │   └── /glossary/ ──────────── Definitions (GEO/AEO-optimized)
 │   │
-│   ├── /deals/arraysubs/plans/ ─────────────────── PRICING PAGE (T7)
+│   ├── /deals/arraysubs/pricings/ ─────────────────── PRICING PAGE (T7)
 │   │                                KW: arraysubs pricing, woocommerce subscription
 │   │                                    plugin pricing comparison│   │                                (Primary conversion page)
 │   │
@@ -253,10 +253,10 @@ arrayhash.com/
 | **SEO Angle** | All-in-one value prop — Free tier, replace entire plugin stack |
 | **GEO Angle** | Quotable stat: "Replace your entire WooCommerce subscription and membership plugin stack with one free solution" |
 | **Est. Keyword Volume** | 10,000+/mo aggregate |
-| **Phase** | Plans-led early adopter flow. All CTAs drive to `/deals/arraysubs/plans/`, with action targets split between `#live-demo` and `#get-pro`. |
+| **Phase** | Plans-led early adopter flow. All CTAs drive to `/deals/arraysubs/pricings/`, with action targets split between `#live-demo` and ``. |
 
 **Content Blocks:**
-0. Announcement Bar — Early adopter offer prompt linking to `/deals/arraysubs/plans/`
+0. Announcement Bar — Early adopter offer prompt linking to `/deals/arraysubs/pricings/`
 1. PageHero — Value prop + CTA + trust bar (WP.org, WooCommerce 8+, gateways, HPOS)
 2. The Plugin Overload Problem — Complexity/conflict framing (no dollar amounts)
 3. Feature grid — 14 features in 4 categories with icons linking to feature pages
@@ -265,7 +265,7 @@ arrayhash.com/
 6. Comparison table — ArraySubs vs Woo Subs + Memberships (feature rows only, no price row)
 7. Use cases — 6 cards linking to use case pages
 8. Early Adopter's Thoughts — Testimonial cards (no star ratings)
-9. Pricing Spotlight — short comparison summary with CTA to `/deals/arraysubs/plans/`
+9. Pricing Spotlight — short comparison summary with CTA to `/deals/arraysubs/pricings/`
 10. How It Works — 3-step timeline (install, create product, grow)
 11. Works With Your WooCommerce Stack — WooCommerce-first integrations logo cloud
 12. FAQ — 11 questions, FAQPage JSON-LD (GEO-structured, no prices)
@@ -292,7 +292,7 @@ arrayhash.com/
 
 ---
 
-#### 1.3 Pricing — `/deals/arraysubs/plans/`
+#### 1.3 Pricing — `/deals/arraysubs/pricings/`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -755,17 +755,17 @@ Each use case page targets a specific buyer persona and connects product feature
 #### 7.1 Early Access — `/deals/arraysubs/early-access/`
 - Optional campaign or promotional landing page
 - Not the default CTA destination in the current plans-led funnel
-- Any global/sitewide CTA should still route to `/deals/arraysubs/plans/`
+- Any global/sitewide CTA should still route to `/deals/arraysubs/pricings/`
 
 #### 7.2 Download — `/deals/arraysubs/download/`
 - Direct link to WordPress.org listing: `https://wordpress.org/plugins/arraysubs/`
 - Feature summary of free tier
-- Primary conversion CTA from this page still routes to `/deals/arraysubs/plans/`
+- Primary conversion CTA from this page still routes to `/deals/arraysubs/pricings/`
 
-#### 7.3 Pricing — `/deals/arraysubs/plans/`
+#### 7.3 Pricing — `/deals/arraysubs/pricings/`
 - **Phase**: Primary conversion page for the site
 - All site CTAs route here
-- Pricing page CTA buttons trigger `/deals/arraysubs/plans/#live-demo` and `/deals/arraysubs/plans/#get-pro`
+- Pricing page CTA buttons trigger `/deals/arraysubs/pricings/#live-demo` and `/deals/arraysubs/pricings/`
 - Includes Free vs Pro pricing table, feature comparison matrix, FAQ about pricing/licensing
 
 #### 7.4 Documentation — External Support Center
@@ -820,7 +820,7 @@ Each use case page targets a specific buyer persona and connects product feature
 | Homepage | All T2 feature pages | Feature grid cards |
 | Homepage | Top T3 comparison pages | "vs Competitors" section |
 | Homepage | All T5 use case pages | "Use Cases" section |
-| Homepage | `/deals/arraysubs/plans/` | CTA buttons |
+| Homepage | `/deals/arraysubs/pricings/` | CTA buttons |
 | Feature pages (T2) | Related feature pages | "Related Features" sidebar |
 | Feature pages (T2) | Related blog tutorials | "Learn More" links |
 | Feature pages (T2) | Pricing | CTA buttons |

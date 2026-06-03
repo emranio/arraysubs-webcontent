@@ -67,7 +67,7 @@
 | Target | Context |
 |--------|---------|
 | All 15 `/deals/arraysubs/features/*` pages | Feature cards |
-| `/deals/arraysubs/plans/` | Free vs Pro table CTA |
+| `/deals/arraysubs/pricings/` | Free vs Pro table CTA |
 | `/deals/arraysubs/use-cases/*` | Use case section cards |
 | `/deals/arraysubs/use-cases/` | Use case section CTA |
 | `/deals/arraysubs/compare/woocommerce-subscriptions/` | Comparison section |

@@ -30,7 +30,7 @@ export const metadata: Metadata = createMetadata({
   path: "/deals/arraysubs/features/",
 });
 
-const GET_PRO = "/deals/arraysubs/pricing/#get-pro";
+const GET_PRO = "/deals/arraysubs/pricing/";
 
 const tierTone = (tier: FeatureTier) => (tier === "Free" ? "highlight" : "primary");
 

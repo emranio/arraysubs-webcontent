@@ -6,26 +6,35 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
   {
     title: "Product",
     links: [
-      ["Features", "#"],
-      ["Pricing", "#"],
+      ["ArraySubs", "/deals/arraysubs/"],
+      ["Features", "/deals/arraysubs/features/"],
+      ["Pricing", "/deals/arraysubs/pricing/"],
+      ["Use Cases", "/deals/arraysubs/use-cases/"],
       ["Download", "https://wordpress.org/plugins/arraysubs/"],
-      ["Changelog", "#"],
     ],
   },
   {
     title: "Compare",
     links: [
-      ["vs WooCommerce Subscriptions", "#"],
-      ["vs WooCommerce Memberships", "#"],
-      ["vs YITH", "#"],
+      [
+        "vs WooCommerce Subscriptions",
+        "/deals/arraysubs/alternatives/woocommerce-subscriptions/",
+      ],
+      [
+        "vs WooCommerce Memberships",
+        "/deals/arraysubs/alternatives/woocommerce-memberships/",
+      ],
+      [
+        "vs YITH Subscription",
+        "/deals/arraysubs/alternatives/yith-woocommerce-subscription/",
+      ],
     ],
   },
   {
     title: "Resources",
     links: [
       ["Documentation", "https://support.arrayhash.com/arraysubs/"],
-      ["Blog", "#"],
-      ["Use Cases", "#"],
+      ["Use Cases", "/deals/arraysubs/use-cases/"],
       ["Support", "https://support.arrayhash.com/arraysubs/"],
     ],
   },
@@ -39,6 +48,7 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
       ["Terms", "/trust-center/terms-of-service/"],
       ["GDPR + CCPA", "/trust-center/gdpr-ccpa-compliance/"],
       ["Accessibility", "/trust-center/accessibility-compliance/"],
+      ["Contact", "/contact/"],
     ],
   },
 ];
