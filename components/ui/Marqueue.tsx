@@ -33,7 +33,15 @@ const edgeFadeStyle: CSSProperties = {
 export function Marqueue({ children, label, className }: MarqueueProps) {
   const rootRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLUListElement>(null);
-  const motion = useRef({ auto: 0, scroll: 0, width: 0 });
+  const motion = useRef({
+    auto: 0,
+    scroll: 0,
+    width: 0,
+    drag: 0,
+    velocity: 0,
+    dragging: false,
+    lastX: 0,
+  });
   const items = Children.toArray(children);
 
   useGSAP(
@@ -41,12 +49,15 @@ export function Marqueue({ children, label, className }: MarqueueProps) {
       registerGsap();
       const root = rootRef.current;
       const track = trackRef.current;
-      if (!root || !track || prefersReducedMotion()) return;
+      if (!root || !track) return;
 
       const update = () => {
         const width = motion.current.width;
         if (width <= 0) return;
-        const x = -((motion.current.auto + motion.current.scroll) % width);
+        // Wrap the combined offset so dragging in either direction loops cleanly.
+        const raw =
+          motion.current.auto + motion.current.scroll - motion.current.drag;
+        const x = -(((raw % width) + width) % width);
         gsap.set(track, { x });
       };
 
@@ -58,6 +69,56 @@ export function Marqueue({ children, label, className }: MarqueueProps) {
       measure();
       const resizeObserver = new ResizeObserver(measure);
       resizeObserver.observe(track);
+
+      // --- Grab & drag to slide (pointer + touch). Works with reduced motion too. ---
+      const onPointerDown = (event: PointerEvent) => {
+        motion.current.dragging = true;
+        motion.current.velocity = 0;
+        motion.current.lastX = event.clientX;
+        track.style.cursor = "grabbing";
+        try {
+          track.setPointerCapture(event.pointerId);
+        } catch {}
+      };
+      const onPointerMove = (event: PointerEvent) => {
+        if (!motion.current.dragging) return;
+        const dx = event.clientX - motion.current.lastX;
+        motion.current.lastX = event.clientX;
+        motion.current.drag += dx;
+        motion.current.velocity = dx;
+        update();
+      };
+      const onPointerUp = (event: PointerEvent) => {
+        if (!motion.current.dragging) return;
+        motion.current.dragging = false;
+        track.style.cursor = "";
+        try {
+          track.releasePointerCapture(event.pointerId);
+        } catch {}
+      };
+      const onDragStart = (event: Event) => event.preventDefault();
+
+      track.addEventListener("pointerdown", onPointerDown);
+      track.addEventListener("pointermove", onPointerMove);
+      track.addEventListener("pointerup", onPointerUp);
+      track.addEventListener("pointercancel", onPointerUp);
+      track.addEventListener("dragstart", onDragStart);
+
+      const removeDragListeners = () => {
+        track.removeEventListener("pointerdown", onPointerDown);
+        track.removeEventListener("pointermove", onPointerMove);
+        track.removeEventListener("pointerup", onPointerUp);
+        track.removeEventListener("pointercancel", onPointerUp);
+        track.removeEventListener("dragstart", onDragStart);
+      };
+
+      if (prefersReducedMotion()) {
+        // Static row, but still allow manual grab-drag.
+        return () => {
+          resizeObserver.disconnect();
+          removeDragListeners();
+        };
+      }
 
       const scrollTrigger = ScrollTrigger.create({
         trigger: root,
@@ -73,6 +134,15 @@ export function Marqueue({ children, label, className }: MarqueueProps) {
       const tick = (_time: number, deltaTime: number) => {
         const width = motion.current.width;
         if (width <= 0) return;
+        if (motion.current.dragging) {
+          update();
+          return;
+        }
+        // Inertia after release, then resume the auto drift.
+        if (Math.abs(motion.current.velocity) > 0.05) {
+          motion.current.drag += motion.current.velocity;
+          motion.current.velocity *= 0.9;
+        }
         motion.current.auto = (motion.current.auto + (deltaTime / 1000) * 24) % width;
         update();
       };
@@ -83,6 +153,7 @@ export function Marqueue({ children, label, className }: MarqueueProps) {
         gsap.ticker.remove(tick);
         scrollTrigger.kill();
         resizeObserver.disconnect();
+        removeDragListeners();
       };
     },
     { scope: rootRef, dependencies: [items.length] },
@@ -114,7 +185,7 @@ export function Marqueue({ children, label, className }: MarqueueProps) {
       >
         <ul
           ref={trackRef}
-          className="flex w-max min-w-full gap-[0.1875rem] will-change-transform"
+          className="flex w-max min-w-full cursor-grab touch-pan-y gap-[0.1875rem] select-none will-change-transform"
         >
           {renderItems()}
           {renderItems(true)}

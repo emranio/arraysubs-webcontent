@@ -70,7 +70,9 @@ export function ComparisonTable({
       aria-label={caption}
       tabIndex={0}
       className={cn(
-        "overflow-x-auto rounded-2xl border border-border bg-card",
+        // `relative` keeps the cells' absolutely-positioned sr-only status text
+        // contained — otherwise it escapes and widens the page on mobile.
+        "relative overflow-x-auto rounded-2xl border border-border bg-card",
         className,
       )}
     >

@@ -143,3 +143,39 @@ export function faqSchema(items: Faq[]) {
     })),
   };
 }
+
+export type ArticleInput = {
+  headline: string;
+  description: string;
+  /** Canonical path beginning with "/". */
+  path: string;
+  /** ISO date (YYYY-MM-DD) the article first published. */
+  datePublished: string;
+  /** ISO date (YYYY-MM-DD) of the last meaningful update — drives freshness. */
+  dateModified: string;
+};
+
+/**
+ * TechArticle JSON-LD for editorial/comparison pages. Signals authored,
+ * dated, citable content to search and AI answer engines (GEO/AEO).
+ */
+export function articleSchema(input: ArticleInput) {
+  const url = `${site.url}${input.path}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: input.headline,
+    description: input.description,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    datePublished: input.datePublished,
+    dateModified: input.dateModified,
+    inLanguage: site.lang,
+    author: { "@type": "Organization", name: site.brand, url: site.url },
+    publisher: {
+      "@type": "Organization",
+      name: site.brand,
+      logo: { "@type": "ImageObject", url: `${site.url}${site.logo}` },
+    },
+  };
+}

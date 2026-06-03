@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { FEATURES } from "@/app/deals/arraysubs/features/_data";
 import { USE_CASES } from "@/app/deals/arraysubs/use-cases/_data";
+import { COMPARISONS } from "@/app/deals/arraysubs/alternatives/_data";
 
 /**
  * Add a route entry here when a new indexable page ships.
@@ -12,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/deals/arraysubs/pricing/", 0.8],
     ["/deals/arraysubs/features/", 0.8],
     ["/deals/arraysubs/use-cases/", 0.8],
+    ["/deals/arraysubs/alternatives/", 0.8],
   ] as const;
 
   const trustRoutes = [
@@ -54,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+    ...COMPARISONS.map((comparison) => ({
+      url: `${site.url}/deals/arraysubs/alternatives/${comparison.slug}/`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
     ...trustRoutes.map(([path, priority]) => ({
       url: `${site.url}${path}`,

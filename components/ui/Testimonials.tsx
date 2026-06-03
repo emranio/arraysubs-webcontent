@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { MoveLeft, MoveRight, Star } from "lucide-react";
 import {
   gsap,
@@ -55,11 +55,15 @@ export function Testimonials({
   const transitioning = useRef(false);
   const mainRef = useRef<HTMLDivElement>(null);
   const authorRef = useRef<HTMLDivElement>(null);
+  /** Active grab-drag gesture state. */
+  const drag = useRef({ active: false, startX: 0, dx: 0 });
   const count = items.length;
   const item = items[index];
   const rating = item.rating ?? 5;
 
   const SLIDE = 32;
+  /** Horizontal drag distance (px) that commits to prev/next. */
+  const DRAG_THRESHOLD = 60;
 
   const go = (dir: 1 | -1) => {
     if (transitioning.current) return;
@@ -83,6 +87,39 @@ export function Testimonials({
         setIndex((current) => (current + dir + count) % count);
       },
     });
+  };
+
+  // --- Grab & drag to go prev/next (pointer + touch) ---
+  const onPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (transitioning.current) return;
+    // Let the prev/next buttons keep their own click behaviour.
+    if ((event.target as HTMLElement).closest("button")) return;
+    drag.current = { active: true, startX: event.clientX, dx: 0 };
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+  };
+  const onPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!drag.current.active) return;
+    drag.current.dx = event.clientX - drag.current.startX;
+    if (prefersReducedMotion()) return;
+    // Live follow, damped so it feels weighty.
+    const targets = [mainRef.current, authorRef.current].filter(Boolean);
+    gsap.set(targets, { x: drag.current.dx * 0.5 });
+  };
+  const endDrag = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!drag.current.active) return;
+    const { dx } = drag.current;
+    drag.current.active = false;
+    try {
+      event.currentTarget.releasePointerCapture?.(event.pointerId);
+    } catch {}
+    if (Math.abs(dx) > DRAG_THRESHOLD) {
+      // Drag left → next, drag right → previous.
+      go(dx < 0 ? 1 : -1);
+    } else if (!prefersReducedMotion()) {
+      // Under threshold: snap back into place.
+      const targets = [mainRef.current, authorRef.current].filter(Boolean);
+      gsap.to(targets, { x: 0, duration: 0.3, ease: "power2.out" });
+    }
   };
 
   useGSAP(
@@ -132,7 +169,12 @@ export function Testimonials({
       <div
         aria-live="polite"
         aria-atomic="true"
-        className="relative z-10 flex flex-col items-center text-center"
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={endDrag}
+        onPointerCancel={endDrag}
+        onDragStart={(event) => event.preventDefault()}
+        className="relative z-10 flex cursor-grab touch-pan-y flex-col items-center text-center select-none active:cursor-grabbing"
       >
         <div ref={mainRef} className="flex w-full flex-col items-center">
           <div className="size-28 overflow-hidden rounded-2xl bg-dark sm:size-36">
@@ -141,6 +183,7 @@ export function Testimonials({
               <img
                 src={item.image}
                 alt={item.name}
+                draggable={false}
                 className="size-full object-cover"
               />
             ) : (

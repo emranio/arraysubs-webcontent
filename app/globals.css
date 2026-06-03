@@ -106,6 +106,9 @@
     -webkit-text-size-adjust: 100%;
     /* space for sticky header when jumping to anchors */
     scroll-padding-top: 6rem;
+    /* Kill stray horizontal scroll globally. `clip` (not `hidden`) doesn't
+       create a scroll container, so sticky/fixed positioning still works. */
+    overflow-x: clip;
   }
 
   body {
