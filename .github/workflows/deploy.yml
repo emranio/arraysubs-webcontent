@@ -36,6 +36,9 @@ jobs:
             echo "==> Installing dependencies"
             bun install --frozen-lockfile
 
+            echo "==> Cleaning previous Next.js build output"
+            rm -rf .next
+
             echo "==> Building"
             bun run build
 
