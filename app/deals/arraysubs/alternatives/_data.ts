@@ -470,7 +470,8 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Subscriptions & billing",
         rows: [
-          row("Simple & variable subscriptions", yes(), yes(), yes("free")),
+          row("Simple subscriptions", yes(), yes(), yes("free")),
+          row("Variable-product subscriptions", yes(), yes(), part("premium")),
           row("Free trials & sign-up fees", yes(), yes(), part("premium")),
           row("Plan switching", yes(), yes(), part("variable only")),
           row("Different renewal price", yes(), yes(), no()),
@@ -738,10 +739,10 @@ export const COMPARISONS: Comparison[] = [
       "Plan switching + retention",
     ],
     intro:
-      "ArraySubs and Subscriptions for WooCommerce by WP Swings are both ==free WooCommerce subscription plugins==. WP Swings is well-established (10k+ installs, 4.4★) and even has a free subscription-box option, but it has ==no plan switching, no member access control and no retention flows==. ArraySubs adds memberships, plan switching with proration, a retention flow builder and a guided setup wizard to its free core.",
+      "ArraySubs and Subscriptions for WooCommerce by WP Swings are both ==free WooCommerce subscription plugins==. WP Swings is well-established (10k+ installs, 4.4★) and even has a free subscription-box option, but its ==free tier lacks plan switching, memberships and retention flows== — those need WP Swings Pro ($129/yr) or a separate plugin. ArraySubs puts plan switching, memberships, a retention flow builder and a setup wizard in its free core.",
     verdict: {
       summary:
-        "Short answer: pick ArraySubs if you want more from a free plugin — memberships, plan switching, retention flows and a setup wizard alongside subscriptions. WP Swings' Subscriptions for WooCommerce is a proven free option with a larger install base and a free subscription-box feature, but it lacks upgrade/downgrade, member access control, retention and analytics.",
+        "Short answer: pick ArraySubs if you want more from a free plugin — memberships, plan switching, retention flows and a setup wizard, all in the free tier. WP Swings' Subscriptions for WooCommerce is a proven option (10k+ installs) with a free subscription box, but its free tier is thinner: plan switching, pause, grace periods and analytics are Pro ($129/yr), and memberships need its separate plugin.",
       arraysubsBestFor: [
         "Stores wanting memberships and subscriptions free",
         "Anyone needing plan switching with proration",
@@ -756,7 +757,7 @@ export const COMPARISONS: Comparison[] = [
     },
     pricing: {
       arraysubs: "Free core, forever. Pro is free for 4 months during early launch.",
-      competitor: "Free + Pro (price not public)",
+      competitor: "Free + Pro ($129/yr)",
       combinedNote:
         "Memberships need WP Swings' separate Membership plugin (800+ installs).",
       savings: "More in the free tier, plus memberships, with no second plugin.",
@@ -765,7 +766,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("Free 4 months"), txt("Free + Pro")),
+          row("Price", txt("$0"), txt("Free 4 months"), txt("$129/yr")),
           row("Free tier", yes(), yes(), yes()),
           row("Memberships in same plugin", yes(), yes(), no("separate plugin")),
         ],
@@ -776,12 +777,12 @@ export const COMPARISONS: Comparison[] = [
           row("Simple subscriptions", yes(), yes(), yes("free")),
           row("Variable subscriptions", yes(), yes(), part("Pro")),
           row("Free trial & sign-up fee", yes(), yes(), yes("free")),
-          row("Plan switching (upgrade/downgrade)", yes(), yes(), no()),
+          row("Plan switching (upgrade/downgrade)", yes(), yes(), part("Pro")),
           row("Different renewal price / skip renewal", yes(), yes(), no()),
-          row("Two-phase grace period", yes(), yes(), no()),
+          row("Two-phase grace period", yes(), yes(), part("Pro")),
           row("Auto-retry failed payments", no(), yes(), part("Pro")),
           row("Subscription box", no(), no(), yes("free")),
-          row("Multiple gateways", part("manual"), txt("Stripe/PayPal/Paddle"), part("Pro: Stripe/PayPal/Mollie")),
+          row("Multiple gateways", part("manual"), txt("Stripe/PayPal/Paddle"), part("4 free, +Pro")),
         ],
       },
       {
@@ -796,16 +797,16 @@ export const COMPARISONS: Comparison[] = [
         rows: [
           row("Retention flow builder", yes(), yes(), no()),
           row("Store credit system", no(), yes(), no()),
-          row("Advanced analytics", no(), yes(), no()),
-          row("Setup wizard", yes(), yes(), no()),
+          row("Advanced analytics", no(), yes(), part("Pro")),
+          row("Setup wizard", yes(), yes(), part("basic")),
         ],
       },
     ],
     differences: [
       {
-        title: "Plan switching with proration",
+        title: "Plan switching — free vs Pro",
         description:
-          "ArraySubs lets customers upgrade, downgrade or crossgrade with proration — free. WP Swings' Subscriptions has no plan switching at all.",
+          "ArraySubs includes upgrade / downgrade / crossgrade with proration in its free core. WP Swings offers plan switching too, but only in its Pro tier ($129/yr) and on variable products.",
         winner: "arraysubs",
       },
       {
@@ -815,9 +816,9 @@ export const COMPARISONS: Comparison[] = [
         winner: "arraysubs",
       },
       {
-        title: "Retention, analytics & setup wizard",
+        title: "Retention & free analytics",
         description:
-          "ArraySubs adds a retention flow builder, analytics and a 9-step setup wizard. WP Swings' Subscriptions has none of these.",
+          "ArraySubs adds a retention flow builder, analytics and a guided setup wizard in its free core. WP Swings has no retention flow, and its analytics sit behind Pro.",
         winner: "arraysubs",
       },
       {
@@ -845,12 +846,12 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Which is better, ArraySubs or WP Swings Subscriptions?",
         answer:
-          "Both are free. ArraySubs offers more — memberships, plan switching with proration, retention flows, analytics and a setup wizard. WP Swings has a larger install base and a free subscription-box feature.",
+          "Both have free tiers. ArraySubs' free tier offers more — memberships, plan switching, retention flows and a setup wizard — where WP Swings keeps plan switching and analytics in Pro and memberships in a separate plugin. WP Swings has a larger install base and a free subscription box.",
       },
       {
         question: "Does WP Swings Subscriptions support plan switching?",
         answer:
-          "No. Subscriptions for WooCommerce by WP Swings has no upgrade/downgrade. ArraySubs supports plan switching with three proration methods in its free core.",
+          "Yes — in its Pro tier ($129/yr), as upgrade/downgrade on variable products. ArraySubs includes plan switching with three proration methods in its free core.",
       },
       {
         question: "Can ArraySubs handle memberships like WP Swings' membership plugin?",
@@ -877,28 +878,28 @@ export const COMPARISONS: Comparison[] = [
     competitorShort: "SUMO",
     icon: Package,
     cardDescription:
-      "A deep but aging CodeCanyon plugin (~$49 one-time, last changelog 2017). ArraySubs is actively developed, free, and far broader.",
+      "A deep but infrequently-updated CodeCanyon plugin (~$49 one-time, premium-only; last release Feb 2026). ArraySubs matches the billing depth but adds memberships, retention, store credit and analytics, free.",
     seoTitle: "ArraySubs vs SUMO Subscriptions — WooCommerce Comparison (2026)",
     metaDescription:
       "Compare ArraySubs (free + Pro) with SUMO Subscriptions, a CodeCanyon plugin. Feature matrix, one-time vs free pricing, support and update cadence compared for 2026.",
     h1: "ArraySubs vs SUMO Subscriptions",
     heroSubtitle:
-      "SUMO Subscriptions is a feature-deep CodeCanyon plugin with one-time pricing — but an aging codebase (last public changelog 2017) and no free tier. ArraySubs is actively developed, free, and much broader.",
+      "SUMO Subscriptions is a feature-deep, premium-only CodeCanyon plugin with one-time pricing and a legacy admin. ArraySubs covers the same billing depth and adds memberships, retention and analytics in a modern, free core.",
     heroHighlights: [
       "Free vs ~$49 one-time",
-      "Actively maintained",
+      "Modern admin & free tier",
       "Memberships + retention",
     ],
     intro:
-      "ArraySubs is a modern, ==actively-maintained alternative to SUMO Subscriptions==. SUMO is a CodeCanyon marketplace plugin with a deep subscription feature set — grouped products, paid trials, a master transaction log — but its ==last public changelog dates to 2017==, it has no free tier and no WordPress.org presence. ArraySubs delivers subscriptions, memberships, retention and analytics on a modern React stack, free.",
+      "ArraySubs is a modern alternative to SUMO Subscriptions. SUMO is a ==deep, premium-only CodeCanyon plugin== — grouped products, paid trials, a master transaction log — but it ships updates infrequently (==last release Feb 2026==), has no free tier or WordPress.org listing, runs a legacy admin, and has no memberships, retention, store credit or analytics. ArraySubs delivers all of those on a modern React stack, free.",
     verdict: {
       summary:
-        "Short answer: choose ArraySubs for active development, a free tier, dedicated support and a far broader feature set including memberships, retention and analytics. SUMO Subscriptions still appeals if you specifically want its one-time CodeCanyon pricing or niche features like grouped-product subscriptions and paid trials — but its codebase looks stale (last changelog 2017) and there's no free version.",
+        "Short answer: choose ArraySubs for a free tier and a far broader feature set — memberships, retention, store credit and analytics — on a modern admin. SUMO Subscriptions still appeals for its one-time CodeCanyon pricing and niche billing features like grouped-product subscriptions and paid trials — but it's premium-only (no free tier), updated infrequently (last release Feb 2026), runs a legacy admin, and has none of those modern modules.",
       arraysubsBestFor: [
-        "Anyone wanting an actively-maintained plugin",
-        "Stores needing memberships, retention and analytics",
-        "Merchants who prefer a free tier and dedicated support",
-        "Teams that value a modern React admin",
+        "Stores that want a free tier, not premium-only",
+        "Anyone needing memberships, retention and analytics",
+        "Merchants who prefer a modern React admin",
+        "Teams that want an all-in-one, not add-ons",
       ],
       competitorBestFor: [
         "Buyers who insist on one-time CodeCanyon pricing",
@@ -910,8 +911,8 @@ export const COMPARISONS: Comparison[] = [
       arraysubs: "Free core, forever. Pro is free for 4 months during early launch.",
       competitor: "~$49 one-time (CodeCanyon)",
       combinedNote:
-        "Access control needs SUMO Memberships too (~$29) — ~$78 one-time, no free tier.",
-      savings: "A free, actively-maintained plugin vs a one-time, aging stack.",
+        "Access control needs SUMO Memberships too (~$39) — ~$88 one-time, premium-only.",
+      savings: "A free, all-in-one plugin vs a premium-only, two-purchase stack.",
     },
     competitorUpdated: "23 February 2026",
     tableGroups: [
@@ -920,7 +921,7 @@ export const COMPARISONS: Comparison[] = [
         rows: [
           row("Price", txt("$0"), txt("Free 4 months"), txt("~$49 one-time")),
           row("Free tier", yes(), yes(), no()),
-          row("Active development", yes(), yes(), no("changelog ~2017")),
+          row("Modern React admin", yes(), yes(), no("legacy")),
           row("WordPress.org listing", yes(), yes(), no("CodeCanyon only")),
           row("Dedicated support", yes(), yes(), part("marketplace")),
         ],
@@ -957,9 +958,9 @@ export const COMPARISONS: Comparison[] = [
     ],
     differences: [
       {
-        title: "Active development vs a 2017 changelog",
+        title: "Modern stack & free tier",
         description:
-          "ArraySubs ships on a modern, maintained React codebase. SUMO Subscriptions' last public changelog is from 2017, raising compatibility and security concerns over time.",
+          "ArraySubs is free and runs a modern React admin with memberships, retention and analytics. SUMO is premium-only on CodeCanyon with a legacy admin, infrequent updates (last release Feb 2026), and none of those modules.",
         winner: "arraysubs",
       },
       {
@@ -994,17 +995,17 @@ export const COMPARISONS: Comparison[] = [
       },
     ],
     migration:
-      "Migrating from SUMO Subscriptions means rebuilding products on a modern, maintained plugin. Because SUMO is CodeCanyon-only with an aging codebase, moving to ArraySubs also future-proofs you with active updates, a free tier and built-in memberships and retention.",
+      "Migrating from SUMO Subscriptions means rebuilding products in ArraySubs. You move from a premium-only CodeCanyon plugin with a legacy admin to a free core with a modern admin and built-in memberships, retention and analytics — and you drop the separate SUMO Memberships purchase.",
     faq: [
       {
         question: "Is ArraySubs a good SUMO Subscriptions alternative?",
         answer:
-          "Yes. ArraySubs is actively maintained, has a free tier and dedicated support, and adds memberships, retention flows and analytics. SUMO is a CodeCanyon plugin whose last public changelog is from 2017.",
+          "Yes. ArraySubs has a free tier and adds memberships, retention flows and analytics on a modern admin. SUMO is a mature CodeCanyon plugin but updated infrequently (last release Feb 2026), premium-only, with a legacy admin and none of those modules.",
       },
       {
         question: "Is SUMO Subscriptions still maintained?",
         answer:
-          "Its last public changelog dates to 2017, which is a concern for WooCommerce and PHP compatibility over time. ArraySubs ships on a modern, actively-developed React codebase.",
+          "Its most recent release was v17.5.0 in February 2026, so updates are infrequent. It's also premium-only with no free tier, uses a legacy admin, and lacks memberships, retention, store credit and analytics — all of which ArraySubs includes.",
       },
       {
         question: "Does ArraySubs use one-time pricing like SUMO?",
@@ -1062,14 +1063,14 @@ export const COMPARISONS: Comparison[] = [
     },
     pricing: {
       arraysubs: "Free core, forever. Pro is free for 4 months during early launch.",
-      competitor: "Free + Pro ($55/yr, 1 site)",
+      competitor: "Free + Pro ($89/yr, 1 site)",
       savings: "Memberships, retention and analytics included — not just billing.",
     },
     tableGroups: [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("Free 4 months"), txt("$55/yr Pro")),
+          row("Price", txt("$0"), txt("Free 4 months"), txt("$89/yr Pro")),
           row("Free tier", yes(), yes(), yes()),
           row("Memberships in same plugin", yes(), yes(), no()),
         ],
@@ -1164,7 +1165,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Are both ArraySubs and WPSubscription free?",
         answer:
-          "Both have free tiers. ArraySubs' free core is broader (it includes memberships and retention), while WPSubscription's Pro adds installments and gateways for $55/yr.",
+          "Both have free tiers. ArraySubs' free core is broader (it includes memberships and retention), while WPSubscription's Pro adds installments and gateways for $89/yr.",
       },
     ],
     related: ["woocommerce-subscriptions", "wp-swings-subscriptions"],

@@ -6,9 +6,9 @@ import {
   HeartHandshake,
   Layers,
   LineChart,
-  MoveRight,
   PanelsTopLeft,
   Rocket,
+  ScrollText,
   Wand2,
 } from "lucide-react";
 import { createMetadata, softwareApplicationSchema } from "@/lib/seo";
@@ -27,6 +27,7 @@ import {
   type ComparisonCell,
   type ComparisonColumn,
   type ComparisonGroup,
+  type ComparisonRow,
 } from "@/components/ui";
 import { COMPARISONS } from "./_data";
 
@@ -44,76 +45,90 @@ const GET_PRO = "/deals/arraysubs/pricing/#get-pro";
 const yes = (_note?: string): ComparisonCell => ({ kind: "check" });
 const no: ComparisonCell = { kind: "no" };
 const part = (label?: string): ComparisonCell => ({ kind: "partial", label });
+const txt = (value: string): ComparisonCell => ({ kind: "text", value });
+const r = (
+  feature: string,
+  arraysubs: ComparisonCell,
+  woo: ComparisonCell,
+  yith: ComparisonCell,
+  wpswings: ComparisonCell,
+  wpsub: ComparisonCell,
+  sumo: ComparisonCell,
+): ComparisonRow => ({
+  feature,
+  cells: { arraysubs, woo, yith, wpswings, wpsub, sumo },
+});
 
 const FIELD_COLUMNS: ComparisonColumn[] = [
   { key: "arraysubs", name: "ArraySubs", offer: "Free + Pro", featured: true },
   { key: "woo", name: "Woo Subscriptions", offer: "$279/yr" },
   { key: "yith", name: "YITH Subscription", offer: "€199.99/yr" },
-  { key: "wpswings", name: "WP Swings", offer: "Free + Pro" },
-  { key: "wpsub", name: "WPSubscription", offer: "$55/yr" },
+  { key: "wpswings", name: "WP Swings", offer: "$129/yr" },
+  { key: "wpsub", name: "WPSubscription", offer: "$89/yr" },
   { key: "sumo", name: "SUMO", offer: "~$49 once" },
 ];
 
 const FIELD_GROUPS: ComparisonGroup[] = [
   {
-    label: "What sets ArraySubs apart",
+    label: "Plans & pricing",
     rows: [
-      {
-        feature: "Generous free tier",
-        cells: {
-          arraysubs: yes(),
-          woo: no,
-          yith: part("limited"),
-          wpswings: yes(),
-          wpsub: yes(),
-          sumo: no,
-        },
-      },
-      {
-        feature: "Subscriptions + memberships in one plugin",
-        cells: {
-          arraysubs: yes(),
-          woo: no,
-          yith: no,
-          wpswings: no,
-          wpsub: no,
-          sumo: no,
-        },
-      },
-      {
-        feature: "Retention flow builder",
-        cells: { arraysubs: yes(), woo: no, yith: no, wpswings: no, wpsub: no, sumo: no },
-      },
-      {
-        feature: "Store credit system",
-        cells: { arraysubs: yes("Pro"), woo: no, yith: no, wpswings: no, wpsub: no, sumo: no },
-      },
-      {
-        feature: "Advanced analytics",
-        cells: {
-          arraysubs: yes("Pro"),
-          woo: part("basic"),
-          yith: part("basic"),
-          wpswings: no,
-          wpsub: no,
-          sumo: no,
-        },
-      },
-      {
-        feature: "Guided setup wizard",
-        cells: { arraysubs: yes(), woo: no, yith: no, wpswings: no, wpsub: no, sumo: no },
-      },
-      {
-        feature: "Actively maintained",
-        cells: {
-          arraysubs: yes(),
-          woo: yes(),
-          yith: yes(),
-          wpswings: yes(),
-          wpsub: yes(),
-          sumo: no,
-        },
-      },
+      r("Free-forever core", yes(), no, part("limited"), yes(), yes(), no),
+      r("Subscriptions + memberships in one plugin", yes(), no, no, no, no, no),
+      r("No annual renewal fee", yes(), no, no, no, no, yes()),
+    ],
+  },
+  {
+    label: "Subscriptions & billing",
+    rows: [
+      r("Simple subscriptions", yes(), yes(), yes(), yes(), yes(), yes()),
+      r("Variable-product subscriptions", yes(), yes(), part("premium"), part("Pro"), part("Pro"), yes()),
+      r("Variable subscriptions in the free tier", yes(), no, no, no, no, no),
+      r("Plan switching (upgrade / downgrade)", yes(), yes(), part("variable"), part("Pro"), part("Pro"), part("variation")),
+      r("Different renewal price", yes(), no, no, no, part("Pro"), no),
+      r("Skip next renewal", yes(), no, no, no, no, no),
+      r("Pause / vacation mode", yes(), yes(), part("premium"), part("Pro"), yes(), yes()),
+      r("Two-phase grace period", yes(), part("basic"), part("premium"), part("Pro"), part("Pro"), yes()),
+      r("Installment / split payments", no, no, no, no, yes(), part("limited")),
+      r("Payment gateways", txt("3 + manual"), txt("25+"), txt("PayPal + add-ons"), txt("4 + Pro"), txt("6"), txt("Stripe/PayPal")),
+    ],
+  },
+  {
+    label: "Memberships & access",
+    rows: [
+      r("Member access control", yes(), no, no, no, no, no),
+      r("Content dripping & scheduling", yes(), no, no, no, no, no),
+      r("URL + role-based rules engine", yes(), no, no, no, no, no),
+    ],
+  },
+  {
+    label: "Retention, revenue & insight",
+    rows: [
+      r("Retention flow builder", yes(), no, no, no, no, no),
+      r("Store credit wallet", yes(), no, no, no, no, no),
+      r("Visual checkout builder", yes(), no, no, no, no, no),
+      r("Advanced analytics", yes(), part("basic"), part("basic"), part("basic"), part("basic"), no),
+    ],
+  },
+  {
+    label: "Audit & activity logs (6 categorized log types)",
+    rows: [
+      r("Activity audits", yes(), no, part("basic"), part("errors"), part("basic"), part("basic")),
+      r("Gateway logs", yes(), no, no, no, no, no),
+      r("Renewal-failure logs", yes(), no, no, no, no, no),
+      r("Portal action-failure logs", yes(), no, no, no, no, no),
+      r("Access-rule conflict logs", yes(), no, no, no, no, no),
+      r("Scheduled-job logs", yes(), no, no, no, no, no),
+    ],
+  },
+  {
+    label: "Setup, support & platform",
+    rows: [
+      r("Guided setup wizard", yes(), no, no, no, no, no),
+      r("Settings export / import", yes(), no, no, no, no, no),
+      r("Modern React admin", yes(), no, no, no, no, no),
+      r("Listed on WordPress.org", yes(), no, yes(), yes(), yes(), no),
+      r("Actively maintained in 2026", yes(), yes(), yes(), yes(), yes(), part("infrequent")),
+      r("Subscription box module", no, no, yes(), yes(), no, no),
     ],
   },
 ];
@@ -141,7 +156,13 @@ const WHY_SWITCH = [
     icon: <LineChart className="size-6" />,
     title: "Modern analytics & store credit",
     description:
-      "Pro adds 10-KPI analytics, audit logs and a store-credit wallet that the rest of the field simply doesn't have.",
+      "Pro adds 10-KPI analytics and a store-credit wallet that the rest of the field simply doesn't have.",
+  },
+  {
+    icon: <ScrollText className="size-6" />,
+    title: "Forensic-grade audit logs",
+    description:
+      "Six categorized log types — activity audits, gateway, renewal-failure, portal action-failure, access-rule conflict and scheduled-job logs. Rivals ship a basic activity log at best.",
   },
   {
     icon: <PanelsTopLeft className="size-6" />,
@@ -282,23 +303,33 @@ export default function AlternativesHubPage() {
             <Link
               href="/deals/arraysubs/features/"
               aria-label="See all ArraySubs features"
-              className="group grid items-end gap-8 overflow-hidden rounded-2xl bg-dark p-8 text-on-dark sm:p-12 lg:col-span-2 lg:grid-cols-2"
+              className="group flex flex-col justify-between gap-8 overflow-hidden rounded-2xl bg-dark p-8 text-on-dark sm:p-12 lg:col-span-2"
             >
-            <div className="flex items-center gap-4 sm:gap-5">
-              <span className="min-w-0 font-display text-5xl leading-none font-bold sm:text-6xl lg:text-7xl">
-                All Features
-              </span>
-              <MoveRight
-                aria-hidden="true"
-                className="size-12 shrink-0 text-primary transition-transform duration-300 ease-out group-hover:translate-x-2 sm:size-14 lg:size-16"
-              />
-            </div>
-            <div className="flex items-end justify-start lg:justify-end">
-              <span className="text-sm font-semibold tracking-[0.18em] text-on-dark/70 uppercase transition-colors group-hover:text-on-dark">
-                Check Now
-              </span>
-            </div>
-          </Link>
+              <div className="flex items-center gap-3 lg:gap-5">
+                <span className="font-display text-[1.6rem] leading-none font-bold whitespace-nowrap lg:text-5xl xl:text-7xl">
+                  All Features
+                </span>
+                <svg
+                  viewBox="0 0 120 12"
+                  fill="none"
+                  aria-hidden="true"
+                  className="h-auto w-14 mt-2 shrink-0 text-primary transition-transform duration-300 ease-out group-hover:translate-x-2 lg:w-24 xl:w-32"
+                >
+                  <path
+                    d="M1 6H113M113 6L104.5 1.5M113 6L104.5 10.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <div className="flex justify-end">
+                <span className="text-sm font-semibold tracking-[0.18em] text-on-dark/70 uppercase transition-colors group-hover:text-on-dark">
+                  Check Now
+                </span>
+              </div>
+            </Link>
           </div>
         </Container>
       </Section>
