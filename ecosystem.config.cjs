@@ -51,7 +51,7 @@ if (process.env.NEXT_HOSTNAME || fileEnv.HOSTNAME) {
 module.exports = {
   apps: [
     {
-      name: "arrayhash-web",
+      name: "arrayhash-com-next",
       cwd: root,
       script: packageRunner,
       args: "run start",
