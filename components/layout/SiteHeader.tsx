@@ -27,7 +27,15 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50">
+    <header
+      className={cn(
+        "top-0 z-50",
+        // While the fullscreen menu is open, pin the header with `fixed` instead
+        // of `sticky`: the menu's scroll-lock (overflow:hidden) disables sticky
+        // pinning, so a scrolled-down page would drop the header off-screen.
+        open ? "fixed inset-x-0" : "sticky",
+      )}
+    >
       {/* Frosted bar — full-width. The blur lives HERE, not on <header>, so the
           fixed MobileMenu stays viewport-sized. */}
       <div className="relative z-[70] border-b border-border bg-background/80 backdrop-blur-md">
@@ -42,8 +50,8 @@ export function SiteHeader() {
               <img
                 src={site.logo}
                 alt=""
-                width={1351}
-                height={309}
+                width={494}
+                height={120}
                 decoding="async"
                 fetchPriority="high"
                 className="h-[1.55rem] w-auto sm:h-[1.75rem]"

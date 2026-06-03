@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: `${site.url}/`,
+      url: `${site.url}/deals/arraysubs/`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,

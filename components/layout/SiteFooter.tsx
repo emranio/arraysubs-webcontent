@@ -53,9 +53,10 @@ export function SiteFooter() {
             <img
               src={site.logo}
               alt={site.name}
-              width={1351}
-              height={309}
-              className="h-[1.875rem] w-auto"
+              width={494}
+              height={120}
+              decoding="async"
+              className="h-auto w-32 max-w-full"
             />
             <p className="text-sm text-on-dark-muted">
               The all-in-one WooCommerce subscription &amp; membership platform.

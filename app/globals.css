@@ -234,3 +234,19 @@
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
+
+/* Gentle floating loop. The global reduced-motion rule above disables it. */
+@keyframes arraysubs-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.75rem);
+  }
+}
+
+.float-anim {
+  animation: arraysubs-float 4.5s ease-in-out infinite;
+  will-change: transform;
+}

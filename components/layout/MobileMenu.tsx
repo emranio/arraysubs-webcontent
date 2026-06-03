@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type RefObject } from "react";
+import { useEffect, useRef, useState, type RefObject } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import {
@@ -21,15 +21,30 @@ type MobileMenuProps = {
 
 /**
  * Fullscreen overlay menu for mobile/tablet (below lg). The header toggle
- * floats above the overlay as the close X.
+ * floats above the overlay as the close X. The overlay stays mounted through
+ * its exit animation — it fades + the items slide out before unmounting, so
+ * closing is as smooth as opening.
  */
 export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
+  // Keep the overlay in the DOM until the close animation finishes.
+  const [mounted, setMounted] = useState(open);
 
   useEffect(() => {
+    if (open) setMounted(true);
+  }, [open]);
+
+  // Body scroll lock + ESC + focus trap — only while open.
+  useEffect(() => {
     if (!open) return;
-    const previousOverflow = document.body.style.overflow;
+    // Lock the real scroll container. globals.css sets html `overflow-x: clip`,
+    // which makes <html> the scroller — so locking only <body> leaves the page
+    // (and the sticky header) scrolling behind the open menu. Lock <html> too.
+    const html = document.documentElement;
+    const prevBodyOverflow = document.body.style.overflow;
+    const prevHtmlOverflow = html.style.overflow;
     document.body.style.overflow = "hidden";
+    html.style.overflow = "hidden";
     overlayRef.current?.querySelector<HTMLElement>("a[href]")?.focus();
 
     const onKeyDown = (event: KeyboardEvent) => {
@@ -58,38 +73,74 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
 
     document.addEventListener("keydown", onKeyDown);
     return () => {
-      document.body.style.overflow = previousOverflow;
+      document.body.style.overflow = prevBodyOverflow;
+      html.style.overflow = prevHtmlOverflow;
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open, onClose, triggerRef]);
 
   useGSAP(
     () => {
-      if (!open || prefersReducedMotion() || !overlayRef.current) return;
+      const overlay = overlayRef.current;
+      if (!mounted || !overlay) return;
+      const items = overlay.querySelectorAll("[data-menu-item]");
+
+      // Reduced motion: no tweens — snap in, unmount instantly on close.
+      if (prefersReducedMotion()) {
+        if (open) {
+          gsap.set(overlay, { autoAlpha: 1 });
+          gsap.set(items, { autoAlpha: 1, y: 0 });
+        } else {
+          setMounted(false);
+        }
+        return;
+      }
+
       registerGsap();
-      const targets = overlayRef.current.querySelectorAll("[data-menu-item]");
-      gsap.fromTo(
-        overlayRef.current,
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.3, ease: "power2.out" },
-      );
-      gsap.fromTo(
-        targets,
-        { autoAlpha: 0, y: 20 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.45,
-          stagger: 0.04,
-          ease: "power3.out",
-          delay: 0.08,
-        },
-      );
+
+      if (open) {
+        gsap.fromTo(
+          overlay,
+          { autoAlpha: 0 },
+          { autoAlpha: 1, duration: 0.3, ease: "power2.out", overwrite: "auto" },
+        );
+        gsap.fromTo(
+          items,
+          { autoAlpha: 0, y: 20 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.45,
+            stagger: 0.04,
+            ease: "power3.out",
+            delay: 0.08,
+            overwrite: "auto",
+          },
+        );
+      } else {
+        // Exit: items slide out bottom-up, then the overlay fades, then unmount.
+        gsap.to(items, {
+          autoAlpha: 0,
+          y: 14,
+          duration: 0.22,
+          stagger: { each: 0.03, from: "end" },
+          ease: "power2.in",
+          overwrite: "auto",
+        });
+        gsap.to(overlay, {
+          autoAlpha: 0,
+          duration: 0.32,
+          ease: "power2.inOut",
+          delay: 0.05,
+          overwrite: "auto",
+          onComplete: () => setMounted(false),
+        });
+      }
     },
-    { dependencies: [open], scope: overlayRef },
+    { dependencies: [open, mounted], scope: overlayRef },
   );
 
-  if (!open) return null;
+  if (!mounted) return null;
 
   return (
     <div
