@@ -38,7 +38,11 @@ export function SiteHeader() {
     >
       {/* Frosted bar — full-width. The blur lives HERE, not on <header>, so the
           fixed MobileMenu stays viewport-sized. */}
-      <div className="relative z-[70] border-b border-border bg-background/80 backdrop-blur-md">
+      {/* `transform-gpu` promotes the frosted bar to its own compositor layer —
+          without it the backdrop-blur repaints a frame late and the sticky
+          header appears to drift a few px before catching up during scroll.
+          Kept on the bar (not <header>) so it never reparents the fixed menu. */}
+      <div className="relative z-[70] transform-gpu border-b border-border bg-background/80 backdrop-blur-md">
         <Container>
           <div className="flex h-16 items-center justify-between gap-6 py-3">
             <Link
