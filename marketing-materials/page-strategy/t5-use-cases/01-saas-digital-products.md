@@ -30,7 +30,7 @@
 
 ## Content Blocks
 
-### 1. Hero — "Turn WooCommerce into your SaaS billing engine"
+### 1. PageHero — "Turn WooCommerce into your SaaS billing engine"
 ### 2. SaaS Billing Model
 - Tiered plans (Basic, Pro, Enterprise via variable subscriptions)
 - Monthly / Annual billing
@@ -98,6 +98,6 @@
 
 - **Buttons**
 	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

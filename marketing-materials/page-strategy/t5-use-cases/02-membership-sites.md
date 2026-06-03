@@ -30,7 +30,7 @@
 
 ## Content Blocks
 
-### 1. Hero — "One plugin. Full membership site."
+### 1. PageHero — "One plugin. Full membership site."
 ### 2. What a Membership Site Needs — checklist of requirements ArraySubs covers
 ### 3. Content Restriction — pages, posts, CPTs, URLs, downloads
 ### 4. Member Tiers & Plans — variable subscriptions for Silver/Gold/Platinum
@@ -69,6 +69,6 @@
 
 - **Buttons**
 	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

@@ -4,8 +4,8 @@ import { cn } from "@/lib/cn";
 type Tone = "neutral" | "primary" | "dark" | "highlight" | "outline";
 
 const tones: Record<Tone, string> = {
-  neutral: "bg-surface-2 text-muted",
-  primary: "bg-primary text-dark",
+  neutral: "bg-surface text-muted",
+  primary: "bg-primary text-on-dark",
   dark: "bg-dark text-on-dark",
   highlight: "bg-highlight text-dark",
   outline: "border border-current text-current",

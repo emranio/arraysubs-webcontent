@@ -1,60 +1,105 @@
 "use client";
 
+import { useEffect } from "react";
 import {
   gsap,
   prefersReducedMotion,
-  registerGsap,
-  ScrollTrigger,
-  useGSAP,
 } from "@/lib/gsap";
+import { scrollBackgroundThemes } from "@/lib/colors";
 
 /** Background + foreground pairs keyed by the `data-scroll-bg` value. */
-const THEMES = {
-  light: { bg: "#ffffff", fg: "#00272c" },
-  surface: { bg: "#f5f8f2", fg: "#00272c" },
-  dark: { bg: "#00272c", fg: "#f1f7f1" },
-  highlight: { bg: "#e1ff51", fg: "#00272c" },
-} as const;
+const THEMES = scrollBackgroundThemes;
 
 type ThemeKey = keyof typeof THEMES;
 
 /**
- * Smoothly tweens the page background + text color as sections cross the
- * viewport center. Mark participating sections with
- * `data-scroll-bg="dark|highlight|surface|light"`. Their content should use the
- * inherited color (Section `surface="transparent"`) so it flips for contrast.
- * Skipped entirely under reduced motion.
+ * Keeps the page-level tone in sync with the scroll stage currently occupying
+ * the viewport focus point. Mark participating sections with
+ * `data-scroll-bg="dark|highlight|surface|light"`. Their content should use
+ * inherited color (Section `surface="transparent"`) so it stays readable while
+ * the page background changes.
  */
 export function ScrollBackground() {
-  useGSAP(() => {
-    registerGsap();
-    if (prefersReducedMotion()) return;
+  useEffect(() => {
+    const body = document.body;
+    const reduceMotion = prefersReducedMotion();
+    let activeKey: ThemeKey | null = null;
+    let activeTween: gsap.core.Tween | null = null;
 
-    const sections = gsap.utils.toArray<HTMLElement>("[data-scroll-bg]");
-    if (sections.length === 0) return;
+    const scrollSections = () =>
+      gsap.utils.toArray<HTMLElement>("[data-scroll-bg]");
 
-    const triggers = sections.map((section) => {
-      const key = (section.dataset.scrollBg as ThemeKey) || "light";
+    const sectionKey = (section: HTMLElement): ThemeKey => {
+      const key = section.dataset.scrollBg as ThemeKey | undefined;
+      return key && key in THEMES ? key : "light";
+    };
+
+    const themeAtFocusPoint = (): ThemeKey => {
+      const focusY = window.innerHeight * 0.5;
+      let key: ThemeKey = "light";
+
+      for (const section of scrollSections()) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= focusY && rect.bottom >= focusY) {
+          key = sectionKey(section);
+        }
+      }
+
+      return key;
+    };
+
+    const paint = (key: ThemeKey, instant = false) => {
+      if (key === activeKey && !instant) return;
+      activeKey = key;
       const theme = THEMES[key] ?? THEMES.light;
-      return ScrollTrigger.create({
-        trigger: section,
-        start: "top center",
-        end: "bottom center",
-        onToggle: (self) => {
-          if (!self.isActive) return;
-          gsap.to(document.body, {
-            backgroundColor: theme.bg,
-            color: theme.fg,
-            duration: 0.6,
-            ease: "power2.out",
-            overwrite: "auto",
-          });
-        },
-      });
-    });
 
-    return () => triggers.forEach((trigger) => trigger.kill());
-  });
+      activeTween?.kill();
+      if (instant || reduceMotion) {
+        gsap.set(body, {
+          backgroundColor: theme.bg,
+          color: theme.fg,
+        });
+        return;
+      }
+
+      activeTween = gsap.to(body, {
+        backgroundColor: theme.bg,
+        color: theme.fg,
+        duration: 0.55,
+        ease: "power3.out",
+        overwrite: "auto",
+      });
+    };
+
+    const sync = (instant = false) => paint(themeAtFocusPoint(), instant);
+    let frame: number | null = null;
+
+    const scheduleSync = (instant = false) => {
+      if (frame !== null) window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(() => {
+        frame = null;
+        sync(instant);
+      });
+    };
+
+    const onScroll = () => scheduleSync();
+    const onResize = () => scheduleSync(true);
+    const observer = new MutationObserver(() => scheduleSync(true));
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    observer.observe(body, { childList: true, subtree: true });
+    scheduleSync(true);
+
+    return () => {
+      if (frame !== null) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+      observer.disconnect();
+      activeTween?.kill();
+      gsap.set(body, { clearProps: "backgroundColor,color" });
+    };
+  }, []);
 
   return null;
 }

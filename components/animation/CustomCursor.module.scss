@@ -22,17 +22,20 @@
     height: 100%;
   }
   path {
-    fill: #fff;
+    fill: var(--color-background);
   }
 }
 
-// Trailing ring: smaller, solid brand-dark outline, NO blend effect.
+// Trailing ring: inverts against the background like the dot (difference blend).
+// Fill stays transparent until it enlarges over interactive elements (see TSX).
 .ring {
   z-index: 9998;
   width: 1.875rem;
   height: 1.875rem;
-  border: 0.09375rem solid var(--color-dark);
+  border: 0.0625rem solid var(--color-background);
   border-radius: 50%;
+  background-color: transparent;
+  mix-blend-mode: difference;
 }
 
 // Never show on touch devices or when motion is reduced (native cursor only).

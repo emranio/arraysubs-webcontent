@@ -29,7 +29,7 @@
 
 ## Content Blocks
 
-### 1. Hero — "Automate your service billing on WooCommerce"
+### 1. PageHero — "Automate your service billing on WooCommerce"
 ### 2. Service Models — maintenance plans, retainers, support tiers, consulting packages
 ### 3. Billing Configuration — monthly/quarterly/annual, signup fees, trial periods
 ### 4. Client Portal — self-service management for clients

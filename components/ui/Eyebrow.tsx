@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
+import { ArrayHashMark } from "./ArrayHashMark";
 
 type EyebrowProps = {
   children: ReactNode;
@@ -16,9 +17,7 @@ export function Eyebrow({ children, withLine = true, className }: EyebrowProps) 
         className,
       )}
     >
-      {withLine && (
-        <span aria-hidden="true" className="h-px w-8 bg-current opacity-50" />
-      )}
+      {withLine && <ArrayHashMark className="text-[0.9em] opacity-65" />}
       {children}
     </span>
   );

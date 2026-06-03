@@ -29,7 +29,7 @@
 
 ## Content Blocks
 
-### 1. Hero — Paddle + merchant-of-record angle
+### 1. PageHero — Paddle + merchant-of-record angle
 ### 2. Why Paddle — tax handling, compliance, global payments
 ### 3. How It Works with ArraySubs — first payment, renewals, auto-charge
 ### 4. Setup Guide (HowTo Schema)

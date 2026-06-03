@@ -8,7 +8,7 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
     links: [
       ["Features", "#"],
       ["Pricing", "#"],
-      ["Download", "#"],
+      ["Download", "https://wordpress.org/plugins/arraysubs/"],
       ["Changelog", "#"],
     ],
   },
@@ -23,19 +23,22 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
   {
     title: "Resources",
     links: [
-      ["Documentation", "#"],
+      ["Documentation", "https://support.arrayhash.com/arraysubs/"],
       ["Blog", "#"],
       ["Use Cases", "#"],
-      ["Support", "#"],
+      ["Support", "https://support.arrayhash.com/arraysubs/"],
     ],
   },
   {
     title: "Company",
     links: [
-      ["Trust Center", "#"],
-      ["Terms", "#"],
-      ["Privacy", "#"],
-      ["Refund Policy", "#"],
+      ["Trust Center", "/trust-center/"],
+      ["Privacy", "/trust-center/privacy-policy/"],
+      ["Data Safety", "/trust-center/data-safety/"],
+      ["Refund Policy", "/trust-center/refund-policy/"],
+      ["Terms", "/trust-center/terms-of-service/"],
+      ["GDPR + CCPA", "/trust-center/gdpr-ccpa-compliance/"],
+      ["Accessibility", "/trust-center/accessibility-compliance/"],
     ],
   },
 ];
@@ -43,20 +46,18 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
 export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
-    <footer
-      data-surface="dark"
-      className="on-dark bg-dark text-on-dark"
-    >
+    <footer data-surface="dark" className="on-dark bg-dark text-on-dark">
       <Container>
         <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.6fr_repeat(4,1fr)]">
           <div className="flex max-w-xs flex-col gap-4">
-            <span className="flex items-center gap-2 font-display text-xl font-bold">
-              <span
-                aria-hidden="true"
-                className="inline-block size-5 rounded-[0.3rem] bg-primary"
-              />
-              {site.name}
-            </span>
+            <img
+              src={site.logo}
+              alt={site.name}
+              width={494}
+              height={120}
+              decoding="async"
+              className="h-auto w-32 max-w-full"
+            />
             <p className="text-sm text-on-dark-muted">
               The all-in-one WooCommerce subscription &amp; membership platform.
               One plugin, generous free tier.

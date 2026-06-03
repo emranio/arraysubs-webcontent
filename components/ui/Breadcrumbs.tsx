@@ -15,8 +15,8 @@ type BreadcrumbsProps = {
 };
 
 /**
- * Accessible breadcrumb trail. Used on inner pages only — the homepage and
- * product landing pages use a Hero instead and omit breadcrumbs.
+ * Accessible breadcrumb trail. Used on inner pages directly or through PageHero.
+ * The homepage and product landing pages omit breadcrumbs.
  */
 export function Breadcrumbs({
   items,

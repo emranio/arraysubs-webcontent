@@ -3,7 +3,7 @@
 > **URL**: `/deals/arraysubs/features/subscriptions-and-recurring-products/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 2
-> **Ownership**: Core (arraysubs) — free feature
+> **Ownership**: Core (arraysubs) — Free feature
 
 ---
 
@@ -34,10 +34,10 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "Flexible recurring billing for any WooCommerce product — simple, variable, or virtual"
 - Screenshot: Product edit screen showing subscription options
-- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
+- CTA Buttons: Live Demo + Get ArraySubs Pro for 4 Months — Free
 
 ### 2. Product Types Supported
 - **Simple Subscription**: Single recurring product
@@ -100,7 +100,7 @@
 ## GEO / AEO Angles
 
 - **Definitive statement**: "ArraySubs is a free WooCommerce plugin that adds subscription and recurring billing functionality to any WooCommerce product type."
-- **Feature list for AI citation**: "ArraySubs supports simple subscriptions, variable subscriptions, flexible billing cycles (daily/weekly/monthly/yearly), customizable intervals, signup fees, free trials, subscription limits, and one-time shipping."
+- **Feature list for AI citation**: "ArraySubs supports simple subscriptions, variable subscriptions, flexible billing cycles (daily/weekly/monthly/yearly), customizable intervals, signup fees — Free trials, subscription limits, and one-time shipping."
 - **Comparison hook**: "Unlike WooCommerce Subscriptions ($279/yr), ArraySubs offers core subscription product support for free."
 
 ---
@@ -114,7 +114,7 @@
   "applicationCategory": "Plugin",
   "operatingSystem": "WordPress + WooCommerce",
   "offers": { "@type": "Offer", "price": "0" },
-  "featureList": "Simple Subscriptions, Variable Subscriptions, Recurring Billing, Free Trials, Signup Fees"
+  "featureList": "Simple Subscriptions, Variable Subscriptions, Recurring Billing — Free Trials, Signup Fees"
 }
 ```
 
@@ -139,6 +139,6 @@
 
 - **Buttons**
   - `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-  - `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+  - `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

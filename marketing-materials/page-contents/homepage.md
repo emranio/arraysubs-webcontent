@@ -1,6 +1,6 @@
 # Homepage — ArraySubs
 
-> **URL**: `/` **Type**: Primary landing page — conversion-focused, lead generation phase **Target KW**: woocommerce subscription plugin (4,400/mo), woocommerce subscription plugin free (1,600/mo), best woocommerce subscription plugin (1,300/mo), woocommerce recurring payments plugin (1,600/mo), woocommerce subscription and membership plugin (590/mo) **Design direction**: Modern SaaS landing page. Clean, confident, proof-driven. Think Stripe / Framer / Linear aesthetic. White space, bold typography, structured grids, professional screenshots. **Context**: The free core plugin has been available on WordPress.org for several months. ArraySubs Pro is now launching in early access — sign up to get 4 months of Pro free. No pricing is shown anywhere on the site during this phase. **Phase**: Lead generation / early access. No prices displayed. All CTAs drive to download (free) or early access sign-up (Pro).
+> **URL**: `/` **Type**: Primary landing page — conversion-focused, lead generation phase **Target KW**: woocommerce subscription plugin (4,400/mo), woocommerce subscription plugin free (1,600/mo), best woocommerce subscription plugin (1,300/mo), woocommerce recurring payments plugin (1,600/mo), woocommerce subscription and membership plugin (590/mo) **Design direction**: Modern SaaS landing page. Clean, confident, proof-driven. Think Stripe / Framer / Linear aesthetic. White space, bold typography, structured grids, professional screenshots. **Context**: The free core plugin has been available on WordPress.org for several months. ArraySubs Pro is now launching in early access — sign up to get ArraySubs Pro for 4 months — Free. No pricing is shown anywhere on the site during this phase. **Phase**: Lead generation / early access. No prices displayed. All CTAs drive to download (free) or early access sign-up (Pro).
 
 * * *
 
@@ -89,7 +89,7 @@ Create subscription products, restrict member-only content, automate recurring b
 | CTA | Style | Link | Note |
 | --- | --- | --- | --- |
 | Download Free | Primary (filled, large) | /download/ | Icon: download arrow |
-| Get Pro Free for 4 Months | Secondary (outlined, large, badge) | /early-access/ | Icon: gift / sparkles |
+| Get ArraySubs Pro for 4 Months — Free | Secondary (outlined, large, badge) | /early-access/ | Icon: gift / sparkles |
 
 ### Trust Bar (below CTAs)
 
@@ -132,7 +132,7 @@ Everything You Need to Run a Subscription Business
 
 -   **Icon**: `repeat` (Lucide)
 -   **Badge**: Free
--   **Description**: Turn any WooCommerce product into a subscription — simple or variable — with flexible billing cycles, free trials, sign-up fees, different renewal prices, and per-variation configuration.
+-   **Description**: Turn any WooCommerce product into a subscription — simple or variable — with flexible billing cycles — Free trials, sign-up fees, different renewal prices, and per-variation configuration.
 -   **Link**: `/features/subscriptions/`
 
 #### Card 2: Billing, Renewals & Refunds
@@ -382,7 +382,7 @@ Every feature in ArraySubs exists for one reason — to grow your subscription r
 
 **Body**: Not every subscriber fits one plan. ArraySubs lets you create simple and variable subscription products — each variation with its own billing cycle, trial period, sign-up fee, renewal price, and subscription length. Customers can upgrade, downgrade, or crossgrade between plans at any time through the portal, with automatic proration calculated using one of three methods (cost-based, day-based, or no proration). Add different renewal pricing to reward long-term subscribers. Combine with sign-up fees for one-time onboarding charges and fixed-period memberships for non-recurring access.
 
-**Features behind this**: Simple & variable subscription products, per-variation billing config, 4 billing intervals (daily, weekly, monthly, yearly), free trials, sign-up fees, different renewal price, subscription length, plan switching (upgrade/downgrade/crossgrade), 3 proration methods, fixed-period membership, coupon integration.
+**Features behind this**: Simple & variable subscription products, per-variation billing config, 4 billing intervals (daily, weekly, monthly, yearly) — Free trials, sign-up fees, different renewal price, subscription length, plan switching (upgrade/downgrade/crossgrade), 3 proration methods, fixed-period membership, coupon integration.
 
 **Outcome**: Match every budget. Grow revenue per customer. Reduce plan-fit churn.
 
@@ -465,7 +465,7 @@ Every feature in ArraySubs exists for one reason — to grow your subscription r
 | CTA | Style | Link |
 | --- | --- | --- |
 | Download Free & Start Now | Primary | /download/ |
-| Get Pro Free for 4 Months | Secondary | /early-access/ |
+| Get ArraySubs Pro for 4 Months — Free | Secondary | /early-access/ |
 
 * * *
 
@@ -567,7 +567,7 @@ From digital SaaS products to physical subscription boxes — see how store owne
 ### Use Case Card 1: SaaS & Digital Products
 
 -   **Icon**: `monitor` (Lucide)
--   **Description**: Sell software licenses, API access, or digital tools with tiered plans, free trials, feature-gated access, and automatic Stripe billing. ArraySubs handles the subscription engine so you can focus on your product.
+-   **Description**: Sell software licenses, API access, or digital tools with tiered plans — Free trials, feature-gated access, and automatic Stripe billing. ArraySubs handles the subscription engine so you can focus on your product.
 -   **Link**: `/use-cases/saas/`
 -   **Example**: "Perfect for plugin shops, design tools, and API platforms."
 
@@ -667,11 +667,11 @@ What Early Adopters Are Saying
 
 * * *
 
-## Section 9: Get ArraySubs Pro Free for 4 Months
+## Section 9: Get ArraySubs Pro for 4 Months — Free
 
 **Layout**: Full-width highlight section with a centered card containing headline, brief value statement, email capture form, and a trust micro-copy line. Prominent visual treatment — this is the lead capture moment. Background: brand gradient or strong accent color.
 
-> **Note**: No pricing is displayed during the early access phase. The section's job is to capture email leads by offering a 4-month free Pro license. When pricing goes live, this section will be replaced with the pricing teaser linking to `/pricing/`.
+> **Note**: No pricing is displayed during the early access phase. The section's job is to capture email leads by offering ArraySubs Pro for 4 months — Free. When pricing goes live, this section will be replaced with the pricing teaser linking to `/pricing/`.
 
 * * *
 
@@ -681,18 +681,18 @@ EARLY ACCESS
 
 ### Headline (H2)
 
-Get Pro Free for 4 Months — No Strings Attached
+Get ArraySubs Pro for 4 Months — Free — No Strings Attached
 
 ### Body
 
-We're opening ArraySubs Pro to early adopters. Sign up now and get a full Pro license — store credit, checkout builder, analytics, audits, automatic payments, and everything else — free for 4 months. No credit card required. No commitment. Just the full plugin, on your store, right now.
+We're opening ArraySubs Pro to early adopters. Sign up now and get a full Pro license — store credit, checkout builder, analytics, audits, automatic payments, and everything else — for 4 months — Free. No credit card required. No commitment. Just the full plugin, on your store, right now.
 
 ### Email Capture Form
 
 | Field | Type | Placeholder |
 | --- | --- | --- |
 | Email | email input | Your email address |
-| Submit | Primary button | Claim My Free Pro License |
+| Submit | Primary button | Claim My Pro License — Free |
 
 ### Micro-copy (below form)
 
@@ -861,7 +861,7 @@ WooCommerce Subscriptions only covers subscription billing — no memberships, n
 
 **Q: How do I get ArraySubs Pro?**
 
-Sign up for early access and get a full Pro license free for 4 months — no credit card required. We'll send your license key immediately. [Claim your free license](/early-access/).
+Sign up for early access and get a full Pro license for 4 months — Free — no credit card required. We'll send your license key immediately. [Claim your license — Free](/early-access/).
 
 * * *
 
@@ -945,7 +945,7 @@ Yes. A 9-step guided wizard asks about your business type (SaaS, subscription bo
       "name": "How do I get ArraySubs Pro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sign up for early access and get a full Pro license free for 4 months — no credit card required."
+        "text": "Sign up for early access and get a full Pro license for 4 months — Free — no credit card required."
       }
     },
     {
@@ -1071,14 +1071,14 @@ Start Building Your Subscription Business Today
 
 ### Subheadline
 
-The free core plugin is already on WordPress.org. Install it, run the wizard, and have your first subscription product live in minutes. Want the full power of Pro? Grab your free 4-month license while early access is open.
+The free core plugin is already on WordPress.org. Install it, run the wizard, and have your first subscription product live in minutes. Want the full power of Pro? Grab your 4-month license — Free while early access is open.
 
 ### CTA Row
 
 | CTA | Style | Link |
 | --- | --- | --- |
 | Download Free Plugin | Primary (white on brand, large) | /download/ |
-| Get Pro Free for 4 Months | Secondary (outlined white, large) | /early-access/ |
+| Get ArraySubs Pro for 4 Months — Free | Secondary (outlined white, large) | /early-access/ |
 
 ### Micro-copy (below CTAs)
 

@@ -8,6 +8,7 @@ import { CustomCursor } from "@/components/animation/CustomCursor";
 import { ScrollBackground } from "@/components/animation/ScrollBackground";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { siteColors } from "@/lib/colors";
 
 const fontDisplay = Funnel_Display({
   subsets: ["latin"],
@@ -27,6 +28,10 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.brand,
   alternates: { canonical: "/" },
+  icons: {
+    icon: [{ url: site.favicon, type: "image/webp" }],
+    shortcut: [{ url: site.favicon, type: "image/webp" }],
+  },
   openGraph: {
     type: "website",
     siteName: site.brand,
@@ -49,7 +54,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#ffffff",
+  themeColor: siteColors.background,
   colorScheme: "light",
 };
 
@@ -60,6 +65,7 @@ export default function RootLayout({
     <html
       lang={site.lang}
       className={`${fontDisplay.variable} ${fontSans.variable}`}
+      data-scroll-behavior="smooth"
     >
       <body className="antialiased" suppressHydrationWarning>
         <a

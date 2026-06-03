@@ -60,7 +60,7 @@ export function Switch({
         onClick={toggle}
         className={cn(
           "mt-0.5 inline-flex h-6 w-11 shrink-0 items-center rounded-pill border-2 transition-colors duration-200 disabled:opacity-50",
-          on ? "border-dark bg-dark" : "border-border-strong bg-surface-2",
+          on ? "border-dark bg-dark" : "border-border-strong bg-surface",
         )}
       >
         <span

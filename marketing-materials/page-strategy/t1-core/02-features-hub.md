@@ -29,9 +29,9 @@
 
 ## Content Blocks
 
-### 1. Hero
+### 1. PageHero
 - H1 + subtitle: "15 feature modules. Generous free tier. One plugin."
-- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
+- CTA Buttons: Live Demo + Get ArraySubs Pro for 4 Months — Free
 
 ### 2. Feature Category Grid
 - 15 feature cards grouped into categories:
@@ -44,7 +44,7 @@
 
 ### 3. Free vs Pro Summary Table
 - All 15 features listed with checkmarks for Free / Pro availability
-- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
+- CTA Buttons: Live Demo + Get ArraySubs Pro for 4 Months — Free
 
 ### 4. Use Case Explorer
 - 6 cards linking to the T5 use-case pages:

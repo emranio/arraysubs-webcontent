@@ -1,109 +1,155 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
+import { HEADER_NAV_ITEMS } from "@/lib/navigation";
 import { site } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-
-const NAV = [
-  { label: "Foundations", href: "#foundations" },
-  { label: "Components", href: "#components" },
-  { label: "Forms", href: "#forms" },
-  { label: "Motion", href: "#motion" },
-];
+import { MobileMenu } from "./MobileMenu";
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // mobile fullscreen menu
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const wasOpen = useRef(false);
+  const pathname = usePathname();
 
-  // Close the mobile menu on Escape.
+  // Return focus to the toggle when the mobile menu closes.
   useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    if (wasOpen.current && !open) toggleRef.current?.focus();
+    wasOpen.current = open;
   }, [open]);
 
+  const close = () => {
+    setOpen(false);
+  };
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background">
-      <Container>
-        <div className="flex h-18 items-center justify-between gap-6 py-3">
-          <Link
-            href="/"
-            className="flex items-center gap-2 font-display text-xl font-bold tracking-tight"
-            aria-label={`${site.name} home`}
-          >
-            <span
-              aria-hidden="true"
-              className="inline-block size-5 rounded-[0.3rem] bg-primary"
-            />
-            {site.name}
-          </Link>
-
-          <nav aria-label="Primary" className="hidden lg:block">
-            <ul className="flex items-center gap-8 text-sm font-medium text-muted">
-              {NAV.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="transition-colors hover:text-foreground"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div className="hidden lg:block">
-            <Button href="#cta" size="sm" magnetic>
-              Get Pro — Free
-            </Button>
-          </div>
-
-          <button
-            type="button"
-            className="lg:hidden"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="size-6" /> : <Menu className="size-6" />}
-          </button>
-        </div>
-      </Container>
-
-      {open && (
-        <nav
-          id="mobile-menu"
-          aria-label="Primary"
-          className="border-t border-border bg-background lg:hidden"
-        >
-          <Container>
-            <ul className="flex flex-col gap-1 py-4 text-base font-medium">
-              {NAV.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="block rounded-md px-2 py-3 transition-colors hover:bg-surface"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-              <li className="pt-2">
-                <Button href="#cta" fullWidth onClick={() => setOpen(false)}>
-                  Get Pro — Free
-                </Button>
-              </li>
-            </ul>
-          </Container>
-        </nav>
+    <header
+      className={cn(
+        "top-0 z-50",
+        // While the fullscreen menu is open, pin the header with `fixed` instead
+        // of `sticky`: the menu's scroll-lock (overflow:hidden) disables sticky
+        // pinning, so a scrolled-down page would drop the header off-screen.
+        open ? "fixed inset-x-0" : "sticky",
       )}
+    >
+      {/* Frosted bar — full-width. The blur lives HERE, not on <header>, so the
+          fixed MobileMenu stays viewport-sized. */}
+      {/* `transform-gpu` promotes the frosted bar to its own compositor layer —
+          without it the backdrop-blur repaints a frame late and the sticky
+          header appears to drift a few px before catching up during scroll.
+          Kept on the bar (not <header>) so it never reparents the fixed menu. */}
+      <div className="relative z-[70] transform-gpu border-b border-border bg-background/80 backdrop-blur-md">
+        <Container>
+          <div className="flex h-16 items-center justify-between gap-6 py-3">
+            <Link
+              href="/"
+              onClick={close}
+              className="flex items-center"
+              aria-label={`${site.name} home`}
+            >
+              <img
+                src={site.logo}
+                alt=""
+                width={494}
+                height={120}
+                decoding="async"
+                fetchPriority="high"
+                className="h-[1.55rem] w-auto sm:h-[1.75rem]"
+              />
+            </Link>
+
+            <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
+              <nav
+                aria-label="Primary"
+                className="hidden items-center gap-5 lg:flex"
+              >
+                {HEADER_NAV_ITEMS.map((item) => {
+                  const isCurrent =
+                    pathname === item.href || pathname === item.href.slice(0, -1);
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      aria-current={isCurrent ? "page" : undefined}
+                      className={cn(
+                        "text-sm font-medium transition-colors hover:text-foreground",
+                        isCurrent ? "text-foreground" : "text-muted",
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </nav>
+
+              <Button
+                href="#cta"
+                size="xs"
+                magnetic
+                onClick={close}
+                className="hidden sm:inline-flex"
+              >
+                Get Pro Access — Free
+              </Button>
+
+              {/* Hamburger / X toggle for mobile/tablet */}
+              <button
+                ref={toggleRef}
+                type="button"
+                aria-expanded={open}
+                aria-haspopup="dialog"
+                aria-controls="mobile-menu"
+                aria-label={open ? "Close menu" : "Open menu"}
+                onClick={() => setOpen((value) => !value)}
+                className={cn(
+                  "group inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border transition-colors lg:hidden",
+                  open
+                    ? "border-dark bg-dark text-on-dark"
+                    : "border-border-strong text-foreground hover:border-dark",
+                )}
+              >
+                <span aria-hidden="true" className="relative block size-5">
+                  <span
+                    className={cn(
+                      "absolute left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-current transition-all duration-300 ease-out",
+                      open
+                        ? "top-1/2 -mt-px w-4 rotate-45"
+                        : "top-[0.1875rem] w-[1.125rem] group-hover:w-5",
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "absolute top-1/2 left-1/2 -mt-px h-0.5 w-[1.125rem] -translate-x-1/2 rounded-full bg-current transition-all duration-300 ease-out",
+                      open && "scale-x-0 opacity-0",
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "absolute left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-current transition-all duration-300 ease-out",
+                      open
+                        ? "top-1/2 -mt-px w-4 -rotate-45"
+                        : "top-[0.9375rem] w-[1.125rem] group-hover:w-5",
+                    )}
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      <div id="mobile-menu">
+        <MobileMenu
+          open={open}
+          onClose={() => setOpen(false)}
+          triggerRef={toggleRef}
+        />
+      </div>
     </header>
   );
 }

@@ -56,14 +56,16 @@ export function MultiStepForm({ className }: { className?: string }) {
   const [errors, setErrors] = useState<{ email?: string; terms?: string }>({});
 
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const mounted = useRef(false);
+  const pendingHeadingFocus = useRef(false);
 
-  // Move focus to the step heading on change (but not on first render).
+  // Move focus after user-triggered step changes only. React Strict Mode can
+  // run mount effects twice in development, so a plain "skip first render" ref
+  // would still focus this deep form demo on initial page navigation.
   useEffect(() => {
-    if (!mounted.current) {
-      mounted.current = true;
+    if (!pendingHeadingFocus.current) {
       return;
     }
+    pendingHeadingFocus.current = false;
     headingRef.current?.focus();
   }, [step, done]);
 
@@ -76,10 +78,12 @@ export function MultiStepForm({ className }: { className?: string }) {
       return;
     }
     setErrors({});
+    pendingHeadingFocus.current = true;
     setStep((s) => Math.min(s + 1, STEPS.length - 1));
   };
   const back = () => {
     setErrors({});
+    pendingHeadingFocus.current = true;
     setStep((s) => Math.max(s - 1, 0));
   };
   const submit = () => {
@@ -96,14 +100,15 @@ export function MultiStepForm({ className }: { className?: string }) {
       <div
         role="status"
         className={cn(
-          "flex flex-col items-center gap-3 rounded-2xl border border-success/30 bg-success/5 p-8 text-center",
+          "flex flex-col items-center gap-3 rounded-2xl bg-success/5 p-8 text-center",
           className,
         )}
       >
         <CheckCircle2 aria-hidden="true" className="size-10 text-success" />
         <h3 className="font-display text-xl">All set, {data.name || "there"}!</h3>
         <p className="text-muted">
-          Your preferences are saved and your free Pro license is on its way.
+          Your preferences are saved and your Pro license is on its way — Free for
+          4 months.
         </p>
       </div>
     );
@@ -114,7 +119,7 @@ export function MultiStepForm({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "rounded-2xl border border-border bg-background p-6 sm:p-8",
+        "rounded-2xl bg-card p-6 text-foreground sm:p-8",
         className,
       )}
     >

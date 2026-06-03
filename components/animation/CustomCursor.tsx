@@ -140,12 +140,24 @@ export function CustomCursor() {
 
     const onOver = (event: PointerEvent) => {
       if ((event.target as Element)?.closest?.(interactive)) {
-        gsap.to(ring, { scale: 1.8, duration: 0.3, ease: "power3" });
+        gsap.to(ring, {
+          scale: 1.8,
+          // Complement of primary — the ring's `difference` blend inverts it
+          // back to primary (#873EFF) over a light background.
+          backgroundColor: "rgba(120, 193, 0, 0.3)",
+          duration: 0.3,
+          ease: "power3",
+        });
       }
     };
     const onOut = (event: PointerEvent) => {
       if ((event.target as Element)?.closest?.(interactive)) {
-        gsap.to(ring, { scale: 1, duration: 0.3, ease: "power3" });
+        gsap.to(ring, {
+          scale: 1,
+          backgroundColor: "rgba(120, 193, 0, 0)", // fade out (complement of primary)
+          duration: 0.3,
+          ease: "power3",
+        });
       }
     };
     const onLeave = () => gsap.to([dot, ring], { autoAlpha: 0, duration: 0.2 });

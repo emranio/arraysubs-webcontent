@@ -235,7 +235,7 @@ All coupon changes are tracked in the audit system:
 | Coupon Deleted | Coupon permanently deleted |
 | Coupon Trashed | Coupon moved to trash |
 
-**Tracked Coupon Fields:** discount amount, expiry date, discount type, description, individual use, product/category inclusions and exclusions, usage limits, free shipping, spending thresholds, email restrictions.
+**Tracked Coupon Fields:** discount amount, expiry date, discount type, description, individual use, product/category inclusions and exclusions, usage limits — Free shipping, spending thresholds, email restrictions.
 
 ---
 

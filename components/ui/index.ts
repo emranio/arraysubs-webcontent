@@ -1,18 +1,34 @@
 // Barrel export for the reusable UI library.
 export { Container } from "./Container";
 export { Section } from "./Section";
+export { ArrayHashMark } from "./ArrayHashMark";
 export { Eyebrow } from "./Eyebrow";
 export { SectionTitle } from "./SectionTitle";
 export { Button } from "./Button";
 export { Badge } from "./Badge";
 export { Breadcrumbs, type BreadcrumbItem } from "./Breadcrumbs";
 export { IconCard } from "./IconCard";
+export { OfferCard } from "./OfferCard";
+export { StepCard } from "./StepCard";
+export { TagCard } from "./TagCard";
 export { CTA } from "./CTA";
-export { Hero } from "./Hero";
+export {
+  ComparisonTable,
+  type ComparisonCell,
+  type ComparisonColumn,
+  type ComparisonGroup,
+  type ComparisonRow,
+} from "./ComparisonTable";
+export { PageHero } from "./PageHero";
+export { Manifesto, type ManifestoLine } from "./Manifesto";
 export { BigText } from "./BigText";
 export { Accordion, type AccordionItemData } from "./Accordion";
 export { Tabs, type TabItem } from "./Tabs";
-export { Slider } from "./Slider";
+export { Marqueue } from "./Marqueue";
+export { Statement, type StatementSegment } from "./Statement";
+export { Testimonials, type TestimonialItem } from "./Testimonials";
+export { ModuleShowcase } from "./ModuleShowcase";
+export { Gallery, type GalleryItem } from "./Gallery";
 
 // Form controls
 export { Field } from "./form/Field";
@@ -26,4 +42,5 @@ export { RadioGroup, type RadioOption } from "./form/RadioGroup";
 export { Switch } from "./form/Switch";
 export { Range } from "./form/Range";
 export { LeadForm } from "./form/LeadForm";
+export { ContactForm } from "./form/ContactForm";
 export { MultiStepForm } from "./form/MultiStepForm";

@@ -29,7 +29,7 @@
 
 ## Content Blocks
 
-### 1. Hero — PayPal logo + WooCommerce + ArraySubs
+### 1. PageHero — PayPal logo + WooCommerce + ArraySubs
 ### 2. Capabilities — first payment, manual renewal, auto-renewal (Pro, tokenized)
 ### 3. Setup Guide (HowTo Schema) — step-by-step with screenshots
 ### 4. Free vs Pro — manual vs automatic renewals

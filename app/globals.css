@@ -12,30 +12,32 @@
    ========================================================================== */
 @theme {
   /* ---- Brand ------------------------------------------------------------ */
-  --color-highlight: #e1ff51; /* bright attention / marker background */
-  --color-primary: #c2e82e; /* main action color (deeper highlight)   */
-  --color-primary-strong: #a9d016; /* hover / active state             */
-  --color-dark: #00272c; /* darkest brand color / dark sections         */
-  --color-dark-2: #013b43; /* elevated surface on dark                  */
+  --color-highlight: #EFE7FF; /* light purple attention / marker background */
+  --color-primary: #873EFF; /* main action color                         */
+  --color-primary-strong: #6F22E6; /* hover / active state             */
+  --color-dark: #12002B; /* darkest brand color / dark sections         */
+  --color-dark-2: #321167; /* primary-tinted elevated surface on dark   */
 
   /* ---- Neutrals (light mode) ------------------------------------------- */
-  --color-background: #ffffff;
-  --color-surface: #f5f8f2; /* subtly tinted off-white                   */
-  --color-surface-2: #eef2e8;
-  --color-foreground: #00272c; /* body + heading text                    */
-  --color-muted: #4a5f63; /* secondary text (AA on white)               */
-  --color-faint: #7c8f92; /* tertiary text / placeholders               */
-  --color-border: #e3e9e3;
-  --color-border-strong: #c9d3cb;
+  --color-background: #FFFFFF;
+  --color-surface: #F0E9FF; /* subtly tinted off-white                   */
+  --color-card: #F0E9FF; /* default card surface on white sections     */
+  --color-foreground: #12002B; /* body + heading text                    */
+  --color-muted: #3F2A5C; /* high-contrast secondary text               */
+  --color-faint: #6A548A; /* tertiary text / placeholders               */
+  --color-dark-edge: #5F32A8; /* lighter dark-2 edge for dark pressed buttons */
+  --color-border: #DED2F4;
+  --color-border-strong: #C5ADEF;
 
   /* ---- Feedback --------------------------------------------------------- */
-  --color-danger: #c2362b; /* AA on white                                  */
-  --color-success: #1f7a4d;
+  --color-danger: #B83A7A; /* AA on white                                  */
+  --color-success: #6040DB;
+  --color-gold: #873EFF; /* star ratings                                    */
 
   /* ---- On dark surfaces ------------------------------------------------- */
-  --color-on-dark: #f1f7f1;
-  --color-on-dark-muted: #9fb6b8;
-  --color-on-dark-border: #14474f;
+  --color-on-dark: #F6F0FF;
+  --color-on-dark-muted: #CBB8EE;
+  --color-on-dark-border: #3C1A72;
 
   /* ---- Typography ------------------------------------------------------- */
   --font-sans: var(--font-funnel-sans), ui-sans-serif, system-ui, -apple-system,
@@ -65,7 +67,7 @@
   --text-display-xl--font-weight: 700;
 
   /* ---- Layout ----------------------------------------------------------- */
-  --container-page: 87.5rem; /* 1400px max page container                  */
+  --container-page: 100rem; /* fluid page container max width             */
   --spacing-gutter: 1.5rem; /* default horizontal page padding             */
 
   /* ---- Radii ------------------------------------------------------------ */
@@ -75,7 +77,7 @@
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
   --radius-2xl: 2rem;
-  --radius-pill: 62.5rem;
+  --radius-pill: 7rem;
 
   /* ---- Elevation: none — this is a 100% flat design.
          Use borders and surface colors for separation, never shadows. ----- */
@@ -102,9 +104,11 @@
   html {
     font-size: 100%; /* 1rem = 16px — scale the whole UI from here */
     -webkit-text-size-adjust: 100%;
-    scroll-behavior: smooth;
     /* space for sticky header when jumping to anchors */
     scroll-padding-top: 6rem;
+    /* Kill stray horizontal scroll globally. `clip` (not `hidden`) doesn't
+       create a scroll container, so sticky/fixed positioning still works. */
+    overflow-x: clip;
   }
 
   body {
@@ -178,6 +182,24 @@
   }
 }
 
+@layer components {
+  .section-surface {
+    position: relative;
+    isolation: isolate;
+    z-index: 0;
+    background-color: transparent;
+  }
+
+  .section-surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: var(--section-bg, var(--color-background));
+  }
+}
+
 /* ============================================================================
    ACCESSIBILITY: respect reduced-motion globally.
    GSAP also checks this flag and skips effects.
@@ -211,4 +233,20 @@
   background-size: 100% 0.45em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+}
+
+/* Gentle floating loop. The global reduced-motion rule above disables it. */
+@keyframes arraysubs-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.75rem);
+  }
+}
+
+.float-anim {
+  animation: arraysubs-float 4.5s ease-in-out infinite;
+  will-change: transform;
 }

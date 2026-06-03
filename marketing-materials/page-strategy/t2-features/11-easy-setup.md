@@ -3,7 +3,7 @@
 > **URL**: `/deals/arraysubs/features/easy-setup/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 3
-> **Ownership**: Core (arraysubs) — free feature (Blue Ocean)
+> **Ownership**: Core (arraysubs) — Free feature (Blue Ocean)
 
 ---
 
@@ -30,11 +30,11 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "No other subscription plugin has a setup wizard"
 - Blue Ocean badge
 - Screenshot: Setup wizard in progress
-- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
+- CTA Buttons: Live Demo + Get ArraySubs Pro for 4 Months — Free
 
 ### 2. Wizard Steps Walkthrough
 - Step-by-step visual of wizard flow
@@ -84,6 +84,6 @@
 
 - **Buttons**
 	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.

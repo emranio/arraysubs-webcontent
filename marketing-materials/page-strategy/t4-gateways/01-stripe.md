@@ -31,9 +31,9 @@
 
 ## Content Blocks
 
-### 1. Hero
+### 1. PageHero
 - H1 + Stripe logo + "The most popular way to accept subscription payments"
-- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
+- CTA Buttons: Live Demo + Get ArraySubs Pro for 4 Months — Free
 
 ### 2. What You Can Do with Stripe + ArraySubs
 - Accept first subscription payments via Stripe

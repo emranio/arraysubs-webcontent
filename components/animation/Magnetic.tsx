@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 import { gsap, hasFinePointer, prefersReducedMotion } from "@/lib/gsap";
+import { cn } from "@/lib/cn";
 
 type MagneticProps = {
   children: ReactNode;
@@ -29,9 +30,17 @@ export function Magnetic({ children, strength = 0.4, className }: MagneticProps)
     const yTo = gsap.quickTo(el, "y", { duration: 0.5, ease: "power3.out" });
 
     const onMove = (event: PointerEvent) => {
+      // getBoundingClientRect() returns the POST-transform rect, so we must
+      // subtract the current GSAP translation to recover the original center —
+      // otherwise the target value shrinks every frame and the button settles
+      // short of the cursor (and wobbles when held still).
       const rect = el.getBoundingClientRect();
-      xTo((event.clientX - (rect.left + rect.width / 2)) * strength);
-      yTo((event.clientY - (rect.top + rect.height / 2)) * strength);
+      const currentX = (gsap.getProperty(el, "x") as number) || 0;
+      const currentY = (gsap.getProperty(el, "y") as number) || 0;
+      const originalCenterX = rect.left + rect.width / 2 - currentX;
+      const originalCenterY = rect.top + rect.height / 2 - currentY;
+      xTo((event.clientX - originalCenterX) * strength);
+      yTo((event.clientY - originalCenterY) * strength);
     };
     // Reuse the same quickTo to glide back to center (smooth, no snap/jank).
     const onLeave = () => {
@@ -50,7 +59,7 @@ export function Magnetic({ children, strength = 0.4, className }: MagneticProps)
   return (
     <span
       ref={ref}
-      className={className}
+      className={cn("relative z-10 hover:z-30 focus-within:z-30", className)}
       style={{ display: "inline-flex", willChange: "transform" }}
     >
       {children}

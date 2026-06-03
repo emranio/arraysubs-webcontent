@@ -1,7 +1,13 @@
 import type { ElementType, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type Surface = "default" | "surface" | "dark" | "highlight" | "transparent";
+type Surface =
+  | "default"
+  | "surface"
+  | "primary"
+  | "dark"
+  | "highlight"
+  | "transparent";
 type Spacing = "none" | "sm" | "md" | "lg";
 type ScrollBg = "light" | "surface" | "dark" | "highlight";
 
@@ -20,11 +26,24 @@ type SectionProps = {
 };
 
 const surfaces: Record<Surface, string> = {
-  default: "bg-background text-foreground",
-  surface: "bg-surface text-foreground",
-  dark: "bg-dark text-on-dark on-dark",
-  highlight: "bg-highlight text-dark",
-  transparent: "text-inherit",
+  default:
+    "text-foreground [--section-bg:var(--color-background)] [--color-card:var(--color-surface)]",
+  surface:
+    "text-foreground [--section-bg:var(--color-surface)] [--color-card:var(--color-background)]",
+  primary:
+    "text-on-dark on-dark [--section-bg:var(--color-primary)] [--color-card:var(--color-background)]",
+  dark:
+    "text-on-dark on-dark [--section-bg:var(--color-dark)] [--color-card:var(--color-background)]",
+  highlight:
+    "text-dark [--section-bg:var(--color-highlight)] [--color-card:var(--color-background)]",
+  transparent: "text-inherit [--section-bg:transparent]",
+};
+
+const scrollBgCardSurfaces: Record<ScrollBg, string> = {
+  light: "[--color-card:var(--color-surface)]",
+  surface: "[--color-card:var(--color-background)]",
+  dark: "[--color-card:var(--color-background)]",
+  highlight: "[--color-card:var(--color-background)]",
 };
 
 const spacings: Record<Spacing, string> = {
@@ -48,9 +67,16 @@ export function Section({
   return (
     <Tag
       id={id}
-      data-surface={surface === "dark" ? "dark" : undefined}
+      data-section-surface={surface}
+      data-surface={surface === "dark" || surface === "primary" ? "dark" : undefined}
       data-scroll-bg={scrollBg}
-      className={cn(surfaces[surface], spacings[spacing], className)}
+      className={cn(
+        "section-surface",
+        surfaces[surface],
+        surface === "transparent" && scrollBg && scrollBgCardSurfaces[scrollBg],
+        spacings[spacing],
+        className,
+      )}
       {...aria}
     >
       {children}

@@ -3,7 +3,7 @@
 > **URL**: `/deals/arraysubs/features/customer-portal/`
 > **Tier**: T2 — Feature Detail
 > **Priority**: Week 2
-> **Ownership**: Core (arraysubs) — free feature; Pro extends with payment method management toggle
+> **Ownership**: Core (arraysubs) — Free feature; Pro extends with payment method management toggle
 
 ---
 
@@ -32,10 +32,10 @@
 
 ## Content Blocks
 
-### 1. Hero Section
+### 1. PageHero Section
 - H1 + subtitle: "Reduce support tickets — let subscribers manage their own plans"
 - Screenshot: Customer portal My Account → Subscriptions tab
-- CTA Buttons: Live Demo + Get Pro - Free [No Strings Attached]
+- CTA Buttons: Live Demo + Get ArraySubs Pro for 4 Months — Free
 
 ### 2. Portal Capabilities
 - **View Subscriptions**: List of active, paused, cancelled subscriptions
@@ -111,6 +111,6 @@ Table of actions and when they appear:
 
 - **Buttons**
 	- `Live Demo` → `/deals/arraysubs/plans/#live-demo`
-	- `Get Pro - Free [No Strings Attached]` → `/deals/arraysubs/plans/#get-pro`
+	- `Get ArraySubs Pro for 4 Months — Free` → `/deals/arraysubs/plans/#get-pro`
 - **Offer note**: Time limited early bird offer.
 - **Friction note**: No credit cards required.
