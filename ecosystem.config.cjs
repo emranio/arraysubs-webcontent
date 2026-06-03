@@ -3,10 +3,7 @@ const path = require("node:path");
 
 const root = __dirname;
 const envFile = path.join(root, ".env");
-const bunBinary =
-  process.env.BUN_BINARY ||
-  (process.env.HOME ? path.join(process.env.HOME, ".bun/bin/bun") : "bun");
-const packageRunner = fs.existsSync(bunBinary) ? bunBinary : "npm";
+const nextBinary = path.join(root, "node_modules/next/dist/bin/next");
 
 function readEnv(filePath) {
   if (!fs.existsSync(filePath)) {
@@ -53,8 +50,9 @@ module.exports = {
     {
       name: "arrayhash-com-next",
       cwd: root,
-      script: packageRunner,
-      args: "run start",
+      script: nextBinary,
+      args: "start",
+      interpreter: "node",
       exec_mode: "fork",
       instances: 1,
       autorestart: true,

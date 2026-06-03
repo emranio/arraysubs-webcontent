@@ -43,11 +43,17 @@ jobs:
             bun run build
 
             echo "==> Removing obsolete PM2 app"
-            bunx --bun pm2 delete arrayhash-web || true
+            pm2 delete arrayhash-web || true
 
             echo "==> Reloading PM2"
-            bunx --bun pm2 startOrReload ecosystem.config.cjs --env production --update-env
-            bunx --bun pm2 save
+            pm2 startOrReload ecosystem.config.cjs --env production --update-env
+
+            echo "==> Checking local app health"
+            APP_PORT="$(sed -n 's/^PORT=//p' .env | tail -1)"
+            APP_PORT="${APP_PORT:-3000}"
+            curl -fsS --retry 10 --retry-delay 2 "http://127.0.0.1:${APP_PORT}/" >/dev/null
+
+            pm2 save
 
             echo "==> Done"
 
