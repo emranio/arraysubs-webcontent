@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Script from "next/script";
 import { X } from "lucide-react";
 import {
@@ -153,7 +152,6 @@ function ConsentAction({
 export function CookieConsent() {
   const [mounted, setMounted] = useState(false);
   const [consent, setConsent] = useState<CookieConsentState | null>(null);
-  const [showBanner, setShowBanner] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
   const [gpcEnabled, setGpcEnabled] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -171,7 +169,7 @@ export function CookieConsent() {
 
     setGpcEnabled(hasGpc);
     setConsent(saved);
-    setShowBanner(!saved);
+    setShowPreferences(!saved);
     setMounted(true);
   }, []);
 
@@ -181,7 +179,6 @@ export function CookieConsent() {
         document.activeElement instanceof HTMLElement
           ? document.activeElement
           : null;
-      setShowBanner(false);
       setShowPreferences(true);
     };
 
@@ -221,7 +218,6 @@ export function CookieConsent() {
 
     writeConsent(next);
     setConsent(next);
-    setShowBanner(false);
     setShowPreferences(false);
 
     if (!analytics) deleteAnalyticsCookies();
@@ -237,7 +233,6 @@ export function CookieConsent() {
 
   const closePreferences = () => {
     setShowPreferences(false);
-    setShowBanner(!consent);
     previousFocusRef.current?.focus();
   };
 
@@ -308,47 +303,9 @@ export function CookieConsent() {
         </Script>
       )}
 
-      {showBanner && !showPreferences && (
-        <section
-          aria-labelledby="cookie-consent-title"
-          className="fixed inset-x-3 bottom-3 z-[80] mx-auto max-w-[40rem] rounded-xl border border-border bg-background p-3 text-foreground sm:bottom-4"
-        >
-          <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
-            <div>
-              <h2 id="cookie-consent-title" className="font-display text-lg">
-                Cookies
-              </h2>
-              <p className="mt-1 text-xs leading-5 text-muted">
-                Analytics is optional. Advertising cookies are not used.{" "}
-                <Link
-                  href="/trust-center/privacy-policy/"
-                  className="font-semibold text-primary underline decoration-primary decoration-2 underline-offset-4 hover:text-primary-strong"
-                >
-                  Privacy policy
-                </Link>
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-[0.1875rem] sm:min-w-[12rem]">
-              <ConsentAction
-                onClick={() => saveConsent(false, "banner")}
-              >
-                Reject
-              </ConsentAction>
-              <ConsentAction
-                tone="primary"
-                onClick={() => saveConsent(true, "banner")}
-              >
-                Accept
-              </ConsentAction>
-            </div>
-          </div>
-        </section>
-      )}
-
       {showPreferences && (
         <div
-          className="fixed inset-0 z-[90] flex items-end justify-center bg-dark/45 p-3 sm:items-center sm:p-4"
+          className="fixed inset-0 z-[90] flex items-end justify-start bg-dark/45 p-3 sm:p-4"
           role="presentation"
         >
           <div
@@ -396,7 +353,7 @@ export function CookieConsent() {
                     Site basics and this consent record.
                   </p>
                   <p className="text-xs font-semibold text-faint">
-                    Always on · cc_cookie · 6 months
+                    Always on · cc_cookie
                   </p>
                 </div>
                 <span className="text-xs font-semibold text-primary">On</span>
@@ -408,7 +365,7 @@ export function CookieConsent() {
                     Aggregate GA4/GTM measurement. No retargeting.
                   </p>
                   <p className="text-xs font-semibold text-faint">
-                    Optional · _ga, _ga_* · up to 2 years
+                    Optional · _ga, _ga_*
                   </p>
                 </div>
                 <span className="text-xs font-semibold text-faint">
