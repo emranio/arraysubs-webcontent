@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 import { site } from "@/lib/site";
 import { Button, CTA, Container, Section, SectionTitle } from "@/components/ui";
 
-export const REVIEWED_DATE = "June 2, 2026";
+export const REVIEWED_DATE = "June 7, 2026";
 export const EFFECTIVE_DATE = "April 10, 2026";
 
 export const TRUST_LINKS = [
@@ -12,7 +12,7 @@ export const TRUST_LINKS = [
     title: "Privacy Policy",
     href: "/trust-center/privacy-policy/",
     description:
-      "What the ArrayHash website collects, why it is used, and how to exercise privacy rights.",
+      "What the ArrayHash website collects, why it is used, cookie consent behavior, and how to exercise privacy rights.",
   },
   {
     title: "Data Safety",
@@ -36,7 +36,7 @@ export const TRUST_LINKS = [
     title: "GDPR + CCPA",
     href: "/trust-center/gdpr-ccpa-compliance/",
     description:
-      "Rights request handling, no-sale commitments, consent, and regional privacy controls.",
+      "Rights request handling, no-sale commitments, consent withdrawal, GPC, and regional privacy controls.",
   },
   {
     title: "Accessibility",

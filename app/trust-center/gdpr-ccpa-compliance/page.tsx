@@ -41,7 +41,7 @@ export default function GdprCcpaCompliancePage() {
         highlights={[
           "No sale of personal data",
           "Rights requests by email",
-          "No plugin telemetry",
+          "Consent withdrawal in footer",
         ]}
         actions={
           <Button
@@ -95,7 +95,7 @@ export default function GdprCcpaCompliancePage() {
               ["Restriction", "Ask ArrayHash to limit processing where applicable."],
               ["Portability", "Ask for a copy of data in a portable format where applicable."],
               ["Objection", "Object to processing based on legitimate interests where applicable."],
-              ["Withdraw consent", "Withdraw consent for newsletter or analytics where consent is the basis."],
+              ["Withdraw consent", "Withdraw newsletter consent by unsubscribe and analytics consent through the footer Privacy choices control."],
               ["Opt out of sale or sharing", "ArrayHash does not sell personal data or share it for cross-context behavioral advertising."],
             ]}
           />
@@ -123,7 +123,10 @@ export default function GdprCcpaCompliancePage() {
             ArrayHash does not sell personal data. ArrayHash does not use
             advertising pixels, retargeting pixels, heatmaps or session
             recordings. GA4 is used for aggregate website analytics, not
-            advertising retargeting.
+            advertising retargeting, and only loads after analytics consent is
+            accepted. If a browser sends Global Privacy Control, ArrayHash
+            treats it as a privacy signal and continues not to sell or share
+            personal data for cross-context behavioral advertising.
           </p>
           <PolicyTable
             caption="CCPA and CPRA posture"
@@ -145,7 +148,7 @@ export default function GdprCcpaCompliancePage() {
             rows={[
               ["Signup, support and contact forms", "Contract or pre-contractual steps."],
               ["Newsletter", "Consent, with unsubscribe available."],
-              ["GA4 analytics", "Consent where required and legitimate interests where permitted."],
+              ["GA4/GTM analytics", "Consent through the website consent manager."],
               ["Stripe and Freemius payments, licenses and tax records", "Contract and legal obligation."],
               ["Security logs and abuse prevention", "Legitimate interests."],
             ]}

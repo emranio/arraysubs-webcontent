@@ -55,7 +55,7 @@ export default function DataSafetyPage() {
         facts={[
           { label: "Effective date", value: EFFECTIVE_DATE },
           { label: "Last reviewed", value: REVIEWED_DATE },
-          { label: "Analytics", value: "GA4 active" },
+          { label: "Analytics", value: "Consent-gated GA4/GTM" },
           { label: "Payment providers", value: "Stripe and Freemius" },
         ]}
       />
@@ -68,10 +68,11 @@ export default function DataSafetyPage() {
           <div className="grid gap-[0.1875rem] md:grid-cols-2">
             <PolicyNote title="ArrayHash website">
               <p>
-                The website collects name, country and email from signup,
-                newsletter, support and contact forms. GA4 is active for
-                aggregate analytics. Stripe and Freemius process payment,
-                checkout, license and transaction workflows.
+                The website collects the fields needed for signup, license
+                request, newsletter, support and contact forms. GA4/GTM
+                analytics loads only after analytics consent. Stripe and
+                Freemius process payment, checkout, license and transaction
+                workflows.
               </p>
             </PolicyNote>
             <PolicyNote title="Merchant WordPress site">
@@ -92,13 +93,13 @@ export default function DataSafetyPage() {
             headers={["Data", "Collected", "Purpose"]}
             rows={[
               [
-                "Name, country and email",
+                "Name, email, country, business type, subject, message body and optional product-update consent",
                 "Yes",
-                "Signup, newsletter, support and contact workflows.",
+                "Signup, license request, newsletter, support and contact workflows.",
               ],
               [
                 "GA4 page and session analytics",
-                "Yes",
+                "Only after analytics consent",
                 "Aggregate website performance and content measurement.",
               ],
               [
@@ -213,8 +214,8 @@ export default function DataSafetyPage() {
             rows={[
               [
                 "Google Analytics 4",
-                "Aggregate website analytics",
-                "Website usage, device, browser and approximate location signals.",
+                "Consent-gated aggregate website analytics",
+                "Website usage, device, browser and approximate location signals after analytics consent.",
               ],
               [
                 "Stripe",

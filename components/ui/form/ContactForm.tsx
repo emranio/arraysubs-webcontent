@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState, type FormEvent } from "react";
 import { ArrowLeft, CheckCircle2, Send } from "lucide-react";
 import { cn } from "@/lib/cn";
@@ -11,14 +12,22 @@ import { Textarea } from "./Textarea";
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
-type Errors = { name?: string; email?: string; subject?: string; body?: string };
+type Errors = {
+  name?: string;
+  email?: string;
+  subject?: string;
+  body?: string;
+  form?: string;
+};
 
 /**
  * Contact form. Client-side validated form matching the LeadForm pattern with
  * inline field errors and an aria-live success state.
  */
 export function ContactForm({ className }: { className?: string }) {
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success">(
+    "idle",
+  );
   const [errors, setErrors] = useState<Errors>({});
   const [sentTo, setSentTo] = useState("");
 
@@ -27,7 +36,7 @@ export function ContactForm({ className }: { className?: string }) {
   const subjectRef = useRef<HTMLInputElement>(null);
   const bodyRef = useRef<HTMLTextAreaElement>(null);
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
@@ -53,9 +62,47 @@ export function ContactForm({ className }: { className?: string }) {
       return;
     }
 
-    setSentTo(email);
-    setStatus("success");
-    form.reset();
+    setStatus("submitting");
+
+    try {
+      const response = await fetch("/api/forms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          kind: "contact",
+          name,
+          email,
+          subject,
+          body,
+          companyWebsite: data.get("companyWebsite"),
+          sourcePath: window.location.pathname,
+        }),
+      });
+
+      const result = (await response.json()) as {
+        ok?: boolean;
+        error?: string;
+      };
+
+      if (!response.ok || !result.ok) {
+        setErrors({
+          form:
+            result.error ??
+            "We could not send your request. Please email us directly.",
+        });
+        setStatus("idle");
+        return;
+      }
+
+      setSentTo(email);
+      setStatus("success");
+      form.reset();
+    } catch {
+      setErrors({
+        form: "We could not send your request. Please email us directly.",
+      });
+      setStatus("idle");
+    }
   };
 
   if (status === "success") {
@@ -95,6 +142,16 @@ export function ContactForm({ className }: { className?: string }) {
       onSubmit={onSubmit}
       className={cn("flex flex-col gap-5", className)}
     >
+      <div aria-hidden="true" className="sr-only">
+        <label htmlFor="contact-company-website">Company website</label>
+        <input
+          id="contact-company-website"
+          name="companyWebsite"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <Field label="Your name" required error={errors.name}>
         <Input
           ref={nameRef}
@@ -142,19 +199,33 @@ export function ContactForm({ className }: { className?: string }) {
         />
       </Field>
 
+      {errors.form && (
+        <p role="alert" className="text-sm font-semibold text-danger">
+          {errors.form}
+        </p>
+      )}
+
       <Button
         type="submit"
         variant="primary"
         size="lg"
         magnetic
         fullWidth
+        disabled={status === "submitting"}
         iconRight={<Send className="size-5" />}
       >
-        Send request
+        {status === "submitting" ? "Sending request..." : "Send request"}
       </Button>
 
       <p className="text-center text-sm text-muted">
-        Prefer email? Write to{" "}
+        We use this form data to reply and manage your request. Read the{" "}
+        <Link
+          href="/trust-center/privacy-policy/"
+          className="font-medium text-foreground underline decoration-primary decoration-2 underline-offset-4 hover:decoration-dark"
+        >
+          Privacy Policy
+        </Link>
+        . Prefer email? Write to{" "}
         <a
           href={`mailto:${site.email}`}
           className="font-medium text-foreground underline decoration-primary decoration-2 underline-offset-4 hover:decoration-dark"

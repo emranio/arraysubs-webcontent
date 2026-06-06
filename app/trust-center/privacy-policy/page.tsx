@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
         highlights={[
           "No plugin telemetry",
           "No sale of personal data",
-          "GA4, Stripe and Freemius disclosed",
+          "Consent-gated analytics disclosed",
         ]}
         actions={
           <Button
@@ -93,8 +93,8 @@ export default function PrivacyPolicyPage() {
             rows={[
               [
                 "Signup forms",
-                "Name, country and email",
-                "Create or manage website signup and product access workflows.",
+                "Name, email, country, business type and optional product-update consent",
+                "Create or manage website signup and ArraySubs Pro license request workflows.",
               ],
               [
                 "Newsletter forms",
@@ -103,7 +103,7 @@ export default function PrivacyPolicyPage() {
               ],
               [
                 "Support and contact forms",
-                "Name, country and email",
+                "Name, email, subject and message body",
                 "Reply to questions, support requests and account inquiries.",
               ],
               [
@@ -158,8 +158,8 @@ export default function PrivacyPolicyPage() {
               ],
               [
                 "GA4 analytics",
-                "Consent where required, legitimate interests where permitted",
-                "GA4 helps us understand aggregate website performance and content usefulness.",
+                "Consent",
+                "Analytics scripts and cookies load only after the visitor accepts analytics in the consent manager.",
               ],
               [
                 "Payments, licenses, tax and refunds",
@@ -177,35 +177,48 @@ export default function PrivacyPolicyPage() {
 
         <PolicySection
           title="Cookies and analytics"
-          subtitle="GA4 is active on the website for aggregate analytics."
+          subtitle="Analytics scripts and cookies are optional and load only after analytics consent is accepted."
         >
           <PolicyTable
             caption="Cookie reference"
-            headers={["Cookie", "Type", "Purpose", "Duration"]}
+            headers={["Cookie", "Type", "Purpose", "Duration", "Control"]}
             rows={[
               [
                 "_ga",
                 "Analytics",
                 "Google Analytics client identifier used for aggregate website analytics.",
                 "Up to 2 years",
+                "Only after analytics consent.",
               ],
               [
                 "_ga_*",
                 "Analytics",
                 "Google Analytics session and measurement cookie.",
                 "Up to 2 years",
+                "Only after analytics consent.",
               ],
               [
                 "cc_cookie",
                 "Functional",
-                "Stores cookie consent preference where a consent banner is shown.",
-                "Up to 6 months",
+                "Stores the visitor's consent preference for strictly necessary and analytics categories.",
+                "6 months",
+                "Always active to remember the privacy choice.",
               ],
             ]}
           />
           <p>
+            Visitors can accept analytics, reject analytics, or customize
+            choices from the banner. Choices can be changed later from the
+            footer Privacy choices control. Rejecting or withdrawing analytics
+            consent clears first-party Google Analytics cookies that are visible
+            to this site.
+          </p>
+          <p>
             ArrayHash does not use advertising cookies, retargeting pixels,
-            heatmaps or session recordings. For more detail, read{" "}
+            heatmaps or session recordings. If a browser sends Global Privacy
+            Control, ArrayHash treats that as a privacy signal and does not sell
+            or share personal data for cross-context behavioral advertising. For
+            more detail, read{" "}
             <InlineLink href="/trust-center/data-safety/">
               Data Safety
             </InlineLink>
@@ -220,8 +233,8 @@ export default function PrivacyPolicyPage() {
             rows={[
               [
                 "Google Analytics 4",
-                "Aggregate website analytics",
-                "Used to understand website traffic and content performance.",
+                "Consent-gated aggregate website analytics",
+                "Loaded through the site consent manager only after analytics is accepted.",
               ],
               [
                 "Stripe",
@@ -274,7 +287,7 @@ export default function PrivacyPolicyPage() {
               ],
               [
                 "GA4 analytics",
-                "Retained according to the active GA4 property settings.",
+                "Collected only after analytics consent and retained according to the active GA4 property settings.",
               ],
               [
                 "Security and server logs",

@@ -8,6 +8,7 @@ import { CustomCursor } from "@/components/animation/CustomCursor";
 import { ScrollBackground } from "@/components/animation/ScrollBackground";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CookieConsent } from "@/components/layout/CookieConsent";
 import { siteColors } from "@/lib/colors";
 
 const fontDisplay = Funnel_Display({
@@ -81,6 +82,7 @@ export default function RootLayout({
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
+        <CookieConsent />
 
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
       </body>

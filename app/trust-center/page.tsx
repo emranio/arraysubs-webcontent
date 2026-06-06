@@ -87,7 +87,7 @@ export default function TrustCenterPage() {
         title="Trust Center — Everything legal and operational in one place"
         subtitle="Clear policies for ArrayHash, ArraySubs, website analytics, payment processing, licensing, refunds, privacy rights, and accessibility. These pages explain what ArrayHash collects on this website, what payment and licensing providers process, and what ArraySubs does not send from your WordPress site."
         highlights={[
-          "GA4, Stripe and Freemius disclosed",
+          "Consent-gated analytics disclosed",
           "No plugin telemetry or WooCommerce store metrics",
           "Privacy rights handled by email",
         ]}
@@ -122,8 +122,8 @@ export default function TrustCenterPage() {
               <div className="mt-8">
                 <PolicyList
                   items={[
-                    "Website forms collect name, country and email from signup, newsletter, support and contact flows.",
-                    "GA4 is active for aggregate website analytics.",
+                    "Website forms collect only the fields needed for signup, license request, newsletter, support and contact workflows.",
+                    "GA4/GTM analytics loads only after analytics consent is accepted.",
                     "Stripe and Freemius are active for payments, checkout, licenses, taxes where applicable, account management and transaction support.",
                     "ArraySubs does not collect plugin or theme installations, activations, usage telemetry, WooCommerce store metrics, WordPress admin emails, user emails or plugin logs.",
                   ]}
@@ -140,7 +140,7 @@ export default function TrustCenterPage() {
               />
               <dl className="mt-8 grid gap-[0.1875rem]">
                 {[
-                  ["Google Analytics 4", "Aggregate website analytics"],
+                  ["Google Analytics 4 / GTM", "Consent-gated aggregate website analytics"],
                   ["Stripe", "Payment processing and card handling"],
                   ["Freemius", "Checkout, licensing, account and transaction management"],
                 ].map(([name, value]) => (

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
+import { PrivacyChoicesButton } from "@/components/layout/PrivacyChoicesButton";
 
 const COLUMNS: { title: string; links: [string, string][] }[] = [
   {
@@ -99,11 +100,14 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-2 border-t border-on-dark-border py-6 text-sm text-on-dark-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 border-t border-on-dark-border py-6 text-sm text-on-dark-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {site.name}. All rights reserved.
           </p>
-          <p>Built for WooCommerce store owners.</p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <PrivacyChoicesButton />
+            <p>Built for WooCommerce store owners.</p>
+          </div>
         </div>
       </Container>
     </footer>
