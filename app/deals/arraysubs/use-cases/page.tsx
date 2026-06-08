@@ -13,15 +13,18 @@ import {
   SectionTitle,
 } from "@/components/ui";
 import { USE_CASES, canDoForUseCase } from "./_data";
+import { FEATURES } from "../features/_data";
 
 export const metadata: Metadata = createMetadata({
   title: "Use Cases — WooCommerce Subscriptions for Every Business",
   description:
-    "See how ArraySubs powers subscriptions and memberships for SaaS, membership sites, subscription boxes, online courses, content publishers, and service businesses.",
+    "See how ArraySubs powers SaaS, memberships, subscription boxes, online courses, publishers, service retainers, wholesale memberships, support operations, and store credit workflows.",
   path: "/deals/arraysubs/use-cases/",
 });
 
 const GET_PRO = "/deals/arraysubs/pricing/";
+const USE_CASE_COUNT = USE_CASES.length;
+const MODULE_COUNT = FEATURES.length;
 
 export default function UseCasesHubPage() {
   return (
@@ -32,12 +35,12 @@ export default function UseCasesHubPage() {
           { name: "ArraySubs", href: "/deals/arraysubs/" },
           { name: "Use cases", href: "/deals/arraysubs/use-cases/" },
         ]}
-        title="Whatever you sell, ArraySubs powers it"
-        subtitle="From digital SaaS to physical subscription boxes — see how store owners run their business model on ArraySubs."
+        title="Whatever you sell, map it to ArraySubs"
+        subtitle={`Browse ${USE_CASE_COUNT} practical workflows built from the current ${MODULE_COUNT}-module ArraySubs manual map.`}
         highlights={[
-          "6 business models",
+          `${USE_CASE_COUNT} use cases`,
+          `${MODULE_COUNT} feature modules`,
           "One free-forever core",
-          "Pro free for 4 months",
         ]}
         actions={
           <Button
@@ -57,7 +60,7 @@ export default function UseCasesHubPage() {
           <SectionTitle
             eyebrow="Use cases"
             title="Built for every subscription business"
-            subtitle="Pick the model closest to yours — each guide maps the exact ArraySubs features behind it."
+            subtitle="Pick the model closest to yours. Each guide maps the exact ArraySubs root modules behind the workflow."
             align="center"
           />
           <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
@@ -80,7 +83,7 @@ export default function UseCasesHubPage() {
           <SectionTitle
             eyebrow="Can I…?"
             title="Yes — ArraySubs can do that"
-            subtitle="The specific things store owners ask before they start, grouped by business model. Every answer is a feature that ships today."
+            subtitle="The specific things store owners ask before they start, grouped by workflow. Every answer maps to a current ArraySubs module."
             align="center"
           />
           <div className="mt-12 flex flex-col gap-12">

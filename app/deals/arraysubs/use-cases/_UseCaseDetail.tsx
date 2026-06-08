@@ -20,7 +20,8 @@ import { highlight } from "../_highlight";
 
 const GET_PRO = "/deals/arraysubs/pricing/";
 
-const tierTone = (tier: FeatureTier) => (tier === "Free" ? "highlight" : "primary");
+const tierTone = (tier: FeatureTier) =>
+  tier === "Free" ? "highlight" : tier === "Pro" ? "dark" : "primary";
 
 /**
  * Shared template for every `/deals/arraysubs/use-cases/<slug>/` page. Copy

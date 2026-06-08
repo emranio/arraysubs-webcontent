@@ -4,7 +4,7 @@ import { createMetadata } from "@/lib/seo";
 import { FEATURES, getFeature } from "../_data";
 import { FeatureDetail } from "../_FeatureDetail";
 
-// Only the 15 known feature slugs are valid; anything else is a 404.
+// Only known feature slugs are valid; anything else is a 404.
 export const dynamicParams = false;
 
 export function generateStaticParams() {

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
 import { faqSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -18,7 +19,8 @@ import { highlight } from "../_highlight";
 
 const GET_PRO = "/deals/arraysubs/pricing/";
 
-const tierTone = (tier: FeatureTier) => (tier === "Free" ? "highlight" : "primary");
+const tierTone = (tier: FeatureTier) =>
+  tier === "Free" ? "highlight" : tier === "Pro" ? "dark" : "primary";
 
 /**
  * Shared template for every `/deals/arraysubs/features/<slug>/` page. All copy
@@ -56,6 +58,28 @@ export function FeatureDetail({ feature }: { feature: Feature }) {
           </Button>
         }
       />
+
+      {feature.screenshot && (
+        <Section surface="surface" spacing="sm">
+          <Container>
+            <figure className="mx-auto max-w-6xl">
+              <div className="overflow-hidden rounded-2xl border border-border bg-card">
+                <Image
+                  src={feature.screenshot.src}
+                  alt={feature.screenshot.alt}
+                  width={1600}
+                  height={1000}
+                  sizes="(min-width: 1024px) 1024px, 100vw"
+                  className="h-auto w-full"
+                />
+              </div>
+              <figcaption className="mt-3 text-center text-sm text-muted">
+                {feature.screenshot.caption}
+              </figcaption>
+            </figure>
+          </Container>
+        </Section>
+      )}
 
       {/* ---- Overview + key stats --------------------------------------- */}
       <Section surface="default" spacing="md">

@@ -20,10 +20,16 @@ import {
   type Comparison,
   type DifferenceWinner,
 } from "./_data";
+import { FEATURES } from "../features/_data";
 import { highlight } from "../_highlight";
 
 const GET_PRO = "/deals/arraysubs/pricing/";
 const ALTERNATIVES = "/deals/arraysubs/alternatives";
+const MODULE_COUNT = FEATURES.length;
+const CORE_MODULE_COUNT = FEATURES.filter((feature) => feature.tier !== "Pro").length;
+const PRO_ONLY_FEATURES = FEATURES.filter((feature) => feature.tier === "Pro");
+const PRO_ONLY_MODULE_COUNT = PRO_ONLY_FEATURES.length;
+const PRO_ONLY_MODULE_NAMES = PRO_ONLY_FEATURES.map((feature) => feature.name).join(", ");
 
 /** Visual treatment per "who wins this difference" verdict. */
 const WINNER_META: Record<
@@ -126,6 +132,44 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
         </Container>
       </Section>
 
+      {/* ---- Manual-backed module coverage ------------------------------ */}
+      <Section surface="default" spacing="md">
+        <Container>
+          <SectionTitle
+            eyebrow="Module coverage"
+            title={`ArraySubs covers ${MODULE_COUNT} root modules`}
+            subtitle={`${CORE_MODULE_COUNT} modules are free/core-accessible. ${PRO_ONLY_MODULE_COUNT} root modules are Pro-only: ${PRO_ONLY_MODULE_NAMES}.`}
+            align="center"
+          />
+          <ul className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-[0.1875rem] sm:grid-cols-3">
+            <li className="rounded-2xl bg-card p-6 text-center">
+              <span className="block font-display text-4xl font-semibold text-primary">
+                {MODULE_COUNT}
+              </span>
+              <span className="mt-2 block text-sm text-muted">
+                root modules
+              </span>
+            </li>
+            <li className="rounded-2xl bg-card p-6 text-center">
+              <span className="block font-display text-4xl font-semibold text-primary">
+                {CORE_MODULE_COUNT}
+              </span>
+              <span className="mt-2 block text-sm text-muted">
+                core-accessible
+              </span>
+            </li>
+            <li className="rounded-2xl bg-card p-6 text-center">
+              <span className="block font-display text-4xl font-semibold text-primary">
+                {PRO_ONLY_MODULE_COUNT}
+              </span>
+              <span className="mt-2 block text-sm text-muted">
+                Pro-only
+              </span>
+            </li>
+          </ul>
+        </Container>
+      </Section>
+
       {/* ---- Overview / definition lead --------------------------------- */}
       <Section surface="default" spacing="md">
         <Container>
@@ -146,7 +190,7 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
           />
           <div className="mt-12">
             <ComparisonTable
-              caption={`Feature-by-feature comparison of ArraySubs (Free and Pro) versus ${c.competitor} across pricing, subscriptions, memberships, retention and analytics.`}
+              caption={`Feature-by-feature comparison of ArraySubs (Free and Pro) versus ${c.competitor} across pricing, root-module coverage, subscriptions, memberships, retention and operations.`}
               columns={comparisonColumns(c)}
               groups={c.tableGroups}
             />

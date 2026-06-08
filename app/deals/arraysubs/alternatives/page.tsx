@@ -30,11 +30,16 @@ import {
   type ComparisonRow,
 } from "@/components/ui";
 import { COMPARISONS } from "./_data";
+import { FEATURES } from "../features/_data";
+
+const MODULE_COUNT = FEATURES.length;
+const CORE_MODULE_COUNT = FEATURES.filter((feature) => feature.tier !== "Pro").length;
+const PRO_ONLY_MODULE_COUNT = FEATURES.filter((feature) => feature.tier === "Pro").length;
 
 export const metadata: Metadata = createMetadata({
   title: "ArraySubs Alternatives & Comparisons — Subscription Plugins (2026)",
   description:
-    "How ArraySubs compares to WooCommerce Subscriptions, WooCommerce Memberships, YITH, WP Swings, SUMO and WPSubscription. Free vs paid, feature matrices and migration notes for 2026.",
+    `How ArraySubs compares to WooCommerce Subscriptions, WooCommerce Memberships, YITH, WP Swings, SUMO and WPSubscription across ${MODULE_COUNT} root modules, pricing, feature matrices and migration notes for 2026.`,
   path: "/deals/arraysubs/alternatives/",
 });
 
@@ -73,6 +78,9 @@ const FIELD_GROUPS: ComparisonGroup[] = [
     label: "Plans & pricing",
     rows: [
       r("Free-forever core", yes(), no, part("limited"), yes(), yes(), no),
+      r(`${MODULE_COUNT} root-module map`, yes(), no, no, no, no, no),
+      r(`${CORE_MODULE_COUNT} core-accessible modules`, yes(), no, no, no, no, no),
+      r(`${PRO_ONLY_MODULE_COUNT} Pro-only root modules`, yes(), no, no, no, no, no),
       r("Subscriptions + memberships in one plugin", yes(), no, no, no, no, no),
       r("No annual renewal fee", yes(), no, no, no, no, yes()),
     ],
@@ -105,12 +113,13 @@ const FIELD_GROUPS: ComparisonGroup[] = [
     rows: [
       r("Retention flow builder", yes(), no, no, no, no, no),
       r("Store credit wallet", yes(), no, no, no, no, no),
-      r("Visual checkout builder", yes(), no, no, no, no, no),
-      r("Advanced analytics", yes(), part("basic"), part("basic"), part("basic"), part("basic"), no),
+      r("Feature Manager entitlements", yes(), no, no, no, no, no),
+      r("Gateway Health dashboard", yes(), no, no, no, no, no),
+      r("Analytics", yes(), part("basic"), part("basic"), part("basic"), part("basic"), no),
     ],
   },
   {
-    label: "Audit & activity logs (6 categorized log types)",
+    label: "Audits, logs & support operations",
     rows: [
       r("Activity audits", yes(), no, part("basic"), part("errors"), part("basic"), part("basic")),
       r("Gateway logs", yes(), no, no, no, no, no),
@@ -126,6 +135,8 @@ const FIELD_GROUPS: ComparisonGroup[] = [
       r("Guided setup wizard", yes(), no, no, no, no, no),
       r("Settings export / import", yes(), no, no, no, no, no),
       r("Modern React admin", yes(), no, no, no, no, no),
+      r("Login as User support workflow", yes(), no, no, no, no, no),
+      r("Member Insight profile dashboard", yes(), no, no, no, no, no),
       r("Listed on WordPress.org", yes(), no, yes(), yes(), yes(), no),
       r("Actively maintained in 2026", yes(), yes(), yes(), yes(), yes(), part("infrequent")),
       r("Subscription box module", no, no, yes(), yes(), no, no),
@@ -138,7 +149,7 @@ const WHY_SWITCH = [
     icon: <Layers className="size-6" />,
     title: "All-in-one, not a plugin pile",
     description:
-      "Subscriptions and memberships in one plugin — no $478/yr two-plugin stacks or vendor add-ons to stitch together.",
+      `${MODULE_COUNT} root modules in one ArraySubs ecosystem — no $478/yr two-plugin stacks or vendor add-ons to stitch together.`,
   },
   {
     icon: <HeartHandshake className="size-6" />,
@@ -154,21 +165,21 @@ const WHY_SWITCH = [
   },
   {
     icon: <LineChart className="size-6" />,
-    title: "Modern analytics & store credit",
+    title: "Store Credit, analytics & operations",
     description:
-      "Pro adds 10-KPI analytics and a store-credit wallet that the rest of the field simply doesn't have.",
+      "Pro adds Store Credit, Gateway Health, Feature Manager, Member Insight, and deeper analytics workflows competitors usually split across add-ons.",
   },
   {
     icon: <ScrollText className="size-6" />,
     title: "Forensic-grade audit logs",
     description:
-      "Six categorized log types — activity audits, gateway, renewal-failure, portal action-failure, access-rule conflict and scheduled-job logs. Rivals ship a basic activity log at best.",
+      "Audits and Logs combines troubleshooting guides with Pro activity audits, scheduled-job logs, gateway context, and portal failure diagnosis.",
   },
   {
     icon: <PanelsTopLeft className="size-6" />,
-    title: "Visual checkout builder",
+    title: "Checkout and payments depth",
     description:
-      "Pro ships a 27-field drag-and-drop checkout builder with multi-step flows and conditional fields — no rival offers one.",
+      "Checkout and Payments covers subscription checkout, manual fallback, Stripe, PayPal, Paddle, and Pro checkout customization.",
   },
   {
     icon: <Rocket className="size-6" />,
@@ -194,11 +205,11 @@ export default function AlternativesHubPage() {
           { name: "Compare", href: "/deals/arraysubs/alternatives/" },
         ]}
         title="ArraySubs vs the alternatives"
-        subtitle="Comparing WooCommerce subscription and membership plugins? See how ArraySubs stacks up against the incumbents — honestly, feature by feature, with pricing and migration notes."
+        subtitle={`Comparing WooCommerce subscription and membership plugins? See how ArraySubs stacks up with ${MODULE_COUNT} root modules, ${CORE_MODULE_COUNT} core-accessible modules, pricing, and migration notes.`}
         highlights={[
           "7 detailed comparisons",
+          `${MODULE_COUNT} root modules`,
           "Free vs paid, side by side",
-          "Balanced — not just our wins",
         ]}
         actions={
           <Button
@@ -244,15 +255,15 @@ export default function AlternativesHubPage() {
               />
               <p className="min-w-0 max-w-[22rem] font-display text-xl leading-tight font-semibold tracking-normal text-foreground sm:text-3xl">
                 You do not need five plugins for subscriptions, memberships,
-                retention and analytics.
+                retention, analytics, support operations and WordPress access.
               </p>
             </div>
 
             <p className="max-w-[39rem] text-lg leading-8 font-normal text-muted sm:text-xl">
               ArraySubs combines them in one ecosystem.{" "}
               <span className="text-foreground">
-                The comparisons below show exactly where it leads, where the match
-                is even, and where each competitor still has the edge.
+                The comparisons below show where it leads, where the match is
+                even, and where each competitor still has the edge.
               </span>
             </p>
 
@@ -345,7 +356,7 @@ export default function AlternativesHubPage() {
           />
           <div className="mt-12">
             <ComparisonTable
-              caption="How ArraySubs compares with WooCommerce Subscriptions, YITH Subscription, WP Swings, WPSubscription and SUMO on free tier, all-in-one scope, retention, store credit, analytics, setup and maintenance."
+              caption={`How ArraySubs compares with WooCommerce Subscriptions, YITH Subscription, WP Swings, WPSubscription and SUMO on free tier, ${MODULE_COUNT} root-module coverage, retention, Store Credit, analytics, setup and operations.`}
               columns={FIELD_COLUMNS}
               groups={FIELD_GROUPS}
             />

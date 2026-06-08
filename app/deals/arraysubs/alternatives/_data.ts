@@ -110,28 +110,28 @@ export const COMPARISONS: Comparison[] = [
     competitorShort: "Woo Subscriptions",
     icon: Crown,
     cardDescription:
-      "The official $279/yr subscriptions plugin. ArraySubs matches its billing and adds memberships, retention, store credit & analytics — free.",
+      "The official $279/yr subscriptions plugin. ArraySubs matches its billing and adds memberships, retention, Store Credit, Feature Manager, Gateway Health, Member Insight & Analytics — free.",
     seoTitle: "ArraySubs vs WooCommerce Subscriptions — Free Alternative (2026)",
     metaDescription:
       "Side-by-side comparison of ArraySubs (free + Pro) vs WooCommerce Subscriptions ($279/yr). Feature matrix, pricing, memberships, retention flows and analytics compared for 2026.",
     h1: "ArraySubs vs WooCommerce Subscriptions",
     heroSubtitle:
-      "WooCommerce Subscriptions is the official $279/yr recurring-billing plugin. ArraySubs covers the same billing in a free core — then adds memberships, retention flows, store credit and analytics that Woo Subscriptions doesn't have.",
+      "WooCommerce Subscriptions is the official $279/yr recurring-billing plugin. ArraySubs covers the same billing in a free core — then adds memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight and Analytics that Woo Subscriptions doesn't have.",
     heroHighlights: [
       "Free vs $279/yr",
       "Memberships built in",
       "Retention flow builder",
     ],
     intro:
-      "ArraySubs is a ==free WooCommerce subscription and membership plugin== and a direct alternative to WooCommerce Subscriptions. It handles the same recurring billing — simple and variable products, trials, sign-up fees, plan switching — but bundles ==memberships, a retention flow builder, store credit, a checkout builder and advanced analytics== that WooCommerce Subscriptions either omits or sells as a separate $199/yr plugin.",
+      "ArraySubs is a ==free WooCommerce subscription and membership plugin== and a direct alternative to WooCommerce Subscriptions. It handles the same recurring billing — simple and variable products, trials, sign-up fees, plan switching — but bundles ==memberships, a retention flow builder, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics workflows== that WooCommerce Subscriptions either omits or sells as a separate $199/yr plugin.",
     verdict: {
       summary:
-        "Short answer: choose ArraySubs if you want subscriptions ==and== memberships in one plugin with churn-fighting retention flows, for free. WooCommerce Subscriptions ($279/yr) is mature and supports 25+ payment gateways, so it still fits stores deep in the official Woo ecosystem that need a niche gateway — but it has no memberships, retention, store credit or analytics, and reaches $478/yr once you add WooCommerce Memberships.",
+        "Short answer: choose ArraySubs if you want subscriptions ==and== memberships in one plugin with churn-fighting retention flows, for free. WooCommerce Subscriptions ($279/yr) is mature and supports 25+ payment gateways, so it still fits stores deep in the official Woo ecosystem that need a niche gateway — but it has no memberships, retention, Store Credit, Feature Manager, Gateway Health, Member Insight or Analytics, and reaches $478/yr once you add WooCommerce Memberships.",
       arraysubsBestFor: [
         "Stores that need subscriptions and memberships together",
         "Anyone who wants to reduce churn with retention offers",
         "Budget-conscious merchants avoiding $279–$478/yr renewals",
-        "Teams that want modern analytics and store credit",
+        "Teams that want Analytics, Store Credit, Feature Manager, Gateway Health, and Member Insight",
       ],
       competitorBestFor: [
         "Stores already invested in the official Woo stack",
@@ -181,9 +181,9 @@ export const COMPARISONS: Comparison[] = [
         label: "Retention, revenue & insight",
         rows: [
           row("Retention flow builder", yes(), yes(), no()),
-          row("Store credit system", no(), yes(), no()),
-          row("Checkout builder", no(), yes(), no()),
-          row("Advanced analytics (10 KPIs)", no(), yes(), part("basic reports")),
+          row("Store Credit", no(), yes(), no()),
+          row("Checkout and Payments", no(), yes(), no()),
+          row("Analytics", no(), yes(), part("basic reports")),
           row("Setup wizard", yes(), yes(), no()),
         ],
       },
@@ -202,9 +202,9 @@ export const COMPARISONS: Comparison[] = [
         winner: "arraysubs",
       },
       {
-        title: "Store credit & checkout builder",
+        title: "Store credit & Checkout and Payments",
         description:
-          "ArraySubs Pro adds a store-credit wallet and a 27-field drag-and-drop checkout builder. WooCommerce Subscriptions has neither.",
+          "ArraySubs Pro adds Store Credit plus Checkout and Payments, including Pro checkout-builder workflows. WooCommerce Subscriptions has neither.",
         winner: "arraysubs",
       },
       {
@@ -242,7 +242,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Is WooCommerce Subscriptions better than ArraySubs?",
         answer:
-          "WooCommerce Subscriptions is more established and supports 25+ payment gateways, which matters if you need a niche processor. But it lacks memberships, retention flows, store credit and advanced analytics, and costs $279/yr with no free tier.",
+          "WooCommerce Subscriptions is more established and supports 25+ payment gateways, which matters if you need a niche processor. But it lacks memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics workflows, and costs $279/yr with no free tier.",
       },
       {
         question: "Can I migrate from WooCommerce Subscriptions to ArraySubs?",
@@ -341,8 +341,8 @@ export const COMPARISONS: Comparison[] = [
         label: "Retention, revenue & insight",
         rows: [
           row("Retention flow builder", yes(), yes(), no()),
-          row("Store credit system", no(), yes(), no()),
-          row("Advanced analytics", no(), yes(), no()),
+          row("Store Credit", no(), yes(), no()),
+          row("Analytics", no(), yes(), no()),
         ],
       },
     ],
@@ -360,9 +360,9 @@ export const COMPARISONS: Comparison[] = [
         winner: "arraysubs",
       },
       {
-        title: "Retention, store credit & analytics",
+        title: "Retention, Store Credit, Feature Manager, Gateway Health, Member Insight & Analytics",
         description:
-          "ArraySubs layers a retention flow builder, store credit and member analytics over access control. WooCommerce Memberships has none of these.",
+          "ArraySubs layers a retention flow builder, Store Credit, Retention Analytics, and Member Insight over access control. WooCommerce Memberships has none of these.",
         winner: "arraysubs",
       },
       {
@@ -435,14 +435,14 @@ export const COMPARISONS: Comparison[] = [
       "Not locked to one vendor's gateways",
     ],
     intro:
-      "ArraySubs is an ==all-in-one alternative to YITH WooCommerce Subscription==. Both create recurring products, but YITH's free version is limited (PayPal-only auto-pay) and its real capabilities — trials, sign-up fees, failed-payment handling — need the €199.99/yr premium. ArraySubs puts ==subscriptions, memberships, retention flows and store credit== in one plugin without locking you into a single vendor's gateway add-ons.",
+      "ArraySubs is an ==all-in-one alternative to YITH WooCommerce Subscription==. Both create recurring products, but YITH's free version is limited (PayPal-only auto-pay) and its real capabilities — trials, sign-up fees, failed-payment handling — need the €199.99/yr premium. ArraySubs puts ==subscriptions, memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics workflows== in one plugin without locking you into a single vendor's gateway add-ons.",
     verdict: {
       summary:
         "Short answer: choose ArraySubs for a genuinely capable free tier plus memberships, retention and store credit in one plugin. YITH WooCommerce Subscription suits stores already invested in the YITH ecosystem, and it has a unique Subscription Box module — but its free tier is thin, upgrade/downgrade is limited to variable products, its gateways are mostly YITH's own paid plugins, and its WordPress.org rating is 3.0★.",
       arraysubsBestFor: [
         "Stores wanting a capable free subscription core",
         "Anyone needing subscriptions and memberships together",
-        "Merchants who want retention flows and store credit",
+        "Merchants who want retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics workflows",
         "Teams avoiding YITH's add-on gateway lock-in",
       ],
       competitorBestFor: [
@@ -492,9 +492,9 @@ export const COMPARISONS: Comparison[] = [
         label: "Retention, revenue & insight",
         rows: [
           row("Retention flow builder", yes(), yes(), no()),
-          row("Store credit system", no(), yes(), no()),
-          row("Checkout builder", no(), yes(), no()),
-          row("Advanced analytics", no(), yes(), part("basic dashboard")),
+          row("Store Credit", no(), yes(), no()),
+          row("Checkout and Payments", no(), yes(), no()),
+          row("Analytics", no(), yes(), part("basic dashboard")),
           row("Setup wizard", yes(), yes(), no()),
         ],
       },
@@ -515,7 +515,7 @@ export const COMPARISONS: Comparison[] = [
       {
         title: "Memberships, retention & store credit",
         description:
-          "ArraySubs bundles memberships, a retention flow builder and store credit. YITH needs a separate €179.99/yr membership plugin and has no retention or store credit at all.",
+          "ArraySubs bundles memberships, a retention flow builder, Store Credit, and Pro operational modules. YITH needs a separate €179.99/yr membership plugin and has no retention or store credit at all.",
         winner: "arraysubs",
       },
       {
@@ -543,7 +543,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Is ArraySubs a good YITH WooCommerce Subscription alternative?",
         answer:
-          "Yes. ArraySubs offers a much fuller free tier — variable products, trials, sign-up fees, plan switching — plus memberships, retention flows and store credit that YITH lacks, without YITH's per-gateway add-on costs.",
+          "Yes. ArraySubs offers a much fuller free tier — variable products, trials, sign-up fees, plan switching — plus memberships, retention flows and Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics workflows that YITH lacks, without YITH's per-gateway add-on costs.",
       },
       {
         question: "Is ArraySubs cheaper than YITH WooCommerce Subscription?",
@@ -595,7 +595,7 @@ export const COMPARISONS: Comparison[] = [
       arraysubsBestFor: [
         "Membership sites that need recurring billing built in",
         "Anyone wanting an AND/OR rules engine and URL restriction",
-        "Merchants who want retention flows and store credit",
+        "Merchants who want retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics workflows",
         "Sites avoiding a €379.98/yr YITH pair",
       ],
       competitorBestFor: [
@@ -645,8 +645,8 @@ export const COMPARISONS: Comparison[] = [
         label: "Retention, revenue & insight",
         rows: [
           row("Retention flow builder", yes(), yes(), no()),
-          row("Store credit system", no(), yes(), no()),
-          row("Advanced analytics", no(), yes(), no()),
+          row("Store Credit", no(), yes(), no()),
+          row("Analytics", no(), yes(), no()),
         ],
       },
     ],
@@ -664,9 +664,9 @@ export const COMPARISONS: Comparison[] = [
         winner: "arraysubs",
       },
       {
-        title: "Retention & store credit",
+        title: "Retention, Store Credit & operations",
         description:
-          "ArraySubs includes a retention flow builder and store credit. YITH Membership has neither.",
+          "ArraySubs includes a retention flow builder, Store Credit, and Pro operational modules. YITH Membership has neither.",
         winner: "arraysubs",
       },
       {
@@ -796,8 +796,8 @@ export const COMPARISONS: Comparison[] = [
         label: "Retention, revenue & insight",
         rows: [
           row("Retention flow builder", yes(), yes(), no()),
-          row("Store credit system", no(), yes(), no()),
-          row("Advanced analytics", no(), yes(), part("Pro")),
+          row("Store Credit", no(), yes(), no()),
+          row("Analytics", no(), yes(), part("Pro")),
           row("Setup wizard", yes(), yes(), part("basic")),
         ],
       },
@@ -878,7 +878,7 @@ export const COMPARISONS: Comparison[] = [
     competitorShort: "SUMO",
     icon: Package,
     cardDescription:
-      "A deep but infrequently-updated CodeCanyon plugin (~$49 one-time, premium-only; last release Feb 2026). ArraySubs matches the billing depth but adds memberships, retention, store credit and analytics, free.",
+      "A deep but infrequently-updated CodeCanyon plugin (~$49 one-time, premium-only; last release Feb 2026). ArraySubs matches the billing depth but adds memberships, retention, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics, free.",
     seoTitle: "ArraySubs vs SUMO Subscriptions — WooCommerce Comparison (2026)",
     metaDescription:
       "Compare ArraySubs (free + Pro) with SUMO Subscriptions, a CodeCanyon plugin. Feature matrix, one-time vs free pricing, support and update cadence compared for 2026.",
@@ -891,10 +891,10 @@ export const COMPARISONS: Comparison[] = [
       "Memberships + retention",
     ],
     intro:
-      "ArraySubs is a modern alternative to SUMO Subscriptions. SUMO is a ==deep, premium-only CodeCanyon plugin== — grouped products, paid trials, a master transaction log — but it ships updates infrequently (==last release Feb 2026==), has no free tier or WordPress.org listing, runs a legacy admin, and has no memberships, retention, store credit or analytics. ArraySubs delivers all of those on a modern React stack, free.",
+      "ArraySubs is a modern alternative to SUMO Subscriptions. SUMO is a ==deep, premium-only CodeCanyon plugin== — grouped products, paid trials, a master transaction log — but it ships updates infrequently (==last release Feb 2026==), has no free tier or WordPress.org listing, runs a legacy admin, and has no memberships, retention, Store Credit, Feature Manager, Gateway Health, Member Insight or Analytics. ArraySubs delivers all of those on a modern React stack, free.",
     verdict: {
       summary:
-        "Short answer: choose ArraySubs for a free tier and a far broader feature set — memberships, retention, store credit and analytics — on a modern admin. SUMO Subscriptions still appeals for its one-time CodeCanyon pricing and niche billing features like grouped-product subscriptions and paid trials — but it's premium-only (no free tier), updated infrequently (last release Feb 2026), runs a legacy admin, and has none of those modern modules.",
+        "Short answer: choose ArraySubs for a free tier and a far broader feature set — memberships, retention, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics — on a modern admin. SUMO Subscriptions still appeals for its one-time CodeCanyon pricing and niche billing features like grouped-product subscriptions and paid trials — but it's premium-only (no free tier), updated infrequently (last release Feb 2026), runs a legacy admin, and has none of those modern modules.",
       arraysubsBestFor: [
         "Stores that want a free tier, not premium-only",
         "Anyone needing memberships, retention and analytics",
@@ -949,8 +949,8 @@ export const COMPARISONS: Comparison[] = [
         label: "Retention, revenue & insight",
         rows: [
           row("Retention flow builder", yes(), yes(), no()),
-          row("Store credit system", no(), yes(), no()),
-          row("Advanced analytics", no(), yes(), no()),
+          row("Store Credit", no(), yes(), no()),
+          row("Analytics", no(), yes(), no()),
           row("Audit & activity logs", no(), yes(), part("transaction log")),
           row("Setup wizard", yes(), yes(), no()),
         ],
@@ -1005,7 +1005,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Is SUMO Subscriptions still maintained?",
         answer:
-          "Its most recent release was v17.5.0 in February 2026, so updates are infrequent. It's also premium-only with no free tier, uses a legacy admin, and lacks memberships, retention, store credit and analytics — all of which ArraySubs includes.",
+          "Its most recent release was v17.5.0 in February 2026, so updates are infrequent. It's also premium-only with no free tier, uses a legacy admin, and lacks memberships, retention, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics — all of which ArraySubs includes.",
       },
       {
         question: "Does ArraySubs use one-time pricing like SUMO?",
@@ -1038,7 +1038,7 @@ export const COMPARISONS: Comparison[] = [
       "Compare ArraySubs and WPSubscription for WooCommerce. Feature matrix, pricing, memberships, gateways and unique capabilities like installment payments and retention compared for 2026.",
     h1: "ArraySubs vs WPSubscription",
     heroSubtitle:
-      "WPSubscription is a newer, well-reviewed plugin (4.9★) with installment payments and six gateways. ArraySubs is broader — adding memberships, retention flows, store credit and analytics on top of subscriptions.",
+      "WPSubscription is a newer, well-reviewed plugin (4.9★) with installment payments and six gateways. ArraySubs is broader — adding memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight and Analytics on top of subscriptions.",
     heroHighlights: [
       "Memberships included",
       "Retention + store credit",
@@ -1048,10 +1048,10 @@ export const COMPARISONS: Comparison[] = [
       "ArraySubs is a broader ==alternative to WPSubscription== by Convers Lab. WPSubscription is a promising newer plugin (700+ installs, 4.9★) with strengths ArraySubs lacks — ==installment/split payments and six payment gateways== — but it's subscriptions-only, with no memberships, store credit, retention or analytics. ArraySubs bundles all of those into one free plugin.",
     verdict: {
       summary:
-        "Short answer: choose ArraySubs for a broader all-in-one — memberships, retention flows, store credit and analytics alongside subscriptions. WPSubscription is excellent if your priorities are installment/split payments and the widest gateway list (six, including Razorpay and Xendit) — but it's subscriptions-only, very early stage (700+ installs), and has no membership, retention or analytics features.",
+        "Short answer: choose ArraySubs for a broader all-in-one — memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight and Analytics alongside subscriptions. WPSubscription is excellent if your priorities are installment/split payments and the widest gateway list (six, including Razorpay and Xendit) — but it's subscriptions-only, very early stage (700+ installs), and has no membership, retention or analytics features.",
       arraysubsBestFor: [
         "Stores needing subscriptions and memberships together",
-        "Anyone who wants retention flows and store credit",
+        "Anyone who wants retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics workflows",
         "Merchants who value analytics and a setup wizard",
         "Teams wanting a broad free feature set",
       ],
@@ -1099,9 +1099,9 @@ export const COMPARISONS: Comparison[] = [
         label: "Retention, revenue & insight",
         rows: [
           row("Retention flow builder", yes(), yes(), no()),
-          row("Store credit system", no(), yes(), no()),
-          row("Checkout builder", no(), yes(), no()),
-          row("Advanced analytics", no(), yes(), no()),
+          row("Store Credit", no(), yes(), no()),
+          row("Checkout and Payments", no(), yes(), no()),
+          row("Analytics", no(), yes(), no()),
           row("Setup wizard", yes(), yes(), no()),
         ],
       },
@@ -1110,19 +1110,19 @@ export const COMPARISONS: Comparison[] = [
       {
         title: "All-in-one vs subscriptions-only",
         description:
-          "ArraySubs bundles memberships, retention flows, store credit and analytics with subscriptions. WPSubscription is focused purely on subscription billing.",
+          "ArraySubs bundles memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight and Analytics with subscriptions. WPSubscription is focused purely on subscription billing.",
         winner: "arraysubs",
       },
       {
-        title: "Retention & store credit",
+        title: "Retention, Store Credit & operations",
         description:
-          "ArraySubs intercepts cancellations and offers a store-credit wallet. WPSubscription has neither retention flows nor store credit.",
+          "ArraySubs intercepts cancellations and offers a Store Credit wallet. WPSubscription has neither retention flows nor store credit.",
         winner: "arraysubs",
       },
       {
         title: "Memberships & analytics",
         description:
-          "ArraySubs adds member access control and advanced analytics. WPSubscription has no membership or analytics features.",
+          "ArraySubs adds member access control and Analytics. WPSubscription has no membership or analytics features.",
         winner: "arraysubs",
       },
       {
@@ -1150,7 +1150,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Is ArraySubs a good WPSubscription alternative?",
         answer:
-          "Yes, if you want more than billing. ArraySubs adds memberships, retention flows, store credit and analytics. WPSubscription is a strong, well-reviewed subscriptions-only plugin with installment payments and six gateways.",
+          "Yes, if you want more than billing. ArraySubs adds memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight and Analytics. WPSubscription is a strong, well-reviewed subscriptions-only plugin with installment payments and six gateways.",
       },
       {
         question: "Does ArraySubs support installment payments like WPSubscription?",
@@ -1160,7 +1160,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Which has more features, ArraySubs or WPSubscription?",
         answer:
-          "ArraySubs has the broader feature set — memberships, retention, store credit, checkout builder and analytics — while WPSubscription goes deeper on payment options (installments, six gateways).",
+          "ArraySubs has the broader feature set — memberships, retention, store credit, Checkout and Payments and analytics — while WPSubscription goes deeper on payment options (installments, six gateways).",
       },
       {
         question: "Are both ArraySubs and WPSubscription free?",

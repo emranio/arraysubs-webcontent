@@ -1,7 +1,10 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Building2,
   Briefcase,
   GraduationCap,
+  HandCoins,
+  Headphones,
   Monitor,
   Newspaper,
   Package,
@@ -218,12 +221,13 @@ export const USE_CASES: UseCase[] = [
       },
     ],
     relatedFeatures: [
-      "subscriptions-and-recurring-products",
+      "easy-setup-wizard",
+      "subscription-products",
       "feature-manager",
-      "member-access-control",
-      "retention-flow-builder",
+      "member-access",
+      "retention-and-refunds",
       "store-credit",
-      "payment-gateways",
+      "checkout-and-payments",
     ],
   },
   {
@@ -394,10 +398,11 @@ export const USE_CASES: UseCase[] = [
       },
     ],
     relatedFeatures: [
-      "member-access-control",
-      "subscriptions-and-recurring-products",
+      "easy-setup-wizard",
+      "member-access",
+      "subscription-products",
       "customer-portal",
-      "retention-flow-builder",
+      "retention-and-refunds",
       "profile-builder",
       "store-credit",
     ],
@@ -565,11 +570,12 @@ export const USE_CASES: UseCase[] = [
       },
     ],
     relatedFeatures: [
-      "subscriptions-and-recurring-products",
-      "billing-renewals-and-refunds",
+      "easy-setup-wizard",
+      "subscription-products",
+      "billing-and-renewals",
       "customer-portal",
-      "retention-flow-builder",
-      "payment-gateways",
+      "retention-and-refunds",
+      "checkout-and-payments",
       "emails",
     ],
   },
@@ -736,10 +742,11 @@ export const USE_CASES: UseCase[] = [
       },
     ],
     relatedFeatures: [
-      "member-access-control",
-      "subscriptions-and-recurring-products",
+      "easy-setup-wizard",
+      "member-access",
+      "subscription-products",
       "customer-portal",
-      "retention-flow-builder",
+      "retention-and-refunds",
       "analytics",
       "profile-builder",
     ],
@@ -907,10 +914,10 @@ export const USE_CASES: UseCase[] = [
       },
     ],
     relatedFeatures: [
-      "member-access-control",
-      "subscriptions-and-recurring-products",
+      "member-access",
+      "subscription-products",
       "emails",
-      "retention-flow-builder",
+      "retention-and-refunds",
       "customer-portal",
       "analytics",
     ],
@@ -1078,12 +1085,481 @@ export const USE_CASES: UseCase[] = [
       },
     ],
     relatedFeatures: [
-      "subscriptions-and-recurring-products",
-      "billing-renewals-and-refunds",
+      "easy-setup-wizard",
+      "subscription-products",
+      "billing-and-renewals",
       "customer-portal",
-      "retention-flow-builder",
-      "payment-gateways",
+      "retention-and-refunds",
+      "checkout-and-payments",
       "manage-subscriptions",
+    ],
+  },
+  {
+    slug: "b2b-wholesale-memberships",
+    icon: Building2,
+    name: "B2B & Wholesale Memberships",
+    cardDescription:
+      "Run trade accounts and wholesale tiers with member pricing, gated catalogs, role mapping, and account cleanup.",
+    seoTitle: "WooCommerce B2B & Wholesale Memberships with ArraySubs",
+    metaDescription:
+      "Build B2B and wholesale memberships on WooCommerce with recurring trade tiers, member discounts, gated products, role mapping, login cleanup, and account-sharing controls.",
+    h1: "Run B2B and wholesale memberships on WooCommerce",
+    heroSubtitle:
+      "Create recurring trade tiers, hide retail-only areas, assign roles automatically, and give approved buyers a clean account portal.",
+    heroHighlights: [
+      "Wholesale tiers",
+      "Member pricing & product rules",
+      "Role-aware access",
+    ],
+    intro:
+      "B2B and wholesale stores need more than recurring billing. They need ==approved account access, role-based pricing, gated catalogs, download rules, clean login paths, and support tools== that help staff verify what a buyer sees. ArraySubs combines subscription products, Member Access, Profile Builder, Toolkit modules, and Pro account-sharing controls into one workflow.",
+    stats: [
+      { value: "20", label: "Core-accessible modules" },
+      { value: "Rules", label: "Catalog access" },
+      { value: "Roles", label: "Buyer segmentation" },
+      { value: "Pro", label: "Session limits" },
+    ],
+    audience: [
+      {
+        title: "Wholesale catalogs",
+        description:
+          "Hide trade pricing and bulk products behind approved buyer memberships.",
+      },
+      {
+        title: "Dealer networks",
+        description:
+          "Assign regional or tier roles that other WordPress tools can recognize.",
+      },
+      {
+        title: "B2B service portals",
+        description:
+          "Gate account resources, documents, and support pages by active subscription.",
+      },
+      {
+        title: "Trade associations",
+        description:
+          "Sell annual memberships with role-based benefits and member-only discounts.",
+      },
+    ],
+    points: [
+      {
+        problem: "Retail customers and wholesale buyers need different catalogs.",
+        solution:
+          "Member Access gates products, categories, URLs, and downloads by subscription status, role, or plan.",
+      },
+      {
+        problem: "Trade buyers need automatic role assignment.",
+        solution:
+          "Role mapping assigns and removes WordPress roles as subscriptions activate, pause, expire, or cancel.",
+      },
+      {
+        problem: "Wholesale pricing should be member-only.",
+        solution:
+          "Commerce and benefit rules apply member discounts and purchase restrictions only to eligible buyers.",
+      },
+      {
+        problem: "The default WordPress login feels wrong for buyers.",
+        solution:
+          "Toolkit modules hide the admin bar, restrict wp-admin, and route login traffic through WooCommerce My Account.",
+      },
+      {
+        problem: "Support needs to verify buyer access quickly.",
+        solution:
+          "Login as User lets administrators open a customer's frontend session without asking for a password.",
+      },
+      {
+        problem: "Shared buyer accounts can leak trade pricing.",
+        solution:
+          "Multi-Login Prevention (Pro) limits concurrent sessions and supports plan-level overrides.",
+      },
+    ],
+    steps: [
+      {
+        title: "Create trade tiers",
+        description:
+          "Build wholesale, dealer, or partner tiers as subscription products.",
+      },
+      {
+        title: "Map buyer roles",
+        description:
+          "Assign roles to active subscribers so pricing and access rules follow the buyer.",
+      },
+      {
+        title: "Gate catalogs",
+        description:
+          "Restrict product categories, URLs, downloads, and resource pages by role or plan.",
+      },
+      {
+        title: "Clean up account access",
+        description:
+          "Enable Toolkit modules for admin bar hiding, wp-admin redirects, and My Account login routing.",
+      },
+      {
+        title: "Protect shared accounts",
+        description:
+          "Use Multi-Login Prevention in Pro when buyer accounts represent paid seats or protected pricing.",
+      },
+    ],
+    playbooks: [
+      {
+        title: "Approved wholesale catalog",
+        description:
+          "An annual wholesale membership unlocks protected categories, member pricing, and downloadable order forms.",
+      },
+      {
+        title: "Dealer portal",
+        description:
+          "Dealer tiers map to WordPress roles and unlock region-specific resources, documents, and support pages.",
+      },
+      {
+        title: "Trade association benefits",
+        description:
+          "Active members get discounts, restricted training content, and a clean My Account member area.",
+      },
+    ],
+    outcomes: [
+      "Keep wholesale products and pricing away from retail customers.",
+      "Use WordPress roles as a shared access layer for other plugins.",
+      "Reduce support time with Login as User and clear subscription records.",
+      "Protect member-only benefits with session limits when Pro is active.",
+      "Keep customer-facing login and account paths branded through My Account.",
+    ],
+    faq: [
+      {
+        question: "Can I hide products from non-wholesale customers?",
+        answer:
+          "Yes. Member Access can restrict products, categories, URLs, and downloads by plan, role, or subscription status.",
+      },
+      {
+        question: "Can buyers get member-only discounts?",
+        answer:
+          "Yes. Commerce and benefit rules can apply discounts only to eligible members.",
+      },
+      {
+        question: "Can support view the buyer experience?",
+        answer:
+          "Yes. Login as User lets administrators open a non-admin customer's frontend session for troubleshooting.",
+      },
+    ],
+    relatedFeatures: [
+      "member-access",
+      "subscription-products",
+      "profile-builder",
+      "admin-dashboard-access",
+      "wordpress-login-page",
+      "multi-login-prevention",
+    ],
+  },
+  {
+    slug: "subscription-support-operations",
+    icon: Headphones,
+    name: "Subscription Support Operations",
+    cardDescription:
+      "Give support teams the dashboards, notes, impersonation, audits, and gateway context needed to solve subscription tickets.",
+    seoTitle: "Subscription Support Operations for WooCommerce Stores",
+    metaDescription:
+      "Run subscription support operations with ArraySubs: subscription records, notes, Login as User, Member Insight, audits, gateway health, and customer portal troubleshooting.",
+    h1: "Support subscription customers without guesswork",
+    heroSubtitle:
+      "Centralize subscription records, customer timelines, admin impersonation, member profiles, gateway health, and audit trails for faster support.",
+    heroHighlights: [
+      "Subscription records",
+      "Login as User",
+      "Audits & gateway health",
+    ],
+    intro:
+      "Subscription support is hard when billing, access, profile data, and gateway state live in separate tools. ArraySubs gives support teams ==Manage Subscriptions, Subscription Notes, Login as User, Customer Portal context, Member Insight, Audits and Logs, and Gateway Health== so they can diagnose the full customer story from one system.",
+    stats: [
+      { value: "Free", label: "Core support tools" },
+      { value: "Pro", label: "Member Insight" },
+      { value: "Notes", label: "Subscription timeline" },
+      { value: "Gateway", label: "Webhook context" },
+    ],
+    audience: [
+      {
+        title: "Subscription support teams",
+        description:
+          "Resolve payment, access, cancellation, and portal tickets with full context.",
+      },
+      {
+        title: "Agency operators",
+        description:
+          "Manage client subscription stores with clean records and troubleshooting paths.",
+      },
+      {
+        title: "Membership managers",
+        description:
+          "Look up members, verify roles, and confirm what the customer sees.",
+      },
+      {
+        title: "Finance and operations",
+        description:
+          "Review renewals, refunds, credits, gateway status, and failed scheduled jobs.",
+      },
+    ],
+    points: [
+      {
+        problem: "Support cannot see why a customer's access changed.",
+        solution:
+          "Subscription Notes keep a timeline of lifecycle changes, renewal events, gateway activity, and admin notes.",
+      },
+      {
+        problem: "The customer says the portal looks wrong.",
+        solution:
+          "Login as User opens their frontend session so support can verify the exact account state.",
+      },
+      {
+        problem: "Staff jump across WooCommerce screens to understand a customer.",
+        solution:
+          "Member Insight (Pro) brings profile, subscription, commerce, address, and credit context into one dashboard.",
+      },
+      {
+        problem: "Payment failures are hard to diagnose.",
+        solution:
+          "Gateway Health and renewal troubleshooting show gateway status, webhook events, and subscription payment context.",
+      },
+      {
+        problem: "Nobody knows who changed a setting or subscription.",
+        solution:
+          "Audits and Logs add activity audits and scheduled-job logs in Pro, with troubleshooting guides available from the core path.",
+      },
+      {
+        problem: "Support actions need to be fast but controlled.",
+        solution:
+          "Admin Dashboard Access and Login as User keep backend and customer-session workflows separated.",
+      },
+    ],
+    steps: [
+      {
+        title: "Start from the subscription",
+        description:
+          "Open the subscription record, review status, dates, customer, product, notes, and related orders.",
+      },
+      {
+        title: "Read the timeline",
+        description:
+          "Use Subscription Notes to understand lifecycle, renewal, gateway, and manual support events.",
+      },
+      {
+        title: "Verify the portal",
+        description:
+          "Use Login as User to confirm what the customer sees in My Account.",
+      },
+      {
+        title: "Open member context",
+        description:
+          "Use Member Insight in Pro for commerce history, credits, addresses, and shortcuts.",
+      },
+      {
+        title: "Escalate with logs",
+        description:
+          "Check Audits, Scheduled Jobs, and Gateway Health when the issue involves automation or payment events.",
+      },
+    ],
+    playbooks: [
+      {
+        title: "Payment failed ticket",
+        description:
+          "Check billing status, renewal notes, gateway health, customer payment method, and grace-period state.",
+      },
+      {
+        title: "Missing member access",
+        description:
+          "Review role mapping, access rules, subscription status, and the customer portal through Login as User.",
+      },
+      {
+        title: "Refund and credit question",
+        description:
+          "Open the subscription, review notes and related orders, then inspect store credit history in Pro.",
+      },
+    ],
+    outcomes: [
+      "Resolve tickets with subscription, payment, access, and customer context in one place.",
+      "Verify the customer-facing portal without collecting passwords.",
+      "Escalate automation issues with gateway, audit, and scheduled-job evidence.",
+      "Reduce repeated support loops by keeping notes on the subscription timeline.",
+      "Use Pro dashboards when the team needs deeper customer and gateway visibility.",
+    ],
+    faq: [
+      {
+        question: "Can support log in as a customer?",
+        answer:
+          "Yes. Login as User lets administrators impersonate non-admin customers from supported contexts.",
+      },
+      {
+        question: "Can I see what happened on a subscription?",
+        answer:
+          "Yes. Subscription Notes records lifecycle changes, renewal events, gateway activity, private admin notes, and customer-visible notes.",
+      },
+      {
+        question: "Which support tools require Pro?",
+        answer:
+          "Member Insight, Gateway Health, activity audits, and scheduled-job logs are Pro workflows. Core still includes subscription management, notes, portal context, and troubleshooting guides.",
+      },
+    ],
+    relatedFeatures: [
+      "manage-subscriptions",
+      "subscription-notes",
+      "login-as-user",
+      "member-insight",
+      "audits-and-logs",
+      "gateway-health",
+    ],
+  },
+  {
+    slug: "store-credit-loyalty",
+    icon: HandCoins,
+    name: "Store Credit & Loyalty",
+    cardDescription:
+      "Use Pro store credit for refund retention, loyalty balances, prepaid credits, customer wallets, and credit emails.",
+    seoTitle: "WooCommerce Store Credit and Loyalty Workflows with ArraySubs",
+    metaDescription:
+      "Use ArraySubs Pro Store Credit for refund-to-credit, customer wallets, credit purchase products, transaction histories, expiration, and loyalty workflows.",
+    h1: "Keep more revenue with store credit workflows",
+    heroSubtitle:
+      "Turn refunds, downgrades, promotions, and prepaid purchases into spendable customer credit for renewals and new orders.",
+    heroHighlights: [
+      "Pro Store Credit",
+      "Refund to credit",
+      "Customer wallet",
+    ],
+    intro:
+      "Store credit is a revenue-retention workflow, not just a balance field. ArraySubs Pro lets merchants ==refund to credit, sell credit purchase products, manage customer balances, track credit history, send credit emails, and show customers their balance in My Account== so refunds and promotions stay inside the store.",
+    stats: [
+      { value: "Pro", label: "Store Credit module" },
+      { value: "4", label: "Credit emails" },
+      { value: "Wallet", label: "Customer balance" },
+      { value: "Refund", label: "Credit source" },
+    ],
+    audience: [
+      {
+        title: "Subscription stores with refunds",
+        description:
+          "Offer credit instead of cash when customers cancel, downgrade, or need partial refunds.",
+      },
+      {
+        title: "Loyalty programs",
+        description:
+          "Issue promotional credit and let customers spend it on renewals or new orders.",
+      },
+      {
+        title: "Prepaid usage businesses",
+        description:
+          "Sell credit packs that customers consume across subscription-related purchases.",
+      },
+      {
+        title: "Support and retention teams",
+        description:
+          "Use credit as a save offer when discounts or pauses are not the right fit.",
+      },
+    ],
+    points: [
+      {
+        problem: "Refunds leave the store forever.",
+        solution:
+          "Refund to Credit keeps value in the customer wallet instead of sending it back through the gateway.",
+      },
+      {
+        problem: "Customers need a simple place to see their balance.",
+        solution:
+          "The customer portal can show Store Credit balance and related account pages in My Account.",
+      },
+      {
+        problem: "Manual credits are hard to audit.",
+        solution:
+          "Store Credit Management and Credit History track balance changes, source, type, and transaction context.",
+      },
+      {
+        problem: "Promotional credit expires silently.",
+        solution:
+          "Store Credit Settings and credit emails support expiration and customer notifications.",
+      },
+      {
+        problem: "You want to sell prepaid credit.",
+        solution:
+          "The Purchase Product workflow creates WooCommerce products for fixed or custom credit amounts.",
+      },
+      {
+        problem: "Retention offers need more than discounts.",
+        solution:
+          "Pair Retention and Refunds with Store Credit to offer value while preserving cash.",
+      },
+    ],
+    steps: [
+      {
+        title: "Enable Store Credit",
+        description:
+          "Turn on the Pro Store Credit module and configure wallet behavior.",
+      },
+      {
+        title: "Configure credit rules",
+        description:
+          "Set auto-apply, expiration, purchase limits, and related customer-facing settings.",
+      },
+      {
+        title: "Add credit products",
+        description:
+          "Create fixed or custom-amount credit purchase products in WooCommerce.",
+      },
+      {
+        title: "Connect refund workflows",
+        description:
+          "Use Refund to Credit from WooCommerce orders when a cash refund is not required.",
+      },
+      {
+        title: "Notify customers",
+        description:
+          "Customize Credit Added, Credit Used, Credit Expiring, and Credit Expired emails.",
+      },
+    ],
+    playbooks: [
+      {
+        title: "Refund retention",
+        description:
+          "A customer cancels mid-cycle; support refunds the unused period to store credit so the value stays available for a future order.",
+      },
+      {
+        title: "Prepaid top-up wallet",
+        description:
+          "Customers buy credit packs and spend the balance on renewals, add-ons, or future purchases.",
+      },
+      {
+        title: "Win-back credit",
+        description:
+          "A retention workflow offers credit toward the next renewal instead of a cash discount.",
+      },
+    ],
+    outcomes: [
+      "Keep refund value inside the store when appropriate.",
+      "Give customers a clear balance and credit history.",
+      "Sell prepaid credit products without custom development.",
+      "Notify customers before credit expires or changes.",
+      "Pair credit with retention workflows for more flexible saves.",
+    ],
+    faq: [
+      {
+        question: "Can I refund an order as store credit?",
+        answer:
+          "Yes. Store Credit includes a refund-to-credit workflow from WooCommerce orders.",
+      },
+      {
+        question: "Can customers buy credit?",
+        answer:
+          "Yes. The Purchase Product workflow lets stores sell fixed or custom credit amounts.",
+      },
+      {
+        question: "Can customers see their credit balance?",
+        answer:
+          "Yes. Store Credit integrates with the customer portal and My Account experience.",
+      },
+    ],
+    relatedFeatures: [
+      "store-credit",
+      "retention-and-refunds",
+      "customer-portal",
+      "emails",
+      "profile-builder",
+      "member-insight",
     ],
   },
 ];
@@ -1626,6 +2102,102 @@ export const USE_CASE_CAN_DO: Record<string, UseCaseFaq[]> = {
       question: "Can I reactivate a paused or cancelled client?",
       answer:
         "Yes. Clients reactivate from the portal, or you reactivate them in the admin.",
+    },
+  ],
+  "b2b-wholesale-memberships": [
+    {
+      question: "Can I hide wholesale products from retail customers?",
+      answer:
+        "Yes. Member Access can restrict product categories, URLs, downloads, and pages by role, plan, or subscription status.",
+    },
+    {
+      question: "Can I assign a WordPress role to active buyers?",
+      answer:
+        "Yes. Role mapping assigns or removes buyer roles as subscriptions activate, pause, expire, or cancel.",
+    },
+    {
+      question: "Can I offer member-only pricing?",
+      answer:
+        "Yes. Commerce and benefit rules can apply discounts and purchase restrictions only to eligible members.",
+    },
+    {
+      question: "Can I redirect buyers away from wp-admin?",
+      answer:
+        "Yes. Admin Dashboard Access redirects unauthorized users away from wp-admin while administrators and selected staff roles keep access.",
+    },
+    {
+      question: "Can I route buyer logins through My Account?",
+      answer:
+        "Yes. WordPress Login Page redirects customer login and registration traffic to WooCommerce My Account.",
+    },
+    {
+      question: "Can I stop shared wholesale logins?",
+      answer:
+        "Yes (Pro). Multi-Login Prevention limits concurrent sessions with global and plan-level controls.",
+    },
+  ],
+  "subscription-support-operations": [
+    {
+      question: "Can support log in as the customer?",
+      answer:
+        "Yes. Login as User lets administrators open a non-admin customer's frontend session for troubleshooting.",
+    },
+    {
+      question: "Can I see a subscription timeline?",
+      answer:
+        "Yes. Subscription Notes logs lifecycle changes, renewal events, gateway activity, admin notes, and customer-visible notes.",
+    },
+    {
+      question: "Can I search a full member profile?",
+      answer:
+        "Yes (Pro). Member Insight shows profile, subscription, commerce, address, credit, and shortcut context.",
+    },
+    {
+      question: "Can I diagnose webhook problems?",
+      answer:
+        "Yes (Pro). Gateway Health shows gateway status, webhook URLs, capabilities, and webhook event logs.",
+    },
+    {
+      question: "Can I see scheduled-job failures?",
+      answer:
+        "Yes (Pro). Audits and Logs includes scheduled-job logs and activity audit screens.",
+    },
+    {
+      question: "Can I export subscriptions for support review?",
+      answer:
+        "Yes. Manage Subscriptions exports filtered subscription data for operations and reporting.",
+    },
+  ],
+  "store-credit-loyalty": [
+    {
+      question: "Can I refund to store credit?",
+      answer:
+        "Yes (Pro). Store Credit supports refund-to-credit from WooCommerce order screens.",
+    },
+    {
+      question: "Can customers buy credit?",
+      answer:
+        "Yes (Pro). Store Credit includes a credit purchase product workflow for fixed or custom amounts.",
+    },
+    {
+      question: "Can customers see their balance?",
+      answer:
+        "Yes. Store Credit can appear in the My Account customer portal experience.",
+    },
+    {
+      question: "Can I manually adjust a customer's credit?",
+      answer:
+        "Yes (Pro). Store Credit Management lets admins add or deduct credit and review transaction histories.",
+    },
+    {
+      question: "Can credit expire?",
+      answer:
+        "Yes. Store Credit Settings include expiration controls, and credit emails can notify customers before and after expiry.",
+    },
+    {
+      question: "Can I use credit as a retention offer?",
+      answer:
+        "Yes. Pair Store Credit with Retention and Refunds to preserve value when customers cancel or downgrade.",
     },
   ],
 };

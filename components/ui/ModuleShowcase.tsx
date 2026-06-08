@@ -1,4 +1,5 @@
 import { ArrowUpRight, MonitorPlay } from "lucide-react";
+import { cn } from "@/lib/cn";
 import { LetterRevealText } from "@/components/animation/LetterRevealText";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -7,9 +8,21 @@ import { Section } from "@/components/ui/Section";
 
 type ModuleShowcaseProps = {
   moduleCount?: number;
+  compact?: boolean;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
 };
 
-export function ModuleShowcase({ moduleCount = 19 }: ModuleShowcaseProps) {
+export function ModuleShowcase({
+  moduleCount = 27,
+  compact = false,
+  primaryHref = "#cta",
+  primaryLabel = "Get Pro Access — Free",
+  secondaryHref = "#demo",
+  secondaryLabel = "Live Demo",
+}: ModuleShowcaseProps) {
   return (
     <Section
       surface="default"
@@ -17,7 +30,12 @@ export function ModuleShowcase({ moduleCount = 19 }: ModuleShowcaseProps) {
       aria-labelledby="module-showcase-title"
       className="overflow-hidden"
     >
-      <Container className="grid min-h-[calc(100svh-4rem)] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[minmax(0,1.08fr)_minmax(24rem,0.72fr)] lg:gap-16 lg:py-24">
+      <Container
+        className={cn(
+          "grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[minmax(0,1.08fr)_minmax(24rem,0.72fr)] lg:gap-16 lg:py-24",
+          !compact && "min-h-[calc(100svh-4rem)]",
+        )}
+      >
         <div className="flex flex-col font-display">
           <Eyebrow className="mb-6 font-display normal-case tracking-normal">
             <LetterRevealText
@@ -107,14 +125,12 @@ export function ModuleShowcase({ moduleCount = 19 }: ModuleShowcaseProps) {
             aria-label={`${moduleCount}+ available modules`}
           >
             <span className="sr-only">{moduleCount}+ available modules</span>
-            <img
-              src="/shapes/module-count-3d.webp"
-              alt=""
-              width={1448}
-              height={1086}
+            <span
               aria-hidden="true"
-              className="h-auto w-[15rem] max-w-full sm:w-[21rem] lg:w-[24rem] xl:w-[27rem]"
-            />
+              className="font-display text-[8rem] leading-[0.8] font-bold tracking-normal text-primary sm:text-[11rem] lg:text-[12.5rem] xl:text-[14rem]"
+            >
+              {moduleCount}+
+            </span>
           </div>
         </div>
 
@@ -144,19 +160,19 @@ export function ModuleShowcase({ moduleCount = 19 }: ModuleShowcaseProps) {
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-20 xl:mt-24">
             <Button
-              href="#cta"
+              href={primaryHref}
               size="md"
               iconRight={<ArrowUpRight aria-hidden="true" className="size-5" />}
             >
-              Get Pro Access — Free
+              {primaryLabel}
             </Button>
             <Button
-              href="#demo"
+              href={secondaryHref}
               variant="outline"
               size="md"
               iconLeft={<MonitorPlay aria-hidden="true" className="size-5" />}
             >
-              Live Demo
+              {secondaryLabel}
             </Button>
           </div>
         </div>

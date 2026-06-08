@@ -232,6 +232,11 @@ export function CookieConsent() {
   };
 
   const closePreferences = () => {
+    if (!consent) {
+      saveConsent(false, "preferences");
+      return;
+    }
+
     setShowPreferences(false);
     previousFocusRef.current?.focus();
   };

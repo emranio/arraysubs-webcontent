@@ -305,7 +305,7 @@ The strategy below clusters 200+ keywords into **12 topic clusters**, each split
 
 ## Cluster 7: Payment Gateways for Subscriptions
 
-> **Pillar Page**: Payment Gateways & Checkout feature page
+> **Pillar Page**: Checkout and Payments feature page
 > **Intent Mix**: Commercial (50%) + Informational (50%)
 > **ArraySubs Advantage**: Stripe + PayPal + Paddle (Merchant of Record) — only 2 plugins support Paddle
 
@@ -412,7 +412,7 @@ The strategy below clusters 200+ keywords into **12 topic clusters**, each split
 
 ## Cluster 10: Checkout Optimization for Subscriptions
 
-> **Pillar Page**: Checkout Builder feature page
+> **Pillar Page**: Checkout and Payments feature page, Checkout Builder section
 > **Intent Mix**: Commercial (45%) + Informational (55%)
 > **ArraySubs Advantage**: ONLY subscription plugin with visual checkout builder — ZERO direct competition
 
@@ -420,14 +420,14 @@ The strategy below clusters 200+ keywords into **12 topic clusters**, each split
 
 | Keyword | Est. Volume | KD | Intent | Opportunity | Target Page |
 |---------|-------------|-----|--------|-------------|-------------|
-| woocommerce checkout builder plugin | 720/mo | 45 | Commercial | ⭐⭐⭐⭐ | Checkout Builder feature page |
-| woocommerce custom checkout fields plugin | 590/mo | 40 | Commercial | ⭐⭐⭐⭐ | Checkout Builder feature page |
-| woocommerce checkout customizer subscription | 140/mo | 10 | Commercial | ⭐⭐⭐⭐⭐ | Checkout Builder feature page |
-| woocommerce multi step checkout plugin | 480/mo | 40 | Commercial | ⭐⭐⭐⭐ | Checkout Builder feature page |
-| woocommerce drag and drop checkout builder | 210/mo | 15 | Commercial | ⭐⭐⭐⭐⭐ | Checkout Builder feature page |
-| woocommerce conditional checkout fields | 320/mo | 25 | Commercial | ⭐⭐⭐⭐⭐ | Checkout Builder feature page |
-| woocommerce checkout file upload | 170/mo | 15 | Commercial | ⭐⭐⭐⭐⭐ | Checkout Builder feature page |
-| woocommerce one click checkout subscription | 210/mo | 20 | Commercial | ⭐⭐⭐⭐⭐ | Checkout feature page |
+| woocommerce checkout builder plugin | 720/mo | 45 | Commercial | ⭐⭐⭐⭐ | Checkout and Payments feature page |
+| woocommerce custom checkout fields plugin | 590/mo | 40 | Commercial | ⭐⭐⭐⭐ | Checkout and Payments feature page |
+| woocommerce checkout customizer subscription | 140/mo | 10 | Commercial | ⭐⭐⭐⭐⭐ | Checkout and Payments feature page |
+| woocommerce multi step checkout plugin | 480/mo | 40 | Commercial | ⭐⭐⭐⭐ | Checkout and Payments feature page |
+| woocommerce drag and drop checkout builder | 210/mo | 15 | Commercial | ⭐⭐⭐⭐⭐ | Checkout and Payments feature page |
+| woocommerce conditional checkout fields | 320/mo | 25 | Commercial | ⭐⭐⭐⭐⭐ | Checkout and Payments feature page |
+| woocommerce checkout file upload | 170/mo | 15 | Commercial | ⭐⭐⭐⭐⭐ | Checkout and Payments feature page |
+| woocommerce one click checkout subscription | 210/mo | 20 | Commercial | ⭐⭐⭐⭐⭐ | Checkout and Payments feature page |
 
 ### 10B. Blog / Article Keywords
 
@@ -692,8 +692,8 @@ These keywords have the highest opportunity scores — low to moderate competiti
 | 4 | Member Access Feature Page | woocommerce content restriction plugin | 720/mo |
 | 4 | Customer Portal Feature Page | woocommerce customer subscription portal | 170/mo |
 | 5 | Store Credit Feature Page | woocommerce store credit plugin | 880/mo |
-| 5 | Payment Gateways Overview Page | woocommerce subscription payment gateway | 590/mo |
-| 6 | Checkout Builder Feature Page | woocommerce checkout builder plugin | 720/mo |
+| 5 | Checkout and Payments Feature Page | woocommerce subscription payment gateway | 590/mo |
+| 6 | Checkout Builder Section | woocommerce checkout builder plugin | 720/mo |
 | 6 | Analytics Feature Page | woocommerce subscription analytics plugin | 170/mo |
 | 7 | vs YITH Subscription | yith woocommerce subscription alternative | 390/mo |
 | 7 | vs WP Swings | wp swings subscription alternative | 170/mo |

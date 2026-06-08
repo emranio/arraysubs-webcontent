@@ -16,6 +16,7 @@ import { createMetadata, faqSchema, softwareApplicationSchema } from "@/lib/seo"
 import { site } from "@/lib/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ScrollFillCard } from "@/components/animation/ScrollFillCard";
+import { FEATURES } from "../features/_data";
 import {
   Accordion,
   Badge,
@@ -53,11 +54,13 @@ export const metadata: Metadata = {
    ========================================================================= */
 
 const OFFER_UNLOCKS = [
-  "Store credit & refund-to-credit",
-  "Checkout builder — 27 field types",
-  "Automatic payments — Stripe, PayPal, Paddle",
-  "Advanced analytics — MRR, churn, ARPU",
-  "Audits, logs & gateway health monitoring",
+  "Store Credit wallet and refund-to-credit",
+  "Feature Manager product entitlements",
+  "Member Insight customer profile dashboard",
+  "Gateway Health and webhook monitoring",
+  "Multi-Login Prevention session limits",
+  "Redirect Product Page controls",
+  "Subscription Shipping rules",
 ];
 
 const PRO_FEATURES: { icon: ReactNode; title: string; description: string }[] =
@@ -66,50 +69,54 @@ const PRO_FEATURES: { icon: ReactNode; title: string; description: string }[] =
       icon: <Wallet className="size-6" />,
       title: "Store Credit",
       description:
-        "A virtual wallet with 8 credit sources, auto-apply to renewals, expiration management, credit purchases, and 4 dedicated email notifications.",
+        "A virtual wallet for balances, purchases, transaction history, expirations, dedicated emails, and refund-to-credit workflows.",
     },
     {
       icon: <LayoutGrid className="size-6" />,
-      title: "Checkout Builder",
+      title: "Redirect Product Page",
       description:
-        "Drag-and-drop checkout editor with 27 field types, multi-step layouts, conditional logic, and section-level design — no code.",
-    },
-    {
-      icon: <BarChart3 className="size-6" />,
-      title: "Advanced Analytics",
-      description:
-        "40+ reports and 10 KPI cards — MRR, churn, ARPU, trial conversions — with time-series charts and a central reports hub.",
-    },
-    {
-      icon: <ClipboardList className="size-6" />,
-      title: "Audits & Logs",
-      description:
-        "An activity timeline for every subscription change, scheduled-job logs, and a gateway health dashboard with webhook monitoring.",
+        "Send direct subscription product URLs to a sales page or return a 404 while checkout links and backend management keep working.",
     },
     {
       icon: <CreditCard className="size-6" />,
-      title: "Automatic Payments",
+      title: "Subscription Shipping",
       description:
-        "Automatic recurring billing with Stripe (SCA/3DS), PayPal billing agreements, and Paddle as merchant of record.",
+        "Choose one-time shipping at checkout or recurring shipping charges on each renewal for physical subscription products.",
+    },
+    {
+      icon: <ClipboardList className="size-6" />,
+      title: "Member Insight",
+      description:
+        "Look up any customer, view their complete subscription and commerce profile, and jump to related support actions.",
     },
     {
       icon: <ListChecks className="size-6" />,
       title: "Feature Manager",
       description:
-        "Define per-plan entitlements — toggles, limits, and details — and show a “What’s included” list right on the product page.",
+        "Define product entitlements, limits, and capabilities so customers know exactly what each subscription includes.",
+    },
+    {
+      icon: <BarChart3 className="size-6" />,
+      title: "Gateway Health",
+      description:
+        "Monitor gateway connections, subscription counts, webhook URLs, capabilities, and webhook event logs from one admin screen.",
     },
     {
       icon: <Lock className="size-6" />,
       title: "Multi-Login Prevention",
       description:
-        "Detect concurrent sessions and enforce your session policy so each subscription means one active user.",
+        "Limit concurrent sessions per account with global limits, plan overrides, and Login as User exclusions.",
     },
   ];
 
+const MODULE_COUNT = FEATURES.length;
+const CORE_MODULE_COUNT = FEATURES.filter((feature) => feature.tier !== "Pro").length;
+const PRO_ONLY_MODULE_COUNT = FEATURES.filter((feature) => feature.tier === "Pro").length;
+
 const STATS = [
-  { value: "15", label: "Built-in modules" },
-  { value: "Free", label: "Core plugin, forever" },
-  { value: "<10 min", label: "From install to live" },
+  { value: String(MODULE_COUNT), label: "Root modules" },
+  { value: String(CORE_MODULE_COUNT), label: "Core-accessible" },
+  { value: String(PRO_ONLY_MODULE_COUNT), label: "Pro-only modules" },
   { value: "6+", label: "Plugins replaced" },
 ];
 
@@ -143,7 +150,7 @@ const COMPARISON_GROUPS: ComparisonGroup[] = [
       row("Pause / vacation mode", yes, yes),
       row("2-phase grace period & recovery", yes, yes),
       row("Coupon integration", yes, yes),
-      row("Fixed-period membership product", yes, yes),
+      row("Fixed-period membership product", no, yes),
     ],
   },
   {
@@ -174,9 +181,19 @@ const COMPARISON_GROUPS: ComparisonGroup[] = [
       row("Advanced analytics (MRR, churn, ARPU)", txt("Retention only"), yes),
       row("Checkout builder (27 field types)", no, yes),
       row("Audit logs & activity timeline", no, yes),
-      row("Gateway health dashboard", no, yes),
+      row("Gateway Health root module", no, yes),
       row("Feature manager (per-plan entitlements)", no, yes),
-      row("Multi-login prevention", no, yes),
+      row("Member Insight customer profile", no, yes),
+    ],
+  },
+  {
+    label: "Site access toolkit",
+    rows: [
+      row("Admin bar visibility", yes, yes),
+      row("Admin dashboard access restriction", yes, yes),
+      row("WordPress login page redirect", yes, yes),
+      row("Login as User support impersonation", yes, yes),
+      row("Multi-Login Prevention root module", no, yes),
     ],
   },
   {
@@ -203,7 +220,7 @@ const FAQ_ITEMS = [
   {
     question: "What do I get with “Pro free for 4 months”?",
     answer:
-      "A full ArraySubs Pro license — store credit, checkout builder, automatic payments, advanced analytics, audits, feature manager, and multi-login prevention — free for 4 months. No credit card, no commitment. We email your license key and download links right after you sign up.",
+      "A full ArraySubs Pro license — the seven Pro-only root modules, plus Pro workflows inside checkout, automatic payments, analytics, audits, customer portal, refunds, emails, and shared modules — free for 4 months. No credit card, no commitment. We email your license key and download links right after you sign up.",
   },
   {
     question: "What happens after the 4 free months?",
@@ -337,8 +354,8 @@ export default function ArraySubsPricingPage() {
         <Container>
           <SectionTitle
             eyebrow="What’s in Pro"
-            title="Seven Extra modules you unlock with Pro"
-            subtitle="The free core already runs your store. Pro is where you grow revenue, automate billing, and see the numbers."
+            title="Seven Pro-only root modules you unlock"
+            subtitle="The free core already runs your store. Pro adds the dedicated modules the current manual marks as Pro-only."
             align="center"
           />
           <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
