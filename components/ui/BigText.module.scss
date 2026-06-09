@@ -6,6 +6,11 @@
   --bt-fill: var(--color-dark);
 
   display: block;
+  // Sub-1.0 display line-heights let the last line's descenders (g, y, comma)
+  // fall below the padding box. The fill is painted via background-clip: text
+  // sized to that box, so uncovered descenders render transparent ("cropped").
+  // Pad the box bottom so the gradient covers them.
+  padding-bottom: 0.18em;
   background-image: linear-gradient(var(--bt-fill), var(--bt-fill)),
     linear-gradient(var(--bt-base), var(--bt-base));
   background-repeat: no-repeat;

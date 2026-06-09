@@ -144,6 +144,26 @@ export function faqSchema(items: Faq[]) {
   };
 }
 
+export type HowToStep = { name: string; text: string };
+
+/**
+ * HowTo JSON-LD for step-by-step setup guides. Helps search and AI answer
+ * engines surface the steps directly (GEO/AEO) for "how to set up X" queries.
+ */
+export function howToSchema(name: string, steps: HowToStep[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
 export type ArticleInput = {
   headline: string;
   description: string;

@@ -31,10 +31,12 @@ import {
 } from "@/components/ui";
 import { COMPARISONS } from "./_data";
 import { FEATURES } from "../features/_data";
+import { RECIPES } from "../use-cases/_recipes";
 
 const MODULE_COUNT = FEATURES.length;
 const CORE_MODULE_COUNT = FEATURES.filter((feature) => feature.tier !== "Pro").length;
 const PRO_ONLY_MODULE_COUNT = FEATURES.filter((feature) => feature.tier === "Pro").length;
+const RECIPE_COUNT = RECIPES.length;
 
 export const metadata: Metadata = createMetadata({
   title: "ArraySubs Alternatives & Comparisons — Subscription Plugins (2026)",
@@ -81,6 +83,7 @@ const FIELD_GROUPS: ComparisonGroup[] = [
       r(`${MODULE_COUNT} root-module map`, yes(), no, no, no, no, no),
       r(`${CORE_MODULE_COUNT} core-accessible modules`, yes(), no, no, no, no, no),
       r(`${PRO_ONLY_MODULE_COUNT} Pro-only root modules`, yes(), no, no, no, no, no),
+      r(`${RECIPE_COUNT} documented setup recipes`, yes(), no, no, no, no, no),
       r("Subscriptions + memberships in one plugin", yes(), no, no, no, no, no),
       r("No annual renewal fee", yes(), no, no, no, no, yes()),
     ],
@@ -149,7 +152,7 @@ const WHY_SWITCH = [
     icon: <Layers className="size-6" />,
     title: "All-in-one, not a plugin pile",
     description:
-      `${MODULE_COUNT} root modules in one ArraySubs ecosystem — no $478/yr two-plugin stacks or vendor add-ons to stitch together.`,
+      `${MODULE_COUNT} root modules and ${RECIPE_COUNT} documented setups in one ArraySubs ecosystem — no $478/yr two-plugin stacks or vendor add-ons to stitch together.`,
   },
   {
     icon: <HeartHandshake className="size-6" />,

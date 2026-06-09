@@ -67,9 +67,9 @@ const SHAPE_KEYS = Object.keys(SHAPES) as ShapeKey[];
 /**
  * GSAP cursor companion that follows the system pointer (the native cursor stays
  * visible). A small solid ring trails the pointer; an inverting dot tracks it
- * tightly and morphs into random rounded shapes (triangle/square/hexagon/circle)
- * on fast movement, settling back to a circle when motion slows. Disabled on
- * touch devices and under reduced motion.
+ * tightly and cycles through rounded shapes (circle/triangle/square/hexagon),
+ * advancing one shape per 100px of pointer travel regardless of speed. Disabled
+ * on touch devices and under reduced motion.
  */
 export function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
@@ -96,8 +96,8 @@ export function CustomCursor() {
     let shown = false;
     let lastX = 0;
     let lastY = 0;
-    let lastT = performance.now();
-    let lastChange = 0;
+    let accumDist = 0;
+    let shapeIndex = 0;
     let current: ShapeKey = "circle";
 
     const morphTo = (key: ShapeKey) => {
@@ -107,34 +107,32 @@ export function CustomCursor() {
       gsap.fromTo(dot, { scale: 0.65 }, { scale: 1, duration: 0.45, ease: "back.out(2)" });
     };
 
-    const FAST = 1.5; // px per ms
+    const STEP = 100; // px of pointer travel between shape changes
     const interactive =
       'a, button, summary, input, textarea, select, [role="tab"], [role="combobox"], [data-cursor="hover"]';
 
     const onMove = (event: PointerEvent) => {
-      const now = performance.now();
       if (!shown) {
         gsap.to([dot, ring], { autoAlpha: 1, duration: 0.3 });
         shown = true;
         lastX = event.clientX;
         lastY = event.clientY;
-        lastT = now;
       }
-      const dt = Math.max(now - lastT, 1);
-      const velocity = Math.hypot(event.clientX - lastX, event.clientY - lastY) / dt;
+      accumDist += Math.hypot(event.clientX - lastX, event.clientY - lastY);
       lastX = event.clientX;
       lastY = event.clientY;
-      lastT = now;
 
       xDot(event.clientX);
       yDot(event.clientY);
       xRing(event.clientX);
       yRing(event.clientY);
 
-      if (velocity > FAST && now - lastChange > 240) {
-        lastChange = now;
-        const choices = SHAPE_KEYS.filter((k) => k !== current);
-        morphTo(choices[Math.floor(Math.random() * choices.length)]);
+      // Advance one shape per STEP px traveled — independent of speed, so it
+      // morphs on slow/normal moves too. Carry the remainder so no travel is lost.
+      if (accumDist >= STEP) {
+        accumDist -= STEP;
+        shapeIndex = (shapeIndex + 1) % SHAPE_KEYS.length;
+        morphTo(SHAPE_KEYS[shapeIndex]);
       }
     };
 

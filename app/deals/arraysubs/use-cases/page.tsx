@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { ArrowRight, Check } from "lucide-react";
-import { createMetadata, faqSchema } from "@/lib/seo";
-import { JsonLd } from "@/components/seo/JsonLd";
+import { ArrowRight } from "lucide-react";
+import { createMetadata } from "@/lib/seo";
 import {
+  Badge,
+  BigText,
   Button,
   Container,
   CTA,
@@ -12,8 +13,12 @@ import {
   Section,
   SectionTitle,
 } from "@/components/ui";
-import { USE_CASES, canDoForUseCase } from "./_data";
-import { FEATURES } from "../features/_data";
+import { USE_CASES } from "./_data";
+import { FEATURES, type FeatureTier } from "../features/_data";
+import { RECIPE_GROUPS, RECIPES, recipesForGroup } from "./_recipes";
+
+const tierTone = (tier: FeatureTier) =>
+  tier === "Free" ? "highlight" : tier === "Pro" ? "dark" : "primary";
 
 export const metadata: Metadata = createMetadata({
   title: "Use Cases — WooCommerce Subscriptions for Every Business",
@@ -77,51 +82,73 @@ export default function UseCasesHubPage() {
         </Container>
       </Section>
 
-      {/* ---- "Can I…?" capability checks (consolidated from all use cases) */}
-      <Section surface="surface" spacing="md" id="can-i">
+      {/* ---- Big link to the "Can I…?" answers page --------------------- */}
+      <Section surface="default" spacing="sm">
         <Container>
-          <SectionTitle
-            eyebrow="Can I…?"
-            title="Yes — ArraySubs can do that"
-            subtitle="The specific things store owners ask before they start, grouped by workflow. Every answer maps to a current ArraySubs module."
-            align="center"
-          />
-          <div className="mt-12 flex flex-col gap-12">
-            {USE_CASES.map((useCase) => (
-              <div key={useCase.slug}>
-                <Eyebrow>{useCase.name}</Eyebrow>
-                <div className="mt-5 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
-                  {canDoForUseCase(useCase.slug).map((item) => (
-                    <div
-                      key={item.question}
-                      className="flex gap-3 rounded-2xl bg-card p-6 text-foreground"
-                    >
-                      <span
-                        aria-hidden="true"
-                        className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-primary text-on-dark"
-                      >
-                        <Check className="size-4" strokeWidth={3} />
-                      </span>
-                      <div>
-                        <p className="font-display font-semibold text-balance">
-                          {item.question}
-                        </p>
-                        <p className="mt-1.5 text-muted text-pretty">
-                          {item.answer}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+          <div className="flex justify-center">
+            <Button
+              href="/deals/arraysubs/use-cases/can-i/"
+              variant="outline"
+              size="lg"
+              magnetic
+              iconRight={<ArrowRight className="size-5" />}
+            >
+              “Can I…?” — see every answer
+            </Button>
           </div>
         </Container>
-        <JsonLd
-          data={faqSchema(
-            USE_CASES.flatMap((useCase) => canDoForUseCase(useCase.slug)),
-          )}
-        />
+      </Section>
+
+      {/* ---- Configuration recipes, grouped by module ------------------- */}
+      <Section surface="surface" spacing="md" id="recipes">
+        <Container>
+          <div className="flex flex-col items-center gap-6 text-center">
+            <div>
+              <BigText size="display-lg" align="center">
+                Whatever you can imagine,
+              </BigText>
+              <BigText size="display-lg" variant="primary" align="center">
+                ArraySubs covers you.
+              </BigText>
+            </div>
+            <p className="text-lg text-muted text-pretty sm:text-xl">
+              {`Pricing that bends, retention that fights, promos that convert — explore ${RECIPES.length} real-world setups built from live ArraySubs settings. However unconventional your subscription idea, the plumbing is already here.`}
+            </p>
+          </div>
+          <div className="mt-12 flex flex-col gap-16">
+            {RECIPE_GROUPS.map((group) => {
+              const recipes = recipesForGroup(group.key);
+              if (recipes.length === 0) return null;
+              return (
+                <div key={group.key}>
+                  <div className="mx-auto max-w-2xl text-center">
+                    <Eyebrow>{group.eyebrow}</Eyebrow>
+                    <h3 className="mt-3 font-display text-2xl leading-tight text-balance sm:text-3xl">
+                      {group.label}
+                    </h3>
+                    <p className="mt-3 text-muted text-pretty">
+                      {group.description}
+                    </p>
+                  </div>
+                  <div className="mt-8 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
+                    {recipes.map((recipe) => (
+                      <IconCard
+                        key={recipe.slug}
+                        icon={<recipe.icon className="size-6" />}
+                        title={recipe.name}
+                        description={recipe.cardDescription}
+                        href={`/deals/arraysubs/use-cases/recipes/${recipe.slug}/`}
+                        badge={
+                          <Badge tone={tierTone(recipe.tier)}>{recipe.tier}</Badge>
+                        }
+                      />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Container>
       </Section>
 
       {/* ---- CTA -------------------------------------------------------- */}

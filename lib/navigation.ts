@@ -10,5 +10,4 @@ export const HEADER_NAV_ITEMS: NavItem[] = [
   { label: "Use Cases", href: "/deals/arraysubs/use-cases/" },
   { label: "Compare", href: "/deals/arraysubs/alternatives/" },
   { label: "Trust Center", href: "/trust-center/" },
-  { label: "Contact", href: "/contact/" },
 ];

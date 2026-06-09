@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { FEATURES } from "@/app/deals/arraysubs/features/_data";
 import { USE_CASES } from "@/app/deals/arraysubs/use-cases/_data";
+import { RECIPES } from "@/app/deals/arraysubs/use-cases/_recipes";
 import { COMPARISONS } from "@/app/deals/arraysubs/alternatives/_data";
 
 /**
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/deals/arraysubs/pricing/", 0.8],
     ["/deals/arraysubs/features/", 0.8],
     ["/deals/arraysubs/use-cases/", 0.8],
+    ["/deals/arraysubs/use-cases/can-i/", 0.7],
     ["/deals/arraysubs/alternatives/", 0.8],
   ] as const;
 
@@ -53,6 +55,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...USE_CASES.map((useCase) => ({
       url: `${site.url}/deals/arraysubs/use-cases/${useCase.slug}/`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...RECIPES.map((recipe) => ({
+      url: `${site.url}/deals/arraysubs/use-cases/recipes/${recipe.slug}/`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,

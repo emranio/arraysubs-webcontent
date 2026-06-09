@@ -228,7 +228,7 @@ export function TrustCrossLinks({
             <Link
               key={item.href}
               href={item.href}
-              className="group flex h-full flex-col rounded-xl bg-card p-6 text-foreground transition-transform duration-300 ease-out hover:-translate-y-1"
+              className="group flex h-full flex-col rounded-xl bg-card p-6 text-foreground"
             >
               <h3 className="font-display text-xl">{item.title}</h3>
               <p className="mt-3 text-muted">{item.description}</p>

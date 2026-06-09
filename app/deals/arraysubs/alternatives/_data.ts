@@ -97,7 +97,7 @@ export function comparisonColumns(c: Comparison): ComparisonColumn[] {
   ];
 }
 
-const UPDATED = "2026-06-03";
+const UPDATED = "2026-06-09";
 
 export const COMPARISONS: Comparison[] = [
   /* ===================================================================== *
@@ -105,6 +105,7 @@ export const COMPARISONS: Comparison[] = [
    * ===================================================================== */
   {
     slug: "woocommerce-subscriptions",
+    competitorUpdated: "v8.8.1 · 4 Jun 2026 (woocommerce.com, verified 9 Jun 2026)",
     competitor: "WooCommerce Subscriptions",
     competitorVendor: "Automattic / WooCommerce",
     competitorShort: "Woo Subscriptions",
@@ -264,6 +265,7 @@ export const COMPARISONS: Comparison[] = [
    * ===================================================================== */
   {
     slug: "woocommerce-memberships",
+    competitorUpdated: "v1.28.2 · 18 May 2026 (woocommerce.com, verified 9 Jun 2026)",
     competitor: "WooCommerce Memberships",
     competitorVendor: "SkyVerge / WooCommerce",
     competitorShort: "Woo Memberships",
@@ -417,6 +419,7 @@ export const COMPARISONS: Comparison[] = [
    * ===================================================================== */
   {
     slug: "yith-woocommerce-subscription",
+    competitorUpdated: "Premium v4.22.1 · 14 May 2026 (yithemes.com, verified 9 Jun 2026)",
     competitor: "YITH WooCommerce Subscription",
     competitorVendor: "YITH (Your Inspiration Solutions)",
     competitorShort: "YITH Subscription",
@@ -471,7 +474,7 @@ export const COMPARISONS: Comparison[] = [
         label: "Subscriptions & billing",
         rows: [
           row("Simple subscriptions", yes(), yes(), yes("free")),
-          row("Variable-product subscriptions", yes(), yes(), part("premium")),
+          row("Variable-product subscriptions", yes(), yes(), yes()),
           row("Free trials & sign-up fees", yes(), yes(), part("premium")),
           row("Plan switching", yes(), yes(), part("variable only")),
           row("Different renewal price", yes(), yes(), no()),
@@ -570,6 +573,7 @@ export const COMPARISONS: Comparison[] = [
    * ===================================================================== */
   {
     slug: "yith-woocommerce-membership",
+    competitorUpdated: "v2.31.0 · 12 May 2026 (yithemes.com, verified 9 Jun 2026)",
     competitor: "YITH WooCommerce Membership",
     competitorVendor: "YITH (Your Inspiration Solutions)",
     competitorShort: "YITH Membership",
@@ -721,6 +725,7 @@ export const COMPARISONS: Comparison[] = [
    * ===================================================================== */
   {
     slug: "wp-swings-subscriptions",
+    competitorUpdated: "v1.9.8 · 8 Jun 2026 (WordPress.org, verified 9 Jun 2026)",
     competitor: "Subscriptions for WooCommerce (WP Swings)",
     competitorVendor: "WP Swings",
     competitorShort: "WP Swings",
@@ -759,7 +764,7 @@ export const COMPARISONS: Comparison[] = [
       arraysubs: "Free core, forever. Pro is free for 4 months during early launch.",
       competitor: "Free + Pro ($129/yr)",
       combinedNote:
-        "Memberships need WP Swings' separate Membership plugin (800+ installs).",
+        "Memberships need WP Swings' separate Membership plugin (900+ installs).",
       savings: "More in the free tier, plus memberships, with no second plugin.",
     },
     tableGroups: [
@@ -812,7 +817,7 @@ export const COMPARISONS: Comparison[] = [
       {
         title: "Memberships in the box",
         description:
-          "ArraySubs includes member access control free. WP Swings needs its separate Membership plugin (only 800+ installs) for any restriction.",
+          "ArraySubs includes member access control free. WP Swings needs its separate Membership plugin (only 900+ installs) for any restriction.",
         winner: "arraysubs",
       },
       {
@@ -914,7 +919,7 @@ export const COMPARISONS: Comparison[] = [
         "Access control needs SUMO Memberships too (~$39) — ~$88 one-time, premium-only.",
       savings: "A free, all-in-one plugin vs a premium-only, two-purchase stack.",
     },
-    competitorUpdated: "23 February 2026",
+    competitorUpdated: "v17.5.0 · 23 Feb 2026 · 5,073 sales (CodeCanyon, verified 9 Jun 2026)",
     tableGroups: [
       {
         label: "Pricing, support & maintenance",
@@ -1027,28 +1032,29 @@ export const COMPARISONS: Comparison[] = [
    * ===================================================================== */
   {
     slug: "wpsubscription",
+    competitorUpdated: "v1.10.1 · 7 Jun 2026 (WordPress.org, verified 9 Jun 2026)",
     competitor: "WPSubscription",
     competitorVendor: "Convers Lab",
     competitorShort: "WPSubscription",
     icon: Sparkles,
     cardDescription:
-      "A well-reviewed newer plugin (4.9★) with installment payments and 6 gateways. ArraySubs is broader — memberships, retention, store credit, analytics.",
+      "A well-reviewed newer plugin (4.9★) with installment payments and 7 gateways. ArraySubs is broader — memberships, retention, store credit, analytics.",
     seoTitle: "ArraySubs vs WPSubscription — WooCommerce Comparison (2026)",
     metaDescription:
       "Compare ArraySubs and WPSubscription for WooCommerce. Feature matrix, pricing, memberships, gateways and unique capabilities like installment payments and retention compared for 2026.",
     h1: "ArraySubs vs WPSubscription",
     heroSubtitle:
-      "WPSubscription is a newer, well-reviewed plugin (4.9★) with installment payments and six gateways. ArraySubs is broader — adding memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight and Analytics on top of subscriptions.",
+      "WPSubscription is a newer, well-reviewed plugin (4.9★) with installment payments and seven gateways. ArraySubs is broader — adding memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight and Analytics on top of subscriptions.",
     heroHighlights: [
       "Memberships included",
       "Retention + store credit",
       "Broader free core",
     ],
     intro:
-      "ArraySubs is a broader ==alternative to WPSubscription== by Convers Lab. WPSubscription is a promising newer plugin (700+ installs, 4.9★) with strengths ArraySubs lacks — ==installment/split payments and six payment gateways== — but it's subscriptions-only, with no memberships, store credit, retention or analytics. ArraySubs bundles all of those into one free plugin.",
+      "ArraySubs is a broader ==alternative to WPSubscription== by Convers Lab. WPSubscription is a promising newer plugin (800+ installs, 4.9★) with strengths ArraySubs lacks — ==installment/split payments and seven payment gateways== — but it's subscriptions-only, with no memberships, store credit, retention or analytics. ArraySubs bundles all of those into one free plugin.",
     verdict: {
       summary:
-        "Short answer: choose ArraySubs for a broader all-in-one — memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight and Analytics alongside subscriptions. WPSubscription is excellent if your priorities are installment/split payments and the widest gateway list (six, including Razorpay and Xendit) — but it's subscriptions-only, very early stage (700+ installs), and has no membership, retention or analytics features.",
+        "Short answer: choose ArraySubs for a broader all-in-one — memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight and Analytics alongside subscriptions. WPSubscription is excellent if your priorities are installment/split payments and the widest gateway list (seven, including Razorpay and Xendit) — but it's subscriptions-only, very early stage (800+ installs), and has no membership, retention or analytics features.",
       arraysubsBestFor: [
         "Stores needing subscriptions and memberships together",
         "Anyone who wants retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics workflows",

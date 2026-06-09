@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import {
   Accessibility,
+  ArrowRight,
   BadgeCheck,
   CreditCard,
   FileCheck2,
   LockKeyhole,
+  Mail,
   ReceiptText,
   Scale,
   ShieldCheck,
@@ -14,6 +16,7 @@ import {
   Button,
   Container,
   CTA,
+  Eyebrow,
   IconCard,
   PageHero,
   Section,
@@ -92,6 +95,43 @@ export default function TrustCenterPage() {
           "Privacy rights handled by email",
         ]}
       />
+
+      {/* ---- Contact (moved here from the header nav) ------------------- */}
+      <Section surface="surface" spacing="sm">
+        <Container>
+          <div className="flex flex-col items-start justify-between gap-6 rounded-2xl bg-card p-6 text-foreground sm:p-8 lg:flex-row lg:items-center">
+            <div className="max-w-2xl">
+              <Eyebrow>Contact</Eyebrow>
+              <h2 className="mt-3 font-display text-2xl leading-tight text-balance sm:text-3xl">
+                Talk to the {site.name} team
+              </h2>
+              <p className="mt-3 text-muted text-pretty">
+                Sales, support, privacy and rights requests, refunds, licensing,
+                and accessibility reports are all handled from one place. Reach
+                out and a human replies.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-wrap gap-3">
+              <Button
+                href="/contact/"
+                size="md"
+                magnetic
+                iconRight={<ArrowRight className="size-4" />}
+              >
+                Contact us
+              </Button>
+              <Button
+                href={`mailto:${site.email}`}
+                variant="outline"
+                size="md"
+                iconRight={<Mail className="size-4" />}
+              >
+                Email {site.name}
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </Section>
 
       <Section surface="default" spacing="md">
         <Container>

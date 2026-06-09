@@ -21,6 +21,7 @@ import {
   type DifferenceWinner,
 } from "./_data";
 import { FEATURES } from "../features/_data";
+import { RECIPES } from "../use-cases/_recipes";
 import { highlight } from "../_highlight";
 
 const GET_PRO = "/deals/arraysubs/pricing/";
@@ -30,6 +31,7 @@ const CORE_MODULE_COUNT = FEATURES.filter((feature) => feature.tier !== "Pro").l
 const PRO_ONLY_FEATURES = FEATURES.filter((feature) => feature.tier === "Pro");
 const PRO_ONLY_MODULE_COUNT = PRO_ONLY_FEATURES.length;
 const PRO_ONLY_MODULE_NAMES = PRO_ONLY_FEATURES.map((feature) => feature.name).join(", ");
+const RECIPE_COUNT = RECIPES.length;
 
 /** Visual treatment per "who wins this difference" verdict. */
 const WINNER_META: Record<
@@ -137,11 +139,11 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
         <Container>
           <SectionTitle
             eyebrow="Module coverage"
-            title={`ArraySubs covers ${MODULE_COUNT} root modules`}
-            subtitle={`${CORE_MODULE_COUNT} modules are free/core-accessible. ${PRO_ONLY_MODULE_COUNT} root modules are Pro-only: ${PRO_ONLY_MODULE_NAMES}.`}
+            title={`One plugin, ${MODULE_COUNT} modules, ${RECIPE_COUNT} ready setups`}
+            subtitle={`${CORE_MODULE_COUNT} modules are free/core-accessible and ${PRO_ONLY_MODULE_COUNT} are Pro-only (${PRO_ONLY_MODULE_NAMES}) — consolidating what stores otherwise license as 5–6 separate plugins, with ${RECIPE_COUNT} documented, copy-me configurations to start from.`}
             align="center"
           />
-          <ul className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-[0.1875rem] sm:grid-cols-3">
+          <ul className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-[0.1875rem] lg:grid-cols-4">
             <li className="rounded-2xl bg-card p-6 text-center">
               <span className="block font-display text-4xl font-semibold text-primary">
                 {MODULE_COUNT}
@@ -164,6 +166,14 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
               </span>
               <span className="mt-2 block text-sm text-muted">
                 Pro-only
+              </span>
+            </li>
+            <li className="rounded-2xl bg-card p-6 text-center">
+              <span className="block font-display text-4xl font-semibold text-primary">
+                {RECIPE_COUNT}
+              </span>
+              <span className="mt-2 block text-sm text-muted">
+                documented setups
               </span>
             </li>
           </ul>
