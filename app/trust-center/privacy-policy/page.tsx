@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
         highlights={[
           "No plugin telemetry",
           "No sale of personal data",
-          "Consent-gated analytics disclosed",
+          "Retargeting requires opt-in",
         ]}
         actions={
           <Button
@@ -133,7 +133,7 @@ export default function PrivacyPolicyPage() {
               "WooCommerce store revenue, product, customer, subscription or order metrics.",
               "WordPress admin emails, WordPress user emails or customer emails from your store.",
               "WordPress, WooCommerce, PHP or plugin logs from your site.",
-              "Advertising pixel, retargeting, heatmap or session recording data.",
+              "Heatmap or session recording data.",
             ]}
           />
         </PolicySection>
@@ -158,8 +158,13 @@ export default function PrivacyPolicyPage() {
               ],
               [
                 "GA4 analytics",
+                "Legitimate interests",
+                "Aggregate measurement is treated as necessary to operate and improve the site, so GA4/GTM load on every visit.",
+              ],
+              [
+                "Retargeting",
                 "Consent",
-                "Analytics scripts and cookies load only after the visitor accepts analytics in the consent manager.",
+                "Advertising and retargeting tags load only after the visitor opts in, and the choice can be withdrawn at any time.",
               ],
               [
                 "Payments, licenses, tax and refunds",
@@ -177,7 +182,7 @@ export default function PrivacyPolicyPage() {
 
         <PolicySection
           title="Cookies and analytics"
-          subtitle="Analytics scripts and cookies are optional and load only after analytics consent is accepted."
+          subtitle="Analytics runs on every visit as a necessary measurement. Retargeting is optional and loads only after opt-in."
         >
           <PolicyTable
             caption="Cookie reference"
@@ -188,37 +193,46 @@ export default function PrivacyPolicyPage() {
                 "Analytics",
                 "Google Analytics client identifier used for aggregate website analytics.",
                 "Up to 2 years",
-                "Only after analytics consent.",
+                "Loaded on every visit.",
               ],
               [
                 "_ga_*",
                 "Analytics",
                 "Google Analytics session and measurement cookie.",
                 "Up to 2 years",
-                "Only after analytics consent.",
+                "Loaded on every visit.",
+              ],
+              [
+                "array_hash_re_ok",
+                "Retargeting",
+                "Records that the visitor opted in to retargeting so advertising tags may load.",
+                "6 months",
+                "Only after retargeting opt-in.",
               ],
               [
                 "cc_cookie",
                 "Functional",
-                "Stores the visitor's consent preference for strictly necessary and analytics categories.",
+                "Stores the visitor's consent preference for the necessary, analytics and retargeting categories.",
                 "6 months",
                 "Always active to remember the privacy choice.",
               ],
             ]}
           />
           <p>
-            Visitors can accept analytics, reject analytics, or customize
-            choices from the banner. Choices can be changed later from the
-            footer Privacy choices control. Rejecting or withdrawing analytics
-            consent clears first-party Google Analytics cookies that are visible
-            to this site.
+            Analytics measurement (GA4 via Google Tag Manager) is treated as
+            necessary and loads on every visit. Visitors can accept or reject
+            retargeting from the banner, and can change that choice later from
+            the footer Privacy choices control. Rejecting or withdrawing
+            retargeting consent clears the first-party retargeting marker
+            (array_hash_re_ok) that is visible to this site.
           </p>
           <p>
-            ArrayHash does not use advertising cookies, retargeting pixels,
-            heatmaps or session recordings. If a browser sends Global Privacy
-            Control, ArrayHash treats that as a privacy signal and does not sell
-            or share personal data for cross-context behavioral advertising. For
-            more detail, read{" "}
+            ArrayHash uses advertising and retargeting tags only after a visitor
+            opts in, and does not use heatmaps or session recordings. If a
+            browser sends Global Privacy Control, ArrayHash treats that as a
+            privacy signal, keeps retargeting off, and does not sell or share
+            personal data for cross-context behavioral advertising. For more
+            detail, read{" "}
             <InlineLink href="/trust-center/data-safety/">
               Data Safety
             </InlineLink>
@@ -233,8 +247,8 @@ export default function PrivacyPolicyPage() {
             rows={[
               [
                 "Google Analytics 4",
-                "Consent-gated aggregate website analytics",
-                "Loaded through the site consent manager only after analytics is accepted.",
+                "Aggregate website analytics",
+                "Loaded on every visit through Google Tag Manager as necessary measurement.",
               ],
               [
                 "Stripe",
@@ -287,7 +301,7 @@ export default function PrivacyPolicyPage() {
               ],
               [
                 "GA4 analytics",
-                "Collected only after analytics consent and retained according to the active GA4 property settings.",
+                "Collected on every visit and retained according to the active GA4 property settings.",
               ],
               [
                 "Security and server logs",

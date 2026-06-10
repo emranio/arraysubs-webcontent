@@ -13,6 +13,8 @@ import {
   COOKIE_CONSENT_MAX_AGE,
   COOKIE_CONSENT_NAME,
   COOKIE_CONSENT_VERSION,
+  RETARGETING_COOKIE_NAME,
+  RETARGETING_ID_LENGTH,
 } from "@/lib/privacy-consent";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -23,18 +25,16 @@ type ConsentSource = "banner" | "preferences" | "privacy-choices";
 type CookieConsentState = {
   version: typeof COOKIE_CONSENT_VERSION;
   necessary: true;
-  analytics: boolean;
+  // Analytics is required for the site to operate and always on.
+  analytics: true;
+  // Optional retargeting opt-in.
+  retargeting: boolean;
   updatedAt: string;
   source: ConsentSource;
 };
 
 type NavigatorWithGpc = Navigator & {
   globalPrivacyControl?: boolean;
-};
-
-type WindowWithGtag = Window & {
-  dataLayer?: unknown[];
-  gtag?: (...args: unknown[]) => void;
 };
 
 const focusableSelector = [
@@ -45,6 +45,20 @@ const focusableSelector = [
   "textarea:not([disabled])",
   "[tabindex]:not([tabindex='-1'])",
 ].join(",");
+
+const RETARGETING_ALPHABET =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+function generateRetargetingId(): string {
+  const bytes = new Uint8Array(RETARGETING_ID_LENGTH);
+  crypto.getRandomValues(bytes);
+
+  let id = "";
+  for (let i = 0; i < RETARGETING_ID_LENGTH; i += 1) {
+    id += RETARGETING_ALPHABET[bytes[i] % RETARGETING_ALPHABET.length];
+  }
+  return id;
+}
 
 function decodeConsent(): CookieConsentState | null {
   if (typeof document === "undefined") return null;
@@ -63,7 +77,7 @@ function decodeConsent(): CookieConsentState | null {
     if (
       parsed.version !== COOKIE_CONSENT_VERSION ||
       parsed.necessary !== true ||
-      typeof parsed.analytics !== "boolean"
+      typeof parsed.retargeting !== "boolean"
     ) {
       return null;
     }
@@ -71,7 +85,8 @@ function decodeConsent(): CookieConsentState | null {
     return {
       version: COOKIE_CONSENT_VERSION,
       necessary: true,
-      analytics: parsed.analytics,
+      analytics: true,
+      retargeting: parsed.retargeting,
       updatedAt:
         typeof parsed.updatedAt === "string"
           ? parsed.updatedAt
@@ -104,21 +119,35 @@ function expireCookie(name: string, domain?: string) {
   document.cookie = `${name}=; Path=/; Max-Age=0; SameSite=Lax${domainPart}`;
 }
 
-function deleteAnalyticsCookies() {
+function readRetargetingId(): string | null {
+  if (typeof document === "undefined") return null;
+
+  const row = document.cookie
+    .split("; ")
+    .find((item) => item.startsWith(`${RETARGETING_COOKIE_NAME}=`));
+
+  return row ? row.slice(RETARGETING_COOKIE_NAME.length + 1) : null;
+}
+
+function writeRetargetingCookie() {
   if (typeof document === "undefined") return;
 
-  const names = document.cookie
-    .split(";")
-    .map((item) => item.trim().split("=")[0])
-    .filter((name) => name === "_ga" || name.startsWith("_ga_"));
+  // Reuse an existing id so the value stays stable across re-consents.
+  const id = readRetargetingId() || generateRetargetingId();
+  const secure =
+    window.location.protocol === "https:" ? "; Secure" : "";
+
+  document.cookie = `${RETARGETING_COOKIE_NAME}=${id}; Path=/; Max-Age=${COOKIE_CONSENT_MAX_AGE}; SameSite=Lax${secure}`;
+}
+
+function deleteRetargetingCookie() {
+  if (typeof document === "undefined") return;
 
   const host = window.location.hostname;
   const domains = new Set<string | undefined>([undefined, host]);
   if (host.includes(".")) domains.add(`.${host}`);
 
-  for (const name of names) {
-    for (const domain of domains) expireCookie(name, domain);
-  }
+  for (const domain of domains) expireCookie(RETARGETING_COOKIE_NAME, domain);
 }
 
 function ConsentAction({
@@ -157,10 +186,6 @@ export function CookieConsent() {
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
 
-  const analyticsEnabled = Boolean(
-    consent?.analytics && (GA_MEASUREMENT_ID || GTM_ID),
-  );
-
   useEffect(() => {
     const saved = decodeConsent();
     const hasGpc = Boolean(
@@ -187,15 +212,13 @@ export function CookieConsent() {
       window.removeEventListener(COOKIE_CONSENT_EVENT, openPreferences);
   }, [consent]);
 
+  // Keep the retargeting cookie in sync with the recorded choice.
   useEffect(() => {
-    if (GA_MEASUREMENT_ID) {
-      const gaDisableKey = `ga-disable-${GA_MEASUREMENT_ID}`;
-      (window as unknown as Record<string, boolean>)[gaDisableKey] =
-        !consent?.analytics;
-    }
+    if (!consent) return;
 
-    if (!consent?.analytics) deleteAnalyticsCookies();
-  }, [consent?.analytics]);
+    if (consent.retargeting) writeRetargetingCookie();
+    else deleteRetargetingCookie();
+  }, [consent?.retargeting]);
 
   useEffect(() => {
     if (!showPreferences) return;
@@ -207,20 +230,27 @@ export function CookieConsent() {
     focusable[0]?.focus();
   }, [showPreferences]);
 
-  const saveConsent = (analytics: boolean, source: ConsentSource) => {
+  const saveConsent = (retargeting: boolean, source: ConsentSource) => {
+    // Global Privacy Control is a binding opt-out signal — never enable
+    // retargeting while it is present.
+    const allowRetargeting = retargeting && !gpcEnabled;
+
     const next: CookieConsentState = {
       version: COOKIE_CONSENT_VERSION,
       necessary: true,
-      analytics,
+      analytics: true,
+      retargeting: allowRetargeting,
       updatedAt: new Date().toISOString(),
       source,
     };
 
     writeConsent(next);
+
+    if (allowRetargeting) writeRetargetingCookie();
+    else deleteRetargetingCookie();
+
     setConsent(next);
     setShowPreferences(false);
-
-    if (!analytics) deleteAnalyticsCookies();
 
     window.dispatchEvent(
       new CustomEvent("arraysubs:cookie-consent-updated", {
@@ -271,7 +301,8 @@ export function CookieConsent() {
 
   return (
     <>
-      {analyticsEnabled && GA_MEASUREMENT_ID && (
+      {/* Analytics is required and always loads, independent of consent. */}
+      {GA_MEASUREMENT_ID && (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
@@ -288,7 +319,7 @@ export function CookieConsent() {
         </>
       )}
 
-      {analyticsEnabled && GTM_ID && (
+      {GTM_ID && (
         <Script id="gtm-consent-gate" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -341,12 +372,12 @@ export function CookieConsent() {
             </div>
 
             <p className="mt-1 text-xs leading-5 text-muted">
-              Analytics is optional. Advertising cookies are not used.
+              Analytics is required to run the site. Retargeting is optional.
             </p>
 
             {gpcEnabled && (
               <div className="mt-2 rounded-md border border-border bg-card px-3 py-2 text-xs text-muted">
-                GPC detected. No sale/share for ads.
+                GPC detected. Retargeting stays off.
               </div>
             )}
 
@@ -367,10 +398,22 @@ export function CookieConsent() {
                 <div>
                   <h3 className="font-semibold text-foreground">Analytics</h3>
                   <p className="text-xs text-muted">
-                    Aggregate GA4/GTM measurement. No retargeting.
+                    Required aggregate GA4/GTM measurement.
                   </p>
                   <p className="text-xs font-semibold text-faint">
-                    Optional · _ga, _ga_*
+                    Always on · _ga, _ga_*
+                  </p>
+                </div>
+                <span className="text-xs font-semibold text-primary">On</span>
+              </div>
+              <div className="flex items-center justify-between gap-3 px-3 py-2">
+                <div>
+                  <h3 className="font-semibold text-foreground">Retargeting</h3>
+                  <p className="text-xs text-muted">
+                    Lets us measure ad campaigns and show relevant ads.
+                  </p>
+                  <p className="text-xs font-semibold text-faint">
+                    Optional · array_hash_re_ok
                   </p>
                 </div>
                 <span className="text-xs font-semibold text-faint">

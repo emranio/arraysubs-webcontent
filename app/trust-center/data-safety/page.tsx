@@ -55,7 +55,7 @@ export default function DataSafetyPage() {
         facts={[
           { label: "Effective date", value: EFFECTIVE_DATE },
           { label: "Last reviewed", value: REVIEWED_DATE },
-          { label: "Analytics", value: "Consent-gated GA4/GTM" },
+          { label: "Analytics", value: "Always-on GA4/GTM" },
           { label: "Payment providers", value: "Stripe and Freemius" },
         ]}
       />
@@ -70,7 +70,8 @@ export default function DataSafetyPage() {
               <p>
                 The website collects the fields needed for signup, license
                 request, newsletter, support and contact forms. GA4/GTM
-                analytics loads only after analytics consent. Stripe and
+                analytics loads on every visit as necessary measurement, and
+                retargeting loads only after the visitor opts in. Stripe and
                 Freemius process payment, checkout, license and transaction
                 workflows.
               </p>
@@ -99,7 +100,7 @@ export default function DataSafetyPage() {
               ],
               [
                 "GA4 page and session analytics",
-                "Only after analytics consent",
+                "On every visit",
                 "Aggregate website performance and content measurement.",
               ],
               [
@@ -108,9 +109,9 @@ export default function DataSafetyPage() {
                 "Checkout, payment processing, licensing, refunds and compliance.",
               ],
               [
-                "Advertising pixels and retargeting",
-                "No",
-                "ArrayHash does not use advertising or retargeting pixels.",
+                "Advertising and retargeting tags",
+                "Only after retargeting opt-in",
+                "Loaded only when the visitor opts in; marked by the array_hash_re_ok cookie.",
               ],
               [
                 "Heatmaps and session recordings",
@@ -214,8 +215,13 @@ export default function DataSafetyPage() {
             rows={[
               [
                 "Google Analytics 4",
-                "Consent-gated aggregate website analytics",
-                "Website usage, device, browser and approximate location signals after analytics consent.",
+                "Aggregate website analytics",
+                "Website usage, device, browser and approximate location signals collected on every visit.",
+              ],
+              [
+                "Advertising and retargeting tags",
+                "Campaign measurement and retargeting (via Google Tag Manager)",
+                "Loaded only after the visitor opts in to retargeting.",
               ],
               [
                 "Stripe",
