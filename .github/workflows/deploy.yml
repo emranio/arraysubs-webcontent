@@ -42,9 +42,6 @@ jobs:
             echo "==> Building"
             bun run build
 
-            echo "==> Removing obsolete PM2 app"
-            pm2 delete arrayhash-web || true
-
             echo "==> Reloading PM2"
             pm2 startOrReload ecosystem.config.cjs --env production --update-env
 
