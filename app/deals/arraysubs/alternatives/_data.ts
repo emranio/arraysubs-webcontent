@@ -392,7 +392,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Can ArraySubs replace WooCommerce Memberships?",
         answer:
-          "Yes. ArraySubs offers the same access control — content restriction, dripping, product/category and download restriction — plus URL restriction, role mapping and an AND/OR rules engine, all free, with recurring billing built in.",
+          "Yes. ArraySubs offers the same access control — content restriction, dripping, product/category and download restriction — plus URL restriction, role mapping, an AND/OR rules engine, and native Elementor section gating, all free, with recurring billing built in.",
       },
       {
         question: "Does WooCommerce Memberships work without WooCommerce Subscriptions?",
@@ -698,7 +698,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Is ArraySubs a free YITH WooCommerce Membership alternative?",
         answer:
-          "Yes. ArraySubs provides content restriction, dripping, download restriction and a private shop free, plus a rules engine and URL restriction YITH lacks — and it bills members recurringly without a second plugin.",
+          "Yes. ArraySubs provides content restriction, dripping, download restriction and a private shop free, plus a rules engine, URL restriction and native Elementor section gating YITH lacks — and it bills members recurringly without a second plugin.",
       },
       {
         question: "Does YITH Membership include recurring billing?",

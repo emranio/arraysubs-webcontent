@@ -163,6 +163,7 @@ const COMPARISON_GROUPS: ComparisonGroup[] = [
       row("Member discounts", yes, yes),
       row("Customer self-service portal", yes, yes),
       row("Profile builder & shortcodes", yes, yes),
+      row("Elementor section gating (no code)", yes, yes),
     ],
   },
   {

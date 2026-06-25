@@ -484,6 +484,10 @@ const M = {
     label: "Content-Gating Shortcodes",
     href: "shortcodes/content-gating.html",
   },
+  elementorRestrictions: {
+    label: "Elementor Content Restrictions",
+    href: "shortcodes/elementor-content-restrictions.html",
+  },
   accountShortcodes: {
     label: "Account Shortcodes",
     href: "shortcodes/account-shortcodes.html",
@@ -9487,7 +9491,98 @@ export const RECIPES: Recipe[] = [
       },
     ],
     relatedFeatures: ["shortcodes", "member-access", "feature-manager"],
-    relatedRecipes: ["login-personalization", "feature-gated-content", "gate-specific-pages"],
+    relatedRecipes: ["restrict-elementor-section", "login-personalization", "feature-gated-content"],
+  },
+  {
+    slug: "restrict-elementor-section",
+    group: "member-restrictions",
+    icon: LayoutGrid,
+    name: "Gate an Elementor section",
+    cardDescription:
+      "Lock any Elementor Container (Flexbox or Grid) to members from the builder — no shortcode to type.",
+    tier: "Free",
+    seoTitle: "Restrict an Elementor Section to Members (WooCommerce)",
+    metaDescription:
+      "Gate any Elementor Container to subscribers from the Advanced tab — by status, product, role, spend, or feature — with no shortcode. Exact controls inside.",
+    h1: "Gate an Elementor section to members",
+    heroSubtitle:
+      "Lock a Container from the Elementor panel — keep the rest of the page public and gate just the section that matters.",
+    heroHighlights: ["Container controls", "No shortcode", "Flexbox + Grid"],
+    intro:
+      "If you build with Elementor, gate ==any Container== from the builder itself. The ==ArraySubs Content Restrictions== section on the Container's ==Advanced tab== locks everything inside it by ==status, product, variation, purchase, role, lifetime spend, or feature (Pro)== — the same engine as the [arraysubs_restrict] shortcode, with ==no shortcode to type==. This recipe gates an Elementor section.",
+    settings: [
+      {
+        setting: "Where",
+        value: "Select Container → Advanced → ArraySubs Content Restrictions",
+        where: "Elementor editor",
+      },
+      {
+        setting: "Enable Restriction + Restriction Type",
+        value: "Yes · Subscription / Role / Purchase (restrict) or Login state (visibility)",
+        where: "Container controls",
+      },
+      {
+        setting: "Conditions",
+        value: "Subscription Status · Products · Variations · Purchased · Roles · Minimum Lifetime Spend · Plan Feature (Pro)",
+        where: "Container controls",
+      },
+      {
+        setting: "Logic + fallback",
+        value: "Match Logic AND/OR · Restricted Message · Require Login · Always Show To Admins",
+        where: "Container controls",
+      },
+    ],
+    outcomes: [
+      "Gate a single Container, leaving the rest of the page public.",
+      "Searchable product, variation, and feature pickers — no IDs to look up.",
+      "Show a custom restricted message to non-members.",
+      "Restricted content is omitted from the page source entirely.",
+    ],
+    bestFor: [
+      "Elementor-built sales and lesson pages",
+      "Member-only blocks (videos, downloads, pricing)",
+      "Teams who prefer the builder over shortcodes",
+    ],
+    steps: [
+      {
+        title: "Open the Container's restriction controls",
+        description:
+          "Select the Container (Flexbox or Grid), open the Advanced tab, and expand ArraySubs Content Restrictions. Turn Enable Restriction to Yes.",
+        manual: M.elementorRestrictions,
+      },
+      {
+        title: "Pick a type and set conditions",
+        description:
+          "Choose Subscription / Role / Purchase (restrict) and set conditions (status, products, roles, spend, or a Pro feature), or choose Login state (visibility). Add a Restricted Message and tune Require Login / Always Show To Admins.",
+        manual: M.elementorRestrictions,
+      },
+    ],
+    notes: [
+      "The controls live on the Container element only — wrap a single widget in its own Container to gate it.",
+      "Restriction never applies inside the Elementor editor/preview; test on the live page.",
+      "Enabling restriction with no conditions leaves the container unrestricted (it won't block logged-out visitors).",
+      "There is no redirect option here (a partial section can't safely redirect the whole page) — use the Restricted Message, or Member Access page/URL rules for full-page redirects.",
+      "Feature conditions require Pro + Feature Manager; admins see content by default (Always Show To Admins).",
+    ],
+    faq: [
+      {
+        question: "Do I need to write shortcodes?",
+        answer:
+          "No. The Container controls produce the same result as [arraysubs_restrict] / [arraysubs_visibility], configured entirely from Elementor's panel.",
+      },
+      {
+        question: "Does it work on the Grid container?",
+        answer:
+          "Yes. Both the Flexbox and Grid layout presets of the Elementor Container element are supported.",
+      },
+      {
+        question: "Can I keep part of the page public?",
+        answer:
+          "Yes. Enable restriction only on the Container that holds the members-only content; everything in other containers stays public.",
+      },
+    ],
+    relatedFeatures: ["member-access", "shortcodes", "feature-manager"],
+    relatedRecipes: ["inline-content-gating", "feature-gated-content", "restrict-pages-by-plan"],
   },
   {
     slug: "login-personalization",

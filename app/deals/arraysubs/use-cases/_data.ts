@@ -384,7 +384,7 @@ export const USE_CASES: UseCase[] = [
       {
         question: "Does it work with my page builder?",
         answer:
-          "Yes. Access control and the My Account editor work with Gutenberg, Elementor, and Bricks, and shortcodes gate content inline anywhere.",
+          "Yes. Access control and the My Account editor work with Gutenberg, Elementor, and Bricks. In Elementor you can gate any Container straight from its Advanced tab — no shortcode — and shortcodes gate content inline anywhere else.",
       },
       {
         question: "Can members pause instead of cancelling?",

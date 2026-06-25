@@ -1029,7 +1029,7 @@ export const FEATURES: Feature[] = [
     h1: "Add subscription-aware shortcodes anywhere",
     highlights: ["Account shortcodes", "Content gating", "Store credit form"],
     intro:
-      "Shortcodes is a root module for adding subscription-aware output to WordPress content. It includes ==login/logout links, personalized greetings, gated content with visibility and restriction shortcodes, and a Pro store-credit purchase shortcode==.",
+      "Shortcodes is a root module for adding subscription-aware output to WordPress content. It includes ==login/logout links, personalized greetings, gated content with visibility and restriction shortcodes, and a Pro store-credit purchase shortcode==. The same gating engine is also exposed as an ==Elementor Container integration==, so you can lock a section from the builder with no shortcode.",
     capabilities: [
       {
         title: "Account shortcodes",
@@ -1040,6 +1040,11 @@ export const FEATURES: Feature[] = [
         title: "Content gating",
         description:
           "Use restriction and visibility shortcodes for subscription-aware content blocks.",
+      },
+      {
+        title: "Elementor content restrictions",
+        description:
+          "Gate any Elementor Container (Flexbox or Grid) by subscription, role, purchase, or feature from the Advanced tab — no shortcode required.",
       },
       {
         title: "Personalized display",
@@ -1063,6 +1068,11 @@ export const FEATURES: Feature[] = [
         question: "Can I gate inline content?",
         answer:
           "Yes. The visibility and restriction shortcodes can show or hide content based on access rules.",
+      },
+      {
+        question: "Do I have to type shortcodes in Elementor?",
+        answer:
+          "No. ArraySubs adds an ArraySubs Content Restrictions section to the Elementor Container's Advanced tab, so you can gate a section by subscription, role, purchase, or feature without typing a shortcode.",
       },
       {
         question: "Which shortcode requires Pro?",
@@ -1100,7 +1110,7 @@ export const FEATURES: Feature[] = [
       {
         title: "Content restriction",
         description:
-          "Drip content, show gated messages, and protect per-post content.",
+          "Drip content, show gated messages, protect per-post content, and gate Elementor Containers from the builder.",
       },
       {
         title: "Session extension",
@@ -1124,6 +1134,11 @@ export const FEATURES: Feature[] = [
         question: "Is Multi-Login Prevention part of Member Access?",
         answer:
           "The manual treats Multi-Login Prevention as a dedicated Pro Toolkit module. Member Access still documents the related Login Limit extension.",
+      },
+      {
+        question: "Can I gate content in Elementor?",
+        answer:
+          "Yes. The same restriction engine is exposed on the Elementor Container's Advanced tab, so you can gate a section by subscription, role, purchase, or feature with no shortcode.",
       },
     ],
     related: ["feature-manager", "shortcodes", "multi-login-prevention"],
