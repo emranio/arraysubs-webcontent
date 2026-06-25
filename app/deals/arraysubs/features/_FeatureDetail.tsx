@@ -31,6 +31,7 @@ export function FeatureDetail({ feature }: { feature: Feature }) {
     .map((slug) => getFeature(slug))
     .filter((item): item is Feature => Boolean(item));
   const useCases = useCasesForFeature(feature.slug);
+  const hasRelatedContent = related.length > 0 || useCases.length > 0;
 
   return (
     <>
@@ -144,14 +145,14 @@ export function FeatureDetail({ feature }: { feature: Feature }) {
         <JsonLd data={faqSchema(feature.faq)} />
       </Section>
 
-      {/* ---- Related features ------------------------------------------ */}
-      {related.length > 0 && (
+      {/* ---- Related features + use cases ------------------------------- */}
+      {hasRelatedContent && (
         <Section surface="surface" spacing="md">
           <Container>
             <SectionTitle
               eyebrow="Explore more"
-              title="Related features"
-              subtitle="Modules that pair well with this one."
+              title="Related features & use cases"
+              subtitle="Modules that pair well with this feature, plus the business models it supports."
               align="center"
             />
             <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
@@ -165,22 +166,6 @@ export function FeatureDetail({ feature }: { feature: Feature }) {
                   badge={<Badge tone={tierTone(item.tier)}>{item.tier}</Badge>}
                 />
               ))}
-            </div>
-          </Container>
-        </Section>
-      )}
-
-      {/* ---- Use cases (feature -> use cases) --------------------------- */}
-      {useCases.length > 0 && (
-        <Section surface="default" spacing="md">
-          <Container>
-            <SectionTitle
-              eyebrow="Built for"
-              title="Use cases this powers"
-              subtitle="Business models that rely on this module."
-              align="center"
-            />
-            <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
               {useCases.map((useCase) => (
                 <IconCard
                   key={useCase.slug}
@@ -188,6 +173,7 @@ export function FeatureDetail({ feature }: { feature: Feature }) {
                   title={useCase.name}
                   description={useCase.cardDescription}
                   href={`/deals/arraysubs/use-cases/${useCase.slug}/`}
+                  badge={<Badge tone="outline">Use case</Badge>}
                 />
               ))}
             </div>

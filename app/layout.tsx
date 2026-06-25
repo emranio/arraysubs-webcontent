@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Funnel_Display, Funnel_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { site } from "@/lib/site";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -69,22 +70,35 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="antialiased" suppressHydrationWarning>
-        <a
-          href="#main"
-          className="sr-only rounded-md focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-dark focus:px-4 focus:py-2 focus:text-on-dark"
-        >
-          Skip to content
-        </a>
+        <div id="accessibility-widget-host">
+          <a
+            href="#main"
+            className="sr-only rounded-md focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-dark focus:px-4 focus:py-2 focus:text-on-dark"
+          >
+            Skip to content
+          </a>
 
-        <CustomCursor />
-        <ScrollBackground />
+          <CustomCursor />
+          <ScrollBackground />
 
-        <SiteHeader />
-        <main id="main">{children}</main>
-        <SiteFooter />
-        <CookieConsent />
+          <SiteHeader />
+          <main id="main">{children}</main>
+          <SiteFooter />
+          <CookieConsent />
 
-        <JsonLd data={[organizationSchema(), websiteSchema()]} />
+          <JsonLd data={[organizationSchema(), websiteSchema()]} />
+        </div>
+
+        <Script
+          id="arrayhash-accessibility-widget-config"
+          src="/accessibility-widget/arrayhash-config.js?v=20260625-2"
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="arrayhash-accessibility-widget"
+          src="/accessibility-widget/dist/accessibility-widget.global.js?v=0.2.5"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
