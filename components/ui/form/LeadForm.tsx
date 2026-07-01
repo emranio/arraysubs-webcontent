@@ -193,6 +193,7 @@ export function LeadForm({ className }: { className?: string }) {
 
       <Checkbox
         name="consent"
+        defaultChecked
         label="Email me product & security updates. No spam — unsubscribe anytime."
       />
 
