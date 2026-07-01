@@ -489,7 +489,7 @@ function customerLicenseText(
     `Pro plugin download: ${downloadUrl}`,
     "",
     "How to activate:",
-    "1. Install and activate the free ArraySubs plugin.",
+    "1. Install and activate the free ArraySubs plugin from the WordPress plugin directory.",
     "2. Download ArraySubs Pro from the link above.",
     "3. Install the ArraySubs Pro zip file, then activate ArraySubs Pro.",
     "4. In WordPress, go to ArraySubs > License.",
@@ -521,7 +521,7 @@ function customerLicenseHtml(
 
       <h2 style="font-size:20px;line-height:1.3;margin:0 0 12px;">How to activate</h2>
       <ol style="margin:0 0 22px;padding-left:22px;color:#3F2A5C;">
-        <li>Install and activate the free ArraySubs plugin.</li>
+        <li>Install and activate the free ArraySubs plugin from the WordPress plugin directory.</li>
         <li>Download ArraySubs Pro from the link above.</li>
         <li>Install the ArraySubs Pro zip file, then activate ArraySubs Pro.</li>
         <li>In WordPress, go to <strong>ArraySubs &gt; License</strong>.</li>
