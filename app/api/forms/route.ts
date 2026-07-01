@@ -1,15 +1,10 @@
 import { execFile } from "node:child_process";
-import { readFile } from "node:fs/promises";
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
-import os from "node:os";
-import path from "node:path";
 import { promisify } from "node:util";
 import { site } from "@/lib/site";
 import {
   type TrialLicenseRecord,
   writeTrialLicense,
 } from "@/lib/licenses";
-import { PRO_PLUGIN_SLUG, readProPluginManifest } from "@/lib/pro-plugins";
 
 export const runtime = "nodejs";
 
@@ -18,6 +13,7 @@ const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "emran@arrayhash.com";
 const FROM_EMAIL = process.env.GMAIL_SENDER_EMAIL ?? "emran@arrayhash.com";
 const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? "ArrayHash Website <onboarding@resend.dev>";
 const GWS_CLI_PATH = process.env.GWS_CLI_PATH ?? "gws";
+const GMAIL_SUPPORT_LABEL_NAME = process.env.GMAIL_SUPPORT_LABEL_NAME ?? "ArrayHash Supports";
 
 const execFileAsync = promisify(execFile);
 
@@ -48,20 +44,28 @@ type NormalizedSubmission = {
   consent?: boolean;
 };
 
-type EmailAttachment = {
-  filename: string;
-  content: string;
-  contentType: string;
-};
-
 type GmailEmailPayload = {
   to: string;
   replyTo?: string;
   subject: string;
   html: string;
   text: string;
-  attachments?: EmailAttachment[];
 };
+
+type GmailMessageResponse = {
+  id?: string;
+};
+
+type GmailLabel = {
+  id?: string;
+  name?: string;
+};
+
+type GmailLabelsResponse = {
+  labels?: GmailLabel[];
+};
+
+let gmailSupportLabelIdPromise: Promise<string> | null = null;
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
@@ -129,7 +133,6 @@ function buildAlternativePart(text: string, html: string, boundary: string) {
 
 function buildMimeEmail(payload: GmailEmailPayload) {
   const alternativeBoundary = `arraysubs-alt-${crypto.randomUUID()}`;
-  const mixedBoundary = `arraysubs-mixed-${crypto.randomUUID()}`;
   const headers = [
     `From: ${formatMailbox(FROM_EMAIL, "Emran")}`,
     `To: ${formatMailbox(payload.to)}`,
@@ -144,66 +147,117 @@ function buildMimeEmail(payload: GmailEmailPayload) {
     alternativeBoundary,
   );
 
-  if (!payload.attachments?.length) {
-    return [
-      ...headers,
-      `Content-Type: multipart/alternative; boundary="${alternativeBoundary}"`,
-      "",
-      alternativePart,
-    ].join("\r\n");
-  }
-
-  const attachmentParts = payload.attachments.map((attachment) => [
-    `--${mixedBoundary}`,
-    `Content-Type: ${stripHeaderValue(attachment.contentType)}; name="${stripHeaderValue(attachment.filename)}"`,
-    "Content-Transfer-Encoding: base64",
-    `Content-Disposition: attachment; filename="${stripHeaderValue(attachment.filename)}"`,
-    "",
-    attachment.content.replace(/.{1,76}/g, "$&\r\n").trimEnd(),
-  ].join("\r\n"));
-
   return [
     ...headers,
-    `Content-Type: multipart/mixed; boundary="${mixedBoundary}"`,
-    "",
-    `--${mixedBoundary}`,
     `Content-Type: multipart/alternative; boundary="${alternativeBoundary}"`,
     "",
     alternativePart,
-    ...attachmentParts,
-    `--${mixedBoundary}--`,
   ].join("\r\n");
 }
 
 async function sendGmailEmail(payload: GmailEmailPayload) {
-  const tempDir = await mkdtemp(path.join(os.tmpdir(), "arrayhash-email-"));
-  const messagePath = path.join(tempDir, "message.eml");
+  const raw = Buffer.from(buildMimeEmail(payload), "utf8").toString("base64url");
+  const { stdout } = await execFileAsync(
+    GWS_CLI_PATH,
+    [
+      "gmail",
+      "users",
+      "messages",
+      "send",
+      "--params",
+      JSON.stringify({ userId: FROM_EMAIL }),
+      "--json",
+      JSON.stringify({ raw }),
+      "--format",
+      "json",
+    ],
+    {
+      cwd: process.cwd(),
+      maxBuffer: 1024 * 1024,
+    },
+  );
+  const response = JSON.parse(String(stdout || "{}")) as GmailMessageResponse;
 
-  try {
-    await writeFile(messagePath, buildMimeEmail(payload), "utf8");
-    await execFileAsync(
-      GWS_CLI_PATH,
-      [
-        "gmail",
-        "users",
-        "messages",
-        "send",
-        "--params",
-        JSON.stringify({ userId: FROM_EMAIL }),
-        "--upload",
-        messagePath,
-        "--upload-content-type",
-        "message/rfc822",
-        "--format",
-        "json",
-      ],
-      {
-        maxBuffer: 1024 * 1024,
-      },
-    );
-  } finally {
-    await rm(tempDir, { recursive: true, force: true });
+  if (response.id) {
+    await markGmailMessageUnread(response.id);
   }
+}
+
+async function markGmailMessageUnread(messageId: string) {
+  const supportLabelId = await getGmailSupportLabelId();
+
+  await execFileAsync(
+    GWS_CLI_PATH,
+    [
+      "gmail",
+      "users",
+      "messages",
+      "modify",
+      "--params",
+      JSON.stringify({
+        userId: FROM_EMAIL,
+        id: messageId,
+      }),
+      "--json",
+      JSON.stringify({
+        addLabelIds: ["UNREAD", "INBOX", "IMPORTANT", "STARRED", supportLabelId],
+      }),
+      "--format",
+      "json",
+    ],
+    {
+      cwd: process.cwd(),
+      maxBuffer: 1024 * 1024,
+    },
+  );
+}
+
+function getConfiguredGmailSupportLabelId() {
+  return process.env.GMAIL_SUPPORT_LABEL_ID?.trim() ?? "";
+}
+
+async function getGmailSupportLabelId() {
+  const configuredLabelId = getConfiguredGmailSupportLabelId();
+
+  if (configuredLabelId) {
+    return configuredLabelId;
+  }
+
+  if (!gmailSupportLabelIdPromise) {
+    gmailSupportLabelIdPromise = resolveGmailSupportLabelId();
+  }
+
+  return gmailSupportLabelIdPromise;
+}
+
+async function resolveGmailSupportLabelId() {
+  const { stdout } = await execFileAsync(
+    GWS_CLI_PATH,
+    [
+      "gmail",
+      "users",
+      "labels",
+      "list",
+      "--params",
+      JSON.stringify({ userId: FROM_EMAIL }),
+      "--format",
+      "json",
+    ],
+    {
+      cwd: process.cwd(),
+      maxBuffer: 1024 * 1024,
+    },
+  );
+  const response = JSON.parse(String(stdout || "{}")) as GmailLabelsResponse;
+  const label = response.labels?.find(
+    (item) => item.name === GMAIL_SUPPORT_LABEL_NAME,
+  );
+
+  if (!label?.id) {
+    throw new Error(`Gmail label "${GMAIL_SUPPORT_LABEL_NAME}" was not found.`);
+  }
+
+  return label.id;
 }
 
 function normalizePayload(payload: FormPayload):
@@ -272,12 +326,13 @@ function signatureText() {
 
 function signatureHtml() {
   return `
-    <p style="margin:22px 0 0;color:#3F2A5C;">
-      Warm Regards<br />
-      Emran<br />
-      Cell &amp; WhatsApp: +8801625000066<br />
-      LinkedIn: <a href="https://www.linkedin.com/in/emranio/" style="color:#321167;">https://www.linkedin.com/in/emranio/</a>
-    </p>
+    <div style="margin:24px 0 0;color:#000000;font-size:16px;line-height:1.5;font-weight:400;">
+      <div style="color:#000000;font-size:16px;line-height:1.25;font-weight:700;margin:0 0 6px;">##</div>
+      <div style="color:#000000;font-size:16px;line-height:1.35;font-weight:700;margin:0 0 4px;">Warm Regards</div>
+      <div style="color:#000000;margin:0 0 2px;">Emran</div>
+      <div style="color:#000000;margin:0 0 2px;">Cell &amp; WhatsApp: +8801625000066</div>
+      <div style="color:#000000;margin:0;">LinkedIn: <a href="https://www.linkedin.com/in/emranio/" style="color:#0B57D0;font-weight:400;text-decoration:underline;">https://www.linkedin.com/in/emranio/</a></div>
+    </div>
   `;
 }
 
@@ -363,19 +418,12 @@ function emailSubject(data: NormalizedSubmission) {
   return `[ArraySubs Pro request] ${data.name}`;
 }
 
-async function getProPluginAttachment(): Promise<EmailAttachment> {
-  const manifest = await readProPluginManifest(PRO_PLUGIN_SLUG);
-  const file = await readFile(manifest.zipPath);
-
-  return {
-    filename: path.basename(manifest.zipPath),
-    content: file.toString("base64"),
-    contentType: "application/zip",
-  };
+function proPluginDownloadUrl(request: Request) {
+  return new URL("/downloads/arraysubspro.zip", request.url).toString();
 }
 
 function customerContactSubject(data: NormalizedSubmission) {
-  return `I received your query - ${site.name}`;
+  return `Re: ${data.subject ?? "Your query"}`;
 }
 
 function customerContactText(data: NormalizedSubmission, submittedAt: string) {
@@ -385,6 +433,8 @@ function customerContactText(data: NormalizedSubmission, submittedAt: string) {
     `Hi ${data.name},`,
     "",
     "I received your query, I will get back to you ASAP.",
+    "",
+    `Subject: ${data.subject ?? ""}`,
     "",
     "Your message:",
     data.body ?? "",
@@ -402,11 +452,12 @@ function customerContactHtml(data: NormalizedSubmission, submittedAt: string) {
   const pageSlug = pageSlugFromSource(data.sourcePath);
 
   return `
-    <div style="font-family:Arial,sans-serif;line-height:1.65;color:#12002B;max-width:680px;margin:0 auto;">
+    <div style="font-family:Arial,sans-serif;line-height:1.65;color:#12002B;max-width:680px;margin:0;text-align:left;">
       <p style="margin:0 0 16px;color:#3F2A5C;">Hi ${escapeHtml(data.name)},</p>
       <p style="margin:0 0 20px;color:#3F2A5C;">I received your query, I will get back to you ASAP.</p>
 
       <div style="padding:18px 20px;border:1px solid #DED2F4;border-radius:14px;background:#F7F3FF;margin:0 0 22px;">
+        <p style="margin:0 0 8px;color:#3F2A5C;"><strong>Subject:</strong> ${escapeHtml(data.subject ?? "")}</p>
         <p style="margin:0 0 8px;font-weight:700;color:#12002B;">Your message</p>
         <p style="margin:0 0 16px;color:#3F2A5C;white-space:pre-wrap;">${escapeHtml(data.body ?? "")}</p>
         <p style="margin:0;color:#3F2A5C;"><strong>Date time:</strong> ${escapeHtml(submittedAt)}</p>
@@ -423,7 +474,11 @@ function customerLicenseSubject() {
   return "Welcome to ArraySubs Pro - your 4-month trial license";
 }
 
-function customerLicenseText(data: NormalizedSubmission, license: TrialLicenseRecord) {
+function customerLicenseText(
+  data: NormalizedSubmission,
+  license: TrialLicenseRecord,
+  downloadUrl: string,
+) {
   return [
     `Hi ${data.name},`,
     "",
@@ -431,12 +486,14 @@ function customerLicenseText(data: NormalizedSubmission, license: TrialLicenseRe
     "",
     `License key: ${license.licenseKey}`,
     `Expires: ${license.expireDateUtc}`,
+    `Pro plugin download: ${downloadUrl}`,
     "",
     "How to activate:",
     "1. Install and activate the free ArraySubs plugin.",
-    "2. Install the attached ArraySubs Pro zip file, then activate ArraySubs Pro.",
-    "3. In WordPress, go to ArraySubs > License.",
-    "4. Paste your license key and click Activate License.",
+    "2. Download ArraySubs Pro from the link above.",
+    "3. Install the ArraySubs Pro zip file, then activate ArraySubs Pro.",
+    "4. In WordPress, go to ArraySubs > License.",
+    "5. Paste your license key and click Activate License.",
     "",
     "Keep this email for your records. If you need help, reply to this email.",
     "",
@@ -444,23 +501,29 @@ function customerLicenseText(data: NormalizedSubmission, license: TrialLicenseRe
   ].join("\n");
 }
 
-function customerLicenseHtml(data: NormalizedSubmission, license: TrialLicenseRecord) {
+function customerLicenseHtml(
+  data: NormalizedSubmission,
+  license: TrialLicenseRecord,
+  downloadUrl: string,
+) {
   return `
-    <div style="font-family:Arial,sans-serif;line-height:1.65;color:#12002B;max-width:680px;margin:0 auto;">
+    <div style="font-family:Arial,sans-serif;line-height:1.65;color:#12002B;max-width:680px;margin:0;text-align:left;">
       <h1 style="font-size:28px;line-height:1.2;margin:0 0 16px;">Welcome to ArraySubs Pro</h1>
       <p style="margin:0 0 16px;color:#3F2A5C;">Hi ${escapeHtml(data.name)},</p>
-      <p style="margin:0 0 20px;color:#3F2A5C;">Your 4-month ArraySubs Pro trial license is ready. The Pro plugin zip is attached to this email.</p>
+      <p style="margin:0 0 20px;color:#3F2A5C;">Your 4-month ArraySubs Pro trial license is ready. Download the Pro plugin from the link below.</p>
 
       <div style="padding:18px 20px;border:1px solid #DED2F4;border-radius:14px;background:#F7F3FF;margin:0 0 22px;">
         <p style="margin:0 0 8px;font-weight:700;color:#12002B;">License key</p>
         <p style="margin:0;font-family:Consolas,Monaco,monospace;font-size:16px;letter-spacing:0.02em;word-break:break-all;color:#321167;">${escapeHtml(license.licenseKey)}</p>
         <p style="margin:16px 0 0;color:#3F2A5C;">Expires: <strong>${escapeHtml(license.expireDateUtc)}</strong></p>
+        <p style="margin:16px 0 0;color:#3F2A5C;"><strong>Pro plugin download:</strong><br /><a href="${escapeHtml(downloadUrl)}" style="color:#0B57D0;text-decoration:underline;word-break:break-all;">${escapeHtml(downloadUrl)}</a></p>
       </div>
 
       <h2 style="font-size:20px;line-height:1.3;margin:0 0 12px;">How to activate</h2>
       <ol style="margin:0 0 22px;padding-left:22px;color:#3F2A5C;">
         <li>Install and activate the free ArraySubs plugin.</li>
-        <li>Install the attached ArraySubs Pro zip file, then activate ArraySubs Pro.</li>
+        <li>Download ArraySubs Pro from the link above.</li>
+        <li>Install the ArraySubs Pro zip file, then activate ArraySubs Pro.</li>
         <li>In WordPress, go to <strong>ArraySubs &gt; License</strong>.</li>
         <li>Paste your license key and click <strong>Activate License</strong>.</li>
       </ol>
@@ -555,30 +618,17 @@ export async function POST(request: Request) {
     }
   }
 
-  let proPluginAttachment: EmailAttachment | null = null;
-
-  if (normalized.data.kind === "pro-license" && license) {
+  if (normalized.data.kind === "pro-license") {
     try {
-      proPluginAttachment = await getProPluginAttachment();
+      await sendResendNotification(normalized.data, submittedAt, license);
     } catch (error) {
-      console.error("Pro plugin attachment failed", error);
+      console.error("Resend form notification failed", error);
 
       return Response.json(
-        { ok: false, error: "Could not attach the Pro plugin right now." },
-        { status: 503 },
+        { ok: false, error: "Could not send the internal notification right now." },
+        { status: 502 },
       );
     }
-  }
-
-  try {
-    await sendResendNotification(normalized.data, submittedAt, license);
-  } catch (error) {
-    console.error("Resend form notification failed", error);
-
-    return Response.json(
-      { ok: false, error: "Could not send the internal notification right now." },
-      { status: 502 },
-    );
   }
 
   try {
@@ -592,14 +642,15 @@ export async function POST(request: Request) {
       });
     }
 
-    if (normalized.data.kind === "pro-license" && license && proPluginAttachment) {
+    if (normalized.data.kind === "pro-license" && license) {
+      const downloadUrl = proPluginDownloadUrl(request);
+
       await sendGmailEmail({
         to: normalized.data.email,
         replyTo: TO_EMAIL,
         subject: customerLicenseSubject(),
-        html: customerLicenseHtml(normalized.data, license),
-        text: customerLicenseText(normalized.data, license),
-        attachments: [proPluginAttachment],
+        html: customerLicenseHtml(normalized.data, license, downloadUrl),
+        text: customerLicenseText(normalized.data, license, downloadUrl),
       });
     }
   } catch (error) {
