@@ -1,13 +1,19 @@
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 import { site } from "@/lib/site";
 
 export const runtime = "nodejs";
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "emran@arrayhash.com";
-const FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL ?? "ArrayHash Website <onboarding@resend.dev>";
+const FROM_EMAIL = process.env.GMAIL_SENDER_EMAIL ?? "emran@arrayhash.com";
+const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? "ArrayHash Website <onboarding@resend.dev>";
+const GWS_CLI_PATH = process.env.GWS_CLI_PATH ?? "gws";
+const GMAIL_SUPPORT_LABEL_NAME = process.env.GMAIL_SUPPORT_LABEL_NAME ?? "ArrayHash Supports";
 
-type FormKind = "contact" | "pro-license";
+const execFileAsync = promisify(execFile);
+
+type FormKind = "contact" | "pro-trial";
 
 type FormPayload = {
   kind?: unknown;
@@ -34,6 +40,29 @@ type NormalizedSubmission = {
   consent?: boolean;
 };
 
+type GmailEmailPayload = {
+  to: string;
+  replyTo?: string;
+  subject: string;
+  html: string;
+  text: string;
+};
+
+type GmailMessageResponse = {
+  id?: string;
+};
+
+type GmailLabel = {
+  id?: string;
+  name?: string;
+};
+
+type GmailLabelsResponse = {
+  labels?: GmailLabel[];
+};
+
+let gmailSupportLabelIdPromise: Promise<string> | null = null;
+
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
 function readString(value: unknown, maxLength: number) {
@@ -53,10 +82,184 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#39;");
 }
 
+function stripHeaderValue(value: string) {
+  return value.replace(/[\r\n]+/g, " ").trim();
+}
+
+function encodeHeaderValue(value: string) {
+  const stripped = stripHeaderValue(value);
+
+  if (/^[\x20-\x7e]*$/.test(stripped)) {
+    return stripped;
+  }
+
+  return `=?UTF-8?B?${Buffer.from(stripped).toString("base64")}?=`;
+}
+
+function formatMailbox(email: string, name?: string) {
+  const safeEmail = stripHeaderValue(email);
+  const safeName = name ? encodeHeaderValue(name) : "";
+
+  return safeName ? `${safeName} <${safeEmail}>` : safeEmail;
+}
+
+function base64Mime(value: Buffer | string) {
+  const base64 = Buffer.isBuffer(value)
+    ? value.toString("base64")
+    : Buffer.from(value, "utf8").toString("base64");
+
+  return base64.replace(/.{1,76}/g, "$&\r\n").trimEnd();
+}
+
+function buildAlternativePart(text: string, html: string, boundary: string) {
+  return [
+    `--${boundary}`,
+    "Content-Type: text/plain; charset=UTF-8",
+    "Content-Transfer-Encoding: base64",
+    "",
+    base64Mime(text),
+    `--${boundary}`,
+    "Content-Type: text/html; charset=UTF-8",
+    "Content-Transfer-Encoding: base64",
+    "",
+    base64Mime(html),
+    `--${boundary}--`,
+  ].join("\r\n");
+}
+
+function buildMimeEmail(payload: GmailEmailPayload) {
+  const alternativeBoundary = `arraysubs-alt-${crypto.randomUUID()}`;
+  const headers = [
+    `From: ${formatMailbox(FROM_EMAIL, "Emran")}`,
+    `To: ${formatMailbox(payload.to)}`,
+    payload.replyTo ? `Reply-To: ${formatMailbox(payload.replyTo)}` : "",
+    `Subject: ${encodeHeaderValue(payload.subject)}`,
+    `Date: ${new Date().toUTCString()}`,
+    "MIME-Version: 1.0",
+  ].filter(Boolean);
+  const alternativePart = buildAlternativePart(
+    payload.text,
+    payload.html,
+    alternativeBoundary,
+  );
+
+  return [
+    ...headers,
+    `Content-Type: multipart/alternative; boundary="${alternativeBoundary}"`,
+    "",
+    alternativePart,
+  ].join("\r\n");
+}
+
+async function sendGmailEmail(payload: GmailEmailPayload) {
+  const raw = Buffer.from(buildMimeEmail(payload), "utf8").toString("base64url");
+  const { stdout } = await execFileAsync(
+    GWS_CLI_PATH,
+    [
+      "gmail",
+      "users",
+      "messages",
+      "send",
+      "--params",
+      JSON.stringify({ userId: FROM_EMAIL }),
+      "--json",
+      JSON.stringify({ raw }),
+      "--format",
+      "json",
+    ],
+    {
+      cwd: process.cwd(),
+      maxBuffer: 1024 * 1024,
+    },
+  );
+  const response = JSON.parse(String(stdout || "{}")) as GmailMessageResponse;
+
+  if (response.id) {
+    await markGmailMessageUnread(response.id);
+  }
+}
+
+async function markGmailMessageUnread(messageId: string) {
+  const supportLabelId = await getGmailSupportLabelId();
+
+  await execFileAsync(
+    GWS_CLI_PATH,
+    [
+      "gmail",
+      "users",
+      "messages",
+      "modify",
+      "--params",
+      JSON.stringify({
+        userId: FROM_EMAIL,
+        id: messageId,
+      }),
+      "--json",
+      JSON.stringify({
+        addLabelIds: ["UNREAD", "INBOX", "IMPORTANT", "STARRED", supportLabelId],
+      }),
+      "--format",
+      "json",
+    ],
+    {
+      cwd: process.cwd(),
+      maxBuffer: 1024 * 1024,
+    },
+  );
+}
+
+function getConfiguredGmailSupportLabelId() {
+  return process.env.GMAIL_SUPPORT_LABEL_ID?.trim() ?? "";
+}
+
+async function getGmailSupportLabelId() {
+  const configuredLabelId = getConfiguredGmailSupportLabelId();
+
+  if (configuredLabelId) {
+    return configuredLabelId;
+  }
+
+  if (!gmailSupportLabelIdPromise) {
+    gmailSupportLabelIdPromise = resolveGmailSupportLabelId();
+  }
+
+  return gmailSupportLabelIdPromise;
+}
+
+async function resolveGmailSupportLabelId() {
+  const { stdout } = await execFileAsync(
+    GWS_CLI_PATH,
+    [
+      "gmail",
+      "users",
+      "labels",
+      "list",
+      "--params",
+      JSON.stringify({ userId: FROM_EMAIL }),
+      "--format",
+      "json",
+    ],
+    {
+      cwd: process.cwd(),
+      maxBuffer: 1024 * 1024,
+    },
+  );
+  const response = JSON.parse(String(stdout || "{}")) as GmailLabelsResponse;
+  const label = response.labels?.find(
+    (item) => item.name === GMAIL_SUPPORT_LABEL_NAME,
+  );
+
+  if (!label?.id) {
+    throw new Error(`Gmail label "${GMAIL_SUPPORT_LABEL_NAME}" was not found.`);
+  }
+
+  return label.id;
+}
+
 function normalizePayload(payload: FormPayload):
   | { ok: true; data: NormalizedSubmission }
   | { ok: false; error: string } {
-  const kind = payload.kind === "contact" ? "contact" : payload.kind === "pro-license" ? "pro-license" : null;
+  const kind = payload.kind === "contact" ? "contact" : payload.kind === "pro-trial" ? "pro-trial" : null;
   const name = readString(payload.name, 160);
   const email = readString(payload.email, 200).toLowerCase();
   const sourcePath = readString(payload.sourcePath, 300) || "/";
@@ -97,12 +300,47 @@ function normalizePayload(payload: FormPayload):
   };
 }
 
-function rows(data: NormalizedSubmission) {
+function submittedAtUtc() {
+  return new Date().toISOString();
+}
+
+function pageSlugFromSource(sourcePath: string) {
+  const pathOnly = sourcePath.split("?")[0]?.trim() || "/";
+  const slug = pathOnly.replace(/^\/+|\/+$/g, "");
+
+  return slug || "home";
+}
+
+function signatureText() {
+  return [
+    "Warm Regards",
+    "Emran",
+    "Cell & WhatsApp: +8801625000066",
+    "LinkedIn: https://www.linkedin.com/in/emranio/",
+  ].join("\n");
+}
+
+function signatureHtml() {
+  return `
+    <div style="margin:24px 0 0;color:#000000;font-size:16px;line-height:1.5;font-weight:400;">
+      <div style="color:#000000;font-size:16px;line-height:1.25;font-weight:700;margin:0 0 6px;">##</div>
+      <div style="color:#000000;font-size:16px;line-height:1.35;font-weight:700;margin:0 0 4px;">Warm Regards</div>
+      <div style="color:#000000;margin:0 0 2px;">Emran</div>
+      <div style="color:#000000;margin:0 0 2px;">Cell &amp; WhatsApp: +8801625000066</div>
+      <div style="color:#000000;margin:0;">LinkedIn: <a href="https://www.linkedin.com/in/emranio/" style="color:#0B57D0;font-weight:400;text-decoration:underline;">https://www.linkedin.com/in/emranio/</a></div>
+    </div>
+  `;
+}
+
+function rows(
+  data: NormalizedSubmission,
+  submittedAt: string,
+) {
   const baseRows: [string, string][] = [
     ["Name", data.name],
     ["Email", data.email],
     ["Source", data.sourcePath],
-    ["Submitted", new Date().toISOString()],
+    ["Submitted", submittedAt],
   ];
 
   if (data.kind === "contact") {
@@ -121,19 +359,25 @@ function rows(data: NormalizedSubmission) {
   ];
 }
 
-function toText(data: NormalizedSubmission) {
-  return rows(data)
+function toText(
+  data: NormalizedSubmission,
+  submittedAt: string,
+) {
+  return rows(data, submittedAt)
     .map(([label, value]) => `${label}: ${value}`)
     .join("\n");
 }
 
-function toHtml(data: NormalizedSubmission) {
+function toHtml(
+  data: NormalizedSubmission,
+  submittedAt: string,
+) {
   const title =
     data.kind === "contact"
       ? "New ArrayHash contact form submission"
-      : "New ArraySubs Pro license request";
+      : "New ArraySubs Pro trial request";
 
-  const renderedRows = rows(data)
+  const renderedRows = rows(data, submittedAt)
     .map(
       ([label, value]) => `
         <tr>
@@ -163,6 +407,89 @@ function emailSubject(data: NormalizedSubmission) {
   return `[ArraySubs Pro request] ${data.name}`;
 }
 
+function customerContactSubject(data: NormalizedSubmission) {
+  return `Re: ${data.subject ?? "Your query"}`;
+}
+
+function customerContactText(data: NormalizedSubmission, submittedAt: string) {
+  const pageSlug = pageSlugFromSource(data.sourcePath);
+
+  return [
+    `Hi ${data.name},`,
+    "",
+    "I received your query, I will get back to you ASAP.",
+    "",
+    `Subject: ${data.subject ?? ""}`,
+    "",
+    "Your message:",
+    data.body ?? "",
+    "",
+    `Submitted: ${submittedAt}`,
+    `Page: ${pageSlug}`,
+    "",
+    `>> Note: A query form was submitted from this email ${data.email} at "${pageSlug}" - ArrayHash.`,
+    "",
+    signatureText(),
+  ].join("\n");
+}
+
+function customerContactHtml(data: NormalizedSubmission, submittedAt: string) {
+  const pageSlug = pageSlugFromSource(data.sourcePath);
+
+  return `
+    <div style="font-family:Arial,sans-serif;line-height:1.65;color:#12002B;max-width:680px;margin:0;text-align:left;">
+      <p style="margin:0 0 16px;color:#3F2A5C;">Hi ${escapeHtml(data.name)},</p>
+      <p style="margin:0 0 20px;color:#3F2A5C;">I received your query, I will get back to you ASAP.</p>
+
+      <div style="padding:18px 20px;border:1px solid #DED2F4;border-radius:14px;background:#F7F3FF;margin:0 0 22px;">
+        <p style="margin:0 0 8px;color:#3F2A5C;"><strong>Subject:</strong> ${escapeHtml(data.subject ?? "")}</p>
+        <p style="margin:0 0 8px;font-weight:700;color:#12002B;">Your message</p>
+        <p style="margin:0 0 16px;color:#3F2A5C;white-space:pre-wrap;">${escapeHtml(data.body ?? "")}</p>
+        <p style="margin:0;color:#3F2A5C;"><strong>Date time:</strong> ${escapeHtml(submittedAt)}</p>
+        <p style="margin:8px 0 0;color:#3F2A5C;"><strong>Page:</strong> ${escapeHtml(pageSlug)}</p>
+      </div>
+
+      <p style="margin:0 0 16px;color:#3F2A5C;">&gt;&gt; Note: A query form was submitted from this email ${escapeHtml(data.email)} at &quot;${escapeHtml(pageSlug)}&quot; - ArrayHash.</p>
+      ${signatureHtml()}
+    </div>
+  `;
+}
+
+async function sendResendNotification(
+  data: NormalizedSubmission,
+  submittedAt: string,
+) {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY is not configured.");
+  }
+
+  const response = await fetch(RESEND_ENDPOINT, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      "Content-Type": "application/json",
+      "Idempotency-Key": crypto.randomUUID(),
+    },
+    body: JSON.stringify({
+      from: RESEND_FROM_EMAIL,
+      to: [TO_EMAIL],
+      reply_to: data.email,
+      subject: emailSubject(data),
+      html: toHtml(data, submittedAt),
+      text: toText(data, submittedAt),
+      tags: [
+        { name: "source", value: "website" },
+        { name: "form", value: data.kind.replace("-", "_") },
+      ],
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Resend notification failed (${response.status}): ${errorText}`);
+  }
+}
+
 export async function POST(request: Request) {
   let payload: FormPayload;
 
@@ -187,43 +514,36 @@ export async function POST(request: Request) {
     );
   }
 
-  if (!process.env.RESEND_API_KEY) {
-    return Response.json(
-      { ok: false, error: "Email delivery is not configured." },
-      { status: 503 },
-    );
+  const submittedAt = submittedAtUtc();
+
+  if (normalized.data.kind === "pro-trial") {
+    try {
+      await sendResendNotification(normalized.data, submittedAt);
+    } catch (error) {
+      console.error("Resend form notification failed", error);
+
+      return Response.json(
+        { ok: false, error: "Could not send the internal notification right now." },
+        { status: 502 },
+      );
+    }
   }
 
-  const response = await fetch(RESEND_ENDPOINT, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-      "Content-Type": "application/json",
-      "Idempotency-Key": crypto.randomUUID(),
-    },
-    body: JSON.stringify({
-      from: FROM_EMAIL,
-      to: [TO_EMAIL],
-      reply_to: normalized.data.email,
-      subject: emailSubject(normalized.data),
-      html: toHtml(normalized.data),
-      text: toText(normalized.data),
-      tags: [
-        { name: "source", value: "website" },
-        { name: "form", value: normalized.data.kind.replace("-", "_") },
-      ],
-    }),
-  });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    console.error("Resend form email failed", {
-      status: response.status,
-      error: errorText,
-    });
+  try {
+    if (normalized.data.kind === "contact") {
+      await sendGmailEmail({
+        to: normalized.data.email,
+        replyTo: TO_EMAIL,
+        subject: customerContactSubject(normalized.data),
+        html: customerContactHtml(normalized.data, submittedAt),
+        text: customerContactText(normalized.data, submittedAt),
+      });
+    }
+  } catch (error) {
+    console.error("Gmail customer email failed", error);
 
     return Response.json(
-      { ok: false, error: "Could not send the email right now." },
+      { ok: false, error: "Could not send the customer email right now." },
       { status: 502 },
     );
   }

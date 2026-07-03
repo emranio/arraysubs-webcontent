@@ -16,20 +16,20 @@ export function Checkbox({ label, id, className, ...props }: CheckboxProps) {
     <label
       htmlFor={controlId}
       className={cn(
-        "flex cursor-pointer items-start gap-3 text-sm text-muted",
+        "flex cursor-pointer items-center gap-3 text-sm text-muted",
         className,
       )}
     >
-      <span className="relative mt-0.5 grid size-5 shrink-0 place-items-center">
+      <span className="relative grid size-5 shrink-0 place-items-center">
         <input id={controlId} type="checkbox" className="peer sr-only" {...props} />
         <span
           aria-hidden="true"
-          className="col-start-1 row-start-1 size-5 rounded-[0.3rem] border-2 border-border-strong bg-background transition-colors duration-150 peer-checked:border-dark peer-checked:bg-dark peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-dark peer-disabled:opacity-50"
+          className="col-start-1 row-start-1 size-5 rounded-[0.3rem] border-2 border-border-strong bg-background transition-colors duration-150 peer-checked:border-faint peer-checked:bg-faint peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-dark peer-disabled:opacity-50"
         />
         <Check
           aria-hidden="true"
           strokeWidth={3}
-          className="col-start-1 row-start-1 size-3.5 text-on-dark opacity-0 transition-opacity duration-150 peer-checked:opacity-100"
+          className="col-start-1 row-start-1 size-3.5 text-background opacity-0 transition-opacity duration-150 peer-checked:opacity-100"
         />
       </span>
       <span>{label}</span>
