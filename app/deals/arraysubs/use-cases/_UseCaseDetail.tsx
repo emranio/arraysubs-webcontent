@@ -25,8 +25,8 @@ const tierTone = (tier: FeatureTier) =>
 
 /**
  * Shared template for every `/deals/arraysubs/use-cases/<slug>/` page. Copy
- * comes from `_data.ts`; the related-feature cards resolve the use case's
- * feature slugs into links to the matching feature pages.
+ * comes from `_data.ts`; related-feature cards resolve the use case's feature
+ * slugs into module summaries.
  */
 export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
   const relatedFeatures = useCase.relatedFeatures
@@ -215,7 +215,7 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
             <SectionTitle
               eyebrow="Built with"
               title="Features that power this use case"
-              subtitle="The ArraySubs modules behind it — explore each in depth."
+              subtitle="The ArraySubs modules behind it."
               align="center"
             />
             <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
@@ -225,7 +225,6 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
                   icon={<feature.icon className="size-6" />}
                   title={feature.name}
                   description={feature.cardDescription}
-                  href={`/deals/arraysubs/features/${feature.slug}/`}
                   badge={<Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>}
                 />
               ))}

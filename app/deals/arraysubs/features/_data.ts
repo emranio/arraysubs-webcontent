@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 /**
- * Manual-aligned source of truth for the ArraySubs feature pages.
+ * Manual-aligned source of truth for the ArraySubs feature hub.
  *
  * The user manual exposes 27 dedicated root-level modules:
  * 20 are free/core-accessible and 7 are Pro-only. Keep this file aligned with

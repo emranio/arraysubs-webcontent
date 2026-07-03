@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/site";
-import { FEATURES } from "@/app/deals/arraysubs/features/_data";
 import { USE_CASES } from "@/app/deals/arraysubs/use-cases/_data";
 import { RECIPES } from "@/app/deals/arraysubs/use-cases/_recipes";
 import { COMPARISONS } from "@/app/deals/arraysubs/alternatives/_data";
@@ -46,12 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority,
-    })),
-    ...FEATURES.map((feature) => ({
-      url: absoluteUrl(`/deals/arraysubs/features/${feature.slug}/`),
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
     })),
     ...USE_CASES.map((useCase) => ({
       url: absoluteUrl(`/deals/arraysubs/use-cases/${useCase.slug}/`),

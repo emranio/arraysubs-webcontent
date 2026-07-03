@@ -210,7 +210,7 @@ export default function FeaturesHubPage() {
           <SectionTitle
             eyebrow="All features"
             title={`${MODULE_COUNT} modules, ${CATEGORY_COUNT} categories`}
-            subtitle="Browse every manual-backed root module. Each page now follows the current user-manual module list, tier, and workflow ownership."
+            subtitle="Browse every manual-backed root module by current user-manual module list, tier, and workflow ownership."
             align="center"
           />
           <div className="mt-12 flex flex-col gap-12">
@@ -228,7 +228,6 @@ export default function FeaturesHubPage() {
                       icon={<feature.icon className="size-6" />}
                       title={feature.name}
                       description={feature.cardDescription}
-                      href={`/deals/arraysubs/features/${feature.slug}/`}
                       badge={
                         <Badge tone={tierTone(feature.tier)}>
                           {feature.tier}
@@ -382,7 +381,6 @@ export default function FeaturesHubPage() {
                   icon={<feature.icon className="size-6" />}
                   title={feature.name}
                   description={feature.cardDescription}
-                  href={`/deals/arraysubs/features/${feature.slug}/`}
                   badge={<Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>}
                 />
               ))}

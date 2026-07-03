@@ -287,7 +287,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
             <SectionTitle
               eyebrow="Built with"
               title="Modules behind this recipe"
-              subtitle="The ArraySubs modules this setup relies on — explore each in depth."
+              subtitle="The ArraySubs modules this setup relies on."
               align="center"
             />
             <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
@@ -297,7 +297,6 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
                   icon={<feature.icon className="size-6" />}
                   title={feature.name}
                   description={feature.cardDescription}
-                  href={`/deals/arraysubs/features/${feature.slug}/`}
                   badge={<Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>}
                 />
               ))}
