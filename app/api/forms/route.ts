@@ -1,10 +1,6 @@
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { site } from "@/lib/site";
-import {
-  type TrialLicenseRecord,
-  writeTrialLicense,
-} from "@/lib/licenses";
 
 export const runtime = "nodejs";
 
@@ -17,7 +13,7 @@ const GMAIL_SUPPORT_LABEL_NAME = process.env.GMAIL_SUPPORT_LABEL_NAME ?? "ArrayH
 
 const execFileAsync = promisify(execFile);
 
-type FormKind = "contact" | "pro-license";
+type FormKind = "contact" | "pro-trial";
 
 type FormPayload = {
   kind?: unknown;
@@ -263,7 +259,7 @@ async function resolveGmailSupportLabelId() {
 function normalizePayload(payload: FormPayload):
   | { ok: true; data: NormalizedSubmission }
   | { ok: false; error: string } {
-  const kind = payload.kind === "contact" ? "contact" : payload.kind === "pro-license" ? "pro-license" : null;
+  const kind = payload.kind === "contact" ? "contact" : payload.kind === "pro-trial" ? "pro-trial" : null;
   const name = readString(payload.name, 160);
   const email = readString(payload.email, 200).toLowerCase();
   const sourcePath = readString(payload.sourcePath, 300) || "/";
@@ -339,7 +335,6 @@ function signatureHtml() {
 function rows(
   data: NormalizedSubmission,
   submittedAt: string,
-  license?: TrialLicenseRecord | null,
 ) {
   const baseRows: [string, string][] = [
     ["Name", data.name],
@@ -358,10 +353,6 @@ function rows(
 
   return [
     ...baseRows,
-    ["License key", license?.licenseKey ?? ""],
-    ["Package", license?.packageName ?? ""],
-    ["License created", license?.createdDateUtc ?? ""],
-    ["License expires", license?.expireDateUtc ?? ""],
     ["Country", data.country ?? ""],
     ["Business type", data.business || "Not provided"],
     ["Product updates consent", data.consent ? "Yes" : "No"],
@@ -371,9 +362,8 @@ function rows(
 function toText(
   data: NormalizedSubmission,
   submittedAt: string,
-  license?: TrialLicenseRecord | null,
 ) {
-  return rows(data, submittedAt, license)
+  return rows(data, submittedAt)
     .map(([label, value]) => `${label}: ${value}`)
     .join("\n");
 }
@@ -381,14 +371,13 @@ function toText(
 function toHtml(
   data: NormalizedSubmission,
   submittedAt: string,
-  license?: TrialLicenseRecord | null,
 ) {
   const title =
     data.kind === "contact"
       ? "New ArrayHash contact form submission"
-      : "New ArraySubs Pro license request";
+      : "New ArraySubs Pro trial request";
 
-  const renderedRows = rows(data, submittedAt, license)
+  const renderedRows = rows(data, submittedAt)
     .map(
       ([label, value]) => `
         <tr>
@@ -416,10 +405,6 @@ function emailSubject(data: NormalizedSubmission) {
   }
 
   return `[ArraySubs Pro request] ${data.name}`;
-}
-
-function proPluginDownloadUrl(request: Request) {
-  return new URL("/downloads/arraysubspro.zip", request.url).toString();
 }
 
 function customerContactSubject(data: NormalizedSubmission) {
@@ -470,74 +455,9 @@ function customerContactHtml(data: NormalizedSubmission, submittedAt: string) {
   `;
 }
 
-function customerLicenseSubject() {
-  return "Welcome to ArraySubs Pro - your 4-month trial license";
-}
-
-function customerLicenseText(
-  data: NormalizedSubmission,
-  license: TrialLicenseRecord,
-  downloadUrl: string,
-) {
-  return [
-    `Hi ${data.name},`,
-    "",
-    "Welcome to ArraySubs Pro. Your 4-month trial license is ready.",
-    "",
-    `License key: ${license.licenseKey}`,
-    `Expires: ${license.expireDateUtc}`,
-    `Pro plugin download: ${downloadUrl}`,
-    "",
-    "How to activate:",
-    "1. Install and activate the free ArraySubs plugin from the WordPress plugin directory.",
-    "2. Download ArraySubs Pro from the link above.",
-    "3. Install the ArraySubs Pro zip file, then activate ArraySubs Pro.",
-    "4. In WordPress, go to ArraySubs > License.",
-    "5. Paste your license key and click Activate License.",
-    "",
-    "Keep this email for your records. If you need help, reply to this email.",
-    "",
-    signatureText(),
-  ].join("\n");
-}
-
-function customerLicenseHtml(
-  data: NormalizedSubmission,
-  license: TrialLicenseRecord,
-  downloadUrl: string,
-) {
-  return `
-    <div style="font-family:Arial,sans-serif;line-height:1.65;color:#12002B;max-width:680px;margin:0;text-align:left;">
-      <h1 style="font-size:28px;line-height:1.2;margin:0 0 16px;">Welcome to ArraySubs Pro</h1>
-      <p style="margin:0 0 16px;color:#3F2A5C;">Hi ${escapeHtml(data.name)},</p>
-      <p style="margin:0 0 20px;color:#3F2A5C;">Your 4-month ArraySubs Pro trial license is ready. Download the Pro plugin from the link below.</p>
-
-      <div style="padding:18px 20px;border:1px solid #DED2F4;border-radius:14px;background:#F7F3FF;margin:0 0 22px;">
-        <p style="margin:0 0 8px;font-weight:700;color:#12002B;">License key</p>
-        <p style="margin:0;font-family:Consolas,Monaco,monospace;font-size:16px;letter-spacing:0.02em;word-break:break-all;color:#321167;">${escapeHtml(license.licenseKey)}</p>
-        <p style="margin:16px 0 0;color:#3F2A5C;">Expires: <strong>${escapeHtml(license.expireDateUtc)}</strong></p>
-        <p style="margin:16px 0 0;color:#3F2A5C;"><strong>Pro plugin download:</strong><br /><a href="${escapeHtml(downloadUrl)}" style="color:#0B57D0;text-decoration:underline;word-break:break-all;">${escapeHtml(downloadUrl)}</a></p>
-      </div>
-
-      <h2 style="font-size:20px;line-height:1.3;margin:0 0 12px;">How to activate</h2>
-      <ol style="margin:0 0 22px;padding-left:22px;color:#3F2A5C;">
-        <li>Install and activate the free ArraySubs plugin from the WordPress plugin directory.</li>
-        <li>Download ArraySubs Pro from the link above.</li>
-        <li>Install the ArraySubs Pro zip file, then activate ArraySubs Pro.</li>
-        <li>In WordPress, go to <strong>ArraySubs &gt; License</strong>.</li>
-        <li>Paste your license key and click <strong>Activate License</strong>.</li>
-      </ol>
-
-      <p style="margin:0 0 16px;color:#3F2A5C;">Keep this email for your records. If you need help, reply to this email.</p>
-      ${signatureHtml()}
-    </div>
-  `;
-}
-
 async function sendResendNotification(
   data: NormalizedSubmission,
   submittedAt: string,
-  license?: TrialLicenseRecord | null,
 ) {
   if (!process.env.RESEND_API_KEY) {
     throw new Error("RESEND_API_KEY is not configured.");
@@ -555,8 +475,8 @@ async function sendResendNotification(
       to: [TO_EMAIL],
       reply_to: data.email,
       subject: emailSubject(data),
-      html: toHtml(data, submittedAt, license),
-      text: toText(data, submittedAt, license),
+      html: toHtml(data, submittedAt),
+      text: toText(data, submittedAt),
       tags: [
         { name: "source", value: "website" },
         { name: "form", value: data.kind.replace("-", "_") },
@@ -595,32 +515,10 @@ export async function POST(request: Request) {
   }
 
   const submittedAt = submittedAtUtc();
-  let license: TrialLicenseRecord | null = null;
 
-  if (normalized.data.kind === "pro-license") {
+  if (normalized.data.kind === "pro-trial") {
     try {
-      license = await writeTrialLicense({
-        kind: "pro-license",
-        name: normalized.data.name,
-        email: normalized.data.email,
-        country: normalized.data.country ?? "",
-        business: normalized.data.business,
-        consent: normalized.data.consent,
-        sourcePath: normalized.data.sourcePath,
-      });
-    } catch (error) {
-      console.error("Trial license write failed", error);
-
-      return Response.json(
-        { ok: false, error: "Could not generate the license right now." },
-        { status: 503 },
-      );
-    }
-  }
-
-  if (normalized.data.kind === "pro-license") {
-    try {
-      await sendResendNotification(normalized.data, submittedAt, license);
+      await sendResendNotification(normalized.data, submittedAt);
     } catch (error) {
       console.error("Resend form notification failed", error);
 
@@ -639,18 +537,6 @@ export async function POST(request: Request) {
         subject: customerContactSubject(normalized.data),
         html: customerContactHtml(normalized.data, submittedAt),
         text: customerContactText(normalized.data, submittedAt),
-      });
-    }
-
-    if (normalized.data.kind === "pro-license" && license) {
-      const downloadUrl = proPluginDownloadUrl(request);
-
-      await sendGmailEmail({
-        to: normalized.data.email,
-        replyTo: TO_EMAIL,
-        subject: customerLicenseSubject(),
-        html: customerLicenseHtml(normalized.data, license, downloadUrl),
-        text: customerLicenseText(normalized.data, license, downloadUrl),
       });
     }
   } catch (error) {

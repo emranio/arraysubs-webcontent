@@ -66,7 +66,7 @@ export function LeadForm({ className }: { className?: string }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          kind: "pro-license",
+          kind: "pro-trial",
           name,
           email,
           country,
