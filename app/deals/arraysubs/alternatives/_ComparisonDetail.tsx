@@ -25,7 +25,7 @@ import { RECIPES } from "../use-cases/_recipes";
 import { highlight } from "../_highlight";
 
 const GET_PRO = "/deals/arraysubs/pricing/";
-const ALTERNATIVES = "/deals/arraysubs/alternatives";
+const ALTERNATIVES = "/deals/arraysubs/alternatives/";
 const MODULE_COUNT = FEATURES.length;
 const CORE_MODULE_COUNT = FEATURES.filter((feature) => feature.tier !== "Pro").length;
 const PRO_ONLY_FEATURES = FEATURES.filter((feature) => feature.tier === "Pro");
@@ -68,8 +68,8 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "ArraySubs", href: "/deals/arraysubs/" },
-          { name: "Compare", href: `${ALTERNATIVES}/` },
-          { name: c.competitorShort, href: `${ALTERNATIVES}/${c.slug}/` },
+          { name: "Compare", href: ALTERNATIVES },
+          { name: c.competitorShort, href: `${ALTERNATIVES}${c.slug}/` },
         ]}
         title={c.h1}
         subtitle={c.heroSubtitle}
@@ -342,7 +342,7 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
                   icon={<item.icon className="size-6" />}
                   title={`vs ${item.competitorShort}`}
                   description={item.cardDescription}
-                  href={`${ALTERNATIVES}/${item.slug}/`}
+                  href={`${ALTERNATIVES}${item.slug}/`}
                 />
               ))}
             </div>
@@ -381,7 +381,7 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
         data={articleSchema({
           headline: c.h1,
           description: c.metaDescription,
-          path: `${ALTERNATIVES}/${c.slug}/`,
+          path: `${ALTERNATIVES}${c.slug}/`,
           datePublished: c.updated,
           dateModified: c.updated,
         })}

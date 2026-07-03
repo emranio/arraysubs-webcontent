@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import { site } from "@/lib/site";
+import { absoluteUrl, site } from "@/lib/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 import { CustomCursor } from "@/components/animation/CustomCursor";
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: site.brand,
     locale: site.locale,
-    url: site.url,
+    url: absoluteUrl("/"),
     title: site.defaultTitle,
     description: site.description,
     images: [{ url: site.ogImage, width: 1200, height: 630, alt: site.brand }],

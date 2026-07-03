@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/site";
+import { absoluteUrl, site, withTrailingSlash } from "@/lib/site";
 
 type SeoInput = {
   title?: string;
@@ -27,7 +27,7 @@ export function createMetadata(input: SeoInput = {}): Metadata {
     type = "website",
   } = input;
 
-  const canonical = path;
+  const canonical = withTrailingSlash(path);
   const resolvedTitle = title ?? site.defaultTitle;
 
   return {
@@ -75,8 +75,8 @@ export function organizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: site.brand,
-    url: site.url,
-    logo: `${site.url}${site.logo}`,
+    url: absoluteUrl("/"),
+    logo: absoluteUrl(site.logo),
     sameAs: [...site.sameAs],
     contactPoint: {
       "@type": "ContactPoint",
@@ -91,7 +91,7 @@ export function websiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: site.brand,
-    url: site.url,
+    url: absoluteUrl("/"),
     description: site.description,
     inLanguage: site.lang,
     publisher: { "@type": "Organization", name: site.brand },
@@ -125,7 +125,7 @@ export function breadcrumbSchema(items: Crumb[]) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `${site.url}${item.path}`,
+      item: absoluteUrl(item.path),
     })),
   };
 }
@@ -180,7 +180,7 @@ export type ArticleInput = {
  * dated, citable content to search and AI answer engines (GEO/AEO).
  */
 export function articleSchema(input: ArticleInput) {
-  const url = `${site.url}${input.path}`;
+  const url = absoluteUrl(input.path);
   return {
     "@context": "https://schema.org",
     "@type": "TechArticle",
@@ -191,11 +191,11 @@ export function articleSchema(input: ArticleInput) {
     datePublished: input.datePublished,
     dateModified: input.dateModified,
     inLanguage: site.lang,
-    author: { "@type": "Organization", name: site.brand, url: site.url },
+    author: { "@type": "Organization", name: site.brand, url: absoluteUrl("/") },
     publisher: {
       "@type": "Organization",
       name: site.brand,
-      logo: { "@type": "ImageObject", url: `${site.url}${site.logo}` },
+      logo: { "@type": "ImageObject", url: absoluteUrl(site.logo) },
     },
   };
 }

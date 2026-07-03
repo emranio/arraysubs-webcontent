@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/lib/site";
+import { absoluteUrl } from "@/lib/site";
 import { FEATURES } from "@/app/deals/arraysubs/features/_data";
 import { USE_CASES } from "@/app/deals/arraysubs/use-cases/_data";
 import { RECIPES } from "@/app/deals/arraysubs/use-cases/_recipes";
@@ -30,49 +30,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: `${site.url}/deals/arraysubs/`,
+      url: absoluteUrl("/deals/arraysubs/"),
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${site.url}/contact/`,
+      url: absoluteUrl("/contact/"),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     ...dealsRoutes.map(([path, priority]) => ({
-      url: `${site.url}${path}`,
+      url: absoluteUrl(path),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority,
     })),
     ...FEATURES.map((feature) => ({
-      url: `${site.url}/deals/arraysubs/features/${feature.slug}/`,
+      url: absoluteUrl(`/deals/arraysubs/features/${feature.slug}/`),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
     ...USE_CASES.map((useCase) => ({
-      url: `${site.url}/deals/arraysubs/use-cases/${useCase.slug}/`,
+      url: absoluteUrl(`/deals/arraysubs/use-cases/${useCase.slug}/`),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
     ...RECIPES.map((recipe) => ({
-      url: `${site.url}/deals/arraysubs/use-cases/recipes/${recipe.slug}/`,
+      url: absoluteUrl(`/deals/arraysubs/use-cases/recipes/${recipe.slug}/`),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
     ...COMPARISONS.map((comparison) => ({
-      url: `${site.url}/deals/arraysubs/alternatives/${comparison.slug}/`,
+      url: absoluteUrl(`/deals/arraysubs/alternatives/${comparison.slug}/`),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
     ...trustRoutes.map(([path, priority]) => ({
-      url: `${site.url}${path}`,
+      url: absoluteUrl(path),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority,

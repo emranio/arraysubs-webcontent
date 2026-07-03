@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
 import { HEADER_NAV_ITEMS } from "@/lib/navigation";
-import { site } from "@/lib/site";
+import { site, withTrailingSlash } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { MobileMenu } from "./MobileMenu";
@@ -15,8 +15,9 @@ export function SiteHeader() {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const wasOpen = useRef(false);
   const pathname = usePathname() ?? "";
-  const isArraySubsPath =
-    pathname === "/deals/arraysubs" || pathname.startsWith("/deals/arraysubs/");
+  const isArraySubsPath = withTrailingSlash(pathname).startsWith(
+    "/deals/arraysubs/",
+  );
   const logoSubtitle = isArraySubsPath
     ? `${site.brand} - Subscription Manager for WooCommerce`
     : `Plugins, Code, and Commerce Solutions for WordPress`;

@@ -23,7 +23,7 @@ import {
   SectionTitle,
 } from "@/components/ui";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { site } from "@/lib/site";
+import { absoluteUrl, site } from "@/lib/site";
 import {
   EFFECTIVE_DATE,
   ExternalLink,
@@ -285,7 +285,7 @@ export default function TrustCenterPage() {
           "@context": "https://schema.org",
           "@type": "WebPage",
           name: "ArrayHash Trust Center",
-          url: `${site.url}/trust-center/`,
+          url: absoluteUrl("/trust-center/"),
           about: TRUST_LINKS.map((item) => item.title),
         }}
       />
