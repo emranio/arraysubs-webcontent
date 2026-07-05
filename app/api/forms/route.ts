@@ -490,6 +490,43 @@ async function sendResendNotification(
   }
 }
 
+/**
+ * Resend fallback for a direct customer email (e.g. the contact auto-reply)
+ * when the Google Workspace send fails. Sent from the website Resend address
+ * with reply-to pointing at the real support mailbox.
+ */
+async function sendResendEmail(payload: GmailEmailPayload) {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY is not configured.");
+  }
+
+  const response = await fetch(RESEND_ENDPOINT, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      "Content-Type": "application/json",
+      "Idempotency-Key": crypto.randomUUID(),
+    },
+    body: JSON.stringify({
+      from: RESEND_FROM_EMAIL,
+      to: [payload.to],
+      reply_to: payload.replyTo ?? TO_EMAIL,
+      subject: payload.subject,
+      html: payload.html,
+      text: payload.text,
+      tags: [
+        { name: "source", value: "website" },
+        { name: "form", value: "contact_autoreply" },
+      ],
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Resend email failed (${response.status}): ${errorText}`);
+  }
+}
+
 export async function POST(request: Request) {
   let payload: FormPayload;
 
@@ -531,16 +568,25 @@ export async function POST(request: Request) {
 
   try {
     if (normalized.data.kind === "contact") {
-      await sendGmailEmail({
+      const customerPayload: GmailEmailPayload = {
         to: normalized.data.email,
         replyTo: TO_EMAIL,
         subject: customerContactSubject(normalized.data),
         html: customerContactHtml(normalized.data, submittedAt),
         text: customerContactText(normalized.data, submittedAt),
-      });
+      };
+
+      try {
+        await sendGmailEmail(customerPayload);
+      } catch (gmailError) {
+        // Workspace mailbox unavailable — deliver through Resend so the
+        // customer still gets their acknowledgement.
+        console.error("Gmail customer email failed; falling back to Resend", gmailError);
+        await sendResendEmail(customerPayload);
+      }
     }
   } catch (error) {
-    console.error("Gmail customer email failed", error);
+    console.error("Customer email failed (Gmail and Resend)", error);
 
     return Response.json(
       { ok: false, error: "Could not send the customer email right now." },
