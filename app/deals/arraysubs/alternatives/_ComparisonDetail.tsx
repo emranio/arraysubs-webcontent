@@ -81,7 +81,7 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
             magnetic
             iconRight={<ArrowRight className="size-5" />}
           >
-            Get Pro — Free
+            View Pro Pricing
           </Button>
         }
       />
@@ -302,7 +302,7 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
                   href={GET_PRO}
                   iconRight={<ArrowRight className="size-5" />}
                 >
-                  Get Pro — Free
+                  View Pricing
                 </Button>
               </div>
             </div>
@@ -356,10 +356,10 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
           <CTA
             surface="primary"
             flat
-            eyebrow="Early launch offer"
-            title="Get ArraySubs Pro — free for 4 months"
-            subtitle="Install the free core today, then unlock every Pro feature free while early launch is open."
-            microcopy="Limited time · no credit card required"
+            eyebrow="Paid Pro plans"
+            title="Choose the ArraySubs Pro plan that fits"
+            subtitle="Install the free core today, then upgrade securely when you need the full Pro feature set."
+            microcopy="Plans from $129/year · Lifetime options available"
             actions={
               <Button
                 href={GET_PRO}
@@ -369,7 +369,7 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
                 magnetic
                 iconRight={<ArrowRight className="size-5" />}
               >
-                Get Pro — Free
+                View Pricing
               </Button>
             }
           />

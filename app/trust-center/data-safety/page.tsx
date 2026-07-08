@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = createMetadata({
   title: "Data Safety",
   description:
-    "How ArrayHash handles data safety for ArraySubs, including website forms, GA4, Stripe, Freemius, and the no plugin telemetry commitment.",
+    "How ArrayHash handles data safety for ArraySubs, including website forms, GA4, payment providers, and the no plugin telemetry commitment.",
   path: "/trust-center/data-safety/",
 });
 
@@ -37,7 +37,7 @@ export default function DataSafetyPage() {
         highlights={[
           "Website forms collect name, country and email",
           "Plugin data stays on the merchant site",
-          "Stripe and Freemius handle payment and licensing flows",
+          "Payment and licensing providers handle purchase flows",
         ]}
         actions={
           <Button
@@ -56,7 +56,7 @@ export default function DataSafetyPage() {
           { label: "Effective date", value: EFFECTIVE_DATE },
           { label: "Last reviewed", value: REVIEWED_DATE },
           { label: "Analytics", value: "Always-on GA4/GTM" },
-          { label: "Payment providers", value: "Stripe and Freemius" },
+          { label: "Payment providers", value: "Payment and licensing providers" },
         ]}
       />
 
@@ -71,8 +71,8 @@ export default function DataSafetyPage() {
                 The website collects the fields needed for signup, license
                 request, newsletter, support and contact forms. GA4/GTM
                 analytics loads on every visit as necessary measurement, and
-                retargeting loads only after the visitor opts in. Stripe and
-                Freemius process payment, checkout, license and transaction
+                retargeting loads only after the visitor opts in. Payment and
+                licensing providers process checkout, license and transaction
                 workflows.
               </p>
             </PolicyNote>
@@ -105,7 +105,7 @@ export default function DataSafetyPage() {
               ],
               [
                 "Payment, invoice, tax and license records",
-                "Yes, through Stripe and Freemius",
+                "Yes, through payment and licensing providers",
                 "Checkout, payment processing, licensing, refunds and compliance.",
               ],
               [
@@ -229,7 +229,7 @@ export default function DataSafetyPage() {
                 "Checkout and transaction data required to complete payment.",
               ],
               [
-                "Freemius",
+                "Checkout and licensing provider",
                 "Checkout, licensing, accounts, tax and transaction support",
                 "License, account, invoice, refund and payment-related records.",
               ],

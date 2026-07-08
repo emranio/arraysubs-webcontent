@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = createMetadata({
   title: "Refund Policy",
   description:
-    "ArraySubs Pro refund policy. Learn about the 60-day money-back guarantee, Stripe and Freemius payment context, eligibility, renewals, and how to request a refund.",
+    "ArraySubs Pro refund policy. Learn about the 30-day money-back guarantee, payment provider context, eligibility, renewals, and how to request a refund.",
   path: "/trust-center/refund-policy/",
 });
 
@@ -32,11 +32,11 @@ export default function RefundPolicyPage() {
           { name: "Home", href: "/" },
           { name: "Refund Policy", href: "/trust-center/refund-policy/" },
         ]}
-        title="60-Day Money-Back Guarantee"
-        subtitle="ArraySubs Pro purchases are covered by a 60-day refund window. Refund requests are handled by email and processed through the payment provider used at checkout."
+        title="30-Day Money-Back Guarantee"
+        subtitle="ArraySubs Pro purchases are covered by a 30-day refund window. Refund requests are handled by email and processed through the payment provider used at checkout."
         highlights={[
-          "60 calendar days from purchase or renewal",
-          "Stripe and Freemius payment context",
+          "30 calendar days from purchase or renewal",
+          "Payment provider context",
           "Card details are not stored by ArrayHash",
         ]}
         actions={
@@ -74,7 +74,7 @@ export default function RefundPolicyPage() {
             <StepCard
               number={2}
               title="We locate the order"
-              description="ArrayHash checks the Stripe or Freemius transaction and confirms the refund window."
+              description="ArrayHash checks the checkout transaction and confirms the refund window."
             />
             <StepCard
               number={3}
@@ -101,11 +101,11 @@ export default function RefundPolicyPage() {
             rows={[
               [
                 "Product",
-                "ArraySubs Pro licenses purchased through ArrayHash, Stripe or Freemius checkout.",
+                "ArraySubs Pro licenses purchased through ArrayHash checkout.",
               ],
               [
                 "Window",
-                "60 calendar days from the original purchase date or renewal charge date.",
+                "30 calendar days from the original purchase date or renewal charge date.",
               ],
               [
                 "Amount",
@@ -113,7 +113,7 @@ export default function RefundPolicyPage() {
               ],
               [
                 "Payment method",
-                "Refunds are sent to the original payment method through Stripe or Freemius.",
+                "Refunds are sent to the original payment method through the provider used at checkout.",
               ],
               [
                 "Card details",
@@ -129,11 +129,11 @@ export default function RefundPolicyPage() {
             headers={["Item", "Reason"]}
             rows={[
               [
-                "Purchases older than 60 days",
+                "Purchases older than 30 days",
                 "Outside the stated guarantee window.",
               ],
               [
-                "Renewals older than 60 days",
+                "Renewals older than 30 days",
                 "Outside the renewal refund window.",
               ],
               [
@@ -172,8 +172,8 @@ export default function RefundPolicyPage() {
                 className="mb-4 size-7 text-primary"
               />
               <p>
-                Refund arrival time depends on Stripe, Freemius, your bank, card
-                network and original payment method.
+                Refund arrival time depends on the payment provider, your bank,
+                card network and original payment method.
               </p>
             </PolicyNote>
             <PolicyNote title="Free plugin">

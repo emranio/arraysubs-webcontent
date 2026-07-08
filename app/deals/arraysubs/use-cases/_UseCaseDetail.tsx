@@ -55,7 +55,7 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
             magnetic
             iconRight={<ArrowRight className="size-5" />}
           >
-            Get Pro — Free
+            View Pro Pricing
           </Button>
         }
       />
@@ -254,10 +254,10 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
           <CTA
             surface="primary"
             flat
-            eyebrow="Early launch offer"
-            title="Get ArraySubs Pro — free for 4 months"
-            subtitle="Start on the free-forever core today, and unlock every Pro feature free while early launch is open."
-            microcopy="Limited time · no credit card required"
+            eyebrow="Paid Pro plans"
+            title="Unlock the complete Pro stack"
+            subtitle="Start on the free-forever core today, then choose a paid Pro plan when you need the advanced Pro feature set."
+            microcopy="Plans from $129/year · Lifetime options available"
             actions={
               <Button
                 href={GET_PRO}
@@ -266,8 +266,8 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
                 layers="2layer"
                 magnetic
                 iconRight={<ArrowRight className="size-5" />}
-              >
-                Get Pro — Free
+                >
+                View Pricing
               </Button>
             }
           />

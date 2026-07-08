@@ -24,7 +24,7 @@ export const TRUST_LINKS = [
     title: "Refund Policy",
     href: "/trust-center/refund-policy/",
     description:
-      "The 60-day ArraySubs Pro refund guarantee and how refund requests are handled.",
+      "The 30-day ArraySubs Pro refund guarantee and how refund requests are handled.",
   },
   {
     title: "Terms of Service",

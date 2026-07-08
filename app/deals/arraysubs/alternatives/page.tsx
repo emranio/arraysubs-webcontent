@@ -221,7 +221,7 @@ export default function AlternativesHubPage() {
             magnetic
             iconRight={<ArrowRight className="size-5" />}
           >
-            Get Pro — Free
+            View Pro Pricing
           </Button>
         }
       />
@@ -276,7 +276,7 @@ export default function AlternativesHubPage() {
                 size="md"
                 iconRight={<ArrowRight aria-hidden="true" className="size-5" />}
               >
-                Get Pro — Free
+                View Pricing
               </Button>
               <Button
                 href="/deals/arraysubs/features/"
@@ -397,10 +397,10 @@ export default function AlternativesHubPage() {
           <CTA
             surface="primary"
             flat
-            eyebrow="Early launch offer"
-            title="Get ArraySubs Pro — free for 4 months"
-            subtitle="Install the free core today, then unlock every Pro module free while early launch is open."
-            microcopy="Limited time · no credit card required"
+            eyebrow="Paid Pro plans"
+            title="Choose the ArraySubs Pro plan that fits"
+            subtitle="Install the free core today, then upgrade securely when you need the full Pro feature set."
+            microcopy="Plans from $129/year · Lifetime options available"
             actions={
               <Button
                 href={GET_PRO}
@@ -410,7 +410,7 @@ export default function AlternativesHubPage() {
                 magnetic
                 iconRight={<ArrowRight className="size-5" />}
               >
-                Get Pro — Free
+                View Pricing
               </Button>
             }
           />

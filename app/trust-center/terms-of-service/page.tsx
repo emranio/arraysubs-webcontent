@@ -35,8 +35,8 @@ export default function TermsOfServicePage() {
         title="Terms of Service"
         subtitle="These terms govern use of the ArrayHash website, ArraySubs Pro licenses, payment and licensing workflows, and related support communications."
         highlights={[
-          "Stripe and Freemius power checkout and licensing",
-          "Refunds follow the 60-day policy",
+          "Payment and licensing providers power checkout",
+          "Refunds follow the 30-day policy",
           "Free plugin availability remains separate from Pro licensing",
         ]}
         actions={
@@ -109,7 +109,7 @@ export default function TermsOfServicePage() {
 
         <PolicySection title="Payments, billing and licensing providers">
           <p>
-            Stripe and Freemius are active providers for checkout, payment
+            Payment and licensing providers are active for checkout, payment
             processing, license and account management, taxes where applicable,
             fraud prevention, transaction support and refunds. ArrayHash does
             not store full card numbers or card security codes.
@@ -119,7 +119,7 @@ export default function TermsOfServicePage() {
             headers={["Provider", "Role"]}
             rows={[
               ["Stripe", "Payment processing and card handling."],
-              ["Freemius", "Checkout, licensing, accounts, invoices, taxes where applicable, transaction support and refund workflows."],
+              ["Checkout and licensing provider", "Checkout, licensing, accounts, invoices, taxes where applicable, transaction support and refund workflows."],
               ["ArrayHash", "Product, website, customer communication, license policy, refund policy and support."],
             ]}
           />
@@ -130,7 +130,7 @@ export default function TermsOfServicePage() {
             items={[
               "If a license is sold as recurring, it may renew automatically unless cancelled before renewal.",
               "Prices, taxes and renewal terms are shown through the checkout or account flow.",
-              "Refunds are governed by the 60-day Refund Policy.",
+              "Refunds are governed by the 30-day Refund Policy.",
               "Cancellation stops future renewal charges but does not automatically create a refund outside the Refund Policy.",
             ]}
           />
@@ -161,7 +161,7 @@ export default function TermsOfServicePage() {
           <PolicyList
             items={[
               "Do not use the website or ArraySubs Pro to violate law, privacy rights or intellectual-property rights.",
-              "Do not attempt unauthorized access to ArrayHash, Stripe, Freemius or provider systems.",
+              "Do not attempt unauthorized access to ArrayHash, payment or provider systems.",
               "Do not distribute malware, spam, phishing content or harmful code through workflows involving ArrayHash services.",
               "Do not bypass license limits, payment controls or account restrictions.",
               "Do not submit secrets, passwords, full card details or unnecessary customer exports to support.",

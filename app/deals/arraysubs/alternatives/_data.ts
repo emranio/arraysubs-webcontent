@@ -92,7 +92,7 @@ const row = (
 export function comparisonColumns(c: Comparison): ComparisonColumn[] {
   return [
     { key: "free", name: "ArraySubs Free", offer: "$0 — free forever" },
-    { key: "pro", name: "ArraySubs Pro", offer: "Free for 4 months", featured: true },
+    { key: "pro", name: "ArraySubs Pro", offer: "From $129/yr", featured: true },
     { key: "competitor", name: c.competitorShort, offer: c.pricing.competitor },
   ];
 }
@@ -111,7 +111,7 @@ export const COMPARISONS: Comparison[] = [
     competitorShort: "Woo Subscriptions",
     icon: Crown,
     cardDescription:
-      "The official $279/yr subscriptions plugin. ArraySubs matches its billing and adds memberships, retention, Store Credit, Feature Manager, Gateway Health, Member Insight & Analytics — free.",
+      "The official $279/yr subscriptions plugin. ArraySubs matches its billing with a free core, then adds paid Pro modules for Store Credit, Feature Manager, Gateway Health, Member Insight & Analytics.",
     seoTitle: "ArraySubs vs WooCommerce Subscriptions — Free Alternative (2026)",
     metaDescription:
       "Side-by-side comparison of ArraySubs (free + Pro) vs WooCommerce Subscriptions ($279/yr). Feature matrix, pricing, memberships, retention flows and analytics compared for 2026.",
@@ -141,7 +141,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro is free for 4 months during early launch.",
+      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
       competitor: "$279/yr (1 site)",
       combinedNote:
         "Add WooCommerce Memberships ($199/yr) for member access — $478/yr for both, renewed annually.",
@@ -151,7 +151,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("Free 4 months"), txt("$279/yr")),
+          row("Price", txt("$0"), txt("$129/yr+"), txt("$279/yr")),
           row("Free tier", yes(), yes(), no()),
           row("Subscriptions + memberships in one plugin", yes(), yes(), no("needs $199/yr add-on")),
         ],
@@ -301,7 +301,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro is free for 4 months during early launch.",
+      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
       competitor: "$199/yr (1 site)",
       combinedNote:
         "Recurring memberships also need WooCommerce Subscriptions ($279/yr) — $478/yr for both.",
@@ -311,7 +311,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("Free 4 months"), txt("$199/yr")),
+          row("Price", txt("$0"), txt("$129/yr+"), txt("$199/yr")),
           row("Free tier", yes(), yes(), no()),
           row("Built-in recurring billing", yes(), yes(), no("needs Woo Subscriptions")),
         ],
@@ -455,7 +455,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro is free for 4 months during early launch.",
+      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
       competitor: "€199.99/yr",
       combinedNote:
         "Memberships need YITH WooCommerce Membership too (€179.99/yr) — €379.98/yr (~$413) combined.",
@@ -465,7 +465,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("Free 4 months"), txt("€199.99/yr")),
+          row("Price", txt("$0"), txt("$129/yr+"), txt("€199.99/yr")),
           row("Capable free tier", yes(), yes(), part("very limited")),
           row("Memberships in same plugin", yes(), yes(), no("€179.99/yr add-on")),
         ],
@@ -551,7 +551,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Is ArraySubs cheaper than YITH WooCommerce Subscription?",
         answer:
-          "Yes. ArraySubs' core is free and Pro is free for 4 months during early launch, while YITH's premium is €199.99/yr — and €379.98/yr once you add YITH Membership for access control.",
+          "Yes. ArraySubs' core is free and Pro starts at $129/yr, while YITH's premium is €199.99/yr — and €379.98/yr once you add YITH Membership for access control.",
       },
       {
         question: "Does ArraySubs have a subscription box feature like YITH?",
@@ -609,7 +609,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro is free for 4 months during early launch.",
+      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
       competitor: "€179.99/yr (premium-only)",
       combinedNote:
         "Recurring memberships also need YITH Subscription (€199.99/yr) — €379.98/yr (~$413) combined.",
@@ -619,7 +619,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("Free 4 months"), txt("€179.99/yr")),
+          row("Price", txt("$0"), txt("$129/yr+"), txt("€179.99/yr")),
           row("Free tier", yes(), yes(), no()),
           row("Built-in recurring billing", yes(), yes(), no("needs YITH Subscription")),
         ],
@@ -713,7 +713,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Is ArraySubs cheaper than YITH WooCommerce Membership?",
         answer:
-          "Yes. ArraySubs is free (Pro free for 4 months during early launch), while YITH Membership is €179.99/yr and premium-only, rising to €379.98/yr with YITH Subscription for billing.",
+          "Yes. ArraySubs has a free core with Pro from $129/yr, while YITH Membership is €179.99/yr and premium-only, rising to €379.98/yr with YITH Subscription for billing.",
       },
     ],
     related: ["yith-woocommerce-subscription", "woocommerce-memberships"],
@@ -761,7 +761,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro is free for 4 months during early launch.",
+      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
       competitor: "Free + Pro ($129/yr)",
       combinedNote:
         "Memberships need WP Swings' separate Membership plugin (900+ installs).",
@@ -771,7 +771,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("Free 4 months"), txt("$129/yr")),
+          row("Price", txt("$0"), txt("$129/yr+"), txt("$129/yr")),
           row("Free tier", yes(), yes(), yes()),
           row("Memberships in same plugin", yes(), yes(), no("separate plugin")),
         ],
@@ -883,7 +883,7 @@ export const COMPARISONS: Comparison[] = [
     competitorShort: "SUMO",
     icon: Package,
     cardDescription:
-      "A deep but infrequently-updated CodeCanyon plugin (~$49 one-time, premium-only; last release Feb 2026). ArraySubs matches the billing depth but adds memberships, retention, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics, free.",
+      "A deep but infrequently-updated CodeCanyon plugin (~$49 one-time, premium-only; last release Feb 2026). ArraySubs matches the billing depth with a free core, then adds paid Pro modules for Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics.",
     seoTitle: "ArraySubs vs SUMO Subscriptions — WooCommerce Comparison (2026)",
     metaDescription:
       "Compare ArraySubs (free + Pro) with SUMO Subscriptions, a CodeCanyon plugin. Feature matrix, one-time vs free pricing, support and update cadence compared for 2026.",
@@ -896,7 +896,7 @@ export const COMPARISONS: Comparison[] = [
       "Memberships + retention",
     ],
     intro:
-      "ArraySubs is a modern alternative to SUMO Subscriptions. SUMO is a ==deep, premium-only CodeCanyon plugin== — grouped products, paid trials, a master transaction log — but it ships updates infrequently (==last release Feb 2026==), has no free tier or WordPress.org listing, runs a legacy admin, and has no memberships, retention, Store Credit, Feature Manager, Gateway Health, Member Insight or Analytics. ArraySubs delivers all of those on a modern React stack, free.",
+      "ArraySubs is a modern alternative to SUMO Subscriptions. SUMO is a ==deep, premium-only CodeCanyon plugin== — grouped products, paid trials, a master transaction log — but it ships updates infrequently (==last release Feb 2026==), has no free tier or WordPress.org listing, runs a legacy admin, and has no memberships, retention, Store Credit, Feature Manager, Gateway Health, Member Insight or Analytics. ArraySubs delivers the free core plus paid Pro modules on a modern React stack.",
     verdict: {
       summary:
         "Short answer: choose ArraySubs for a free tier and a far broader feature set — memberships, retention, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics — on a modern admin. SUMO Subscriptions still appeals for its one-time CodeCanyon pricing and niche billing features like grouped-product subscriptions and paid trials — but it's premium-only (no free tier), updated infrequently (last release Feb 2026), runs a legacy admin, and has none of those modern modules.",
@@ -913,7 +913,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro is free for 4 months during early launch.",
+      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
       competitor: "~$49 one-time (CodeCanyon)",
       combinedNote:
         "Access control needs SUMO Memberships too (~$39) — ~$88 one-time, premium-only.",
@@ -924,7 +924,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing, support & maintenance",
         rows: [
-          row("Price", txt("$0"), txt("Free 4 months"), txt("~$49 one-time")),
+          row("Price", txt("$0"), txt("$129/yr+"), txt("~$49 one-time")),
           row("Free tier", yes(), yes(), no()),
           row("Modern React admin", yes(), yes(), no("legacy")),
           row("WordPress.org listing", yes(), yes(), no("CodeCanyon only")),
@@ -989,7 +989,7 @@ export const COMPARISONS: Comparison[] = [
       {
         title: "Paid trials & one-time pricing",
         description:
-          "SUMO offers paid trials and a one-time CodeCanyon license, which some buyers prefer over recurring fees. ArraySubs uses free + Pro and free trials only.",
+          "SUMO offers paid trials and a one-time CodeCanyon license, which some buyers prefer over recurring fees. ArraySubs uses a free core plus paid Pro plans, and supports free trials for subscription products.",
         winner: "competitor",
       },
       {
@@ -1015,7 +1015,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Does ArraySubs use one-time pricing like SUMO?",
         answer:
-          "No. ArraySubs is free at the core with a Pro tier (free for 4 months during early launch), rather than SUMO's ~$49 one-time CodeCanyon license. The trade-off is active development and a free tier.",
+          "No. ArraySubs has a free core with paid Pro plans from $129/yr, rather than SUMO's ~$49 one-time CodeCanyon license. The trade-off is active development and a free tier.",
       },
       {
         question: "What does SUMO do that ArraySubs doesn't?",
@@ -1068,7 +1068,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro is free for 4 months during early launch.",
+      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
       competitor: "Free + Pro ($89/yr, 1 site)",
       savings: "Memberships, retention and analytics included — not just billing.",
     },
@@ -1076,7 +1076,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("Free 4 months"), txt("$89/yr Pro")),
+          row("Price", txt("$0"), txt("$129/yr+"), txt("$89/yr Pro")),
           row("Free tier", yes(), yes(), yes()),
           row("Memberships in same plugin", yes(), yes(), no()),
         ],

@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = createMetadata({
   title: "GDPR and CCPA Compliance",
   description:
-    "ArrayHash GDPR, UK GDPR, CCPA and CPRA compliance information for ArraySubs website data, GA4, Stripe, Freemius, privacy rights, and no-sale commitments.",
+    "ArrayHash GDPR, UK GDPR, CCPA and CPRA compliance information for ArraySubs website data, GA4, payment providers, privacy rights, and no-sale commitments.",
   path: "/trust-center/gdpr-ccpa-compliance/",
 });
 
@@ -150,7 +150,7 @@ export default function GdprCcpaCompliancePage() {
               ["Newsletter", "Consent, with unsubscribe available."],
               ["GA4/GTM analytics", "Legitimate interests; necessary measurement loaded on every visit."],
               ["Retargeting and advertising tags", "Consent through the website consent manager; off under GPC."],
-              ["Stripe and Freemius payments, licenses and tax records", "Contract and legal obligation."],
+              ["Payment, license and tax records", "Contract and legal obligation."],
               ["Security logs and abuse prevention", "Legitimate interests."],
             ]}
           />
@@ -158,10 +158,10 @@ export default function GdprCcpaCompliancePage() {
 
         <PolicySection title="Providers and international transfers">
           <p>
-            ArrayHash uses Google Analytics 4, Stripe, Freemius and hosting
-            providers. These providers may process data in countries outside your
-            own. Provider privacy, security and transfer mechanisms apply to
-            their processing.
+            ArrayHash uses Google Analytics 4, payment providers, checkout
+            providers and hosting providers. These providers may process data in
+            countries outside your own. Provider privacy, security and transfer
+            mechanisms apply to their processing.
           </p>
           <PolicyList
             items={[
@@ -169,13 +169,6 @@ export default function GdprCcpaCompliancePage() {
                 Stripe privacy information:{" "}
                 <ExternalLink href="https://stripe.com/privacy">
                   stripe.com/privacy
-                </ExternalLink>
-                .
-              </>,
-              <>
-                Freemius privacy information:{" "}
-                <ExternalLink href="https://freemius.com/privacy/">
-                  freemius.com/privacy
                 </ExternalLink>
                 .
               </>,

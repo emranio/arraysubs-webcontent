@@ -197,10 +197,10 @@ export default function AccessibilityCompliancePage() {
 
         <PolicySection title="Third-party flows">
           <p>
-            Stripe and Freemius may provide checkout, payment, licensing or
-            account screens. ArrayHash selects established providers and links to
-            their own policies where relevant, but those third-party interfaces
-            are controlled by the provider.
+            Payment and licensing providers may provide checkout, payment,
+            licensing or account screens. ArrayHash selects established
+            providers and links to their own policies where relevant, but those
+            third-party interfaces are controlled by the provider.
           </p>
         </PolicySection>
 

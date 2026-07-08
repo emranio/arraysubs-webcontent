@@ -42,7 +42,7 @@ const FAQ_ITEMS = [
   {
     question: "Can you help me migrate from another subscription plugin?",
     answer:
-      "Absolutely. Tell us what you're moving from and roughly how many active subscriptions you have, and we'll walk you through the safest path — migration help is part of the early-access program.",
+      "Absolutely. Tell us what you're moving from and roughly how many active subscriptions you have, and we'll walk you through the safest path.",
   },
   {
     question: "Can I request a feature?",
@@ -169,16 +169,28 @@ export default function ContactPage() {
           <CTA
             surface="primary"
             flat
-            eyebrow="Or just try it"
-            title="Get ArraySubs Pro for 4 months — Free"
-            subtitle="No credit card, no strings. We're here whenever you need a hand."
+            eyebrow="Ready to buy"
+            title="Choose an ArraySubs Pro plan"
+            subtitle="Personal, Professional, and Agency all include the full Pro feature set. Pick the site count that fits your store."
             actions={
               <>
-                <Button variant="dark" size="lg" layers="2layer" magnetic>
-                  Claim My Pro License — Free
+                <Button
+                  href="/deals/arraysubs/pricing/"
+                  variant="dark"
+                  size="lg"
+                  layers="2layer"
+                  magnetic
+                >
+                  View Pricing
                 </Button>
-                <Button variant="outline" size="lg" layers="2layer" magnetic>
-                  Live Demo
+                <Button
+                  href="https://support.arrayhash.com/arraysubs/"
+                  variant="outline"
+                  size="lg"
+                  layers="2layer"
+                  magnetic
+                >
+                  Help Center
                 </Button>
               </>
             }

@@ -23,6 +23,7 @@ import {
   Button,
   Checkbox,
   Container,
+  ContactForm,
   CTA,
   Eyebrow,
   Field,
@@ -35,7 +36,6 @@ import {
   Statement,
   StepCard,
   TagCard,
-  LeadForm,
   Manifesto,
   Marqueue,
   ModuleShowcase,
@@ -362,7 +362,7 @@ export default function DesignSystemPage() {
               Live Demo
             </Button>
             <Button variant="outline" size="lg" magnetic>
-              Get Pro Access — Free
+              View Pricing
             </Button>
           </>
         }
@@ -524,7 +524,7 @@ export default function DesignSystemPage() {
 
             <DemoRow label="With icons">
               <Button iconRight={<ArrowRight className="size-5" />} magnetic>
-                Get Pro Access — Free
+                View Pricing
               </Button>
               <Button
                 variant="outline"
@@ -601,15 +601,15 @@ export default function DesignSystemPage() {
             />
             <OfferCard
               number={2}
-              badge="Limited early access"
+              badge="Paid Pro"
               title="ArraySubs Pro"
               eyebrow="Unlock the full subscription stack"
               description="Adds store credit, the visual checkout builder, automatic payments (Stripe / PayPal / Paddle), advanced analytics and audit logs."
-              metaLabel="Early access"
-              metaValue="4 months"
-              metaSuffix="free"
+              metaLabel="From"
+              metaValue="$129"
+              metaSuffix="/ year"
               href="#cta"
-              cta="Claim a Pro license"
+              cta="Choose a Pro plan"
             />
           </div>
         </Container>
@@ -773,8 +773,8 @@ export default function DesignSystemPage() {
                       label: "Pricing",
                       content: (
                         <p className="text-muted">
-                          The core is free forever. Pro is currently free for 4
-                          months in early access — no credit card required.
+                          The core is free forever. Pro paid plans start at
+                          $129/year, with annual and lifetime options.
                         </p>
                       ),
                     },
@@ -966,12 +966,12 @@ export default function DesignSystemPage() {
           </div>
 
           <div className="mt-12 grid items-start gap-12 lg:grid-cols-2">
-            <div id="lead-capture" className="flex flex-col gap-6 scroll-mt-32">
+            <div id="contact-form" className="flex flex-col gap-6 scroll-mt-32">
               <h3 className="text-sm font-semibold tracking-wider text-muted uppercase">
-                Lead capture
+                Contact form
               </h3>
               <div className="rounded-2xl bg-card p-6 text-foreground sm:p-8">
-                <LeadForm />
+                <ContactForm />
               </div>
             </div>
             <div id="multistep" className="flex flex-col gap-6 scroll-mt-32">
@@ -1149,12 +1149,18 @@ export default function DesignSystemPage() {
             surface="primary"
             flat
             eyebrow="Get started"
-            title="Get ArraySubs Pro for 4 months — Free"
-            subtitle="No strings attached. We'll send your license key immediately — no credit card required."
+            title="Buy ArraySubs Pro"
+            subtitle="Choose a paid plan by site count and complete checkout securely."
             actions={
               <>
-                <Button variant="dark" size="lg" layers="2layer" magnetic>
-                  Claim My Pro License — Free
+                <Button
+                  href="/deals/arraysubs/pricing/"
+                  variant="dark"
+                  size="lg"
+                  layers="2layer"
+                  magnetic
+                >
+                  View Pricing
                 </Button>
                 <Button variant="outline" size="lg" layers="2layer" magnetic>
                   Live Demo

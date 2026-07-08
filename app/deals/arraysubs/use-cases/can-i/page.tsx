@@ -48,7 +48,7 @@ export default function CanIPage() {
             magnetic
             iconRight={<ArrowRight className="size-5" />}
           >
-            Get Pro — Free
+            View Pro Pricing
           </Button>
         }
       />
@@ -99,10 +99,10 @@ export default function CanIPage() {
           <CTA
             surface="primary"
             flat
-            eyebrow="Early launch offer"
-            title="Get ArraySubs Pro — free for 4 months"
-            subtitle="Install the free core today, then unlock every Pro module free while early launch is open."
-            microcopy="Limited time · no credit card required"
+            eyebrow="Paid Pro plans"
+            title="Unlock Pro workflows when you need them"
+            subtitle="Install the free core today, then choose a paid Pro plan for advanced modules, automation, analytics, and payment workflows."
+            microcopy="Plans from $129/year · Lifetime options available"
             actions={
               <Button
                 href={GET_PRO}
@@ -111,8 +111,8 @@ export default function CanIPage() {
                 layers="2layer"
                 magnetic
                 iconRight={<ArrowRight className="size-5" />}
-              >
-                Get Pro — Free
+                >
+                View Pricing
               </Button>
             }
           />

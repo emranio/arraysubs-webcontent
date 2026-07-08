@@ -18,8 +18,8 @@ type ModuleShowcaseProps = {
 export function ModuleShowcase({
   moduleCount = 27,
   compact = false,
-  primaryHref = "#cta",
-  primaryLabel = "Get Pro Access — Free",
+  primaryHref = "/deals/arraysubs/pricing/",
+  primaryLabel = "View Pro Pricing",
   secondaryHref = "#demo",
   secondaryLabel = "Live Demo",
 }: ModuleShowcaseProps) {

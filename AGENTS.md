@@ -327,7 +327,7 @@ Use the form primitives exported from `@/components/ui`.
 - Wrap standalone inputs in `Field` so label, description, error,
   `aria-describedby`, `aria-invalid` and required state are wired correctly.
 - Use `Input`, `Textarea`, `Range`, `Checkbox`, `RadioGroup`, `Switch`,
-  `Select`, `Multiselect`, `LeadForm` and `MultiStepForm` instead of native
+  `Select`, `Multiselect`, `ContactForm` and `MultiStepForm` instead of native
   browser-default controls in page files.
 - `Select` and `Multiselect` are custom accessible listbox controls. Do not
   replace them with native selects unless explicitly requested.
@@ -396,10 +396,10 @@ Motion rules:
 - Umbrella brand: `ArrayHash`.
 - Product pages live under `/deals/arraysubs/`.
 - Trust/legal pages live under `/trust-center/`.
-- Primary CTA: `Get ArraySubs Pro for 4 Months — Free`.
+- Primary CTA: `View Pro Pricing`.
 - Secondary CTA: `Live Demo`.
-- Early-access offer: ArraySubs Pro for 4 months — Free, no credit card, no pricing table
-  during the early-access phase.
+- Pro pricing: Personal (1 site), Professional (10 sites), and Agency (1000
+  sites), with annual and lifetime options through secure checkout.
 - Support email: `emran@arraysubs.com`.
 - Docs/support: `support.arrayhash.com`.
 - Do not reference a GitHub repository in public marketing copy.

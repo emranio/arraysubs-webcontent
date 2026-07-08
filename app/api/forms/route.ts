@@ -1,6 +1,5 @@
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
-import { site } from "@/lib/site";
 
 export const runtime = "nodejs";
 
@@ -13,7 +12,7 @@ const GMAIL_SUPPORT_LABEL_NAME = process.env.GMAIL_SUPPORT_LABEL_NAME ?? "ArrayH
 
 const execFileAsync = promisify(execFile);
 
-type FormKind = "contact" | "pro-trial";
+type FormKind = "contact";
 
 type FormPayload = {
   kind?: unknown;
@@ -21,9 +20,6 @@ type FormPayload = {
   email?: unknown;
   subject?: unknown;
   body?: unknown;
-  country?: unknown;
-  business?: unknown;
-  consent?: unknown;
   sourcePath?: unknown;
   companyWebsite?: unknown;
 };
@@ -35,9 +31,6 @@ type NormalizedSubmission = {
   sourcePath: string;
   subject?: string;
   body?: string;
-  country?: string;
-  business?: string;
-  consent?: boolean;
 };
 
 type GmailEmailPayload = {
@@ -67,10 +60,6 @@ const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
 function readString(value: unknown, maxLength: number) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
-}
-
-function readBoolean(value: unknown) {
-  return value === true || value === "true" || value === "on";
 }
 
 function escapeHtml(value: string) {
@@ -259,7 +248,7 @@ async function resolveGmailSupportLabelId() {
 function normalizePayload(payload: FormPayload):
   | { ok: true; data: NormalizedSubmission }
   | { ok: false; error: string } {
-  const kind = payload.kind === "contact" ? "contact" : payload.kind === "pro-trial" ? "pro-trial" : null;
+  const kind = payload.kind === "contact" ? "contact" : null;
   const name = readString(payload.name, 160);
   const email = readString(payload.email, 200).toLowerCase();
   const sourcePath = readString(payload.sourcePath, 300) || "/";
@@ -270,33 +259,15 @@ function normalizePayload(payload: FormPayload):
     return { ok: false, error: "A valid email address is required." };
   }
 
-  if (kind === "contact") {
-    const subject = readString(payload.subject, 180);
-    const body = readString(payload.body, 4000);
+  const subject = readString(payload.subject, 180);
+  const body = readString(payload.body, 4000);
 
-    if (!subject) return { ok: false, error: "Subject is required." };
-    if (!body) return { ok: false, error: "Message is required." };
-
-    return {
-      ok: true,
-      data: { kind, name, email, subject, body, sourcePath },
-    };
-  }
-
-  const country = readString(payload.country, 160);
-  if (!country) return { ok: false, error: "Country is required." };
+  if (!subject) return { ok: false, error: "Subject is required." };
+  if (!body) return { ok: false, error: "Message is required." };
 
   return {
     ok: true,
-    data: {
-      kind,
-      name,
-      email,
-      country,
-      sourcePath,
-      business: readString(payload.business, 160),
-      consent: readBoolean(payload.consent),
-    },
+    data: { kind, name, email, subject, body, sourcePath },
   };
 }
 
@@ -330,81 +301,6 @@ function signatureHtml() {
       <div style="color:#000000;margin:0;">LinkedIn: <a href="https://www.linkedin.com/in/emranio/" style="color:#0B57D0;font-weight:400;text-decoration:underline;">https://www.linkedin.com/in/emranio/</a></div>
     </div>
   `;
-}
-
-function rows(
-  data: NormalizedSubmission,
-  submittedAt: string,
-) {
-  const baseRows: [string, string][] = [
-    ["Name", data.name],
-    ["Email", data.email],
-    ["Source", data.sourcePath],
-    ["Submitted", submittedAt],
-  ];
-
-  if (data.kind === "contact") {
-    return [
-      ...baseRows,
-      ["Subject", data.subject ?? ""],
-      ["Message", data.body ?? ""],
-    ];
-  }
-
-  return [
-    ...baseRows,
-    ["Country", data.country ?? ""],
-    ["Business type", data.business || "Not provided"],
-    ["Product updates consent", data.consent ? "Yes" : "No"],
-  ];
-}
-
-function toText(
-  data: NormalizedSubmission,
-  submittedAt: string,
-) {
-  return rows(data, submittedAt)
-    .map(([label, value]) => `${label}: ${value}`)
-    .join("\n");
-}
-
-function toHtml(
-  data: NormalizedSubmission,
-  submittedAt: string,
-) {
-  const title =
-    data.kind === "contact"
-      ? "New ArrayHash contact form submission"
-      : "New ArraySubs Pro trial request";
-
-  const renderedRows = rows(data, submittedAt)
-    .map(
-      ([label, value]) => `
-        <tr>
-          <th style="padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #DED2F4;color:#12002B;width:180px;">${escapeHtml(label)}</th>
-          <td style="padding:12px;vertical-align:top;border-bottom:1px solid #DED2F4;color:#3F2A5C;white-space:pre-wrap;">${escapeHtml(value)}</td>
-        </tr>
-      `,
-    )
-    .join("");
-
-  return `
-    <div style="font-family:Arial,sans-serif;line-height:1.6;color:#12002B;">
-      <h1 style="font-size:24px;line-height:1.2;margin:0 0 16px;">${escapeHtml(title)}</h1>
-      <p style="margin:0 0 20px;color:#3F2A5C;">This message was submitted through ${escapeHtml(site.name)}.</p>
-      <table style="width:100%;border-collapse:collapse;border:1px solid #DED2F4;border-radius:12px;overflow:hidden;">
-        <tbody>${renderedRows}</tbody>
-      </table>
-    </div>
-  `;
-}
-
-function emailSubject(data: NormalizedSubmission) {
-  if (data.kind === "contact") {
-    return `[ArrayHash Contact] ${data.subject}`;
-  }
-
-  return `[ArraySubs Pro request] ${data.name}`;
 }
 
 function customerContactSubject(data: NormalizedSubmission) {
@@ -453,41 +349,6 @@ function customerContactHtml(data: NormalizedSubmission, submittedAt: string) {
       ${signatureHtml()}
     </div>
   `;
-}
-
-async function sendResendNotification(
-  data: NormalizedSubmission,
-  submittedAt: string,
-) {
-  if (!process.env.RESEND_API_KEY) {
-    throw new Error("RESEND_API_KEY is not configured.");
-  }
-
-  const response = await fetch(RESEND_ENDPOINT, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-      "Content-Type": "application/json",
-      "Idempotency-Key": crypto.randomUUID(),
-    },
-    body: JSON.stringify({
-      from: RESEND_FROM_EMAIL,
-      to: [TO_EMAIL],
-      reply_to: data.email,
-      subject: emailSubject(data),
-      html: toHtml(data, submittedAt),
-      text: toText(data, submittedAt),
-      tags: [
-        { name: "source", value: "website" },
-        { name: "form", value: data.kind.replace("-", "_") },
-      ],
-    }),
-  });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`Resend notification failed (${response.status}): ${errorText}`);
-  }
 }
 
 /**
@@ -553,37 +414,22 @@ export async function POST(request: Request) {
 
   const submittedAt = submittedAtUtc();
 
-  if (normalized.data.kind === "pro-trial") {
-    try {
-      await sendResendNotification(normalized.data, submittedAt);
-    } catch (error) {
-      console.error("Resend form notification failed", error);
-
-      return Response.json(
-        { ok: false, error: "Could not send the internal notification right now." },
-        { status: 502 },
-      );
-    }
-  }
-
   try {
-    if (normalized.data.kind === "contact") {
-      const customerPayload: GmailEmailPayload = {
-        to: normalized.data.email,
-        replyTo: TO_EMAIL,
-        subject: customerContactSubject(normalized.data),
-        html: customerContactHtml(normalized.data, submittedAt),
-        text: customerContactText(normalized.data, submittedAt),
-      };
+    const customerPayload: GmailEmailPayload = {
+      to: normalized.data.email,
+      replyTo: TO_EMAIL,
+      subject: customerContactSubject(normalized.data),
+      html: customerContactHtml(normalized.data, submittedAt),
+      text: customerContactText(normalized.data, submittedAt),
+    };
 
-      try {
-        await sendGmailEmail(customerPayload);
-      } catch (gmailError) {
-        // Workspace mailbox unavailable — deliver through Resend so the
-        // customer still gets their acknowledgement.
-        console.error("Gmail customer email failed; falling back to Resend", gmailError);
-        await sendResendEmail(customerPayload);
-      }
+    try {
+      await sendGmailEmail(customerPayload);
+    } catch (gmailError) {
+      // Workspace mailbox unavailable — deliver through Resend so the
+      // customer still gets their acknowledgement.
+      console.error("Gmail customer email failed; falling back to Resend", gmailError);
+      await sendResendEmail(customerPayload);
     }
   } catch (error) {
     console.error("Customer email failed (Gmail and Resend)", error);

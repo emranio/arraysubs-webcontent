@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import {
   ArrowRight,
   BarChart3,
-  Check,
   ClipboardList,
   CreditCard,
   LayoutGrid,
   ListChecks,
   Lock,
+  ShieldCheck,
   Wallet,
 } from "lucide-react";
 import { createMetadata, faqSchema, softwareApplicationSchema } from "@/lib/seo";
 import { site } from "@/lib/site";
+import { cn } from "@/lib/cn";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ScrollFillCard } from "@/components/animation/ScrollFillCard";
 import { FEATURES } from "../features/_data";
@@ -25,7 +26,6 @@ import {
   Container,
   CTA,
   IconCard,
-  LeadForm,
   PageHero,
   Section,
   SectionTitle,
@@ -34,34 +34,20 @@ import {
   type ComparisonGroup,
   type ComparisonRow,
 } from "@/components/ui";
+import {
+  ARRAYSUBS_PRO_PLANS,
+  formatUsd,
+} from "./_plans";
 
 export const metadata: Metadata = {
-  // `createMetadata` sets canonical + OG/Twitter (OG title resolves from the
-  // string title below). The absolute override defeats the root layout's
-  // "%s — ArraySubs" template so the document <title> is exactly as specified.
   ...createMetadata({
-    title: "Pricing Plans for ArraySubs",
+    title: "ArraySubs Pro Pricing",
     description:
-      "Compare ArraySubs Free vs Pro for WooCommerce subscriptions & memberships, then claim ArraySubs Pro free for 4 months — no credit card, no commitment.",
+      "Choose an ArraySubs Pro plan for 1, 10, or 1000 sites. Every paid plan includes the full Pro feature set, annual and lifetime options, and a 30-day money-back guarantee.",
     path: "/deals/arraysubs/pricing/",
   }),
-  title: { absolute: "Pricing Plans for ArraySubs" },
+  title: { absolute: "ArraySubs Pro Pricing" },
 };
-
-/* ===========================================================================
-   CONTENT — all copy lives here so the page reads as one editable document.
-   ArraySubs only (multi-product site): do not mix in other products' copy.
-   ========================================================================= */
-
-const OFFER_UNLOCKS = [
-  "Store Credit wallet and refund-to-credit",
-  "Feature Manager product entitlements",
-  "Member Insight customer profile dashboard",
-  "Gateway Health and webhook monitoring",
-  "Multi-Login Prevention session limits",
-  "Redirect Product Page controls",
-  "Subscription Shipping rules",
-];
 
 const PRO_FEATURES: { icon: ReactNode; title: string; description: string }[] =
   [
@@ -120,8 +106,6 @@ const STATS = [
   { value: "6+", label: "Plugins replaced" },
 ];
 
-/* ---- Free vs Pro comparison (data only; structure lives in ComparisonTable) */
-
 const yes: ComparisonCell = { kind: "check" };
 const no: ComparisonCell = { kind: "no" };
 const txt = (value: string): ComparisonCell => ({ kind: "text", value });
@@ -133,7 +117,7 @@ const row = (
 
 const COMPARISON_COLUMNS: ComparisonColumn[] = [
   { key: "free", name: "ArraySubs Free", offer: "$0 — free forever" },
-  { key: "pro", name: "ArraySubs Pro", offer: "Free for 4 months", featured: true },
+  { key: "pro", name: "ArraySubs Pro", offer: "Paid plans from $129/yr", featured: true },
 ];
 
 const COMPARISON_GROUPS: ComparisonGroup[] = [
@@ -141,7 +125,7 @@ const COMPARISON_GROUPS: ComparisonGroup[] = [
     label: "Subscriptions & billing",
     rows: [
       row("Subscription products (simple & variable)", yes, yes),
-      row("Flexible billing cycles (daily–yearly)", yes, yes),
+      row("Flexible billing cycles (daily-yearly)", yes, yes),
       row("Free trials & sign-up fees", yes, yes),
       row("Different renewal price", yes, yes),
       row("Plan switching (upgrade, downgrade, crossgrade)", yes, yes),
@@ -210,44 +194,38 @@ const COMPARISON_GROUPS: ComparisonGroup[] = [
   },
 ];
 
-/* ---- Pricing FAQ (distinct from the homepage FAQ; plain strings for JSON-LD) */
-
 const FAQ_ITEMS = [
   {
-    question: "Is ArraySubs really free?",
+    question: "Do all paid plans include every Pro feature?",
     answer:
-      "Yes. The ArraySubs core plugin is free forever on WordPress.org — not a trial. You get subscription products, member access control, recurring billing with a 2-phase grace period, a customer self-service portal, plan switching, the Retention Flow builder, email notifications, and a 9-step setup wizard at no cost.",
+      "Yes. Personal, Professional, and Agency all include the complete ArraySubs Pro feature set. The difference is the number of sites covered by the license.",
   },
   {
-    question: "What do I get with “Pro free for 4 months”?",
+    question: "Which plan should I buy?",
     answer:
-      "A full ArraySubs Pro license — the seven Pro-only root modules, plus Pro workflows inside checkout, automatic payments, analytics, audits, customer portal, refunds, emails, and shared modules — free for 4 months. No credit card, no commitment. We email your license key and download links right after you sign up.",
+      "Choose Personal for one store, Professional for up to 10 sites, and Agency for up to 1000 sites. If you manage client stores or staging environments, Professional is usually the best fit.",
   },
   {
-    question: "What happens after the 4 free months?",
+    question: "Can I still use ArraySubs for free?",
     answer:
-      "Nothing is charged automatically. You keep every free-forever feature. If you want to keep Pro you can choose to continue when paid pricing goes live — otherwise your store keeps running on the free core with no interruption.",
+      "Yes. The ArraySubs core plugin remains free forever on WordPress.org. ArraySubs Pro is now a paid upgrade for advanced modules and workflows.",
   },
   {
-    question: "Do I need both the free plugin and Pro?",
+    question: "Are free Pro requests still available?",
     answer:
-      "Pro extends the free core — it isn’t a separate plugin you migrate to. You install ArraySubs (free), then add the Pro add-on on top. You never lose free features by upgrading.",
+      "No. Free Pro request access has ended. New Pro licenses are purchased through the secure checkout from this pricing page.",
   },
   {
-    question: "Which payment gateways are supported?",
+    question: "Can I choose annual or lifetime at checkout?",
     answer:
-      "The free version supports manual renewals with any WooCommerce payment gateway. Pro adds automatic recurring payments with Stripe (SCA/3DS), PayPal (billing agreements), and Paddle (merchant of record).",
+      "Yes. The pricing cards show annual and lifetime prices for each plan, and the secure checkout handles the license, invoice, and account flow.",
   },
   {
     question: "Is there a money-back guarantee?",
     answer:
-      "Yes — ArraySubs Pro is backed by a 60-day, no-questions-asked refund guarantee. During early launch there is nothing to refund, since Pro is free for 4 months.",
+      "Yes. ArraySubs Pro is backed by a 30-day, no-questions-asked refund guarantee for eligible purchases.",
   },
 ];
-
-/* ===========================================================================
-   PAGE
-   ========================================================================= */
 
 export default function ArraySubsPricingPage() {
   return (
@@ -258,82 +236,154 @@ export default function ArraySubsPricingPage() {
           { name: "ArraySubs", href: "/deals/arraysubs/" },
           { name: "Pricing", href: "/deals/arraysubs/pricing/" },
         ]}
-        title="Get ArraySubs Pro — free for 4 months."
-        subtitle="ArraySubs is the all-in-one WooCommerce subscriptions and memberships plugin. The core is free forever — and right now you can unlock every Pro feature, free for 4 months. No credit card, no commitment."
+        title="ArraySubs Pro pricing."
+        subtitle="Choose by site count, not feature access. Every ArraySubs Pro plan includes the complete Pro feature set, annual and lifetime options, and the same 30-day guarantee."
         highlights={[
-          "Free-forever core plugin",
-          "Early launch offer · limited time",
-          "Pro free for 4 months",
-          "No credit card required",
+          "Personal · 1 site",
+          "Professional · 10 sites",
+          "Agency · 1000 sites",
+          "All Pro features included",
         ]}
         actions={
-          <Button
-            href="#get-pro"
-            size="lg"
-            magnetic
-            iconRight={<ArrowRight className="size-5" />}
-          >
-            Get Pro — Free
-          </Button>
+          <>
+            <Button
+              href="#plans"
+              size="lg"
+              magnetic
+              iconRight={<ArrowRight className="size-5" />}
+            >
+              Compare Plans
+            </Button>
+            <Button
+              href={site.sameAs[0]}
+              variant="outline"
+              size="lg"
+              magnetic
+            >
+              Get Free Core
+            </Button>
+          </>
         }
       />
 
-      {/* ---- Offer + lead capture (the loudest moment) ------------------- */}
-      <Section id="get-pro" surface="highlight" spacing="md">
+      <Section id="plans" surface="surface" spacing="md">
         <Container>
-          <div className="grid items-stretch gap-[0.1875rem] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
-            {/* Offer pitch */}
-            <div className="flex h-full flex-col rounded-2xl bg-card p-6 text-foreground sm:p-10">
-              <Badge tone="primary">Early launch offer</Badge>
-              <h2 className="mt-5 font-display text-3xl text-balance sm:text-4xl">
-                Unlock every Pro feature —{" "}
-                <span className="marker-highlight">free for 4 months</span>
-              </h2>
-              <p className="mt-4 text-lg text-muted text-pretty">
-                Submit your details and we’ll email your ArraySubs Pro license
-                and download links straight away. No pricing table, no credit
-                card, cancel anytime.
-              </p>
-              <ul className="mt-7 grid gap-3 sm:grid-cols-2">
-                {OFFER_UNLOCKS.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2.5 text-sm font-medium text-foreground"
-                  >
-                    <Check
-                      aria-hidden="true"
-                      className="mt-0.5 size-5 shrink-0 text-primary"
-                    />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-auto pt-7 text-sm text-faint">
-                Limited time · 4-month Pro license · No credit card required
-              </p>
-            </div>
+          <SectionTitle
+            eyebrow="Plans"
+            title="Pick the license size that matches your store count"
+            subtitle="No feature gating between paid tiers. Personal, Professional, and Agency all unlock the full Pro stack."
+            align="left"
+          />
+          <div className="mt-12 grid items-stretch gap-[0.1875rem] lg:grid-cols-3">
+            {ARRAYSUBS_PRO_PLANS.map((plan) => {
+              const isFeatured = Boolean(plan.badge);
 
-            {/* Lead form (reused component, pricing context) */}
-            <div className="h-full rounded-2xl bg-card p-6 text-foreground sm:p-10">
-              <h3 className="font-display text-xl sm:text-2xl">
-                Claim your free Pro license
-              </h3>
-              <p className="mt-2 text-muted">
-                Free for 4 months — we’ll send your key by email.
-              </p>
-              <LeadForm className="mt-7" />
-            </div>
+              return (
+                <article
+                  key={plan.id}
+                  className={cn(
+                    "flex h-full flex-col rounded-2xl p-6 sm:p-8",
+                    isFeatured
+                      ? "bg-primary text-on-dark"
+                      : "bg-card text-foreground",
+                  )}
+                >
+                  <div className="flex min-h-8 flex-wrap items-center justify-between gap-3">
+                    <Badge tone="highlight">{plan.siteLabel}</Badge>
+                    {plan.badge && <Badge tone="dark">{plan.badge}</Badge>}
+                  </div>
+
+                  <h2 className="mt-6 font-display text-3xl sm:text-4xl">
+                    {plan.name}
+                  </h2>
+                  <p
+                    className={cn(
+                      "mt-3 text-pretty",
+                      isFeatured ? "text-on-dark" : "text-muted",
+                    )}
+                  >
+                    {plan.summary}
+                  </p>
+
+                  <div className="mt-8">
+                    <div className="flex items-end gap-2">
+                      <span className="font-display text-5xl font-semibold">
+                        {formatUsd(plan.annualPrice)}
+                      </span>
+                      <span
+                        className={cn(
+                          "pb-2 text-sm font-semibold",
+                          isFeatured ? "text-on-dark" : "text-muted",
+                        )}
+                      >
+                        / year
+                      </span>
+                    </div>
+                    <p
+                      className={cn(
+                        "mt-3 text-sm",
+                        isFeatured ? "text-on-dark" : "text-muted",
+                      )}
+                    >
+                      Lifetime option:{" "}
+                      <span
+                        className={cn(
+                          "font-semibold",
+                          isFeatured ? "text-on-dark" : "text-foreground",
+                        )}
+                      >
+                        {formatUsd(plan.lifetimePrice)}
+                      </span>
+                    </p>
+                  </div>
+
+                  <p
+                    className={cn(
+                      "mt-8 text-sm font-semibold",
+                      isFeatured ? "text-on-dark" : "text-foreground",
+                    )}
+                  >
+                    Best for
+                  </p>
+                  <p
+                    className={cn(
+                      "mt-2 text-sm leading-6",
+                      isFeatured ? "text-on-dark" : "text-muted",
+                    )}
+                  >
+                    {plan.bestFor}
+                  </p>
+
+                  <div className="mt-auto pt-12">
+                    <Button
+                      href={`/deals/arraysubs/checkout/${plan.id}/`}
+                      variant={isFeatured ? "dark" : "primary"}
+                      size="lg"
+                      fullWidth
+                      magnetic
+                      layers={isFeatured ? "2layer" : "3layer"}
+                      iconRight={<ArrowRight className="size-5" />}
+                    >
+                      Choose {plan.name}
+                    </Button>
+                  </div>
+                </article>
+              );
+            })}
           </div>
+          <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted">
+            Annual and lifetime checkout is handled securely. Taxes and
+            invoices are calculated during checkout where applicable.
+          </p>
         </Container>
       </Section>
 
-      {/* ---- Feature comparison ------------------------------------------ */}
       <Section id="compare" surface="default" spacing="md">
         <Container>
           <SectionTitle
             eyebrow="Free vs Pro"
-            title="Everything in Free — and everything you unlock in Pro"
-            subtitle="Every free feature stays free forever. Here’s exactly what the Pro add-on adds on top."
+            title="Start free, upgrade when the store needs the full operating stack"
+            subtitle="The free core keeps running subscriptions and memberships. Pro adds the advanced revenue, analytics, payment, and operations modules."
             align="center"
           />
           <div className="mt-12">
@@ -343,20 +393,15 @@ export default function ArraySubsPricingPage() {
               groups={COMPARISON_GROUPS}
             />
           </div>
-          <p className="mt-6 text-center text-sm text-muted">
-            Pro is free for 4 months during early launch — no credit card
-            required.
-          </p>
         </Container>
       </Section>
 
-      {/* ---- What's included in Pro -------------------------------------- */}
       <Section id="pro-features" surface="surface" spacing="md">
         <Container>
           <SectionTitle
             eyebrow="What’s in Pro"
             title="Seven Pro-only root modules you unlock"
-            subtitle="The free core already runs your store. Pro adds the dedicated modules the current manual marks as Pro-only."
+            subtitle="Every paid license includes these modules plus Pro workflows across checkout, payments, analytics, refunds, and customer operations."
             align="center"
           />
           <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
@@ -370,7 +415,6 @@ export default function ArraySubsPricingPage() {
               />
             ))}
 
-            {/* "All features" CTA — fills the empty cells (spans 2 cols on lg). */}
             <ScrollFillCard
               href="/deals/arraysubs/features/"
               aria-label="Explore all ArraySubs features"
@@ -396,7 +440,6 @@ export default function ArraySubsPricingPage() {
         </Container>
       </Section>
 
-      {/* ---- Social proof / stats ---------------------------------------- */}
       <Section id="proof" surface="dark" spacing="md">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
@@ -408,8 +451,8 @@ export default function ArraySubsPricingPage() {
             </h2>
             <p className="mt-4 text-lg text-on-dark-muted text-pretty">
               Subscriptions, memberships, billing, retention, store credit, and
-              analytics share one data layer — so there’s nothing to duct-tape
-              together.
+              analytics share one data layer, so there is nothing to stitch
+              together across separate tools.
             </p>
           </div>
 
@@ -444,13 +487,12 @@ export default function ArraySubsPricingPage() {
         </Container>
       </Section>
 
-      {/* ---- Pricing FAQ ------------------------------------------------- */}
       <Section id="faq" surface="default" spacing="md">
         <Container>
           <SectionTitle
             eyebrow="Pricing FAQ"
-            title="Questions about plans & pricing"
-            subtitle="The early-launch offer, the free tier, gateways, and the guarantee — answered."
+            title="Questions about plans & checkout"
+            subtitle="Plan limits, annual and lifetime pricing, secure checkout, and the free core."
             align="center"
           />
           <div className="mx-auto mt-12 max-w-3xl">
@@ -470,26 +512,25 @@ export default function ArraySubsPricingPage() {
         <JsonLd data={faqSchema(FAQ_ITEMS)} />
       </Section>
 
-      {/* ---- Final CTA --------------------------------------------------- */}
       <Section surface="primary" spacing="md">
         <Container>
           <CTA
             surface="primary"
             flat
-            eyebrow="Early launch offer"
-            title="Get ArraySubs Pro — free for 4 months"
-            subtitle="Start on the free-forever core today, and unlock every Pro feature free while early launch is open."
-            microcopy="Limited time · no credit card required"
+            eyebrow="Ready to upgrade"
+            title="Buy ArraySubs Pro with the site count you need"
+            subtitle="Every paid plan includes the same Pro feature set. Choose Personal, Professional, or Agency and complete checkout securely."
+            microcopy="Secure checkout · Annual and lifetime options · 30-day guarantee"
             actions={
               <Button
-                href="#get-pro"
+                href="#plans"
                 variant="dark"
                 size="lg"
                 layers="2layer"
                 magnetic
-                iconRight={<ArrowRight className="size-5" />}
+                iconRight={<ShieldCheck className="size-5" />}
               >
-                Get Pro — Free
+                Choose a Plan
               </Button>
             }
           />

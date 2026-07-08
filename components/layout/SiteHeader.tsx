@@ -111,7 +111,7 @@ export function SiteHeader() {
                 onClick={close}
                 className="hidden sm:inline-flex"
               >
-                Get Pro Access — Free
+                Pricing Plans
               </Button>
 
               {/* Hamburger / X toggle for mobile/tablet */}

@@ -5,7 +5,7 @@ import { Fragment, type ReactNode } from "react";
  * marker, to draw the eye to key points in long lead paragraphs. Plain strings
  * with no markers are returned unchanged.
  *
- * Example: `highlight("Get it ==free for 4 months==.")`
+ * Example: `highlight("Plans start at ==$129/year==.")`
  */
 export function highlight(text: string): ReactNode {
   // Capturing split → even indices are plain text, odd indices are marked.

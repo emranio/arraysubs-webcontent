@@ -53,7 +53,7 @@ const NO: ComparisonCell = { kind: "no" };
 
 const COMPARISON_COLUMNS: ComparisonColumn[] = [
   { key: "free", name: "ArraySubs Free", offer: "$0 — free forever" },
-  { key: "pro", name: "ArraySubs Pro", offer: "Free for 4 months", featured: true },
+  { key: "pro", name: "ArraySubs Pro", offer: "Paid plans from $129/yr", featured: true },
 ];
 
 const COMPARISON_GROUPS: ComparisonGroup[] = FEATURE_CATEGORIES.map(
@@ -181,7 +181,7 @@ export default function FeaturesHubPage() {
         highlights={[
           `${MODULE_COUNT} feature modules`,
           "Generous free-forever core",
-          "Pro free for 4 months",
+          "Pro plans from $129/yr",
         ]}
         actions={
           <Button
@@ -190,7 +190,7 @@ export default function FeaturesHubPage() {
             magnetic
             iconRight={<ArrowRight className="size-5" />}
           >
-            Get Pro — Free
+            View Pro Pricing
           </Button>
         }
       />
@@ -199,7 +199,7 @@ export default function FeaturesHubPage() {
         moduleCount={MODULE_COUNT}
         compact
         primaryHref={GET_PRO}
-        primaryLabel="Get Pro — Free"
+        primaryLabel="View Pro Pricing"
         secondaryHref="#all-modules"
         secondaryLabel="Browse modules"
       />
@@ -410,10 +410,10 @@ export default function FeaturesHubPage() {
           <CTA
             surface="primary"
             flat
-            eyebrow="Early launch offer"
-            title="Get ArraySubs Pro — free for 4 months"
-            subtitle="Install the free core today, then unlock every Pro-only module and advanced Pro workflow free while early launch is open."
-            microcopy="Limited time · no credit card required"
+            eyebrow="Paid Pro plans"
+            title="Unlock the complete Pro stack"
+            subtitle="Install the free core today, then choose a paid Pro plan when you need advanced modules, automation, analytics, and payment workflows."
+            microcopy="Plans from $129/year · Lifetime options available"
             actions={
               <>
                 <Button
@@ -424,7 +424,7 @@ export default function FeaturesHubPage() {
                   magnetic
                   iconRight={<ArrowRight className="size-5" />}
                 >
-                  Get Pro — Free
+                  View Pricing
                 </Button>
                 <Button
                   href="#all-modules"

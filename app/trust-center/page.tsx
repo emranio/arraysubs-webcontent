@@ -36,7 +36,7 @@ import {
 export const metadata: Metadata = createMetadata({
   title: "Trust Center",
   description:
-    "ArrayHash Trust Center for ArraySubs privacy, data safety, refunds, terms, GDPR and CCPA compliance, accessibility, Stripe, Freemius, and GA4 practices.",
+    "ArrayHash Trust Center for ArraySubs privacy, data safety, refunds, terms, GDPR and CCPA compliance, accessibility, payment providers, and GA4 practices.",
   path: "/trust-center/",
 });
 
@@ -164,7 +164,7 @@ export default function TrustCenterPage() {
                   items={[
                     "Website forms collect only the fields needed for signup, license request, newsletter, support and contact workflows.",
                     "GA4/GTM analytics loads only after analytics consent is accepted.",
-                    "Stripe and Freemius are active for payments, checkout, licenses, taxes where applicable, account management and transaction support.",
+                    "Payment, checkout and licensing providers are active for purchases, licenses, taxes where applicable, account management and transaction support.",
                     "ArraySubs does not collect plugin or theme installations, activations, usage telemetry, WooCommerce store metrics, WordPress admin emails, user emails or plugin logs.",
                   ]}
                 />
@@ -182,7 +182,7 @@ export default function TrustCenterPage() {
                 {[
                   ["Google Analytics 4 / GTM", "Consent-gated aggregate website analytics"],
                   ["Stripe", "Payment processing and card handling"],
-                  ["Freemius", "Checkout, licensing, account and transaction management"],
+                  ["Checkout and licensing provider", "Checkout, licensing, account and transaction management"],
                 ].map(([name, value]) => (
                   <div
                     key={name}
@@ -215,15 +215,11 @@ export default function TrustCenterPage() {
               <h2 className="mt-6 font-display text-2xl">Payment privacy</h2>
               <p className="mt-3 text-muted">
                 ArrayHash does not store card details. Payment details are
-                handled by Stripe and Freemius. Read the{" "}
+                handled by the provider used at checkout. Read the{" "}
                 <ExternalLink href="https://stripe.com/privacy">
                   Stripe privacy policy
-                </ExternalLink>{" "}
-                and{" "}
-                <ExternalLink href="https://freemius.com/privacy/">
-                  Freemius privacy policy
                 </ExternalLink>
-                .
+                {" "}for card processing details.
               </p>
             </div>
             <div className="rounded-xl bg-card p-6 text-foreground">

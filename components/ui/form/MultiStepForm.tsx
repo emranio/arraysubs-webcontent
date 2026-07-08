@@ -107,8 +107,7 @@ export function MultiStepForm({ className }: { className?: string }) {
         <CheckCircle2 aria-hidden="true" className="size-10 text-success" />
         <h3 className="font-display text-xl">All set, {data.name || "there"}!</h3>
         <p className="text-muted">
-          Your preferences are saved and your Pro license is on its way — Free for
-          4 months.
+          Your preferences are saved.
         </p>
       </div>
     );

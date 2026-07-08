@@ -12,10 +12,10 @@ Email: emran@arraysubs.com
 wordpress.org link: https://wordpress.org/plugins/arraysubs/
 no github repo <dont mention it anywhere>
 
-ArraySubs Pro offers a full 60-day no-questions-asked refund. Submit the form, get your money back automatically. No hoops to jump through.
+ArraySubs Pro offers a full 30-day no-questions-asked refund. Submit the form, get your money back automatically. No hoops to jump through.
 
 
-cta will be "Get ArraySubs Pro for 4 Months — Free / Claim My Pro License — Free", no credit cards are required. on the pricing page, no pricing table will be shown, just a form, user submits the form, an email sent with account details, license keys, and ArraySubs / ArraySubs Pro download links. says limited time early bird offer. this is a 4-month license.
+CTA will be "View Pro Pricing" or "Choose a Plan". The pricing page shows paid ArraySubs Pro plans and sends buyers to a dedicated secure checkout page by plan ID. Personal covers 1 site, Professional covers 10 sites, and Agency covers 1000 sites; each paid plan includes all Pro features with annual and lifetime pricing.
 
 
  this is a multi product site, all arraysubs related pages will be under /deals/arraysubs/ such as feature pages, main landing page, pricing page etc. the refund policy, contact, terms pages etc will be under /trust-center/

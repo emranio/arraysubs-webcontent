@@ -21,7 +21,7 @@ type Errors = {
 };
 
 /**
- * Contact form. Client-side validated form matching the LeadForm pattern with
+ * Contact form. Client-side validated form with
  * inline field errors and an aria-live success state.
  */
 export function ContactForm({ className }: { className?: string }) {

@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = createMetadata({
   title: "Privacy Policy",
   description:
-    "ArrayHash privacy policy for ArraySubs, including website forms, GA4 analytics, Stripe, Freemius, cookies, privacy rights, and the no plugin telemetry commitment.",
+    "ArrayHash privacy policy for ArraySubs, including website forms, GA4 analytics, payment providers, cookies, privacy rights, and the no plugin telemetry commitment.",
   path: "/trust-center/privacy-policy/",
 });
 
@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
           { name: "Privacy Policy", href: "/trust-center/privacy-policy/" },
         ]}
         title="Privacy Policy"
-        subtitle="This policy explains what ArrayHash collects on the ArraySubs website, how GA4, Stripe and Freemius are used, and what data ArraySubs does not collect from WordPress stores."
+        subtitle="This policy explains what ArrayHash collects on the ArraySubs website, how GA4 and payment providers are used, and what data ArraySubs does not collect from WordPress stores."
         highlights={[
           "No plugin telemetry",
           "No sale of personal data",
@@ -112,7 +112,7 @@ export default function PrivacyPolicyPage() {
                 "Understand aggregate website usage and improve pages.",
               ],
               [
-                "Stripe and Freemius",
+                "Payment and checkout providers",
                 "Checkout, transaction, tax, invoice, license and account records needed to process purchases",
                 "Complete payments, handle licenses, issue refunds, prevent fraud and meet legal obligations.",
               ],
@@ -120,7 +120,7 @@ export default function PrivacyPolicyPage() {
           />
           <p>
             ArrayHash does not store card numbers, CVC codes or full payment
-            credentials. Card handling is performed by Stripe and Freemius.
+            credentials. Card handling is performed by the provider used at checkout.
           </p>
         </PolicySection>
 
@@ -169,7 +169,7 @@ export default function PrivacyPolicyPage() {
               [
                 "Payments, licenses, tax and refunds",
                 "Contract and legal obligation",
-                "Stripe and Freemius process checkout, license and transaction records needed for the purchase.",
+                "Payment and checkout providers process license and transaction records needed for the purchase.",
               ],
               [
                 "Security and abuse prevention",
@@ -262,16 +262,9 @@ export default function PrivacyPolicyPage() {
                 </>,
               ],
               [
-                "Freemius",
+                "Checkout and licensing provider",
                 "Checkout, licensing, account and transaction management",
-                <>
-                  Used for payment and licensing workflows, not ArraySubs plugin
-                  telemetry. See the{" "}
-                  <ExternalLink href="https://freemius.com/privacy/">
-                    Freemius privacy policy
-                  </ExternalLink>
-                  .
-                </>,
+                "Used for payment and licensing workflows, not ArraySubs plugin telemetry.",
               ],
               [
                 "Hosting provider",
