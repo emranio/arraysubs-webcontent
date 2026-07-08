@@ -60,7 +60,7 @@ export default async function ArraySubsCheckoutPage({
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "ArraySubs", href: "/deals/arraysubs/" },
-          { name: "Pricing", href: "/deals/arraysubs/pricing/" },
+          { name: "Pricing Plan", href: "/deals/arraysubs/pricing/" },
           { name: `${plan.name} Checkout`, href: `/deals/arraysubs/checkout/${plan.id}/` },
         ]}
         title={`${plan.name} checkout.`}

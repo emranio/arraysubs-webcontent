@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import { createMetadata, faqSchema, softwareApplicationSchema } from "@/lib/seo";
 import { site } from "@/lib/site";
-import { cn } from "@/lib/cn";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ScrollFillCard } from "@/components/animation/ScrollFillCard";
 import { FEATURES } from "../features/_data";
@@ -34,10 +33,7 @@ import {
   type ComparisonGroup,
   type ComparisonRow,
 } from "@/components/ui";
-import {
-  ARRAYSUBS_PRO_PLANS,
-  formatUsd,
-} from "./_plans";
+import { PricingPlanCards } from "./PricingPlanCards";
 
 export const metadata: Metadata = {
   ...createMetadata({
@@ -234,7 +230,7 @@ export default function ArraySubsPricingPage() {
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "ArraySubs", href: "/deals/arraysubs/" },
-          { name: "Pricing", href: "/deals/arraysubs/pricing/" },
+          { name: "Pricing Plan", href: "/deals/arraysubs/pricing/" },
         ]}
         title="ArraySubs Pro pricing."
         subtitle="Choose by site count, not feature access. Every ArraySubs Pro plan includes the complete Pro feature set, annual and lifetime options, and the same 30-day guarantee."
@@ -274,103 +270,7 @@ export default function ArraySubsPricingPage() {
             subtitle="No feature gating between paid tiers. Personal, Professional, and Agency all unlock the full Pro stack."
             align="left"
           />
-          <div className="mt-12 grid items-stretch gap-[0.1875rem] lg:grid-cols-3">
-            {ARRAYSUBS_PRO_PLANS.map((plan) => {
-              const isFeatured = Boolean(plan.badge);
-
-              return (
-                <article
-                  key={plan.id}
-                  className={cn(
-                    "flex h-full flex-col rounded-2xl p-6 sm:p-8",
-                    isFeatured
-                      ? "bg-primary text-on-dark"
-                      : "bg-card text-foreground",
-                  )}
-                >
-                  <div className="flex min-h-8 flex-wrap items-center justify-between gap-3">
-                    <Badge tone="highlight">{plan.siteLabel}</Badge>
-                    {plan.badge && <Badge tone="dark">{plan.badge}</Badge>}
-                  </div>
-
-                  <h2 className="mt-6 font-display text-3xl sm:text-4xl">
-                    {plan.name}
-                  </h2>
-                  <p
-                    className={cn(
-                      "mt-3 text-pretty",
-                      isFeatured ? "text-on-dark" : "text-muted",
-                    )}
-                  >
-                    {plan.summary}
-                  </p>
-
-                  <div className="mt-8">
-                    <div className="flex items-end gap-2">
-                      <span className="font-display text-5xl font-semibold">
-                        {formatUsd(plan.annualPrice)}
-                      </span>
-                      <span
-                        className={cn(
-                          "pb-2 text-sm font-semibold",
-                          isFeatured ? "text-on-dark" : "text-muted",
-                        )}
-                      >
-                        / year
-                      </span>
-                    </div>
-                    <p
-                      className={cn(
-                        "mt-3 text-sm",
-                        isFeatured ? "text-on-dark" : "text-muted",
-                      )}
-                    >
-                      Lifetime option:{" "}
-                      <span
-                        className={cn(
-                          "font-semibold",
-                          isFeatured ? "text-on-dark" : "text-foreground",
-                        )}
-                      >
-                        {formatUsd(plan.lifetimePrice)}
-                      </span>
-                    </p>
-                  </div>
-
-                  <p
-                    className={cn(
-                      "mt-8 text-sm font-semibold",
-                      isFeatured ? "text-on-dark" : "text-foreground",
-                    )}
-                  >
-                    Best for
-                  </p>
-                  <p
-                    className={cn(
-                      "mt-2 text-sm leading-6",
-                      isFeatured ? "text-on-dark" : "text-muted",
-                    )}
-                  >
-                    {plan.bestFor}
-                  </p>
-
-                  <div className="mt-auto pt-12">
-                    <Button
-                      href={`/deals/arraysubs/checkout/${plan.id}/`}
-                      variant={isFeatured ? "dark" : "primary"}
-                      size="lg"
-                      fullWidth
-                      magnetic
-                      layers={isFeatured ? "2layer" : "3layer"}
-                      iconRight={<ArrowRight className="size-5" />}
-                    >
-                      Choose {plan.name}
-                    </Button>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+          <PricingPlanCards />
           <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted">
             Annual and lifetime checkout is handled securely. Taxes and
             invoices are calculated during checkout where applicable.
