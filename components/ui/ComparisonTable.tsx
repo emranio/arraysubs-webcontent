@@ -124,20 +124,22 @@ export function ComparisonTable({
         <tbody>
           {groups.map((group, groupIndex) => (
             <Fragment key={group.label}>
-              <tr>
-                <th
-                  scope="colgroup"
-                  colSpan={colSpan}
-                  className={cn(
-                    "bg-card px-5 pb-2 text-left text-xs font-semibold tracking-[0.18em] text-faint uppercase",
-                    groupIndex === 0
-                      ? "pt-5"
-                      : "border-t border-border pt-8",
-                  )}
-                >
-                  {group.label}
-                </th>
-              </tr>
+              {group.label && (
+                <tr>
+                  <th
+                    scope="colgroup"
+                    colSpan={colSpan}
+                    className={cn(
+                      "bg-card px-5 pb-2 text-left text-xs font-semibold tracking-[0.18em] text-faint uppercase",
+                      groupIndex === 0
+                        ? "pt-5"
+                        : "border-t border-border pt-8",
+                    )}
+                  >
+                    {group.label}
+                  </th>
+                </tr>
+              )}
 
               {group.rows.map((row) => (
                 <tr

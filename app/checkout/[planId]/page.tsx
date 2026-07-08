@@ -13,7 +13,7 @@ import {
   PRO_PLAN_FEATURES,
   formatUsd,
   getArraySubsProPlan,
-} from "../../pricing/_plans";
+} from "../../deals/arraysubs/pricing/_plans";
 import { CheckoutOverlayClient } from "./CheckoutOverlayClient";
 
 export const dynamicParams = false;
@@ -37,7 +37,7 @@ export async function generateMetadata({
   return createMetadata({
     title: `${plan.name} Checkout — ArraySubs Pro`,
     description: `Complete your ArraySubs Pro ${plan.name} checkout securely. ${plan.siteLabel}, ${formatUsd(plan.annualPrice)} yearly, lifetime option ${formatUsd(plan.lifetimePrice)}.`,
-    path: `/deals/arraysubs/checkout/${plan.id}/`,
+    path: `/checkout/${plan.id}/`,
     noindex: true,
   });
 }
@@ -61,7 +61,7 @@ export default async function ArraySubsCheckoutPage({
           { name: "Home", href: "/" },
           { name: "ArraySubs", href: "/deals/arraysubs/" },
           { name: "Pricing Plan", href: "/deals/arraysubs/pricing/" },
-          { name: `${plan.name} Checkout`, href: `/deals/arraysubs/checkout/${plan.id}/` },
+          { name: `${plan.name} Checkout`, href: `/checkout/${plan.id}/` },
         ]}
         title={`${plan.name} checkout.`}
         subtitle="Secure checkout opens automatically on this page. Complete checkout to receive your ArraySubs Pro license and account details."

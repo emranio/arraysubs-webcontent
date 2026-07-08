@@ -258,7 +258,7 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
             eyebrow="Paid Pro plans"
             title="Unlock the complete Pro stack"
             subtitle="Start on the free-forever core today, then choose a paid Pro plan when you need the advanced Pro feature set."
-            microcopy="No credit card required · Plans from $129/year · Lifetime options available"
+            microcopy="No credit card required · Annual and lifetime options available"
             actions={
               <Button
                 href={GET_PRO}

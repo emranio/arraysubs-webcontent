@@ -9,6 +9,8 @@ import { Section } from "@/components/ui/Section";
 type ModuleShowcaseProps = {
   moduleCount?: number;
   compact?: boolean;
+  artworkSrc?: string;
+  artworkAlt?: string;
   primaryHref?: string;
   primaryLabel?: string;
   secondaryHref?: string;
@@ -18,11 +20,16 @@ type ModuleShowcaseProps = {
 export function ModuleShowcase({
   moduleCount = 27,
   compact = false,
+  artworkSrc,
+  artworkAlt,
   primaryHref = "/deals/arraysubs/pricing/",
   primaryLabel = "View Pro Pricing",
   secondaryHref = "#demo",
   secondaryLabel = "Live Demo",
 }: ModuleShowcaseProps) {
+  const hasPrimaryAction = Boolean(primaryHref && primaryLabel);
+  const hasSecondaryAction = Boolean(secondaryHref && secondaryLabel);
+
   return (
     <Section
       surface="default"
@@ -37,101 +44,118 @@ export function ModuleShowcase({
         )}
       >
         <div className="flex flex-col font-display">
-          <Eyebrow className="mb-6 font-display normal-case tracking-normal">
-            <LetterRevealText
-              text="Available Modules"
-              mode="scrub"
-              start="top 92%"
-              end="top 54%"
-              y={1.1}
-              stagger={0.035}
-            />
-          </Eyebrow>
+          {artworkSrc ? (
+            <div className="flex min-h-[18rem] items-center justify-center py-6 sm:min-h-[24rem] lg:min-h-[30rem] lg:justify-start lg:py-0">
+              <h2 id="module-showcase-title" className="sr-only">
+                {moduleCount}+ available modules for WooCommerce stores
+              </h2>
+              <img
+                src={artworkSrc}
+                alt={artworkAlt ?? `${moduleCount}+ available modules`}
+                width={1289}
+                height={905}
+                className="float-anim h-auto w-full max-w-[28rem] drop-shadow-[0_2rem_3.5rem_rgba(116,68,255,0.28)] sm:max-w-[32rem] lg:max-w-[34rem]"
+              />
+            </div>
+          ) : (
+            <>
+              <Eyebrow className="mb-6 font-display normal-case tracking-normal">
+                <LetterRevealText
+                  text="Available Modules"
+                  mode="scrub"
+                  start="top 92%"
+                  end="top 54%"
+                  y={1.1}
+                  stagger={0.035}
+                />
+              </Eyebrow>
 
-          <h2
-            id="module-showcase-title"
-            aria-label={`${moduleCount}+ available modules for WooCommerce stores`}
-            className="max-w-[52rem] font-display text-[2.875rem] leading-[0.9] font-bold tracking-normal text-foreground sm:text-[5.25rem] lg:text-[5.25rem] xl:text-[5.75rem]"
-          >
-            <LetterRevealText
-              text="Available"
-              ariaHidden
-              className="block"
-              mode="scrub"
-              start="top 92%"
-              end="top 44%"
-              y={1.35}
-              stagger={0.035}
-            />
-            <span className="block whitespace-nowrap">
-              <LetterRevealText
-                text="Modules"
-                ariaHidden
-                className="inline text-primary"
-                mode="scrub"
-                start="top 90%"
-                end="top 42%"
-                y={1.35}
-                stagger={0.035}
-              />
-              <LetterRevealText
-                text=" for"
-                ariaHidden
-                className="inline"
-                mode="scrub"
-                start="top 90%"
-                end="top 42%"
-                y={1.35}
-                stagger={0.035}
-              />
-            </span>
-            <span className="block">
-              <LetterRevealText
-                text="Woo"
-                ariaHidden
-                className="inline"
-                mode="scrub"
-                start="top 88%"
-                end="top 40%"
-                y={1.35}
-                stagger={0.035}
-              />
-              <span className="sm:hidden"><br /></span>
-              <LetterRevealText
-                text="Commerce"
-                ariaHidden
-                className="inline"
-                mode="scrub"
-                start="top 88%"
-                end="top 40%"
-                y={1.35}
-                stagger={0.035}
-              />
-            </span>
-            <LetterRevealText
-              text="Stores"
-              ariaHidden
-              className="block"
-              mode="scrub"
-              start="top 86%"
-              end="top 38%"
-              y={1.35}
-              stagger={0.035}
-            />
-          </h2>
+              <h2
+                id="module-showcase-title"
+                aria-label={`${moduleCount}+ available modules for WooCommerce stores`}
+                className="max-w-[52rem] font-display text-[2.875rem] leading-[0.9] font-bold tracking-normal text-foreground sm:text-[5.25rem] lg:text-[5.25rem] xl:text-[5.75rem]"
+              >
+                <LetterRevealText
+                  text="Available"
+                  ariaHidden
+                  className="block"
+                  mode="scrub"
+                  start="top 92%"
+                  end="top 44%"
+                  y={1.35}
+                  stagger={0.035}
+                />
+                <span className="block whitespace-nowrap">
+                  <LetterRevealText
+                    text="Modules"
+                    ariaHidden
+                    className="inline text-primary"
+                    mode="scrub"
+                    start="top 90%"
+                    end="top 42%"
+                    y={1.35}
+                    stagger={0.035}
+                  />
+                  <LetterRevealText
+                    text=" for"
+                    ariaHidden
+                    className="inline"
+                    mode="scrub"
+                    start="top 90%"
+                    end="top 42%"
+                    y={1.35}
+                    stagger={0.035}
+                  />
+                </span>
+                <span className="block">
+                  <LetterRevealText
+                    text="Woo"
+                    ariaHidden
+                    className="inline"
+                    mode="scrub"
+                    start="top 88%"
+                    end="top 40%"
+                    y={1.35}
+                    stagger={0.035}
+                  />
+                  <span className="sm:hidden"><br /></span>
+                  <LetterRevealText
+                    text="Commerce"
+                    ariaHidden
+                    className="inline"
+                    mode="scrub"
+                    start="top 88%"
+                    end="top 40%"
+                    y={1.35}
+                    stagger={0.035}
+                  />
+                </span>
+                <LetterRevealText
+                  text="Stores"
+                  ariaHidden
+                  className="block"
+                  mode="scrub"
+                  start="top 86%"
+                  end="top 38%"
+                  y={1.35}
+                  stagger={0.035}
+                />
+              </h2>
 
-          <div
-            className="mt-8 flex items-end sm:mt-10 lg:mt-12"
-            aria-label={`${moduleCount}+ available modules`}
-          >
-            <span className="sr-only">{moduleCount}+ available modules</span>
-            <span
-              aria-hidden="true"
-              className="font-display text-[8rem] leading-[0.8] font-bold tracking-normal text-primary sm:text-[11rem] lg:text-[12.5rem] xl:text-[14rem]"
-            >
-              {moduleCount}+
-            </span>
-          </div>
+              <div
+                className="mt-8 flex items-end sm:mt-10 lg:mt-12"
+                aria-label={`${moduleCount}+ available modules`}
+              >
+                <span className="sr-only">{moduleCount}+ available modules</span>
+                <span
+                  aria-hidden="true"
+                  className="font-display text-[8rem] leading-[0.8] font-bold tracking-normal text-primary sm:text-[11rem] lg:text-[12.5rem] xl:text-[14rem]"
+                >
+                  {moduleCount}+
+                </span>
+              </div>
+            </>
+          )}
         </div>
 
         <div className="flex flex-col justify-center lg:pt-24">
@@ -158,23 +182,29 @@ export function ModuleShowcase({
             </span>
           </p>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-20 xl:mt-24">
-            <Button
-              href={primaryHref}
-              size="md"
-              iconRight={<ArrowUpRight aria-hidden="true" className="size-5" />}
-            >
-              {primaryLabel}
-            </Button>
-            <Button
-              href={secondaryHref}
-              variant="outline"
-              size="md"
-              iconLeft={<MonitorPlay aria-hidden="true" className="size-5" />}
-            >
-              {secondaryLabel}
-            </Button>
-          </div>
+          {(hasPrimaryAction || hasSecondaryAction) && (
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-20 xl:mt-24">
+              {hasPrimaryAction && (
+                <Button
+                  href={primaryHref}
+                  size="md"
+                  iconRight={<ArrowUpRight aria-hidden="true" className="size-5" />}
+                >
+                  {primaryLabel}
+                </Button>
+              )}
+              {hasSecondaryAction && (
+                <Button
+                  href={secondaryHref}
+                  variant="outline"
+                  size="md"
+                  iconLeft={<MonitorPlay aria-hidden="true" className="size-5" />}
+                >
+                  {secondaryLabel}
+                </Button>
+              )}
+            </div>
+          )}
         </div>
       </Container>
     </Section>

@@ -173,7 +173,7 @@ export function PricingPlanCards() {
 
               <div className="mt-auto pt-12">
                 <Button
-                  href={`/deals/arraysubs/checkout/${plan.id}/`}
+                  href={`/checkout/${plan.id}/`}
                   variant={isFeatured ? "dark" : accentTone}
                   size="lg"
                   fullWidth

@@ -161,7 +161,7 @@ export default function UseCasesHubPage() {
             eyebrow="Paid Pro plans"
             title="Unlock Pro workflows when you need them"
             subtitle="Install the free core today, then choose a paid Pro plan for advanced modules, automation, analytics, and payment workflows."
-            microcopy="No credit card required · Plans from $129/year · Lifetime options available"
+            microcopy="No credit card required · Annual and lifetime options available"
             actions={
               <Button
                 href={GET_PRO}

@@ -1864,6 +1864,398 @@ export const FEATURES: Feature[] = [
     related: ["billing-and-renewals", "subscription-products", "stripe-payments"],
   }),
   buildFeature({
+    slug: "auto-retry-failed-payments",
+    category: "subscription-operations",
+    icon: Repeat,
+    name: "Auto-Retry Failed Payments",
+    cardDescription:
+      "Retry failed automatic renewal payments with scheduled attempts, customer notices, and recovery tracking. Pro only.",
+    tier: "Pro",
+    summary:
+      "Recover failed renewals automatically instead of pushing every payment failure into manual support.",
+    h1: "Automatically retry failed subscription payments",
+    highlights: ["Pro automation", "Retry schedule", "Recovery emails"],
+    intro:
+      "Auto-Retry Failed Payments is a Pro renewal recovery workflow. When an automatic renewal charge fails, ArraySubs can ==schedule retry attempts, notify the customer, track recovery status, and keep the subscription in the right grace or hold state== while payment is being recovered.",
+    capabilities: [
+      {
+        title: "Scheduled retry attempts",
+        description:
+          "Run configured follow-up attempts after an automatic renewal payment fails.",
+      },
+      {
+        title: "Customer recovery notices",
+        description:
+          "Send failed-payment and retry communication so customers know how to fix billing issues.",
+      },
+      {
+        title: "Grace-state alignment",
+        description:
+          "Works with the grace period so access does not end before recovery has a fair chance.",
+      },
+      {
+        title: "Operational tracking",
+        description:
+          "Logs retry activity into subscription notes and related operations views.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "Auto", label: "Retry mode" },
+      { value: "Email", label: "Customer notices" },
+      { value: "Grace", label: "Recovery state" },
+    ],
+    faq: [
+      {
+        question: "Does auto-retry work with manual payments?",
+        answer:
+          "No. Auto-retry is for supported automatic payment gateways. Manual renewals still use invoices and customer payment links.",
+      },
+      {
+        question: "Does retry cancel access immediately?",
+        answer:
+          "No. It is designed to work with recovery and grace-period handling before a final failure decision.",
+      },
+    ],
+    related: ["billing-and-renewals", "grace-period-recovery", "stripe-payments"],
+  }),
+  buildFeature({
+    slug: "auto-downgrade-on-failure",
+    category: "subscription-operations",
+    icon: ShieldCheck,
+    name: "Auto-Downgrade on Failure",
+    cardDescription:
+      "Move customers to a lower plan or fallback access path after unresolved renewal failures. Pro only.",
+    tier: "Pro",
+    summary:
+      "Protect revenue and access continuity by downgrading failed subscriptions after recovery windows are exhausted.",
+    h1: "Auto-downgrade subscriptions after failed renewals",
+    highlights: ["Pro automation", "Fallback plans", "Failure recovery"],
+    intro:
+      "Auto-Downgrade on Failure is a Pro recovery automation for stores that prefer a lower-access fallback over full churn. After retry and grace rules are exhausted, ArraySubs can ==move the customer to a configured fallback plan or access tier== so the relationship is preserved instead of simply ending.",
+    capabilities: [
+      {
+        title: "Fallback access path",
+        description:
+          "Move failed subscriptions into a lower plan, free tier, or reduced-access state when configured.",
+      },
+      {
+        title: "Recovery-window timing",
+        description:
+          "Runs after retry and grace handling so downgrades happen only after recovery attempts complete.",
+      },
+      {
+        title: "Member access alignment",
+        description:
+          "Keeps roles, gated content, and plan features aligned with the downgraded subscription.",
+      },
+      {
+        title: "Lifecycle notes",
+        description:
+          "Records downgrade actions so support can see why the customer's plan changed.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "Fallback", label: "Plan mode" },
+      { value: "After retry", label: "Timing" },
+      { value: "Access", label: "Synced state" },
+    ],
+    faq: [
+      {
+        question: "Is auto-downgrade the same as plan switching?",
+        answer:
+          "No. Plan switching is customer or admin-initiated. Auto-downgrade is a Pro automation triggered by unresolved payment failure.",
+      },
+      {
+        question: "Can access rules follow the downgraded plan?",
+        answer:
+          "Yes. Member access and feature conditions should follow the subscription state after the downgrade.",
+      },
+    ],
+    related: ["auto-retry-failed-payments", "plan-switching", "member-access"],
+  }),
+  buildFeature({
+    slug: "grace-period-recovery",
+    category: "subscription-operations",
+    icon: HeartHandshake,
+    name: "2-Phase Grace Period & Recovery",
+    cardDescription:
+      "Keep access recoverable after failed renewals with warning and final grace phases before cancellation or hold.",
+    tier: "Free + Pro",
+    summary:
+      "Give customers a structured recovery window before a failed renewal becomes a lost subscription.",
+    h1: "Use a two-phase grace period for renewal recovery",
+    highlights: ["Grace phases", "Recovery window", "Access continuity"],
+    intro:
+      "2-Phase Grace Period & Recovery gives failed renewals a structured path. Stores can ==warn customers, keep access temporarily recoverable, move into a final grace phase, and only then apply hold, cancellation, or Pro downgrade rules== based on the configured policy.",
+    capabilities: [
+      {
+        title: "Warning phase",
+        description:
+          "Notify customers that payment needs attention while access can remain recoverable.",
+      },
+      {
+        title: "Final grace phase",
+        description:
+          "Apply the last recovery window before the subscription moves to its failure outcome.",
+      },
+      {
+        title: "Access coordination",
+        description:
+          "Keeps portal actions, emails, notes, and member access aligned during recovery.",
+      },
+      {
+        title: "Pro recovery hooks",
+        description:
+          "Pro retry and downgrade workflows can extend the same recovery lifecycle.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Grace model" },
+      { value: "2", label: "Recovery phases" },
+      { value: "Pro", label: "Automation hooks" },
+      { value: "Access", label: "Protected state" },
+    ],
+    faq: [
+      {
+        question: "Does grace period require Pro?",
+        answer:
+          "The grace model is part of the core renewal flow. Pro adds automatic retry and downgrade automation around it.",
+      },
+      {
+        question: "Why use two phases?",
+        answer:
+          "Two phases let stores separate the first warning period from the final recovery window before access changes.",
+      },
+    ],
+    related: ["billing-and-renewals", "auto-retry-failed-payments", "emails"],
+  }),
+  buildFeature({
+    slug: "skip-next-renewal",
+    category: "subscription-operations",
+    icon: Repeat,
+    name: "Skip Next Renewal",
+    cardDescription:
+      "Let customers or staff skip the next scheduled renewal while keeping the subscription relationship active.",
+    tier: "Free",
+    summary:
+      "Offer a lightweight pause alternative by moving the next renewal forward one cycle.",
+    h1: "Skip the next subscription renewal",
+    highlights: ["Customer action", "Admin action", "Renewal schedule"],
+    intro:
+      "Skip Next Renewal lets a customer or staff member ==skip one upcoming billing cycle without cancelling the subscription==. The subscription remains connected to the customer, and the next payment date moves forward according to the plan's billing schedule.",
+    capabilities: [
+      {
+        title: "Customer self-service",
+        description:
+          "Expose skip controls in the customer portal where the store allows it.",
+      },
+      {
+        title: "Admin support action",
+        description:
+          "Let support skip a renewal for goodwill, vacation, or temporary billing situations.",
+      },
+      {
+        title: "Schedule recalculation",
+        description:
+          "Moves the next payment date to the following billing cycle instead of cancelling the record.",
+      },
+      {
+        title: "Lifecycle history",
+        description:
+          "Records skip actions in the subscription timeline for support context.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "1", label: "Cycle skipped" },
+      { value: "Portal", label: "Customer surface" },
+      { value: "Admin", label: "Support surface" },
+    ],
+    faq: [
+      {
+        question: "Does skipping cancel the subscription?",
+        answer:
+          "No. It moves the next renewal forward and keeps the subscription relationship active.",
+      },
+      {
+        question: "Can staff skip renewals for customers?",
+        answer:
+          "Yes. Staff can use skip as a support action when the workflow is enabled.",
+      },
+    ],
+    related: ["customer-portal", "billing-and-renewals", "pause-vacation-mode"],
+  }),
+  buildFeature({
+    slug: "plan-switching",
+    category: "subscription-operations",
+    icon: SlidersHorizontal,
+    name: "Plan Switching",
+    cardDescription:
+      "Let customers upgrade, downgrade, or crossgrade between eligible subscription products with schedule-aware changes.",
+    tier: "Free + Pro",
+    summary:
+      "Move subscribers between plans without forcing cancellation and repurchase.",
+    h1: "Switch subscription plans without starting over",
+    highlights: ["Upgrade", "Downgrade", "Crossgrade"],
+    intro:
+      "Plan Switching lets customers or admins ==upgrade, downgrade, or crossgrade between eligible subscription products== while preserving the relationship, schedule context, notes, and portal history. Proration rules decide how money is handled during the switch.",
+    capabilities: [
+      {
+        title: "Eligible switch paths",
+        description:
+          "Define which products or variations customers can switch between.",
+      },
+      {
+        title: "Customer and admin flows",
+        description:
+          "Support self-service plan changes and staff-assisted support changes.",
+      },
+      {
+        title: "Lifecycle continuity",
+        description:
+          "Keeps the subscription record and operational history connected through the switch.",
+      },
+      {
+        title: "Proration support",
+        description:
+          "Connects to the proration method chosen for upgrade, downgrade, or crossgrade changes.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Core switching" },
+      { value: "3", label: "Switch types" },
+      { value: "Portal", label: "Customer flow" },
+      { value: "Admin", label: "Support flow" },
+    ],
+    faq: [
+      {
+        question: "What is a crossgrade?",
+        answer:
+          "A crossgrade moves a customer between plans at the same general level, such as monthly to annual or one sibling tier to another.",
+      },
+      {
+        question: "Does plan switching require a new checkout?",
+        answer:
+          "No. The switch flow can update the existing subscription instead of requiring cancellation and a fresh purchase.",
+      },
+    ],
+    related: ["proration-methods", "subscription-products", "customer-portal"],
+  }),
+  buildFeature({
+    slug: "proration-methods",
+    category: "subscription-operations",
+    icon: ReceiptText,
+    name: "3 Proration Methods for Plan Switch",
+    cardDescription:
+      "Control upgrade, downgrade, and crossgrade billing with three proration methods for plan changes.",
+    tier: "Free + Pro",
+    summary:
+      "Choose how unused value and new plan costs are handled when a subscriber changes plans.",
+    h1: "Choose the proration method for plan switches",
+    highlights: ["3 methods", "Upgrade billing", "Downgrade credits"],
+    intro:
+      "3 Proration Methods for Plan Switch gives stores control over money movement during plan changes. Depending on the switch policy, ArraySubs can ==charge immediately, credit unused time, or align the financial adjustment with the next renewal== so upgrades and downgrades match the business model.",
+    capabilities: [
+      {
+        title: "Immediate adjustment",
+        description:
+          "Collect or apply the price difference during the switch when that is the cleanest flow.",
+      },
+      {
+        title: "Unused-time value",
+        description:
+          "Calculate remaining value from the current plan before moving to the new plan.",
+      },
+      {
+        title: "Renewal-aligned handling",
+        description:
+          "Apply the plan change around renewal timing when immediate charging is not desired.",
+      },
+      {
+        title: "Switch policy consistency",
+        description:
+          "Keeps customer portal, admin changes, notes, and renewal dates aligned after the switch.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "3", label: "Methods" },
+      { value: "Upgrade", label: "Switch type" },
+      { value: "Downgrade", label: "Switch type" },
+    ],
+    faq: [
+      {
+        question: "Do all plan switches use the same proration behavior?",
+        answer:
+          "No. Stores can choose the method that fits their upgrade, downgrade, or crossgrade policy.",
+      },
+      {
+        question: "Does proration update renewal dates?",
+        answer:
+          "Proration works with the subscription schedule so money handling and renewal timing stay aligned.",
+      },
+    ],
+    related: ["plan-switching", "renewal-sync", "store-credit"],
+  }),
+  buildFeature({
+    slug: "pause-vacation-mode",
+    category: "subscription-operations",
+    icon: Lock,
+    name: "Pause / Vacation Mode",
+    cardDescription:
+      "Temporarily pause renewals and access for customers who need a break without cancelling their subscription.",
+    tier: "Free",
+    summary:
+      "Give subscribers a temporary break while preserving their account and subscription history.",
+    h1: "Pause subscriptions for vacation or temporary breaks",
+    highlights: ["Pause", "Resume", "Retention alternative"],
+    intro:
+      "Pause / Vacation Mode lets stores ==temporarily suspend a subscription instead of cancelling it==. Customers or staff can pause where allowed, resume later, and keep the original subscription history intact.",
+    capabilities: [
+      {
+        title: "Temporary pause",
+        description:
+          "Stop renewal activity for a temporary period without deleting or cancelling the subscription relationship.",
+      },
+      {
+        title: "Resume flow",
+        description:
+          "Let customers or staff reactivate the subscription when the break is over.",
+      },
+      {
+        title: "Retention alternative",
+        description:
+          "Use pause as a save offer before final cancellation or as a goodwill support action.",
+      },
+      {
+        title: "Portal visibility",
+        description:
+          "Shows pause state and supported actions in the customer subscription experience.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "Pause", label: "Primary action" },
+      { value: "Resume", label: "Follow-up" },
+      { value: "Portal", label: "Customer surface" },
+    ],
+    faq: [
+      {
+        question: "Is pause the same as cancellation?",
+        answer:
+          "No. Pause is temporary and keeps the subscription relationship ready to resume.",
+      },
+      {
+        question: "Can pause be used as a retention offer?",
+        answer:
+          "Yes. Pause is commonly used before cancellation when a customer only needs a temporary break.",
+      },
+    ],
+    related: ["customer-portal", "retention-and-refunds", "skip-next-renewal"],
+  }),
+  buildFeature({
     slug: "profile-builder",
     category: "member-experience",
     icon: UserCog,
@@ -2045,6 +2437,118 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["feature-manager", "restricted-downloads", "multi-login-prevention"],
+  }),
+  buildFeature({
+    slug: "member-discounts",
+    category: "member-experience",
+    icon: Wallet,
+    name: "Member Discounts",
+    cardDescription:
+      "Offer subscriber-only discounts for products, categories, or targeted purchase paths using member access rules.",
+    tier: "Free",
+    summary:
+      "Reward active members with pricing benefits tied to subscription and commerce conditions.",
+    h1: "Create member-only discounts",
+    highlights: ["Member pricing", "Access rules", "WooCommerce products"],
+    intro:
+      "Member Discounts use the Member Access rule engine to ==offer targeted pricing benefits to qualifying subscribers==. Stores can connect discounts to active plans, roles, product history, spend thresholds, or other access conditions so benefits follow membership value.",
+    capabilities: [
+      {
+        title: "Subscription-based discounts",
+        description:
+          "Offer discounts only to customers who match a configured subscription or membership rule.",
+      },
+      {
+        title: "Product and category targeting",
+        description:
+          "Apply benefits to selected products, categories, or purchase contexts.",
+      },
+      {
+        title: "Commerce-aware conditions",
+        description:
+          "Use purchase history, lifetime spend, role, or plan state to qualify the discount.",
+      },
+      {
+        title: "Benefit visibility",
+        description:
+          "Keep member pricing aligned with shop restrictions, content access, and customer portal status.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "Product", label: "Target scope" },
+      { value: "Rule", label: "Condition model" },
+      { value: "Member", label: "Benefit owner" },
+    ],
+    faq: [
+      {
+        question: "Can discounts depend on subscription status?",
+        answer:
+          "Yes. Discounts can be tied to the same subscription and membership rules used for access control.",
+      },
+      {
+        question: "Are member discounts separate from coupons?",
+        answer:
+          "They serve a different purpose. Coupons are customer-entered or campaign discounts, while member discounts are rule-based membership benefits.",
+      },
+    ],
+    related: ["member-access", "shop-access-restrictions", "coupons"],
+  }),
+  buildFeature({
+    slug: "content-dripping",
+    category: "member-experience",
+    icon: Repeat,
+    name: "Content Dripping",
+    cardDescription:
+      "Release posts, lessons, downloads, or protected sections over time based on subscription timing and access rules.",
+    tier: "Free",
+    summary:
+      "Schedule member content so subscribers receive access in stages instead of all at once.",
+    h1: "Drip member content over time",
+    highlights: ["Scheduled access", "Lessons and downloads", "Membership timing"],
+    intro:
+      "Content Dripping lets stores ==unlock protected content after a configured subscription or membership window==. It can support courses, onboarding, file libraries, lessons, private posts, and other staged member experiences.",
+    capabilities: [
+      {
+        title: "Scheduled unlocks",
+        description:
+          "Delay access until a configured number of days or billing periods after membership starts.",
+      },
+      {
+        title: "Multiple content surfaces",
+        description:
+          "Use dripping for posts, pages, custom post types, downloads, shortcodes, or partial content sections.",
+      },
+      {
+        title: "Rule-based qualification",
+        description:
+          "Combine drip timing with subscription, role, product, purchase, or spend conditions.",
+      },
+      {
+        title: "Course and onboarding fit",
+        description:
+          "Release lessons, modules, and member resources in the order the experience requires.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "Time", label: "Unlock model" },
+      { value: "Content", label: "Target type" },
+      { value: "Rule", label: "Condition model" },
+    ],
+    faq: [
+      {
+        question: "Can content unlock after a delay?",
+        answer:
+          "Yes. Drip timing can delay access after the customer qualifies for the membership rule.",
+      },
+      {
+        question: "Can dripping work with downloads?",
+        answer:
+          "Yes. Restricted Downloads can also use schedules so files unlock over time.",
+      },
+    ],
+    related: ["member-access", "restricted-downloads", "cpt-content-restrictions"],
   }),
   buildFeature({
     slug: "restricted-downloads",

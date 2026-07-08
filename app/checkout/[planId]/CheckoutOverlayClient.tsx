@@ -5,12 +5,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, CheckCircle2, Loader2, TriangleAlert } from "lucide-react";
 import { absoluteUrl } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
-import type { ArraySubsProPlan } from "../../pricing/_plans";
+import type { ArraySubsProPlan } from "../../deals/arraysubs/pricing/_plans";
 import {
   CHECKOUT_PRODUCT_ID,
   CHECKOUT_PUBLIC_KEY,
   formatUsd,
-} from "../../pricing/_plans";
+} from "../../deals/arraysubs/pricing/_plans";
 
 type CheckoutConfig = {
   product_id: string;

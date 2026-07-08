@@ -401,7 +401,7 @@ export default function AlternativesHubPage() {
             eyebrow="Paid Pro plans"
             title="Choose the ArraySubs Pro plan that fits"
             subtitle="Install the free core today, then upgrade securely when you need the full Pro feature set."
-            microcopy="No credit card required · Plans from $129/year · Lifetime options available"
+            microcopy="No credit card required · Annual and lifetime options available"
             actions={
               <Button
                 href={GET_PRO}

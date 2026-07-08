@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 import { CustomCursor } from "@/components/animation/CustomCursor";
 import { ScrollBackground } from "@/components/animation/ScrollBackground";
+import { BottomOfferPill } from "@/components/layout/BottomOfferPill";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { CookieConsent } from "@/components/layout/CookieConsent";
@@ -84,6 +85,7 @@ export default function RootLayout({
           <SiteHeader />
           <main id="main">{children}</main>
           <SiteFooter />
+          <BottomOfferPill />
           <CookieConsent />
 
           <JsonLd data={[organizationSchema(), websiteSchema()]} />

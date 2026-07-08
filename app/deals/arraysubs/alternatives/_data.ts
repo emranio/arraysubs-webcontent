@@ -91,8 +91,8 @@ const row = (
 /** The fixed 3-column header used by every comparison table. */
 export function comparisonColumns(c: Comparison): ComparisonColumn[] {
   return [
-    { key: "free", name: "ArraySubs Free", offer: "$0 — free forever" },
-    { key: "pro", name: "ArraySubs Pro", offer: "From $129/yr", featured: true },
+    { key: "free", name: "ArraySubs Free", offer: "Free core" },
+    { key: "pro", name: "ArraySubs Pro", offer: "Pro upgrade", featured: true },
     { key: "competitor", name: c.competitorShort, offer: c.pricing.competitor },
   ];
 }
@@ -141,7 +141,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
+      arraysubs: "Free core, forever. Pro details live on the pricing page.",
       competitor: "$279/yr (1 site)",
       combinedNote:
         "Add WooCommerce Memberships ($199/yr) for member access — $478/yr for both, renewed annually.",
@@ -151,7 +151,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("$129/yr+"), txt("$279/yr")),
+          row("Price", txt("Free core"), txt("Pro upgrade"), txt("$279/yr")),
           row("Free tier", yes(), yes(), no()),
           row("Subscriptions + memberships in one plugin", yes(), yes(), no("needs $199/yr add-on")),
         ],
@@ -301,7 +301,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
+      arraysubs: "Free core, forever. Pro details live on the pricing page.",
       competitor: "$199/yr (1 site)",
       combinedNote:
         "Recurring memberships also need WooCommerce Subscriptions ($279/yr) — $478/yr for both.",
@@ -311,7 +311,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("$129/yr+"), txt("$199/yr")),
+          row("Price", txt("Free core"), txt("Pro upgrade"), txt("$199/yr")),
           row("Free tier", yes(), yes(), no()),
           row("Built-in recurring billing", yes(), yes(), no("needs Woo Subscriptions")),
         ],
@@ -455,7 +455,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
+      arraysubs: "Free core, forever. Pro details live on the pricing page.",
       competitor: "€199.99/yr",
       combinedNote:
         "Memberships need YITH WooCommerce Membership too (€179.99/yr) — €379.98/yr (~$413) combined.",
@@ -465,7 +465,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("$129/yr+"), txt("€199.99/yr")),
+          row("Price", txt("Free core"), txt("Pro upgrade"), txt("€199.99/yr")),
           row("Capable free tier", yes(), yes(), part("very limited")),
           row("Memberships in same plugin", yes(), yes(), no("€179.99/yr add-on")),
         ],
@@ -551,7 +551,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Is ArraySubs cheaper than YITH WooCommerce Subscription?",
         answer:
-          "Yes. ArraySubs' core is free and Pro starts at $129/yr, while YITH's premium is €199.99/yr — and €379.98/yr once you add YITH Membership for access control.",
+          "Yes. ArraySubs' core is free and Pro details live on the pricing page, while YITH's premium is €199.99/yr — and €379.98/yr once you add YITH Membership for access control.",
       },
       {
         question: "Does ArraySubs have a subscription box feature like YITH?",
@@ -609,7 +609,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
+      arraysubs: "Free core, forever. Pro details live on the pricing page.",
       competitor: "€179.99/yr (premium-only)",
       combinedNote:
         "Recurring memberships also need YITH Subscription (€199.99/yr) — €379.98/yr (~$413) combined.",
@@ -619,7 +619,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("$129/yr+"), txt("€179.99/yr")),
+          row("Price", txt("Free core"), txt("Pro upgrade"), txt("€179.99/yr")),
           row("Free tier", yes(), yes(), no()),
           row("Built-in recurring billing", yes(), yes(), no("needs YITH Subscription")),
         ],
@@ -713,7 +713,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Is ArraySubs cheaper than YITH WooCommerce Membership?",
         answer:
-          "Yes. ArraySubs has a free core with Pro from $129/yr, while YITH Membership is €179.99/yr and premium-only, rising to €379.98/yr with YITH Subscription for billing.",
+          "Yes. ArraySubs has a free core and Pro details live on the pricing page, while YITH Membership is €179.99/yr and premium-only, rising to €379.98/yr with YITH Subscription for billing.",
       },
     ],
     related: ["yith-woocommerce-subscription", "woocommerce-memberships"],
@@ -761,7 +761,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
+      arraysubs: "Free core, forever. Pro details live on the pricing page.",
       competitor: "Free + Pro ($129/yr)",
       combinedNote:
         "Memberships need WP Swings' separate Membership plugin (900+ installs).",
@@ -771,7 +771,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("$129/yr+"), txt("$129/yr")),
+          row("Price", txt("Free core"), txt("Pro upgrade"), txt("$129/yr")),
           row("Free tier", yes(), yes(), yes()),
           row("Memberships in same plugin", yes(), yes(), no("separate plugin")),
         ],
@@ -913,7 +913,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
+      arraysubs: "Free core, forever. Pro details live on the pricing page.",
       competitor: "~$49 one-time (CodeCanyon)",
       combinedNote:
         "Access control needs SUMO Memberships too (~$39) — ~$88 one-time, premium-only.",
@@ -924,7 +924,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing, support & maintenance",
         rows: [
-          row("Price", txt("$0"), txt("$129/yr+"), txt("~$49 one-time")),
+          row("Price", txt("Free core"), txt("Pro upgrade"), txt("~$49 one-time")),
           row("Free tier", yes(), yes(), no()),
           row("Modern React admin", yes(), yes(), no("legacy")),
           row("WordPress.org listing", yes(), yes(), no("CodeCanyon only")),
@@ -1015,7 +1015,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Does ArraySubs use one-time pricing like SUMO?",
         answer:
-          "No. ArraySubs has a free core with paid Pro plans from $129/yr, rather than SUMO's ~$49 one-time CodeCanyon license. The trade-off is active development and a free tier.",
+          "No. ArraySubs has a free core with paid Pro details on the pricing page, rather than SUMO's ~$49 one-time CodeCanyon license. The trade-off is active development and a free tier.",
       },
       {
         question: "What does SUMO do that ArraySubs doesn't?",
@@ -1068,7 +1068,7 @@ export const COMPARISONS: Comparison[] = [
       ],
     },
     pricing: {
-      arraysubs: "Free core, forever. Pro plans start at $129/yr.",
+      arraysubs: "Free core, forever. Pro details live on the pricing page.",
       competitor: "Free + Pro ($89/yr, 1 site)",
       savings: "Memberships, retention and analytics included — not just billing.",
     },
@@ -1076,7 +1076,7 @@ export const COMPARISONS: Comparison[] = [
       {
         label: "Pricing & licensing",
         rows: [
-          row("Price", txt("$0"), txt("$129/yr+"), txt("$89/yr Pro")),
+          row("Price", txt("Free core"), txt("Pro upgrade"), txt("$89/yr Pro")),
           row("Free tier", yes(), yes(), yes()),
           row("Memberships in same plugin", yes(), yes(), no()),
         ],

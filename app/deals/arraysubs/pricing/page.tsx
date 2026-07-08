@@ -10,6 +10,7 @@ import {
   LayoutGrid,
   ListChecks,
   Lock,
+  Repeat,
   ShieldCheck,
   Wallet,
 } from "lucide-react";
@@ -22,18 +23,15 @@ import {
   Accordion,
   Badge,
   Button,
-  ComparisonTable,
   Container,
   CTA,
   IconCard,
+  ModuleShowcase,
   PageHero,
   Section,
   SectionTitle,
-  type ComparisonCell,
-  type ComparisonColumn,
-  type ComparisonGroup,
-  type ComparisonRow,
 } from "@/components/ui";
+import { FreeVsProTable } from "../_components/FreeVsProTable";
 import { PricingPlanCards } from "./PricingPlanCards";
 import { ARRAYSUBS_PRO_PLANS } from "./_plans";
 
@@ -91,6 +89,18 @@ const PRO_FEATURES: { icon: ReactNode; title: string; description: string }[] =
       description:
         "Limit concurrent sessions per account with global limits, plan overrides, and Login as User exclusions.",
     },
+    {
+      icon: <Repeat className="size-6" />,
+      title: "Auto-Retry Failed Payments",
+      description:
+        "Retry failed automatic renewal charges with scheduled attempts, customer notices, recovery tracking, and grace-state alignment.",
+    },
+    {
+      icon: <ArrowDown className="size-6" />,
+      title: "Auto-Downgrade on Failure",
+      description:
+        "Move unresolved failed renewals to a lower plan or fallback access path instead of ending the customer relationship outright.",
+    },
   ];
 
 const MODULE_COUNT = FEATURES.length;
@@ -105,94 +115,6 @@ const STATS = [
 ];
 
 const TRIAL_PLAN = ARRAYSUBS_PRO_PLANS[0];
-
-const yes: ComparisonCell = { kind: "check" };
-const no: ComparisonCell = { kind: "no" };
-const txt = (value: string): ComparisonCell => ({ kind: "text", value });
-const row = (
-  feature: string,
-  free: ComparisonCell,
-  pro: ComparisonCell,
-): ComparisonRow => ({ feature, cells: { free, pro } });
-
-const COMPARISON_COLUMNS: ComparisonColumn[] = [
-  { key: "free", name: "ArraySubs Free", offer: "$0 — free forever" },
-  { key: "pro", name: "ArraySubs Pro", offer: "Paid plans from $129/yr", featured: true },
-];
-
-const COMPARISON_GROUPS: ComparisonGroup[] = [
-  {
-    label: "Subscriptions & billing",
-    rows: [
-      row("Subscription products (simple & variable)", yes, yes),
-      row("Flexible billing cycles (daily-yearly)", yes, yes),
-      row("Free trials & sign-up fees", yes, yes),
-      row("Different renewal price", yes, yes),
-      row("Plan switching (upgrade, downgrade, crossgrade)", yes, yes),
-      row("3 proration methods", yes, yes),
-      row("Skip next renewal", yes, yes),
-      row("Pause / vacation mode", yes, yes),
-      row("2-phase grace period & recovery", yes, yes),
-      row("Coupon integration", yes, yes),
-      row("Fixed-period membership product", no, yes),
-    ],
-  },
-  {
-    label: "Memberships & access",
-    rows: [
-      row("Content restriction (10 conditions, AND/OR)", yes, yes),
-      row("Content dripping", yes, yes),
-      row("Role mapping", yes, yes),
-      row("URL restriction (4 patterns)", yes, yes),
-      row("Member discounts", yes, yes),
-      row("Customer self-service portal", yes, yes),
-      row("Profile builder & shortcodes", yes, yes),
-      row("Elementor section gating (no code)", yes, yes),
-    ],
-  },
-  {
-    label: "Retention & revenue",
-    rows: [
-      row("Retention Flow builder", yes, yes),
-      row("Email notifications (20+ triggers)", yes, yes),
-      row("Store credit system", no, yes),
-    ],
-  },
-  {
-    label: "Operations & insights",
-    rows: [
-      row("Manage subscriptions dashboard", yes, yes),
-      row("Easy setup wizard (9 steps)", yes, yes),
-      row("Advanced analytics (MRR, churn, ARPU)", txt("Retention only"), yes),
-      row("Checkout builder (27 field types)", no, yes),
-      row("Audit logs & activity timeline", no, yes),
-      row("Gateway Health root module", no, yes),
-      row("Feature manager (per-plan entitlements)", no, yes),
-      row("Member Insight customer profile", no, yes),
-    ],
-  },
-  {
-    label: "Site access toolkit",
-    rows: [
-      row("Admin bar visibility", yes, yes),
-      row("Admin dashboard access restriction", yes, yes),
-      row("WordPress login page redirect", yes, yes),
-      row("Login as User support impersonation", yes, yes),
-      row("Multi-Login Prevention root module", no, yes),
-    ],
-  },
-  {
-    label: "Payments & platform",
-    rows: [
-      row("Automatic payments (Stripe, PayPal, Paddle)", txt("Manual only"), yes),
-      row("Paddle — merchant of record", no, yes),
-      row("Auto-retry failed payments", no, yes),
-      row("Auto-downgrade on failure", no, yes),
-      row("HPOS compatible", yes, yes),
-      row("Plugins required", txt("1"), txt("1 + add-on")),
-    ],
-  },
-];
 
 const FAQ_ITEMS = [
   {
@@ -266,6 +188,17 @@ export default function ArraySubsPricingPage() {
         }
       />
 
+      <ModuleShowcase
+        moduleCount={MODULE_COUNT}
+        compact
+        artworkSrc="/shapes/feature-count.png"
+        artworkAlt="63+ ArraySubs features"
+        primaryHref=""
+        primaryLabel=""
+        secondaryHref=""
+        secondaryLabel=""
+      />
+
       <Section id="plans" surface="surface" spacing="md">
         <Container>
           <SectionTitle
@@ -332,15 +265,18 @@ export default function ArraySubsPricingPage() {
                 height={586}
                 className="mx-auto w-full max-w-[34rem]"
               />
-              <div className="mt-auto flex justify-center pt-8">
+              <div className="mt-auto flex flex-col items-center pt-8 text-center">
                 <Button
-                  href={`/deals/arraysubs/checkout/${TRIAL_PLAN.id}/`}
+                  href={`/checkout/${TRIAL_PLAN.id}/`}
                   size="lg"
                   magnetic
                   iconRight={<ArrowRight className="size-5" />}
                 >
-                  Start Trial
+                  Choose trial now
                 </Button>
+                <p className="mt-3 text-sm font-semibold text-muted">
+                  Use it first. Pay later.
+                </p>
               </div>
             </article>
 
@@ -374,14 +310,13 @@ export default function ArraySubsPricingPage() {
           <SectionTitle
             eyebrow="Free vs Pro"
             title="Start free, upgrade when the store needs the full operating stack"
-            subtitle="The free core keeps running subscriptions and memberships. Pro adds the advanced revenue, analytics, payment, and operations modules."
+            subtitle={`All ${MODULE_COUNT} features from the features page are listed below. ${PRO_ONLY_MODULE_COUNT} Pro-only features come first, followed by shared and free/core features.`}
             align="center"
           />
           <div className="mt-12">
-            <ComparisonTable
-              caption="Feature comparison of ArraySubs Free versus ArraySubs Pro, grouped by subscriptions and billing, memberships and access, retention and revenue, operations and insights, and payments and platform."
-              columns={COMPARISON_COLUMNS}
-              groups={COMPARISON_GROUPS}
+            <FreeVsProTable
+              freeOffer="$0 — free forever"
+              proOffer="Paid plans from $129/yr"
             />
           </div>
         </Container>
@@ -391,8 +326,8 @@ export default function ArraySubsPricingPage() {
         <Container>
           <SectionTitle
             eyebrow="What’s in Pro"
-            title="Seven Pro-only root modules you unlock"
-            subtitle="Every paid license includes these modules plus Pro workflows across checkout, payments, analytics, refunds, and customer operations."
+            title="Pro-only modules and automation you unlock"
+            subtitle="Every paid license includes the Pro root modules plus automatic retry, auto-downgrade, checkout, payment, analytics, refund, and customer operations workflows."
             align="center"
           />
           <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">

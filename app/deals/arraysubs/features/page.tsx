@@ -8,7 +8,6 @@ import {
   Badge,
   BigText,
   Button,
-  ComparisonTable,
   Container,
   CTA,
   Eyebrow,
@@ -19,9 +18,6 @@ import {
   SectionTitle,
   StepCard,
   TagCard,
-  type ComparisonCell,
-  type ComparisonColumn,
-  type ComparisonGroup,
 } from "@/components/ui";
 import {
   FEATURES,
@@ -29,6 +25,7 @@ import {
   featuresByCategory,
   type FeatureTier,
 } from "./_data";
+import { FreeVsProTable } from "../_components/FreeVsProTable";
 
 const MODULE_COUNT = FEATURES.length;
 const CORE_MODULE_COUNT = FEATURES.filter((feature) => feature.tier !== "Pro").length;
@@ -46,25 +43,6 @@ const GET_PRO = "/deals/arraysubs/pricing/";
 
 const tierTone = (tier: FeatureTier) =>
   tier === "Free" ? "highlight" : tier === "Pro" ? "dark" : "primary";
-
-/* Free vs Pro availability table, built from the feature data. */
-const CHECK: ComparisonCell = { kind: "check" };
-const NO: ComparisonCell = { kind: "no" };
-
-const COMPARISON_COLUMNS: ComparisonColumn[] = [
-  { key: "free", name: "ArraySubs Free", offer: "$0 — free forever" },
-  { key: "pro", name: "ArraySubs Pro", offer: "Paid plans from $129/yr", featured: true },
-];
-
-const COMPARISON_GROUPS: ComparisonGroup[] = FEATURE_CATEGORIES.map(
-  (category) => ({
-    label: category.label,
-    rows: featuresByCategory(category.key).map((feature) => ({
-      feature: feature.name,
-      cells: { free: feature.tier === "Pro" ? NO : CHECK, pro: CHECK },
-    })),
-  }),
-);
 
 const SYSTEMS = [
   {
@@ -95,13 +73,13 @@ const SYSTEMS = [
     tag: "Operations",
     title: "Subscription records and customer self-service",
     description:
-      "Manage Subscriptions, Subscription Notes, Customer Portal, and Billing and Renewals keep recurring relationships running.",
+      "Manage Subscriptions, Customer Portal, Billing and Renewals, plan switching, retry, grace, pause, and skip tools keep recurring relationships running.",
   },
   {
     tag: "Members",
     title: "Accounts, access rules, and support context",
     description:
-      "Profile Builder, Shortcodes, Member Access, Restricted Downloads, and Member Insight control the subscriber-facing account experience.",
+      "Profile Builder, Shortcodes, Member Access, Member Discounts, Content Dripping, Restricted Downloads, and Member Insight shape subscriber experiences.",
   },
   {
     tag: "Revenue",
@@ -158,12 +136,12 @@ const FAQ_ITEMS = [
   {
     question: "Do I need Pro to run a subscription business?",
     answer:
-      "No. The free core covers subscription products, billing, manual payment flows, customer portal actions, member access, retention offers, emails, setup, and the free Toolkit modules. Pro adds automatic gateways, advanced automation, analytics, store credit, checkout builder, audits, Feature Manager, and Multi-Login Prevention.",
+      "No. The free core covers subscription products, billing, manual payment flows, customer portal actions, plan switching, proration, skip, pause, grace recovery, member access, member discounts, content dripping, retention offers, emails, setup, and the free Toolkit modules. Pro adds automatic gateways, failed-payment retry, auto-downgrade, advanced automation, analytics, store credit, checkout builder, audits, Feature Manager, and Multi-Login Prevention.",
   },
   {
     question: "Which root modules are Pro-only?",
     answer:
-      "The Pro-only root modules are Multi-Login Prevention, Redirect Product Page, Subscription Shipping, Member Insight, Store Credit, Feature Manager, and Gateway Health.",
+      "The Pro-only root modules are Multi-Login Prevention, Redirect Product Page, Subscription Shipping, Member Insight, Store Credit, Feature Manager, and Gateway Health. Pro-only workflow cards also include Auto-Retry Failed Payments and Auto-Downgrade on Failure.",
   },
 ];
 
@@ -178,7 +156,6 @@ export default function FeaturesHubPage() {
         ]}
         title={
           <>
-            <span className="block">{MODULE_COUNT}</span>
             <span className="block">ArraySubs</span>
             <span className="block">features</span>
           </>
@@ -187,7 +164,7 @@ export default function FeaturesHubPage() {
         highlights={[
           `${MODULE_COUNT} feature cards`,
           "Generous free-forever core",
-          "Pro plans from $129/yr",
+          "Pro upgrade available",
         ]}
         actions={
           <Button
@@ -205,6 +182,8 @@ export default function FeaturesHubPage() {
       <ModuleShowcase
         moduleCount={MODULE_COUNT}
         compact
+        artworkSrc="/shapes/feature-count.png"
+        artworkAlt="ArraySubs features"
         primaryHref={GET_PRO}
         primaryLabel="Start Trial"
         secondaryHref="#all-modules"
@@ -222,7 +201,7 @@ export default function FeaturesHubPage() {
           />
           <div className="mt-12 flex flex-col gap-12">
             {FEATURE_CATEGORIES.map((category) => (
-              <div key={category.key}>
+              <div key={category.key} id={category.key} className="scroll-mt-24">
                 <Eyebrow>{category.label}</Eyebrow>
                 <ScrollReveal
                   stagger={0.04}
@@ -278,48 +257,54 @@ export default function FeaturesHubPage() {
         </Container>
       </Section>
 
-      {/* ---- Core/Pro split --------------------------------------------- */}
-      <Section surface="dark" spacing="md">
+      {/* ---- Trial and refund guarantee --------------------------------- */}
+      <Section surface="surface" spacing="md">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-            <div>
-              <Eyebrow className="text-on-dark">Module split</Eyebrow>
-              <h2 className="mt-4 font-display text-4xl text-balance sm:text-display-sm">
-                Start with the core. Add Pro when automation matters.
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-on-dark-muted text-pretty">
-                The hub exposes {CORE_MODULE_COUNT} feature cards in the
-                free/core-accessible path. {PRO_ONLY_MODULE_COUNT} feature cards
-                require Pro, including Multi-Login Prevention, Store Credit,
-                Feature Manager, and Gateway Health.
-              </p>
-            </div>
-            <ul className="grid gap-[0.1875rem] sm:grid-cols-3">
-              <li className="rounded-2xl border border-on-dark-border bg-dark-2 p-6 text-center">
-                <span className="block font-display text-5xl font-semibold text-highlight">
-                  {MODULE_COUNT}
-                </span>
-                <span className="mt-2 block text-sm text-on-dark-muted">
-                  total features
-                </span>
-              </li>
-              <li className="rounded-2xl border border-on-dark-border bg-dark-2 p-6 text-center">
-                <span className="block font-display text-5xl font-semibold text-highlight">
-                  {CORE_MODULE_COUNT}
-                </span>
-                <span className="mt-2 block text-sm text-on-dark-muted">
-                  core-available features
-                </span>
-              </li>
-              <li className="rounded-2xl border border-on-dark-border bg-dark-2 p-6 text-center">
-                <span className="block font-display text-5xl font-semibold text-highlight">
-                  {PRO_ONLY_MODULE_COUNT}
-                </span>
-                <span className="mt-2 block text-sm text-on-dark-muted">
-                  Pro-only features
-                </span>
-              </li>
-            </ul>
+          <div className="grid items-stretch gap-[0.1875rem] lg:grid-cols-2">
+            <article className="flex h-full flex-col rounded-2xl bg-card p-6 text-foreground sm:p-8">
+              <img
+                src="/shapes/10-day-trial.png"
+                alt="10 day trial, no credit card required"
+                width={1574}
+                height={586}
+                className="mx-auto w-full max-w-[34rem]"
+              />
+              <div className="mt-auto flex flex-col items-center pt-8 text-center">
+                <Button
+                  href={GET_PRO}
+                  size="lg"
+                  magnetic
+                  iconRight={<ArrowRight className="size-5" />}
+                >
+                  Choose trial now
+                </Button>
+                <p className="mt-3 text-sm font-semibold text-muted">
+                  Use it first. Pay later.
+                </p>
+              </div>
+            </article>
+
+            <article className="grid h-full items-center gap-8 rounded-2xl p-6 text-foreground sm:p-8 md:grid-cols-[10rem_1fr]">
+              <img
+                src="/shapes/30-days-refund-removebg.png"
+                alt="30 days refund guarantee"
+                width={500}
+                height={500}
+                className="mx-auto w-full max-w-40 md:mx-0"
+              />
+              <div>
+                <p className="text-sm font-semibold tracking-wide text-primary uppercase">
+                  30-day guarantee
+                </p>
+                <h2 className="mt-3 font-display text-3xl text-balance sm:text-4xl">
+                  Try ArraySubs Pro without second thoughts.
+                </h2>
+                <p className="mt-4 text-muted text-pretty">
+                  If the Pro workflow is not the right fit, request a refund
+                  within 30 days. No drawn-out review, no pressure to stay.
+                </p>
+              </div>
+            </article>
           </div>
         </Container>
       </Section>
@@ -352,15 +337,11 @@ export default function FeaturesHubPage() {
           <SectionTitle
             eyebrow="Free vs Pro"
             title="What's in each plan"
-            subtitle={`${CORE_MODULE_COUNT} features are available in the free/core path. ${PRO_ONLY_MODULE_COUNT} features are Pro-only, and Pro also deepens several shared features with automation and reporting.`}
+            subtitle={`All ${MODULE_COUNT} features are listed below. ${PRO_ONLY_MODULE_COUNT} Pro-only features come first, followed by shared and free/core features.`}
             align="center"
           />
           <div className="mt-12">
-            <ComparisonTable
-              caption="ArraySubs feature availability in the Free core versus Pro, grouped by category."
-              columns={COMPARISON_COLUMNS}
-              groups={COMPARISON_GROUPS}
-            />
+            <FreeVsProTable />
           </div>
         </Container>
       </Section>
@@ -417,10 +398,10 @@ export default function FeaturesHubPage() {
           <CTA
             surface="primary"
             flat
-            eyebrow="Paid Pro plans"
+            eyebrow="Pro upgrade"
             title="Unlock the complete Pro stack"
-            subtitle="Install the free core today, then choose a paid Pro plan when you need advanced features, automation, analytics, and payment workflows."
-            microcopy="No credit card required · Plans from $129/year · Lifetime options available"
+            subtitle="Install the free core today, then activate Pro when you need advanced features, automation, analytics, and payment workflows."
+            microcopy="No credit card required · Annual and lifetime options available"
             actions={
               <>
                 <Button

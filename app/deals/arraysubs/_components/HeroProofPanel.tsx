@@ -1,11 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import {
-  Check,
-  HeartHandshake,
-  Sparkles,
-} from "lucide-react";
+import { HeartHandshake, Sparkles } from "lucide-react";
 import {
   gsap,
   prefersReducedMotion,
@@ -32,40 +28,6 @@ const saveFlow = [
   "Reason captured",
   "Offer shown",
   "Subscriber saved",
-];
-
-const billingFeatureTags = [
-  "Recurring products",
-  "Free trials",
-  "Sign-up fees",
-  "Variable billing",
-  "Manual renewals",
-  "Stripe billing",
-  "PayPal billing",
-  "Paddle MOR",
-  "Grace period",
-  "Auto retry",
-  "Auto downgrade",
-  "Invoice payment",
-];
-
-const growthFeatureTags = [
-  "Member access",
-  "URL restriction",
-  "Content dripping",
-  "Role mapping",
-  "Customer portal",
-  "Skip & pause",
-  "Plan switching",
-  "Proration",
-  "Retention offers",
-  "Store credit",
-  "MRR analytics",
-  "Churn analytics",
-  "Audit logs",
-  "Usage limits",
-  "Multi-login control",
-  "Checkout builder",
 ];
 
 function formatMetric(value: number, format: MetricFormat) {
@@ -109,7 +71,7 @@ export function HeroProofPanel() {
     <div
       ref={rootRef}
       className="relative min-w-0"
-      aria-label="ArraySubs subscription, membership, retention and analytics proof panel"
+      aria-label="ArraySubs subscription, membership and retention proof panel"
     >
       <div className="grid gap-[0.1875rem]">
         <div data-proof-item className="rounded-xl bg-card p-4 sm:p-5">
@@ -120,8 +82,8 @@ export function HeroProofPanel() {
                 Live retention engine
               </span>
               <p className="mt-3 max-w-4xl text-lg leading-8 font-medium text-muted text-pretty sm:text-xl">
-                ArraySubs replaces five disconnected tools with one integrated
-                plugin — so you launch in minutes, recover failed payments
+                ArraySubs replaces six disconnected plugins with one integrated
+                system — so you launch in minutes, recover failed payments
                 automatically, and turn cancellations into saves.
               </p>
             </div>
@@ -156,77 +118,28 @@ export function HeroProofPanel() {
           ))}
         </div>
 
-        <div className="grid items-stretch gap-[0.1875rem] lg:grid-cols-2">
-          <div data-proof-item className="flex h-full flex-col rounded-xl bg-card p-4">
-            <div className="flex items-center justify-between gap-3">
-              <span className="text-xs font-semibold text-faint uppercase">
-                Cancellation save flow
-              </span>
-              <HeartHandshake className="size-4 text-primary" />
-            </div>
-            <ol className="mt-3 grid flex-1 gap-[0.1875rem]">
-              {saveFlow.map((step, index) => (
-                <li
-                  key={step}
-                  className="flex items-center gap-3 rounded-lg bg-surface px-3 py-2.5"
-                >
-                  <span className="inline-flex size-7 shrink-0 items-center justify-center rounded-full bg-card text-xs font-semibold text-primary">
-                    {index + 1}
-                  </span>
-                  <span className="text-sm font-semibold text-foreground">
-                    {step}
-                  </span>
-                </li>
-              ))}
-            </ol>
+        <div data-proof-item className="rounded-xl bg-card p-4 sm:p-5">
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-xs font-semibold text-faint uppercase">
+              Cancellation save flow
+            </span>
+            <HeartHandshake className="size-4 text-primary" />
           </div>
-
-          <div data-proof-item className="grid h-full gap-[0.1875rem]">
-            <div className="rounded-xl bg-card p-4">
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-xs font-semibold text-faint uppercase">
-                  Billing feature tags
+          <ol className="mt-3 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-4">
+            {saveFlow.map((step, index) => (
+              <li
+                key={step}
+                className="flex items-center gap-3 rounded-lg bg-surface px-3 py-2.5"
+              >
+                <span className="inline-flex size-7 shrink-0 items-center justify-center rounded-full bg-card text-xs font-semibold text-primary">
+                  {index + 1}
                 </span>
-                <span className="rounded-pill bg-surface px-2.5 py-1 text-xs font-semibold text-primary">
-                  Payments
+                <span className="text-sm font-semibold text-foreground">
+                  {step}
                 </span>
-              </div>
-
-              <ul className="mt-3 flex flex-wrap gap-[0.1875rem]">
-                {billingFeatureTags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="inline-flex items-center rounded-pill border border-border bg-transparent px-2.5 py-1.5 text-xs font-semibold text-foreground"
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-xl bg-card p-4">
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-xs font-semibold text-faint uppercase">
-                  Growth feature tags
-                </span>
-                <span className="rounded-pill bg-surface px-2.5 py-1 text-xs font-semibold text-primary">
-                  Store ops
-                </span>
-              </div>
-
-              <ul className="mt-3 flex flex-wrap gap-[0.1875rem]">
-                {growthFeatureTags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="inline-flex items-center gap-1.5 rounded-pill border border-border bg-transparent px-2.5 py-1.5 text-xs font-semibold text-foreground"
-                  >
-                    <Check className="size-3.5 shrink-0 text-primary" />
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </div>
