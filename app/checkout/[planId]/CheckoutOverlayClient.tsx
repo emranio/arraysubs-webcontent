@@ -9,7 +9,9 @@ import type { ArraySubsProPlan } from "../../deals/arraysubs/pricing/_plans";
 import {
   CHECKOUT_PRODUCT_ID,
   CHECKOUT_PUBLIC_KEY,
+  EARLY_BIRD_DISCOUNT_PERCENT,
   formatUsd,
+  getDiscountedPrice,
 } from "../../deals/arraysubs/pricing/_plans";
 
 type CheckoutConfig = {
@@ -46,6 +48,8 @@ declare global {
 const CHECKOUT_SCRIPT_URL = "https://checkout.freemius.com/js/v1/";
 
 export function CheckoutOverlayClient({ plan }: { plan: ArraySubsProPlan }) {
+  const annualPrice = getDiscountedPrice(plan.annualPrice);
+  const lifetimePrice = getDiscountedPrice(plan.lifetimePrice);
   const [scriptReady, setScriptReady] = useState(false);
   const [status, setStatus] = useState<"loading" | "ready" | "success" | "error">(
     "loading",
@@ -163,8 +167,25 @@ export function CheckoutOverlayClient({ plan }: { plan: ArraySubsProPlan }) {
           <p className="mt-4 text-sm text-muted text-pretty">
             Selected plan:{" "}
             <span className="font-semibold text-foreground">{plan.name}</span>,{" "}
-            {plan.siteLabel}. Annual price {formatUsd(plan.annualPrice)};
-            lifetime option {formatUsd(plan.lifetimePrice)}.
+            {plan.siteLabel}.{" "}
+            <span className="font-semibold text-[#FE8218]">
+              {EARLY_BIRD_DISCOUNT_PERCENT}% off
+            </span>{" "}
+            annual price{" "}
+            <span className="line-through decoration-muted/70">
+              {formatUsd(plan.annualPrice)}
+            </span>{" "}
+            <span className="font-semibold text-foreground">
+              {formatUsd(annualPrice)}
+            </span>
+            ; lifetime option{" "}
+            <span className="line-through decoration-muted/70">
+              {formatUsd(plan.lifetimePrice)}
+            </span>{" "}
+            <span className="font-semibold text-foreground">
+              {formatUsd(lifetimePrice)}
+            </span>
+            .
           </p>
           <div className="mt-7 max-w-sm">
             <Button

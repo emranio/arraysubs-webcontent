@@ -8,6 +8,7 @@ import { HEADER_NAV_ITEMS } from "@/lib/navigation";
 import { site, withTrailingSlash } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Magnetic } from "@/components/animation/Magnetic";
 import { MobileMenu } from "./MobileMenu";
 
 export function SiteHeader() {
@@ -104,15 +105,20 @@ export function SiteHeader() {
                 })}
               </nav>
 
-              <Button
-                href="/deals/arraysubs/pricing/"
-                size="xs"
-                magnetic
-                onClick={close}
-                className="hidden sm:inline-flex"
-              >
-                Pricing Plans
-              </Button>
+              <Magnetic className="hidden sm:inline-flex">
+                <span className="relative inline-flex">
+                  <span className="pointer-events-none absolute -top-2 -right-2 z-20 rounded-pill bg-[#FE8218] px-1.5 py-0.5 text-[0.625rem] leading-none font-extrabold tracking-wide text-white uppercase shadow-sm">
+                    30% off
+                  </span>
+                  <Button
+                    href="/deals/arraysubs/pricing/"
+                    size="xs"
+                    onClick={close}
+                  >
+                    Pricing Plans
+                  </Button>
+                </span>
+              </Magnetic>
 
               {/* Hamburger / X toggle for mobile/tablet */}
               <button

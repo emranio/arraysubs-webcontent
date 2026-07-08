@@ -10,9 +10,12 @@ import {
 } from "@/components/ui";
 import {
   ARRAYSUBS_PRO_PLANS,
+  EARLY_BIRD_DISCOUNT_PERCENT,
   PRO_PLAN_FEATURES,
   formatUsd,
   getArraySubsProPlan,
+  getCheckoutHref,
+  getDiscountedPrice,
 } from "../../deals/arraysubs/pricing/_plans";
 import { CheckoutOverlayClient } from "./CheckoutOverlayClient";
 
@@ -34,10 +37,13 @@ export async function generateMetadata({
     return {};
   }
 
+  const annualPrice = getDiscountedPrice(plan.annualPrice);
+  const lifetimePrice = getDiscountedPrice(plan.lifetimePrice);
+
   return createMetadata({
     title: `${plan.name} Checkout — ArraySubs Pro`,
-    description: `Complete your ArraySubs Pro ${plan.name} checkout securely. ${plan.siteLabel}, ${formatUsd(plan.annualPrice)} yearly, lifetime option ${formatUsd(plan.lifetimePrice)}.`,
-    path: `/checkout/${plan.id}/`,
+    description: `Complete your ArraySubs Pro ${plan.name} checkout securely. ${plan.siteLabel}, ${EARLY_BIRD_DISCOUNT_PERCENT}% off early-bird pricing: ${formatUsd(annualPrice)} yearly, lifetime option ${formatUsd(lifetimePrice)}.`,
+    path: getCheckoutHref(plan.id),
     noindex: true,
   });
 }
@@ -54,6 +60,9 @@ export default async function ArraySubsCheckoutPage({
     notFound();
   }
 
+  const annualPrice = getDiscountedPrice(plan.annualPrice);
+  const lifetimePrice = getDiscountedPrice(plan.lifetimePrice);
+
   return (
     <>
       <PageHero
@@ -61,15 +70,16 @@ export default async function ArraySubsCheckoutPage({
           { name: "Home", href: "/" },
           { name: "ArraySubs", href: "/deals/arraysubs/" },
           { name: "Pricing Plan", href: "/deals/arraysubs/pricing/" },
-          { name: `${plan.name} Checkout`, href: `/checkout/${plan.id}/` },
+          { name: `${plan.name} Checkout`, href: getCheckoutHref(plan.id) },
         ]}
         title={`${plan.name} checkout.`}
         subtitle="Secure checkout opens automatically on this page. Complete checkout to receive your ArraySubs Pro license and account details."
         highlights={[
           `Plan ID ${plan.id}`,
           plan.siteLabel,
-          `${formatUsd(plan.annualPrice)} yearly`,
-          `${formatUsd(plan.lifetimePrice)} lifetime`,
+          `${EARLY_BIRD_DISCOUNT_PERCENT}% off early bird`,
+          `${formatUsd(annualPrice)} yearly`,
+          `${formatUsd(lifetimePrice)} lifetime`,
         ]}
         actions={
           <Button
@@ -96,12 +106,29 @@ export default async function ArraySubsCheckoutPage({
                 <p className="text-sm font-semibold tracking-wide text-faint uppercase">
                   ArraySubs Pro {plan.name}
                 </p>
-                <p className="mt-3 font-display text-5xl font-semibold">
-                  {formatUsd(plan.annualPrice)}
-                </p>
+                <div className="mt-3 inline-flex items-center rounded-pill bg-[#FE8218] px-2.5 py-1 text-xs font-extrabold tracking-wide text-white uppercase">
+                  {EARLY_BIRD_DISCOUNT_PERCENT}% off
+                </div>
+                <div className="mt-4 flex flex-wrap items-end gap-x-3 gap-y-1">
+                  <span className="pb-2 text-sm font-semibold text-muted line-through decoration-muted/70">
+                    {formatUsd(plan.annualPrice)}
+                  </span>
+                  <span className="font-display text-5xl leading-none font-semibold">
+                    {formatUsd(annualPrice)}
+                  </span>
+                  <span className="pb-1.5 text-sm font-semibold text-muted">
+                    / year
+                  </span>
+                </div>
                 <p className="mt-2 text-sm text-muted">
                   Annual license for {plan.siteLabel}. Lifetime option{" "}
-                  {formatUsd(plan.lifetimePrice)}.
+                  <span className="line-through decoration-muted/70">
+                    {formatUsd(plan.lifetimePrice)}
+                  </span>{" "}
+                  <span className="font-semibold text-foreground">
+                    {formatUsd(lifetimePrice)}
+                  </span>
+                  .
                 </p>
               </div>
               <p className="mt-6 text-muted text-pretty">{plan.summary}</p>

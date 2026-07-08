@@ -33,13 +33,19 @@ import {
 } from "@/components/ui";
 import { FreeVsProTable } from "../_components/FreeVsProTable";
 import { PricingPlanCards } from "./PricingPlanCards";
-import { ARRAYSUBS_PRO_PLANS } from "./_plans";
+import {
+  ARRAYSUBS_PRO_PLANS,
+  EARLY_BIRD_DISCOUNT_PERCENT,
+  formatUsd,
+  getCheckoutHref,
+  getDiscountedPrice,
+} from "./_plans";
 
 export const metadata: Metadata = {
   ...createMetadata({
     title: "ArraySubs Pro Pricing",
     description:
-      "Choose an ArraySubs Pro plan for 1, 10, or 1000 sites. Every paid plan includes the full Pro feature set, annual and lifetime options, and a 30-day money-back guarantee.",
+      "Choose an ArraySubs Pro plan for 1, 10, or 1000 sites. Early bird plans are 30% off, and every paid plan includes the full Pro feature set, annual and lifetime options, and a 30-day money-back guarantee.",
     path: "/deals/arraysubs/pricing/",
   }),
   title: { absolute: "ArraySubs Pro Pricing" },
@@ -204,7 +210,7 @@ export default function ArraySubsPricingPage() {
           <SectionTitle
             eyebrow="Plans"
             title="Pick the license size that matches your store count"
-            subtitle="No feature gating between paid tiers. Personal, Professional, and Agency all unlock the full Pro stack."
+            subtitle={`${EARLY_BIRD_DISCOUNT_PERCENT}% early bird pricing is active on every annual and lifetime plan. Personal, Professional, and Agency all unlock the full Pro stack.`}
             align="left"
           />
           <PricingPlanCards />
@@ -267,7 +273,7 @@ export default function ArraySubsPricingPage() {
               />
               <div className="mt-auto flex flex-col items-center pt-8 text-center">
                 <Button
-                  href={`/checkout/${TRIAL_PLAN.id}/`}
+                  href={getCheckoutHref(TRIAL_PLAN.id)}
                   size="lg"
                   magnetic
                   iconRight={<ArrowRight className="size-5" />}
@@ -316,7 +322,9 @@ export default function ArraySubsPricingPage() {
           <div className="mt-12">
             <FreeVsProTable
               freeOffer="$0 — free forever"
-              proOffer="Paid plans from $129/yr"
+              proOffer={`Paid plans from ${formatUsd(
+                getDiscountedPrice(TRIAL_PLAN.annualPrice),
+              )}/yr`}
             />
           </div>
         </Container>

@@ -26,7 +26,8 @@ import {
   type FeatureTier,
 } from "./features/_data";
 import { FreeVsProTable } from "./_components/FreeVsProTable";
-import { HeroProofPanel } from "./_components/HeroProofPanel";
+import { MembershipLockSection } from "./_components/MembershipLockSection";
+import { RetentionEnginePanel } from "./_components/RetentionEnginePanel";
 import { ARRAYSUBS_PRO_PLANS } from "./pricing/_plans";
 
 export const metadata: Metadata = {
@@ -112,20 +113,6 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
     surface: "default",
   },
   {
-    eyebrow: "Memberships & content",
-    title: "Gate anything a plan should unlock",
-    lead: "Restrict pages, posts, custom post types, URL paths, Elementor containers, and Gutenberg blocks by subscription — then drip content on a schedule and reward members automatically.",
-    bullets: [
-      "Access rules by plan, role, purchase value, or Pro feature conditions",
-      "Content dripping, restricted downloads, and partial content teasers",
-      "Member-only discounts applied across the whole shop",
-    ],
-    linkLabel: "All membership features",
-    linkHref: `${ALL_FEATURES}#member-experience`,
-    slugs: ["member-access", "content-dripping", "restricted-downloads", "member-discounts"],
-    surface: "surface",
-  },
-  {
     eyebrow: "Retention",
     title: "The cancel button becomes a save flow",
     lead: "When a customer heads for the exit, the Retention Flow Builder captures the reason and answers with the right counter-offer — while portal self-service quietly prevents the ticket in the first place.",
@@ -142,13 +129,17 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
       "plan-switching",
       "pause-vacation-mode",
     ],
-    surface: "default",
+    surface: "surface",
   },
 ];
 
 const SHOWCASED_SLUGS = new Set(BENEFIT_BLOCKS.flatMap((block) => block.slugs));
+// Membership features get their own dedicated MembershipLockSection, so keep the
+// whole member-experience category out of the "everything else" marquee.
 const MARQUEE_FEATURES = FEATURES.filter(
-  (feature) => !SHOWCASED_SLUGS.has(feature.slug),
+  (feature) =>
+    !SHOWCASED_SLUGS.has(feature.slug) &&
+    feature.category !== "member-experience",
 );
 
 /* ---- How it starts ------------------------------------------------------ */
@@ -260,13 +251,6 @@ export default function ArraySubsPage() {
         trust="Free core on WordPress.org · 10-day Pro trial — no credit card · 30-day money-back guarantee"
       />
 
-      {/* ---- Proof panel (JSX mockup, no screenshots needed) ------------- */}
-      <Section surface="default" spacing="md">
-        <Container>
-          <HeroProofPanel />
-        </Container>
-      </Section>
-
       {/* ---- Problem → positioning --------------------------------------- */}
       <Section surface="dark" spacing="lg">
         <Container>
@@ -283,6 +267,13 @@ export default function ArraySubsPage() {
             ArraySubs ships the whole stack as one system on one subscription
             record.
           </p>
+        </Container>
+      </Section>
+
+      {/* ---- Live retention engine proof (JSX mockup, no screenshots) ---- */}
+      <Section surface="surface" spacing="md">
+        <Container>
+          <RetentionEnginePanel />
         </Container>
       </Section>
 
@@ -356,6 +347,9 @@ export default function ArraySubsPage() {
           </Container>
         </Section>
       ))}
+
+      {/* ---- Membership spotlight (dedicated creative section) ----------- */}
+      <MembershipLockSection />
 
       {/* ---- Everything else, drifting past --------------------------------- */}
       <Section surface="surface" spacing="md">

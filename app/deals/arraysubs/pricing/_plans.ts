@@ -12,6 +12,7 @@ export type ArraySubsProPlan = {
 
 export const CHECKOUT_PRODUCT_ID = "33435";
 export const CHECKOUT_PUBLIC_KEY = "pk_ab1c211d5fa5e6aabcd0f9fd43c91";
+export const EARLY_BIRD_DISCOUNT_PERCENT = 30;
 
 export const ARRAYSUBS_PRO_PLANS: ArraySubsProPlan[] = [
   {
@@ -62,6 +63,14 @@ export const PRO_PLAN_FEATURES = [
 
 export function getArraySubsProPlan(planId: string) {
   return ARRAYSUBS_PRO_PLANS.find((plan) => plan.id === planId);
+}
+
+export function getCheckoutHref(planId: string) {
+  return `/checkout/${planId}/`;
+}
+
+export function getDiscountedPrice(amount: number) {
+  return Math.round(amount * ((100 - EARLY_BIRD_DISCOUNT_PERCENT) / 100));
 }
 
 export function formatUsd(amount: number) {

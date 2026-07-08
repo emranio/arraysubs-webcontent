@@ -4,7 +4,12 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { Badge, Button } from "@/components/ui";
-import { ARRAYSUBS_PRO_PLANS, formatUsd } from "./_plans";
+import {
+  ARRAYSUBS_PRO_PLANS,
+  formatUsd,
+  getCheckoutHref,
+  getDiscountedPrice,
+} from "./_plans";
 
 type BillingCycle = "yearly" | "lifetime";
 
@@ -84,12 +89,19 @@ export function PricingPlanCards() {
       <div className="mt-8 grid items-stretch gap-[0.1875rem] lg:grid-cols-3">
         {ARRAYSUBS_PRO_PLANS.map((plan) => {
           const isFeatured = Boolean(plan.badge);
-          const price = isLifetime ? plan.lifetimePrice : plan.annualPrice;
+          const originalPrice = isLifetime
+            ? plan.lifetimePrice
+            : plan.annualPrice;
+          const price = getDiscountedPrice(originalPrice);
           const priceSuffix = isLifetime ? "/ lifetime" : "/ year";
           const alternateLabel = isLifetime ? "Yearly option" : "Lifetime option";
-          const alternatePrice = isLifetime
-            ? `${formatUsd(plan.annualPrice)}/year`
-            : formatUsd(plan.lifetimePrice);
+          const alternateOriginalPrice = isLifetime
+            ? plan.annualPrice
+            : plan.lifetimePrice;
+          const alternatePrice = getDiscountedPrice(alternateOriginalPrice);
+          const oldPriceTextClass = isFeatured
+            ? "text-on-dark/75 decoration-on-dark/70"
+            : "text-muted decoration-muted/70";
 
           return (
             <article
@@ -123,18 +135,38 @@ export function PricingPlanCards() {
               </p>
 
               <div className="mt-8">
-                <div className="flex items-end gap-2">
-                  <span className="font-display text-5xl font-semibold">
-                    {formatUsd(price)}
-                  </span>
-                  <span
-                    className={cn(
-                      "pb-2 text-sm font-semibold",
-                      isFeatured ? featuredMutedClass : "text-muted",
-                    )}
-                  >
-                    {priceSuffix}
-                  </span>
+                <div className="rounded-xl border border-current/10 bg-white/10 p-4 shadow-inner shadow-white/10">
+                  <div className="flex items-center justify-between gap-4">
+                    <span
+                      className={cn(
+                        "text-xs font-bold tracking-wide uppercase",
+                        isFeatured ? featuredMutedClass : "text-muted",
+                      )}
+                    >
+                      Early bird price
+                    </span>
+                  </div>
+                  <div className="mt-3 flex flex-wrap items-end gap-x-3 gap-y-1">
+                    <span
+                      className={cn(
+                        "pb-2 text-sm font-semibold line-through",
+                        oldPriceTextClass,
+                      )}
+                    >
+                      {formatUsd(originalPrice)}
+                    </span>
+                    <span className="font-display text-6xl leading-none font-semibold">
+                      {formatUsd(price)}
+                    </span>
+                    <span
+                      className={cn(
+                        "pb-2 text-sm font-semibold",
+                        isFeatured ? featuredMutedClass : "text-muted",
+                      )}
+                    >
+                      {priceSuffix}
+                    </span>
+                  </div>
                 </div>
                 <p
                   className={cn(
@@ -145,11 +177,23 @@ export function PricingPlanCards() {
                   {alternateLabel}:{" "}
                   <span
                     className={cn(
+                      "mr-1.5 font-semibold line-through",
+                      oldPriceTextClass,
+                    )}
+                  >
+                    {isLifetime
+                      ? `${formatUsd(alternateOriginalPrice)}/year`
+                      : formatUsd(alternateOriginalPrice)}
+                  </span>
+                  <span
+                    className={cn(
                       "font-semibold",
                       isFeatured ? featuredTextClass : "text-foreground",
                     )}
                   >
-                    {alternatePrice}
+                    {isLifetime
+                      ? `${formatUsd(alternatePrice)}/year`
+                      : formatUsd(alternatePrice)}
                   </span>
                 </p>
               </div>
@@ -173,7 +217,7 @@ export function PricingPlanCards() {
 
               <div className="mt-auto pt-12">
                 <Button
-                  href={`/checkout/${plan.id}/`}
+                  href={getCheckoutHref(plan.id)}
                   variant={isFeatured ? "dark" : accentTone}
                   size="lg"
                   fullWidth
