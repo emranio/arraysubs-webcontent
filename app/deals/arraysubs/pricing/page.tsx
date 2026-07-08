@@ -304,9 +304,8 @@ export default function ArraySubsPricingPage() {
                   stop until renewal.
                 </span>
               </p>
-              <p className="rounded-sm bg-highlight px-4 py-3 text-foreground">
-                Lifetime plans continue receiving Pro support, new features,
-                and security updates without yearly renewal.
+              <p className=" ">
+                <span className="bg-highlight text-foreground"><span className="font-semibold leading-tight">Lifetime plans</span> are a one-time purchase and  continue receiving Pro support, new features, and security updates without yearly renewal.</span>
               </p>
               <p>
                 <span className="font-semibold text-foreground">
