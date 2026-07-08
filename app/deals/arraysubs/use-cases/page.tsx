@@ -54,9 +54,10 @@ export default function UseCasesHubPage() {
             magnetic
             iconRight={<ArrowRight className="size-5" />}
           >
-            View Pro Pricing
+            Start Trial
           </Button>
         }
+        trust="No credit card required"
       />
 
       {/* ---- Use case grid ---------------------------------------------- */}
@@ -160,7 +161,7 @@ export default function UseCasesHubPage() {
             eyebrow="Paid Pro plans"
             title="Unlock Pro workflows when you need them"
             subtitle="Install the free core today, then choose a paid Pro plan for advanced modules, automation, analytics, and payment workflows."
-            microcopy="Plans from $129/year · Lifetime options available"
+            microcopy="No credit card required · Plans from $129/year · Lifetime options available"
             actions={
               <Button
                 href={GET_PRO}
@@ -170,7 +171,7 @@ export default function UseCasesHubPage() {
                 magnetic
                 iconRight={<ArrowRight className="size-5" />}
                 >
-                View Pricing
+                Start Trial
               </Button>
             }
           />

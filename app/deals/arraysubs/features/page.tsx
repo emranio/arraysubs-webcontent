@@ -38,7 +38,7 @@ const CATEGORY_COUNT = FEATURE_CATEGORIES.length;
 export const metadata: Metadata = createMetadata({
   title: "All Features — WooCommerce Subscriptions & Memberships",
   description:
-    `Explore all ${MODULE_COUNT} ArraySubs feature modules — subscriptions, memberships, billing, retention, store credit, checkout builder, analytics, site access tools, and more. ${CORE_MODULE_COUNT} modules are available in the core path, with ${PRO_ONLY_MODULE_COUNT} Pro-only modules.`,
+    `Explore all ${MODULE_COUNT} ArraySubs feature cards — subscriptions, memberships, billing, payment gateways, retention, store credit, checkout builder, analytics, site access tools, and more. ${CORE_MODULE_COUNT} are available in the core path, with ${PRO_ONLY_MODULE_COUNT} Pro-only features.`,
   path: "/deals/arraysubs/features/",
 });
 
@@ -75,15 +75,21 @@ const SYSTEMS = [
   },
   {
     tag: "Toolkit",
-    title: "WordPress access cleanup for member sites",
+    title: "Guided setup, page builders, and access cleanup",
     description:
-      "Admin bar visibility, dashboard redirects, My Account login routing, Login as User, and Pro session limits are dedicated modules.",
+      "Easy Setup Wizard, Checkout Page Builder, My Account Page Builder, login routing, dashboard cleanup, support impersonation, and Pro session limits sit together.",
   },
   {
     tag: "Products",
-    title: "Products, checkout, coupons, and entitlements",
+    title: "Products, checkout URLs, coupons, and entitlements",
     description:
-      "Subscription products, coupons, checkout and payments, product redirects, shipping, and Feature Manager shape how subscriptions are sold.",
+      "Subscription products, coupons, one-click checkout URLs, product redirects, shipping, and Feature Manager shape how subscriptions are sold.",
+  },
+  {
+    tag: "Payments",
+    title: "Gateways, manual payments, and tax",
+    description:
+      "Stripe, Paddle, PayPal, WooCommerce manual payments, and WooCommerce tax handling explain how subscription payments are collected.",
   },
   {
     tag: "Operations",
@@ -95,13 +101,13 @@ const SYSTEMS = [
     tag: "Members",
     title: "Accounts, access rules, and support context",
     description:
-      "Profile Builder, Shortcodes, Member Access, and Member Insight control the subscriber-facing account experience.",
+      "Profile Builder, Shortcodes, Member Access, Restricted Downloads, and Member Insight control the subscriber-facing account experience.",
   },
   {
     tag: "Revenue",
-    title: "Retention, refunds, analytics, and credit",
+    title: "Retention, analytics, and credit",
     description:
-      "Retention and Refunds, Retention Analytics, and Store Credit explain cancellations and keep more value inside the store.",
+      "Retention Flow Builder, Retention Analytics, and Store Credit explain cancellation behavior and keep more value inside the store.",
   },
   {
     tag: "Infra",
@@ -125,7 +131,7 @@ const SETUP_STEPS = [
   {
     title: "Layer in Pro modules",
     description:
-      `Add the ${PRO_ONLY_MODULE_COUNT} Pro-only root modules when the store needs credit, entitlements, shipping, gateway monitoring, and account sharing controls.`,
+      `Add the ${PRO_ONLY_MODULE_COUNT} Pro-only features when the store needs credit, entitlements, shipping, gateway monitoring, and account sharing controls.`,
   },
   {
     title: "Operate from shared data",
@@ -136,23 +142,23 @@ const SETUP_STEPS = [
 
 const FAQ_ITEMS = [
   {
-    question: "How many ArraySubs feature modules are there?",
-    answer: `There are ${MODULE_COUNT} public feature modules. ${CORE_MODULE_COUNT} are available in the free/core path, and ${PRO_ONLY_MODULE_COUNT} are Pro-only modules.`,
+    question: "How many ArraySubs feature cards are there?",
+    answer: `There are ${MODULE_COUNT} public feature cards. ${CORE_MODULE_COUNT} are available in the free/core path, and ${PRO_ONLY_MODULE_COUNT} features are Pro-only.`,
   },
   {
-    question: "Are Toolkit settings counted as modules?",
+    question: "What is in the Site Access Toolkit section?",
     answer:
-      "Yes. Admin Bar Visibility, Admin Dashboard Access, WordPress Login Page, Login as User, and Multi-Login Prevention are dedicated site-access modules even though their controls live on the Toolkit settings screen.",
+      "It groups Easy Setup Wizard, Checkout Page Builder, My Account Page Builder, and the WordPress-facing access modules: Admin Bar Visibility, Admin Dashboard Access, WordPress Login Page, Login as User, and Multi-Login Prevention.",
   },
   {
     question: "Which Toolkit module requires Pro?",
     answer:
-      "Multi-Login Prevention is Pro-only. Admin Bar Visibility, Admin Dashboard Access, WordPress Login Page, and Login as User are available in the free core.",
+      "Checkout Page Builder and Multi-Login Prevention are Pro-only. Easy Setup Wizard is core-accessible with Pro-only options, My Account Page Builder is core-accessible with Pro-added menu items, and the other access cleanup modules are available in the free core.",
   },
   {
     question: "Do I need Pro to run a subscription business?",
     answer:
-      "No. The free core covers subscription products, billing, customer portal actions, member access, retention offers, emails, setup, and the free Toolkit modules. Pro adds advanced automation, analytics, store credit, checkout builder, audits, Feature Manager, and Multi-Login Prevention.",
+      "No. The free core covers subscription products, billing, manual payment flows, customer portal actions, member access, retention offers, emails, setup, and the free Toolkit modules. Pro adds automatic gateways, advanced automation, analytics, store credit, checkout builder, audits, Feature Manager, and Multi-Login Prevention.",
   },
   {
     question: "Which root modules are Pro-only?",
@@ -174,12 +180,12 @@ export default function FeaturesHubPage() {
           <>
             <span className="block">{MODULE_COUNT}</span>
             <span className="block">ArraySubs</span>
-            <span className="block">modules</span>
+            <span className="block">features</span>
           </>
         }
-        subtitle={`${MODULE_COUNT} root-level modules from the current user manual. ${CORE_MODULE_COUNT} are free/core-accessible and ${PRO_ONLY_MODULE_COUNT} are Pro-only.`}
+        subtitle={`${MODULE_COUNT} manual-backed feature cards from the current user manual. ${CORE_MODULE_COUNT} are free/core-accessible and ${PRO_ONLY_MODULE_COUNT} features are Pro-only.`}
         highlights={[
-          `${MODULE_COUNT} feature modules`,
+          `${MODULE_COUNT} feature cards`,
           "Generous free-forever core",
           "Pro plans from $129/yr",
         ]}
@@ -190,18 +196,19 @@ export default function FeaturesHubPage() {
             magnetic
             iconRight={<ArrowRight className="size-5" />}
           >
-            View Pro Pricing
+            Start Trial
           </Button>
         }
+        trust="No credit card required"
       />
 
       <ModuleShowcase
         moduleCount={MODULE_COUNT}
         compact
         primaryHref={GET_PRO}
-        primaryLabel="View Pro Pricing"
+        primaryLabel="Start Trial"
         secondaryHref="#all-modules"
-        secondaryLabel="Browse modules"
+        secondaryLabel="Browse features"
       />
 
       {/* ---- Category grid ---------------------------------------------- */}
@@ -209,8 +216,8 @@ export default function FeaturesHubPage() {
         <Container>
           <SectionTitle
             eyebrow="All features"
-            title={`${MODULE_COUNT} modules, ${CATEGORY_COUNT} categories`}
-            subtitle="Browse every manual-backed root module by current user-manual module list, tier, and workflow ownership."
+            title={`${MODULE_COUNT} features, ${CATEGORY_COUNT} categories`}
+            subtitle="Browse the manual-backed feature grid by current user-manual coverage, tier, and workflow ownership."
             align="center"
           />
           <div className="mt-12 flex flex-col gap-12">
@@ -245,7 +252,7 @@ export default function FeaturesHubPage() {
       {/* ---- Feature systems -------------------------------------------- */}
       <Section surface="default" spacing="lg">
         <Container>
-          <Eyebrow>How the modules fit together</Eyebrow>
+          <Eyebrow>How the features fit together</Eyebrow>
           <div className="mt-4">
             <BigText size="display-lg" variant="primary">
               One subscription system, not a plugin pile.
@@ -281,8 +288,8 @@ export default function FeaturesHubPage() {
                 Start with the core. Add Pro when automation matters.
               </h2>
               <p className="mt-5 text-lg leading-8 text-on-dark-muted text-pretty">
-                The manual exposes {CORE_MODULE_COUNT} root modules in the
-                free/core-accessible path. {PRO_ONLY_MODULE_COUNT} root modules
+                The hub exposes {CORE_MODULE_COUNT} feature cards in the
+                free/core-accessible path. {PRO_ONLY_MODULE_COUNT} feature cards
                 require Pro, including Multi-Login Prevention, Store Credit,
                 Feature Manager, and Gateway Health.
               </p>
@@ -293,7 +300,7 @@ export default function FeaturesHubPage() {
                   {MODULE_COUNT}
                 </span>
                 <span className="mt-2 block text-sm text-on-dark-muted">
-                  total modules
+                  total features
                 </span>
               </li>
               <li className="rounded-2xl border border-on-dark-border bg-dark-2 p-6 text-center">
@@ -301,7 +308,7 @@ export default function FeaturesHubPage() {
                   {CORE_MODULE_COUNT}
                 </span>
                 <span className="mt-2 block text-sm text-on-dark-muted">
-                  core-available modules
+                  core-available features
                 </span>
               </li>
               <li className="rounded-2xl border border-on-dark-border bg-dark-2 p-6 text-center">
@@ -309,7 +316,7 @@ export default function FeaturesHubPage() {
                   {PRO_ONLY_MODULE_COUNT}
                 </span>
                 <span className="mt-2 block text-sm text-on-dark-muted">
-                  Pro-only modules
+                  Pro-only features
                 </span>
               </li>
             </ul>
@@ -323,7 +330,7 @@ export default function FeaturesHubPage() {
           <SectionTitle
             eyebrow="Workflow map"
             title="From first product to protected revenue"
-            subtitle="Use the modules in sequence, or turn on only the parts your store needs today."
+            subtitle="Use the features in sequence, or turn on only the parts your store needs today."
             align="center"
           />
           <div className="mt-12 grid gap-[0.1875rem] md:grid-cols-4">
@@ -345,7 +352,7 @@ export default function FeaturesHubPage() {
           <SectionTitle
             eyebrow="Free vs Pro"
             title="What's in each plan"
-            subtitle={`${CORE_MODULE_COUNT} modules are available in the free/core path. ${PRO_ONLY_MODULE_COUNT} root modules are Pro-only, and Pro also deepens several shared modules with automation and reporting.`}
+            subtitle={`${CORE_MODULE_COUNT} features are available in the free/core path. ${PRO_ONLY_MODULE_COUNT} features are Pro-only, and Pro also deepens several shared features with automation and reporting.`}
             align="center"
           />
           <div className="mt-12">
@@ -365,13 +372,13 @@ export default function FeaturesHubPage() {
             <div>
               <Eyebrow>Site access toolkit</Eyebrow>
               <h2 className="mt-4 font-display text-4xl text-balance text-dark sm:text-display-sm">
-                Toolkit settings are now first-class modules.
+                Site access is now a first-class section.
               </h2>
               <p className="mt-5 text-lg leading-8 text-dark/80 text-pretty">
-                These modules clean up WordPress for customer-facing subscription
-                sites: hide backend chrome, route logins properly, support
-                customers by impersonating their portal, and enforce session
-                limits with Pro. Four are free; Multi-Login Prevention is Pro.
+                These features clean up WordPress for customer-facing subscription
+                sites: guide setup, shape checkout and My Account pages, hide
+                backend chrome, route logins properly, support customers by
+                impersonating their portal, and enforce session limits with Pro.
               </p>
             </div>
             <div className="grid gap-[0.1875rem] sm:grid-cols-2">
@@ -412,8 +419,8 @@ export default function FeaturesHubPage() {
             flat
             eyebrow="Paid Pro plans"
             title="Unlock the complete Pro stack"
-            subtitle="Install the free core today, then choose a paid Pro plan when you need advanced modules, automation, analytics, and payment workflows."
-            microcopy="Plans from $129/year · Lifetime options available"
+            subtitle="Install the free core today, then choose a paid Pro plan when you need advanced features, automation, analytics, and payment workflows."
+            microcopy="No credit card required · Plans from $129/year · Lifetime options available"
             actions={
               <>
                 <Button
@@ -424,7 +431,7 @@ export default function FeaturesHubPage() {
                   magnetic
                   iconRight={<ArrowRight className="size-5" />}
                 >
-                  View Pricing
+                  Start Trial
                 </Button>
                 <Button
                   href="#all-modules"
@@ -434,7 +441,7 @@ export default function FeaturesHubPage() {
                   magnetic
                   iconRight={<Check className="size-5" />}
                 >
-                  Review modules
+                  Review features
                 </Button>
               </>
             }

@@ -79,9 +79,10 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
             magnetic
             iconRight={<ArrowRight className="size-5" />}
           >
-            View Pro Pricing
+            Start Trial
           </Button>
         }
+        trust="No credit card required"
       />
 
       {/* ---- Overview + outcomes ---------------------------------------- */}
@@ -351,7 +352,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
             eyebrow="Paid Pro plans"
             title="Unlock the complete Pro stack"
             subtitle="Start on the free-forever core today, then choose a paid Pro plan when you need the advanced Pro feature set."
-            microcopy="Plans from $129/year · Lifetime options available"
+            microcopy="No credit card required · Plans from $129/year · Lifetime options available"
             actions={
               <Button
                 href={RECIPE_CTA}
@@ -361,7 +362,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
                 magnetic
                 iconRight={<ArrowRight className="size-5" />}
               >
-                View Pricing
+                Start Trial
               </Button>
             }
           />

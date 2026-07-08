@@ -81,9 +81,10 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
             magnetic
             iconRight={<ArrowRight className="size-5" />}
           >
-            View Pro Pricing
+            Start Trial
           </Button>
         }
+        trust="No credit card required"
       />
 
       {/* ---- Verdict / TL;DR (answer-first — the GEO money block) -------- */}
@@ -302,7 +303,7 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
                   href={GET_PRO}
                   iconRight={<ArrowRight className="size-5" />}
                 >
-                  View Pricing
+                  Start Trial
                 </Button>
               </div>
             </div>
@@ -359,7 +360,7 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
             eyebrow="Paid Pro plans"
             title="Choose the ArraySubs Pro plan that fits"
             subtitle="Install the free core today, then upgrade securely when you need the full Pro feature set."
-            microcopy="Plans from $129/year · Lifetime options available"
+            microcopy="No credit card required · Plans from $129/year · Lifetime options available"
             actions={
               <Button
                 href={GET_PRO}
@@ -369,7 +370,7 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
                 magnetic
                 iconRight={<ArrowRight className="size-5" />}
               >
-                View Pricing
+                Start Trial
               </Button>
             }
           />

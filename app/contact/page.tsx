@@ -172,6 +172,7 @@ export default function ContactPage() {
             eyebrow="Ready to buy"
             title="Choose an ArraySubs Pro plan"
             subtitle="Personal, Professional, and Agency all include the full Pro feature set. Pick the site count that fits your store."
+            microcopy="No credit card required"
             actions={
               <>
                 <Button
@@ -181,7 +182,7 @@ export default function ContactPage() {
                   layers="2layer"
                   magnetic
                 >
-                  View Pricing
+                  Start Trial
                 </Button>
                 <Button
                   href="https://support.arrayhash.com/arraysubs/"

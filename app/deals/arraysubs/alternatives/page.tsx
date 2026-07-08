@@ -221,9 +221,10 @@ export default function AlternativesHubPage() {
             magnetic
             iconRight={<ArrowRight className="size-5" />}
           >
-            View Pro Pricing
+            Start Trial
           </Button>
         }
+        trust="No credit card required"
       />
 
       {/* ---- All-in-one showcase (two-column statement) ----------------- */}
@@ -276,7 +277,7 @@ export default function AlternativesHubPage() {
                 size="md"
                 iconRight={<ArrowRight aria-hidden="true" className="size-5" />}
               >
-                View Pricing
+                Start Trial
               </Button>
               <Button
                 href="/deals/arraysubs/features/"
@@ -400,7 +401,7 @@ export default function AlternativesHubPage() {
             eyebrow="Paid Pro plans"
             title="Choose the ArraySubs Pro plan that fits"
             subtitle="Install the free core today, then upgrade securely when you need the full Pro feature set."
-            microcopy="Plans from $129/year · Lifetime options available"
+            microcopy="No credit card required · Plans from $129/year · Lifetime options available"
             actions={
               <Button
                 href={GET_PRO}
@@ -410,7 +411,7 @@ export default function AlternativesHubPage() {
                 magnetic
                 iconRight={<ArrowRight className="size-5" />}
               >
-                View Pricing
+                Start Trial
               </Button>
             }
           />

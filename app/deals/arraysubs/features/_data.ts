@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import {
   Boxes,
+  Blocks,
   ChartColumn,
   CircleUser,
   ClipboardList,
@@ -15,6 +16,7 @@ import {
   Repeat,
   ShieldCheck,
   SlidersHorizontal,
+  SquareDashedMousePointer,
   UserCheck,
   UserCog,
   Wand2,
@@ -24,9 +26,8 @@ import {
 /**
  * Manual-aligned source of truth for the ArraySubs feature hub.
  *
- * The user manual exposes 27 dedicated root-level modules:
- * 20 are free/core-accessible and 7 are Pro-only. Keep this file aligned with
- * `user-manual/markdowns/getting-started/before-you-launch.md`.
+ * The hub mixes root-level modules with high-value documented feature
+ * surfaces. Keep this file aligned with the current user manual.
  */
 
 export type FeatureTier = "Free" | "Pro" | "Free + Pro";
@@ -44,6 +45,7 @@ export type FeatureCategoryKey =
   | "setup-configuration"
   | "site-access-toolkit"
   | "products-checkout"
+  | "payment-gateways"
   | "subscription-operations"
   | "member-experience"
   | "retention-revenue"
@@ -81,11 +83,11 @@ type FeatureInput = Omit<
 };
 
 export const FEATURE_CATEGORIES: { key: FeatureCategoryKey; label: string }[] = [
-  { key: "setup-configuration", label: "Setup & configuration" },
-  { key: "site-access-toolkit", label: "Site access toolkit" },
   { key: "products-checkout", label: "Products & checkout" },
+  { key: "payment-gateways", label: "Payment gateways" },
   { key: "subscription-operations", label: "Subscription operations" },
   { key: "member-experience", label: "Member experience" },
+  { key: "site-access-toolkit", label: "Site access toolkit" },
   { key: "retention-revenue", label: "Retention & revenue" },
   { key: "analytics-infrastructure", label: "Analytics & infrastructure" },
 ];
@@ -117,7 +119,7 @@ const buildFeature = ({
 export const FEATURES: Feature[] = [
   buildFeature({
     slug: "easy-setup-wizard",
-    category: "setup-configuration",
+    category: "site-access-toolkit",
     icon: Wand2,
     name: "Easy Setup Wizard",
     cardDescription:
@@ -174,7 +176,119 @@ export const FEATURES: Feature[] = [
           "Pro-only wizard options are hidden. Any Pro-specific settings already saved remain dormant until Pro is active again.",
       },
     ],
-    related: ["subscription-products", "checkout-and-payments", "retention-and-refunds"],
+    related: ["subscription-products", "checkout-page-builder", "retention-and-refunds"],
+  }),
+  buildFeature({
+    slug: "checkout-page-builder",
+    category: "site-access-toolkit",
+    icon: CreditCard,
+    name: "Checkout Page Builder",
+    cardDescription:
+      "Design Pro classic checkout pages with drag-and-drop fields, multi-step layouts, conditional visibility, and styling controls.",
+    tier: "Pro",
+    summary:
+      "Replace the default classic WooCommerce checkout with a branded, subscription-aware builder flow.",
+    h1: "Build custom subscription checkout pages",
+    highlights: ["Pro builder", "28 element types", "Multi-step checkout"],
+    intro:
+      "Checkout Page Builder is the Pro visual editor for the classic WooCommerce checkout page. Merchants can ==drag fields and layout elements into single-step or multi-step checkout flows, apply conditional visibility, style the experience, and carry captured field data through to orders, subscriptions, and renewal invoices==.",
+    capabilities: [
+      {
+        title: "Drag-and-drop checkout layout",
+        description:
+          "Arrange standard fields, advanced inputs, sections, headings, notices, product tables, and order/payment elements.",
+      },
+      {
+        title: "Multi-step navigation",
+        description:
+          "Split checkout into named steps with previous/next navigation and a customer-facing progress indicator.",
+      },
+      {
+        title: "Conditional field visibility",
+        description:
+          "Show or hide fields based on customer input so checkout stays relevant to the selected subscription.",
+      },
+      {
+        title: "Captured subscription data",
+        description:
+          "Stores custom checkout fields with orders and subscriptions so staff can review them later in operations.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "28", label: "Element types" },
+      { value: "Steps", label: "Layout mode" },
+      { value: "Fields", label: "Captured data" },
+    ],
+    faq: [
+      {
+        question: "Does Checkout Page Builder require Pro?",
+        answer:
+          "Yes. Checkout Page Builder is the Pro visual builder for the classic WooCommerce checkout page.",
+      },
+      {
+        question: "Does it work with subscription records?",
+        answer:
+          "Yes. Captured checkout field data can flow through to orders, subscriptions, renewals, and subscription detail cards.",
+      },
+    ],
+    related: ["stripe-payments", "subscription-products", "manage-subscriptions"],
+  }),
+  buildFeature({
+    slug: "my-account-page-builder",
+    category: "site-access-toolkit",
+    icon: CircleUser,
+    name: "My Account Page Builder",
+    cardDescription:
+      "Reorder, rename, hide, and add WooCommerce My Account pages, including custom endpoints linked to WordPress content.",
+    tier: "Free + Pro",
+    summary:
+      "Control the customer account menu and add custom endpoint pages without writing WooCommerce endpoint code.",
+    h1: "Build the WooCommerce My Account experience",
+    highlights: ["Menu editor", "Custom endpoints", "Pro menu items"],
+    intro:
+      "My Account Page Builder is the customer-account layout surface from Profile Builder. Merchants can ==reorder, rename, hide, and add WooCommerce My Account pages, link custom endpoints to WordPress pages or custom post types, and manage Pro-added pages such as My Features and Store Credit==.",
+    capabilities: [
+      {
+        title: "Menu ordering and labels",
+        description:
+          "Drag My Account items into the preferred order and rename labels like Orders, Downloads, or Subscriptions.",
+      },
+      {
+        title: "Visibility controls",
+        description:
+          "Hide menu items that should not appear in the customer-facing account navigation.",
+      },
+      {
+        title: "Custom endpoint pages",
+        description:
+          "Add account tabs that render linked WordPress pages, posts, or custom post types inside the My Account wrapper.",
+      },
+      {
+        title: "Pro page integration",
+        description:
+          "Manage Pro items such as My Features and Store Credit when those modules are active.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Core editor" },
+      { value: "Pro", label: "Extra pages" },
+      { value: "Endpoint", label: "Page model" },
+      { value: "My Account", label: "Surface" },
+    ],
+    faq: [
+      {
+        question: "Can I add a custom page inside My Account?",
+        answer:
+          "Yes. Add a custom endpoint, choose the linked WordPress content, and it renders inside the My Account layout.",
+      },
+      {
+        question: "Does hiding a menu item block direct access?",
+        answer:
+          "No. Hiding controls menu visibility. Use member access rules when the endpoint itself needs access control.",
+      },
+    ],
+    related: ["profile-builder", "customer-portal", "wordpress-login-page"],
   }),
   buildFeature({
     slug: "admin-bar-visibility",
@@ -216,7 +330,7 @@ export const FEATURES: Feature[] = [
       { value: "Free", label: "Availability" },
       { value: "1", label: "Primary toggle" },
       { value: "0", label: "Capability changes" },
-      { value: "5", label: "Toolkit modules" },
+      { value: "8", label: "Site access cards" },
     ],
     faq: [
       {
@@ -272,7 +386,7 @@ export const FEATURES: Feature[] = [
       { value: "Free", label: "Availability" },
       { value: "1", label: "Role allow-list" },
       { value: "1", label: "Redirect target" },
-      { value: "5", label: "Toolkit modules" },
+      { value: "8", label: "Site access cards" },
     ],
     faq: [
       {
@@ -328,7 +442,7 @@ export const FEATURES: Feature[] = [
       { value: "Free", label: "Availability" },
       { value: "1", label: "Redirect toggle" },
       { value: "My Account", label: "Default target" },
-      { value: "5", label: "Toolkit modules" },
+      { value: "8", label: "Site access cards" },
     ],
     faq: [
       {
@@ -384,7 +498,7 @@ export const FEATURES: Feature[] = [
       { value: "Free", label: "Availability" },
       { value: "Admin", label: "Allowed actor" },
       { value: "0", label: "Customer passwords needed" },
-      { value: "5", label: "Toolkit modules" },
+      { value: "8", label: "Site access cards" },
     ],
     faq: [
       {
@@ -510,7 +624,7 @@ export const FEATURES: Feature[] = [
           "Yes. Configure the coupon so it affects the initial order without continuing across renewal cycles.",
       },
     ],
-    related: ["subscription-products", "checkout-and-payments", "retention-and-refunds"],
+    related: ["subscription-products", "woocommerce-manual-payments", "retention-and-refunds"],
   }),
   buildFeature({
     slug: "subscription-products",
@@ -566,76 +680,692 @@ export const FEATURES: Feature[] = [
           "The core product engine is free. Pro adds product extensions such as Feature Manager, Redirect Product Page, and Subscription Shipping.",
       },
     ],
-    related: ["billing-and-renewals", "checkout-and-payments", "feature-manager"],
+    related: ["billing-and-renewals", "stripe-payments", "feature-manager"],
   }),
   buildFeature({
-    slug: "checkout-and-payments",
+    slug: "free-trials",
     category: "products-checkout",
-    icon: CreditCard,
-    name: "Checkout and Payments",
+    icon: Repeat,
+    name: "Free Trials",
     cardDescription:
-      "Subscription checkout, automatic payments, gateway setup, customer payment methods, and Checkout Builder workflows.",
-    tier: "Free + Pro",
+      "Offer trial periods before billing starts, collect payment details when needed, and convert trials into renewal schedules.",
+    tier: "Free",
     summary:
-      "Control how subscriptions are purchased, billed, and collected from checkout through renewal.",
-    h1: "Manage subscription checkout and payments",
-    highlights: ["Checkout flow", "Automatic payments", "Gateway setup"],
+      "Add trial windows to subscription products and keep trial conversion aligned with billing rules.",
+    h1: "Offer subscription trials before the first renewal",
+    highlights: ["Trial periods", "Trial conversion", "Subscription products"],
     intro:
-      "Checkout and Payments covers ==subscription checkout, cart rules, automatic payment gateways, manual fallback, customer payment methods, and Pro Checkout Builder workflows==. It connects the purchase path to the recurring billing engine.",
+      "Free Trials are part of the core subscription product setup. Merchants can ==offer a free trial before recurring billing begins==, collect the needed checkout details, and let ArraySubs calculate the first paid renewal from the trial end date.",
     capabilities: [
       {
-        title: "Subscription checkout",
+        title: "Product-level trial terms",
         description:
-          "Handles subscription cart rules, trial behavior, one-click checkout, and subscription creation.",
+          "Set trial length on simple subscription products or per variation for variable subscriptions.",
       },
       {
-        title: "Automatic payments",
+        title: "Checkout-aware behavior",
         description:
-          "Pro supports automatic collection through Stripe, PayPal, and Paddle.",
+          "Keeps initial checkout, customer messaging, and first renewal scheduling aligned with the trial window.",
       },
       {
-        title: "Manual fallback",
+        title: "Trial conversion",
         description:
-          "Stores can still create renewal invoices and accept manual payment flows.",
+          "Moves trialing subscriptions into the normal renewal flow when the trial ends.",
       },
       {
-        title: "Checkout Builder",
+        title: "Customer clarity",
         description:
-          "Pro adds multi-step checkout customization, 27 field types, and checkout data capture.",
+          "Displays trial timing in the subscription purchase and account experience.",
       },
     ],
     stats: [
-      { value: "3", label: "Pro gateways" },
-      { value: "27", label: "Builder fields" },
-      { value: "Manual", label: "Core fallback" },
-      { value: "Pro", label: "Automation" },
+      { value: "Free", label: "Availability" },
+      { value: "Product", label: "Setup scope" },
+      { value: "Trial", label: "First phase" },
+      { value: "Renewal", label: "Next phase" },
     ],
     faq: [
       {
-        question: "Can ArraySubs work without automatic payments?",
+        question: "Can variations have different trials?",
         answer:
-          "Yes. The core supports manual renewal invoices. Pro adds automatic collection through supported gateways.",
+          "Yes. Variable subscription variations can carry their own trial and billing terms.",
       },
       {
-        question: "Is Checkout Builder a root Pro module?",
+        question: "Does a trial skip subscription creation?",
         answer:
-          "The updated manual groups Checkout Builder under Checkout and Payments rather than counting it as a separate root-level Pro module.",
+          "No. The subscription exists at checkout, then moves into renewal billing after the trial period.",
       },
     ],
-    related: ["subscription-products", "billing-and-renewals", "gateway-health"],
+    related: ["subscription-products", "billing-and-renewals", "stripe-payments"],
+  }),
+  buildFeature({
+    slug: "signup-fees",
+    category: "products-checkout",
+    icon: Wallet,
+    name: "Signup Fees",
+    cardDescription:
+      "Charge one-time setup or activation fees at checkout while renewal orders keep the recurring subscription price.",
+    tier: "Free",
+    summary:
+      "Separate one-time activation revenue from recurring subscription charges.",
+    h1: "Add one-time signup fees to subscriptions",
+    highlights: ["Setup fee", "Checkout charge", "Clean renewals"],
+    intro:
+      "Signup Fees let merchants ==charge a one-time setup, onboarding, or activation amount at checkout== without inflating the recurring renewal price. They are configured alongside the product's recurring billing terms.",
+    capabilities: [
+      {
+        title: "One-time checkout fee",
+        description:
+          "Adds the configured signup fee to the initial subscription order.",
+      },
+      {
+        title: "Recurring price separation",
+        description:
+          "Keeps renewal orders focused on the recurring subscription amount.",
+      },
+      {
+        title: "Variable plan support",
+        description:
+          "Lets each subscription variation carry its own setup fee when plans differ.",
+      },
+      {
+        title: "Lifecycle consistency",
+        description:
+          "Stores the fee with product terms so support and exports can explain the first order total.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "1x", label: "Charge timing" },
+      { value: "Initial", label: "Order affected" },
+      { value: "Renewal", label: "Unaffected price" },
+    ],
+    faq: [
+      {
+        question: "Does the signup fee repeat on renewals?",
+        answer:
+          "No. Signup fees are charged on the initial checkout order only.",
+      },
+      {
+        question: "Can each variation have a different signup fee?",
+        answer:
+          "Yes. Variable subscription products can define signup fees per variation.",
+      },
+    ],
+    related: ["subscription-products", "woocommerce-tax-handling", "billing-and-renewals"],
+  }),
+  buildFeature({
+    slug: "different-renewal-price",
+    category: "products-checkout",
+    icon: ReceiptText,
+    name: "Different Renewal Price",
+    cardDescription:
+      "Design introductory subscription pricing that changes to a configured renewal amount after the chosen billing cycles.",
+    tier: "Free",
+    summary:
+      "Use introductory pricing without manually correcting future renewal totals.",
+    h1: "Set a different renewal price after checkout",
+    highlights: ["Introductory pricing", "Renewal price", "Cycle control"],
+    intro:
+      "Different Renewal Price supports offers where the first charge and renewal charge should differ. Merchants can ==sell an introductory amount, then move the subscription to its configured renewal price== after the selected number of billing cycles.",
+    capabilities: [
+      {
+        title: "Introductory offer design",
+        description:
+          "Use a lower, higher, or launch-specific checkout price before normal renewals begin.",
+      },
+      {
+        title: "Renewal price field",
+        description:
+          "Store the recurring amount that future renewal orders should use.",
+      },
+      {
+        title: "Apply-after control",
+        description:
+          "Choose when the subscription switches from the intro price to the renewal price.",
+      },
+      {
+        title: "Variation-aware setup",
+        description:
+          "Let different subscription variations carry different intro and renewal economics.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "Intro", label: "First price" },
+      { value: "Renewal", label: "Later price" },
+      { value: "Cycle", label: "Switch point" },
+    ],
+    faq: [
+      {
+        question: "Is this only for discounts?",
+        answer:
+          "No. The renewal price can support any planned difference between checkout and future billing.",
+      },
+      {
+        question: "Does it require a coupon?",
+        answer:
+          "No. It is configured on the subscription product rather than through WooCommerce coupons.",
+      },
+    ],
+    related: ["subscription-products", "coupons", "billing-and-renewals"],
+  }),
+  buildFeature({
+    slug: "one-click-checkout-urls",
+    category: "products-checkout",
+    icon: CreditCard,
+    name: "One-Click Checkout URLs",
+    cardDescription:
+      "Send buyers from product buttons, sales pages, or direct add-to-cart links straight into subscription checkout.",
+    tier: "Free",
+    summary:
+      "Create direct checkout paths for subscription products while preserving normal cart-safe behavior.",
+    h1: "Send subscription buyers straight to checkout",
+    highlights: ["Direct checkout", "Add-to-cart URLs", "Cart bypass"],
+    intro:
+      "One-Click Checkout URLs make subscription purchase paths easier to test and promote. Stores can ==route subscription add-to-cart actions directly to checkout== and use direct checkout links from product settings, sales pages, campaigns, or support messages.",
+    capabilities: [
+      {
+        title: "Cart bypass option",
+        description:
+          "Redirect subscription add-to-cart actions to checkout instead of leaving customers on product or cart pages.",
+      },
+      {
+        title: "Direct checkout links",
+        description:
+          "Use add-to-cart checkout URLs for simple products and configured variations.",
+      },
+      {
+        title: "Sales-page friendly",
+        description:
+          "Pairs with curated product pages, campaigns, and product-page redirects.",
+      },
+      {
+        title: "Checkout-safe behavior",
+        description:
+          "Keeps ArraySubs checkout validation active even when the cart page is skipped.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "URL", label: "Primary surface" },
+      { value: "Cart", label: "Optional bypass" },
+      { value: "Checkout", label: "Destination" },
+    ],
+    faq: [
+      {
+        question: "Do direct links work with product redirects?",
+        answer:
+          "Yes. Product-page redirects control direct product-page visits, while add-to-cart and checkout links continue to work.",
+      },
+      {
+        question: "Can I use one-click URLs for variations?",
+        answer:
+          "Yes. Variation checkout links include the variation selection needed to add the right plan.",
+      },
+    ],
+    related: ["stripe-payments", "redirect-product-page", "subscription-products"],
+  }),
+  buildFeature({
+    slug: "conditional-subscription-rules",
+    category: "products-checkout",
+    icon: SlidersHorizontal,
+    name: "Conditional Subscription Rules",
+    cardDescription:
+      "Control one subscription per product, one subscription per customer, mixed carts, billing cycles, and migration behavior.",
+    tier: "Free",
+    summary:
+      "Set the store-level guardrails that decide which subscription combinations can be purchased.",
+    h1: "Control subscription purchase conditions",
+    highlights: ["Cart rules", "Customer limits", "Migration behavior"],
+    intro:
+      "Conditional Subscription Rules govern how many subscription relationships a customer can create and combine. Stores can ==limit one subscription per product or customer, allow or block mixed carts, control multiple billing cycles, and auto-migrate existing subscriptions== when the customer chooses a new plan.",
+    capabilities: [
+      {
+        title: "One per product",
+        description:
+          "Prevent customers from buying duplicate active subscriptions for the same product.",
+      },
+      {
+        title: "One per customer",
+        description:
+          "Keep customers on a single active subscription relationship when the business model requires it.",
+      },
+      {
+        title: "Mixed checkout control",
+        description:
+          "Choose whether subscription items can be purchased alongside normal WooCommerce products.",
+      },
+      {
+        title: "Billing-cycle guardrails",
+        description:
+          "Control whether subscriptions with different billing cycles can share one checkout.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "Cart", label: "Validation point" },
+      { value: "Customer", label: "Limit scope" },
+      { value: "Product", label: "Limit scope" },
+    ],
+    faq: [
+      {
+        question: "Can a store block duplicate subscription products?",
+        answer:
+          "Yes. The one-subscription-per-product setting prevents duplicate active product subscriptions for the same customer.",
+      },
+      {
+        question: "Can a new subscription replace an old one?",
+        answer:
+          "Yes. Auto migration can move the customer to the new subscription path when one-per-customer behavior is enabled.",
+      },
+    ],
+    related: ["subscription-products", "woocommerce-manual-payments", "customer-portal"],
+  }),
+  buildFeature({
+    slug: "fixed-date-subscriptions",
+    category: "products-checkout",
+    icon: Repeat,
+    name: "Fixed-Date Subscriptions",
+    cardDescription:
+      "Sell fixed-period memberships with enrollment windows, annual cutoffs, and period-end renewal or expiration behavior.",
+    tier: "Pro",
+    summary:
+      "Create subscriptions that end on a known calendar date instead of only relative billing lengths.",
+    h1: "Sell subscriptions tied to fixed dates",
+    highlights: ["Pro product module", "Enrollment windows", "Calendar cutoff"],
+    intro:
+      "Fixed-Date Subscriptions are a Pro product capability for memberships, cohorts, seasons, or licensing windows. Merchants can ==sell subscriptions that run until a specific date, repeat on annual cutoffs, and control whether access renews or expires at period end==.",
+    capabilities: [
+      {
+        title: "Calendar-based end dates",
+        description:
+          "End subscriptions on a configured date instead of only using a relative subscription length.",
+      },
+      {
+        title: "Recurring annual periods",
+        description:
+          "Use a repeatable cutoff for yearly cohorts, seasons, memberships, or license windows.",
+      },
+      {
+        title: "Enrollment windows",
+        description:
+          "Control when customers can join a fixed-period product.",
+      },
+      {
+        title: "Period-end behavior",
+        description:
+          "Choose whether the subscription expires or renews when the fixed period ends.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "Date", label: "End model" },
+      { value: "Window", label: "Enrollment" },
+      { value: "Expire", label: "Period option" },
+    ],
+    faq: [
+      {
+        question: "When should I use fixed-date subscriptions?",
+        answer:
+          "Use them for cohort memberships, seasonal access, annual clubs, or licenses that should share a known end date.",
+      },
+      {
+        question: "Can fixed periods renew?",
+        answer:
+          "Yes. Pro can support fixed periods that renew or expire based on the product configuration.",
+      },
+    ],
+    related: ["subscription-products", "renewal-sync", "feature-manager"],
+  }),
+  buildFeature({
+    slug: "lifetime-deals",
+    category: "products-checkout",
+    icon: HeartHandshake,
+    name: "Lifetime Deals",
+    cardDescription:
+      "Sell one-time lifetime access through subscription product setup without recurring renewal invoices.",
+    tier: "Free",
+    summary:
+      "Offer lifetime access as a first-class subscription product mode with no recurring billing.",
+    h1: "Sell lifetime subscription deals",
+    highlights: ["Lifetime access", "One-time payment", "No renewals"],
+    intro:
+      "Lifetime Deals let merchants ==sell a one-time subscription-style offer that grants ongoing access without recurring renewal invoices==. They are useful for launch promotions, lifetime memberships, and one-time access products that should still participate in subscription-aware access logic.",
+    capabilities: [
+      {
+        title: "Lifetime billing period",
+        description:
+          "Use the lifetime product mode when access should not generate recurring renewal orders.",
+      },
+      {
+        title: "Subscription-aware access",
+        description:
+          "Keep lifetime customers compatible with member access, content restrictions, and account experiences.",
+      },
+      {
+        title: "One-time checkout",
+        description:
+          "Collect the lifetime purchase amount once at checkout.",
+      },
+      {
+        title: "Operational clarity",
+        description:
+          "Represent lifetime access in subscription records instead of hiding it in unrelated product metadata.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "1x", label: "Payment model" },
+      { value: "0", label: "Renewal invoices" },
+      { value: "Access", label: "Primary use" },
+    ],
+    faq: [
+      {
+        question: "Do lifetime deals renew?",
+        answer:
+          "No. Lifetime products grant ongoing access without recurring renewal invoices.",
+      },
+      {
+        question: "Can lifetime buyers satisfy member access rules?",
+        answer:
+          "Yes. Lifetime subscriptions can participate in subscription-aware access conditions.",
+      },
+    ],
+    related: ["subscription-products", "member-access", "feature-manager"],
+  }),
+  buildFeature({
+    slug: "stripe-payments",
+    category: "payment-gateways",
+    icon: CreditCard,
+    name: "First-Class Stripe Support",
+    cardDescription:
+      "Run ArraySubs-managed automatic renewals through Stripe with saved payment methods, SCA handling, webhooks, and card lifecycle events.",
+    tier: "Pro",
+    summary:
+      "Use Stripe as the first-class automatic payment gateway where ArraySubs remains the billing schedule source of truth.",
+    h1: "Run automatic subscription billing with Stripe",
+    highlights: ["Pro gateway", "ArraySubs-managed billing", "SCA support"],
+    intro:
+      "First-Class Stripe Support is the Pro automatic payment path where ==ArraySubs controls the renewal schedule, creates invoices, and sends off-session charge requests to Stripe==. Stripe then returns payment, failure, card, SCA, refund, and dispute events through webhook reconciliation.",
+    capabilities: [
+      {
+        title: "ArraySubs-managed billing",
+        description:
+          "Keeps the subscription renewal schedule in ArraySubs while Stripe processes each automatic charge.",
+      },
+      {
+        title: "Saved payment methods",
+        description:
+          "Stores customer and payment method metadata so future renewals can be charged without customer action.",
+      },
+      {
+        title: "SCA and card lifecycle events",
+        description:
+          "Handles 3D Secure requirements, payment method updates, card auto-updates, and card expiry notices where Stripe provides them.",
+      },
+      {
+        title: "Gateway reconciliation",
+        description:
+          "Uses Stripe webhooks and ArraySubs gateway logs to reconcile payment success, payment failure, refunds, and disputes.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "Stripe", label: "Gateway" },
+      { value: "ArraySubs", label: "Billing owner" },
+      { value: "SCA", label: "Auth support" },
+    ],
+    faq: [
+      {
+        question: "Who owns the billing schedule with Stripe?",
+        answer:
+          "ArraySubs owns the schedule. On renewal, ArraySubs creates the invoice and asks Stripe to charge the stored payment method.",
+      },
+      {
+        question: "Does Stripe support synced renewal checkout?",
+        answer:
+          "Yes. The manual documents Renewal Sync support for manual/offline gateways and Stripe.",
+      },
+    ],
+    related: ["billing-and-renewals", "gateway-health", "woocommerce-tax-handling"],
+  }),
+  buildFeature({
+    slug: "paddle-payments",
+    category: "payment-gateways",
+    icon: Wallet,
+    name: "Paddle Payments",
+    cardDescription:
+      "Use Paddle gateway-managed subscriptions with Paddle checkout, hosted customer flows, native tax/VAT handling, and webhook sync.",
+    tier: "Pro",
+    summary:
+      "Let Paddle manage the recurring billing agreement while ArraySubs syncs subscription state from webhooks.",
+    h1: "Sell subscriptions through Paddle",
+    highlights: ["Pro gateway", "Gateway-managed billing", "Native tax handling"],
+    intro:
+      "Paddle Payments is a Pro gateway-managed billing path. ArraySubs creates the Paddle subscription at checkout, then ==Paddle controls future billing timing and sends webhooks back to ArraySubs when payments, pauses, renewals, or lifecycle events occur==. Paddle is the tax exception because it handles tax/VAT natively as merchant of record.",
+    capabilities: [
+      {
+        title: "Gateway-managed renewals",
+        description:
+          "Paddle owns the recurring billing schedule and notifies ArraySubs when gateway-side charges occur.",
+      },
+      {
+        title: "Hosted payment and customer flows",
+        description:
+          "Supports Paddle checkout and gateway-hosted customer payment method updates.",
+      },
+      {
+        title: "Native tax and VAT",
+        description:
+          "Uses Paddle's merchant-of-record tax/VAT handling instead of WooCommerce tax calculations.",
+      },
+      {
+        title: "Webhook state sync",
+        description:
+          "Maps Paddle events into ArraySubs subscriptions, renewal orders, notes, and gateway health logs.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "Paddle", label: "Gateway" },
+      { value: "Gateway", label: "Billing owner" },
+      { value: "Native", label: "Tax handling" },
+    ],
+    faq: [
+      {
+        question: "Does WooCommerce calculate tax for Paddle subscriptions?",
+        answer:
+          "No. Paddle is the exception because Paddle handles tax/VAT natively as merchant of record.",
+      },
+      {
+        question: "Does ArraySubs send local renewal charges to Paddle?",
+        answer:
+          "No. For gateway-managed billing, ArraySubs waits for Paddle webhooks confirming gateway-side payments.",
+      },
+    ],
+    related: ["billing-and-renewals", "gateway-health", "woocommerce-tax-handling"],
+  }),
+  buildFeature({
+    slug: "paypal-payments",
+    category: "payment-gateways",
+    icon: Wallet,
+    name: "PayPal Payments",
+    cardDescription:
+      "Use PayPal gateway-managed subscription agreements for automatic renewals, payment method updates, refunds, and webhook sync.",
+    tier: "Pro",
+    summary:
+      "Let PayPal own the billing agreement while ArraySubs tracks renewal events through gateway webhooks.",
+    h1: "Sell automatic subscriptions with PayPal",
+    highlights: ["Pro gateway", "Gateway-managed billing", "Webhook sync"],
+    intro:
+      "PayPal Payments is a Pro gateway-managed billing path. During checkout, ArraySubs creates the PayPal billing agreement, then ==PayPal controls future automatic charges and sends webhooks back to ArraySubs for renewal order creation and subscription state updates==.",
+    capabilities: [
+      {
+        title: "PayPal billing agreements",
+        description:
+          "Creates a PayPal subscription agreement during checkout for future automatic payment collection.",
+      },
+      {
+        title: "Gateway-owned renewal timing",
+        description:
+          "Uses PayPal as the source of truth for when gateway-side charges occur.",
+      },
+      {
+        title: "Payment method update path",
+        description:
+          "Supports customer payment updates by creating a new agreement when PayPal requires it.",
+      },
+      {
+        title: "Automatic restrictions",
+        description:
+          "Enforces PayPal limitations such as no mixed carts, multiple subscriptions, or different billing cycles in one checkout.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "PayPal", label: "Gateway" },
+      { value: "Gateway", label: "Billing owner" },
+      { value: "Webhook", label: "Sync model" },
+    ],
+    faq: [
+      {
+        question: "Can PayPal handle mixed subscription carts?",
+        answer:
+          "No. The manual notes PayPal restrictions for mixed carts, multiple subscriptions, and different billing cycles in one checkout.",
+      },
+      {
+        question: "Does ArraySubs charge PayPal locally on renewal?",
+        answer:
+          "No. PayPal owns the recurring agreement and sends webhooks when payments occur.",
+      },
+    ],
+    related: ["billing-and-renewals", "gateway-health", "woocommerce-tax-handling"],
+  }),
+  buildFeature({
+    slug: "woocommerce-manual-payments",
+    category: "payment-gateways",
+    icon: ReceiptText,
+    name: "500+ WooCommerce Manual Payments",
+    cardDescription:
+      "Use WooCommerce's gateway ecosystem for manual subscription checkout and renewal invoices while automatic renewals stay gateway-specific.",
+    tier: "Free",
+    summary:
+      "Keep subscription billing compatible with WooCommerce manual and offline payment flows.",
+    h1: "Use WooCommerce manual payment gateways",
+    highlights: ["Free core", "Manual invoices", "WooCommerce gateways"],
+    intro:
+      "500+ WooCommerce Manual Payments means ArraySubs can work with the wider WooCommerce gateway ecosystem for checkout and manual renewal invoices. Stores can ==create renewal invoices, email payment links, and let customers pay through available WooCommerce payment methods== while automatic off-session renewals remain limited to supported Pro gateways.",
+    capabilities: [
+      {
+        title: "Manual renewal invoices",
+        description:
+          "Creates pending renewal invoices that customers can pay through WooCommerce checkout.",
+      },
+      {
+        title: "WooCommerce gateway compatibility",
+        description:
+          "Uses the payment methods available in the WooCommerce checkout flow for manual payments.",
+      },
+      {
+        title: "Offline payment support",
+        description:
+          "Supports offline or manual methods such as bank transfer where the store completes payment outside automatic charging.",
+      },
+      {
+        title: "Automatic gateway boundary",
+        description:
+          "Keeps off-session automatic renewal collection limited to Stripe, PayPal, and Paddle Pro gateway integrations.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "500+", label: "WC ecosystem" },
+      { value: "Manual", label: "Renewal mode" },
+      { value: "Invoice", label: "Payment path" },
+    ],
+    faq: [
+      {
+        question: "Do all WooCommerce gateways support automatic renewals?",
+        answer:
+          "No. The broader WooCommerce gateway ecosystem is for checkout and manual renewal payments. Automatic recurring collection uses supported Pro gateways.",
+      },
+      {
+        question: "Can customers pay renewal invoices manually?",
+        answer:
+          "Yes. Manual renewals create invoices with payment links that customers can complete through WooCommerce checkout.",
+      },
+    ],
+    related: ["billing-and-renewals", "manage-subscriptions", "woocommerce-tax-handling"],
+  }),
+  buildFeature({
+    slug: "woocommerce-tax-handling",
+    category: "payment-gateways",
+    icon: ReceiptText,
+    name: "WooCommerce Tax Handling",
+    cardDescription:
+      "Use WooCommerce tax calculations for subscription checkout and renewals except Paddle, which handles tax/VAT natively.",
+    tier: "Free + Pro",
+    summary:
+      "Keep subscription tax aligned with WooCommerce tax rules while respecting Paddle's merchant-of-record model.",
+    h1: "Handle subscription taxes through WooCommerce",
+    highlights: ["WooCommerce tax", "Renewal taxes", "Paddle exception"],
+    intro:
+      "WooCommerce Tax Handling keeps subscription checkout and renewal tax behavior aligned with the store's WooCommerce tax configuration. ArraySubs can ==carry WooCommerce tax calculations through manual, Stripe, and PayPal subscription flows, while Paddle remains the exception because Paddle handles tax/VAT natively==.",
+    capabilities: [
+      {
+        title: "WooCommerce tax source",
+        description:
+          "Uses WooCommerce tax configuration as the source for subscription checkout and renewal tax calculations.",
+      },
+      {
+        title: "Renewal consistency",
+        description:
+          "Keeps renewal invoices aligned with the subscription product, customer, and store tax context.",
+      },
+      {
+        title: "Gateway-aware handling",
+        description:
+          "Works with manual, Stripe, and PayPal flows where WooCommerce remains the tax engine.",
+      },
+      {
+        title: "Paddle exception",
+        description:
+          "Excludes Paddle from WooCommerce tax handling because Paddle calculates and remits tax/VAT natively.",
+      },
+    ],
+    stats: [
+      { value: "Free + Pro", label: "Availability" },
+      { value: "WooCommerce", label: "Tax source" },
+      { value: "Paddle", label: "Exception" },
+      { value: "Renewals", label: "Covered flow" },
+    ],
+    faq: [
+      {
+        question: "Does Paddle use WooCommerce tax?",
+        answer:
+          "No. Paddle handles tax and VAT natively, so it is the exception to WooCommerce tax handling.",
+      },
+      {
+        question: "Do manual renewal invoices keep WooCommerce tax behavior?",
+        answer:
+          "Yes. Manual renewal invoices use WooCommerce checkout and tax behavior.",
+      },
+    ],
+    related: ["stripe-payments", "paypal-payments", "woocommerce-manual-payments"],
   }),
   buildFeature({
     slug: "redirect-product-page",
-    category: "products-checkout",
+    category: "member-experience",
     icon: LayoutGrid,
-    name: "Redirect Product Page",
+    name: "Product Page Redirection",
     cardDescription:
-      "Send direct subscription product URLs to a sales page or return a 404 while checkout links keep working. Pro only.",
+      "Redirect direct subscription product pages to sales pages or return 404s while checkout links keep working. Pro only.",
     tier: "Pro",
     summary:
       "Control direct access to subscription product pages without breaking checkout or admin product management.",
     h1: "Redirect or hide direct subscription product URLs",
-    highlights: ["Pro product module", "301 redirect", "404 option"],
+    highlights: ["Pro access module", "301 redirect", "404 option"],
     intro:
       "Redirect Product Page is a Pro module that ==sends direct subscription product URLs to a custom sales page or returns a 404==. Checkout links and backend product management continue to work, so merchants can sell through curated pages without exposing raw product URLs.",
     capabilities: [
@@ -678,7 +1408,7 @@ export const FEATURES: Feature[] = [
           "The controls live on the subscription product editing screen.",
       },
     ],
-    related: ["subscription-products", "checkout-and-payments", "feature-manager"],
+    related: ["subscription-products", "one-click-checkout-urls", "member-access"],
   }),
   buildFeature({
     slug: "subscription-shipping",
@@ -734,7 +1464,7 @@ export const FEATURES: Feature[] = [
           "Yes. Pro can charge shipping again on renewals when the product requires recurring fulfillment.",
       },
     ],
-    related: ["subscription-products", "checkout-and-payments", "customer-portal"],
+    related: ["subscription-products", "woocommerce-tax-handling", "customer-portal"],
   }),
   buildFeature({
     slug: "manage-subscriptions",
@@ -791,6 +1521,118 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["subscription-notes", "billing-and-renewals", "customer-portal"],
+  }),
+  buildFeature({
+    slug: "create-subscription-admin",
+    category: "subscription-operations",
+    icon: UserCheck,
+    name: "Create Subscription from WP Admin",
+    cardDescription:
+      "Create subscriptions manually from wp-admin for migrations, phone orders, support corrections, and staff-managed setup.",
+    tier: "Free + Pro",
+    summary:
+      "Let staff create subscription records directly from the admin dashboard when checkout is not the right entry point.",
+    h1: "Create subscriptions manually from wp-admin",
+    highlights: ["Admin creation", "Manual setup", "Support workflows"],
+    intro:
+      "Create Subscription from WP Admin covers the staff-managed path inside the main subscription dashboard. Operators can ==create subscription records manually for migrations, phone orders, support corrections, comped accounts, or customers who should not go through public checkout==.",
+    capabilities: [
+      {
+        title: "Manual subscription creation",
+        description:
+          "Create a subscription record from the admin area instead of requiring a storefront checkout.",
+      },
+      {
+        title: "Customer and product setup",
+        description:
+          "Attach the subscription to the right customer, product, dates, and operational details.",
+      },
+      {
+        title: "Migration support",
+        description:
+          "Bring existing subscription relationships into ArraySubs during store migrations or cleanup work.",
+      },
+      {
+        title: "Admin lifecycle continuity",
+        description:
+          "Created records enter the same notes, billing, portal, and reporting flows as checkout-created subscriptions.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Core admin" },
+      { value: "wp-admin", label: "Entry point" },
+      { value: "Staff", label: "Primary actor" },
+      { value: "Shared", label: "Lifecycle flow" },
+    ],
+    faq: [
+      {
+        question: "Does manual creation bypass normal subscription records?",
+        answer:
+          "No. Admin-created subscriptions use the same subscription record model and operational views.",
+      },
+      {
+        question: "When should staff create subscriptions manually?",
+        answer:
+          "Use it for migrations, phone orders, support adjustments, complimentary accounts, or other non-checkout setup work.",
+      },
+    ],
+    related: ["manage-subscriptions", "subscription-notes", "billing-and-renewals"],
+  }),
+  buildFeature({
+    slug: "manage-refunds",
+    category: "subscription-operations",
+    icon: Wallet,
+    name: "Manage Refunds",
+    cardDescription:
+      "Issue prorated, full, partial, gateway, manual, or Pro store-credit refunds from subscription and order workflows.",
+    tier: "Free + Pro",
+    summary:
+      "Control refund policy and refund execution without separating subscriptions from WooCommerce order history.",
+    h1: "Manage subscription refunds from operations",
+    highlights: ["Refund settings", "Prorated refunds", "Store-credit option"],
+    intro:
+      "Manage Refunds covers the operational refund tools around subscriptions. Staff can ==configure refund policy, preview and issue prorated refunds, use WooCommerce order refunds, trigger gateway refunds where supported, and route value into Pro store credit== when that retention path fits the customer.",
+    capabilities: [
+      {
+        title: "Refund policy settings",
+        description:
+          "Control cancellation refund behavior, automatic gateway refunding, prorated refunds, and minimum refund amounts.",
+      },
+      {
+        title: "Prorated subscription refunds",
+        description:
+          "Preview and process refunds based on unused subscription time from the subscription detail workflow.",
+      },
+      {
+        title: "Order refund compatibility",
+        description:
+          "Supports full and partial WooCommerce order refunds where the order is the correct source of truth.",
+      },
+      {
+        title: "Store-credit retention",
+        description:
+          "Pro can keep value in the store by issuing refund value as store credit when appropriate.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Refund tools" },
+      { value: "Pro", label: "Credit option" },
+      { value: "Prorate", label: "Time-based flow" },
+      { value: "Order", label: "WC flow" },
+    ],
+    faq: [
+      {
+        question: "Can ArraySubs calculate prorated refunds?",
+        answer:
+          "Yes. The refund workflow can preview and process prorated subscription refunds based on unused time.",
+      },
+      {
+        question: "Which refund path needs Pro?",
+        answer:
+          "Refunding into store credit depends on the Pro Store Credit module. Standard refund settings and subscription refund operations are available in the core path.",
+      },
+    ],
+    related: ["manage-subscriptions", "store-credit", "retention-and-refunds"],
   }),
   buildFeature({
     slug: "subscription-notes",
@@ -958,7 +1800,68 @@ export const FEATURES: Feature[] = [
           "ArraySubs uses recovery and grace flows instead of cancelling access immediately.",
       },
     ],
-    related: ["checkout-and-payments", "customer-portal", "emails"],
+    related: ["stripe-payments", "customer-portal", "emails"],
+  }),
+  buildFeature({
+    slug: "renewal-sync",
+    category: "subscription-operations",
+    icon: Repeat,
+    name: "Renewal Sync",
+    cardDescription:
+      "Align new subscriptions to predictable billing dates with prorated, full-amount, and Pro flexible first-charge modes.",
+    tier: "Free + Pro",
+    summary:
+      "Align first renewals to billing-cycle boundaries while controlling the first checkout charge.",
+    h1: "Sync subscription renewals to predictable billing dates",
+    highlights: ["Global sync", "Full or prorated first charge", "Pro flexible segments"],
+    intro:
+      "Renewal Sync lets eligible new subscriptions ==start on the checkout date but renew on a shared billing-cycle boundary==. Global sync can prorate the first charge or charge the full recurring amount immediately. Pro Flexible Renewal Sync adds product-level cycle segments so early, middle, and late signups can each use the right first-charge behavior.",
+    capabilities: [
+      {
+        title: "Shared renewal boundaries",
+        description:
+          "Moves the first full renewal to the next day, store week, first day of the month, or January 1 based on the billing period.",
+      },
+      {
+        title: "First-charge control",
+        description:
+          "Choose whether checkout prorates until the synced date or charges the full recurring amount immediately.",
+      },
+      {
+        title: "Flexible product segments",
+        description:
+          "Pro products can split the billing cycle into full amount, prorate amount, and charge-full-for-next-cycle segments.",
+      },
+      {
+        title: "Stored renewal schedule",
+        description:
+          "Saves the synced date as the subscription next payment date so invoices, reminders, gateways, and grace checks stay aligned.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Global sync" },
+      { value: "Pro", label: "Flexible segments" },
+      { value: "Full", label: "First charge option" },
+      { value: "Prorate", label: "First charge option" },
+    ],
+    faq: [
+      {
+        question: "Does Renewal Sync change existing subscriptions?",
+        answer:
+          "No. It applies to eligible new subscriptions created after the setting or product-level flexible sync is enabled.",
+      },
+      {
+        question: "Which gateways support synced checkout?",
+        answer:
+          "Manual/offline gateways and Stripe support synced checkout. Unsupported automatic gateways are hidden while a synced subscription is in the cart.",
+      },
+      {
+        question: "When should I use Flexible Renewal Sync?",
+        answer:
+          "Use the Pro product-level segment picker when early, middle, and late signup windows need different first-charge behavior.",
+      },
+    ],
+    related: ["billing-and-renewals", "subscription-products", "stripe-payments"],
   }),
   buildFeature({
     slug: "profile-builder",
@@ -1141,7 +2044,633 @@ export const FEATURES: Feature[] = [
           "Yes. The same restriction engine is exposed on the Elementor Container's Advanced tab, so you can gate a section by subscription, role, purchase, or feature with no shortcode.",
       },
     ],
-    related: ["feature-manager", "shortcodes", "multi-login-prevention"],
+    related: ["feature-manager", "restricted-downloads", "multi-login-prevention"],
+  }),
+  buildFeature({
+    slug: "restricted-downloads",
+    category: "member-experience",
+    icon: ReceiptText,
+    name: "Restricted Downloads",
+    cardDescription:
+      "Provision gated downloadable files to qualifying members through My Account Downloads with rules and optional drip schedules.",
+    tier: "Free",
+    summary:
+      "Deliver member-only files through WooCommerce downloads without exposing raw file locations.",
+    h1: "Gate downloadable files by membership rules",
+    highlights: ["Download rules", "My Account Downloads", "Drip schedules"],
+    intro:
+      "Restricted Downloads is the Downloads tab inside Member Access. Merchants can ==attach files to rules, define who qualifies, optionally delay availability with scheduling, and show the files in My Account -> Downloads alongside normal WooCommerce downloadable products==.",
+    capabilities: [
+      {
+        title: "Rule-based file provisioning",
+        description:
+          "Add one or more files to a rule and decide which members qualify with the shared condition builder.",
+      },
+      {
+        title: "My Account delivery",
+        description:
+          "Displays qualifying files in the customer's WooCommerce My Account Downloads area.",
+      },
+      {
+        title: "Drip availability",
+        description:
+          "Delay file access with schedules for training programs, course modules, or staged resources.",
+      },
+      {
+        title: "Verified download links",
+        description:
+          "Serves downloads through signed or verified links instead of exposing the raw file location directly.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "Rule", label: "Access model" },
+      { value: "My Account", label: "Delivery" },
+      { value: "Drip", label: "Schedule option" },
+    ],
+    faq: [
+      {
+        question: "Are Restricted Downloads the same as WooCommerce product downloads?",
+        answer:
+          "No. They are an additional membership-based layer that appears alongside native WooCommerce downloads.",
+      },
+      {
+        question: "Can files unlock later in the subscription?",
+        answer:
+          "Yes. Download rules can use schedules so files unlock after the configured membership timing.",
+      },
+    ],
+    related: ["member-access", "advanced-condition-builder", "customer-portal"],
+  }),
+  buildFeature({
+    slug: "shop-access-restrictions",
+    category: "member-experience",
+    icon: Boxes,
+    name: "Shop Restrictions",
+    cardDescription:
+      "Restrict store, product, or category browsing and purchasing with redirects, 404s, login prompts, or purchase blocks.",
+    tier: "Free",
+    summary:
+      "Use membership rules to decide who can browse, view, or buy products.",
+    h1: "Restrict shop access by membership rules",
+    highlights: ["Shop access", "Purchase rules", "Cart validation"],
+    intro:
+      "Shop Restrictions bring the Member Access rule engine into WooCommerce commerce flows. Stores can ==gate the full shop, selected products, product categories, product pages, add-to-cart actions, cart validation, and checkout== by subscription, purchase, role, or spend conditions.",
+    capabilities: [
+      {
+        title: "Store and product targeting",
+        description:
+          "Apply rules to the full store, selected products, categories, or exclusions.",
+      },
+      {
+        title: "Purchase blocking",
+        description:
+          "Let products remain visible while preventing unauthorized purchase attempts.",
+      },
+      {
+        title: "Redirect or hide behavior",
+        description:
+          "Send denied users to login or a specific page, show a message, or return a 404.",
+      },
+      {
+        title: "Checkout enforcement",
+        description:
+          "Validates access through product pages, add-to-cart flows, carts, checkout, and Store API paths.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "Shop", label: "Rule surface" },
+      { value: "Product", label: "Target scope" },
+      { value: "Checkout", label: "Enforced at" },
+    ],
+    faq: [
+      {
+        question: "Can customers see a product but not buy it?",
+        answer:
+          "Yes. Shop rules can block purchasing while leaving product visibility intact.",
+      },
+      {
+        question: "Do shop restrictions only affect product pages?",
+        answer:
+          "No. Rules also protect add-to-cart, cart, checkout, and Store API flows.",
+      },
+    ],
+    related: ["member-access", "conditional-subscription-rules", "subscription-products"],
+  }),
+  buildFeature({
+    slug: "role-based-conditions",
+    category: "member-experience",
+    icon: UserCheck,
+    name: "Role-Based Conditions",
+    cardDescription:
+      "Assign, remove, or test WordPress roles so subscription state can drive LMS, forum, community, or staff access.",
+    tier: "Free",
+    summary:
+      "Connect subscription rules to native WordPress role behavior.",
+    h1: "Use WordPress roles in member access rules",
+    highlights: ["Role mapping", "Role checks", "WordPress integration"],
+    intro:
+      "Role-Based Conditions let stores ==map subscription access into WordPress roles and use role checks inside access rules==. That makes ArraySubs compatible with role-aware plugins for LMS, communities, forums, downloads, and internal member workflows.",
+    capabilities: [
+      {
+        title: "Role mapping rules",
+        description:
+          "Assign or remove roles when subscription conditions match.",
+      },
+      {
+        title: "Role-based gates",
+        description:
+          "Use current user roles as conditions inside content, shop, URL, and shortcode restrictions.",
+      },
+      {
+        title: "Subscription-driven access",
+        description:
+          "Keep roles synchronized with active subscriptions, purchased products, or other rule conditions.",
+      },
+      {
+        title: "Plugin interoperability",
+        description:
+          "Let other role-aware WordPress tools respond to ArraySubs membership state.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "Roles", label: "WP surface" },
+      { value: "Assign", label: "Action" },
+      { value: "Remove", label: "Action" },
+    ],
+    faq: [
+      {
+        question: "Can ArraySubs assign WordPress roles?",
+        answer:
+          "Yes. Role mapping rules can assign or remove roles based on subscription-related conditions.",
+      },
+      {
+        question: "Can roles be used as access conditions?",
+        answer:
+          "Yes. User Role is one of the conditions available to access rules and partial content gates.",
+      },
+    ],
+    related: ["member-access", "advanced-condition-builder", "profile-builder"],
+  }),
+  buildFeature({
+    slug: "product-purchase-value-conditions",
+    category: "member-experience",
+    icon: ReceiptText,
+    name: "Product & Purchase Value Conditions",
+    cardDescription:
+      "Build access rules from purchased products, variations, categories, tags, and lifetime purchase amount thresholds.",
+    tier: "Free",
+    summary:
+      "Gate membership experiences by what customers bought and how much value they have generated.",
+    h1: "Use product history and purchase value as conditions",
+    highlights: ["Purchased products", "Lifetime spend", "Variation checks"],
+    intro:
+      "Product & Purchase Value Conditions let ArraySubs rules evaluate commerce history. Merchants can ==target customers by purchased products, variations, categories, tags, and lifetime purchase amount thresholds== across content, shop, role, URL, and partial-content rules.",
+    capabilities: [
+      {
+        title: "Product history checks",
+        description:
+          "Match customers who purchased specific products, variations, categories, or tags.",
+      },
+      {
+        title: "Lifetime value thresholds",
+        description:
+          "Unlock experiences when a customer crosses a configured purchase amount.",
+      },
+      {
+        title: "Commerce-aware gating",
+        description:
+          "Use purchase history to control content, products, discounts, downloads, or roles.",
+      },
+      {
+        title: "Large catalog support",
+        description:
+          "Uses searchable selectors instead of preloading every product or variation.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "Product", label: "Condition type" },
+      { value: "Variation", label: "Condition type" },
+      { value: "Spend", label: "Threshold type" },
+    ],
+    faq: [
+      {
+        question: "Can access rules check lifetime purchase amount?",
+        answer:
+          "Yes. Lifetime Purchase Amount is available as a condition for membership rules.",
+      },
+      {
+        question: "Can rules target product variations?",
+        answer:
+          "Yes. Product and variation purchase conditions are supported.",
+      },
+    ],
+    related: ["member-access", "shop-access-restrictions", "advanced-condition-builder"],
+  }),
+  buildFeature({
+    slug: "feature-based-conditions",
+    category: "member-experience",
+    icon: SlidersHorizontal,
+    name: "Feature-Based Conditions",
+    cardDescription:
+      "Use Pro Feature Manager entitlements to unlock content by included features, limits, allowances, or strongest plan value.",
+    tier: "Pro",
+    summary:
+      "Make access decisions from the plan features and numeric allowances customers own.",
+    h1: "Gate access by Pro feature entitlements",
+    highlights: ["Pro condition", "Feature Manager", "Allowance checks"],
+    intro:
+      "Feature-Based Conditions connect Member Access to the Pro Feature Manager. Rules can ==unlock content or experiences by feature availability, numeric allowances, summed values, maximum values, or any matching subscribed plan== so access follows the entitlements customers actually bought.",
+    capabilities: [
+      {
+        title: "Feature entitlement checks",
+        description:
+          "Match customers who have a specific Pro feature assigned through their subscribed plan.",
+      },
+      {
+        title: "Numeric allowance logic",
+        description:
+          "Evaluate seats, limits, credits, storage, or other numeric feature values.",
+      },
+      {
+        title: "Aggregation modes",
+        description:
+          "Use sum, max, or any-plan matching when a customer has multiple subscriptions.",
+      },
+      {
+        title: "Builder integrations",
+        description:
+          "Use feature checks in shortcodes, Elementor Containers, Gutenberg blocks, and access rules.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "Feature", label: "Condition type" },
+      { value: "Sum", label: "Aggregation" },
+      { value: "Max", label: "Aggregation" },
+    ],
+    faq: [
+      {
+        question: "Does this require Feature Manager?",
+        answer:
+          "Yes. Feature-based conditions depend on the Pro Feature Manager module.",
+      },
+      {
+        question: "Can conditions combine multiple subscribed plans?",
+        answer:
+          "Yes. Rules can use sum, max, or any-plan aggregation depending on how the feature should be evaluated.",
+      },
+    ],
+    related: ["feature-manager", "member-access", "advanced-condition-builder"],
+  }),
+  buildFeature({
+    slug: "cpt-content-restrictions",
+    category: "member-experience",
+    icon: Blocks,
+    name: "Any CPT & Content Restriction",
+    cardDescription:
+      "Gate posts, pages, custom post types, taxonomy terms, archives, or selected entries with member access rules.",
+    tier: "Free",
+    summary:
+      "Protect WordPress content beyond one-off pages by targeting post types, terms, and selected entries.",
+    h1: "Restrict any post type or content area",
+    highlights: ["Custom post types", "Taxonomy targeting", "Archive behavior"],
+    intro:
+      "Any CPT & Content Restriction lets Member Access protect normal WordPress content and custom content models. Merchants can ==restrict posts, pages, custom post types, taxonomy terms, archives, or selected entries== with redirects, messages, 403 handling, or hidden archive behavior.",
+    capabilities: [
+      {
+        title: "Post type targeting",
+        description:
+          "Protect all content in a post type or narrow the rule to selected posts and pages.",
+      },
+      {
+        title: "Taxonomy targeting",
+        description:
+          "Gate categories, tags, or custom taxonomy terms when content organization matters.",
+      },
+      {
+        title: "Archive handling",
+        description:
+          "Choose whether restricted entries are hidden, shown with locks, or displayed normally in archive views.",
+      },
+      {
+        title: "Content dripping",
+        description:
+          "Schedule access timing so content can unlock after a configured membership window.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "CPT", label: "Target type" },
+      { value: "Term", label: "Target type" },
+      { value: "Drip", label: "Schedule option" },
+    ],
+    faq: [
+      {
+        question: "Can ArraySubs protect custom post types?",
+        answer:
+          "Yes. Member Access includes post type rules for pages, posts, and custom post types.",
+      },
+      {
+        question: "Can restricted content be hidden from archives?",
+        answer:
+          "Yes. Archive behavior can hide restricted entries or show them with lock-style messaging.",
+      },
+    ],
+    related: ["member-access", "url-path-rules", "partial-content-restriction"],
+  }),
+  buildFeature({
+    slug: "url-path-rules",
+    category: "member-experience",
+    icon: KeyRound,
+    name: "URL Path Rules",
+    cardDescription:
+      "Protect arbitrary site paths with exact, prefix, contains, or regex matching plus priority and exclusion controls.",
+    tier: "Free",
+    summary:
+      "Restrict paths that are not easily represented as a product, post, taxonomy, or shortcode block.",
+    h1: "Protect member-only URL paths",
+    highlights: ["URL rules", "Regex matching", "Redirect actions"],
+    intro:
+      "URL Path Rules protect site areas by path instead of content object. Stores can ==match exact URLs, path prefixes, contains patterns, or regular expressions, then redirect, show a message, return a 403, or require login== with priorities and exclusions.",
+    capabilities: [
+      {
+        title: "Flexible path matching",
+        description:
+          "Use exact, starts-with, contains, or regex matching for protected paths.",
+      },
+      {
+        title: "Priority and exclusions",
+        description:
+          "Resolve overlapping rules and exempt specific paths from broader restrictions.",
+      },
+      {
+        title: "Multiple denied actions",
+        description:
+          "Redirect, show a message, return 403, or send visitors to login.",
+      },
+      {
+        title: "Object-independent gating",
+        description:
+          "Protect routes produced by custom plugins, page builders, or dynamic templates.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "4", label: "Match modes" },
+      { value: "403", label: "Deny option" },
+      { value: "Regex", label: "Advanced mode" },
+    ],
+    faq: [
+      {
+        question: "When should I use URL Path Rules?",
+        answer:
+          "Use them when the protected area is best identified by URL rather than a post, product, taxonomy term, or shortcode section.",
+      },
+      {
+        question: "Can URL rules redirect denied users?",
+        answer:
+          "Yes. Denied users can be redirected, shown a message, sent to login, or served a 403 response.",
+      },
+    ],
+    related: ["member-access", "cpt-content-restrictions", "redirect-product-page"],
+  }),
+  buildFeature({
+    slug: "partial-content-restriction",
+    category: "member-experience",
+    icon: SquareDashedMousePointer,
+    name: "Partial Content Restriction",
+    cardDescription:
+      "Protect selected sections inside public pages with shortcodes, Elementor Containers, Gutenberg blocks, or PHP checks.",
+    tier: "Free + Pro",
+    summary:
+      "Gate only the valuable portion of a page while keeping public context and conversion copy visible.",
+    h1: "Restrict sections without hiding the full page",
+    highlights: ["Shortcodes", "Elementor", "Gutenberg blocks"],
+    intro:
+      "Partial Content Restriction gives builders and editors section-level control. Teams can ==leave public intros, previews, CTAs, and SEO content visible while hiding premium sections== through shortcodes, Elementor Containers, Gutenberg blocks, or developer checks.",
+    capabilities: [
+      {
+        title: "Shortcode gates",
+        description:
+          "Wrap protected sections with visibility or restriction shortcodes.",
+      },
+      {
+        title: "Builder-native gates",
+        description:
+          "Use Elementor Container controls or Gutenberg Restricted Content blocks without manual shortcode wrapping.",
+      },
+      {
+        title: "Public-page strategy",
+        description:
+          "Keep lead-in content visible while members-only lessons, downloads, or account data stay protected.",
+      },
+      {
+        title: "Shared condition model",
+        description:
+          "Use the same subscription, role, purchase, spend, and Pro feature conditions as the rule engine.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Shortcodes" },
+      { value: "Free", label: "Blocks" },
+      { value: "Pro", label: "Feature checks" },
+      { value: "Section", label: "Scope" },
+    ],
+    faq: [
+      {
+        question: "Does partial restriction redirect the whole page?",
+        answer:
+          "No. It is designed to hide or replace selected sections while the rest of the page still renders.",
+      },
+      {
+        question: "Can partial gates use Feature Manager values?",
+        answer:
+          "Yes. Pro feature conditions can be used where the partial gate supports the shared condition model.",
+      },
+    ],
+    related: ["shortcodes", "elementor-content-restrictions", "gutenberg-content-restrictions"],
+  }),
+  buildFeature({
+    slug: "advanced-condition-builder",
+    category: "member-experience",
+    icon: SlidersHorizontal,
+    name: "Advanced Condition Builder",
+    cardDescription:
+      "Combine subscription, product, role, purchase, spend, feature, and schedule logic with nested AND/OR condition groups.",
+    tier: "Free + Pro",
+    summary:
+      "Model real membership logic with relational conditions instead of one-dimensional access toggles.",
+    h1: "Build advanced relational access conditions",
+    highlights: ["Nested AND/OR groups", "Commerce conditions", "Feature conditions"],
+    intro:
+      "Advanced Condition Builder is the shared rule model behind Member Access and partial content gates. Merchants can ==combine subscription status, products, variations, roles, purchase history, lifetime spend, Pro features, and schedules with nested AND/OR groups== so complex membership logic stays readable.",
+    capabilities: [
+      {
+        title: "Nested condition groups",
+        description:
+          "Combine top-level and nested AND/OR logic for advanced rule matching.",
+      },
+      {
+        title: "Subscription and commerce logic",
+        description:
+          "Check active subscriptions, products, variations, categories, tags, and lifetime value.",
+      },
+      {
+        title: "Role and feature logic",
+        description:
+          "Use WordPress roles in the core path and Pro Feature Manager values when entitlement checks are needed.",
+      },
+      {
+        title: "Scheduled access",
+        description:
+          "Add drip or timing rules so access can unlock after a membership window.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Core conditions" },
+      { value: "Pro", label: "Feature values" },
+      { value: "AND/OR", label: "Logic model" },
+      { value: "Drip", label: "Schedule model" },
+    ],
+    faq: [
+      {
+        question: "Can conditions be nested?",
+        answer:
+          "Yes. The rule model supports nested groups so complex AND/OR logic can be represented without separate rules for every case.",
+      },
+      {
+        question: "Which advanced conditions require Pro?",
+        answer:
+          "Feature Manager values are Pro-only. Subscription, role, product, variation, category, tag, and lifetime spend conditions are part of the core access model.",
+      },
+    ],
+    related: ["member-access", "feature-based-conditions", "shop-access-restrictions"],
+  }),
+  buildFeature({
+    slug: "elementor-content-restrictions",
+    category: "member-experience",
+    icon: SquareDashedMousePointer,
+    name: "Elementor Container Restriction",
+    cardDescription:
+      "Gate Elementor Containers from the Advanced panel by subscription, role, purchase history, spend, or Pro feature.",
+    tier: "Free + Pro",
+    summary:
+      "Protect Elementor Container sections with the same restriction engine used by ArraySubs shortcodes.",
+    h1: "Restrict Elementor sections without shortcodes",
+    highlights: ["Elementor Containers", "No shortcode required", "Pro feature checks"],
+    intro:
+      "Elementor Container Restriction adds an ==ArraySubs Content Restrictions== panel to Elementor Containers. Page builders can gate Flexbox or Grid containers by subscription status, products, variations, purchases, roles, lifetime spend, or Pro Feature Manager entitlements while leaving the rest of the page public.",
+    capabilities: [
+      {
+        title: "Builder-native controls",
+        description:
+          "Configure restrictions from the Elementor Advanced tab instead of wrapping content with shortcodes.",
+      },
+      {
+        title: "Shared access engine",
+        description:
+          "Uses the same restrict and visibility behavior as the ArraySubs content-gating shortcodes.",
+      },
+      {
+        title: "Partial-page gating",
+        description:
+          "Protect only the selected Container while public intros, footers, and calls to action remain visible.",
+      },
+      {
+        title: "Feature conditions",
+        description:
+          "Pro Feature Manager conditions can unlock sections by toggle features or numeric allowances.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Core gating" },
+      { value: "Pro", label: "Feature checks" },
+      { value: "2", label: "Container layouts" },
+      { value: "0", label: "Shortcodes needed" },
+    ],
+    faq: [
+      {
+        question: "Does this work on every Elementor widget?",
+        answer:
+          "The controls appear on Elementor Containers. To gate a single widget, place it inside its own Container and gate that Container.",
+      },
+      {
+        question: "Is the restricted content only hidden with CSS?",
+        answer:
+          "No. For denied visitors, the gated Container content is omitted from the rendered frontend HTML.",
+      },
+      {
+        question: "Can an Elementor gate redirect denied users?",
+        answer:
+          "No. Container gates are for partial-page protection and show a restricted message. Use URL or post-type rules for full-page redirects.",
+      },
+    ],
+    related: ["member-access", "gutenberg-content-restrictions", "shortcodes"],
+  }),
+  buildFeature({
+    slug: "gutenberg-content-restrictions",
+    category: "member-experience",
+    icon: Blocks,
+    name: "Gutenberg Block Restriction",
+    cardDescription:
+      "Protect nested WordPress blocks with a Restricted Content block and sidebar rules for members or logged-in users.",
+    tier: "Free + Pro",
+    summary:
+      "Wrap protected block-editor content in a dynamic Restricted Content block.",
+    h1: "Restrict Gutenberg blocks by membership rules",
+    highlights: ["Restricted Content block", "Nested block protection", "Pro feature checks"],
+    intro:
+      "Gutenberg Block Restriction adds a ==Restricted Content block== for protecting nested WordPress blocks. Authors place premium lessons, downloads, notices, or plan-specific sections inside the block, then configure subscription, role, purchase, spend, login-state, or Pro feature checks from the block sidebar.",
+    capabilities: [
+      {
+        title: "Nested block gating",
+        description:
+          "Protect any blocks placed inside the Restricted Content wrapper while surrounding blocks remain public.",
+      },
+      {
+        title: "Sidebar rule controls",
+        description:
+          "Configure restriction type, subscription status, products, variations, roles, spend, messages, and login behavior.",
+      },
+      {
+        title: "Frontend-only enforcement",
+        description:
+          "Authors can still edit the protected blocks, while denied frontend visitors receive only the configured fallback message.",
+      },
+      {
+        title: "Plan feature access",
+        description:
+          "Pro Feature Manager checks can unlock blocks by included capability, combined allowance, or strongest single-plan value.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Block wrapper" },
+      { value: "Pro", label: "Feature checks" },
+      { value: "Nested", label: "Protected content" },
+      { value: "Editor", label: "Setup surface" },
+    ],
+    faq: [
+      {
+        question: "Can editors still see the protected blocks?",
+        answer:
+          "Yes. The block does not hide inner content in the editor. The restriction applies when the frontend renders.",
+      },
+      {
+        question: "Does the block redirect denied visitors?",
+        answer:
+          "No. It is for partial-page gating and shows a restricted message. Use URL or post-type rules for full-page redirects.",
+      },
+      {
+        question: "Do product and feature selectors preload every option?",
+        answer:
+          "No. The selectors load results on demand so large catalogs and feature lists stay manageable.",
+      },
+    ],
+    related: ["member-access", "elementor-content-restrictions", "shortcodes"],
   }),
   buildFeature({
     slug: "member-insight",
@@ -1203,42 +2732,42 @@ export const FEATURES: Feature[] = [
     slug: "retention-and-refunds",
     category: "retention-revenue",
     icon: HeartHandshake,
-    name: "Retention and Refunds",
+    name: "Retention Flow Builder",
     cardDescription:
-      "Configure cancellation reasons, retention offers, refund policies, prorated refunds, and Pro refund-to-credit flows.",
+      "Build a multi-step cancellation flow with reason capture, targeted save offers, and final confirmation.",
     tier: "Free + Pro",
     summary:
-      "Reduce churn, capture cancellation reasons, present save offers, and manage refund outcomes.",
-    h1: "Reduce churn and manage refunds",
-    highlights: ["Cancellation reasons", "Retention offers", "Refund policies"],
+      "Reduce churn by collecting cancellation reasons and presenting targeted offers before final cancellation.",
+    h1: "Build the pre-cancellation retention flow",
+    highlights: ["Cancellation reasons", "Save offers", "Multi-step form"],
     intro:
-      "Retention, Cancellation, and Refunds is the module for ==cancellation setup, retention offers, retention use cases, refund management, prorated refunds, and Pro refund-to-store-credit outcomes==. It helps merchants understand why customers leave and recover revenue before it is lost.",
+      "Retention Flow Builder is the cancellation-save workflow for ArraySubs. It lets merchants ==collect a cancellation reason, present targeted retention offers, and guide customers through a multi-step form before the final cancellation confirmation== so recoverable churn has a real intervention point.",
     capabilities: [
       {
-        title: "Cancellation setup",
+        title: "Reason capture",
         description:
-          "Control immediate vs end-of-period cancellation and required reason capture.",
+          "Ask customers why they are leaving before the cancellation is finalized.",
       },
       {
-        title: "Retention offers",
+        title: "Targeted retention offers",
         description:
-          "Present discount, pause, downgrade, or contact-support offers during cancellation.",
+          "Show discount, pause, downgrade, or contact-support offers based on the selected reason.",
       },
       {
-        title: "Refund management",
+        title: "Multi-step cancellation form",
         description:
-          "Handle immediate, end-of-period, prorated, and full-refund subscription behavior.",
+          "Moves customers from reason selection to save offers and only then to final cancellation confirmation.",
       },
       {
-        title: "Refund to credit",
+        title: "Offer outcome tracking",
         description:
-          "Pro can retain value by refunding to store credit instead of payment rails.",
+          "Logs accepted and declined offers so retention analytics can report what saves revenue.",
       },
     ],
     stats: [
       { value: "Free", label: "Retention flow" },
       { value: "4", label: "Offer types" },
-      { value: "Pro", label: "Credit refunds" },
+      { value: "3", label: "Form steps" },
       { value: "Reasons", label: "Churn insight" },
     ],
     faq: [
@@ -1248,12 +2777,12 @@ export const FEATURES: Feature[] = [
           "Yes. The core includes retention offers and cancellation reason capture.",
       },
       {
-        question: "Which refund workflow requires Pro?",
+        question: "What happens before cancellation?",
         answer:
-          "Refund-to-store-credit depends on the Pro Store Credit module.",
+          "Customers choose a reason, see any matching save offer, and then continue to the final confirmation only if they still want to cancel.",
       },
     ],
-    related: ["retention-analytics", "store-credit", "customer-portal"],
+    related: ["retention-analytics", "customer-portal", "manage-refunds"],
   }),
   buildFeature({
     slug: "retention-analytics",
@@ -1304,7 +2833,7 @@ export const FEATURES: Feature[] = [
           "No. The updated manual counts Retention Analytics as a free root-level module.",
       },
       {
-        question: "Does it depend on Retention and Refunds?",
+        question: "Does it depend on Retention Flow Builder?",
         answer:
           "Yes. It reports on cancellation reasons and offers configured through the retention workflow.",
       },
@@ -1581,7 +3110,7 @@ export const FEATURES: Feature[] = [
       {
         question: "Is Gateway Health the same as automatic payments?",
         answer:
-          "No. Automatic payments are part of Checkout and Payments. Gateway Health is the dedicated Pro monitoring module.",
+          "No. Automatic payments are represented in the Payment Gateways section. Gateway Health is the dedicated Pro monitoring module.",
       },
       {
         question: "Which gateways does it help monitor?",
@@ -1589,7 +3118,7 @@ export const FEATURES: Feature[] = [
           "The manual highlights Stripe, PayPal, and Paddle gateway workflows, plus gateway capabilities and webhook events.",
       },
     ],
-    related: ["checkout-and-payments", "audits-and-logs", "analytics"],
+    related: ["stripe-payments", "paypal-payments", "paddle-payments"],
   }),
   buildFeature({
     slug: "feature-manager",

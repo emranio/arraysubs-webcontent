@@ -55,9 +55,10 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
             magnetic
             iconRight={<ArrowRight className="size-5" />}
           >
-            View Pro Pricing
+            Start Trial
           </Button>
         }
+        trust="No credit card required"
       />
 
       {/* ---- Overview + outcomes + stats -------------------------------- */}
@@ -257,7 +258,7 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
             eyebrow="Paid Pro plans"
             title="Unlock the complete Pro stack"
             subtitle="Start on the free-forever core today, then choose a paid Pro plan when you need the advanced Pro feature set."
-            microcopy="Plans from $129/year · Lifetime options available"
+            microcopy="No credit card required · Plans from $129/year · Lifetime options available"
             actions={
               <Button
                 href={GET_PRO}
@@ -267,7 +268,7 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
                 magnetic
                 iconRight={<ArrowRight className="size-5" />}
                 >
-                View Pricing
+                Start Trial
               </Button>
             }
           />

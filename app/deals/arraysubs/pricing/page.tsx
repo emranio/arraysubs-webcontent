@@ -98,9 +98,9 @@ const CORE_MODULE_COUNT = FEATURES.filter((feature) => feature.tier !== "Pro").l
 const PRO_ONLY_MODULE_COUNT = FEATURES.filter((feature) => feature.tier === "Pro").length;
 
 const STATS = [
-  { value: String(MODULE_COUNT), label: "Root modules" },
+  { value: String(MODULE_COUNT), label: "Features" },
   { value: String(CORE_MODULE_COUNT), label: "Core-accessible" },
-  { value: String(PRO_ONLY_MODULE_COUNT), label: "Pro-only modules" },
+  { value: String(PRO_ONLY_MODULE_COUNT), label: "Pro-only features" },
   { value: "6+", label: "Plugins replaced" },
 ];
 
