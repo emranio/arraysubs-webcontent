@@ -16,11 +16,23 @@ const BILLING_OPTIONS: { label: string; value: BillingCycle }[] = [
 export function PricingPlanCards() {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("yearly");
   const isLifetime = billingCycle === "lifetime";
+  const accentTone = isLifetime ? "secondary" : "primary";
+  const featuredTextClass = "text-on-dark";
+  const featuredMutedClass = "text-on-dark";
+  const selectedFaceClass = isLifetime
+    ? "bg-secondary text-on-dark"
+    : "bg-primary text-on-dark";
+  const selectedEdgeClass = isLifetime
+    ? "bg-secondary-strong"
+    : "bg-primary-strong";
 
   return (
     <>
       <div
-        className="mt-8 inline-flex rounded-pill border border-[#FE8219] bg-background p-1"
+        className={cn(
+          "mt-8 inline-flex gap-1 rounded-pill border bg-background p-1.5 transition-colors",
+          isLifetime ? "border-secondary" : "border-primary",
+        )}
         role="radiogroup"
         aria-label="Choose billing option"
       >
@@ -35,14 +47,35 @@ export function PricingPlanCards() {
               aria-checked={selected}
               onClick={() => setBillingCycle(option.value)}
               className={cn(
-                "min-w-32 cursor-pointer rounded-pill px-6 py-3 text-base font-semibold transition-colors",
-                "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
-                selected
-                  ? "bg-[#FE8219] text-dark"
-                  : "text-muted hover:text-foreground",
+                "group relative min-w-32 cursor-pointer rounded-pill border-0 bg-transparent p-0 text-base font-semibold outline-none",
+                "focus-visible:outline-2 focus-visible:outline-offset-2",
+                isLifetime
+                  ? "focus-visible:outline-secondary"
+                  : "focus-visible:outline-primary",
               )}
             >
-              {option.label}
+              {selected && (
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    "absolute inset-x-0 top-[0.1875rem] bottom-0 rounded-pill",
+                    selectedEdgeClass,
+                  )}
+                />
+              )}
+              <span
+                className={cn(
+                  "relative flex min-h-12 items-center justify-center rounded-pill px-6 transition-transform",
+                  selected
+                    ? cn(
+                        "-translate-y-[0.1875rem] group-active:translate-y-0",
+                        selectedFaceClass,
+                      )
+                    : "text-muted hover:text-foreground",
+                )}
+              >
+                {option.label}
+              </span>
             </button>
           );
         })}
@@ -62,14 +95,18 @@ export function PricingPlanCards() {
             <article
               key={plan.id}
               className={cn(
-                "flex h-full flex-col rounded-2xl p-6 sm:p-8",
+                "flex h-full flex-col rounded-2xl p-6 transition-colors sm:p-8",
                 isFeatured
-                  ? "bg-primary text-on-dark"
+                  ? isLifetime
+                    ? "bg-secondary text-on-dark"
+                    : "bg-primary text-on-dark"
                   : "bg-card text-foreground",
               )}
             >
               <div className="flex min-h-8 flex-wrap items-center justify-between gap-3">
-                <Badge tone="highlight">{plan.siteLabel}</Badge>
+                <Badge tone={isFeatured ? "highlight" : accentTone}>
+                  {plan.siteLabel}
+                </Badge>
                 {plan.badge && <Badge tone="dark">{plan.badge}</Badge>}
               </div>
 
@@ -79,7 +116,7 @@ export function PricingPlanCards() {
               <p
                 className={cn(
                   "mt-3 text-pretty",
-                  isFeatured ? "text-on-dark" : "text-muted",
+                  isFeatured ? featuredMutedClass : "text-muted",
                 )}
               >
                 {plan.summary}
@@ -93,7 +130,7 @@ export function PricingPlanCards() {
                   <span
                     className={cn(
                       "pb-2 text-sm font-semibold",
-                      isFeatured ? "text-on-dark" : "text-muted",
+                      isFeatured ? featuredMutedClass : "text-muted",
                     )}
                   >
                     {priceSuffix}
@@ -102,14 +139,14 @@ export function PricingPlanCards() {
                 <p
                   className={cn(
                     "mt-3 text-sm",
-                    isFeatured ? "text-on-dark" : "text-muted",
+                    isFeatured ? featuredMutedClass : "text-muted",
                   )}
                 >
                   {alternateLabel}:{" "}
                   <span
                     className={cn(
                       "font-semibold",
-                      isFeatured ? "text-on-dark" : "text-foreground",
+                      isFeatured ? featuredTextClass : "text-foreground",
                     )}
                   >
                     {alternatePrice}
@@ -120,7 +157,7 @@ export function PricingPlanCards() {
               <p
                 className={cn(
                   "mt-8 text-sm font-semibold",
-                  isFeatured ? "text-on-dark" : "text-foreground",
+                  isFeatured ? featuredTextClass : "text-foreground",
                 )}
               >
                 Best for
@@ -128,7 +165,7 @@ export function PricingPlanCards() {
               <p
                 className={cn(
                   "mt-2 text-sm leading-6",
-                  isFeatured ? "text-on-dark" : "text-muted",
+                  isFeatured ? featuredMutedClass : "text-muted",
                 )}
               >
                 {plan.bestFor}
@@ -137,7 +174,7 @@ export function PricingPlanCards() {
               <div className="mt-auto pt-12">
                 <Button
                   href={`/deals/arraysubs/checkout/${plan.id}/`}
-                  variant={isFeatured ? "dark" : "primary"}
+                  variant={isFeatured ? "dark" : accentTone}
                   size="lg"
                   fullWidth
                   magnetic

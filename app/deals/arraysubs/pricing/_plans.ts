@@ -22,7 +22,8 @@ export const ARRAYSUBS_PRO_PLANS: ArraySubsProPlan[] = [
     annualPrice: 129,
     lifetimePrice: 269,
     summary: "The complete Pro feature set for one production store.",
-    bestFor: "Solo store owners, a single membership site, or one WooCommerce subscription build.",
+    bestFor:
+      "Solo store owners, a single membership site, or one WooCommerce subscription build.",
   },
   {
     id: "55248",
@@ -32,8 +33,10 @@ export const ARRAYSUBS_PRO_PLANS: ArraySubsProPlan[] = [
     annualPrice: 249,
     lifetimePrice: 519,
     badge: "Best value",
-    summary: "Everything in Pro across client stores, staging sites, and growing portfolios.",
-    bestFor: "Agencies, freelancers, and operators running multiple subscription stores.",
+    summary:
+      "Everything in Pro across client stores, staging sites, and growing portfolios.",
+    bestFor:
+      "Agencies, freelancers, and operators running multiple subscription stores.",
   },
   {
     id: "55250",
@@ -42,8 +45,10 @@ export const ARRAYSUBS_PRO_PLANS: ArraySubsProPlan[] = [
     siteLabel: "1000 sites",
     annualPrice: 489,
     lifetimePrice: 899,
-    summary: "High-volume licensing for agencies and productized WooCommerce services.",
-    bestFor: "Large agencies, hosting partners, and teams standardizing ArraySubs across many builds.",
+    summary:
+      "High-volume licensing for agencies and productized WooCommerce services.",
+    bestFor:
+      "Large agencies, hosting partners, and teams standardizing ArraySubs across many builds.",
   },
 ];
 

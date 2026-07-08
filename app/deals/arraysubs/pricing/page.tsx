@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import {
   ArrowRight,
+  ArrowDown,
   BarChart3,
   ClipboardList,
   CreditCard,
@@ -34,6 +35,7 @@ import {
   type ComparisonRow,
 } from "@/components/ui";
 import { PricingPlanCards } from "./PricingPlanCards";
+import { ARRAYSUBS_PRO_PLANS } from "./_plans";
 
 export const metadata: Metadata = {
   ...createMetadata({
@@ -101,6 +103,8 @@ const STATS = [
   { value: String(PRO_ONLY_MODULE_COUNT), label: "Pro-only modules" },
   { value: "6+", label: "Plugins replaced" },
 ];
+
+const TRIAL_PLAN = ARRAYSUBS_PRO_PLANS[0];
 
 const yes: ComparisonCell = { kind: "check" };
 const no: ComparisonCell = { kind: "no" };
@@ -243,20 +247,20 @@ export default function ArraySubsPricingPage() {
         actions={
           <>
             <Button
-              href="#plans"
-              size="lg"
-              magnetic
-              iconRight={<ArrowRight className="size-5" />}
-            >
-              Compare Plans
-            </Button>
-            <Button
               href={site.sameAs[0]}
               variant="outline"
               size="lg"
               magnetic
             >
-              Get Free Core
+              Get Free Core - WP.ORG
+            </Button>
+            <Button
+              href="#plans"
+              size="lg"
+              magnetic
+              iconRight={<ArrowDown className="size-5" />}
+            >
+              Compare Plans
             </Button>
           </>
         }
@@ -271,10 +275,98 @@ export default function ArraySubsPricingPage() {
             align="left"
           />
           <PricingPlanCards />
-          <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted">
-            Annual and lifetime checkout is handled securely. Taxes and
-            invoices are calculated during checkout where applicable.
-          </p>
+          <div className="mt-[0.1875rem] grid rounded-2xl bg-card p-6 text-foreground sm:p-8 lg:grid-cols-[1fr_2fr] lg:gap-10">
+            <div className="flex flex-col">
+              <p className="text-sm font-semibold tracking-wide text-primary uppercase">
+                What every plan includes
+              </p>
+              <h3 className="mt-3 font-display text-3xl text-balance sm:text-4xl">
+                Every paid plan includes every Pro feature and module.
+              </h3>
+              <p className="mt-auto pt-8 text-sm text-muted">
+                Taxes and invoices are calculated during checkout where
+                applicable.
+              </p>
+            </div>
+            <div className="grid gap-5 text-muted">
+              <p>
+                <span className="font-semibold text-foreground">
+                  All plans include all features and all modules.
+                </span>{" "}
+                Personal, Professional, and Agency only differ by licensed site
+                count.
+              </p>
+              <p>
+                Yearly plans receive Pro support, new features, and security
+                updates while the license is active.{" "}
+                <span className="font-semibold text-foreground underline decoration-current underline-offset-4">
+                  After expiry, Pro support, new features, and security updates
+                  stop until renewal.
+                </span>
+              </p>
+              <p className="rounded-sm bg-highlight px-4 py-3 text-foreground">
+                Lifetime plans continue receiving Pro support, new features,
+                and security updates without yearly renewal.
+              </p>
+              <p>
+                <span className="font-semibold text-foreground">
+                  I value support the most.
+                </span>{" "}
+                For any support, email{" "}
+                <a
+                  href="mailto:emran@arrayhash.com"
+                  className="font-semibold text-primary underline decoration-current underline-offset-4"
+                >
+                  emran@arrayhash.com
+                </a>
+                . I will help you out. I always do.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-24 grid items-stretch gap-[0.1875rem] lg:grid-cols-2">
+            <article className="flex h-full flex-col rounded-2xl bg-card p-6 text-foreground sm:p-8">
+              <img
+                src="/shapes/10-day-trial.png"
+                alt="10 day trial, no credit card required"
+                width={1574}
+                height={586}
+                className="mx-auto w-full max-w-[34rem]"
+              />
+              <div className="mt-auto flex justify-center pt-8">
+                <Button
+                  href={`/deals/arraysubs/checkout/${TRIAL_PLAN.id}/`}
+                  size="lg"
+                  magnetic
+                  iconRight={<ArrowRight className="size-5" />}
+                >
+                  Start Trial
+                </Button>
+              </div>
+            </article>
+
+            <article className="grid h-full items-center gap-8 rounded-2xl p-6 text-foreground sm:p-8 md:grid-cols-[10rem_1fr]">
+              <img
+                src="/shapes/30-days-refund-removebg.png"
+                alt="30 days refund guarantee"
+                width={500}
+                height={500}
+                className="mx-auto w-full max-w-40 md:mx-0"
+              />
+              <div>
+                <p className="text-sm font-semibold tracking-wide text-primary uppercase">
+                  30-day guarantee
+                </p>
+                <h3 className="mt-3 font-display text-3xl text-balance sm:text-4xl">
+                  Try ArraySubs Pro without second thoughts.
+                </h3>
+                <p className="mt-4 text-muted text-pretty">
+                  If the Pro workflow is not the right fit, request a refund
+                  within 30 days. No drawn-out review, no pressure to stay.
+                </p>
+              </div>
+            </article>
+          </div>
         </Container>
       </Section>
 

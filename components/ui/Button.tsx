@@ -10,7 +10,13 @@ import { cn } from "@/lib/cn";
 import { Magnetic } from "@/components/animation/Magnetic";
 
 /** Style variants are named by their look, per the design-system convention. */
-type Variant = "primary" | "dark" | "highlight" | "outline" | "ghost";
+type Variant =
+  | "primary"
+  | "secondary"
+  | "dark"
+  | "highlight"
+  | "outline"
+  | "ghost";
 type Size = "xs" | "sm" | "md" | "lg";
 type Layers = "3layer" | "2layer";
 
@@ -48,6 +54,11 @@ const variants: Record<
     shadow: "bg-primary/25",
     edge: "bg-primary-strong",
     front: "bg-primary text-on-dark",
+  },
+  secondary: {
+    shadow: "bg-secondary/25",
+    edge: "bg-secondary-strong",
+    front: "bg-secondary text-on-dark",
   },
   dark: {
     shadow: "bg-dark/25",

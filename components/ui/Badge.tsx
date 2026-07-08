@@ -1,11 +1,18 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type Tone = "neutral" | "primary" | "dark" | "highlight" | "outline";
+type Tone =
+  | "neutral"
+  | "primary"
+  | "secondary"
+  | "dark"
+  | "highlight"
+  | "outline";
 
 const tones: Record<Tone, string> = {
   neutral: "bg-surface text-muted",
   primary: "bg-primary text-on-dark",
+  secondary: "bg-secondary text-on-dark",
   dark: "bg-dark text-on-dark",
   highlight: "bg-highlight text-dark",
   outline: "border border-current text-current",

@@ -1,9 +1,12 @@
 export const brandBaseColor = "#873EFF";
+export const secondaryBaseColor = "#18A554";
 
 export const siteColors = {
   highlight: "#EFE7FF",
   primary: brandBaseColor,
   primaryStrong: "#6F22E6",
+  secondary: secondaryBaseColor,
+  secondaryStrong: "#128443",
   dark: "#12002B",
   dark2: "#321167",
   background: "#FFFFFF",
