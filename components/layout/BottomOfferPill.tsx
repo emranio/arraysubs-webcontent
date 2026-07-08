@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 import {
@@ -34,6 +35,8 @@ const HOLD_SECONDS = 3;
 
 export function BottomOfferPill() {
   const rootRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname() ?? "";
+  const isCheckoutPath = pathname.startsWith("/checkout/");
 
   useGSAP(
     () => {
@@ -138,6 +141,10 @@ export function BottomOfferPill() {
     },
     { scope: rootRef },
   );
+
+  if (isCheckoutPath) {
+    return null;
+  }
 
   return (
     <div

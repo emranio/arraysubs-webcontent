@@ -273,7 +273,7 @@ export default function ArraySubsPricingPage() {
               />
               <div className="mt-auto flex flex-col items-center pt-8 text-center">
                 <Button
-                  href={getCheckoutHref(TRIAL_PLAN.id)}
+                  href={getCheckoutHref(TRIAL_PLAN.id, { trial: "free" })}
                   size="lg"
                   magnetic
                   iconRight={<ArrowRight className="size-5" />}

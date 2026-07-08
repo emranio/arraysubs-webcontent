@@ -9,6 +9,7 @@ import type { ArraySubsProPlan } from "../../deals/arraysubs/pricing/_plans";
 import {
   CHECKOUT_PRODUCT_ID,
   CHECKOUT_PUBLIC_KEY,
+  type CheckoutTrialMode,
   EARLY_BIRD_DISCOUNT_PERCENT,
   formatUsd,
   getDiscountedPrice,
@@ -23,7 +24,10 @@ type CheckoutConfig = {
 
 type CheckoutOpenOptions = {
   name: string;
+  plan_id: string;
   licenses: number;
+  coupon: string;
+  trial?: CheckoutTrialMode;
   purchaseCompleted?: (response: CheckoutResponse) => void;
   success?: (response: CheckoutResponse) => void;
 };
@@ -47,9 +51,18 @@ declare global {
 
 const CHECKOUT_SCRIPT_URL = "https://checkout.freemius.com/js/v1/";
 
-export function CheckoutOverlayClient({ plan }: { plan: ArraySubsProPlan }) {
+export function CheckoutOverlayClient({
+  plan,
+  couponCode,
+  trialMode,
+}: {
+  plan: ArraySubsProPlan;
+  couponCode: string;
+  trialMode?: CheckoutTrialMode;
+}) {
   const annualPrice = getDiscountedPrice(plan.annualPrice);
   const lifetimePrice = getDiscountedPrice(plan.lifetimePrice);
+  const isTrialCheckout = Boolean(trialMode);
   const [scriptReady, setScriptReady] = useState(false);
   const [status, setStatus] = useState<"loading" | "ready" | "success" | "error">(
     "loading",
@@ -91,7 +104,10 @@ export function CheckoutOverlayClient({ plan }: { plan: ArraySubsProPlan }) {
 
       checkout.open({
         name: "ArraySubs Pro",
+        plan_id: plan.id,
         licenses: plan.sites,
+        coupon: couponCode,
+        ...(trialMode ? { trial: trialMode } : {}),
         purchaseCompleted: (response) => {
           console.log("Purchase completed:", response);
           console.log("User email:", response.user?.email);
@@ -110,7 +126,7 @@ export function CheckoutOverlayClient({ plan }: { plan: ArraySubsProPlan }) {
       setStatus("error");
       setMessage("Secure checkout could not open. Please refresh the page.");
     }
-  }, [plan.id, plan.sites]);
+  }, [couponCode, plan.id, plan.sites, trialMode]);
 
   useEffect(() => {
     if (!scriptReady || openedRef.current) {
@@ -164,10 +180,19 @@ export function CheckoutOverlayClient({ plan }: { plan: ArraySubsProPlan }) {
             <h2 className="font-display text-2xl">Secure checkout</h2>
           </div>
           <p className="mt-4 text-muted text-pretty">{message}</p>
+          {isTrialCheckout && (
+            <p className="mt-4 rounded-xl border border-primary/20 bg-primary/8 px-4 py-3 text-sm font-semibold text-foreground text-pretty">
+              Trial mode is enabled for this checkout. Freemius will open the
+              no-card trial flow when the product plan supports free trials.
+            </p>
+          )}
           <p className="mt-4 text-sm text-muted text-pretty">
             Selected plan:{" "}
             <span className="font-semibold text-foreground">{plan.name}</span>,{" "}
             {plan.siteLabel}.{" "}
+            Coupon{" "}
+            <span className="font-semibold text-foreground">{couponCode}</span>
+            .{" "}
             <span className="font-semibold text-[#FE8218]">
               {EARLY_BIRD_DISCOUNT_PERCENT}% off
             </span>{" "}

@@ -10,11 +10,14 @@ import {
 } from "@/components/ui";
 import {
   ARRAYSUBS_PRO_PLANS,
+  CHECKOUT_COUPON_CODE,
+  type CheckoutTrialMode,
   EARLY_BIRD_DISCOUNT_PERCENT,
   PRO_PLAN_FEATURES,
   formatUsd,
   getArraySubsProPlan,
   getCheckoutHref,
+  getCheckoutPath,
   getDiscountedPrice,
 } from "../../deals/arraysubs/pricing/_plans";
 import { CheckoutOverlayClient } from "./CheckoutOverlayClient";
@@ -43,25 +46,46 @@ export async function generateMetadata({
   return createMetadata({
     title: `${plan.name} Checkout — ArraySubs Pro`,
     description: `Complete your ArraySubs Pro ${plan.name} checkout securely. ${plan.siteLabel}, ${EARLY_BIRD_DISCOUNT_PERCENT}% off early-bird pricing: ${formatUsd(annualPrice)} yearly, lifetime option ${formatUsd(lifetimePrice)}.`,
-    path: getCheckoutHref(plan.id),
+    path: getCheckoutPath(plan.id),
     noindex: true,
   });
 }
 
+function readSearchValue(value: string | string[] | undefined) {
+  return Array.isArray(value) ? value[0] : value;
+}
+
+function normalizeTrialMode(
+  value: string | string[] | undefined,
+): CheckoutTrialMode | undefined {
+  const trial = readSearchValue(value);
+
+  if (trial === "true") return true;
+  if (trial === "free" || trial === "paid") return trial;
+
+  return undefined;
+}
+
 export default async function ArraySubsCheckoutPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ planId: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { planId } = await params;
+  const query = await searchParams;
   const plan = getArraySubsProPlan(planId);
 
   if (!plan) {
     notFound();
   }
 
+  const couponCode = readSearchValue(query.coupon)?.trim() || CHECKOUT_COUPON_CODE;
+  const trialMode = normalizeTrialMode(query.trial);
   const annualPrice = getDiscountedPrice(plan.annualPrice);
   const lifetimePrice = getDiscountedPrice(plan.lifetimePrice);
+  const isTrialCheckout = Boolean(trialMode);
 
   return (
     <>
@@ -72,11 +96,17 @@ export default async function ArraySubsCheckoutPage({
           { name: "Pricing Plan", href: "/deals/arraysubs/pricing/" },
           { name: `${plan.name} Checkout`, href: getCheckoutHref(plan.id) },
         ]}
-        title={`${plan.name} checkout.`}
-        subtitle="Secure checkout opens automatically on this page. Complete checkout to receive your ArraySubs Pro license and account details."
+        title={`${plan.name} ${isTrialCheckout ? "trial" : "checkout"}.`}
+        subtitle={
+          isTrialCheckout
+            ? "The no-card trial checkout opens automatically on this page. Start the trial to receive your ArraySubs Pro license and account details."
+            : "Secure checkout opens automatically on this page. Complete checkout to receive your ArraySubs Pro license and account details."
+        }
         highlights={[
           `Plan ID ${plan.id}`,
           plan.siteLabel,
+          `Coupon ${couponCode}`,
+          ...(isTrialCheckout ? ["10-day no-card trial"] : []),
           `${EARLY_BIRD_DISCOUNT_PERCENT}% off early bird`,
           `${formatUsd(annualPrice)} yearly`,
           `${formatUsd(lifetimePrice)} lifetime`,
@@ -148,7 +178,11 @@ export default async function ArraySubsCheckoutPage({
               </ul>
             </aside>
 
-            <CheckoutOverlayClient plan={plan} />
+            <CheckoutOverlayClient
+              plan={plan}
+              couponCode={couponCode}
+              trialMode={trialMode}
+            />
           </div>
         </Container>
       </Section>

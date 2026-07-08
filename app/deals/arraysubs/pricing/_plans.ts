@@ -10,8 +10,16 @@ export type ArraySubsProPlan = {
   bestFor: string;
 };
 
+export type CheckoutTrialMode = true | "free" | "paid";
+
+export type CheckoutHrefOptions = {
+  coupon?: string | null;
+  trial?: CheckoutTrialMode;
+};
+
 export const CHECKOUT_PRODUCT_ID = "33435";
 export const CHECKOUT_PUBLIC_KEY = "pk_ab1c211d5fa5e6aabcd0f9fd43c91";
+export const CHECKOUT_COUPON_CODE = "special30";
 export const EARLY_BIRD_DISCOUNT_PERCENT = 30;
 
 export const ARRAYSUBS_PRO_PLANS: ArraySubsProPlan[] = [
@@ -65,8 +73,27 @@ export function getArraySubsProPlan(planId: string) {
   return ARRAYSUBS_PRO_PLANS.find((plan) => plan.id === planId);
 }
 
-export function getCheckoutHref(planId: string) {
+export function getCheckoutPath(planId: string) {
   return `/checkout/${planId}/`;
+}
+
+export function getCheckoutHref(planId: string, options: CheckoutHrefOptions = {}) {
+  const params = new URLSearchParams();
+  const coupon = options.coupon === undefined
+    ? CHECKOUT_COUPON_CODE
+    : options.coupon;
+
+  if (coupon) {
+    params.set("coupon", coupon);
+  }
+
+  if (options.trial) {
+    params.set("trial", String(options.trial));
+  }
+
+  const query = params.toString();
+
+  return query ? `${getCheckoutPath(planId)}?${query}` : getCheckoutPath(planId);
 }
 
 export function getDiscountedPrice(amount: number) {
