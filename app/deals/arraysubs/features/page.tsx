@@ -200,7 +200,7 @@ export default function FeaturesHubPage() {
       <ModuleShowcase
         moduleCount={MODULE_COUNT}
         compact
-        artworkSrc="/shapes/feature-count.png"
+        artworkSrc="/shapes/feature-count.webp"
         artworkAlt="ArraySubs features"
         primaryHref={GET_PRO}
         primaryLabel="Start Trial"
@@ -277,7 +277,7 @@ export default function FeaturesHubPage() {
           <div className="grid items-stretch gap-[0.1875rem] lg:grid-cols-2">
             <article className="flex h-full flex-col rounded-2xl bg-card p-6 text-foreground sm:p-8">
               <img
-                src="/shapes/10-day-trial.png"
+                src="/shapes/10-day-trial.webp"
                 alt="10 day trial, no credit card required"
                 width={1574}
                 height={586}
@@ -300,7 +300,7 @@ export default function FeaturesHubPage() {
 
             <article className="grid h-full items-center gap-8 rounded-2xl p-6 text-foreground sm:p-8 md:grid-cols-[10rem_1fr]">
               <img
-                src="/shapes/30-days-refund-removebg.png"
+                src="/shapes/30-days-refund.webp"
                 alt="30 days refund guarantee"
                 width={500}
                 height={500}
