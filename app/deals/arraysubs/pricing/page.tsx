@@ -51,8 +51,12 @@ export const metadata: Metadata = {
   title: { absolute: "ArraySubs Pro Pricing" },
 };
 
-const PRO_FEATURES: { icon: ReactNode; title: string; description: string }[] =
-  [
+const PRO_FEATURES: {
+  icon: ReactNode;
+  title: string;
+  description: string;
+  status?: "coming-soon";
+}[] = [
     {
       icon: <Wallet className="size-6" />,
       title: "Store Credit",
@@ -97,6 +101,12 @@ const PRO_FEATURES: { icon: ReactNode; title: string; description: string }[] =
     },
     {
       icon: <Repeat className="size-6" />,
+      title: "Flexible Renewal Sync",
+      description:
+        "Set product-level cycle segments for synced renewals with full, prorated, or next-cycle first-charge behavior.",
+    },
+    {
+      icon: <Repeat className="size-6" />,
       title: "Auto-Retry Failed Payments",
       description:
         "Retry failed automatic renewal charges with scheduled attempts, customer notices, recovery tracking, and grace-state alignment.",
@@ -106,6 +116,34 @@ const PRO_FEATURES: { icon: ReactNode; title: string; description: string }[] =
       title: "Auto-Downgrade on Failure",
       description:
         "Move unresolved failed renewals to a lower plan or fallback access path instead of ending the customer relationship outright.",
+    },
+    {
+      icon: <Repeat className="size-6" />,
+      title: "Early Renew",
+      description:
+        "Let customers or staff renew before the scheduled date while keeping the subscription cadence predictable.",
+      status: "coming-soon",
+    },
+    {
+      icon: <CreditCard className="size-6" />,
+      title: "Installment / Split Payments",
+      description:
+        "Sell a fixed-price product across multiple instalments instead of collecting the full amount upfront.",
+      status: "coming-soon",
+    },
+    {
+      icon: <ListChecks className="size-6" />,
+      title: "Customer-Chosen Subscription Duration",
+      description:
+        "Let customers choose how many cycles or periods their subscription should run, within merchant-defined limits.",
+      status: "coming-soon",
+    },
+    {
+      icon: <Wallet className="size-6" />,
+      title: "Donation & Crowdfunding Module",
+      description:
+        "Accept donation-style payments, supporter pledges, and campaign funding workflows through ArraySubs Pro.",
+      status: "coming-soon",
     },
   ];
 
@@ -165,12 +203,12 @@ export default function ArraySubsPricingPage() {
           { name: "Pricing Plan", href: "/deals/arraysubs/pricing/" },
         ]}
         title="ArraySubs Pro pricing."
-        subtitle="Choose by site count, not feature access. Every ArraySubs Pro plan includes the complete Pro feature set, annual and lifetime options, and the same 30-day guarantee."
+        subtitle="Choose by site count, not feature access. Every ArraySubs Pro plan includes the same Pro feature access, annual and lifetime options, and the same 30-day guarantee."
         highlights={[
           "Personal · 1 site",
           "Professional · 10 sites",
           "Agency · 1000 sites",
-          "All Pro features included",
+          "All current Pro features included",
         ]}
         actions={
           <>
@@ -198,7 +236,7 @@ export default function ArraySubsPricingPage() {
         moduleCount={MODULE_COUNT}
         compact
         artworkSrc="/shapes/feature-count.png"
-        artworkAlt="63+ ArraySubs features"
+        artworkAlt={`${MODULE_COUNT} ArraySubs features`}
         primaryHref=""
         primaryLabel=""
         secondaryHref=""
@@ -220,7 +258,8 @@ export default function ArraySubsPricingPage() {
                 What every plan includes
               </p>
               <h3 className="mt-3 font-display text-3xl text-balance sm:text-4xl">
-                Every paid plan includes every Pro feature and module.
+                Every paid plan includes every current Pro feature and future
+                Pro module as it ships.
               </h3>
               <p className="mt-auto pt-8 text-sm text-muted">
                 Taxes and invoices are calculated during checkout where
@@ -230,10 +269,11 @@ export default function ArraySubsPricingPage() {
             <div className="grid gap-5 text-muted">
               <p>
                 <span className="font-semibold text-foreground">
-                  All plans include all features and all modules.
+                  All plans include all current features and modules.
                 </span>{" "}
                 Personal, Professional, and Agency only differ by licensed site
-                count.
+                count. Coming-soon Pro workflows are marked clearly below and
+                are planned for the same Pro plan family.
               </p>
               <p>
                 Yearly plans receive Pro support, new features, and security
@@ -316,16 +356,11 @@ export default function ArraySubsPricingPage() {
           <SectionTitle
             eyebrow="Free vs Pro"
             title="Start free, upgrade when the store needs the full operating stack"
-            subtitle={`All ${MODULE_COUNT} features from the features page are listed below. ${PRO_ONLY_MODULE_COUNT} Pro-only features come first, followed by shared and free/core features.`}
+            subtitle={`Every ArraySubs capability compared, Pro-only upgrades first. A tick in the Free column ships in the free core; Pro layers on the ${PRO_ONLY_MODULE_COUNT} automation and revenue features.`}
             align="center"
           />
           <div className="mt-12">
-            <FreeVsProTable
-              freeOffer="$0 — free forever"
-              proOffer={`Paid plans from ${formatUsd(
-                getDiscountedPrice(TRIAL_PLAN.annualPrice),
-              )}/yr`}
-            />
+            <FreeVsProTable />
           </div>
         </Container>
       </Section>
@@ -335,7 +370,7 @@ export default function ArraySubsPricingPage() {
           <SectionTitle
             eyebrow="What’s in Pro"
             title="Pro-only modules and automation you unlock"
-            subtitle="Every paid license includes the Pro root modules plus automatic retry, auto-downgrade, checkout, payment, analytics, refund, and customer operations workflows."
+            subtitle="Every paid license includes the current Pro modules, with upcoming Pro workflows marked as coming soon."
             align="center"
           />
           <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
@@ -345,7 +380,14 @@ export default function ArraySubsPricingPage() {
                 icon={feature.icon}
                 title={feature.title}
                 description={feature.description}
-                badge={<Badge tone="primary">Pro</Badge>}
+                badge={
+                  <span className="flex flex-wrap justify-end gap-1.5">
+                    <Badge tone="primary">Pro</Badge>
+                    {feature.status === "coming-soon" && (
+                      <Badge tone="outline">Coming soon</Badge>
+                    )}
+                  </span>
+                }
               />
             ))}
 

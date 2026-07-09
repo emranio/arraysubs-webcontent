@@ -23,6 +23,7 @@ import {
   FEATURES,
   FEATURE_CATEGORIES,
   featuresByCategory,
+  type Feature,
   type FeatureTier,
 } from "./_data";
 import { FreeVsProTable } from "../_components/FreeVsProTable";
@@ -43,6 +44,15 @@ const GET_PRO = "/deals/arraysubs/pricing/";
 
 const tierTone = (tier: FeatureTier) =>
   tier === "Free" ? "highlight" : tier === "Pro" ? "dark" : "primary";
+
+const featureBadges = (feature: Pick<Feature, "tier" | "status">) => (
+  <span className="flex flex-wrap justify-end gap-1.5">
+    <Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>
+    {feature.status === "coming-soon" && (
+      <Badge tone="outline">Coming soon</Badge>
+    )}
+  </span>
+);
 
 const SYSTEMS = [
   {
@@ -120,28 +130,32 @@ const SETUP_STEPS = [
 
 const FAQ_ITEMS = [
   {
-    question: "How many ArraySubs feature cards are there?",
-    answer: `There are ${MODULE_COUNT} public feature cards. ${CORE_MODULE_COUNT} are available in the free/core path, and ${PRO_ONLY_MODULE_COUNT} features are Pro-only.`,
-  },
-  {
-    question: "What is in the Site Access Toolkit section?",
-    answer:
-      "It groups Easy Setup Wizard, Checkout Page Builder, My Account Page Builder, and the WordPress-facing access modules: Admin Bar Visibility, Admin Dashboard Access, WordPress Login Page, Login as User, and Multi-Login Prevention.",
-  },
-  {
-    question: "Which Toolkit module requires Pro?",
-    answer:
-      "Checkout Page Builder and Multi-Login Prevention are Pro-only. Easy Setup Wizard is core-accessible with Pro-only options, My Account Page Builder is core-accessible with Pro-added menu items, and the other access cleanup modules are available in the free core.",
+    question: "How many features does ArraySubs have?",
+    answer: `There are ${MODULE_COUNT} manual-backed features. ${CORE_MODULE_COUNT} are available in the free/core path, and ${PRO_ONLY_MODULE_COUNT} are Pro-only.`,
   },
   {
     question: "Do I need Pro to run a subscription business?",
     answer:
-      "No. The free core covers subscription products, billing, manual payment flows, customer portal actions, plan switching, proration, skip, pause, grace recovery, member access, member discounts, content dripping, retention offers, emails, setup, and the free Toolkit modules. Pro adds automatic gateways, failed-payment retry, auto-downgrade, advanced automation, analytics, store credit, checkout builder, audits, Feature Manager, and Multi-Login Prevention.",
+      "No. The free core covers subscription products, free trials, signup fees, coupons, manual payment flows, customer portal actions, plan switching with proration, skip, pause, 2-phase grace recovery, member access, content restriction, content dripping, member discounts, retention flows, emails, analytics basics, setup, and the free Toolkit modules. Pro adds automatic gateways, failed-payment retry, auto-downgrade, store credit, the checkout builder, Feature Manager, Gateway Health, audits, and Multi-Login Prevention.",
   },
   {
-    question: "Which root modules are Pro-only?",
+    question: "How much content restriction is included?",
     answer:
-      "The Pro-only root modules are Multi-Login Prevention, Redirect Product Page, Subscription Shipping, Member Insight, Store Credit, Feature Manager, and Gateway Health. Pro-only workflow cards also include Auto-Retry Failed Payments and Auto-Downgrade on Failure.",
+      "Member access is the largest category. Member Access gates content by subscription, role, purchased products, lifetime spend, and Pro feature entitlements — across pages, posts, any custom post type, taxonomy terms, URL paths, partial sections, Elementor Containers, and Gutenberg blocks — with content dripping and restricted downloads.",
+  },
+  {
+    question: "What is in the Site Access Toolkit section?",
+    answer:
+      "It groups Easy Setup Wizard, Checkout Page Builder, and My Account Page Builder with the WordPress-facing access modules: Admin Bar Visibility, Admin Dashboard Access, WordPress Login Page, Login as User, and Multi-Login Prevention.",
+  },
+  {
+    question: "Which features are Pro-only?",
+    answer: `There are ${PRO_ONLY_MODULE_COUNT} Pro-only features, including the Checkout Page Builder, automatic Stripe/PayPal/Paddle billing, Flexible Renewal Sync, Auto-Retry, Auto-Downgrade, Fixed-Date Subscriptions, Subscription Shipping, Product Page Redirection, Multi-Login Prevention, Feature Manager, Feature-Based Conditions, Member Insight, Store Credit, Gateway Health, and the coming-soon Early Renew, Installment / Split Payments, Customer-Chosen Subscription Duration, and Donation & Crowdfunding modules.`,
+  },
+  {
+    question: "Are all features in one plugin, or paid add-ons?",
+    answer:
+      "Every feature ships in the same plugin on one shared subscription record — no add-on store, no per-feature pricing. Install the free core from WordPress.org and activate Pro when you need the automation and revenue features.",
   },
 ];
 
@@ -160,23 +174,27 @@ export default function FeaturesHubPage() {
             <span className="block">features</span>
           </>
         }
-        subtitle={`${MODULE_COUNT} manual-backed feature cards from the current user manual. ${CORE_MODULE_COUNT} are free/core-accessible and ${PRO_ONLY_MODULE_COUNT} features are Pro-only.`}
+        subtitle="Launch subscriptions, memberships, gated content, retention offers, and renewal workflows from one WooCommerce plugin instead of stitching together a fragile stack of add-ons."
         highlights={[
-          `${MODULE_COUNT} feature cards`,
-          "Generous free-forever core",
-          "Pro upgrade available",
+          "Start with a free core built for real stores",
+          "Add Pro automation when revenue scales",
+          `${MODULE_COUNT} features across billing, access, and retention`,
         ]}
         actions={
-          <Button
-            href={GET_PRO}
-            size="lg"
-            magnetic
-            iconRight={<ArrowRight className="size-5" />}
-          >
-            Start Trial
-          </Button>
+          <>
+            <Button
+              href={GET_PRO}
+              size="lg"
+              magnetic
+              iconRight={<ArrowRight className="size-5" />}
+            >
+              Start Trial
+            </Button>
+            <span className="whitespace-nowrap text-sm font-medium text-muted">
+              No credit card required
+            </span>
+          </>
         }
-        trust="No credit card required"
       />
 
       <ModuleShowcase
@@ -214,11 +232,7 @@ export default function FeaturesHubPage() {
                       icon={<feature.icon className="size-6" />}
                       title={feature.name}
                       description={feature.cardDescription}
-                      badge={
-                        <Badge tone={tierTone(feature.tier)}>
-                          {feature.tier}
-                        </Badge>
-                      }
+                      badge={featureBadges(feature)}
                     />
                   ))}
                 </ScrollReveal>
@@ -337,7 +351,7 @@ export default function FeaturesHubPage() {
           <SectionTitle
             eyebrow="Free vs Pro"
             title="What's in each plan"
-            subtitle={`All ${MODULE_COUNT} features are listed below. ${PRO_ONLY_MODULE_COUNT} Pro-only features come first, followed by shared and free/core features.`}
+            subtitle={`Every capability compared, Pro-only upgrades first. A tick in the Free column ships in the free core; Pro adds automatic billing, failed-payment recovery, store credit, the checkout builder, and deeper insight — ${PRO_ONLY_MODULE_COUNT} Pro-only upgrades in all.`}
             align="center"
           />
           <div className="mt-12">
@@ -369,7 +383,7 @@ export default function FeaturesHubPage() {
                   icon={<feature.icon className="size-6" />}
                   title={feature.name}
                   description={feature.cardDescription}
-                  badge={<Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>}
+                  badge={featureBadges(feature)}
                 />
               ))}
             </div>

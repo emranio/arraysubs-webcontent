@@ -30,7 +30,7 @@ export const ARRAYSUBS_PRO_PLANS: ArraySubsProPlan[] = [
     siteLabel: "1 site",
     annualPrice: 129,
     lifetimePrice: 269,
-    summary: "The complete Pro feature set for one production store.",
+    summary: "Current Pro features and future Pro modules for one production store.",
     bestFor:
       "Solo store owners, a single membership site, or one WooCommerce subscription build.",
   },
@@ -62,7 +62,8 @@ export const ARRAYSUBS_PRO_PLANS: ArraySubsProPlan[] = [
 ];
 
 export const PRO_PLAN_FEATURES = [
-  "Every ArraySubs Pro module and workflow",
+  "Every current ArraySubs Pro module and workflow",
+  "Future Pro workflows as they ship",
   "Store Credit, Checkout Builder, and Feature Manager",
   "Automatic recurring payments with Stripe, PayPal, and Paddle",
   "Advanced analytics, audit logs, Gateway Health, and Member Insight",

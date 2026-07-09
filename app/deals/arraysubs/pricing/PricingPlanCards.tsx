@@ -93,6 +93,7 @@ export function PricingPlanCards() {
             ? plan.lifetimePrice
             : plan.annualPrice;
           const price = getDiscountedPrice(originalPrice);
+          const savings = originalPrice - price;
           const priceSuffix = isLifetime ? "/ lifetime" : "/ year";
           const alternateLabel = isLifetime ? "Yearly option" : "Lifetime option";
           const alternateOriginalPrice = isLifetime
@@ -143,7 +144,7 @@ export function PricingPlanCards() {
                         isFeatured ? featuredMutedClass : "text-muted",
                       )}
                     >
-                      Early bird price
+                      Early bird price - save {formatUsd(savings)}
                     </span>
                   </div>
                   <div className="mt-3 flex flex-wrap items-end gap-x-3 gap-y-1">

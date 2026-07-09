@@ -7,6 +7,8 @@
 > **Updated 9 June 2026 (product)** — ArraySubs is now feature-complete for launch: **27 dedicated root modules** (20 free/core, 7 Pro), organized for buyers into **7 module groups** with **126 documented, copy-me setup configurations** on the public use-cases page. In practical terms ArraySubs consolidates what stores otherwise assemble from **5–6 separate plugins** (recurring billing + membership/access control + store credit + cancellation/retention + checkout-field builder + subscription analytics) into one Free + Pro plugin. Pro is **free for 4 months** during early launch (no card required).
 >
 > **Updated 9 June 2026 (competitors — live re-verification)** — all competitor figures below re-checked against woocommerce.com, WordPress.org, CodeCanyon and yithemes.com (sources cited in footer). Corrections to earlier drafts: Woo Subscriptions **$446.40 is a 2-year, 1-site prepay** (NOT a "2-site" tier — Woo licenses per site); current versions Woo Subs **8.8.1** (Jun 4 2026), Woo Memberships **1.28.2** (May 18 2026), WP Swings Sub **1.9.8**, WP Swings Mem **3.1.0**, WPSubscription **1.10.1** (Jun 7 2026), SUMO Mem **8.0.0** (Feb 10 2026), YITH Subscription premium **4.22.1** (the WordPress.org *free* build lags at 4.17.0), YITH Membership **2.31.0**. **Correction: YITH's free tier _does_ support variation-based subscriptions** — an earlier note wrongly said Premium-only; the WordPress.org listing explicitly offers variation subscriptions free (Premium adds richer plan management + upgrade/downgrade). Woo Subscriptions has now shipped **gift subscriptions** and downloadable-product support. YITH Membership's €179.99/yr list price is JS-rendered and could not be re-confirmed live on 9 Jun — treat as last-known.
+>
+> **Updated 9 July 2026 (product + competitors — full re-verification)** — **Product:** the public feature surface has expanded from the older "27 root modules" framing to **67 documented feature cards** (47 core-accessible, 20 Pro-only, 4 coming-soon) across 8 categories, with **129 copy-me setup configurations**. New/roadmap items that move the competitive picture: **Installment / Split Payments**, **Early Renew**, **Customer-Chosen Subscription Duration** and a **Donation & Crowdfunding module** are now on the Pro roadmap (marked *coming soon*); **Fixed-Date Subscriptions** and **Lifetime Deals** shipped (Free); and **Partial Content Restriction** plus native **Elementor Container** and **Gutenberg Block** section-gating now match YITH's "limited content preview / newspaper" and members-only-block features. **Competitors (all re-checked 9 Jul 2026):** **Woo Subscriptions → v9.0.0 (23 Jun 2026)** folded the paid *All Products for Subscriptions* add-on into core at no cost, made trials/sign-up-fees/discounts native, and added a Subscriptions Health Check with one-click fixes; gift subscriptions are shipped. It still has no memberships, retention, store credit, checkout builder or churn analytics. **Woo Memberships → v1.29.1 (1 Jul 2026)**, 4.0★/150; only WP Abilities API + REST-security work — still no billing engine; Teams add-on is now **v1.9.0, $129/yr, 3.9★/12 reviews, 2,000+ installs**. **WP Swings Subscriptions → v2.0.0 (22 Jun 2026)** now ships **native Membership Plans + Members admin + Access Rules (content/product restriction) in the FREE tier**, plus an AI Subscription-Health widget — this overturns the earlier "no member access (separate plugin)" limitation (though it still lacks an AND/OR rules engine, URL/role targeting, dripping and a retention flow). **WP Swings Membership → v3.1.1 (29 Jun 2026)** security patch; **Pro price now confirmed at $99/yr** (1 site; previously unlisted); 800+ installs. **WPSubscription → v1.10.6 (5 Jul 2026)** shipped a lot: **Custom Renewal Pricing** (was "coming soon"), **Subscription Recovery** (automated win-back), **Subscription Health** (MRR/churn/revenue-at-risk), Recurring Coupons, cancellation feedback, pause, onboarding wizard, and new **Academy LMS / FluentCRM / MailPoet / WP Fusion** integrations — so the old "no retention / no analytics" notes no longer hold, though it still has **no membership/access control, no store credit, no checkout builder**. Gateway roster is **7** (Stripe/PayPal/Paddle/Mollie/Razorpay/Xendit + WooEpay). **SUMO Subscriptions → v17.6.0 (19 Jun 2026)** — **actively maintained, NOT stale** (drop the "last release Feb 2026" framing for it); 5,092 sales. **SUMO Memberships → still v8.0.0 (10 Feb 2026)**, ~5 months stale and not yet WP-7.0-tested — the "infrequent updates" angle now applies to Memberships only; 1,007 sales. **YITH Subscription → premium v4.23.0 / free build v4.18.0 (Jun 2026)** and **YITH Membership → v2.32.0 (17 Jun 2026)** — WooCommerce-compat bumps only, no new features, prices and ratings essentially unchanged.
 
 * * *
 
@@ -28,12 +30,12 @@
 The WooCommerce subscription and membership plugin market is fragmented across several tiers:
 
 -   **Official Woo products** (WooCommerce Subscriptions + Memberships) dominate by install base (130K+ combined) but require two expensive plugins ($478/yr combined), suffer from poor reviews (3.2★ for Subscriptions), and lack modern features like retention flows, store credit, or checkout builders.
--   **WP Swings** offers a free subscription plugin with 10K+ installs, but its free tier is thin — plan switching, pause, grace periods and analytics are all Pro ($129/yr), there is no retention flow at any tier, and memberships need a separate plugin (800+ installs).
--   **WPSubscription (Convers Lab)** is a newer entrant (700+ installs, 4.9★) with a freemium model, installment payments, and multi-gateway support, but lacks membership/access control entirely.
--   **SUMO (Fantastic Plugins)** sells premium-only CodeCanyon plugins for subscriptions and memberships separately, with deep feature sets but a legacy admin, infrequent updates (last release Feb 2026) and no free tier.
+-   **WP Swings** offers a free subscription plugin with 10K+ installs; its v2.0.0 added basic native membership access rules (free), but plan switching, pause and analytics remain Pro ($129/yr), there is no retention flow at any tier, and deep member rules (URL/role/AND-OR, dripping) still need its separate Membership plugin (800+ installs) or aren't available.
+-   **WPSubscription (Convers Lab)** is a fast-moving newer entrant (800+ installs, 4.9★) with a freemium model, installment payments, 7 gateways, and — as of mid-2026 — win-back recovery and MRR/churn health views, but it still lacks membership/access control, store credit and a checkout builder.
+-   **SUMO (Fantastic Plugins)** sells premium-only CodeCanyon plugins for subscriptions and memberships separately, with deep feature sets but a legacy admin and no free tier. SUMO Subscriptions is actively maintained (v17.6.0, Jun 2026); SUMO Memberships is the stale one (still v8.0.0, Feb 2026).
 -   **YITH (Your Inspiration Solutions)** sells a freemium subscription plugin (7K+ installs, €199.99/yr premium) and a premium-only membership plugin (€179.99/yr). Deep feature sets including subscription boxes and download credit systems, but poor WordPress.org reviews (3.0★ for Subscriptions), limited gateway support (mostly YITH's own plugins), and combined cost of €379.98/yr for subscriptions + memberships.
 
-**ArraySubs occupies a unique position** as the only all-in-one solution that combines subscriptions, memberships, store credit, retention flows, checkout builder, and advanced analytics in a single plugin ecosystem (Free + Pro). No competitor offers this breadth. Concretely, ArraySubs ships **27 root modules across 7 buyer-facing groups** and publishes **126 documented setup configurations** — consolidating what would otherwise be **5–6 separately-licensed plugins** ($478/yr for the official Woo subscriptions + memberships stack alone, before any retention, store-credit, checkout, or analytics add-ons that simply don't exist for the others) into one plugin with a genuinely usable free tier.
+**ArraySubs occupies a unique position** as the only all-in-one solution that combines subscriptions, memberships, store credit, retention flows, checkout builder, and advanced analytics in a single plugin ecosystem (Free + Pro). No competitor offers this breadth. Concretely, ArraySubs ships **67 documented feature cards** (47 core-accessible, 20 Pro-only) and publishes **129 documented setup configurations** — consolidating what would otherwise be **5–6 separately-licensed plugins** ($478/yr for the official Woo subscriptions + memberships stack alone, before any retention, store-credit, checkout, or analytics add-ons that simply don't exist for the others) into one plugin with a genuinely usable free tier.
 
 * * *
 
@@ -48,7 +50,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Price | $279/yr (1 site). The $446.40 option is a **2-year, 1-site prepay** (20% off $558), not a 2-site tier — Woo licenses per site |
 | Installs | 100,000+ |
 | Rating | 3.2★ (116 reviews) on woocommerce.com — not listed on WordPress.org |
-| Version | 8.8.1 (4 Jun 2026) |
+| Version | 9.0.0 (23 Jun 2026) — folded *All Products for Subscriptions* into core |
 | Compatibility | HPOS, Cart/Checkout blocks |
 | Website | woocommerce.com/products/woocommerce-subscriptions/ |
 
@@ -66,8 +68,8 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Type | Premium only |
 | Price | $199/yr (1 site). The $318.40 option is a **2-year, 1-site prepay** (20% off $398) |
 | Installs | 30,000+ |
-| Rating | 4.0★ (149 reviews) on woocommerce.com |
-| Version | 1.28.2 (18 May 2026) |
+| Rating | 4.0★ (150 reviews) on woocommerce.com |
+| Version | 1.29.1 (1 Jul 2026) |
 | Website | woocommerce.com/products/woocommerce-memberships/ |
 
 **Core capabilities**: Sell or assign memberships (standalone, product-bundled, multi-product, manual), content dripping, purchasing clubs (hide/restrict products), member-only free shipping, member discounts, member area in My Account, CSV import/export, membership notes, expiration/renewal reminder emails. Teams add-on available ($129/yr).
@@ -84,15 +86,15 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Type | Freemium |
 | Price | Free + Pro ($129/yr, 1 site) |
 | Installs | 10,000+ |
-| Rating | 4.4★ (175 reviews — 145 five-star, 20 one-star) |
-| Version | 1.9.8 (8 Jun 2026) |
+| Rating | 4.4★ (176 reviews — 146 five-star, 20 one-star) |
+| Version | 2.0.0 (22 Jun 2026) — added native Membership Plans + Access Rules (free) |
 | Website | wordpress.org/plugins/subscriptions-for-woocommerce/ |
 
-**Core capabilities (Free)**: Simple subscription products, billing frequency (monthly/weekly/yearly), trial, sign-up fee, expiry, cancellation, subscription box support, REST API, error logs, email notifications.
+**Core capabilities (Free)**: Simple subscription products, billing frequency (monthly/weekly/yearly), trial, sign-up fee, expiry, cancellation, subscription box support, **native Membership Plans + Members admin + Access Rules (new in v2.0.0)**, **AI Subscription-Health widget (v1.9.8)**, REST API, error logs, email notifications.
 
 **Pro additions**: Variable products, **plan switching (upgrade/downgrade with proration, on variable products)**, **pause/resume**, **grace period + auto-retry failed payments**, **reporting (sales, renewals, ARR, churn)**, manual subscription orders, more gateways (Stripe, PayPal, Mollie, Authorize.net, WooPayments), one-time purchase option, multi-quantity subscriptions.
 
-**Limitations**: Free tier lacks plan switching, pause, grace period and analytics (all Pro). No retention flow at any tier, no member access control (separate Membership plugin), no store credit, no checkout builder, no audit/activity log, no skip-renewal.
+**Limitations**: Free tier lacks plan switching, pause, grace period and analytics (all Pro). No retention flow at any tier; its v2.0.0 memberships cover basic content/product access rules but no AND/OR rules engine, URL/role targeting or content dripping; no store credit, no checkout builder, no audit/activity log, no skip-renewal.
 
 * * *
 
@@ -102,10 +104,10 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | --- | --- |
 | Vendor | WP Swings |
 | Type | Freemium |
-| Price | Free (limited) + Pro (pricing not publicly listed on wpswings.com) |
-| Installs | 900+ |
+| Price | Free (limited) + Pro ($99/yr, 1 site; $249/5, $499/10) |
+| Installs | 800+ |
 | Rating | 4.4★ (28 reviews — 24 five-star, 4 one-star) |
-| Version | 3.1.0 (26 May 2026) |
+| Version | 3.1.1 (29 Jun 2026 — security fix) |
 | Website | wordpress.org/plugins/membership-for-woocommerce/ |
 
 **Core capabilities**: Membership plans (lifetime/limited), content restriction, product/category restriction, cart discounts (fixed/percentage) — Free shipping for members, BuddyPress integration, community features, SMS/WhatsApp notifications (Twilio), reCAPTCHA, member dashboard, data export/import, APIs, shortcodes.
@@ -127,18 +129,18 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Price | Free + Pro — annual $89/yr (1-site), $149/yr (5-site), $299/yr (50-site); **lifetime** $179 (1-site) / $349 (5-site) / $599 (unlimited) |
 | Installs | 800+ (WordPress.org; vendor markets "1,200+ stores") |
 | Rating | 4.9★ (25 reviews — 22 five-star, 3 four-star) |
-| Version | 1.10.1 (7 Jun 2026) |
+| Version | 1.10.6 (5 Jul 2026) — shipped Custom Renewal Pricing, Subscription Recovery + Health |
 | Website | wpsubscription.co · wordpress.org/plugins/subscription/ |
 
 **Core capabilities (Free)**: Simple product subscriptions, flexible billing cycles (daily/weekly/monthly/yearly) — Free trial support, subscription management dashboard, customer self-service portal.
 
-**Pro additions**: Simple + variable products, automatic Stripe recurring payments, advanced per-product customization, sign-up fees, pending cancellation (end-of-period), installment/split payments, role-based product visibility, grace period, delivery schedules, synchronized scheduling, digital file access control, REST API, upgrade/downgrade options.
+**Pro additions**: Simple + variable + bundled products, automatic Stripe recurring payments, advanced per-product customization, sign-up fees, pending cancellation (end-of-period), installment/split payments, **custom/different renewal price (shipped)**, **Subscription Recovery win-back campaigns**, **Subscription Health (MRR/churn/revenue-at-risk)**, recurring coupons, cancellation feedback, pause, onboarding wizard, role-based product visibility, grace period, delivery schedules, synchronized scheduling, digital file access control, REST API, upgrade/downgrade options.
 
 **Gateway support**: Stripe (incl. Apple Pay/Google Pay), PayPal, Paddle, Mollie, Razorpay, Xendit, WooEpay.
 
 **Integrations**: Bit Integrations, WP Software License, Tutor LMS, LearnPress, LearnDash, OttoKit, WPML.
 
-**Limitations**: No membership/access control system, no store credit, no checkout builder, no retention flow, no advanced analytics, no audit logs. Very early stage (700+ installs). No content restriction features. Support resolution rate: 0 out of 2 issues in last 2 months.
+**Limitations**: No membership/access control system, no store credit, no checkout builder, no store-wide audit log (only per-subscription notes). Its retention and analytics are lighter than ArraySubs' — post-cancel win-back recovery plus an MRR/churn health view, not an at-cancel retention builder or full analytics suite. Still early stage (800+ installs), though support resolution is now strong (6/6 recent threads resolved).
 
 * * *
 
@@ -150,15 +152,15 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Type | Premium only (CodeCanyon) |
 | Price | ~$49 one-time (CodeCanyon license) |
 | Installs | Not listed (CodeCanyon sales) |
-| Rating | 4.38★ (114 ratings) · 5,073 sales |
-| Latest version | v17.5.0 (23 Feb 2026) |
+| Rating | 4.38★ (114 ratings) · 5,092 sales |
+| Latest version | v17.6.0 (19 Jun 2026) — actively maintained |
 | Website | fantasticplugins.com |
 
 **Core capabilities**: Simple/variable/grouped product subscriptions, order subscriptions for non-subscription products, subscription payment synchronization, prorated amounts for synchronized subscriptions, mixed cart (subscription + non-subscription), inbuilt PayPal (Reference Transaction, Subscriptions API, Adaptive Payment) + Stripe gateways, manual renewal via any WooCommerce gateway, multi-quantity subscriptions, subscription limits (per product, per site) — Free/paid trials, pause/cancel by subscriber and admin, auto/manual renewal switching, variation switching, admin manual subscription creation, renewal date modification, log history, payment reminder emails, payment overdue/grace system, bulk update, master transaction log, coupon discount for renewals.
 
 **Compatibility**: SUMO Reward Points, SUMO Memberships, SUMO Coupons, SUMO Donations, SUMO Affiliates, Recover Abandoned Cart.
 
-**Limitations**: Premium-only (no free tier, no WordPress.org listing), legacy admin, infrequent updates (last release Feb 2026), requires separate SUMO Memberships for access control, no retention flow, no store credit, no checkout builder, no analytics dashboard. Locked into SUMO ecosystem for extended features.
+**Limitations**: Premium-only (no free tier, no WordPress.org listing), legacy admin, requires separate SUMO Memberships for access control, no retention flow, no store credit, no checkout builder, no analytics dashboard. Locked into SUMO ecosystem for extended features.
 
 * * *
 
@@ -169,8 +171,8 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Vendor | Fantastic Plugins |
 | Type | Premium only (CodeCanyon) |
 | Price | ~$39 one-time (CodeCanyon license) |
-| Rating | 4.48★ (33 ratings) · 1,006 sales |
-| Latest version | v8.0.0 (10 Feb 2026) |
+| Rating | 4.48★ (33 ratings) · 1,007 sales |
+| Latest version | v8.0.0 (10 Feb 2026) — ~5 months stale, not yet WP 7.0-tested |
 | Website | fantasticplugins.com |
 
 **Core capabilities**: Simple memberships and subscription memberships (with SUMO Subscriptions), access control for pages/posts/products/custom post types/URLs, complete/limited/redirect restriction types, content restriction by shortcodes, RSS feed restriction, membership plan transfer, link plans with other users, default plan on signup, hide restricted products in shop/menus, immediate/delayed access, multiple plans per member, pause membership, admin management (add/enable/disable/pause/cancel plans), duration modification, notes, log history, master transaction log, trial support (with SUMO Subscriptions), overdue/suspend duration.
@@ -190,7 +192,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Price | Free + Premium (€199.99/yr) |
 | Installs | 7,000+ (WordPress.org) / 28,395 customers (YITH) |
 | Rating | 3.0★ on WordPress.org (45 reviews — 19 five-star, 17 one-star) / 4.3★ on YITH (102 reviews) |
-| Version | Premium 4.22.1 (14 May 2026); WordPress.org free build 4.17.0 |
+| Version | Premium 4.23.0 (Jun 2026); WordPress.org free build 4.18.0 (24 Jun 2026) |
 | Compatibility | WP 6.9.4, WooCommerce, HPOS |
 | Website | yithemes.com/themes/plugins/yith-woocommerce-subscription/ |
 
@@ -213,7 +215,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Price | €179.99/yr (last-known; JS-rendered, not re-confirmed live 9 Jun 2026) |
 | Installs | 18,377 customers (YITH — no WordPress.org free version) |
 | Rating | 4.47★ (93 reviews on YITH) |
-| Version | 2.31.0 (12 May 2026) |
+| Version | 2.32.0 (17 Jun 2026) |
 | Website | yithemes.com/themes/plugins/yith-woocommerce-membership/ |
 
 **Core capabilities**: Unlimited plans with permission rules, auto-assign membership on registration, private shop (Privalia-style hidden products), hide pages/posts from non-members, limited content preview (newspaper model), Gutenberg "Members-only content starts here" block, file download restriction (PDFs, images, audio, video), alternative content for non-members (Gutenberg blocks) — Free shipping for members, per-plan member discounts (percentage), download credit system (for stock image/resource platforms), YITH Subscription integration for recurring billing, content dripping (gradual release), membership/download monitoring dashboard, My Account membership section, email notifications (creation, 10-day expiry warning, expired, canceled).
@@ -231,7 +233,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Simple subscriptions | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ | ✅ Free |
 | Variable subscriptions | ✅ Free | ✅ | ✅ Pro | ✅ Pro | ✅ | ✅ Free (variation-based) |
 | Grouped subscriptions | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| Installment/split payments | ❌ | ❌ | ❌ | ✅ Pro | ❌ | ❌ |
+| Installment/split payments | 🔜 Pro (soon) | ❌ | ❌ | ✅ Pro | ❌ | ❌ |
 | Billing cycles (D/W/M/Y) | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ | ✅ Free |
 | Free trial | ✅ Free | ✅ | ✅ Free | ✅ Free | ✅ | ✅ Premium |
 | Paid trial | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
@@ -239,11 +241,11 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Plan switching (up/down/cross) | ✅ Free | ✅ | ✅ Pro (variable) | ✅ Pro | ✅ (variation only) | ✅ Premium (variation only) |
 | Proration (3 methods) | ✅ Pro | ✅ | ❌ | ❌ | ✅ (limited) | ✅ Premium (limited) |
 | Renewal sync | ✅ Free | ✅ | ❌ | ✅ Pro | ✅ | ✅ Premium |
-| Different renewal price | ✅ Free | ❌ | ❌ | 🔜 Coming Soon | ❌ | ❌ |
+| Different renewal price | ✅ Free | ❌ | ❌ | ✅ Pro | ❌ | ❌ |
 | Skip next renewal | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Pause/vacation mode | ✅ Free | ✅ (suspend) | ❌ | ❌ | ✅ | ✅ Premium |
+| Pause/vacation mode | ✅ Free | ✅ (suspend) | ✅ Pro | ✅ | ✅ | ✅ Premium |
 | Grace period (2-phase) | ✅ Free | ✅ (basic) | ❌ | ✅ Pro | ✅ | ✅ Premium (configurable) |
-| Auto-retry failed payments | ✅ Pro | ✅ | ✅ Pro | ❌ | ❌ | ✅ Premium (3 attempts) |
+| Auto-retry failed payments | ✅ Pro | ✅ | ✅ Pro | ✅ Pro | ❌ | ✅ Premium (3 attempts) |
 | Auto-downgrade on failure | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Fixed period membership product | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Feature manager per plan | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ |
@@ -277,9 +279,9 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Teams/group memberships | ❌ | ✅ ($129/yr add-on) | ❌ | ❌ | ❌ |
 | Multi-login prevention | ✅ Pro | ❌ | ❌ | ❌ | ❌ |
 | Per-plan session limits | ✅ Pro | ❌ | ❌ | ❌ | ❌ |
-| Limited content preview | ❌ | ❌ | ❌ | ❌ | ✅ (newspaper model) |
+| Limited content preview | ✅ (Partial Content Restriction) | ❌ | ❌ | ❌ | ✅ (newspaper model) |
 | Download credit system | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Alternative content (non-members) | ❌ | ❌ | ❌ | ❌ | ✅ (Gutenberg blocks) |
+| Alternative content (non-members) | ✅ (Elementor/Gutenberg gating) | ❌ | ❌ | ❌ | ✅ (Gutenberg blocks) |
 
 ### Payment Gateways
 
@@ -317,9 +319,9 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 
 | Feature | ArraySubs | Woo Sub | Woo Mem | WP Swings | WPSub | SUMO | YITH |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Retention flow builder | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Retention flow builder | ✅ Free | ❌ | ❌ | ❌ | 🔶 win-back | ❌ | ❌ |
 | Store credit system | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Checkout builder (27 fields) | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Checkout builder (28 element types) | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Advanced analytics (10 KPIs) | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Retention analytics (8 KPIs) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Audit & activity logs | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ✅ (basic) | ❌ |
@@ -328,7 +330,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | My Account editor | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Login as User (6 placements) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Member insight dashboard | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| 16+ email templates | ✅ Free | ✅ | ❌ | ✅ Free | ❌ | ✅ | ✅ Premium |
+| 25 email templates | ✅ Free | ✅ | ❌ | ✅ Free | ❌ | ✅ | ✅ Premium |
 | CSV/JSON export | ✅ Free | ✅ | ✅ Free | ❌ | ❌ | ❌ | ✅ Premium (CSV) |
 | Subscription notes (21 events) | ✅ Free | ✅ | ❌ | ❌ | ✅ |  | ❌ |
 | Refund-to-store-credit | ✅ Pro | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
@@ -336,7 +338,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | Subscription box module | ❌ | ❌ | ❌ | ✅ Free | ❌ | ❌ | ✅ Premium |
 | Download credit system | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ (Membership) |
 | Gutenberg plan display block | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ Premium |
-| Subscription dashboard (MRR/ARR) | ✅ Pro | ✅ (basic) | ❌ | ❌ | ❌ | ❌ | ✅ Premium |
+| Subscription dashboard (MRR/ARR) | ✅ Pro | ✅ (basic) | ❌ | ❌ | 🔶 MRR/churn | ❌ | ✅ Premium |
 | Setup wizard (guided config) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Settings export/import (JSON) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Business-type presets (7 profiles) | ✅ Free | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
@@ -354,7 +356,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | ArraySubs | Free core + Pro (free 4 months, early launch) | Included (same plugin) | One plugin | ✅ Generous |
 | Woo Official | $279/yr | $199/yr | $478/yr | ❌ None |
 | Woo + Teams | $279/yr | $199 + $129/yr | $607/yr | ❌ None |
-| WP Swings | Free / Pro ($?) | Free / Pro ($?) | 2 plugins | ✅ Limited |
+| WP Swings | Free / Pro ($129/yr) | Free / Pro ($99/yr) | 2 plugins (basic memberships now free in Sub) | ✅ Limited |
 | WPSubscription | $89/yr (Pro) | ❌ Not available | $89/yr (no memberships) | ✅ Basic |
 | SUMO | ~$49 one-time | ~$39 one-time | ~$88 one-time | ❌ None |
 | YITH | €199.99/yr | €179.99/yr | €379.98/yr (~$413/yr) | ✅ Limited (Sub only) |
@@ -363,7 +365,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 
 1.  **Woo Official is the most expensive** at $478/yr for a complete subscription + membership solution, with poor satisfaction (3.2★ for Subscriptions).
 2.  **YITH is the second most expensive** at €379.98/yr (~$413/yr) for subscriptions + memberships combined, with a limited free subscription tier but no free membership option.
-3.  **SUMO is cheapest upfront** at ~$88 total one-time, but is premium-only, infrequently updated (last release Feb 2026), with no free tier and no WordPress.org presence.
+3.  **SUMO is cheapest upfront** at ~$88 total one-time, but is premium-only with no free tier and no WordPress.org presence (SUMO Subscriptions is actively maintained at v17.6.0; SUMO Memberships is stale at v8.0.0, Feb 2026).
 4.  **WPSubscription** is competitively priced ($89/yr) but offers subscriptions only — no membership/access control.
 5.  **ArraySubs is the only all-in-one** where subscriptions + memberships + store credit + analytics + retention are available in a single ecosystem, with a generous free tier.
 6.  **YITH locks you into their ecosystem** — automatic gateway support requires purchasing additional YITH plugins (Stripe, PayPal Express), pushing the real total cost even higher.
@@ -403,7 +405,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 | --- | --- |
 | Good free tier on WordPress.org | No plan switching (upgrade/downgrade) |
 | 10K+ installs, 4.4★ rating | No retention flow |
-| Subscription box support | No member access control (separate plugin) |
+| Subscription box support | Basic memberships only (v2.0.0); no rules engine or dripping |
 | Multiple gateway support in Pro | No store credit |
 | Active updates | No advanced analytics or audit logs |
 |  | Limited customer portal actions |
@@ -422,10 +424,10 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 
 | Strengths | Weaknesses |
 | --- | --- |
-| Excellent reviews (4.9★) | Very early stage (700 installs) |
+| Excellent reviews (4.9★) | Very early stage (800 installs) |
 | Affordable Pro pricing ($89/yr) | No membership/access control |
-| Installment/split payments (unique) | No store credit, retention, or analytics |
-| 6 payment gateways (most in class) | Support resolution: 0/2 recent issues |
+| Installment/split payments (unique) | No memberships or store credit; retention/analytics are light |
+| 7 payment gateways (most in class) | Subscriptions-only (no membership/access control) |
 | Clean, modern approach | No audit or logging features |
 | Early renewal support | Coming from a Bangladeshi dev agency (ConverS Lab) |
 | Delivery schedule management | Limited community/ecosystem |
@@ -434,7 +436,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 
 | Strengths | Weaknesses |
 | --- | --- |
-| Deep subscription feature set | Infrequent updates (last release Feb 2026) |
+| Deep subscription feature set | Premium-only; legacy admin UI |
 | Grouped product subscriptions (unique) | No free tier, no WordPress.org listing |
 | Paid trial support (unique) | Premium-only via CodeCanyon |
 | Order subscription for non-subscription products | No retention flow |
@@ -489,7 +491,7 @@ The WooCommerce subscription and membership plugin market is fragmented across s
 
 ### 1\. All-in-One Architecture (Primary Differentiator)
 
-ArraySubs is the **only plugin that combines** subscriptions, memberships, store credit, retention, checkout customization, and analytics in a unified ecosystem — **27 root modules across 7 buyer-facing groups, with 126 documented setup configurations** covering recurring-billing, retention, plan-switching, member access, the membership experience layer, and growth analytics. Every other vendor on this list solves at most two of those areas and requires a second purchase (or has no answer at all) for the rest.
+ArraySubs is the **only plugin that combines** subscriptions, memberships, store credit, retention, checkout customization, and analytics in a unified ecosystem — **67 documented feature cards (47 core-accessible, 20 Pro-only), with 129 documented setup configurations** covering recurring-billing, retention, plan-switching, member access, the membership experience layer, and growth analytics. Every other vendor on this list solves at most two of those areas and requires a second purchase (or has no answer at all) for the rest.
 
 **Competitor comparison:**
 
@@ -535,7 +537,7 @@ ArraySubs provides:
 ArraySubs Pro includes:
 
 -   Drag-and-drop editor
--   27 field types (9 standard, 9 advanced, 9 layout)
+-   28 element types (standard, advanced, and layout)
 -   Multi-step checkout
 -   Conditional visibility
 -   Section-based layouts
@@ -631,7 +633,7 @@ Every other plugin requires manual configuration through dozens of settings scre
 | Feature Gap | Available In | Priority | Notes |
 | --- | --- | --- | --- |
 | Gifting subscriptions | Woo Subscriptions | Medium | Niche but differentiating for gift-oriented stores |
-| Installment/split payments | WPSubscription | Medium | Growing demand for BNPL-style payment |
+| Installment/split payments | WPSubscription | Medium | On the ArraySubs Pro roadmap (coming soon); WPSubscription ships it today |
 | Grouped product subscriptions | SUMO Subscriptions | Low | Rare use case |
 | Paid trial | SUMO Subscriptions | Low | Free trial covers most cases |
 | Teams/group memberships | Woo Memberships ($129 add-on) | Medium | B2B/enterprise demand |
@@ -645,15 +647,15 @@ Every other plugin requires manual configuration through dozens of settings scre
 | 25+ payment gateways | Woo Subscriptions | Medium | Woo's biggest moat is gateway breadth |
 | Subscription box module | WP Swings Sub, YITH Sub | Medium | Growing business model (curated product boxes) |
 | Download credit system | YITH Membership | Low | Niche for stock image/resource platforms |
-| Limited content preview (newspaper) | YITH Membership | Low | Niche for paywall-style content |
+| Limited content preview (newspaper) | YITH Membership | — | Now covered by ArraySubs Partial Content Restriction |
 | Gutenberg plan display block | YITH Subscription | Low | Nice-to-have for visual plan presentation |
-| Early renewal (before due date) | WPSubscription | Low | Nice-to-have convenience |
+| Early renewal (before due date) | WPSubscription | Low | ArraySubs "Early Renew" on the Pro roadmap (coming soon) |
 
 ### Competitive Threats
 
 1.  **WooCommerce Official bundling**: If Automattic merges Subscriptions + Memberships into a single lower-priced product, it would directly threaten ArraySubs' all-in-one value proposition. Their 100K+ install base gives them enormous distribution power.
     
-2.  **WPSubscription growth**: At 4.9★ with aggressive pricing ($89/yr), 6 gateway integrations, and installment payments, WPSubscription could capture the budget-conscious segment. If they add membership features, they become a direct competitor.
+2.  **WPSubscription growth**: At 4.9★ with aggressive pricing ($89/yr), 7 gateway integrations, installment payments, and a new win-back-recovery + MRR/churn health stack (mid-2026), WPSubscription could capture the budget-conscious segment. If they add membership/access-control features, they become a direct competitor.
     
 3.  **Gateway breadth**: Woo Subscriptions supports 25+ gateways. ArraySubs supports 3 automatic + manual. For stores using niche gateways (Authorize.net, Square, etc.), Woo Subscriptions remains the only option.
     
@@ -758,17 +760,17 @@ Every other plugin requires manual configuration through dozens of settings scre
 | Checkout builder | 🟢 Sole provider — no competition | None |
 | Analytics depth | 🟢 Leader — 10 KPIs + retention analytics | Woo Sub (basic reports), YITH (basic dashboard) |
 | Free tier value | 🟢 Leader — most generous free feature set | WP Swings (limited free), YITH Sub (very limited free) |
-| Gateway breadth | 🟡 Moderate — 3 auto + manual | Woo Sub (25+), WPSub (6), YITH (YITH ecosystem only) |
+| Gateway breadth | 🟡 Moderate — 3 auto + manual | Woo Sub (25+), WPSub (7), YITH (YITH ecosystem only) |
 | Install base | 🔴 Early stage | Woo Sub (100K+), WP Swings (10K+), YITH Sub (7K+ / 28K customers) |
 | Brand recognition | 🔴 Building | Woo Official (Automattic brand), YITH (2.25M+ users ecosystem) |
 | Price competitiveness | 🟢 Strong — single purchase vs. $478/yr | WPSub ($89/yr), SUMO ($88 one-time), YITH (€379.98/yr) |
 | LMS integrations | 🟡 Gap | WPSub (3 LMS), WP Swings (Tutor) |
 | Easy setup wizard | 🟢 Sole provider — 9-step wizard, 7 business profiles | None |
 | Settings migration (export/import) | 🟢 Sole provider — JSON export, section-level import | None |
-| Installment payments | 🔴 Missing | WPSub (unique feature) |
+| Installment payments | 🔜 On Pro roadmap (coming soon) | WPSub (ships today) |
 | Subscription box | 🔴 Missing | YITH Sub (premium), WP Swings (free) |
 | Membership features | 🟢 Integrated | Woo Mem ($199/yr), YITH Mem (€179.99/yr), SUMO Mem ($39) |
 
 * * *
 
-_Analysis conducted April 2026. **Last verified live 9 June 2026** — prices, plugin versions, ratings, install/sales counts and YITH's free variable-subscription support re-checked against primary sources the same day. Competitor data sourced from WordPress.org plugin pages (subscriptions-for-woocommerce, membership-for-woocommerce, subscription [Convers Lab], yith-woocommerce-subscription), vendor websites (woocommerce.com incl. official changelog mirror, wpswings.com, wpsubscription.co / converslab.com, yithemes.com), and CodeCanyon item pages (SUMO Subscriptions, SUMO Memberships). One figure unconfirmed on 9 Jun: YITH Membership's €179.99/yr list price (JS-rendered) — shown as last-known. Install counts, sales and ratings are approximate and subject to change._
+_Analysis conducted April 2026. **Last verified live 9 July 2026** — prices, plugin versions, ratings, install/sales counts and YITH's free variable-subscription support re-checked against primary sources the same day. Competitor data sourced from WordPress.org plugin pages (subscriptions-for-woocommerce, membership-for-woocommerce, subscription [Convers Lab], yith-woocommerce-subscription), vendor websites (woocommerce.com incl. official changelog mirror, wpswings.com, wpsubscription.co / converslab.com, yithemes.com), and CodeCanyon item pages (SUMO Subscriptions, SUMO Memberships). One figure unconfirmed on 9 Jun: YITH Membership's €179.99/yr list price (JS-rendered) — shown as last-known. Install counts, sales and ratings are approximate and subject to change._

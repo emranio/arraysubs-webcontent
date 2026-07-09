@@ -763,7 +763,7 @@ export default function DesignSystemPage() {
                       label: "Features",
                       content: (
                         <ul className="flex list-disc flex-col gap-1 pl-5 text-muted marker:text-primary-strong">
-                          <li>27 root modules</li>
+                          <li>67 feature modules</li>
                           <li>Retention Flow Builder (free)</li>
                           <li>Stripe, PayPal &amp; Paddle (Pro)</li>
                         </ul>

@@ -31,6 +31,7 @@ import {
  */
 
 export type FeatureTier = "Free" | "Pro" | "Free + Pro";
+export type FeatureStatus = "coming-soon";
 
 export type FeatureCapability = { title: string; description: string };
 export type FeatureStat = { value: string; label: string };
@@ -58,6 +59,7 @@ export type Feature = {
   name: string;
   cardDescription: string;
   tier: FeatureTier;
+  status?: FeatureStatus;
   seoTitle: string;
   metaDescription: string;
   h1: string;
@@ -1019,6 +1021,120 @@ export const FEATURES: Feature[] = [
     related: ["subscription-products", "renewal-sync", "feature-manager"],
   }),
   buildFeature({
+    slug: "customer-chosen-subscription-duration",
+    category: "products-checkout",
+    icon: SlidersHorizontal,
+    name: "Customer-Chosen Subscription Duration",
+    cardDescription:
+      "Coming soon: let customers choose how many cycles or periods their subscription should run before checkout.",
+    tier: "Pro",
+    status: "coming-soon",
+    summary:
+      "Let customers choose the subscription length that fits their need while the store keeps guardrails in place.",
+    h1: "Let customers choose subscription duration",
+    highlights: ["Coming soon", "Pro product control", "Customer-selected length"],
+    intro:
+      "Customer-Chosen Subscription Duration is a planned Pro product workflow for stores that want buyers to choose ==how many cycles, months, weeks, or other billing periods a subscription should run==. Merchants can offer controlled duration choices while keeping checkout, renewal scheduling, and expiration behavior aligned.",
+    capabilities: [
+      {
+        title: "Customer duration choices",
+        description:
+          "Offer approved cycle or period options during purchase instead of forcing one fixed subscription length.",
+      },
+      {
+        title: "Product-level guardrails",
+        description:
+          "Keep the merchant in control of minimum, maximum, and allowed duration choices.",
+      },
+      {
+        title: "Schedule-aware checkout",
+        description:
+          "Carry the selected duration into the subscription schedule so renewal and end behavior stay predictable.",
+      },
+      {
+        title: "Clear buyer messaging",
+        description:
+          "Make the selected length visible during purchase and in account-facing subscription details.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "Soon", label: "Status" },
+      { value: "Cycles", label: "Choice model" },
+      { value: "Product", label: "Setup scope" },
+    ],
+    faq: [
+      {
+        question: "Is customer-chosen duration available in the free core?",
+        answer:
+          "No. This is planned as a Pro product workflow and is marked as coming soon.",
+      },
+      {
+        question: "Can stores limit the choices?",
+        answer:
+          "Yes. The planned workflow is designed around merchant-approved duration options, not unrestricted customer input.",
+      },
+    ],
+    related: ["subscription-products", "fixed-date-subscriptions", "billing-and-renewals"],
+  }),
+  buildFeature({
+    slug: "installment-split-payments",
+    category: "products-checkout",
+    icon: CreditCard,
+    name: "Installment / Split Payments",
+    cardDescription:
+      "Coming soon: sell a fixed-price product across multiple instalments instead of collecting the full amount upfront.",
+    tier: "Pro",
+    status: "coming-soon",
+    summary:
+      "Split a fixed product price into scheduled customer payments without turning it into an open-ended subscription.",
+    h1: "Sell fixed-price products with instalment payments",
+    highlights: ["Coming soon", "Split payment", "Fixed-price product"],
+    intro:
+      "Installment / Split Payments is a planned Pro commerce workflow for products with a fixed total price. Instead of charging the full amount at checkout, stores can ==divide the price across multiple instalments== while keeping the payment plan clear to the buyer and manageable for staff.",
+    capabilities: [
+      {
+        title: "Fixed-total payment plan",
+        description:
+          "Keep the product's total price fixed while collecting it over multiple scheduled payments.",
+      },
+      {
+        title: "Instalment schedule",
+        description:
+          "Define how many payments collect the product price and how the customer sees the schedule.",
+      },
+      {
+        title: "Checkout clarity",
+        description:
+          "Explain the upfront amount, remaining instalments, and total payable amount before purchase.",
+      },
+      {
+        title: "Subscription-aware records",
+        description:
+          "Keep split-payment records connected to the customer and order lifecycle for support visibility.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "Soon", label: "Status" },
+      { value: "Fixed", label: "Price model" },
+      { value: "Split", label: "Payment model" },
+    ],
+    faq: [
+      {
+        question: "Is this the same as a recurring subscription?",
+        answer:
+          "No. The planned workflow is for a fixed-price product paid over multiple instalments, also known as split payment.",
+      },
+      {
+        question: "Is installment payment a Pro feature?",
+        answer:
+          "Yes. Installment / Split Payments is planned as a Pro-only feature and is marked as coming soon.",
+      },
+    ],
+    related: ["subscription-products", "billing-and-renewals", "stripe-payments"],
+  }),
+  buildFeature({
     slug: "lifetime-deals",
     category: "products-checkout",
     icon: HeartHandshake,
@@ -1125,7 +1241,7 @@ export const FEATURES: Feature[] = [
       {
         question: "Does Stripe support synced renewal checkout?",
         answer:
-          "Yes. The manual documents Renewal Sync support for manual/offline gateways and Stripe.",
+          "Yes. Flexible Renewal Sync supports synced checkout with manual/offline gateways and Stripe.",
       },
     ],
     related: ["billing-and-renewals", "gateway-health", "woocommerce-tax-handling"],
@@ -1803,19 +1919,76 @@ export const FEATURES: Feature[] = [
     related: ["stripe-payments", "customer-portal", "emails"],
   }),
   buildFeature({
+    slug: "early-renew",
+    category: "subscription-operations",
+    icon: Repeat,
+    name: "Early Renew",
+    cardDescription:
+      "Coming soon: let customers renew before the scheduled date when they want to extend access or keep billing current.",
+    tier: "Pro",
+    status: "coming-soon",
+    summary:
+      "Give customers and staff a Pro workflow for renewing a subscription before the next scheduled billing date.",
+    h1: "Let subscribers renew early",
+    highlights: ["Coming soon", "Pro renewal action", "Customer self-service"],
+    intro:
+      "Early Renew is a planned Pro renewal workflow for stores that want customers or staff to ==pay the next renewal before the scheduled date==. It helps teams handle prepaid access, expiring budgets, account cleanup, or customers who simply want to keep a subscription current ahead of time.",
+    capabilities: [
+      {
+        title: "Customer early-renew action",
+        description:
+          "Expose an eligible renewal action before the next payment date when the store allows early payment.",
+      },
+      {
+        title: "Admin support control",
+        description:
+          "Let staff trigger or guide an early renewal for customers who contact support.",
+      },
+      {
+        title: "Schedule-safe handling",
+        description:
+          "Apply early renewal payments without losing the subscription's intended billing cadence.",
+      },
+      {
+        title: "Lifecycle visibility",
+        description:
+          "Record the early renewal event so support can see why the payment happened before the due date.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "Soon", label: "Status" },
+      { value: "Portal", label: "Customer action" },
+      { value: "Admin", label: "Support action" },
+    ],
+    faq: [
+      {
+        question: "Is Early Renew available in the free core?",
+        answer:
+          "No. Early Renew is planned as a Pro-only renewal workflow and is marked as coming soon.",
+      },
+      {
+        question: "Does early renewal replace automatic renewals?",
+        answer:
+          "No. It is planned as an optional early-payment action for eligible subscriptions, not a replacement for the normal renewal schedule.",
+      },
+    ],
+    related: ["billing-and-renewals", "customer-portal", "emails"],
+  }),
+  buildFeature({
     slug: "renewal-sync",
     category: "subscription-operations",
     icon: Repeat,
-    name: "Renewal Sync",
+    name: "Flexible Renewal Sync",
     cardDescription:
-      "Align new subscriptions to predictable billing dates with prorated, full-amount, and Pro flexible first-charge modes.",
-    tier: "Free + Pro",
+      "Configure Pro product-level cycle segments for synced renewals with full, prorated, or next-cycle first-charge behavior.",
+    tier: "Pro",
     summary:
-      "Align first renewals to billing-cycle boundaries while controlling the first checkout charge.",
-    h1: "Sync subscription renewals to predictable billing dates",
-    highlights: ["Global sync", "Full or prorated first charge", "Pro flexible segments"],
+      "Align first renewals to billing-cycle boundaries while controlling the first checkout charge with product-level Pro segments.",
+    h1: "Sync renewals with flexible Pro cycle segments",
+    highlights: ["Pro flexible sync", "Full or prorated first charge", "Product segments"],
     intro:
-      "Renewal Sync lets eligible new subscriptions ==start on the checkout date but renew on a shared billing-cycle boundary==. Global sync can prorate the first charge or charge the full recurring amount immediately. Pro Flexible Renewal Sync adds product-level cycle segments so early, middle, and late signups can each use the right first-charge behavior.",
+      "Flexible Renewal Sync is the Pro renewal-sync workflow for eligible new subscriptions that should ==start on the checkout date but renew on a shared billing-cycle boundary==. Product-level cycle segments let early, middle, and late signups each use the right first-charge behavior: full amount, prorated amount, or charge-full-for-next-cycle.",
     capabilities: [
       {
         title: "Shared renewal boundaries",
@@ -1828,9 +2001,9 @@ export const FEATURES: Feature[] = [
           "Choose whether checkout prorates until the synced date or charges the full recurring amount immediately.",
       },
       {
-        title: "Flexible product segments",
+        title: "Product-level segments",
         description:
-          "Pro products can split the billing cycle into full amount, prorate amount, and charge-full-for-next-cycle segments.",
+          "Split the billing cycle into full amount, prorate amount, and charge-full-for-next-cycle segments.",
       },
       {
         title: "Stored renewal schedule",
@@ -1839,16 +2012,16 @@ export const FEATURES: Feature[] = [
       },
     ],
     stats: [
-      { value: "Free", label: "Global sync" },
-      { value: "Pro", label: "Flexible segments" },
+      { value: "Pro", label: "Availability" },
+      { value: "Segments", label: "Sync mode" },
       { value: "Full", label: "First charge option" },
       { value: "Prorate", label: "First charge option" },
     ],
     faq: [
       {
-        question: "Does Renewal Sync change existing subscriptions?",
+        question: "Does Flexible Renewal Sync change existing subscriptions?",
         answer:
-          "No. It applies to eligible new subscriptions created after the setting or product-level flexible sync is enabled.",
+          "No. It applies to eligible new subscriptions created after product-level flexible sync is enabled.",
       },
       {
         question: "Which gateways support synced checkout?",
@@ -1856,9 +2029,9 @@ export const FEATURES: Feature[] = [
           "Manual/offline gateways and Stripe support synced checkout. Unsupported automatic gateways are hidden while a synced subscription is in the cart.",
       },
       {
-        question: "When should I use Flexible Renewal Sync?",
+        question: "Is Flexible Renewal Sync a Pro feature?",
         answer:
-          "Use the Pro product-level segment picker when early, middle, and late signup windows need different first-charge behavior.",
+          "Yes. Flexible Renewal Sync is a Pro-only feature for product-level cycle segment rules.",
       },
     ],
     related: ["billing-and-renewals", "subscription-products", "stripe-payments"],
@@ -3222,7 +3395,7 @@ export const FEATURES: Feature[] = [
       {
         question: "Is Member Insight available in the free core?",
         answer:
-          "No. Member Insight is one of the seven Pro-only root modules in the updated manual.",
+          "No. Member Insight is part of the Pro-only module set.",
       },
       {
         question: "Does it replace Login as User?",
@@ -3343,6 +3516,63 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["retention-and-refunds", "analytics", "store-credit"],
+  }),
+  buildFeature({
+    slug: "donation-crowdfunding-module",
+    category: "retention-revenue",
+    icon: HeartHandshake,
+    name: "Donation & Crowdfunding Module",
+    cardDescription:
+      "Coming soon: accept donation-style payments, supporter pledges, and campaign funding workflows through Pro.",
+    tier: "Pro",
+    status: "coming-soon",
+    summary:
+      "Add donation and crowdfunding-style revenue workflows to WooCommerce with ArraySubs Pro.",
+    h1: "Run donation and crowdfunding workflows",
+    highlights: ["Coming soon", "Pro revenue module", "Campaign funding"],
+    intro:
+      "Donation & Crowdfunding Module is a planned Pro revenue workflow for stores, creators, communities, and causes that need ==donation-style payments, campaign funding, supporter pledges, or recurring contribution paths== inside WooCommerce.",
+    capabilities: [
+      {
+        title: "Donation-style checkout",
+        description:
+          "Support contribution flows where the customer is funding a cause, campaign, creator, or community.",
+      },
+      {
+        title: "Campaign context",
+        description:
+          "Keep funding goals, campaign messaging, and supporter intent connected to the purchase flow.",
+      },
+      {
+        title: "Recurring contribution path",
+        description:
+          "Connect one-time or recurring supporter payments to the subscription and customer account model.",
+      },
+      {
+        title: "Supporter visibility",
+        description:
+          "Make supporter payments easier to review from customer, order, and subscription records.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "Soon", label: "Status" },
+      { value: "Donate", label: "Payment intent" },
+      { value: "Campaign", label: "Revenue model" },
+    ],
+    faq: [
+      {
+        question: "Is the donation module available now?",
+        answer:
+          "No. Donation & Crowdfunding Module is a planned Pro feature and is marked as coming soon.",
+      },
+      {
+        question: "Is it only for nonprofits?",
+        answer:
+          "No. The planned workflow can support causes, creators, communities, memberships, campaign funding, and similar supporter-backed models.",
+      },
+    ],
+    related: ["store-credit", "subscription-products", "retention-and-refunds"],
   }),
   buildFeature({
     slug: "store-credit",
@@ -3670,7 +3900,7 @@ export const FEATURES: Feature[] = [
       {
         question: "Is Feature Manager a Pro-only root module?",
         answer:
-          "Yes. The updated manual lists Feature Manager as one of seven Pro-only root modules.",
+          "Yes. Feature Manager is part of the Pro-only module set.",
       },
       {
         question: "Does it only affect product pages?",

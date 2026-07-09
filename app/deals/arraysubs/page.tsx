@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { ArrowRight, Check } from "lucide-react";
+import {
+  ArrowRight,
+  ChartColumn,
+  Check,
+  ClipboardList,
+  ReceiptText,
+  type LucideIcon,
+} from "lucide-react";
 import { createMetadata, faqSchema, softwareApplicationSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
@@ -26,7 +33,6 @@ import {
   type FeatureTier,
 } from "./features/_data";
 import { FreeVsProTable } from "./_components/FreeVsProTable";
-import { MembershipLockSection } from "./_components/MembershipLockSection";
 import { RetentionEnginePanel } from "./_components/RetentionEnginePanel";
 import { ARRAYSUBS_PRO_PLANS } from "./pricing/_plans";
 
@@ -59,12 +65,28 @@ const PRO_ONLY_MODULE_COUNT = FEATURES.filter(
 const tierTone = (tier: FeatureTier) =>
   tier === "Free" ? "highlight" : tier === "Pro" ? "dark" : "primary";
 
+const featureBadges = (feature: Pick<Feature, "tier" | "status">) => (
+  <span className="flex flex-wrap justify-end gap-1.5">
+    <Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>
+    {feature.status === "coming-soon" && (
+      <Badge tone="outline">Coming soon</Badge>
+    )}
+  </span>
+);
+
 const featuresBySlugs = (slugs: readonly string[]): Feature[] =>
   slugs
     .map((slug) => getFeature(slug))
     .filter((feature): feature is Feature => Boolean(feature));
 
-/* ---- Benefit blocks (cards come straight from the feature hub data) ----- */
+/* ---- Benefit blocks ----------------------------------------------------- */
+
+type BenefitCustomCard = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  badge?: string;
+};
 
 type BenefitBlock = {
   eyebrow: string;
@@ -75,6 +97,7 @@ type BenefitBlock = {
   /** Deep link into the matching category anchor on the features hub. */
   linkHref: string;
   slugs: string[];
+  customCards?: BenefitCustomCard[];
   surface: "surface" | "default";
 };
 
@@ -82,15 +105,22 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
   {
     eyebrow: "Launch & sell",
     title: "Any product can become a plan",
-    lead: "Simple or variable subscriptions with trials, signup fees, intro-to-renewal pricing, and lifetime deals — configured inside the WooCommerce product editor you already know.",
+    lead: "Simple or variable subscriptions can launch with trials, signup fees, different renewal pricing, and fixed-period rules that match a date range or billing-cycle model.",
     bullets: [
-      "Trials, signup fees, and a different renewal price after checkout",
-      "Lifetime deals and Pro fixed-date memberships for cohorts and seasons",
-      "One-click checkout URLs that send buyers straight past the cart",
+      "Intro prices can move to a different renewal price after the chosen cycle",
+      "Fixed-date subscriptions keep cohorts, seasons, and memberships on a known period",
+      "Trials, signup fees, and checkout shortcuts stay inside the product editor",
     ],
     linkLabel: "All product features",
     linkHref: `${ALL_FEATURES}#products-checkout`,
-    slugs: ["subscription-products", "free-trials", "signup-fees", "lifetime-deals"],
+    slugs: [
+      "subscription-products",
+      "different-renewal-price",
+      "fixed-date-subscriptions",
+      "free-trials",
+      "signup-fees",
+      "lifetime-deals",
+    ],
     surface: "surface",
   },
   {
@@ -115,32 +145,165 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
   {
     eyebrow: "Retention",
     title: "The cancel button becomes a save flow",
-    lead: "When a customer heads for the exit, the Retention Flow Builder captures the reason and answers with the right counter-offer — while portal self-service quietly prevents the ticket in the first place.",
+    lead: "When a customer heads for the exit, the Retention Flow Builder saves the cancellation reason and can answer with conditional discounts, pause offers, downgrade paths, or support handoff.",
     bullets: [
-      "Cancellation reasons routed into targeted save offers",
-      "Pause, vacation mode, and skip-next-renewal instead of hard cancels",
-      "Plan switching with 3 proration methods, tracked by retention analytics",
+      "Cancellation reasons are stored before the final cancel confirmation",
+      "Conditional save discounts can appear only for the reasons and plans you choose",
+      "Accepted and declined offers feed retention analytics for future decisions",
     ],
     linkLabel: "All retention features",
     linkHref: `${ALL_FEATURES}#retention-revenue`,
     slugs: [
       "retention-and-refunds",
       "customer-portal",
-      "plan-switching",
+      "retention-analytics",
       "pause-vacation-mode",
     ],
+    customCards: [
+      {
+        icon: ReceiptText,
+        title: "Conditional Save Discounts",
+        description:
+          "Show a discount only when the selected cancellation reason, plan, or churn risk deserves a price-based save offer.",
+        badge: "Flow",
+      },
+      {
+        icon: ClipboardList,
+        title: "Saved Cancellation Reasons",
+        description:
+          "Keep every cancellation reason tied to the subscription record so retention reports explain what customers are really reacting to.",
+        badge: "Insight",
+      },
+    ],
     surface: "surface",
+  },
+  {
+    eyebrow: "Store toolkit",
+    title: "Build the subscription experience around your store",
+    lead: "Create subscriptions from wp-admin, turn refunds into store credit, shape checkout plus My Account, and control how plan changes and synced renewals handle money.",
+    bullets: [
+      "Issue store credit from refunds, downgrades, promotions, or direct credit purchases",
+      "Sync renewals with full payment, prorated payment, or flexible next-cycle handling",
+      "Use 3 proration methods for upgrades, downgrades, and crossgrades",
+    ],
+    linkLabel: "Browse related features",
+    linkHref: ALL_FEATURES,
+    slugs: [
+      "store-credit",
+      "create-subscription-admin",
+      "checkout-page-builder",
+      "my-account-page-builder",
+      "renewal-sync",
+      "proration-methods",
+    ],
+    surface: "default",
+  },
+  {
+    eyebrow: "Renewal recovery",
+    title: "Failed payments get a recovery path before churn",
+    lead: "Renewal invoices, failed-payment recovery, grace periods, early renewal, retry automation, and fallback downgrades all share the same subscription schedule and customer communication layer.",
+    bullets: [
+      "Manual renewals in core, automatic collection and retry automation in Pro",
+      "Two-phase grace windows protect access while customers update payment details",
+      "Fallback downgrades preserve the relationship when recovery attempts are exhausted",
+    ],
+    linkLabel: "All renewal features",
+    linkHref: `${ALL_FEATURES}#subscription-operations`,
+    slugs: [
+      "billing-and-renewals",
+      "grace-period-recovery",
+      "auto-retry-failed-payments",
+      "auto-downgrade-on-failure",
+    ],
+    surface: "surface",
+  },
+  {
+    eyebrow: "Membership access",
+    title: "A subscription can unlock the right member experience",
+    lead: "Use subscription status, roles, purchase history, lifetime spend, and Pro feature entitlements to decide who gets access, discounts, downloads, products, and account privileges.",
+    bullets: [
+      "Rule-based member access for content, products, discounts, downloads, and roles",
+      "Commerce-aware conditions from purchased products, variations, categories, and spend",
+      "Nested AND/OR logic models real membership tiers without duplicating rules",
+    ],
+    linkLabel: "All membership features",
+    linkHref: `${ALL_FEATURES}#member-experience`,
+    slugs: [
+      "member-access",
+      "member-discounts",
+      "product-purchase-value-conditions",
+      "advanced-condition-builder",
+    ],
+    surface: "default",
+  },
+  {
+    eyebrow: "Content restriction",
+    title: "Protect lessons, downloads, paths, and page sections",
+    lead: "Keep public sales pages visible while locking the valuable pieces behind membership rules — from CPT archives and URL paths to Elementor Containers, Gutenberg blocks, staged lessons, and gated files.",
+    bullets: [
+      "Gate pages, posts, custom post types, taxonomy terms, archives, and arbitrary URL paths",
+      "Protect only selected sections with shortcodes, Elementor Containers, or Gutenberg blocks",
+      "Drip lessons and restricted downloads over time as the member relationship matures",
+    ],
+    linkLabel: "All content restriction features",
+    linkHref: `${ALL_FEATURES}#member-experience`,
+    slugs: [
+      "cpt-content-restrictions",
+      "url-path-rules",
+      "partial-content-restriction",
+      "content-dripping",
+      "restricted-downloads",
+      "gutenberg-content-restrictions",
+    ],
+    surface: "surface",
+  },
+  {
+    eyebrow: "Analytics & audit",
+    title: "Know what happened before support has to ask",
+    lead: "Growth reports, profit-and-loss views, audit trails, scheduled-job logs, and gateway health checks turn subscription activity into decisions operators can act on.",
+    bullets: [
+      "Subscription analytics tracks revenue, growth, churn, retention, and customer behavior",
+      "Profit and loss reporting connects revenue, refunds, payment recovery, and gateway performance",
+      "Deep reports reveal the trends behind pricing, retention, access, and operational decisions",
+    ],
+    linkLabel: "All analytics features",
+    linkHref: `${ALL_FEATURES}#analytics-infrastructure`,
+    slugs: ["analytics", "audits-and-logs", "gateway-health"],
+    customCards: [
+      {
+        icon: ChartColumn,
+        title: "Business Growth Reports",
+        description:
+          "Track MRR, churn, retention saves, trial conversion, product momentum, and subscriber movement before choosing the next growth play.",
+        badge: "Report",
+      },
+      {
+        icon: ReceiptText,
+        title: "Profit & Loss Reports",
+        description:
+          "Compare recurring revenue, refunds, failed payments, recovery, discounts, and gateway performance before margin problems hide in order history.",
+        badge: "Report",
+      },
+      {
+        icon: ClipboardList,
+        title: "Decision-Ready Deep Reports",
+        description:
+          "Drill into products, cohorts, gateways, retention offers, scheduled jobs, and customer behavior before changing pricing or operations.",
+        badge: "Deep report",
+      },
+    ],
+    surface: "default",
   },
 ];
 
 const SHOWCASED_SLUGS = new Set(BENEFIT_BLOCKS.flatMap((block) => block.slugs));
-// Membership features get their own dedicated MembershipLockSection, so keep the
-// whole member-experience category out of the "everything else" marquee.
 const MARQUEE_FEATURES = FEATURES.filter(
-  (feature) =>
-    !SHOWCASED_SLUGS.has(feature.slug) &&
-    feature.category !== "member-experience",
+  (feature) => !SHOWCASED_SLUGS.has(feature.slug),
 );
+const MARQUEE_FEATURE_ROWS = [
+  MARQUEE_FEATURES.filter((_, index) => index % 2 === 0),
+  MARQUEE_FEATURES.filter((_, index) => index % 2 === 1),
+];
 
 /* ---- How it starts ------------------------------------------------------ */
 
@@ -169,18 +332,18 @@ const STEPS = [
 
 const FAQ_ITEMS = [
   {
-    question: "Is the free version actually usable, or just a demo?",
-    answer: `${CORE_MODULE_COUNT} of the ${MODULE_COUNT} features work without paying: subscription products, trials, signup fees, coupons, manual renewals across 500+ WooCommerce gateways, the customer portal, member access and content restriction, retention flows, emails, and the setup wizard. Pro adds the ${PRO_ONLY_MODULE_COUNT} automation and revenue features like automatic gateway billing, payment recovery, store credit, and the checkout builder.`,
+    question: "Is the free version of ArraySubs actually usable, or just a demo?",
+    answer: `${CORE_MODULE_COUNT} of the ${MODULE_COUNT} features work without paying: subscription products, free trials, signup fees, coupons, manual renewals across 500+ WooCommerce gateways, the customer portal, member access and content restriction, content dripping, retention flows, emails, and the setup wizard. Pro adds the ${PRO_ONLY_MODULE_COUNT} automation and revenue features — automatic gateway billing, failed-payment recovery, store credit, the checkout builder, and advanced analytics.`,
   },
   {
-    question: "Which payment gateways renew automatically?",
+    question: "Which payment gateways renew subscriptions automatically?",
     answer:
       "Stripe, PayPal, and Paddle run automatic off-session renewals with ArraySubs Pro. On the free core, renewals create invoices that customers pay through any of the 500+ WooCommerce-compatible gateways, including offline methods like bank transfer.",
   },
   {
     question: "Can I restrict content by subscription plan?",
     answer:
-      "Yes. Pages, posts, any custom post type, URL paths, partial content, Elementor containers, and Gutenberg blocks can all be gated by plan, role, purchase, or feature conditions — with scheduled content dripping and restricted downloads on top.",
+      "Yes. Member Access gates pages, posts, any custom post type, URL paths, partial content, Elementor Containers, and Gutenberg blocks by plan, role, purchase, spend, or Pro feature conditions — with scheduled content dripping and restricted downloads on top.",
   },
   {
     question: "What happens when a renewal payment fails?",
@@ -190,7 +353,17 @@ const FAQ_ITEMS = [
   {
     question: "Can customers manage their own subscriptions?",
     answer:
-      "The customer portal lets subscribers pause, skip a renewal, switch plans with proration, and cancel on their own — and every cancel attempt can route through your retention flow before it completes.",
+      "Yes. The customer portal lets subscribers pause, skip a renewal, switch plans with proration, update payment details, and cancel on their own — and every cancel attempt can route through your retention flow before it completes.",
+  },
+  {
+    question: "Can I reduce churn and keep refunds inside the store?",
+    answer:
+      "Yes. The Retention Flow Builder answers cancellations with targeted discount, pause, or downgrade offers, and Pro Store Credit turns refunds into a spendable wallet balance instead of cash leaving the store.",
+  },
+  {
+    question: "Does ArraySubs work with my WooCommerce setup and HPOS?",
+    answer:
+      "Yes. ArraySubs is built on native WooCommerce products, checkout, coupons, and tax, and declares full HPOS (high-performance order storage) compatibility. Paddle is the one tax exception, handling VAT natively as merchant of record.",
   },
   {
     question: "How is ArraySubs Pro licensed?",
@@ -337,9 +510,16 @@ export default function ArraySubsPage() {
                     icon={<feature.icon className="size-6" />}
                     title={feature.name}
                     description={feature.cardDescription}
-                    badge={
-                      <Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>
-                    }
+                    badge={featureBadges(feature)}
+                  />
+                ))}
+                {block.customCards?.map((card) => (
+                  <IconCard
+                    key={card.title}
+                    icon={<card.icon className="size-6" />}
+                    title={card.title}
+                    description={card.description}
+                    badge={<Badge tone="primary">{card.badge ?? "Report"}</Badge>}
                   />
                 ))}
               </ScrollReveal>
@@ -348,49 +528,58 @@ export default function ArraySubsPage() {
         </Section>
       ))}
 
-      {/* ---- Membership spotlight (dedicated creative section) ----------- */}
-      <MembershipLockSection />
-
       {/* ---- Everything else, drifting past --------------------------------- */}
-      <Section surface="surface" spacing="md">
+      <Section surface="dark" spacing="md">
         <Container>
-          <SectionTitle
-            eyebrow="Still counting"
-            title={`And ${MARQUEE_FEATURES.length} more, already in the box`}
-            subtitle="Everything below ships in the same plugin — no add-on store, no per-feature pricing, one shared subscription record."
-          />
+          <div className="flex max-w-3xl flex-col gap-4">
+            <Eyebrow className="text-on-dark-muted">Still counting</Eyebrow>
+            <h2 className="-ml-[3px] font-display text-4xl text-on-dark text-balance sm:text-display-sm">
+              And {MARQUEE_FEATURES.length} more, already in the box
+            </h2>
+            <p className="max-w-2xl text-lg text-on-dark-muted text-pretty sm:text-xl">
+              Everything below ships in the same plugin — no add-on store, no
+              per-feature pricing, one shared subscription record.
+            </p>
+          </div>
         </Container>
         <Container className="mt-12">
-          <Marqueue label="More ArraySubs features">
-            {MARQUEE_FEATURES.map((feature) => (
-              <div
-                key={feature.slug}
-                className="flex h-full flex-col gap-4 rounded-xl bg-card p-6 text-foreground"
+          <div className="flex flex-col gap-[0.1875rem]">
+            {MARQUEE_FEATURE_ROWS.map((row, rowIndex) => (
+              <Marqueue
+                key={`feature-row-${rowIndex}`}
+                label={`More ArraySubs features row ${rowIndex + 1}`}
               >
-                <div className="flex items-start justify-between gap-3">
-                  <span
-                    aria-hidden="true"
-                    className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg bg-surface text-dark"
+                {row.map((feature) => (
+                  <div
+                    key={feature.slug}
+                    className="flex h-full flex-col gap-4 rounded-xl bg-card p-6 text-foreground"
                   >
-                    <feature.icon className="size-5" />
-                  </span>
-                  <Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>
-                </div>
-                <div className="flex flex-col gap-1.5">
-                  <h3 className="font-display text-lg leading-tight">
-                    {feature.name}
-                  </h3>
-                  <p className="text-sm text-muted text-pretty">
-                    {feature.cardDescription}
-                  </p>
-                </div>
-              </div>
+                    <div className="flex items-start justify-between gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg bg-surface text-dark"
+                      >
+                        <feature.icon className="size-5" />
+                      </span>
+                      {featureBadges(feature)}
+                    </div>
+                    <div className="flex flex-col gap-1.5">
+                      <h3 className="font-display text-lg leading-tight">
+                        {feature.name}
+                      </h3>
+                      <p className="text-sm text-muted text-pretty">
+                        {feature.cardDescription}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </Marqueue>
             ))}
-          </Marqueue>
+          </div>
           <div className="mt-10 flex justify-center">
             <Button
               href={ALL_FEATURES}
-              variant="dark"
+              variant="highlight"
               size="md"
               magnetic
               iconRight={<ArrowRight className="size-5" />}
@@ -407,7 +596,7 @@ export default function ArraySubsPage() {
           <SectionTitle
             eyebrow="Free vs Pro"
             title="Start on free. Upgrade for autopilot."
-            subtitle={`The honest split: ${CORE_MODULE_COUNT} of ${MODULE_COUNT} features are usable without paying a cent. Pro adds the ${PRO_ONLY_MODULE_COUNT} automation and revenue features listed first.`}
+            subtitle={`The honest split: ${CORE_MODULE_COUNT} of ${MODULE_COUNT} features work without paying a cent. The ${PRO_ONLY_MODULE_COUNT} Pro-only upgrades are listed first; a tick in the Free column ships in the free core.`}
             align="center"
           />
           <div className="mt-12">

@@ -4,20 +4,21 @@ import { useRef } from "react";
 import {
   CircleDollarSign,
   HeartHandshake,
+  ShieldCheck,
   RefreshCw,
   Sparkles,
   Undo2,
   type LucideIcon,
 } from "lucide-react";
 import { gsap, prefersReducedMotion, registerGsap, useGSAP } from "@/lib/gsap";
-import { Badge, SectionTitle } from "@/components/ui";
+import { Badge, Button, SectionTitle } from "@/components/ui";
 
-type Stat = { value: string; label: string };
+type Stat = { value: string; label: string; detail: string };
 
 const stats: Stat[] = [
-  { value: "$12.4k", label: "MRR · +18% this month" },
-  { value: "2.1%", label: "Churn · save offers armed" },
-  { value: "34", label: "Saves · this month" },
+  { value: "$12.4k", label: "Protected MRR", detail: "+18% this month" },
+  { value: "2.1%", label: "Churn risk", detail: "Save offers armed" },
+  { value: "34", label: "Recovered accounts", detail: "This month" },
 ];
 
 type FeedEvent = {
@@ -71,6 +72,14 @@ const events: FeedEvent[] = [
     positive: false,
     time: "18m ago",
   },
+  {
+    icon: ShieldCheck,
+    title: "Grace window opened",
+    meta: "Access held while recovery email sent",
+    tag: "protected",
+    positive: true,
+    time: "24m ago",
+  },
 ];
 
 /**
@@ -118,57 +127,94 @@ export function RetentionEnginePanel() {
       className="min-w-0"
       aria-label="ArraySubs live retention engine — recent recovery and save events"
     >
-      {/* Header: claim on the left, live status + compact stat readout on the right */}
-      <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-start">
+      {/* Header: claim on the left, redesigned live recovery dashboard on the right */}
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.48fr)] lg:items-start">
         <SectionTitle
           eyebrow="Live retention engine"
           title="Cancellations saved, payments recovered — automatically."
           subtitle="The billing, dunning, and save-offer work six separate plugins used to fight over now runs as one live system on a single subscription record."
         />
 
-        <div className="flex flex-col gap-6">
-          <Badge tone="neutral" className="w-fit">
-            <span
-              data-live-dot
-              aria-hidden="true"
-              className="mr-1 size-2 rounded-full bg-secondary"
-            />
-            Live
-          </Badge>
-          <dl className="flex flex-wrap gap-x-8 gap-y-5 lg:flex-col lg:gap-y-4">
+        <aside
+          className="grid gap-[0.1875rem]"
+          aria-label="Live retention performance summary"
+        >
+          <div className="flex items-center justify-between gap-4">
+            <Badge tone="neutral" className="w-fit">
+              <span
+                data-live-dot
+                aria-hidden="true"
+                className="mr-1 size-2 rounded-full bg-primary"
+              />
+              Live recovery pulse
+            </Badge>
+            <span className="text-xs font-semibold tracking-wide text-primary uppercase">
+              Auto-syncing
+            </span>
+          </div>
+
+          <div className="rounded-2xl border border-border bg-card p-5">
+            <p className="text-xs font-semibold tracking-wide text-faint uppercase">
+              Revenue protected
+            </p>
+            <p className="mt-2 font-display text-5xl leading-none font-semibold tabular-nums text-foreground">
+              $12.4k
+            </p>
+            <p className="mt-2 text-sm text-muted">
+              Recovered from retries, save offers, and grace-period workflows
+              this month.
+            </p>
+          </div>
+
+          <dl className="grid gap-[0.1875rem] sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
             {stats.map((stat) => (
-              <div key={stat.label} className="min-w-0">
-                <dt className="sr-only">{stat.label}</dt>
-                <dd>
+              <div
+                key={stat.label}
+                className="rounded-xl border border-border bg-background p-3"
+              >
+                <dt className="text-xs font-semibold tracking-wide text-faint uppercase">
+                  {stat.label}
+                </dt>
+                <dd className="mt-2">
                   <span className="block font-display text-2xl leading-none font-semibold tabular-nums text-foreground">
                     {stat.value}
                   </span>
-                  <span className="mt-1.5 block text-xs font-medium text-faint uppercase">
-                    {stat.label}
+                  <span className="mt-1.5 block text-xs font-medium text-primary">
+                    {stat.detail}
                   </span>
                 </dd>
               </div>
             ))}
           </dl>
-        </div>
+
+          <Button
+            href="/deals/arraysubs/features/#retention-revenue"
+            variant="outline"
+            size="sm"
+            className="mt-4 justify-self-start"
+            iconRight={<Sparkles aria-hidden="true" className="size-4" />}
+          >
+            See retention tools
+          </Button>
+        </aside>
       </div>
 
-      {/* One dominant motif: the live event feed (single card, divided rows) */}
-      <div className="mt-10 rounded-2xl border border-border bg-card">
-        <div className="flex items-center justify-between border-b border-border px-5 py-4">
+      {/* Six compact cards: recent events in the same retention pipeline. */}
+      <div className="mt-10">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="text-xs font-semibold tracking-wide text-faint uppercase">
             Recent retention events
           </span>
           <span className="text-xs font-medium text-faint">Auto-updating</span>
         </div>
-        <ul role="list" className="divide-y divide-border">
+        <ul role="list" className="mt-4 grid gap-[0.1875rem] md:grid-cols-2">
           {events.map((event) => {
             const Icon = event.icon;
             return (
               <li
                 key={event.title}
                 data-feed-row
-                className="flex items-center gap-4 px-5 py-4"
+                className="grid min-h-32 grid-cols-[auto_1fr] gap-x-4 gap-y-5 rounded-xl border border-border bg-card p-4"
                 aria-label={`${event.title}: ${event.meta} — ${event.tag}, ${event.time}`}
               >
                 <span
@@ -177,17 +223,17 @@ export function RetentionEnginePanel() {
                 >
                   <Icon className="size-5" />
                 </span>
-                <div className="min-w-0 flex-1">
+                <div className="min-w-0">
                   <p className="text-sm font-semibold text-foreground">
                     {event.title}
                   </p>
                   <p className="text-xs text-muted text-pretty">{event.meta}</p>
                 </div>
-                <div className="flex shrink-0 flex-col items-end gap-1">
+                <div className="col-span-2 flex items-end justify-between gap-3 border-t border-border pt-3">
                   <span
                     className={
                       event.positive
-                        ? "rounded-pill bg-surface px-2.5 py-0.5 text-xs font-semibold tabular-nums text-secondary"
+                        ? "rounded-pill bg-highlight px-2.5 py-0.5 text-xs font-semibold tabular-nums text-primary"
                         : "rounded-pill bg-surface px-2.5 py-0.5 text-xs font-semibold text-muted"
                     }
                   >

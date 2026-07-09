@@ -92,21 +92,21 @@ const FIELD_GROUPS: ComparisonGroup[] = [
     label: "Subscriptions & billing",
     rows: [
       r("Simple subscriptions", yes(), yes(), yes(), yes(), yes(), yes()),
-      r("Variable-product subscriptions", yes(), yes(), part("premium"), part("Pro"), part("Pro"), yes()),
+      r("Variable-product subscriptions", yes(), yes(), yes(), part("Pro"), part("Pro"), yes()),
       r("Variable subscriptions in the free tier", yes(), no, no, no, no, no),
       r("Plan switching (upgrade / downgrade)", yes(), yes(), part("variable"), part("Pro"), part("Pro"), part("variation")),
       r("Different renewal price", yes(), no, no, no, part("Pro"), no),
       r("Skip next renewal", yes(), no, no, no, no, no),
       r("Pause / vacation mode", yes(), yes(), part("premium"), part("Pro"), yes(), yes()),
       r("Two-phase grace period", yes(), part("basic"), part("premium"), part("Pro"), part("Pro"), yes()),
-      r("Installment / split payments", no, no, no, no, yes(), part("limited")),
-      r("Payment gateways", txt("3 + manual"), txt("25+"), txt("PayPal + add-ons"), txt("4 + Pro"), txt("6"), txt("Stripe/PayPal")),
+      r("Installment / split payments", part("soon"), no, no, no, yes(), part("limited")),
+      r("Payment gateways", txt("3 + manual"), txt("25+"), txt("PayPal + add-ons"), txt("4 + Pro"), txt("7"), txt("Stripe/PayPal")),
     ],
   },
   {
     label: "Memberships & access",
     rows: [
-      r("Member access control", yes(), no, no, no, no, no),
+      r("Member access control", yes(), no, no, part("basic"), no, no),
       r("Content dripping & scheduling", yes(), no, no, no, no, no),
       r("URL + role-based rules engine", yes(), no, no, no, no, no),
     ],
@@ -114,7 +114,7 @@ const FIELD_GROUPS: ComparisonGroup[] = [
   {
     label: "Retention, revenue & insight",
     rows: [
-      r("Retention flow builder", yes(), no, no, no, no, no),
+      r("Retention flow builder", yes(), no, no, no, part("win-back"), no),
       r("Store credit wallet", yes(), no, no, no, no, no),
       r("Feature Manager entitlements", yes(), no, no, no, no, no),
       r("Gateway Health dashboard", yes(), no, no, no, no, no),
@@ -141,7 +141,7 @@ const FIELD_GROUPS: ComparisonGroup[] = [
       r("Login as User support workflow", yes(), no, no, no, no, no),
       r("Member Insight profile dashboard", yes(), no, no, no, no, no),
       r("Listed on WordPress.org", yes(), no, yes(), yes(), yes(), no),
-      r("Actively maintained in 2026", yes(), yes(), yes(), yes(), yes(), part("infrequent")),
+      r("Actively maintained in 2026", yes(), yes(), yes(), yes(), yes(), yes()),
       r("Subscription box module", no, no, yes(), yes(), no, no),
     ],
   },

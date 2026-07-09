@@ -39,13 +39,22 @@ export function ModuleShowcase({
     >
       <Container
         className={cn(
-          "grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[minmax(0,1.08fr)_minmax(24rem,0.72fr)] lg:gap-16 lg:py-24",
-          !compact && "min-h-[calc(100svh-4rem)]",
+          "grid items-center lg:grid-cols-[minmax(0,1.08fr)_minmax(24rem,0.72fr)]",
+          compact
+            ? "gap-8 py-8 sm:gap-10 sm:py-10 lg:gap-12 lg:py-12"
+            : "min-h-[calc(100svh-4rem)] gap-12 py-16 sm:py-20 lg:gap-16 lg:py-24",
         )}
       >
         <div className="flex flex-col font-display">
           {artworkSrc ? (
-            <div className="flex min-h-[18rem] items-center justify-center py-6 sm:min-h-[24rem] lg:min-h-[30rem] lg:justify-start lg:py-0">
+            <div
+              className={cn(
+                "flex items-center justify-center lg:justify-start",
+                compact
+                  ? "min-h-[14rem] py-2 sm:min-h-[20rem] lg:min-h-[24rem] lg:py-0"
+                  : "min-h-[18rem] py-6 sm:min-h-[24rem] lg:min-h-[30rem] lg:py-0",
+              )}
+            >
               <h2 id="module-showcase-title" className="sr-only">
                 {moduleCount}+ available modules for WooCommerce stores
               </h2>
@@ -158,7 +167,12 @@ export function ModuleShowcase({
           )}
         </div>
 
-        <div className="flex flex-col justify-center lg:pt-24">
+        <div
+          className={cn(
+            "flex flex-col justify-center",
+            compact ? "lg:pt-0" : "lg:pt-24",
+          )}
+        >
           <div className="mb-10 flex items-start gap-5 sm:mb-12">
             <img
               src="/shapes/shape-3.webp"
@@ -183,7 +197,12 @@ export function ModuleShowcase({
           </p>
 
           {(hasPrimaryAction || hasSecondaryAction) && (
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-20 xl:mt-24">
+            <div
+              className={cn(
+                "flex flex-col gap-3 sm:flex-row sm:items-center",
+                compact ? "mt-8 lg:mt-10" : "mt-10 lg:mt-20 xl:mt-24",
+              )}
+            >
               {hasPrimaryAction && (
                 <Button
                   href={primaryHref}
