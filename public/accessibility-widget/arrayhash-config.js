@@ -55,10 +55,33 @@
     }
   }
 
+  function dedupeAccessibilityWidgetRoots() {
+    var roots = Array.prototype.slice.call(
+      document.querySelectorAll(".accessibility-widget-root"),
+    );
+
+    if (roots.length <= 1) return roots[0] || null;
+
+    var rootToKeep = roots[roots.length - 1];
+
+    roots.slice(0, -1).forEach(function (root) {
+      root.remove();
+    });
+
+    return rootToKeep;
+  }
+
   function syncPanelAccessibility() {
-    var trigger = document.querySelector(".accessibility-widget-trigger");
-    var panel = document.querySelector(".accessibility-widget-panel");
-    var overlay = document.querySelector(".accessibility-widget-overlay");
+    var root = dedupeAccessibilityWidgetRoots();
+    var trigger = root
+      ? root.querySelector(".accessibility-widget-trigger")
+      : document.querySelector(".accessibility-widget-trigger");
+    var panel = root
+      ? root.querySelector(".accessibility-widget-panel")
+      : document.querySelector(".accessibility-widget-panel");
+    var overlay = root
+      ? root.querySelector(".accessibility-widget-overlay")
+      : document.querySelector(".accessibility-widget-overlay");
     var isOpen = trigger && trigger.getAttribute("aria-expanded") === "true";
 
     setInert(panel, !isOpen);
@@ -94,7 +117,10 @@
   function toggleWidget() {
     if (isMobileWidgetViewport()) return;
 
-    var trigger = document.querySelector(".accessibility-widget-trigger");
+    var root = dedupeAccessibilityWidgetRoots();
+    var trigger = root
+      ? root.querySelector(".accessibility-widget-trigger")
+      : document.querySelector(".accessibility-widget-trigger");
 
     if (trigger) {
       trigger.click();
@@ -161,6 +187,8 @@
   function syncMobileWidgetState() {
     var isMobile = isMobileWidgetViewport();
     var api = window.AccessibilityWidget;
+
+    dedupeAccessibilityWidgetRoots();
 
     document.documentElement.toggleAttribute(
       "data-accessibility-widget-mobile-disabled",

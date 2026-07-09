@@ -93,7 +93,7 @@ export default function RootLayout({
 
         <Script
           id="arrayhash-accessibility-widget-config"
-          src="/accessibility-widget/arrayhash-config.js?v=20260710-1"
+          src="/accessibility-widget/arrayhash-config.js?v=20260710-2"
           strategy="beforeInteractive"
         />
         <Script
