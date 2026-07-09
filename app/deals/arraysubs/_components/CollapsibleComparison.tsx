@@ -42,8 +42,8 @@ export function CollapsibleComparison({
   const visibleRows = showFull ? rows : rows.slice(0, collapsedRowCount);
 
   return (
-    <div className="flex flex-col items-center gap-6">
-      <div id={tableId} className="relative w-full">
+    <div className="flex w-full min-w-0 flex-col items-center gap-6">
+      <div id={tableId} className="relative w-full min-w-0">
         <ComparisonTable
           caption={caption}
           columns={columns}

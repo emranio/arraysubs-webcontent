@@ -17,6 +17,8 @@
   --color-primary-strong: #6F22E6; /* hover / active state             */
   --color-secondary: #18A554; /* secondary secure green accent             */
   --color-secondary-strong: #128443; /* secondary hover / active state     */
+  --color-offer: #FE8218; /* offer banner orange                         */
+  --color-offer-strong: #C85D00; /* offer banner border / active tone    */
   --color-dark: #12002B; /* darkest brand color / dark sections         */
   --color-dark-2: #321167; /* primary-tinted elevated surface on dark   */
 
@@ -95,6 +97,8 @@
 @layer base {
   :root {
     color-scheme: light;
+    --color-offer: #FE8218;
+    --color-offer-strong: #C85D00;
   }
 
   *,
@@ -199,6 +203,13 @@
     z-index: -1;
     pointer-events: none;
     background-color: var(--section-bg, var(--color-background));
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .accessibility-widget-trigger[data-position="right"],
+  .accessibility-widget-trigger[data-position="left"] {
+    bottom: 5.75rem !important;
   }
 }
 

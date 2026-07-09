@@ -2,91 +2,68 @@
 
 import { useRef } from "react";
 import {
-  CircleDollarSign,
+  ArrowRight,
+  BadgeCheck,
+  CreditCard,
   HeartHandshake,
-  ShieldCheck,
+  LifeBuoy,
+  MessageSquareText,
+  PauseCircle,
   RefreshCw,
-  Sparkles,
-  Undo2,
+  ShieldCheck,
+  WalletCards,
   type LucideIcon,
 } from "lucide-react";
 import { gsap, prefersReducedMotion, registerGsap, useGSAP } from "@/lib/gsap";
-import { Badge, Button, SectionTitle } from "@/components/ui";
+import { Badge, Button } from "@/components/ui";
 
-type Stat = { value: string; label: string; detail: string };
-
-const stats: Stat[] = [
-  { value: "$12.4k", label: "Protected MRR", detail: "+18% this month" },
-  { value: "2.1%", label: "Churn risk", detail: "Save offers armed" },
-  { value: "34", label: "Recovered accounts", detail: "This month" },
-];
-
-type FeedEvent = {
+type SavePath = {
   icon: LucideIcon;
-  title: string;
-  meta: string;
-  tag: string;
-  positive: boolean;
-  time: string;
+  label: string;
 };
 
-/** Illustrative mock of the retention engine at work — not live customer data. */
-const events: FeedEvent[] = [
+const savePaths: SavePath[] = [
+  { icon: MessageSquareText, label: "Reason capture" },
+  { icon: PauseCircle, label: "Pause offer" },
+  { icon: HeartHandshake, label: "Downgrade path" },
+  { icon: LifeBuoy, label: "Support handoff" },
+  { icon: CreditCard, label: "Payment retry" },
+  { icon: WalletCards, label: "Store credit" },
+];
+
+type WorkflowCard = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+};
+
+const workflowCards: WorkflowCard[] = [
   {
-    icon: RefreshCw,
-    title: "Renewal recovered",
-    meta: "Pro Monthly · card retried automatically",
-    tag: "+$29",
-    positive: true,
-    time: "just now",
+    icon: MessageSquareText,
+    title: "Listen before cancel",
+    description:
+      "Capture the reason before the final confirmation, so the store can respond with context instead of a dead-end button.",
   },
   {
     icon: HeartHandshake,
-    title: "Cancellation saved",
-    meta: "Reason captured, then 20% offer accepted",
-    tag: "saved",
-    positive: true,
-    time: "2m ago",
+    title: "Match the save path",
+    description:
+      "Present the right next step: pause, downgrade, support, store credit, or a targeted save offer based on the situation.",
   },
   {
-    icon: CircleDollarSign,
-    title: "Failed payment retried",
-    meta: "Smart dunning · attempt 2 cleared",
-    tag: "success",
-    positive: true,
-    time: "6m ago",
-  },
-  {
-    icon: Sparkles,
-    title: "Trial converted",
-    meta: "10-day trial rolled into Pro annual",
-    tag: "+$149",
-    positive: true,
-    time: "11m ago",
-  },
-  {
-    icon: Undo2,
-    title: "Paused instead of cancelled",
-    meta: "Subscription resumes in 30 days",
-    tag: "retained",
-    positive: false,
-    time: "18m ago",
+    icon: RefreshCw,
+    title: "Recover failed renewals",
+    description:
+      "Retry payments, open a grace window, and guide customers back to active billing without losing the subscription thread.",
   },
   {
     icon: ShieldCheck,
-    title: "Grace window opened",
-    meta: "Access held while recovery email sent",
-    tag: "protected",
-    positive: true,
-    time: "24m ago",
+    title: "Keep the story together",
+    description:
+      "Every decision stays tied to the subscription record, so support, recovery, and reporting all see the same customer path.",
   },
 ];
 
-/**
- * "Live retention engine" proof panel — a JSX product mockup (no screenshots).
- * A compact claim + stat readout above a single dominant live-event feed, so the
- * whole billing/dunning/save story reads as one system working in real time.
- */
 export function RetentionEnginePanel() {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -97,26 +74,18 @@ export function RetentionEnginePanel() {
       registerGsap();
       if (prefersReducedMotion()) return;
 
-      const rows = root.querySelectorAll<HTMLElement>("[data-feed-row]");
-      gsap.from(rows, {
+      const revealItems = root.querySelectorAll<HTMLElement>(
+        "[data-retention-reveal]",
+      );
+
+      gsap.from(revealItems, {
         autoAlpha: 0,
-        y: "0.5rem",
-        duration: 0.6,
+        y: "0.75rem",
+        duration: 0.65,
         ease: "power3.out",
-        stagger: 0.06,
+        stagger: 0.05,
         scrollTrigger: { trigger: root, start: "top 80%", once: true },
       });
-
-      const dot = root.querySelector<HTMLElement>("[data-live-dot]");
-      if (dot) {
-        gsap.to(dot, {
-          opacity: 0.35,
-          duration: 1.1,
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true,
-        });
-      }
     },
     { scope: rootRef },
   );
@@ -125,128 +94,122 @@ export function RetentionEnginePanel() {
     <div
       ref={rootRef}
       className="min-w-0"
-      aria-label="ArraySubs live retention engine — recent recovery and save events"
+      aria-label="ArraySubs retention workflow builder"
     >
-      {/* Header: claim on the left, redesigned live recovery dashboard on the right */}
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.48fr)] lg:items-start">
-        <SectionTitle
-          eyebrow="Live retention engine"
-          title="Cancellations saved, payments recovered — automatically."
-          subtitle="The billing, dunning, and save-offer work six separate plugins used to fight over now runs as one live system on a single subscription record."
-        />
-
-        <aside
-          className="grid gap-[0.1875rem]"
-          aria-label="Live retention performance summary"
+      <div className="grid gap-[0.1875rem] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-stretch">
+        <div
+          data-retention-reveal
+          className="flex min-h-[34rem] flex-col justify-between rounded-2xl border border-border bg-background p-6 sm:p-8 lg:p-10"
         >
-          <div className="flex items-center justify-between gap-4">
-            <Badge tone="neutral" className="w-fit">
-              <span
-                data-live-dot
-                aria-hidden="true"
-                className="mr-1 size-2 rounded-full bg-primary"
-              />
-              Live recovery pulse
+          <div>
+            <Badge tone="highlight" className="w-fit">
+              Retention save studio
             </Badge>
-            <span className="text-xs font-semibold tracking-wide text-primary uppercase">
-              Auto-syncing
+            <h2 className="mt-6 max-w-4xl font-display text-[2.625rem] leading-[1.02] font-semibold tracking-normal text-foreground text-balance sm:text-[3.5rem] lg:text-[4.5rem]">
+              Turn cancellation intent into a guided save path.
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted text-pretty sm:text-xl">
+              ArraySubs gives every risky subscriber moment a clear next step:
+              understand the reason, present the right option, and keep the
+              relationship inside WooCommerce.
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <div className="grid gap-[0.1875rem] sm:grid-cols-2">
+              {savePaths.map((path) => {
+                const Icon = path.icon;
+                return (
+                  <span
+                    key={path.label}
+                    className="inline-flex min-h-14 items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground"
+                  >
+                    <Icon
+                      aria-hidden="true"
+                      className="size-5 shrink-0 text-primary"
+                    />
+                    {path.label}
+                  </span>
+                );
+              })}
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Button
+                href="/deals/arraysubs/features/#retention-revenue"
+                size="lg"
+                magnetic
+                iconRight={<ArrowRight aria-hidden="true" className="size-5" />}
+              >
+                Explore retention tools
+              </Button>
+              <p className="max-w-sm text-sm font-medium text-muted">
+                Built for the moments where a normal cancel button gives up.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          data-retention-reveal
+          className="rounded-2xl border border-on-dark-border bg-dark p-5 text-on-dark sm:p-6 lg:min-h-[34rem] lg:p-8"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <Badge tone="outline" className="text-on-dark-muted">
+              Relationship routing
+            </Badge>
+            <span className="inline-flex items-center gap-2 rounded-pill border border-on-dark-border px-3 py-1 text-xs font-semibold text-on-dark-muted uppercase">
+              <BadgeCheck aria-hidden="true" className="size-4 text-secondary" />
+              WooCommerce-native
             </span>
           </div>
 
-          <div className="rounded-2xl border border-border bg-card p-5">
-            <p className="text-xs font-semibold tracking-wide text-faint uppercase">
-              Revenue protected
-            </p>
-            <p className="mt-2 font-display text-5xl leading-none font-semibold tabular-nums text-foreground">
-              $12.4k
-            </p>
-            <p className="mt-2 text-sm text-muted">
-              Recovered from retries, save offers, and grace-period workflows
-              this month.
-            </p>
+          <div className="mt-8 grid gap-[0.1875rem] xl:grid-cols-2">
+            <div className="rounded-xl border border-on-dark-border bg-dark-2 p-4">
+              <p className="text-xs font-semibold tracking-wide text-on-dark-muted uppercase">
+                Exit moment
+              </p>
+              <p className="mt-3 text-2xl leading-tight font-semibold text-on-dark text-balance">
+                A subscriber is about to leave or a renewal needs recovery.
+              </p>
+            </div>
+            <div className="rounded-xl border border-on-dark-border bg-dark-2 p-4">
+              <p className="text-xs font-semibold tracking-wide text-on-dark-muted uppercase">
+                ArraySubs workflow
+              </p>
+              <p className="mt-3 text-2xl leading-tight font-semibold text-on-dark text-balance">
+                The same subscription record routes the reason, offer, recovery,
+                and support context.
+              </p>
+            </div>
           </div>
 
-          <dl className="grid gap-[0.1875rem] sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-xl border border-border bg-background p-3"
-              >
-                <dt className="text-xs font-semibold tracking-wide text-faint uppercase">
-                  {stat.label}
-                </dt>
-                <dd className="mt-2">
-                  <span className="block font-display text-2xl leading-none font-semibold tabular-nums text-foreground">
-                    {stat.value}
-                  </span>
-                  <span className="mt-1.5 block text-xs font-medium text-primary">
-                    {stat.detail}
-                  </span>
-                </dd>
-              </div>
-            ))}
-          </dl>
-
-          <Button
-            href="/deals/arraysubs/features/#retention-revenue"
-            variant="outline"
-            size="sm"
-            className="mt-4 justify-self-start"
-            iconRight={<Sparkles aria-hidden="true" className="size-4" />}
-          >
-            See retention tools
-          </Button>
-        </aside>
-      </div>
-
-      {/* Six compact cards: recent events in the same retention pipeline. */}
-      <div className="mt-10">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <span className="text-xs font-semibold tracking-wide text-faint uppercase">
-            Recent retention events
-          </span>
-          <span className="text-xs font-medium text-faint">Auto-updating</span>
-        </div>
-        <ul role="list" className="mt-4 grid gap-[0.1875rem] md:grid-cols-2">
-          {events.map((event) => {
-            const Icon = event.icon;
-            return (
-              <li
-                key={event.title}
-                data-feed-row
-                className="grid min-h-32 grid-cols-[auto_1fr] gap-x-4 gap-y-5 rounded-xl border border-border bg-card p-4"
-                aria-label={`${event.title}: ${event.meta} — ${event.tag}, ${event.time}`}
-              >
-                <span
-                  aria-hidden="true"
-                  className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg bg-highlight text-primary"
+          <div className="mt-[0.1875rem] grid gap-[0.1875rem] sm:grid-cols-2">
+            {workflowCards.map((card) => {
+              const Icon = card.icon;
+              return (
+                <article
+                  key={card.title}
+                  data-retention-reveal
+                  className="min-h-52 rounded-xl border border-on-dark-border bg-dark-2 p-5"
                 >
-                  <Icon className="size-5" />
-                </span>
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-foreground">
-                    {event.title}
-                  </p>
-                  <p className="text-xs text-muted text-pretty">{event.meta}</p>
-                </div>
-                <div className="col-span-2 flex items-end justify-between gap-3 border-t border-border pt-3">
                   <span
-                    className={
-                      event.positive
-                        ? "rounded-pill bg-highlight px-2.5 py-0.5 text-xs font-semibold tabular-nums text-primary"
-                        : "rounded-pill bg-surface px-2.5 py-0.5 text-xs font-semibold text-muted"
-                    }
+                    aria-hidden="true"
+                    className="inline-flex size-11 items-center justify-center rounded-lg bg-highlight text-primary"
                   >
-                    {event.tag}
+                    <Icon className="size-5" />
                   </span>
-                  <span className="text-xs font-medium text-faint">
-                    {event.time}
-                  </span>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+                  <h3 className="mt-5 text-lg font-semibold tracking-normal text-on-dark">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-on-dark-muted text-pretty">
+                    {card.description}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

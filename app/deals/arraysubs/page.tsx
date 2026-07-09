@@ -33,6 +33,7 @@ import {
   type FeatureTier,
 } from "./features/_data";
 import { FreeVsProTable } from "./_components/FreeVsProTable";
+import { ArraySubsHeroVisual } from "./_components/ArraySubsHeroVisual";
 import { RetentionEnginePanel } from "./_components/RetentionEnginePanel";
 import { ARRAYSUBS_PRO_PLANS } from "./pricing/_plans";
 
@@ -385,26 +386,26 @@ export default function ArraySubsPage() {
     <>
       {/* ---- Hero ------------------------------------------------------- */}
       <PageHero
+        layout="showcase"
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "ArraySubs", href: "/deals/arraysubs/" },
         ]}
         title={
           <>
-            {/* Sized down below `sm` so "subscriptions." never breaks mid-word. */}
-            <span className="block max-sm:text-[2.875rem]">
+            <span className="block">
               Sell subscriptions.
             </span>
-            <span className="block max-sm:text-[2.875rem]">
-              Keep subscribers.
+            <span className="block text-dark">
+              Keep the relationship.
             </span>
           </>
         }
-        subtitle="ArraySubs turns WooCommerce into a complete subscription business — recurring billing, memberships, gated content, retention offers, and analytics in one plugin, with a free core generous enough to launch on."
+        subtitle="ArraySubs unites recurring billing, memberships, protected content, customer self-service, and retention in one WooCommerce workflow."
         highlights={[
-          `${MODULE_COUNT} features in one plugin`,
-          `${CORE_MODULE_COUNT} available free`,
-          "Replaces 6+ single-purpose plugins",
+          "Launch recurring products",
+          "Protect member experiences",
+          "Recover customers before they leave",
         ]}
         actions={
           <>
@@ -414,14 +415,21 @@ export default function ArraySubsPage() {
               magnetic
               iconRight={<ArrowRight className="size-5" />}
             >
-              View Pro Pricing
+              Get ArraySubs Pro
             </Button>
-            <Button href="#free-vs-pro" variant="outline" size="lg" magnetic>
-              See what&rsquo;s free
+            <Button
+              href={ALL_FEATURES}
+              variant="outline"
+              size="lg"
+              magnetic
+              className="max-sm:hidden"
+            >
+              Explore Features
             </Button>
           </>
         }
-        trust="Free core on WordPress.org · 10-day Pro trial — no credit card · 30-day money-back guarantee"
+        trust="WooCommerce-native · Customer self-service · Money-back guarantee"
+        visual={<ArraySubsHeroVisual />}
       />
 
       {/* ---- Problem → positioning --------------------------------------- */}
@@ -443,8 +451,8 @@ export default function ArraySubsPage() {
         </Container>
       </Section>
 
-      {/* ---- Live retention engine proof (JSX mockup, no screenshots) ---- */}
-      <Section surface="surface" spacing="md">
+      {/* ---- Retention save studio --------------------------------------- */}
+      <Section surface="default" spacing="md">
         <Container>
           <RetentionEnginePanel />
         </Container>
@@ -671,7 +679,7 @@ export default function ArraySubsPage() {
               </div>
             </article>
 
-            <article className="grid h-full items-center gap-8 rounded-2xl bg-card p-6 text-foreground sm:p-8 md:grid-cols-[10rem_1fr]">
+            <article className="grid h-full items-center gap-8 rounded-2xl bg-card p-6 text-center text-foreground sm:p-8 md:grid-cols-[10rem_1fr] md:text-left">
               <img
                 src="/shapes/30-days-refund.webp"
                 alt="30-day money-back guarantee"

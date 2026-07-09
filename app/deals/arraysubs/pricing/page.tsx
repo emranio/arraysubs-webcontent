@@ -232,17 +232,6 @@ export default function ArraySubsPricingPage() {
         }
       />
 
-      <ModuleShowcase
-        moduleCount={MODULE_COUNT}
-        compact
-        artworkSrc="/shapes/feature-count.webp"
-        artworkAlt={`${MODULE_COUNT} ArraySubs features`}
-        primaryHref=""
-        primaryLabel=""
-        secondaryHref=""
-        secondaryLabel=""
-      />
-
       <Section id="plans" surface="surface" spacing="md">
         <Container>
           <SectionTitle
@@ -350,6 +339,17 @@ export default function ArraySubsPricingPage() {
           </div>
         </Container>
       </Section>
+
+      <ModuleShowcase
+        moduleCount={MODULE_COUNT}
+        compact
+        artworkSrc="/shapes/feature-count.webp"
+        artworkAlt={`${MODULE_COUNT} ArraySubs features`}
+        primaryHref=""
+        primaryLabel=""
+        secondaryHref=""
+        secondaryLabel=""
+      />
 
       <Section id="compare" surface="default" spacing="md">
         <Container>

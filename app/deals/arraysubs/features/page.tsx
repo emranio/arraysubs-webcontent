@@ -208,6 +208,28 @@ export default function FeaturesHubPage() {
         secondaryLabel="Browse features"
       />
 
+      {/* ---- Workflow map ----------------------------------------------- */}
+      <Section surface="default" spacing="md">
+        <Container>
+          <SectionTitle
+            eyebrow="Workflow map"
+            title="From first product to protected revenue"
+            subtitle="Use the features in sequence, or turn on only the parts your store needs today."
+            align="center"
+          />
+          <div className="mt-12 grid gap-[0.1875rem] md:grid-cols-4">
+            {SETUP_STEPS.map((step, index) => (
+              <StepCard
+                key={step.title}
+                number={index + 1}
+                title={step.title}
+                description={step.description}
+              />
+            ))}
+          </div>
+        </Container>
+      </Section>
+
       {/* ---- Category grid ---------------------------------------------- */}
       <Section id="all-modules" surface="surface" spacing="md">
         <Container>
@@ -319,28 +341,6 @@ export default function FeaturesHubPage() {
                 </p>
               </div>
             </article>
-          </div>
-        </Container>
-      </Section>
-
-      {/* ---- Workflow map ----------------------------------------------- */}
-      <Section surface="surface" spacing="md">
-        <Container>
-          <SectionTitle
-            eyebrow="Workflow map"
-            title="From first product to protected revenue"
-            subtitle="Use the features in sequence, or turn on only the parts your store needs today."
-            align="center"
-          />
-          <div className="mt-12 grid gap-[0.1875rem] md:grid-cols-4">
-            {SETUP_STEPS.map((step, index) => (
-              <StepCard
-                key={step.title}
-                number={index + 1}
-                title={step.title}
-                description={step.description}
-              />
-            ))}
           </div>
         </Container>
       </Section>

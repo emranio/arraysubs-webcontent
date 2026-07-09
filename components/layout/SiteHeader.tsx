@@ -67,7 +67,7 @@ export function SiteHeader() {
                 fetchPriority="high"
                 className="h-[1.35rem] w-auto sm:h-[1.5rem]"
               />
-              <span className="max-w-[15.25rem] truncate text-[0.5625rem] leading-none font-medium tracking-normal text-faint sm:max-w-[18rem] sm:text-[0.625rem] lg:max-w-[15.25rem] xl:max-w-none xl:text-[0.6875rem]">
+              <span className="hidden max-w-[15.25rem] truncate text-[0.5625rem] leading-none font-medium tracking-normal text-faint lg:block lg:max-w-[15.25rem] lg:text-[0.625rem] xl:max-w-none xl:text-[0.6875rem]">
                 {logoSubtitle}
               </span>
             </Link>
@@ -105,7 +105,7 @@ export function SiteHeader() {
                 })}
               </nav>
 
-              <Magnetic className="hidden sm:inline-flex">
+              <Magnetic className="inline-flex">
                 <span className="relative inline-flex">
                   <span className="pointer-events-none absolute -top-2 -right-2 z-20 rounded-pill bg-[#FE8218] px-1.5 py-0.5 text-[0.625rem] leading-none font-extrabold tracking-wide text-white uppercase shadow-sm">
                     30% off

@@ -59,8 +59,11 @@ export function Magnetic({ children, strength = 0.4, className }: MagneticProps)
   return (
     <span
       ref={ref}
-      className={cn("relative z-10 hover:z-30 focus-within:z-30", className)}
-      style={{ display: "inline-flex", willChange: "transform" }}
+      className={cn(
+        "relative z-10 inline-flex hover:z-30 focus-within:z-30",
+        className,
+      )}
+      style={{ willChange: "transform" }}
     >
       {children}
     </span>

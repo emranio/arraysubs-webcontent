@@ -133,12 +133,11 @@ export function Button({
       />
       <span
         className={cn(
-          "relative flex items-center justify-center gap-2 rounded-pill transition-transform duration-[600ms] [transition-timing-function:cubic-bezier(0.3,0.7,0.4,1)] -translate-y-1",
+          "relative flex w-full items-center justify-center gap-2 rounded-pill transition-transform duration-[600ms] [transition-timing-function:cubic-bezier(0.3,0.7,0.4,1)] -translate-y-1",
           "group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-hover:[transition-timing-function:cubic-bezier(0.3,0.7,0.4,1.5)]",
           "group-active:-translate-y-0.5 group-active:duration-[34ms]",
           sizes[size],
           tone.front,
-          fullWidth && "w-full",
         )}
       >
         {iconLeft && (

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
@@ -16,7 +16,7 @@ const PRICING_HREF = "/deals/arraysubs/pricing/";
 
 const OFFER_MESSAGES = [
   {
-    text: "Up to 30% discount - early bird limited offer",
+    text: "Limited time - Up to 30% discount",
     cta: {
       label: "Get offer",
       href: PRICING_HREF,
@@ -32,11 +32,57 @@ const OFFER_MESSAGES = [
 ];
 
 const HOLD_SECONDS = 3;
+const SHOW_AFTER_SCROLL_REM = 4;
 
 export function BottomOfferPill() {
   const rootRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
   const pathname = usePathname() ?? "";
   const isCheckoutPath = pathname.startsWith("/checkout/");
+
+  useEffect(() => {
+    if (isCheckoutPath) return;
+
+    let frameId: number | null = null;
+
+    const getThreshold = () => {
+      const rootFontSize = Number.parseFloat(
+        window.getComputedStyle(document.documentElement).fontSize,
+      );
+
+      return (Number.isFinite(rootFontSize) ? rootFontSize : 16) *
+        SHOW_AFTER_SCROLL_REM;
+    };
+
+    const updateVisibility = () => {
+      frameId = null;
+      const nextVisible = window.scrollY >= getThreshold();
+      setIsVisible((current) =>
+        current === nextVisible ? current : nextVisible,
+      );
+    };
+
+    const scheduleVisibilityUpdate = () => {
+      if (frameId !== null) return;
+      frameId = window.requestAnimationFrame(updateVisibility);
+    };
+
+    updateVisibility();
+
+    window.addEventListener("scroll", scheduleVisibilityUpdate, {
+      passive: true,
+    });
+    window.addEventListener("resize", scheduleVisibilityUpdate);
+
+    return () => {
+      window.removeEventListener("scroll", scheduleVisibilityUpdate);
+      window.removeEventListener("resize", scheduleVisibilityUpdate);
+
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
+    };
+  }, [isCheckoutPath]);
 
   useGSAP(
     () => {
@@ -150,17 +196,22 @@ export function BottomOfferPill() {
     <div
       ref={rootRef}
       role="region"
+      aria-hidden={!isVisible}
       aria-label="ArraySubs offer: up to 30% discount, early bird limited offer. Experience it first, spend later."
-      className="fixed bottom-5 left-5 z-[60] inline-flex min-h-12 max-w-[calc(100vw-2rem)] items-center gap-3 rounded-pill border border-white/20 bg-primary/78 px-4 py-2.5 text-[0.9375rem] font-bold text-white shadow-[0_1rem_3rem_rgba(15,10,44,0.24)] backdrop-blur-xl will-change-transform sm:bottom-7 sm:left-7 sm:min-h-14 sm:px-5 sm:text-[1.0625rem]"
+      className={cn(
+        "fixed right-5 bottom-5 left-5 z-[60] inline-flex min-h-12 min-w-0 items-center justify-center gap-3 rounded-pill border border-[var(--color-offer-strong)] bg-[var(--color-offer)] px-4 py-2.5 text-[0.9375rem] font-bold text-dark transition-opacity duration-300 ease-out will-change-[opacity,transform] sm:right-auto sm:bottom-5 sm:left-7 sm:min-h-14 sm:max-w-[calc(100vw-2rem)] sm:px-5 sm:text-[1.0625rem]",
+        isVisible ? "opacity-100" : "pointer-events-none opacity-0",
+      )}
     >
       <Link
         href={PRICING_HREF}
         aria-label="Up to 30% discount - view ArraySubs pricing"
+        tabIndex={isVisible ? undefined : -1}
         className="absolute inset-0 rounded-pill focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       />
       <span
         aria-hidden="true"
-        className="pointer-events-none relative grid h-[1.45em] max-w-[calc(100vw-4rem)] overflow-hidden leading-none"
+        className="pointer-events-none relative grid h-[1.45em] max-w-full min-w-0 overflow-hidden leading-none"
       >
         {OFFER_MESSAGES.map((message, messageIndex) => (
           <span
@@ -186,7 +237,8 @@ export function BottomOfferPill() {
             <span data-offer-pill-cta className="inline-flex">
               <Link
                 href={message.cta.href}
-                className="pointer-events-auto inline-flex items-center gap-1 rounded-pill bg-[#FE8218] px-2.5 py-1 text-xs font-extrabold leading-none text-white shadow-sm transition-colors hover:bg-[#fe9440] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-[0.8125rem]"
+                tabIndex={isVisible ? undefined : -1}
+                className="pointer-events-auto inline-flex items-center gap-1 rounded-pill bg-primary px-1.5 py-1 font-extrabold leading-none text-on-dark transition-colors hover:bg-primary-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white "
               >
                 <span>{message.cta.label}</span>
                 <ArrowUpRight aria-hidden="true" className="size-3" />
