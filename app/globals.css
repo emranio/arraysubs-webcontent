@@ -207,9 +207,13 @@
 }
 
 @media (max-width: 39.999rem) {
+  .accessibility-widget-root,
+  .accessibility-widget-panel,
+  .accessibility-widget-overlay,
+  .accessibility-widget-structure-dialog,
   .accessibility-widget-trigger[data-position="right"],
   .accessibility-widget-trigger[data-position="left"] {
-    bottom: 5.75rem !important;
+    display: none !important;
   }
 }
 

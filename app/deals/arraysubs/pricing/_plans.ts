@@ -11,8 +11,10 @@ export type ArraySubsProPlan = {
 };
 
 export type CheckoutTrialMode = true | "free" | "paid";
+export type CheckoutBillingCycle = "annual" | "lifetime";
 
 export type CheckoutHrefOptions = {
+  billingCycle?: CheckoutBillingCycle;
   coupon?: string | null;
   trial?: CheckoutTrialMode;
 };
@@ -86,6 +88,10 @@ export function getCheckoutHref(planId: string, options: CheckoutHrefOptions = {
 
   if (coupon) {
     params.set("coupon", coupon);
+  }
+
+  if (options.billingCycle && options.billingCycle !== "annual") {
+    params.set("billing_cycle", options.billingCycle);
   }
 
   if (options.trial) {

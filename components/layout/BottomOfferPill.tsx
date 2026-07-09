@@ -199,7 +199,7 @@ export function BottomOfferPill() {
       aria-hidden={!isVisible}
       aria-label="ArraySubs offer: up to 30% discount, early bird limited offer. Experience it first, spend later."
       className={cn(
-        "fixed right-5 bottom-5 left-5 z-[60] inline-flex min-h-12 min-w-0 items-center justify-center gap-3 rounded-pill border border-[var(--color-offer-strong)] bg-[var(--color-offer)] px-4 py-2.5 text-[0.9375rem] font-bold text-dark transition-opacity duration-300 ease-out will-change-[opacity,transform] sm:right-auto sm:bottom-5 sm:left-7 sm:min-h-14 sm:max-w-[calc(100vw-2rem)] sm:px-5 sm:text-[1.0625rem]",
+        "fixed right-5 bottom-5 left-5 z-[60] inline-flex min-h-12 min-w-0 items-center justify-center gap-3 rounded-pill border border-[var(--color-offer-strong)] bg-[color-mix(in_srgb,var(--color-offer)_80%,transparent)] px-4 py-2.5 text-[0.9375rem] font-bold text-white backdrop-blur-md transition-opacity duration-300 ease-out will-change-[opacity,transform] sm:right-auto sm:bottom-5 sm:left-7 sm:min-h-14 sm:max-w-[calc(100vw-2rem)] sm:px-5 sm:text-[1.0625rem]",
         isVisible ? "opacity-100" : "pointer-events-none opacity-0",
       )}
     >

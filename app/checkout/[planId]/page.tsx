@@ -11,6 +11,7 @@ import {
 import {
   ARRAYSUBS_PRO_PLANS,
   CHECKOUT_COUPON_CODE,
+  type CheckoutBillingCycle,
   type CheckoutTrialMode,
   EARLY_BIRD_DISCOUNT_PERCENT,
   PRO_PLAN_FEATURES,
@@ -66,6 +67,12 @@ function normalizeTrialMode(
   return undefined;
 }
 
+function normalizeBillingCycle(
+  value: string | string[] | undefined,
+): CheckoutBillingCycle {
+  return readSearchValue(value) === "lifetime" ? "lifetime" : "annual";
+}
+
 export default async function ArraySubsCheckoutPage({
   params,
   searchParams,
@@ -82,9 +89,15 @@ export default async function ArraySubsCheckoutPage({
   }
 
   const couponCode = readSearchValue(query.coupon)?.trim() || CHECKOUT_COUPON_CODE;
+  const billingCycle = normalizeBillingCycle(query.billing_cycle);
   const trialMode = normalizeTrialMode(query.trial);
-  const annualPrice = getDiscountedPrice(plan.annualPrice);
-  const lifetimePrice = getDiscountedPrice(plan.lifetimePrice);
+  const isLifetimeCheckout = billingCycle === "lifetime";
+  const originalPrice = isLifetimeCheckout ? plan.lifetimePrice : plan.annualPrice;
+  const discountedPrice = getDiscountedPrice(originalPrice);
+  const priceSuffix = isLifetimeCheckout ? "/ lifetime" : "/ year";
+  const priceHighlight = isLifetimeCheckout
+    ? `${formatUsd(discountedPrice)} lifetime`
+    : `${formatUsd(discountedPrice)} yearly`;
   const isTrialCheckout = Boolean(trialMode);
 
   return (
@@ -94,7 +107,10 @@ export default async function ArraySubsCheckoutPage({
           { name: "Home", href: "/" },
           { name: "ArraySubs", href: "/deals/arraysubs/" },
           { name: "Pricing Plan", href: "/deals/arraysubs/pricing/" },
-          { name: `${plan.name} Checkout`, href: getCheckoutHref(plan.id) },
+          {
+            name: `${plan.name} Checkout`,
+            href: getCheckoutHref(plan.id, { billingCycle }),
+          },
         ]}
         title={`${plan.name} ${isTrialCheckout ? "trial" : "checkout"}.`}
         subtitle={
@@ -108,8 +124,7 @@ export default async function ArraySubsCheckoutPage({
           `Coupon ${couponCode}`,
           ...(isTrialCheckout ? ["10-day no-card trial"] : []),
           `${EARLY_BIRD_DISCOUNT_PERCENT}% off early bird`,
-          `${formatUsd(annualPrice)} yearly`,
-          `${formatUsd(lifetimePrice)} lifetime`,
+          priceHighlight,
         ]}
         actions={
           <Button
@@ -141,24 +156,18 @@ export default async function ArraySubsCheckoutPage({
                 </div>
                 <div className="mt-4 flex flex-wrap items-end gap-x-3 gap-y-1">
                   <span className="pb-2 text-sm font-semibold text-muted line-through decoration-muted/70">
-                    {formatUsd(plan.annualPrice)}
+                    {formatUsd(originalPrice)}
                   </span>
                   <span className="font-display text-5xl leading-none font-semibold">
-                    {formatUsd(annualPrice)}
+                    {formatUsd(discountedPrice)}
                   </span>
                   <span className="pb-1.5 text-sm font-semibold text-muted">
-                    / year
+                    {priceSuffix}
                   </span>
                 </div>
                 <p className="mt-2 text-sm text-muted">
-                  Annual license for {plan.siteLabel}. Lifetime option{" "}
-                  <span className="line-through decoration-muted/70">
-                    {formatUsd(plan.lifetimePrice)}
-                  </span>{" "}
-                  <span className="font-semibold text-foreground">
-                    {formatUsd(lifetimePrice)}
-                  </span>
-                  .
+                  {isLifetimeCheckout ? "Lifetime" : "Annual"} license for{" "}
+                  {plan.siteLabel}.
                 </p>
               </div>
               <p className="mt-6 text-muted text-pretty">{plan.summary}</p>
@@ -180,6 +189,7 @@ export default async function ArraySubsCheckoutPage({
 
             <CheckoutOverlayClient
               plan={plan}
+              billingCycle={billingCycle}
               couponCode={couponCode}
               trialMode={trialMode}
             />

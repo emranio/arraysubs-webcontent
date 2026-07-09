@@ -9,6 +9,7 @@ import type { ArraySubsProPlan } from "../../deals/arraysubs/pricing/_plans";
 import {
   CHECKOUT_PRODUCT_ID,
   CHECKOUT_PUBLIC_KEY,
+  type CheckoutBillingCycle,
   type CheckoutTrialMode,
   EARLY_BIRD_DISCOUNT_PERCENT,
   formatUsd,
@@ -26,6 +27,7 @@ type CheckoutOpenOptions = {
   name: string;
   plan_id: string;
   licenses: number;
+  billing_cycle: CheckoutBillingCycle;
   coupon: string;
   trial?: CheckoutTrialMode;
   purchaseCompleted?: (response: CheckoutResponse) => void;
@@ -39,6 +41,8 @@ type CheckoutResponse = {
 
 type CheckoutInstance = {
   open: (options: CheckoutOpenOptions) => void;
+  close?: () => void;
+  destroy?: () => void;
 };
 
 declare global {
@@ -53,15 +57,19 @@ const CHECKOUT_SCRIPT_URL = "https://checkout.freemius.com/js/v1/";
 
 export function CheckoutOverlayClient({
   plan,
+  billingCycle,
   couponCode,
   trialMode,
 }: {
   plan: ArraySubsProPlan;
+  billingCycle: CheckoutBillingCycle;
   couponCode: string;
   trialMode?: CheckoutTrialMode;
 }) {
-  const annualPrice = getDiscountedPrice(plan.annualPrice);
-  const lifetimePrice = getDiscountedPrice(plan.lifetimePrice);
+  const isLifetimeCheckout = billingCycle === "lifetime";
+  const originalPrice = isLifetimeCheckout ? plan.lifetimePrice : plan.annualPrice;
+  const discountedPrice = getDiscountedPrice(originalPrice);
+  const priceSuffix = isLifetimeCheckout ? "lifetime" : "annual";
   const isTrialCheckout = Boolean(trialMode);
   const [scriptReady, setScriptReady] = useState(false);
   const [status, setStatus] = useState<"loading" | "ready" | "success" | "error">(
@@ -73,11 +81,40 @@ export function CheckoutOverlayClient({
   const openedRef = useRef(false);
   const checkoutRef = useRef<CheckoutInstance | null>(null);
 
+  const closeCheckout = useCallback(() => {
+    const checkout = checkoutRef.current;
+
+    if (!checkout) return;
+
+    try {
+      if (typeof checkout.close === "function") {
+        checkout.close();
+      } else if (typeof checkout.destroy === "function") {
+        checkout.destroy();
+      }
+    } catch (error) {
+      console.error("Secure checkout failed to close", error);
+    }
+  }, []);
+
   useEffect(() => {
     if (window.FS?.Checkout) {
       setScriptReady(true);
     }
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("popstate", closeCheckout);
+    window.addEventListener("pagehide", closeCheckout);
+    window.addEventListener("beforeunload", closeCheckout);
+
+    return () => {
+      window.removeEventListener("popstate", closeCheckout);
+      window.removeEventListener("pagehide", closeCheckout);
+      window.removeEventListener("beforeunload", closeCheckout);
+      closeCheckout();
+    };
+  }, [closeCheckout]);
 
   const openCheckout = useCallback(() => {
     if (!window.FS?.Checkout) {
@@ -106,6 +143,7 @@ export function CheckoutOverlayClient({
         name: "ArraySubs Pro",
         plan_id: plan.id,
         licenses: plan.sites,
+        billing_cycle: billingCycle,
         coupon: couponCode,
         ...(trialMode ? { trial: trialMode } : {}),
         purchaseCompleted: (response) => {
@@ -126,7 +164,7 @@ export function CheckoutOverlayClient({
       setStatus("error");
       setMessage("Secure checkout could not open. Please refresh the page.");
     }
-  }, [couponCode, plan.id, plan.sites, trialMode]);
+  }, [billingCycle, couponCode, plan.id, plan.sites, trialMode]);
 
   useEffect(() => {
     if (!scriptReady || openedRef.current) {
@@ -196,19 +234,12 @@ export function CheckoutOverlayClient({
             <span className="font-semibold text-[#FE8218]">
               {EARLY_BIRD_DISCOUNT_PERCENT}% off
             </span>{" "}
-            annual price{" "}
+            {priceSuffix} price{" "}
             <span className="line-through decoration-muted/70">
-              {formatUsd(plan.annualPrice)}
+              {formatUsd(originalPrice)}
             </span>{" "}
             <span className="font-semibold text-foreground">
-              {formatUsd(annualPrice)}
-            </span>
-            ; lifetime option{" "}
-            <span className="line-through decoration-muted/70">
-              {formatUsd(plan.lifetimePrice)}
-            </span>{" "}
-            <span className="font-semibold text-foreground">
-              {formatUsd(lifetimePrice)}
+              {formatUsd(discountedPrice)}
             </span>
             .
           </p>

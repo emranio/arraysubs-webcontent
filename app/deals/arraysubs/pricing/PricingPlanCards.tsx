@@ -95,10 +95,7 @@ export function PricingPlanCards() {
           const price = getDiscountedPrice(originalPrice);
           const savings = originalPrice - price;
           const priceSuffix = isLifetime ? "/ lifetime" : "/ year";
-          const alternateLabel = isLifetime ? "Yearly option" : "Lifetime option";
-          const alternateOriginalPrice = isLifetime
-            ? plan.annualPrice
-            : plan.lifetimePrice;
+          const alternateOriginalPrice = plan.lifetimePrice;
           const alternatePrice = getDiscountedPrice(alternateOriginalPrice);
           const oldPriceTextClass = isFeatured
             ? "text-on-dark/75 decoration-on-dark/70"
@@ -136,7 +133,17 @@ export function PricingPlanCards() {
               </p>
 
               <div className="mt-8">
-                <div className="rounded-xl border border-current/10 bg-white/10 p-4 shadow-inner shadow-white/10">
+                <div
+                  className={cn(
+                    "rounded-xl border-2 p-4",
+                    isFeatured
+                      ? "border-white/20 bg-white/10 shadow-inner shadow-white/10"
+                      : cn(
+                          "bg-background",
+                          isLifetime ? "border-secondary/45" : "border-primary/35",
+                        ),
+                  )}
+                >
                   <div className="flex items-center justify-between gap-4">
                     <span
                       className={cn(
@@ -169,34 +176,34 @@ export function PricingPlanCards() {
                     </span>
                   </div>
                 </div>
-                <p
-                  className={cn(
-                    "mt-3 text-sm",
-                    isFeatured ? featuredMutedClass : "text-muted",
-                  )}
-                >
-                  {alternateLabel}:{" "}
-                  <span
+                {isLifetime ? (
+                  <div aria-hidden="true" className="mt-3 h-5" />
+                ) : (
+                  <p
                     className={cn(
-                      "mr-1.5 font-semibold line-through",
-                      oldPriceTextClass,
+                      "mt-3 text-sm",
+                      isFeatured ? featuredMutedClass : "text-muted",
                     )}
                   >
-                    {isLifetime
-                      ? `${formatUsd(alternateOriginalPrice)}/year`
-                      : formatUsd(alternateOriginalPrice)}
-                  </span>
-                  <span
-                    className={cn(
-                      "font-semibold",
-                      isFeatured ? featuredTextClass : "text-foreground",
-                    )}
-                  >
-                    {isLifetime
-                      ? `${formatUsd(alternatePrice)}/year`
-                      : formatUsd(alternatePrice)}
-                  </span>
-                </p>
+                    Lifetime option:{" "}
+                    <span
+                      className={cn(
+                        "mr-1.5 font-semibold line-through",
+                        oldPriceTextClass,
+                      )}
+                    >
+                      {formatUsd(alternateOriginalPrice)}
+                    </span>
+                    <span
+                      className={cn(
+                        "font-semibold",
+                        isFeatured ? featuredTextClass : "text-foreground",
+                      )}
+                    >
+                      {formatUsd(alternatePrice)}
+                    </span>
+                  </p>
+                )}
               </div>
 
               <p
@@ -218,7 +225,9 @@ export function PricingPlanCards() {
 
               <div className="mt-auto pt-12">
                 <Button
-                  href={getCheckoutHref(plan.id)}
+                  href={getCheckoutHref(plan.id, {
+                    billingCycle: isLifetime ? "lifetime" : "annual",
+                  })}
                   variant={isFeatured ? "dark" : accentTone}
                   size="lg"
                   fullWidth
