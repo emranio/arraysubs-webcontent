@@ -98,7 +98,7 @@ export default function RootLayout({
         />
         <Script
           id="arrayhash-accessibility-widget"
-          src="/accessibility-widget/dist/accessibility-widget.global.js?v=0.2.5"
+          src="/accessibility-widget/dist/accessibility-widget.global.js?v=0.2.6"
           strategy="afterInteractive"
         />
       </body>
