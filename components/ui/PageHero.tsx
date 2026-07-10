@@ -159,7 +159,7 @@ export function PageHero({
               <div className="min-w-0">{rail}</div>
               <div className="mt-8 grid items-center gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1.04fr)_minmax(25rem,0.96fr)] lg:gap-12 xl:gap-16">
                 {heroContent}
-                {visual && <div className="min-w-0">{visual}</div>}
+                {visual && <div className="min-w-0 max-[63.999rem]:hidden lg:block">{visual}</div>}
               </div>
             </div>
           ) : (

@@ -315,7 +315,7 @@ export default function ArraySubsPricingPage() {
               </div>
             </article>
 
-            <article className="grid h-full items-center gap-8 rounded-2xl p-6 text-foreground sm:p-8 md:grid-cols-[10rem_1fr]">
+            <article className="grid h-full items-center justify-items-center gap-8 rounded-2xl p-6 text-center text-foreground sm:p-8 md:grid-cols-[10rem_1fr] md:justify-items-start md:text-left">
               <img
                 src="/shapes/30-days-refund.webp"
                 alt="30 days refund guarantee"
