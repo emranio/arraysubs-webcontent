@@ -1,15 +1,8 @@
 (function () {
-  var MOBILE_WIDGET_QUERY = "(max-width: 39.999rem)";
-
   function cleanText(text) {
-    return String(text || "").replace(/\s+/g, " ").trim();
-  }
-
-  function isMobileWidgetViewport() {
-    return (
-      typeof window.matchMedia === "function" &&
-      window.matchMedia(MOBILE_WIDGET_QUERY).matches
-    );
+    return String(text || "")
+      .replace(/\s+/g, " ")
+      .trim();
   }
 
   function simplifySelection(text) {
@@ -55,33 +48,10 @@
     }
   }
 
-  function dedupeAccessibilityWidgetRoots() {
-    var roots = Array.prototype.slice.call(
-      document.querySelectorAll(".accessibility-widget-root"),
-    );
-
-    if (roots.length <= 1) return roots[0] || null;
-
-    var rootToKeep = roots[roots.length - 1];
-
-    roots.slice(0, -1).forEach(function (root) {
-      root.remove();
-    });
-
-    return rootToKeep;
-  }
-
   function syncPanelAccessibility() {
-    var root = dedupeAccessibilityWidgetRoots();
-    var trigger = root
-      ? root.querySelector(".accessibility-widget-trigger")
-      : document.querySelector(".accessibility-widget-trigger");
-    var panel = root
-      ? root.querySelector(".accessibility-widget-panel")
-      : document.querySelector(".accessibility-widget-panel");
-    var overlay = root
-      ? root.querySelector(".accessibility-widget-overlay")
-      : document.querySelector(".accessibility-widget-overlay");
+    var trigger = document.querySelector(".accessibility-widget-trigger");
+    var panel = document.querySelector(".accessibility-widget-panel");
+    var overlay = document.querySelector(".accessibility-widget-overlay");
     var isOpen = trigger && trigger.getAttribute("aria-expanded") === "true";
 
     setInert(panel, !isOpen);
@@ -115,12 +85,7 @@
   }
 
   function toggleWidget() {
-    if (isMobileWidgetViewport()) return;
-
-    var root = dedupeAccessibilityWidgetRoots();
-    var trigger = root
-      ? root.querySelector(".accessibility-widget-trigger")
-      : document.querySelector(".accessibility-widget-trigger");
+    var trigger = document.querySelector(".accessibility-widget-trigger");
 
     if (trigger) {
       trigger.click();
@@ -129,8 +94,6 @@
   }
 
   function handleMacSafeShortcut(event) {
-    if (isMobileWidgetViewport()) return;
-
     if (
       !event.altKey ||
       event.ctrlKey ||
@@ -161,92 +124,16 @@
 
   document.addEventListener("keydown", handleMacSafeShortcut, true);
 
-  function setMobileHiddenFallback(isHidden) {
-    [
-      ".accessibility-widget-root",
-      ".accessibility-widget-trigger",
-      ".accessibility-widget-panel",
-      ".accessibility-widget-overlay",
-      ".accessibility-widget-structure-dialog",
-    ].forEach(function (selector) {
-      document.querySelectorAll(selector).forEach(function (element) {
-        if (isHidden) {
-          element.dataset.arrayhashMobileHidden = "true";
-          element.style.display = "none";
-          return;
-        }
-
-        if (element.dataset.arrayhashMobileHidden === "true") {
-          delete element.dataset.arrayhashMobileHidden;
-          element.style.removeProperty("display");
-        }
-      });
-    });
-  }
-
-  function syncMobileWidgetState() {
-    var isMobile = isMobileWidgetViewport();
-    var api = window.AccessibilityWidget;
-
-    dedupeAccessibilityWidgetRoots();
-
-    document.documentElement.toggleAttribute(
-      "data-accessibility-widget-mobile-disabled",
-      isMobile,
-    );
-
-    if (isMobile && api && typeof api.destroy === "function") {
-      api.destroy();
-    } else if (
-      !isMobile &&
-      api &&
-      typeof api.init === "function" &&
-      !document.querySelector(".accessibility-widget-root")
-    ) {
-      api.init(window.AccessibilityWidgetConfig);
-      window.setTimeout(syncPanelAccessibility, 0);
-    }
-
-    setMobileHiddenFallback(isMobile);
-  }
-
-  function installMobileWidgetSync() {
-    var media =
-      typeof window.matchMedia === "function"
-        ? window.matchMedia(MOBILE_WIDGET_QUERY)
-        : null;
-    var observer = new MutationObserver(syncMobileWidgetState);
-
-    observer.observe(document.body, {
-      childList: true,
-    });
-
-    if (media) {
-      if (typeof media.addEventListener === "function") {
-        media.addEventListener("change", syncMobileWidgetState);
-      } else if (typeof media.addListener === "function") {
-        media.addListener(syncMobileWidgetState);
-      }
-    }
-
-    syncMobileWidgetState();
-    window.addEventListener("load", syncMobileWidgetState, { once: true });
-  }
-
   if (document.readyState === "loading") {
     document.addEventListener(
       "DOMContentLoaded",
-      function () {
-        installPanelAccessibilitySync();
-        installMobileWidgetSync();
-      },
+      installPanelAccessibilitySync,
       {
         once: true,
       },
     );
   } else {
     installPanelAccessibilitySync();
-    installMobileWidgetSync();
   }
 
   window.AccessibilityWidgetConfig = {
