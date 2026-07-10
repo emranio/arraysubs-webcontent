@@ -590,7 +590,7 @@ function normalizeAffiliate(payload: FormPayload):
     return { ok: false, error: "A valid email address is required." };
   }
   if (!website) {
-    return { ok: false, error: "Please tell us where you'll promote ArraySubs." };
+    return { ok: false, error: "Please tell us where you'll promote ArrayHash." };
   }
   if (!promotion) {
     return { ok: false, error: "Please tell us a little about your audience." };
@@ -626,7 +626,7 @@ function affiliateAckText(data: AffiliateSubmission) {
     "Your application is in review. We'll take a look and email you as soon as it's approved — usually within a couple of business days.",
     "",
     "What you'll earn as an ArrayHash affiliate:",
-    "- 35% commission on every new ArraySubs Pro license",
+    "- 35% commission on every new ArrayHash Pro license",
     "- Recurring commission every time a subscription auto-renews",
     "- 60-day tracking cookie so later purchases still count",
     "- $100 minimum payout, paid monthly in USD via PayPal",
@@ -645,7 +645,7 @@ function affiliateAckHtml(data: AffiliateSubmission) {
     <div style="padding:18px 20px;border:1px solid #DED2F4;border-radius:14px;background:#F7F3FF;margin:0 0 22px;">
       <p style="margin:0 0 10px;font-weight:700;color:#12002B;">What you'll earn as an affiliate</p>
       <ul style="margin:0;padding:0 0 0 18px;color:#3F2A5C;">
-        <li style="margin:0 0 6px;">35% commission on every new ArraySubs Pro license</li>
+        <li style="margin:0 0 6px;">35% commission on every new ArrayHash Pro license</li>
         <li style="margin:0 0 6px;">Recurring commission every time a subscription auto-renews</li>
         <li style="margin:0 0 6px;">60-day tracking cookie so later purchases still count</li>
         <li style="margin:0;">$100 minimum payout, paid monthly in USD via PayPal</li>
@@ -667,7 +667,7 @@ function affiliateWelcomeText(data: AffiliateSubmission) {
   return [
     `Hi ${data.name},`,
     "",
-    "I'm Emran, founder of ArrayHash — the team behind ArraySubs.",
+    "I'm Emran, founder of ArrayHash.",
     "",
     "I saw your affiliate application come in. It's being reviewed right now, and I wanted to personally say thank you for wanting to partner with us.",
     "",
@@ -683,7 +683,7 @@ function affiliateWelcomeText(data: AffiliateSubmission) {
 function affiliateWelcomeHtml(data: AffiliateSubmission) {
   return affiliateEmailShell(`
     <p style="margin:0 0 16px;color:#3F2A5C;">Hi ${escapeHtml(data.name)},</p>
-    <p style="margin:0 0 16px;color:#3F2A5C;">I'm Emran, founder of ArrayHash — the team behind ArraySubs.</p>
+    <p style="margin:0 0 16px;color:#3F2A5C;">I'm Emran, founder of ArrayHash.</p>
     <p style="margin:0 0 16px;color:#3F2A5C;">I saw your affiliate application come in. It's being reviewed right now, and I wanted to personally say thank you for wanting to partner with us.</p>
     <p style="margin:0 0 16px;color:#3F2A5C;">While we review it, if you have any questions about the program, the product, or the best way to promote it — I'm genuinely here to help. Just reply to this email or reach me directly at <a href="mailto:emran@arrayhash.com" style="color:#873EFF;">emran@arrayhash.com</a>.</p>
     <p style="margin:0 0 2px;color:#3F2A5C;">Talk soon,</p>
@@ -712,7 +712,7 @@ function affiliateNotifyText(data: AffiliateSubmission, submittedAt: string) {
     `Email: ${data.email}`,
     `Website / channel: ${data.website}`,
     "",
-    "How they'll promote ArraySubs:",
+    "How they'll promote ArrayHash:",
     data.promotion,
     "",
     `Submitted: ${submittedAt}`,
@@ -731,7 +731,7 @@ function affiliateNotifyHtml(data: AffiliateSubmission, submittedAt: string) {
       <p style="margin:0 0 8px;color:#3F2A5C;"><strong>Name:</strong> ${escapeHtml(data.name)}</p>
       <p style="margin:0 0 8px;color:#3F2A5C;"><strong>Email:</strong> <a href="mailto:${escapeHtml(data.email)}" style="color:#873EFF;">${escapeHtml(data.email)}</a></p>
       <p style="margin:0 0 12px;color:#3F2A5C;"><strong>Website / channel:</strong> ${escapeHtml(data.website)}</p>
-      <p style="margin:0 0 6px;color:#12002B;font-weight:700;">How they'll promote ArraySubs</p>
+      <p style="margin:0 0 6px;color:#12002B;font-weight:700;">How they'll promote ArrayHash</p>
       <p style="margin:0;color:#3F2A5C;white-space:pre-wrap;">${escapeHtml(data.promotion)}</p>
     </div>
     <p style="margin:0 0 4px;color:#3F2A5C;"><strong>Submitted:</strong> ${escapeHtml(submittedAt)}</p>

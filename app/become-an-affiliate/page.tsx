@@ -14,6 +14,10 @@ import {
 import { cn } from "@/lib/cn";
 import { createMetadata, faqSchema } from "@/lib/seo";
 import { site } from "@/lib/site";
+import {
+  ARRAYSUBS_PRO_PLANS,
+  formatUsd,
+} from "@/app/deals/arraysubs/pricing/_plans";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
 import {
@@ -23,6 +27,7 @@ import {
   Button,
   Container,
   CTA,
+  Eyebrow,
   IconCard,
   PageHero,
   Section,
@@ -31,9 +36,9 @@ import {
 } from "@/components/ui";
 
 export const metadata: Metadata = createMetadata({
-  title: "Become an ArraySubs Affiliate — Earn 35% Recurring Commission",
+  title: "Become an ArrayHash Affiliate — Earn 35% Recurring Commission",
   description:
-    "Join the ArrayHash affiliate program and earn 35% commission on every new ArraySubs Pro license — plus recurring commission on automatic subscription renewals. 60-day cookie, monthly PayPal payouts.",
+    "Join the ArrayHash affiliate program and earn 35% commission on every new ArrayHash Pro license — plus recurring commission on automatic renewals. 60-day cookie, monthly PayPal payouts.",
   path: "/become-an-affiliate/",
 });
 
@@ -59,7 +64,7 @@ const STEPS: { title: string; description: string }[] = [
       "Once you're approved, you get a unique link with a 60-day tracking cookie already working in your favour.",
   },
   {
-    title: "Recommend ArraySubs",
+    title: "Recommend ArrayHash",
     description:
       "Share it with WooCommerce store owners — in your content, your emails, your course, or your community.",
   },
@@ -101,27 +106,71 @@ const TERMS: {
   },
 ];
 
-const RENEWAL_TIMELINE: {
-  when: string;
-  event: string;
-  note: string;
-}[] = [
-  { when: "Month 1", event: "New license", note: "Your referral buys ArraySubs Pro" },
-  { when: "Month 2", event: "Auto-renewal", note: "Billed automatically" },
-  { when: "Month 3", event: "Auto-renewal", note: "Billed automatically" },
-  { when: "Month 4+", event: "Auto-renewal", note: "…and every cycle after" },
+// Commission math shown in real dollars, driven by live ArrayHash Pro pricing
+// (Personal + Agency, yearly and lifetime) so the numbers never drift.
+const COMMISSION_RATE = 0.35;
+
+const personalPlan = ARRAYSUBS_PRO_PLANS.find((plan) => plan.name === "Personal")!;
+const agencyPlan = ARRAYSUBS_PRO_PLANS.find((plan) => plan.name === "Agency")!;
+
+function commissionUsd(amount: number) {
+  return formatUsd(Math.round(amount * COMMISSION_RATE));
+}
+
+type CommissionExample = {
+  plan: string;
+  cycle: string;
+  price: string;
+  cut: string;
+  cadence: string;
+  recurring: boolean;
+};
+
+const COMMISSION_EXAMPLES: CommissionExample[] = [
+  {
+    plan: "ArrayHash Pro Personal",
+    cycle: "Yearly",
+    price: `${formatUsd(personalPlan.annualPrice)}/yr`,
+    cut: commissionUsd(personalPlan.annualPrice),
+    cadence: "every year they renew",
+    recurring: true,
+  },
+  {
+    plan: "ArrayHash Pro Agency",
+    cycle: "Yearly",
+    price: `${formatUsd(agencyPlan.annualPrice)}/yr`,
+    cut: commissionUsd(agencyPlan.annualPrice),
+    cadence: "every year they renew",
+    recurring: true,
+  },
+  {
+    plan: "ArrayHash Pro Personal",
+    cycle: "Lifetime",
+    price: formatUsd(personalPlan.lifetimePrice),
+    cut: commissionUsd(personalPlan.lifetimePrice),
+    cadence: "one-time",
+    recurring: false,
+  },
+  {
+    plan: "ArrayHash Pro Agency",
+    cycle: "Lifetime",
+    price: formatUsd(agencyPlan.lifetimePrice),
+    cut: commissionUsd(agencyPlan.lifetimePrice),
+    cadence: "one-time",
+    recurring: false,
+  },
 ];
 
 const FAQ_ITEMS = [
   {
-    question: "How much can I earn as an ArraySubs affiliate?",
+    question: "How much can I earn as an ArrayHash affiliate?",
     answer:
-      "You earn 35% commission on every new ArraySubs Pro license purchased through your link — and you keep earning 35% when those subscriptions renew automatically. There's no cap on how much you can make.",
+      "You earn 35% commission on every new ArrayHash Pro license purchased through your link — and you keep earning 35% when those licenses renew automatically. There's no cap on how much you can make.",
   },
   {
     question: "Do I really earn commission on renewals?",
     answer:
-      "Yes. ArraySubs is a subscription plugin, so the stores you refer bill on a recurring cycle and their licenses auto-renew. You get your commission on those automatic renewals too, not just the first sale — so one good referral can pay you month after month.",
+      "Yes. ArrayHash products are subscription-based, so the customers you refer bill on a recurring cycle and their licenses auto-renew. You get your commission on those automatic renewals too, not just the first sale — so one good referral can pay you month after month.",
   },
   {
     question: "When and how do I get paid?",
@@ -136,7 +185,7 @@ const FAQ_ITEMS = [
   {
     question: "Who can join the program?",
     answer:
-      "Anyone with a relevant audience — bloggers, YouTubers, course creators, agencies, freelancers and WooCommerce communities. Tell us how you plan to promote ArraySubs in the application and we'll take it from there.",
+      "Anyone with a relevant audience — bloggers, YouTubers, course creators, agencies, freelancers and WooCommerce communities. Tell us how you plan to promote ArrayHash in the application and we'll take it from there.",
   },
 ];
 
@@ -149,8 +198,8 @@ export default function BecomeAnAffiliatePage() {
           { name: "Home", href: "/" },
           { name: "Become an Affiliate", href: "/become-an-affiliate/" },
         ]}
-        title="Earn 35% for every store you send to ArraySubs."
-        subtitle="Recommend the WooCommerce subscription plugin you already trust and earn a generous, recurring commission on every customer you refer — on the first sale and every renewal after it."
+        title="Earn 35% for every store you send to ArrayHash."
+        subtitle="Recommend ArrayHash to your audience and earn a generous, recurring commission on every customer you refer — on the first sale and every renewal after it."
         highlights={[
           "35% on new licenses",
           "Recurring commission on renewals",
@@ -201,11 +250,15 @@ export default function BecomeAnAffiliatePage() {
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
             <div>
-              <SectionTitle
-                eyebrow="Recurring by design"
-                title="You get paid again every time they renew."
-                subtitle="ArraySubs is a subscription plugin — the stores you refer bill their customers on a recurring cycle, and their licenses auto-renew. Your 35% doesn't stop at the first sale. You earn it on every automatic renewal, so a single referral can keep paying you month after month."
-              />
+              <Eyebrow className="text-on-dark-muted">Recurring by design</Eyebrow>
+              <h2 className="mt-4 font-display text-4xl text-balance sm:text-display-sm">
+                You get paid again every time they renew.
+              </h2>
+              <p className="mt-6 max-w-xl text-lg text-pretty text-on-dark/85 sm:text-xl">
+                {
+                  "ArrayHash products are subscription-based — the customers you refer keep paying on a recurring cycle, and their licenses auto-renew. Your 35% doesn't stop at the first sale. You earn it on every automatic renewal, so a single referral can keep paying you month after month."
+                }
+              </p>
               <ul className="mt-8 flex flex-col gap-4">
                 {[
                   "Commission on the first license and on every automated renewal.",
@@ -228,7 +281,7 @@ export default function BecomeAnAffiliatePage() {
             </div>
 
             <ScrollReveal y={1}>
-              <RenewalTimeline />
+              <CommissionExamples />
             </ScrollReveal>
           </div>
         </Container>
@@ -309,7 +362,7 @@ export default function BecomeAnAffiliatePage() {
                   {
                     icon: UserPlus,
                     title: "Apply",
-                    text: "Share your details and how you plan to promote ArraySubs.",
+                    text: "Share your details and how you plan to promote ArrayHash.",
                   },
                   {
                     icon: Megaphone,
@@ -367,7 +420,7 @@ export default function BecomeAnAffiliatePage() {
             flat
             eyebrow="Ready when you are"
             title="Turn recommendations into recurring income"
-            subtitle="Promote a WooCommerce subscription plugin store owners actually keep — and earn 35% on every sale and renewal."
+            subtitle="Promote ArrayHash software that store owners actually keep — and earn 35% on every sale and renewal."
             microcopy="Free to join · No minimum audience"
             actions={
               <>
@@ -381,7 +434,7 @@ export default function BecomeAnAffiliatePage() {
                   layers="2layer"
                   magnetic
                 >
-                  Explore ArraySubs
+                  Explore our products
                 </Button>
               </>
             }
@@ -413,7 +466,7 @@ function HeroCommissionCard() {
         <div className="flex items-center justify-between gap-3 rounded-xl bg-surface px-4 py-3.5">
           <dt className="flex items-center gap-2.5 font-medium">
             <HandCoins aria-hidden="true" className="size-5 text-primary" />
-            New ArraySubs Pro license
+            New ArrayHash Pro sale
           </dt>
           <dd className="font-bold text-primary">35%</dd>
         </div>
@@ -426,7 +479,16 @@ function HeroCommissionCard() {
         </div>
       </dl>
 
-      <p className="mt-5 flex items-center gap-2 text-sm text-muted">
+      <p className="mt-4 rounded-xl bg-highlight px-4 py-3 text-sm text-dark">
+        <span className="font-semibold">Example:</span> an ArrayHash Pro Agency
+        license at {formatUsd(agencyPlan.annualPrice)}/yr pays you{" "}
+        <span className="font-semibold">
+          {commissionUsd(agencyPlan.annualPrice)}
+        </span>{" "}
+        — every year they renew.
+      </p>
+
+      <p className="mt-4 flex items-center gap-2 text-sm text-muted">
         <Cookie aria-hidden="true" className="size-4 shrink-0 text-primary" />
         60-day tracking cookie after the first visit
       </p>
@@ -434,52 +496,49 @@ function HeroCommissionCard() {
   );
 }
 
-/** Recurring section visual: one referral paying out cycle after cycle. */
-function RenewalTimeline() {
+/** Recurring section visual: what one referral pays you, in real dollars. */
+function CommissionExamples() {
   return (
     <div className="rounded-2xl bg-card p-6 text-foreground sm:p-8">
       <div className="flex items-center justify-between gap-3">
-        <p className="font-display text-lg">One referral, paid again and again</p>
-        <Badge tone="primary">35% each</Badge>
+        <p className="font-display text-lg">What one referral pays you</p>
+        <Badge tone="primary">35%</Badge>
       </div>
+      <p className="mt-2 flex items-center gap-2 text-sm text-muted">
+        <CircleDollarSign
+          aria-hidden="true"
+          className="size-4 shrink-0 text-primary"
+        />
+        Real ArrayHash Pro pricing — your 35%, in dollars.
+      </p>
 
-      <ol className="mt-6">
-        {RENEWAL_TIMELINE.map((row, index) => {
-          const isLast = index === RENEWAL_TIMELINE.length - 1;
-          return (
-            <li key={row.when} className="flex gap-4">
-              <div className="flex flex-col items-center">
-                <span
-                  aria-hidden="true"
-                  className="grid size-9 shrink-0 place-items-center rounded-full bg-primary text-on-dark"
-                >
-                  <CircleDollarSign className="size-4" />
-                </span>
-                {!isLast && (
-                  <span aria-hidden="true" className="my-1 w-px flex-1 bg-border" />
-                )}
-              </div>
-              <div
-                className={cn(
-                  "flex flex-1 items-center justify-between gap-3 pt-0.5",
-                  isLast ? "pb-0" : "pb-6",
-                )}
-              >
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-faint">
-                    {row.when}
-                  </p>
-                  <p className="font-medium">{row.event}</p>
-                  <p className="text-sm text-muted">{row.note}</p>
-                </div>
-                <span className="shrink-0 rounded-pill bg-highlight px-2.5 py-1 text-xs font-semibold text-dark">
-                  +35%
-                </span>
-              </div>
-            </li>
-          );
-        })}
-      </ol>
+      <ul className="mt-5 flex flex-col gap-[0.1875rem]">
+        {COMMISSION_EXAMPLES.map((example) => (
+          <li
+            key={`${example.plan}-${example.cycle}`}
+            className={cn(
+              "flex items-center justify-between gap-3 rounded-xl px-4 py-3",
+              example.recurring ? "bg-highlight" : "bg-surface",
+            )}
+          >
+            <div className="min-w-0">
+              <p className="truncate font-medium">{example.plan}</p>
+              <p className="text-xs text-muted">
+                {example.cycle} · {example.price}
+              </p>
+            </div>
+            <div className="shrink-0 text-right">
+              <p className="font-bold text-primary">+{example.cut}</p>
+              <p className="text-xs text-faint">{example.cadence}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <p className="mt-4 text-xs text-muted">
+        Yearly plans renew, so you earn your 35% again every year they stay.
+        Shown on list price.
+      </p>
     </div>
   );
 }

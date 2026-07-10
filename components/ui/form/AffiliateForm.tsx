@@ -51,7 +51,7 @@ export function AffiliateForm({ className }: { className?: string }) {
     if (!name) next.name = "Please enter your name.";
     if (!email) next.email = "Please enter your email address.";
     else if (!EMAIL_RE.test(email)) next.email = "Enter a valid email address.";
-    if (!website) next.website = "Share where you'll promote ArraySubs.";
+    if (!website) next.website = "Share where you'll promote ArrayHash.";
     if (!promotion) next.promotion = "Tell us a little about your audience.";
 
     setErrors(next);
@@ -184,7 +184,7 @@ export function AffiliateForm({ className }: { className?: string }) {
         label="Website, blog, or social profile"
         required
         error={errors.website}
-        description="The main place you'll share ArraySubs with your audience."
+        description="The main place you'll share ArrayHash with your audience."
       >
         <Input
           ref={websiteRef}
@@ -197,7 +197,7 @@ export function AffiliateForm({ className }: { className?: string }) {
       </Field>
 
       <Field
-        label="How will you promote ArraySubs?"
+        label="How will you promote ArrayHash?"
         required
         error={errors.promotion}
         description="A sentence or two on your audience — WooCommerce store owners, agencies, a newsletter, a course…"
