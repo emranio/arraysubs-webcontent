@@ -40,6 +40,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: absoluteUrl("/become-an-affiliate/"),
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
     ...dealsRoutes.map(([path, priority]) => ({
       url: absoluteUrl(path),
       lastModified: new Date(),
