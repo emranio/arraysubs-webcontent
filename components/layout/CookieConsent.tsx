@@ -19,6 +19,7 @@ import {
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+const INCLUDE_BD_VISITS = process.env.NEXT_PUBLIC_INCLUDE_BD_VISITS === "true";
 
 type ConsentSource = "banner" | "preferences" | "privacy-choices";
 
@@ -150,6 +151,10 @@ function deleteRetargetingCookie() {
   for (const domain of domains) expireCookie(RETARGETING_COOKIE_NAME, domain);
 }
 
+function isBrowserUtcPlusSix() {
+  return new Date().getTimezoneOffset() === -360;
+}
+
 function ConsentAction({
   children,
   onClick,
@@ -183,8 +188,11 @@ export function CookieConsent() {
   const [consent, setConsent] = useState<CookieConsentState | null>(null);
   const [showPreferences, setShowPreferences] = useState(false);
   const [gpcEnabled, setGpcEnabled] = useState(false);
+  const [blockBangladeshAnalytics, setBlockBangladeshAnalytics] =
+    useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
+  const analyticsEnabled = !blockBangladeshAnalytics;
 
   useEffect(() => {
     const saved = decodeConsent();
@@ -195,6 +203,7 @@ export function CookieConsent() {
     setGpcEnabled(hasGpc);
     setConsent(saved);
     setShowPreferences(!saved);
+    setBlockBangladeshAnalytics(!INCLUDE_BD_VISITS && isBrowserUtcPlusSix());
     setMounted(true);
   }, []);
 
@@ -302,7 +311,7 @@ export function CookieConsent() {
   return (
     <>
       {/* Analytics is required and always loads, independent of consent. */}
-      {GA_MEASUREMENT_ID && (
+      {analyticsEnabled && GA_MEASUREMENT_ID && (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
@@ -319,7 +328,7 @@ export function CookieConsent() {
         </>
       )}
 
-      {GTM_ID && (
+      {analyticsEnabled && GTM_ID && (
         <Script id="gtm-consent-gate" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
