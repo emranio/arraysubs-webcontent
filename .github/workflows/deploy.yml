@@ -21,9 +21,6 @@ jobs:
           script: |
             set -e
 
-            export PATH="$HOME/.bun/bin:$PATH"
-            export BUN_INSTALL="$HOME/.bun"
-
             cd ${{ secrets.DEPLOY_PATH }}
 
             echo "==> Syncing latest code"
@@ -34,13 +31,13 @@ jobs:
             cp .env.production .env
 
             echo "==> Installing dependencies"
-            bun install --frozen-lockfile
+            npm ci
 
             echo "==> Cleaning previous Next.js build output"
             rm -rf .next
 
             echo "==> Building"
-            bun run build
+            npm run build
 
             echo "==> Reloading PM2"
             pm2 startOrReload ecosystem.config.cjs --env production --update-env

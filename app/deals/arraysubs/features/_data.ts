@@ -36,11 +36,6 @@ export type FeatureStatus = "coming-soon";
 export type FeatureCapability = { title: string; description: string };
 export type FeatureStat = { value: string; label: string };
 export type FeatureFaq = { question: string; answer: string };
-export type FeatureScreenshot = {
-  src: string;
-  alt: string;
-  caption: string;
-};
 
 export type FeatureCategoryKey =
   | "setup-configuration"
@@ -69,7 +64,6 @@ export type Feature = {
   capabilities: FeatureCapability[];
   stats: FeatureStat[];
   faq: FeatureFaq[];
-  screenshot?: FeatureScreenshot;
   related: string[];
 };
 
@@ -109,13 +103,6 @@ const buildFeature = ({
   h1: h1 ?? feature.name,
   heroSubtitle: summary,
   heroHighlights: highlights,
-  screenshot:
-    feature.screenshot ??
-    {
-      src: `/arraysubs-manual/${feature.slug}.png`,
-      alt: `Annotated ${feature.name} screenshot from the ArraySubs user manual`,
-      caption: `Screenshot from the current ${feature.name} user-manual guide.`,
-    },
 });
 
 export const FEATURES: Feature[] = [
