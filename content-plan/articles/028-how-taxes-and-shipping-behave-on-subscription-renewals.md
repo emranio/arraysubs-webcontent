@@ -2,6 +2,7 @@
 
 ## Article specification
 
+- **Status:** Published
 - **Proposed title:** How Taxes and Shipping Behave on Subscription Renewals
 - **Content cluster:** C02 — Billing, renewals, synchronization, and proration
 - **Content category:** Billing Strategy

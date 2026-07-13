@@ -2,6 +2,7 @@
 
 ## Article specification
 
+- **Status:** Published
 - **Proposed title:** Subscription Dunning Strategy: Timing, Messages, and Stop Rules
 - **Content cluster:** C03 — Failed payments, dunning, and grace recovery
 - **Content category:** Payment Recovery

@@ -2,6 +2,7 @@
 
 ## Article specification
 
+- **Status:** Published
 - **Proposed title:** What Happens When a Subscription Payment Fails?
 - **Content cluster:** C03 — Failed payments, dunning, and grace recovery
 - **Content category:** Payment Recovery

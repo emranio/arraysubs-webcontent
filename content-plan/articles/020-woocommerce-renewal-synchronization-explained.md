@@ -2,6 +2,7 @@
 
 ## Article specification
 
+- **Status:** Published
 - **Proposed title:** WooCommerce Renewal Synchronization Explained
 - **Content cluster:** C02 — Billing, renewals, synchronization, and proration
 - **Content category:** Billing Strategy

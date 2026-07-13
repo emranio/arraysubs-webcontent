@@ -2,6 +2,7 @@
 
 ## Article specification
 
+- **Status:** Published
 - **Proposed title:** Can WooCommerce Do Subscriptions Without a Plugin?
 - **Content cluster:** C01 — WooCommerce subscription setup and product models
 - **Content category:** Subscription Foundations

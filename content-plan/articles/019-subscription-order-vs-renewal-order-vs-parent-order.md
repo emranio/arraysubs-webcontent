@@ -2,6 +2,7 @@
 
 ## Article specification
 
+- **Status:** Published
 - **Proposed title:** Subscription Order vs Renewal Order vs Parent Order
 - **Content cluster:** C02 — Billing, renewals, synchronization, and proration
 - **Content category:** Billing Strategy

@@ -2,6 +2,7 @@
 
 ## Article specification
 
+- **Status:** Published
 - **Proposed title:** Anatomy of a High-Converting WooCommerce Subscription Product Page
 - **Content cluster:** C01 — WooCommerce subscription setup and product models
 - **Content category:** Subscription Foundations

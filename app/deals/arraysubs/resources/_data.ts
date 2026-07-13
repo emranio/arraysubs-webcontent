@@ -501,6 +501,615 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
       tone: "primary",
     },
   },
+  {
+    id: "A014",
+    slug: "anatomy-of-a-high-converting-woocommerce-subscription-product-page",
+    categorySlug: "subscription-foundations",
+    title: "Anatomy of a High-Converting WooCommerce Subscription Product Page",
+    seoTitle: "WooCommerce Subscription Product Page Anatomy",
+    metaDescription:
+      "Build a clear WooCommerce subscription product page with complete pricing, renewal, cancellation, fulfillment, trust, and checkout information.",
+    excerpt:
+      "Turn the subscription agreement into a clear product-page hierarchy covering the promise, price sequence, proof, terms, and next action.",
+    directAnswer:
+      "A strong WooCommerce subscription product page makes the complete agreement understandable before checkout: what the customer receives, what is due today, the recurring amount and cadence, the first renewal date, the minimum term, shipping or access rules, cancellation timing, and the next action.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "9 min read",
+    format: "Conversion guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "WooCommerce subscription product page",
+      "subscription pricing disclosure",
+      "subscription conversion",
+    ],
+    cover: {
+      label: "Subscription page anatomy",
+      image:
+        "/blogs/anatomy-of-a-high-converting-woocommerce-subscription-product-page/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A015",
+    slug: "woocommerce-subscription-launch-readiness-checklist",
+    categorySlug: "subscription-foundations",
+    title: "WooCommerce Subscription Launch Readiness Checklist",
+    seoTitle: "WooCommerce Subscription Launch Checklist",
+    metaDescription:
+      "Use this WooCommerce subscription launch checklist to verify product terms, gateways, renewals, taxes, shipping, access, recovery, support, and analytics.",
+    excerpt:
+      "Prove the complete lifecycle with owned launch gates, real orders, gateway evidence, customer communication, and production monitoring.",
+    directAnswer:
+      "A WooCommerce subscription is ready to launch only after the offer, checkout, renewal, failure, cancellation, fulfillment, and reporting paths have been proven with real test orders.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "9 min read",
+    format: "Launch checklist",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "WooCommerce subscription launch checklist",
+      "subscription testing",
+      "subscription launch readiness",
+    ],
+    cover: {
+      label: "Launch with evidence",
+      image: "/blogs/woocommerce-subscription-launch-readiness-checklist/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A016",
+    slug: "can-woocommerce-do-subscriptions-without-a-plugin",
+    categorySlug: "subscription-foundations",
+    title: "Can WooCommerce Do Subscriptions Without a Plugin?",
+    seoTitle: "WooCommerce Subscriptions Without a Plugin?",
+    metaDescription:
+      "Learn what WooCommerce core can and cannot do for subscriptions, when manual recurring orders are workable, and why a lifecycle extension is normally required.",
+    excerpt:
+      "Separate core commerce building blocks from the agreement, schedule, renewal, recovery, and customer-management system a real subscription needs.",
+    directAnswer:
+      "WooCommerce core can sell products and create one-time orders, but it does not provide a complete subscription agreement, renewal schedule, recurring-order lifecycle, customer self-service, or failed-payment recovery by itself.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "8 min read",
+    format: "Direct answer",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "WooCommerce subscriptions without a plugin",
+      "WooCommerce recurring payments",
+      "subscription extension",
+    ],
+    cover: {
+      label: "Core versus lifecycle",
+      image: "/blogs/can-woocommerce-do-subscriptions-without-a-plugin/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A017",
+    slug: "how-woocommerce-subscription-renewals-work",
+    categorySlug: "billing-strategy",
+    title: "How WooCommerce Subscription Renewals Work",
+    seoTitle: "How WooCommerce Subscription Renewals Work",
+    metaDescription:
+      "Follow a WooCommerce subscription renewal from schedule and invoice creation through payment, webhooks, order status, access, and the next billing date.",
+    excerpt:
+      "Trace the complete renewal state transition across agreement, scheduled jobs, order, gateway, customer communication, and the next cycle.",
+    directAnswer:
+      "A WooCommerce subscription renewal turns a stored customer agreement into a new payable order, collects automatically or waits for manual payment, reconciles gateway events, updates status and access, and advances the next date.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "10 min read",
+    format: "Pillar guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "how WooCommerce subscription renewals work",
+      "renewal order",
+      "subscription billing lifecycle",
+    ],
+    cover: {
+      label: "Renewal lifecycle",
+      image: "/blogs/how-woocommerce-subscription-renewals-work/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A018",
+    slug: "manual-vs-automatic-subscription-renewals-in-woocommerce",
+    categorySlug: "billing-strategy",
+    title: "Manual vs Automatic Subscription Renewals in WooCommerce",
+    seoTitle: "Manual vs Automatic WooCommerce Renewals",
+    metaDescription:
+      "Compare manual and automatic WooCommerce subscription renewals by customer effort, gateway ownership, retries, reconciliation, cost, and support risk.",
+    excerpt:
+      "Choose deliberate invoicing or supported automatic collection by comparing ownership, customer action, gateway risk, and total operating effort.",
+    directAnswer:
+      "Use automatic renewals when the gateway and product support reliable off-session collection and customers expect uninterrupted service. Use manual renewals when each payment needs customer approval, the gateway cannot store a reusable method, or high-touch invoicing is intentional.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "9 min read",
+    format: "Comparison guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "manual vs automatic WooCommerce subscription renewals",
+      "automatic recurring payments",
+      "manual renewal invoice",
+    ],
+    cover: {
+      label: "Manual or automatic",
+      image:
+        "/blogs/manual-vs-automatic-subscription-renewals-in-woocommerce/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A019",
+    slug: "subscription-order-vs-renewal-order-vs-parent-order",
+    categorySlug: "billing-strategy",
+    title: "Subscription Order vs Renewal Order vs Parent Order",
+    seoTitle: "Subscription vs Renewal vs Parent Order",
+    metaDescription:
+      "Understand WooCommerce subscription records, parent orders, and renewal orders, including what each stores, how they link, and where to troubleshoot.",
+    excerpt:
+      "Give the product, customer agreement, parent order, and renewal order distinct jobs so troubleshooting and reporting stay accurate.",
+    directAnswer:
+      "A subscription is the customer’s ongoing agreement, a parent order records the initial checkout, and a renewal order records one later billing cycle. They link to each other but are not interchangeable.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "8 min read",
+    format: "Record explainer",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "subscription order vs renewal order",
+      "WooCommerce parent order",
+      "subscription records",
+    ],
+    cover: {
+      label: "Agreement and orders",
+      image:
+        "/blogs/subscription-order-vs-renewal-order-vs-parent-order/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A020",
+    slug: "woocommerce-renewal-synchronization-explained",
+    categorySlug: "billing-strategy",
+    title: "WooCommerce Renewal Synchronization Explained",
+    seoTitle: "WooCommerce Renewal Synchronization Explained",
+    metaDescription:
+      "Learn how WooCommerce renewal synchronization aligns billing dates, calculates first charges, handles gateways, and differs from fixed-term subscriptions.",
+    excerpt:
+      "Align new subscriptions to a shared billing boundary while making the first partial period, gateway support, and operational workload explicit.",
+    directAnswer:
+      "Renewal synchronization aligns eligible new subscriptions to a shared calendar boundary. It changes the first partial period and next payment date; it does not make every agreement end together.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "8 min read",
+    format: "Explainer",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "WooCommerce renewal synchronization",
+      "billing date alignment",
+      "subscription proration",
+    ],
+    cover: {
+      label: "Align the billing date",
+      image: "/blogs/woocommerce-renewal-synchronization-explained/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A021",
+    slug: "subscription-proration-methods-compared-charge-credit-or-defer",
+    categorySlug: "billing-strategy",
+    title: "Subscription Proration Methods Compared: Charge, Credit, or Defer",
+    seoTitle: "Subscription Proration Methods Compared",
+    metaDescription:
+      "Compare immediate subscription proration, deferred plan changes, and full-price replacement with formulas, examples, access timing, and billing anchors.",
+    excerpt:
+      "Choose immediate proration, a deferred switch, or full-price replacement by aligning money, entitlement timing, credit, and the next anchor.",
+    directAnswer:
+      "Use immediate proration when access should change now and the customer can settle the unused-value difference. Defer the switch when the current paid entitlement should remain through renewal.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "10 min read",
+    format: "Decision guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "subscription proration methods",
+      "subscription credit",
+      "deferred plan change",
+    ],
+    cover: {
+      label: "Charge, credit, or defer",
+      image:
+        "/blogs/subscription-proration-methods-compared-charge-credit-or-defer/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A022",
+    slug: "immediate-vs-next-renewal-plan-changes",
+    categorySlug: "billing-strategy",
+    title: "Immediate vs Next-Renewal Subscription Plan Changes",
+    seoTitle: "Immediate vs Next-Renewal Plan Changes",
+    metaDescription:
+      "Choose whether WooCommerce subscription upgrades and downgrades take effect immediately or at renewal, with payment, access, and failure tradeoffs.",
+    excerpt:
+      "Choose the effective boundary from the entitlement promise, then gate every immediate or deferred change on the correct payment event.",
+    directAnswer:
+      "Apply a plan change immediately when the customer needs the new entitlement now and any adjustment can be collected before access changes. Apply it at the next renewal when the customer should finish the already-paid period on the current plan.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "8 min read",
+    format: "Timing guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "immediate vs next renewal plan change",
+      "subscription upgrade",
+      "subscription downgrade",
+    ],
+    cover: {
+      label: "Change now or later",
+      image: "/blogs/immediate-vs-next-renewal-plan-changes/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A023",
+    slug: "early-subscription-renewals-benefits-risks-and-guardrails",
+    categorySlug: "billing-strategy",
+    title: "Early Subscription Renewals: Benefits, Risks, and Guardrails",
+    seoTitle: "Early Subscription Renewals: Risks and Guardrails",
+    metaDescription:
+      "Evaluate early WooCommerce subscription renewals with rules for eligibility, amount, schedule advancement, duplicate-charge prevention, fulfillment, and refunds.",
+    excerpt:
+      "Define the paid cycle, next date, gateway ownership, fulfillment result, and duplicate-charge lock before accepting an early renewal.",
+    directAnswer:
+      "An early renewal lets a customer pay the next scheduled subscription obligation before its due date, but only safely when the store defines the charged cycle, schedule advancement, duplicate-charge protection, fulfillment, refunds, and gateway support.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "8 min read",
+    format: "Risk guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "early subscription renewal",
+      "renew now",
+      "duplicate subscription charge",
+    ],
+    cover: {
+      label: "Pay the next cycle early",
+      image:
+        "/blogs/early-subscription-renewals-benefits-risks-and-guardrails/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A024",
+    slug: "subscription-billing-schedule-vs-shipping-schedule",
+    categorySlug: "billing-strategy",
+    title: "Subscription Billing Schedule vs Shipping Schedule",
+    seoTitle: "Subscription Billing vs Shipping Schedule",
+    metaDescription:
+      "Separate subscription billing from fulfillment and delivery schedules, then model shipping charges, inventory, address cutoffs, failures, and cancellations.",
+    excerpt:
+      "Model money and fulfillment as separate schedules, especially when one payment funds several shipments or delivery obligations.",
+    directAnswer:
+      "A billing schedule decides when the customer is charged; a shipping schedule decides when goods are allocated and delivered. They can differ, but every extra shipment needs its own fulfillment record and policy.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "9 min read",
+    format: "Operations guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "subscription billing schedule vs shipping schedule",
+      "subscription fulfillment",
+      "recurring shipping",
+    ],
+    cover: {
+      label: "Billing versus shipping",
+      image: "/blogs/subscription-billing-schedule-vs-shipping-schedule/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A025",
+    slug: "different-first-and-renewal-prices-subscription-pricing-patterns",
+    categorySlug: "billing-strategy",
+    title: "Different First and Renewal Prices: Subscription Pricing Patterns",
+    seoTitle: "Different First and Renewal Prices",
+    metaDescription:
+      "Design a different first and renewal price in WooCommerce with explicit payment counting, contribution modeling, disclosure, coupons, and test cases.",
+    excerpt:
+      "Use one clearly disclosed introductory price step, count successful paid payments precisely, and model contribution through the transition.",
+    directAnswer:
+      "Use a different first and renewal price when the same subscription should charge a clearly disclosed introductory amount for a fixed number of successful paid payments, then one stable recurring amount.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "9 min read",
+    format: "Pricing guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "different first and renewal price WooCommerce",
+      "introductory subscription price",
+      "renewal price",
+    ],
+    cover: {
+      label: "Intro price to renewal",
+      image:
+        "/blogs/different-first-and-renewal-prices-subscription-pricing-patterns/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A026",
+    slug: "immediate-cancellation-vs-cancel-at-period-end",
+    categorySlug: "billing-strategy",
+    title: "Immediate Cancellation vs Cancel at Period End",
+    seoTitle: "Immediate vs End-of-Period Cancellation",
+    metaDescription:
+      "Compare immediate subscription cancellation with cancel at period end across access, renewals, refunds, fulfillment, undo, and customer communication.",
+    excerpt:
+      "Separate the renewal stop, access end, and refund result, then confirm the exact effective date and undo option to the customer.",
+    directAnswer:
+      "Cancel immediately when service or access must stop now and the store has a clear refund, fulfillment, and data policy. Cancel at period end when the customer should retain what they already paid for while preventing the next renewal.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "9 min read",
+    format: "Policy guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "immediate vs end of period cancellation",
+      "cancel subscription",
+      "subscription refund",
+    ],
+    cover: {
+      label: "Cancel now or later",
+      image: "/blogs/immediate-cancellation-vs-cancel-at-period-end/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A027",
+    slug: "recurring-subscription-coupons-economics-and-abuse-controls",
+    categorySlug: "billing-strategy",
+    title: "Recurring Subscription Coupons: Economics and Abuse Controls",
+    seoTitle: "Recurring Subscription Coupon Strategy",
+    metaDescription:
+      "Design recurring WooCommerce subscription coupons with payment-count rules, contribution math, eligibility, limits, zero-total tests, and abuse controls.",
+    excerpt:
+      "Define the exact discounted payment sequence, contribution case, eligibility, live restrictions, and safe stop rules before scaling a promotion.",
+    directAnswer:
+      "Use a recurring coupon only when the promotion’s incremental contribution and retention value can justify its total discount cost. Define whether checkout counts, the successful-payment limit, eligibility, stacking, expiry, and stop conditions.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "10 min read",
+    format: "Economics guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "WooCommerce recurring coupon strategy",
+      "subscription coupon",
+      "coupon abuse controls",
+    ],
+    cover: {
+      label: "Coupon economics",
+      image:
+        "/blogs/recurring-subscription-coupons-economics-and-abuse-controls/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A028",
+    slug: "how-taxes-and-shipping-behave-on-subscription-renewals",
+    categorySlug: "billing-strategy",
+    title: "How Taxes and Shipping Behave on Subscription Renewals",
+    seoTitle: "Subscription Renewal Tax and Shipping",
+    metaDescription:
+      "Reconcile WooCommerce subscription renewal tax and shipping across stored recurring prices, addresses, shipping policy, discounts, fees, and order totals.",
+    excerpt:
+      "Reconcile every renewal component—from stored recurring price and shipping through address, tax, discounts, and the gateway transaction.",
+    directAnswer:
+      "A subscription renewal is a new order, not a copy of the original checkout total. Its charge can combine stored recurring price, recurring shipping policy, current address, discounts or fees, and WooCommerce tax calculation.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "10 min read",
+    format: "Reconciliation guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "WooCommerce subscription renewal tax shipping",
+      "renewal shipping",
+      "subscription tax",
+    ],
+    cover: {
+      label: "Reconcile tax and shipping",
+      image: "/blogs/how-taxes-and-shipping-behave-on-subscription-renewals/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A029",
+    slug: "changing-a-subscription-renewal-date-safely",
+    categorySlug: "billing-strategy",
+    title: "Changing a Subscription Renewal Date Safely",
+    seoTitle: "Change a Subscription Renewal Date Safely",
+    metaDescription:
+      "Change a WooCommerce subscription renewal date safely by coordinating orders, scheduled actions, reminders, gateways, access, shipping, and audit history.",
+    excerpt:
+      "Use a supported lifecycle outcome and move every dependent job, order, gateway date, access rule, and customer promise together.",
+    directAnswer:
+      "Changing a renewal date safely means changing the subscription’s authoritative schedule and every dependent job—not editing a database date alone.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "10 min read",
+    format: "Safety guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "change WooCommerce subscription renewal date",
+      "subscription schedule",
+      "Action Scheduler",
+    ],
+    cover: {
+      label: "Move dates safely",
+      image: "/blogs/changing-a-subscription-renewal-date-safely/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A030",
+    slug: "multiple-subscriptions-per-customer-policy-cart-and-billing-tradeoffs",
+    categorySlug: "billing-strategy",
+    title: "Multiple Subscriptions per Customer: Policy, Cart, and Billing Tradeoffs",
+    seoTitle: "Multiple WooCommerce Subscriptions per Customer",
+    metaDescription:
+      "Decide when to allow multiple WooCommerce subscriptions per customer across carts, quantities, products, billing cycles, gateways, and plan changes.",
+    excerpt:
+      "Decide independent needs, quantities, account limits, mixed carts, cycles, gateway support, and upgrade routes as separate policy layers.",
+    directAnswer:
+      "Allow multiple subscriptions when customers genuinely need independent products, quantities, recipients, or billing schedules. Restrict them when a second purchase is usually an accidental duplicate or should be an upgrade.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "9 min read",
+    format: "Policy guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "multiple WooCommerce subscriptions per customer",
+      "subscription cart policy",
+      "subscription gateway restrictions",
+    ],
+    cover: {
+      label: "Allow, limit, or upgrade",
+      image:
+        "/blogs/multiple-subscriptions-per-customer-policy-cart-and-billing-tradeoffs/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A031",
+    slug: "failed-subscription-payment-recovery-for-woocommerce",
+    categorySlug: "payment-recovery",
+    title: "Failed Subscription Payment Recovery for WooCommerce",
+    seoTitle: "WooCommerce Failed Payment Recovery Guide",
+    metaDescription:
+      "Build a WooCommerce failed subscription payment recovery system with decline routing, safe retries, customer actions, grace, KPIs, and stop rules.",
+    excerpt:
+      "Build a responsible recovery lifecycle around evidence, decline-specific actions, duplicate-charge safety, customer communication, grace, and closed-cohort measurement.",
+    directAnswer:
+      "Recover failed subscription payments with a coordinated system: classify the failure, avoid duplicate charges, retry only recoverable declines, send a clear payment-update path, preserve access for defined grace, and stop predictably.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "12 min read",
+    format: "Pillar guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "WooCommerce failed subscription payment recovery",
+      "failed renewal",
+      "involuntary churn",
+    ],
+    cover: {
+      label: "Payment recovery system",
+      image: "/blogs/failed-subscription-payment-recovery-for-woocommerce/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A032",
+    slug: "what-happens-when-a-subscription-payment-fails",
+    categorySlug: "payment-recovery",
+    title: "What Happens When a Subscription Payment Fails?",
+    seoTitle: "What Happens When a Subscription Payment Fails?",
+    metaDescription:
+      "See the WooCommerce subscription payment failure timeline across the renewal order, subscription status, retries, grace, access, and cancellation.",
+    excerpt:
+      "Follow the default failure timeline while keeping the renewal order, subscription, gateway, and access states separate.",
+    directAnswer:
+      "When a subscription payment fails, the renewal order remains unpaid or becomes failed, the reason is logged, and the customer is prompted to fix or pay it. With ArraySubs defaults, access stays active for three grace days, then moves on-hold.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "8 min read",
+    format: "Timeline explainer",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "what happens when subscription payment fails WooCommerce",
+      "subscription grace period",
+      "failed renewal timeline",
+    ],
+    cover: {
+      label: "After payment fails",
+      image: "/blogs/what-happens-when-a-subscription-payment-fails/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A033",
+    slug: "subscription-dunning-strategy-timing-messages-and-stop-rules",
+    categorySlug: "payment-recovery",
+    title: "Subscription Dunning Strategy: Timing, Messages, and Stop Rules",
+    seoTitle: "WooCommerce Subscription Dunning Strategy",
+    metaDescription:
+      "Create a WooCommerce subscription dunning strategy for retry ownership, decline routing, customer messages, grace, access, KPIs, and safe stop rules.",
+    excerpt:
+      "Coordinate gateway ownership, decline routing, message timing, service policy, recovery measurement, and hard stop rules as one governed system.",
+    directAnswer:
+      "A subscription dunning strategy is the coordinated policy for failed-payment retries, customer messages, access grace, and the final stop, cancellation, or downgrade action.",
+    publishedAt: "2026-07-13",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-13",
+    readTime: "10 min read",
+    format: "Strategy guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "subscription dunning strategy WooCommerce",
+      "dunning emails",
+      "payment retry strategy",
+    ],
+    cover: {
+      label: "Dunning strategy",
+      image:
+        "/blogs/subscription-dunning-strategy-timing-messages-and-stop-rules/hero.png",
+      tone: "highlight",
+    },
+  },
 ];
 
 export function getResourceCategory(slug: string) {
