@@ -11,6 +11,9 @@ type SeoInput = {
   /** Absolute or root-relative OG image. */
   ogImage?: string;
   type?: "website" | "article";
+  /** ISO dates used by article Open Graph metadata. */
+  publishedTime?: string;
+  modifiedTime?: string;
 };
 
 /**
@@ -25,6 +28,8 @@ export function createMetadata(input: SeoInput = {}): Metadata {
     noindex = false,
     ogImage = site.ogImage,
     type = "website",
+    publishedTime,
+    modifiedTime,
   } = input;
 
   const canonical = withTrailingSlash(path);
@@ -47,15 +52,28 @@ export function createMetadata(input: SeoInput = {}): Metadata {
             "max-video-preview": -1,
           },
         },
-    openGraph: {
-      type,
-      title: resolvedTitle,
-      description,
-      url: canonical,
-      siteName: site.brand,
-      locale: site.locale,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: resolvedTitle }],
-    },
+    openGraph:
+      type === "article"
+        ? {
+            type: "article",
+            title: resolvedTitle,
+            description,
+            url: canonical,
+            siteName: site.brand,
+            locale: site.locale,
+            publishedTime,
+            modifiedTime,
+            images: [{ url: ogImage, width: 1672, height: 941, alt: resolvedTitle }],
+          }
+        : {
+            type: "website",
+            title: resolvedTitle,
+            description,
+            url: canonical,
+            siteName: site.brand,
+            locale: site.locale,
+            images: [{ url: ogImage, width: 1200, height: 630, alt: resolvedTitle }],
+          },
     twitter: {
       card: "summary_large_image",
       title: resolvedTitle,
@@ -71,12 +89,25 @@ export function createMetadata(input: SeoInput = {}): Metadata {
    ========================================================================== */
 
 export function organizationSchema() {
+  const organizationId = `${absoluteUrl("/")}#organization`;
+  const logoId = `${absoluteUrl("/")}#logo`;
+
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: site.brand,
+    "@id": organizationId,
+    name: site.name,
+    alternateName: site.brand,
     url: absoluteUrl("/"),
-    logo: absoluteUrl(site.logo),
+    logo: {
+      "@type": "ImageObject",
+      "@id": logoId,
+      url: absoluteUrl(site.logo),
+      contentUrl: absoluteUrl(site.logo),
+      width: 494,
+      height: 120,
+    },
+    brand: { "@type": "Brand", name: site.brand },
     sameAs: [...site.sameAs],
     contactPoint: {
       "@type": "ContactPoint",
@@ -90,11 +121,13 @@ export function websiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: site.brand,
+    "@id": `${absoluteUrl("/")}#website`,
+    name: site.name,
+    alternateName: site.brand,
     url: absoluteUrl("/"),
     description: site.description,
     inLanguage: site.lang,
-    publisher: { "@type": "Organization", name: site.brand },
+    publisher: { "@id": `${absoluteUrl("/")}#organization` },
   };
 }
 
@@ -132,10 +165,13 @@ export function breadcrumbSchema(items: Crumb[]) {
 
 export type Faq = { question: string; answer: string };
 
-export function faqSchema(items: Faq[]) {
+export function faqSchema(items: Faq[], path?: string) {
+  const url = path ? absoluteUrl(path) : undefined;
+
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    ...(url ? { "@id": `${url}#faq`, url } : {}),
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -164,26 +200,110 @@ export function howToSchema(name: string, steps: HowToStep[]) {
   };
 }
 
-export type ArticleInput = {
+export type BlogPostInput = {
   headline: string;
   description: string;
+  abstract: string;
   /** Canonical path beginning with "/". */
   path: string;
   /** ISO date (YYYY-MM-DD) the article first published. */
   datePublished: string;
   /** ISO date (YYYY-MM-DD) of the last meaningful update — drives freshness. */
   dateModified: string;
+  author: string;
+  reviewer: string;
+  image: string;
+  imageWidth: number;
+  imageHeight: number;
+  articleSection: string;
+  format: string;
+  keywords: string[];
+  wordCount: number;
 };
 
 /**
- * TechArticle JSON-LD for editorial/comparison pages. Signals authored,
+ * BlogPosting JSON-LD for resource articles. Signals authored,
  * dated, citable content to search and AI answer engines (GEO/AEO).
  */
-export function articleSchema(input: ArticleInput) {
+export function blogPostSchema(input: BlogPostInput) {
   const url = absoluteUrl(input.path);
+  const organizationId = `${absoluteUrl("/")}#organization`;
+  const logoId = `${absoluteUrl("/")}#logo`;
+  const imageUrl = absoluteUrl(input.image);
+
   return {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: input.headline,
+    description: input.description,
+    abstract: input.abstract,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    isPartOf: { "@id": `${absoluteUrl("/")}#website` },
+    datePublished: input.datePublished,
+    dateModified: input.dateModified,
+    inLanguage: site.lang,
+    isAccessibleForFree: true,
+    articleSection: input.articleSection,
+    genre: input.format,
+    keywords: input.keywords.join(", "),
+    wordCount: input.wordCount,
+    image: {
+      "@type": "ImageObject",
+      url: imageUrl,
+      contentUrl: imageUrl,
+      width: input.imageWidth,
+      height: input.imageHeight,
+      caption: input.headline,
+    },
+    thumbnailUrl: imageUrl,
+    author: {
+      "@type": "Person",
+      name: input.author,
+      worksFor: { "@id": organizationId },
+    },
+    reviewedBy: {
+      "@type": "Organization",
+      name: input.reviewer,
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": organizationId,
+      name: site.name,
+      url: absoluteUrl("/"),
+      logo: { "@id": logoId },
+    },
+    about: [
+      { "@type": "Thing", name: "WooCommerce subscriptions" },
+      { "@type": "SoftwareApplication", name: "WooCommerce" },
+    ],
+    mentions: {
+      "@type": "SoftwareApplication",
+      name: site.brand,
+      url: absoluteUrl("/deals/arraysubs/"),
+    },
+    copyrightHolder: { "@id": organizationId },
+  };
+}
+
+export type ArticleInput = {
+  headline: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  dateModified: string;
+};
+
+/** General Article schema retained for comparison and editorial landing pages. */
+export function articleSchema(input: ArticleInput) {
+  const url = absoluteUrl(input.path);
+  const organizationId = `${absoluteUrl("/")}#organization`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${url}#article`,
     headline: input.headline,
     description: input.description,
     url,
@@ -191,11 +311,7 @@ export function articleSchema(input: ArticleInput) {
     datePublished: input.datePublished,
     dateModified: input.dateModified,
     inLanguage: site.lang,
-    author: { "@type": "Organization", name: site.brand, url: absoluteUrl("/") },
-    publisher: {
-      "@type": "Organization",
-      name: site.brand,
-      logo: { "@type": "ImageObject", url: absoluteUrl(site.logo) },
-    },
+    author: { "@id": organizationId },
+    publisher: { "@id": organizationId },
   };
 }

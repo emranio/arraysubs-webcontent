@@ -2,6 +2,7 @@
 
 ## Article specification
 
+- **Status:** Published
 - **Proposed title:** Customer-Chosen Subscription Duration: Use Cases, UX, and Risk Controls
 - **Content cluster:** C01 — WooCommerce subscription setup and product models
 - **Content category:** Subscription Foundations

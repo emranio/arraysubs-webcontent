@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">The four systems in a subscription</title>
+  <desc id="desc">Billing, access, fulfillment, and self-service connect to one subscription agreement and customer.</desc>
+  <rect width="1200" height="680" fill="#FAF8FF"/>
+  <text x="70" y="74" fill="#12002B" font-family="Arial, sans-serif" font-size="38" font-weight="700">One subscription, four coordinated systems</text>
+  <text x="70" y="112" fill="#5B476F" font-family="Arial, sans-serif" font-size="20">Design every path before the first customer checks out.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="70" y="165" width="255" height="150" rx="22" fill="#F0E9FF" stroke="#BFA8EA" stroke-width="2"/>
+    <circle cx="116" cy="211" r="23" fill="#873EFF"/><path d="M105 211h22M116 200v22" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <text x="153" y="213" fill="#12002B" font-size="25" font-weight="700">Billing</text>
+    <text x="100" y="260" fill="#3F2A5C" font-size="18">Price · cadence · term</text><text x="100" y="288" fill="#3F2A5C" font-size="18">tax · payment method</text>
+    <rect x="70" y="345" width="255" height="150" rx="22" fill="#E9F7EF" stroke="#8AD0A8" stroke-width="2"/>
+    <circle cx="116" cy="391" r="23" fill="#18A554"/><path d="M105 391l8 8 16-18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="153" y="393" fill="#12002B" font-size="25" font-weight="700">Access</text>
+    <text x="100" y="440" fill="#3F2A5C" font-size="18">Trial · active · grace</text><text x="100" y="468" fill="#3F2A5C" font-size="18">cancel · expire</text>
+    <rect x="875" y="165" width="255" height="150" rx="22" fill="#FFF1E3" stroke="#F6BD80" stroke-width="2"/>
+    <circle cx="921" cy="211" r="23" fill="#FE8218"/><path d="M909 204h24v18h-24zM913 200h16" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+    <text x="958" y="213" fill="#12002B" font-size="25" font-weight="700">Fulfillment</text>
+    <text x="905" y="260" fill="#3F2A5C" font-size="18">Goods · services · files</text><text x="905" y="288" fill="#3F2A5C" font-size="18">shipping · inventory</text>
+    <rect x="875" y="345" width="255" height="150" rx="22" fill="#F5F2F8" stroke="#CFC4D8" stroke-width="2"/>
+    <circle cx="921" cy="391" r="23" fill="#12002B"/><circle cx="921" cy="384" r="7" fill="none" stroke="#fff" stroke-width="3"/><path d="M909 405c2-9 22-9 24 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <text x="958" y="393" fill="#12002B" font-size="25" font-weight="700">Self-service</text>
+    <text x="905" y="440" fill="#3F2A5C" font-size="18">View · update · pay</text><text x="905" y="468" fill="#3F2A5C" font-size="18">pause · cancel</text>
+    <path d="M325 240H430M325 420H430M875 240H770M875 420H770" stroke="#873EFF" stroke-width="4" stroke-linecap="round"/>
+    <rect x="430" y="210" width="340" height="240" rx="30" fill="#873EFF"/>
+    <rect x="475" y="258" width="250" height="144" rx="18" fill="#fff"/>
+    <text x="600" y="305" text-anchor="middle" fill="#873EFF" font-size="16" font-weight="700" letter-spacing="2">LIVE AGREEMENT</text>
+    <text x="600" y="345" text-anchor="middle" fill="#12002B" font-size="28" font-weight="700">Subscription</text>
+    <text x="600" y="376" text-anchor="middle" fill="#5B476F" font-size="17">status · dates · totals · customer</text>
+    <circle cx="600" cy="538" r="34" fill="#12002B"/><circle cx="600" cy="528" r="10" fill="#F0E9FF"/><path d="M581 553c4-14 34-14 38 0" fill="none" stroke="#F0E9FF" stroke-width="5" stroke-linecap="round"/>
+    <path d="M600 450v50" stroke="#873EFF" stroke-width="4" stroke-linecap="round"/>
+    <text x="600" y="602" text-anchor="middle" fill="#12002B" font-size="22" font-weight="700">Customer</text>
+    <text x="600" y="630" text-anchor="middle" fill="#5B476F" font-size="17">One clear promise across every system</text>
+  </g>
+</svg>

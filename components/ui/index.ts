@@ -1,11 +1,13 @@
 // Barrel export for the reusable UI library.
 export { Container } from "./Container";
 export { Section } from "./Section";
+export { ArticleCard } from "./ArticleCard";
 export { ArrayHashMark } from "./ArrayHashMark";
 export { Eyebrow } from "./Eyebrow";
 export { SectionTitle } from "./SectionTitle";
 export { Button } from "./Button";
 export { Badge } from "./Badge";
+export { EditorialArtwork } from "./EditorialArtwork";
 export { Breadcrumbs, type BreadcrumbItem } from "./Breadcrumbs";
 export { IconCard } from "./IconCard";
 export { OfferCard } from "./OfferCard";
@@ -20,6 +22,7 @@ export {
   type ComparisonRow,
 } from "./ComparisonTable";
 export { PageHero } from "./PageHero";
+export { Pagination } from "./Pagination";
 export { Manifesto, type ManifestoLine } from "./Manifesto";
 export { BigText } from "./BigText";
 export { Accordion, type AccordionItemData } from "./Accordion";

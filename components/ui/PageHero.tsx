@@ -28,6 +28,8 @@ type PageHeroProps = {
   visual?: ReactNode;
   /** `showcase` places the copy beside a prominent product visual. */
   layout?: "default" | "showcase";
+  /** Long editorial titles use a more compact scale while preserving PageHero. */
+  titleSize?: "default" | "article";
   /** Heading element for the title. Keep h1 on real pages. */
   headingLevel?: ElementType;
   className?: string;
@@ -49,6 +51,7 @@ export function PageHero({
   trust,
   visual,
   layout = "default",
+  titleSize = "default",
   headingLevel: Heading = "h1",
   className,
 }: PageHeroProps) {
@@ -79,6 +82,8 @@ export function PageHero({
           "break-words font-display font-semibold text-primary tracking-normal [text-wrap:wrap]",
           layout === "showcase"
             ? "text-[2.875rem] leading-[0.98] max-[22.499rem]:text-[2.5rem] sm:text-[3.75rem] md:text-[4.25rem] lg:text-[4.75rem] xl:text-[5.5rem]"
+            : titleSize === "article"
+              ? "text-[2.75rem] leading-[1.02] max-[22.499rem]:text-[2.375rem] sm:text-[3.5rem] lg:text-[4.25rem] xl:text-[4.75rem]"
             : "text-6xl leading-none sm:text-[5rem] lg:text-[5.875rem] xl:text-[6.5rem]",
         )}
       >

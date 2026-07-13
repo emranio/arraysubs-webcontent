@@ -3,6 +3,12 @@ import { absoluteUrl } from "@/lib/site";
 import { USE_CASES } from "@/app/deals/arraysubs/use-cases/_data";
 import { RECIPES } from "@/app/deals/arraysubs/use-cases/_recipes";
 import { COMPARISONS } from "@/app/deals/arraysubs/alternatives/_data";
+import {
+  RESOURCE_ARTICLES,
+  RESOURCE_CATEGORIES,
+  getArticlePath,
+  getCategoryPath,
+} from "@/app/deals/arraysubs/resources/_data";
 
 /**
  * Add a route entry here when a new indexable page ships.
@@ -15,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/deals/arraysubs/use-cases/", 0.8],
     ["/deals/arraysubs/use-cases/can-i/", 0.7],
     ["/deals/arraysubs/alternatives/", 0.8],
+    ["/deals/arraysubs/resources/", 0.8],
   ] as const;
 
   const trustRoutes = [
@@ -67,6 +74,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...COMPARISONS.map((comparison) => ({
       url: absoluteUrl(`/deals/arraysubs/alternatives/${comparison.slug}/`),
       lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...RESOURCE_CATEGORIES.map((category) => ({
+      url: absoluteUrl(getCategoryPath(category.slug)),
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
+    ...RESOURCE_ARTICLES.map((article) => ({
+      url: absoluteUrl(getArticlePath(article)),
+      lastModified: new Date(`${article.updatedAt}T00:00:00Z`),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),

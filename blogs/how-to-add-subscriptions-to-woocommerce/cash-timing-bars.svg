@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative fixed-term and prepaid cash timing</title><desc id="desc">Bar chart comparing six monthly 40 dollar charges with one 240 dollar upfront charge.</desc>
+  <rect width="1200" height="700" fill="#FAF8FF"/>
+  <g font-family="Arial, sans-serif">
+    <text x="70" y="68" fill="#12002B" font-size="38" font-weight="700">Same $240 total, different collection timing</text>
+    <text x="70" y="105" fill="#5B476F" font-size="19">Hypothetical arithmetic · excludes tax, refunds, fees, and failed payments</text>
+    <rect x="70" y="145" width="1060" height="458" rx="24" fill="#fff" stroke="#DED2F4" stroke-width="2"/>
+    <line x1="200" y1="200" x2="200" y2="540" stroke="#9B8CAA" stroke-width="2"/><line x1="200" y1="540" x2="1070" y2="540" stroke="#9B8CAA" stroke-width="2"/>
+    <g fill="#5B476F" font-size="16"><text x="170" y="545" text-anchor="end">$0</text><text x="170" y="434" text-anchor="end">$80</text><text x="170" y="323" text-anchor="end">$160</text><text x="170" y="212" text-anchor="end">$240</text></g>
+    <g stroke="#E8E0F4"><line x1="200" y1="429" x2="1070" y2="429"/><line x1="200" y1="318" x2="1070" y2="318"/><line x1="200" y1="207" x2="1070" y2="207"/></g>
+    <g fill="#873EFF"><rect x="250" y="484" width="48" height="56" rx="7"/><rect x="390" y="484" width="48" height="56" rx="7"/><rect x="530" y="484" width="48" height="56" rx="7"/><rect x="670" y="484" width="48" height="56" rx="7"/><rect x="810" y="484" width="48" height="56" rx="7"/><rect x="950" y="484" width="48" height="56" rx="7"/></g>
+    <g fill="#18A554"><rect x="306" y="207" width="48" height="333" rx="7"/><rect x="446" y="536" width="48" height="4" rx="2"/><rect x="586" y="536" width="48" height="4" rx="2"/><rect x="726" y="536" width="48" height="4" rx="2"/><rect x="866" y="536" width="48" height="4" rx="2"/><rect x="1006" y="536" width="48" height="4" rx="2"/></g>
+    <g fill="#12002B" font-size="16" font-weight="700"><text x="274" y="472" text-anchor="middle">$40</text><text x="414" y="472" text-anchor="middle">$40</text><text x="554" y="472" text-anchor="middle">$40</text><text x="694" y="472" text-anchor="middle">$40</text><text x="834" y="472" text-anchor="middle">$40</text><text x="974" y="472" text-anchor="middle">$40</text><text x="330" y="196" text-anchor="middle">$240</text></g>
+    <g fill="#5B476F" font-size="16"><text x="302" y="572" text-anchor="middle">Checkout</text><text x="442" y="572" text-anchor="middle">Month 2</text><text x="582" y="572" text-anchor="middle">Month 3</text><text x="722" y="572" text-anchor="middle">Month 4</text><text x="862" y="572" text-anchor="middle">Month 5</text><text x="1002" y="572" text-anchor="middle">Month 6</text></g>
+    <rect x="250" y="630" width="18" height="18" rx="4" fill="#873EFF"/><text x="280" y="645" fill="#12002B" font-size="17">Fixed-term recurring · $40 each month</text>
+    <rect x="655" y="630" width="18" height="18" rx="4" fill="#18A554"/><text x="685" y="645" fill="#12002B" font-size="17">Prepaid · $240 at checkout</text>
+  </g>
+</svg>

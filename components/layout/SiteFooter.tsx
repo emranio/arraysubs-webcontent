@@ -34,6 +34,7 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
   {
     title: "Resources",
     links: [
+      ["Field Guides", "/deals/arraysubs/resources/"],
       ["Documentation", "https://support.arrayhash.com/arraysubs/"],
       ["Use Cases", "/deals/arraysubs/use-cases/"],
       ["Support", "https://support.arrayhash.com/arraysubs/"],
