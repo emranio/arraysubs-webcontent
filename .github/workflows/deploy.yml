@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: arrayhash-production-deploy
+  cancel-in-progress: false
+
 jobs:
   deploy:
     name: Build & Reload on Server
@@ -19,34 +23,87 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script_stop: true
           script: |
-            set -e
+            set -euo pipefail
 
-            cd ${{ secrets.DEPLOY_PATH }}
+            DEPLOY_PATH="${{ secrets.DEPLOY_PATH }}"
+            TARGET_SHA="${{ github.sha }}"
+            APP_NAME="arrayhash-com-next"
+            STAGING_DIR="$(mktemp -d "${DEPLOY_PATH}.deploy.XXXXXX")"
+            PREVIOUS_SHA=""
+            ROLLBACK_READY=0
+
+            cleanup() {
+              status=$?
+              set +e
+
+              if [ "$status" -ne 0 ] && [ "$ROLLBACK_READY" -eq 1 ]; then
+                echo "==> Activation failed; restoring previous release"
+                cd "$DEPLOY_PATH"
+                pm2 stop "$APP_NAME" >/dev/null 2>&1 || true
+                rm -rf .next node_modules
+
+                if [ -d "$STAGING_DIR/previous.next" ]; then
+                  mv "$STAGING_DIR/previous.next" .next
+                fi
+
+                if [ -d "$STAGING_DIR/previous.node_modules" ]; then
+                  mv "$STAGING_DIR/previous.node_modules" node_modules
+                fi
+
+                git reset --hard "$PREVIOUS_SHA"
+                cp .env.production .env
+                pm2 startOrReload ecosystem.config.cjs --env production --update-env
+              fi
+
+              rm -rf "$STAGING_DIR"
+              exit "$status"
+            }
+
+            trap cleanup EXIT
+
+            cd "$DEPLOY_PATH"
+            PREVIOUS_SHA="$(git rev-parse HEAD)"
 
             echo "==> Syncing latest code"
             git fetch --prune origin main
-            git reset --hard "${{ github.sha }}"
+            git archive "$TARGET_SHA" | tar -x -C "$STAGING_DIR"
 
             echo "==> Copying .env.production to .env"
-            cp .env.production .env
+            cp "$STAGING_DIR/.env.production" "$STAGING_DIR/.env"
 
-            echo "==> Installing dependencies"
+            echo "==> Installing dependencies in staging"
+            cd "$STAGING_DIR"
             npm ci
 
-            echo "==> Cleaning previous Next.js build output"
-            rm -rf .next
-
-            echo "==> Building"
+            echo "==> Building isolated release"
             npm run build
 
-            echo "==> Reloading PM2"
+            echo "==> Activating release"
+            cd "$DEPLOY_PATH"
+            pm2 stop "$APP_NAME" >/dev/null 2>&1 || true
+            ROLLBACK_READY=1
+
+            if [ -d .next ]; then
+              mv .next "$STAGING_DIR/previous.next"
+            fi
+
+            if [ -d node_modules ]; then
+              mv node_modules "$STAGING_DIR/previous.node_modules"
+            fi
+
+            git reset --hard "$TARGET_SHA"
+            cp .env.production .env
+            mv "$STAGING_DIR/.next" .next
+            mv "$STAGING_DIR/node_modules" node_modules
+
+            echo "==> Starting PM2"
             pm2 startOrReload ecosystem.config.cjs --env production --update-env
 
             echo "==> Checking local app health"
             APP_PORT="$(sed -n 's/^PORT=//p' .env | tail -1)"
             APP_PORT="${APP_PORT:-3000}"
             for attempt in $(seq 1 30); do
-              if curl -fsS "http://127.0.0.1:${APP_PORT}/" >/dev/null; then
+              if curl -fsS "http://127.0.0.1:${APP_PORT}/deals/arraysubs/" >/dev/null; then
                 break
               fi
 
@@ -58,6 +115,7 @@ jobs:
               sleep 1
             done
 
+            ROLLBACK_READY=0
             pm2 save
 
             echo "==> Done"
