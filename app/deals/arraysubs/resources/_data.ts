@@ -53,6 +53,38 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       "Test the complete renewal loop before launch",
     ],
   },
+  {
+    slug: "billing-strategy",
+    name: "Billing Strategy",
+    eyebrow: "Design the money movement",
+    description:
+      "Operator-focused guides to renewal mechanics, payment timing, schedule alignment, proration, plan changes, cancellation, discounts, tax, and billing controls.",
+    intro: [
+      "A subscription billing model is a chain of dates, records, payment attempts, customer promises, and operational decisions. These guides explain each link so finance, support, engineering, and fulfillment teams can work from the same model.",
+      "Start with the renewal lifecycle, then compare automatic and manual collection, record relationships, schedule alignment, proration, changes, cancellation, coupons, tax, and shipping. Worked examples are illustrative and product-specific behavior is clearly separated from general WooCommerce concepts.",
+    ],
+    highlights: [
+      "Map every renewal from due time to the next schedule",
+      "Choose explicit rules for proration, changes, and cancellation",
+      "Reconcile money, tax, shipping, access, and customer communication",
+    ],
+  },
+  {
+    slug: "payment-recovery",
+    name: "Payment Recovery",
+    eyebrow: "Recover revenue responsibly",
+    description:
+      "Practical playbooks for failed renewal payments, retry decisions, customer communication, grace policy, access outcomes, and measurable dunning operations.",
+    intro: [
+      "A failed renewal is not one event. It is a branch that can involve the gateway, renewal order, subscription status, retry queue, customer message, payment-method update, entitlement policy, and a final stop decision.",
+      "Use these guides to separate what happened from what your configured policy should do next. The goal is to recover valid revenue while keeping the customer informed, limiting duplicate attempts, and ending unrecoverable sequences cleanly.",
+    ],
+    highlights: [
+      "Classify the failure before choosing a recovery action",
+      "Coordinate retries, messages, grace, and access",
+      "Measure recovery by cohort without relying on unsupported benchmarks",
+    ],
+  },
 ];
 
 export const RESOURCE_ARTICLES: ResourceArticle[] = [
