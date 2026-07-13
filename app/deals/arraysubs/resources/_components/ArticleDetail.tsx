@@ -59,7 +59,6 @@ export function ArticleDetail({
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Resources", href: RESOURCE_BASE },
-          { name: category.name, href: getCategoryPath(category.slug) },
           { name: article.title, href: getArticlePath(article) },
         ]}
         title={article.title}
@@ -76,9 +75,6 @@ export function ArticleDetail({
             title={article.cover.label}
             image={article.cover.image}
             tone={article.cover.tone}
-            byline={`${article.author} // ${site.name}`}
-            updatedAt={article.updatedAt}
-            updatedLabel={formatArticleDate(article.updatedAt)}
             className="aspect-[4/3] min-h-0 sm:aspect-[16/7] sm:min-h-[19rem]"
           />
 

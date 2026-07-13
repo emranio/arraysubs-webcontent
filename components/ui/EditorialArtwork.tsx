@@ -24,9 +24,9 @@ const tones = {
     frame: "border-on-dark-border bg-background",
   },
   highlight: {
-    shell: "bg-highlight text-dark",
-    muted: "text-muted",
-    frame: "border-border-strong bg-background",
+    shell: "bg-dark-2 text-on-dark",
+    muted: "text-on-dark-muted",
+    frame: "border-on-dark-border bg-background",
   },
 } as const;
 
@@ -68,7 +68,7 @@ export function EditorialArtwork({
         >
           ArraySubs field guide
         </p>
-        <p className="mt-2 font-display text-xl leading-[1.05] font-semibold text-balance sm:text-2xl lg:text-3xl">
+        <p className="mt-3 font-display text-xl leading-[1.05] font-semibold text-balance sm:text-2xl lg:text-3xl">
           {title}
         </p>
       </div>

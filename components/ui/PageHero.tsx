@@ -183,11 +183,11 @@ export function PageHero({
 function PageHeroBreadcrumbs({ items }: { items: BreadcrumbItem[] }) {
   return (
     <nav aria-label="Breadcrumb" className="text-sm">
-      <ol className="inline-flex flex-wrap items-center gap-2 font-medium">
+      <ol className="inline-flex flex-wrap items-start gap-2 font-medium">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
-            <li key={item.href} className="inline-flex items-center gap-2">
+            <li key={item.href} className="inline-flex items-start gap-2">
               {index === 0 ? (
                 <ArrayHashMark className="text-[0.95em] text-primary" />
               ) : (
