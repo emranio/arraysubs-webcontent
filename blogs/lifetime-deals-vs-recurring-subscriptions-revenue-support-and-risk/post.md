@@ -40,7 +40,7 @@ Complete this sentence before publishing:
 
 Lifetime access, future major versions, compatibility/security maintenance, human support, hosted services, API/AI usage, storage, community, and new content are separate promises. Do not compress them into one “lifetime” badge.
 
-![Decision flow for lifetime, recurring, and hybrid pricing.](/blogs/lifetime-deals-vs-recurring-subscriptions-revenue-support-and-risk/decision-flow.svg)
+![Cash now or value over time? — a focused split for Cash now and obligations later must balance.](/blogs/lifetime-deals-vs-recurring-subscriptions-revenue-support-and-risk/decision-visual.png)
 
 ## Build a lifetime price floor
 
@@ -83,7 +83,7 @@ Assume the same entitlement is sold for $300 lifetime or $120/year, with $60 imm
 | 6 | $24 | $444 |
 | 7 | -$12 | $528 |
 
-![Illustrative lifetime and recurring contribution bars.](/blogs/lifetime-deals-vs-recurring-subscriptions-revenue-support-and-risk/worked-model-bars.svg)
+![Contribution over time — an illustrative bars for Cash now and obligations later must balance.](/blogs/lifetime-deals-vs-recurring-subscriptions-revenue-support-and-risk/model-visual.png)
 
 *Scenario arithmetic, not a forecast. Every shown recurring payment is assumed to succeed.*
 
@@ -103,7 +103,7 @@ Lifetime starts with more contribution but loses $36 for each modeled service ye
 | Physical replenishment | Recurring | Prepaid finite gift term, never lifetime fulfillment |
 | Consulting support | Fixed package/retainer | Defined hours and deliverables |
 
-![Operating model for cash timing, support liability, and customer promise.](/blogs/lifetime-deals-vs-recurring-subscriptions-revenue-support-and-risk/operating-model.svg)
+![Promise and liability — a focused balance for Cash now and obligations later must balance.](/blogs/lifetime-deals-vs-recurring-subscriptions-revenue-support-and-risk/operating-visual.png)
 
 A lifetime offer is a candidate only when entitlement scope is bounded, future costs are modelable, usage/support can be limited honestly, the business can fund low/base/high scenarios, and every customer surface can show the same promise.
 

@@ -13,15 +13,16 @@ import {
   PolicyNote,
   PolicySection,
   PolicyTable,
-  REVIEWED_DATE,
   TrustContactCta,
   TrustCrossLinks,
 } from "../_components";
 
+const PRIVACY_REVIEWED_DATE = "July 15, 2026";
+
 export const metadata: Metadata = createMetadata({
   title: "Privacy Policy",
   description:
-    "ArrayHash privacy policy for ArraySubs, including website forms, GA4 analytics, payment providers, cookies, privacy rights, and the no plugin telemetry commitment.",
+    "ArrayHash privacy policy for ArraySubs, including website forms, roadmap participation, GA4 analytics, payment providers, cookies, privacy rights, and the no plugin telemetry commitment.",
   path: "/trust-center/privacy-policy/",
 });
 
@@ -38,7 +39,7 @@ export default function PrivacyPolicyPage() {
         highlights={[
           "No plugin telemetry",
           "No sale of personal data",
-          "Retargeting requires opt-in",
+          "Roadmap cookie only on demand",
         ]}
         actions={
           <Button
@@ -57,20 +58,21 @@ export default function PrivacyPolicyPage() {
           { label: "Controller", value: "ArrayHash" },
           { label: "Product", value: "All, sold on site" },
           { label: "Effective date", value: EFFECTIVE_DATE },
-          { label: "Last reviewed", value: REVIEWED_DATE },
+          { label: "Last reviewed", value: PRIVACY_REVIEWED_DATE },
         ]}
       />
 
       <PolicyBody>
         <PolicySection
           title="Scope"
-          subtitle="This policy covers the ArrayHash website and ArraySubs marketing, signup, newsletter, support, contact, payment and licensing flows."
+          subtitle="This policy covers the ArrayHash website and ArraySubs marketing, roadmap, signup, newsletter, support, contact, payment and licensing flows."
         >
           <p>
             ArrayHash operates the ArraySubs marketing website at arrayhash.com.
             This policy applies when you visit the website, submit a signup,
-            newsletter, support or contact form, buy or manage an ArraySubs Pro
-            license, request a refund, or contact us about privacy rights.
+            newsletter, support or contact form, submit or upvote a roadmap idea,
+            buy or manage an ArraySubs Pro license, request a refund, or contact
+            us about privacy rights.
           </p>
           <PolicyNote title="Important WordPress plugin distinction">
             <p>
@@ -107,6 +109,11 @@ export default function PrivacyPolicyPage() {
                 "Reply to questions, support requests and account inquiries.",
               ],
               [
+                "Roadmap participation",
+                "Feature title and description, timestamps, and one-way hashes derived from an anonymous browser identifier",
+                "Publish requested ideas, count one upvote per card and browser, and limit repeated submissions.",
+              ],
+              [
                 "GA4 website analytics",
                 "Page views, sessions, referral source, approximate location, browser and device information",
                 "Understand aggregate website usage and improve pages.",
@@ -133,6 +140,7 @@ export default function PrivacyPolicyPage() {
               "WooCommerce store revenue, product, customer, subscription or order metrics.",
               "WordPress admin emails, WordPress user emails or customer emails from your store.",
               "WordPress, WooCommerce, PHP or plugin logs from your site.",
+              "Names or email addresses for roadmap suggestions and votes.",
               "Heatmap or session recording data.",
             ]}
           />
@@ -165,6 +173,11 @@ export default function PrivacyPolicyPage() {
                 "Retargeting",
                 "Consent",
                 "Advertising and retargeting tags load only after the visitor opts in, and the choice can be withdrawn at any time.",
+              ],
+              [
+                "Roadmap suggestions and upvotes",
+                "Consent and legitimate interests",
+                "The anonymous participation cookie is created only after an on-demand choice. Duplicate-vote and submission limits protect the public roadmap from ordinary abuse.",
               ],
               [
                 "Payments, licenses, tax and refunds",
@@ -216,6 +229,13 @@ export default function PrivacyPolicyPage() {
                 "6 months",
                 "Always active to remember the privacy choice.",
               ],
+              [
+                "arraysubs_roadmap_visitor",
+                "Functional",
+                "Stores a random anonymous browser identifier used to prevent ordinary duplicate roadmap votes and repeated submissions.",
+                "1 year",
+                "Created only after the visitor chooses Allow and continue while submitting or voting.",
+              ],
             ]}
           />
           <p>
@@ -238,6 +258,41 @@ export default function PrivacyPolicyPage() {
             </InlineLink>
             .
           </p>
+        </PolicySection>
+
+        <PolicySection
+          id="roadmap-participation"
+          title="Roadmap participation"
+          subtitle="The public roadmap can be viewed without a roadmap cookie. A separate on-demand choice appears only when someone submits an idea or upvotes a card."
+        >
+          <p>
+            If the visitor chooses Allow and continue, ArrayHash creates the
+            first-party <strong>arraysubs_roadmap_visitor</strong> cookie with a
+            random identifier. The cookie is HTTP-only, uses SameSite=Lax, and
+            is sent only to this website. It is not added to the site-wide
+            privacy banner because it is unnecessary until the visitor chooses
+            to participate in the roadmap.
+          </p>
+          <p>
+            The roadmap file stores the submitted feature title and description,
+            creation and update timestamps, and one-way hashes derived from the
+            random identifier. The public API exposes only the idea text, status,
+            timestamps, upvote count, and whether the current browser already
+            voted. It never exposes the cookie value or stored hashes.
+          </p>
+          <p>
+            You can withdraw this choice at any time with the <strong>Forget
+            roadmap cookie</strong> control on the roadmap page. This removes the
+            browser cookie immediately. Previously recorded anonymous vote hashes
+            may remain so published totals stay consistent.
+          </p>
+          <PolicyNote title="If you do not allow the cookie">
+            <p>
+              No roadmap participation cookie is created and the requested
+              submission or upvote is cancelled. The rest of the site and the
+              read-only roadmap remain available.
+            </p>
+          </PolicyNote>
         </PolicySection>
 
         <PolicySection title="Third-party providers">
@@ -295,6 +350,10 @@ export default function PrivacyPolicyPage() {
               [
                 "GA4 analytics",
                 "Collected on every visit and retained according to the active GA4 property settings.",
+              ],
+              [
+                "Roadmap ideas and vote records",
+                "Kept while the public roadmap is maintained. The anonymous browser cookie expires after 1 year; stored vote hashes may remain so published counts stay consistent.",
               ],
               [
                 "Security and server logs",

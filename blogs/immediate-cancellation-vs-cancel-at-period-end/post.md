@@ -24,7 +24,7 @@ Cancel immediately when service or access must stop now and the store has a clea
 
 ## Compare the two timelines
 
-![Two cancellation timelines showing immediate access end and end-of-period access.](/blogs/immediate-cancellation-vs-cancel-at-period-end/decision-flow.svg)
+![Two cancellation timelines — a focused lanes for Cancellation timing controls access and future charges.](/blogs/immediate-cancellation-vs-cancel-at-period-end/decision-visual.png)
 
 | Question | Immediate | Period end |
 | --- | --- | --- |
@@ -56,7 +56,7 @@ Assume $30 paid July 1, cancellation requested July 10, and a July 31 boundary. 
 illustrative unused value = $30 × (21 ÷ 30) = $21
 ```
 
-![Bars separating used and unused value in an illustrative paid period.](/blogs/immediate-cancellation-vs-cancel-at-period-end/worked-model-bars.svg)
+![Used and remaining value — an illustrative stacked for Cancellation timing controls access and future charges.](/blogs/immediate-cancellation-vs-cancel-at-period-end/model-visual.png)
 
 *Arithmetic only—not a refund entitlement or legal conclusion.*
 
@@ -73,7 +73,7 @@ ArraySubs refund behavior has its own setting and workflow. A refund can trigger
 - **Trial:** explicitly state whether cancellation ends trial access now or only prevents the first charge.
 - **Fixed payment obligation:** contract-specific; do not present owed installments as cancel-anytime service.
 
-![An operating model separating renewal stop, access end, refund, fulfillment, and communication.](/blogs/immediate-cancellation-vs-cancel-at-period-end/operating-model.svg)
+![Access and refund policy — a focused balance for Cancellation timing controls access and future charges.](/blogs/immediate-cancellation-vs-cancel-at-period-end/operating-visual.png)
 
 ## Customer confirmation fields
 

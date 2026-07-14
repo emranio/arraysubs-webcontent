@@ -84,16 +84,21 @@ export function PolicyBody({ children }: { children: ReactNode }) {
 }
 
 export function PolicySection({
+  id,
   title,
   subtitle,
   children,
 }: {
+  id?: string;
   title: ReactNode;
   subtitle?: ReactNode;
   children: ReactNode;
 }) {
   return (
-    <section className="border-t border-border py-12 first:border-t-0 first:pt-0 last:pb-0">
+    <section
+      id={id}
+      className="border-t border-border py-12 first:border-t-0 first:pt-0 last:pb-0"
+    >
       <SectionTitle title={title} subtitle={subtitle} size="sm" />
       <div className="mt-8 space-y-6 text-muted">{children}</div>
     </section>

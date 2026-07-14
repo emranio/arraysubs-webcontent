@@ -24,7 +24,7 @@ A billing schedule decides when the customer is charged; a shipping schedule dec
 
 ## The five schedules
 
-![Two tracks separating customer payment dates from shipment and delivery dates.](/blogs/subscription-billing-schedule-vs-shipping-schedule/decision-flow.svg)
+![Two separate clocks — a focused lanes for Billing and delivery are separate clocks.](/blogs/subscription-billing-schedule-vs-shipping-schedule/decision-visual.png)
 
 | Schedule | Governs | Typical evidence |
 | --- | --- | --- |
@@ -59,7 +59,7 @@ shipping allocation per quarterly bill = $96 ÷ 4 = $24
 additional fulfillment records beyond renewal orders = 12 − 4 = 8
 ```
 
-![Bars comparing four billing events with twelve fulfillment events.](/blogs/subscription-billing-schedule-vs-shipping-schedule/worked-model-bars.svg)
+![Billing and delivery events — an illustrative bars for Billing and delivery are separate clocks.](/blogs/subscription-billing-schedule-vs-shipping-schedule/model-visual.png)
 
 *Illustrative operations arithmetic, not a shipping-cost benchmark.*
 
@@ -79,7 +79,7 @@ On successful quarterly payment, create three dated fulfillment obligations. Eac
 
 Let the subscription system record the paid-through obligation and an operations system release shipments. Reconcile subscription ID, renewal order, fulfillment ID, promised date, actual shipment, and refund state. Never let two systems create the same obligation independently.
 
-![An operating model from paid renewal to obligations, inventory, cutoff, packing, and reconciliation.](/blogs/subscription-billing-schedule-vs-shipping-schedule/operating-model.svg)
+![Fulfillment control — a focused hub for Billing and delivery are separate clocks.](/blogs/subscription-billing-schedule-vs-shipping-schedule/operating-visual.png)
 
 ## Failure, skip, and cancellation decisions
 

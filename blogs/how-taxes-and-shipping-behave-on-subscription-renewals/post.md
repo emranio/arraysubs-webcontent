@@ -24,7 +24,7 @@ A subscription renewal is a new order, not a copy of the original checkout total
 
 ## Initial checkout versus renewal
 
-![A renewal calculation flow from stored agreement through address, shipping, tax, and gateway.](/blogs/how-taxes-and-shipping-behave-on-subscription-renewals/decision-flow.svg)
+![Recalculate the renewal — a focused steps for Recalculate each renewal from current taxable facts.](/blogs/how-taxes-and-shipping-behave-on-subscription-renewals/decision-visual.png)
 
 | Component | Initial order | Current ArraySubs renewal |
 | --- | --- | --- |
@@ -67,7 +67,7 @@ illustrative tax = $6.60
 total = $80 + $8 − $8 + $6.60 = $86.60
 ```
 
-![A stacked comparison of product, shipping, discount, and illustrative tax.](/blogs/how-taxes-and-shipping-behave-on-subscription-renewals/worked-model-bars.svg)
+![Renewal total — an illustrative stacked total for Recalculate each renewal from current taxable facts.](/blogs/how-taxes-and-shipping-behave-on-subscription-renewals/model-visual.png)
 
 *Arithmetic illustration only. The current discount is a non-taxable negative fee, so actual tax treatment can differ from this simplified model.*
 
@@ -102,7 +102,7 @@ This stored model provides predictability but can become inaccurate after destin
 
 ArraySubs Pro lets customers/admins update the subscription address. The current customer cutoff defaults to three days before renewal. The next renewal copies the then-current address, but the cutoff is tied to renewal—not every independently scheduled shipment a separate system might create.
 
-![An operating model for reconciling subscription, order lines, tax, shipping, gateway, and accounting.](/blogs/how-taxes-and-shipping-behave-on-subscription-renewals/operating-model.svg)
+![Tax and shipping owners — a focused hub for Recalculate each renewal from current taxable facts.](/blogs/how-taxes-and-shipping-behave-on-subscription-renewals/operating-visual.png)
 
 ## Reconciliation checklist
 

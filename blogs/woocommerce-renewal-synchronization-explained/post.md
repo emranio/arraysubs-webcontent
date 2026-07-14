@@ -24,7 +24,7 @@ Renewal synchronization aligns eligible new subscriptions to a shared calendar b
 
 ## How alignment works
 
-![A flow from signup date through first-charge rule to a shared renewal boundary.](/blogs/woocommerce-renewal-synchronization-explained/decision-flow.svg)
+![Join a shared boundary — a focused timeline for Renewal sync aligns customers to a shared boundary.](/blogs/woocommerce-renewal-synchronization-explained/decision-visual.png)
 
 Without synchronization, a monthly subscription started July 13 normally renews around August 13. With day-one monthly synchronization, its next shared boundary is August 1. The store must decide what July 13–August 1 costs.
 
@@ -46,7 +46,7 @@ prorated first recurring amount = $30 × (16 ÷ 30) = $16
 
 This is arithmetic, not universal ArraySubs invoice output or tax advice. Calendar conventions, minimum charges, intervals, coupons, trials, fees, and rounding can change the result.
 
-![Bars comparing free, full, and prorated first-charge models.](/blogs/woocommerce-renewal-synchronization-explained/worked-model-bars.svg)
+![First-period policy — an illustrative bars for Renewal sync aligns customers to a shared boundary.](/blogs/woocommerce-renewal-synchronization-explained/model-visual.png)
 
 *Illustrative first-period amounts only.*
 
@@ -78,7 +78,7 @@ Trials, signup fees, coupons, shipping, tax, and zero-total first orders can als
 
 Synchronization can simplify warehouse batching, cohort access, finance forecasting, or support communication. It can also create concentrated payment failures, support load, fulfillment peaks, and gateway traffic on one day.
 
-![An operating model connecting shared billing dates to gateway, finance, fulfillment, and support capacity.](/blogs/woocommerce-renewal-synchronization-explained/operating-model.svg)
+![Sync operating model — a focused triangle for Renewal sync aligns customers to a shared boundary.](/blogs/woocommerce-renewal-synchronization-explained/operating-visual.png)
 
 Before choosing a shared date, model:
 

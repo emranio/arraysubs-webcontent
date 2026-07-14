@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import sharp from "sharp";
 
 const palette = {
   purple: "#7c3cff",
@@ -228,81 +229,354 @@ const articles = [
   },
 ];
 
-const esc = (value) => String(value).replace(/[&<>"']/g, (char) => ({
-  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;",
-}[char]));
+const visualPlans = {
+  "simple-vs-variable-woocommerce-subscriptions-which-product-type-fits": { types: ["split", "units", "triangle"], titles: ["Choose by buyer choice", "Configuration load", "Catalog to operations"] },
+  "recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model": { types: ["split", "bars", "balance"], titles: ["What ends the agreement?", "Cash timing", "Three term models"] },
+  "free-trial-paid-trial-or-no-trial-a-subscription-decision-framework": { types: ["split", "numbers", "triangle"], titles: ["Choose the trial", "Friction and exposure", "Proof of value"] },
+  "subscription-sign-up-fees-unit-economics-ux-and-examples": { types: ["split", "stacked", "layers"], titles: ["Does setup need a fee?", "First-period cost", "Fee policy"] },
+  "monthly-and-annual-subscription-plans-packaging-without-cannibalization": { types: ["split", "bars", "balance"], titles: ["Monthly, annual, or both?", "Price view", "Package the commitment"] },
+  "one-time-purchase-and-subscription-on-one-product-when-to-offer-both": { types: ["split", "bars", "triangle"], titles: ["Earn the second option", "Revenue is not contribution", "Keep the choice clear"] },
+  "fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows": { types: ["timeline", "numbers", "cycle-system"], titles: ["One shared calendar", "Late-entry policy", "Cohort operating loop"] },
+  "customer-chosen-subscription-duration-use-cases-ux-and-risk-controls": { types: ["steps", "pie", "layers"], titles: ["Bound the duration", "Illustrative choice mix", "Duration guardrails"] },
+  "lifetime-deals-vs-recurring-subscriptions-revenue-support-and-risk": { types: ["split", "bars", "balance"], titles: ["Cash now or value over time?", "Contribution over time", "Promise and liability"] },
+  "subscription-terms-customers-must-see-before-they-pay": { types: ["timeline", "bars", "layers"], titles: ["Terms before payment", "Disclosure coverage", "Understandable and provable"] },
+  "anatomy-of-a-high-converting-woocommerce-subscription-product-page": { types: ["steps", "pie", "layers"], titles: ["The buying sequence", "Decision coverage", "Product-page system"] },
+  "woocommerce-subscription-launch-readiness-checklist": { types: ["cycle", "bars", "hub"], titles: ["Test the full loop", "Launch scorecard", "Production owners"] },
+  "can-woocommerce-do-subscriptions-without-a-plugin": { types: ["split", "bars", "layers"], titles: ["Repeat sales or subscription?", "Operating workload", "Commerce system layers"] },
+  "how-woocommerce-subscription-renewals-work": { types: ["cycle", "numbers", "hub"], titles: ["Renewal lifecycle", "One renewal, four records", "System ownership"] },
+  "manual-vs-automatic-subscription-renewals-in-woocommerce": { types: ["lanes", "bars", "balance"], titles: ["Who initiates payment?", "Customer touchpoints", "Automatic and manual"] },
+  "subscription-order-vs-renewal-order-vs-parent-order": { types: ["timeline", "units", "hub"], titles: ["One record, one job", "Records after three cycles", "Trace the transaction"] },
+  "woocommerce-renewal-synchronization-explained": { types: ["timeline", "bars", "triangle"], titles: ["Join a shared boundary", "First-period policy", "Sync operating model"] },
+  "subscription-proration-methods-compared-charge-credit-or-defer": { types: ["lanes", "equation-reverse", "triangle"], titles: ["Three change paths", "Proration equation", "Money, access, schedule"] },
+  "immediate-vs-next-renewal-plan-changes": { types: ["lanes", "equation", "balance"], titles: ["Now or next renewal?", "Immediate settlement", "Match money to access"] },
+  "early-subscription-renewals-benefits-risks-and-guardrails": { types: ["cycle", "numbers", "hub"], titles: ["Advance value once", "Duplicate-risk checks", "Early-renewal owners"] },
+  "subscription-billing-schedule-vs-shipping-schedule": { types: ["lanes", "bars", "hub"], titles: ["Two separate clocks", "Billing and delivery events", "Fulfillment control"] },
+  "different-first-and-renewal-prices-subscription-pricing-patterns": { types: ["timeline", "bars", "layers"], titles: ["Price step over time", "First and later payments", "Disclosure to reporting"] },
+  "immediate-cancellation-vs-cancel-at-period-end": { types: ["lanes", "stacked", "balance"], titles: ["Two cancellation timelines", "Used and remaining value", "Access and refund policy"] },
+  "recurring-subscription-coupons-economics-and-abuse-controls": { types: ["cycle", "equation", "hub"], titles: ["Coupon stop rule", "Discount equation", "Coupon controls"] },
+  "how-taxes-and-shipping-behave-on-subscription-renewals": { types: ["steps", "stacked-total", "hub"], titles: ["Recalculate the renewal", "Renewal total", "Tax and shipping owners"] },
+  "changing-a-subscription-renewal-date-safely": { types: ["timeline", "numbers", "hub"], titles: ["Move the whole schedule", "Old date to new date", "Controlled date change"] },
+  "multiple-subscriptions-per-customer-policy-cart-and-billing-tradeoffs": { types: ["stack-flow", "numbers", "hub"], titles: ["Choose the duplicate policy", "Independent schedules", "One order, many agreements"] },
+  "failed-subscription-payment-recovery-for-woocommerce": { types: ["cycle", "funnel", "hub"], titles: ["Recovery lifecycle", "Closed-cohort recovery", "Recovery ownership"] },
+  "what-happens-when-a-subscription-payment-fails": { types: ["timeline", "funnel", "hub"], titles: ["Failure policy timeline", "Retry candidates", "Order, access, customer"] },
+  "subscription-dunning-strategy-timing-messages-and-stop-rules": { types: ["timeline", "numbers", "cycle-system"], titles: ["Dunning sequence", "Timing and contact", "Measure the outcome"] },
+};
 
-const shell = (title, subtitle, body) => `
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
-  <title id="title">${esc(title)}</title>
-  <desc id="desc">${esc(subtitle)}</desc>
-  <rect width="1200" height="700" rx="36" fill="${palette.paper}"/>
-  <rect x="32" y="32" width="1136" height="636" rx="28" fill="none" stroke="${palette.border}" stroke-width="2"/>
-  <text x="72" y="92" fill="${palette.purple}" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2">ARRAYSUBS FIELD GUIDE</text>
-  <text x="72" y="142" fill="${palette.ink}" font-family="Arial, sans-serif" font-size="34" font-weight="700">${esc(title)}</text>
-  <text x="72" y="178" fill="${palette.muted}" font-family="Arial, sans-serif" font-size="17">${esc(subtitle)}</text>
-  ${body}
-</svg>`;
+const colors = ["#7c3cff", "#ff6b1a", "#16a75c", "#1677ff", "#e83e8c", "#f4bd32"];
+const softColors = ["#eee7ff", "#fff0e4", "#e6f7ed", "#e8f1ff", "#fde8f2", "#fff6d6"];
+const esc = (value) => String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" }[char]));
 
-function flowSvg(article) {
+function lines(value, max = 20) {
+  const words = String(value).split(/\s+/);
+  const output = [];
+  let current = "";
+  for (const word of words) {
+    if (`${current} ${word}`.trim().length > max && current) {
+      output.push(current);
+      current = word;
+    } else current = `${current} ${word}`.trim();
+  }
+  if (current) output.push(current);
+  return output.slice(0, 3);
+}
+
+function label(value, x, y, width, size = 13, color = palette.ink, anchor = "middle", weight = 700) {
+  const chunks = lines(value, Math.max(8, Math.floor(width / (size * 0.58))));
+  const textX = anchor === "middle" ? x + width / 2 : x;
+  return `<text x="${textX}" y="${y}" text-anchor="${anchor}" fill="${color}" font-family="Arial, sans-serif" font-size="${size}" font-weight="${weight}">${chunks.map((chunk, index) => `<tspan x="${textX}" dy="${index ? size * 1.15 : 0}">${esc(chunk)}</tspan>`).join("")}</text>`;
+}
+
+function shell(title, kind, body, theme = 0) {
+  const surface = [palette.paper, "#fff8f1", "#f3fff8", "#f2f7ff"][theme % 4];
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="700" height="408" viewBox="0 0 700 408" role="img"><rect width="700" height="408" rx="24" fill="${surface}"/><rect x="24" y="22" width="126" height="24" rx="12" fill="${colors[theme % colors.length]}"/><text x="87" y="39" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">${esc(kind.toUpperCase())}</text>${label(title, 34, 78, 632, title.length > 31 ? 22 : 26, palette.ink, "start")}${body}</svg>`;
+}
+
+const arrowDefs = `<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="${palette.ink}"/></marker></defs>`;
+
+function nodeBox(text, x, y, width, height, index, pill = false) {
+  const radius = pill ? height / 2 : 16;
+  return `<rect x="${x}" y="${y}" width="${width}" height="${height}" rx="${radius}" fill="${softColors[index % softColors.length]}" stroke="${colors[index % colors.length]}" stroke-width="2"/>${label(text, x + 10, y + height / 2 - 2, width - 20, 14)}`;
+}
+
+function splitVisual(article, title) {
+  const pairs = [];
+  for (let index = 0; index < article.flow.length; index += 2) pairs.push(article.flow.slice(index, index + 2));
+  const gap = pairs.length === 2 ? 100 : 72;
+  const start = pairs.length === 2 ? 145 : 122;
+  const body = pairs.map(([left, right], index) => {
+    const y = start + index * gap;
+    return `${nodeBox(left, 48, y, 246, 56, index)}<path d="M310 ${y + 28} H378" stroke="${palette.ink}" stroke-width="3" marker-end="url(#arrow)"/>${nodeBox(right ?? "Define policy", 398, y, 254, 56, index + 1, true)}`;
+  }).join("");
+  return shell(title, "decision", `${arrowDefs}${body}`, 0);
+}
+
+function timelineVisual(article, title) {
   const count = article.flow.length;
-  const nodeWidth = count > 4 ? 155 : 225;
-  const gap = count > 4 ? 25 : 42;
-  const total = count * nodeWidth + (count - 1) * gap;
-  const start = (1200 - total) / 2;
-  const y = 300;
-  const colors = [palette.purpleSoft, palette.orangeSoft, palette.greenSoft];
-  const strokes = [palette.purple, palette.orange, palette.green];
-  const nodes = article.flow.map((label, index) => {
-    const x = start + index * (nodeWidth + gap);
-    const arrow = index < count - 1
-      ? `<path d="M ${x + nodeWidth + 7} ${y + 70} H ${x + nodeWidth + gap - 10}" stroke="${palette.ink}" stroke-width="4" stroke-linecap="round"/><path d="M ${x + nodeWidth + gap - 22} ${y + 58} L ${x + nodeWidth + gap - 10} ${y + 70} L ${x + nodeWidth + gap - 22} ${y + 82}" fill="none" stroke="${palette.ink}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>`
-      : "";
-    return `${arrow}<rect x="${x}" y="${y}" width="${nodeWidth}" height="140" rx="22" fill="${colors[index % 3]}" stroke="${strokes[index % 3]}" stroke-width="2"/><circle cx="${x + 28}" cy="${y + 30}" r="15" fill="${strokes[index % 3]}"/><text x="${x + 28}" y="${y + 36}" text-anchor="middle" fill="white" font-family="Arial" font-size="15" font-weight="700">${index + 1}</text><foreignObject x="${x + 20}" y="${y + 55}" width="${nodeWidth - 40}" height="70"><div xmlns="http://www.w3.org/1999/xhtml" style="font:700 18px Arial;color:${palette.ink};line-height:1.25;text-align:center">${esc(label)}</div></foreignObject>`;
-  }).join("");
-  return shell(article.title, "Decision path — read from left to right", `${nodes}<rect x="310" y="535" width="580" height="64" rx="32" fill="${palette.ink}"/><text x="600" y="574" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="700">Make the customer promise explicit before configuration</text>`);
+  const startX = 66;
+  const step = 568 / Math.max(count - 1, 1);
+  const y = 238;
+  const body = `<path d="M${startX} ${y} H634" stroke="${palette.border}" stroke-width="8" stroke-linecap="round"/>${article.flow.map((item, index) => {
+    const x = startX + index * step;
+    const above = index % 2 === 0;
+    return `<circle cx="${x}" cy="${y}" r="20" fill="${colors[index % colors.length]}"/><text x="${x}" y="${y + 5}" text-anchor="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">${index + 1}</text>${label(item, x - 48, above ? 160 : 296, 96, 12)}`;
+  }).join("")}`;
+  return shell(title, "timeline", body, 1);
 }
 
-function barsSvg(article) {
-  const max = Math.max(...article.bars.map(([, value]) => value), 1);
-  const chartLeft = 330;
-  const chartWidth = 760;
-  const rows = article.bars.map(([label, value], index) => {
-    const y = 270 + index * 76;
-    const width = Math.max(8, (value / max) * chartWidth);
-    const fill = [palette.purple, palette.green, palette.orange][index % 3];
-    return `<text x="290" y="${y + 26}" text-anchor="end" fill="${palette.ink}" font-family="Arial" font-size="17" font-weight="700">${esc(label)}</text><rect x="${chartLeft}" y="${y}" width="${chartWidth}" height="38" rx="12" fill="${palette.white}" stroke="${palette.border}"/><rect x="${chartLeft}" y="${y}" width="${width}" height="38" rx="12" fill="${fill}"/><text x="${Math.min(chartLeft + width + 14, 1110)}" y="${y + 26}" fill="${palette.ink}" font-family="Arial" font-size="16" font-weight="700">${value}</text>`;
+function lanesVisual(article, title) {
+  const half = Math.ceil(article.flow.length / 2);
+  const lanes = [article.flow.slice(0, half), article.flow.slice(half)];
+  const body = lanes.map((lane, laneIndex) => {
+    const y = 140 + laneIndex * 122;
+    const width = 150;
+    return `<rect x="38" y="${y + 12}" width="72" height="32" rx="16" fill="${colors[laneIndex]}"/><text x="74" y="${y + 33}" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-weight="700">PATH ${laneIndex + 1}</text>${lane.map((item, index) => {
+      const x = 132 + index * 178;
+      const connector = index < lane.length - 1 ? `<path d="M${x + width} ${y + 28} H${x + 174}" stroke="${palette.ink}" stroke-width="3" marker-end="url(#arrow)"/>` : "";
+      return `${nodeBox(item, x, y, width, 56, laneIndex + index)}${connector}`;
+    }).join("")}`;
   }).join("");
-  return shell(`${article.title}: worked model`, "Values illustrate the decision framework; they are not observed customer performance", `${rows}<text x="600" y="625" text-anchor="middle" fill="${palette.muted}" font-family="Arial" font-size="15">Replace the example inputs with your own prices, costs, and policies.</text>`);
+  return shell(title, "two paths", `${arrowDefs}${body}`, 2);
 }
 
-function cardsSvg(article) {
-  const cards = article.cards.map(([label, text], index) => {
-    const x = 80 + index * 365;
-    const fill = [palette.purpleSoft, palette.orangeSoft, palette.greenSoft][index];
-    const accent = [palette.purple, palette.orange, palette.green][index];
-    return `<rect x="${x}" y="280" width="315" height="250" rx="26" fill="${fill}" stroke="${accent}" stroke-width="2"/><circle cx="${x + 48}" cy="330" r="26" fill="${accent}"/><text x="${x + 48}" y="338" text-anchor="middle" fill="white" font-family="Arial" font-size="22" font-weight="700">${index + 1}</text><text x="${x + 86}" y="338" fill="${palette.ink}" font-family="Arial" font-size="24" font-weight="700">${esc(label)}</text><foreignObject x="${x + 28}" y="380" width="259" height="100"><div xmlns="http://www.w3.org/1999/xhtml" style="font:18px Arial;color:${palette.muted};line-height:1.45">${esc(text)}</div></foreignObject>`;
+function cycleVisual(article, title) {
+  const count = article.flow.length;
+  const positions = article.flow.map((_, index) => {
+    const angle = -Math.PI / 2 + index * Math.PI * 2 / count;
+    return [350 + Math.cos(angle) * 238, 242 + Math.sin(angle) * 105];
+  });
+  const body = `<ellipse cx="350" cy="242" rx="238" ry="105" fill="none" stroke="${palette.border}" stroke-width="5"/><circle cx="350" cy="242" r="54" fill="${palette.ink}"/>${label("CONTROLLED LOOP", 305, 236, 90, 12, "white")}${positions.map(([x, y], index) => `<rect x="${x - 55}" y="${y - 24}" width="110" height="48" rx="24" fill="${softColors[index % softColors.length]}" stroke="${colors[index % colors.length]}" stroke-width="2"/>${label(article.flow[index], x - 46, y - 4, 92, 12)}`).join("")}`;
+  return shell(title, "lifecycle", body, 3);
+}
+
+function stepsVisual(article, title) {
+  const items = article.flow.slice(0, 5);
+  const body = items.map((item, index) => {
+    const x = 48 + index * 128;
+    const y = 280 - index * 34;
+    return `<polygon points="${x},${y} ${x + 50},${y - 18} ${x + 112},${y} ${x + 62},${y + 18}" fill="${softColors[index]}"/><rect x="${x}" y="${y}" width="112" height="54" fill="${colors[index]}"/><polygon points="${x + 112},${y} ${x + 128},${y - 10} ${x + 128},${y + 42} ${x + 112},${y + 54}" fill="${colors[(index + 1) % colors.length]}"/><text x="${x + 18}" y="${y + 34}" fill="white" font-family="Arial" font-size="18" font-weight="700">${index + 1}</text>${label(item, x - 4, y + 78, 120, 12)}`;
   }).join("");
-  const person = `<circle cx="600" cy="590" r="18" fill="${palette.ink}"/><path d="M 566 652 Q 570 610 600 610 Q 630 610 634 652" fill="${palette.ink}"/><path d="M 576 624 L 540 600 M 624 624 L 660 600" stroke="${palette.ink}" stroke-width="9" stroke-linecap="round"/>`;
-  return shell(`${article.title}: operating model`, "Three responsibilities the subscription team must make explicit", `${cards}${person}`);
+  return shell(title, "step art", body, 0);
+}
+
+function stackFlowVisual(article, title) {
+  const items = article.flow.slice(0, 6);
+  const body = items.map((item, index) => {
+    const inset = Math.min(index, items.length - 1 - index) * 22;
+    const y = 112 + index * 46;
+    return `<rect x="${64 + inset}" y="${y}" width="${572 - inset * 2}" height="36" rx="12" fill="${softColors[index % softColors.length]}" stroke="${colors[index % colors.length]}" stroke-width="2"/><circle cx="${88 + inset}" cy="${y + 18}" r="12" fill="${colors[index % colors.length]}"/><text x="${88 + inset}" y="${y + 22}" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="700">${index + 1}</text>${label(item, 112 + inset, y + 22, 480 - inset * 2, 13, palette.ink, "start")}`;
+  }).join("");
+  return shell(title, "policy stack", body, 1);
+}
+
+function barsVisual(article, title) {
+  const data = article.bars.slice(0, 5);
+  const max = Math.max(...data.map(([, value]) => value), 1);
+  const body = data.map(([name, value], index) => {
+    const y = 118 + index * 54;
+    const width = 360 * value / max;
+    return `${label(name, 42, y + 21, 190, 13, palette.ink, "start")}<rect x="238" y="${y}" width="390" height="30" rx="15" fill="${softColors[index % softColors.length]}"/><rect x="238" y="${y}" width="${Math.max(12, width)}" height="30" rx="15" fill="${colors[index % colors.length]}"/><text x="642" y="${y + 21}" text-anchor="end" fill="${palette.ink}" font-family="Arial" font-size="13" font-weight="700">${value}</text>`;
+  }).join("");
+  return shell(title, "bar chart", body, 2);
+}
+
+function numbersVisual(article, title) {
+  const data = article.bars.slice(0, 4);
+  const width = 600 / data.length;
+  const body = data.map(([name, value], index) => {
+    const x = 50 + index * width;
+    return `<circle cx="${x + width / 2}" cy="208" r="62" fill="${softColors[index % softColors.length]}" stroke="${colors[index % colors.length]}" stroke-width="5"/><text x="${x + width / 2}" y="220" text-anchor="middle" fill="${palette.ink}" font-family="Arial" font-size="34" font-weight="700">${value}</text>${label(name, x + 8, 304, width - 16, 13)}`;
+  }).join("");
+  return shell(title, "numbers", body, 3);
+}
+
+function unitsVisual(article, title) {
+  const data = article.bars.slice(0, 4);
+  const body = data.map(([name, value], row) => {
+    const y = 122 + row * 68;
+    const count = Math.min(12, Math.max(1, Math.round(value)));
+    return `${label(name, 42, y + 17, 190, 13, palette.ink, "start")}${Array.from({ length: count }, (_, index) => `<circle cx="${252 + index * 29}" cy="${y + 12}" r="9" fill="${colors[row % colors.length]}"/>`).join("")}<text x="648" y="${y + 17}" text-anchor="end" fill="${palette.ink}" font-family="Arial" font-size="13" font-weight="700">${value}</text>`;
+  }).join("");
+  return shell(title, "unit model", body, 0);
+}
+
+function pieVisual(article, title) {
+  const data = article.bars.slice(0, 4);
+  const total = data.reduce((sum, [, value]) => sum + value, 0) || 1;
+  const radius = 92;
+  const circumference = Math.PI * 2 * radius;
+  let offset = 0;
+  const rings = data.map(([, value], index) => {
+    const length = circumference * value / total;
+    const ring = `<circle cx="225" cy="232" r="${radius}" fill="none" stroke="${colors[index]}" stroke-width="54" stroke-dasharray="${length} ${circumference - length}" stroke-dashoffset="${-offset}" transform="rotate(-90 225 232)"/>`;
+    offset += length;
+    return ring;
+  }).join("");
+  const legend = data.map(([name, value], index) => `<circle cx="410" cy="${150 + index * 52}" r="9" fill="${colors[index]}"/>${label(name, 430, 155 + index * 52, 188, 13, palette.ink, "start")}<text x="648" y="${155 + index * 52}" text-anchor="end" fill="${palette.ink}" font-family="Arial" font-size="13" font-weight="700">${value}</text>`).join("");
+  return shell(title, "pie chart", `${rings}<circle cx="225" cy="232" r="54" fill="${palette.paper}"/>${legend}`, 1);
+}
+
+function funnelVisual(article, title) {
+  const data = article.bars.slice(0, 4);
+  const max = Math.max(...data.map(([, value]) => value), 1);
+  const body = data.map(([name, value], index) => {
+    const width = 250 + 270 * value / max;
+    const x = (700 - width) / 2;
+    const y = 112 + index * 65;
+    return `<path d="M${x} ${y} H${x + width} L${x + width - 25} ${y + 48} H${x + 25} Z" fill="${colors[index]}"/>${label(name, x + 28, y + 28, width - 110, 11, "white", "start")}<text x="${x + width - 35}" y="${y + 29}" text-anchor="end" fill="white" font-family="Arial" font-size="12" font-weight="700">${value}</text>`;
+  }).join("");
+  return shell(title, "funnel", body, 2);
+}
+
+function equationVisual(article, title, reverse = false) {
+  const source = reverse ? [article.bars[1], article.bars[0], article.bars[2]] : article.bars.slice(0, 3);
+  const body = source.map(([name, value], index) => {
+    const x = 46 + index * 226;
+    return `<rect x="${x}" y="142" width="156" height="144" rx="22" fill="${softColors[index]}" stroke="${colors[index]}" stroke-width="3"/><text x="${x + 78}" y="212" text-anchor="middle" fill="${palette.ink}" font-family="Arial" font-size="34" font-weight="700">${value}</text>${label(name, x + 16, 248, 124, 12)}`;
+  }).join("");
+  return shell(title, "equation", `${body}<text x="244" y="225" text-anchor="middle" fill="${palette.ink}" font-family="Arial" font-size="34" font-weight="700">−</text><text x="470" y="225" text-anchor="middle" fill="${palette.ink}" font-family="Arial" font-size="34" font-weight="700">=</text>`, 3);
+}
+
+function stackedVisual(article, title, hasTotal = false) {
+  const data = hasTotal ? article.bars.slice(0, -1) : article.bars;
+  const total = hasTotal ? article.bars.at(-1)[1] : data.reduce((sum, [, value]) => sum + value, 0) || 1;
+  let x = 54;
+  const width = hasTotal ? 500 : 592;
+  const segments = data.map(([name, value], index) => {
+    const segmentWidth = width * value / total;
+    const result = `<rect x="${x}" y="180" width="${segmentWidth}" height="92" fill="${colors[index]}"/>${segmentWidth > 85 ? label(name, x + 8, 215, segmentWidth - 16, 12, "white") : ""}<text x="${x + segmentWidth / 2}" y="252" text-anchor="middle" fill="white" font-family="Arial" font-size="13" font-weight="700">${value}</text>`;
+    x += segmentWidth;
+    return result;
+  }).join("");
+  const totalNode = hasTotal ? `<path d="M${x + 10} 226 H586" stroke="${palette.ink}" stroke-width="3" marker-end="url(#arrow)"/><rect x="600" y="166" width="64" height="120" rx="18" fill="${palette.ink}"/><text x="632" y="235" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="700">${total}</text>` : "";
+  return shell(title, "stacked model", `${arrowDefs}${segments}${totalNode}`, 0);
+}
+
+function isoBlock(x, y, width, height, index, title, detail = "") {
+  const depth = 20;
+  const color = colors[index % colors.length];
+  const side = colors[(index + 1) % colors.length];
+  return `<polygon points="${x},${y} ${x + depth},${y - depth} ${x + width + depth},${y - depth} ${x + width},${y}" fill="${softColors[index % softColors.length]}" stroke="${color}" stroke-width="2"/><rect x="${x}" y="${y}" width="${width}" height="${height}" rx="4" fill="${color}"/><polygon points="${x + width},${y} ${x + width + depth},${y - depth} ${x + width + depth},${y + height - depth} ${x + width},${y + height}" fill="${side}"/>${label(title, x + 8, y + 36, width - 16, 15, "white")}${detail ? label(detail, x + 8, y + height + 28, width + depth - 16, 12) : ""}`;
+}
+
+function triangleVisual(article, title) {
+  const [a, b, c] = article.cards;
+  const body = `<path d="M350 128 L145 318 H555 Z" fill="none" stroke="${palette.border}" stroke-width="8"/>${nodeBox(a[0], 250, 112, 200, 54, 0, true)}${nodeBox(b[0], 50, 302, 210, 54, 1, true)}${nodeBox(c[0], 440, 302, 210, 54, 2, true)}<circle cx="350" cy="252" r="50" fill="${palette.ink}"/>${label("SAFE MODEL", 306, 248, 88, 12, "white")}`;
+  return shell(title, "three-way fit", body, 1);
+}
+
+function hubVisual(article, title) {
+  const positions = [[48, 134], [470, 134], [260, 302]];
+  const connectors = positions.map(([x, y]) => `<path d="M350 242 L${x + 90} ${y + 30}" stroke="${palette.ink}" stroke-width="3"/>`).join("");
+  const cards = article.cards.map(([name], index) => nodeBox(name, positions[index][0], positions[index][1], 182, 58, index, true)).join("");
+  return shell(title, "system map", `${connectors}<circle cx="350" cy="242" r="58" fill="${palette.ink}"/>${label("ONE SOURCE OF TRUTH", 302, 238, 96, 11, "white")}${cards}`, 2);
+}
+
+function layersVisual(article, title) {
+  const body = article.cards.map(([name, detail], index) => {
+    const x = 54 + index * 28;
+    const y = 122 + index * 84;
+    const width = 592 - index * 56;
+    return `<rect x="${x}" y="${y}" width="${width}" height="64" rx="16" fill="${softColors[index]}" stroke="${colors[index]}" stroke-width="2"/><rect x="${x + 12}" y="${y + 12}" width="40" height="40" rx="20" fill="${colors[index]}"/><text x="${x + 32}" y="${y + 38}" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="700">${index + 1}</text>${label(name, x + 70, y + 27, 180, 14, palette.ink, "start")}${label(detail, x + 250, y + 25, width - 270, 12, palette.muted, "start", 400)}`;
+  }).join("");
+  return shell(title, "operating layers", body, 3);
+}
+
+function balanceVisual(article, title) {
+  const [left, right, foundation] = article.cards;
+  const body = `${isoBlock(70, 158, 180, 92, 0, left[0])}${isoBlock(450, 158, 180, 92, 1, right[0])}<path d="M248 285 H452" stroke="${palette.ink}" stroke-width="8" stroke-linecap="round"/><path d="M350 285 V325" stroke="${palette.ink}" stroke-width="8"/><path d="M292 340 H408" stroke="${palette.ink}" stroke-width="14" stroke-linecap="round"/>${label(foundation[0], 270, 378, 160, 12)}`;
+  return shell(title, "trade-off", body, 0);
+}
+
+function cycleSystemVisual(article, title) {
+  const positions = [[350, 142], [165, 302], [535, 302]];
+  const body = `<path d="M350 164 L185 284 M195 318 H505 M515 284 L350 164" fill="none" stroke="${palette.border}" stroke-width="6" marker-end="url(#arrow)"/>${article.cards.map(([name], index) => nodeBox(name, positions[index][0] - 82, positions[index][1] - 28, 164, 56, index, true)).join("")}<circle cx="350" cy="258" r="42" fill="${palette.ink}"/>${label("REVIEW", 316, 254, 68, 11, "white")}`;
+  return shell(title, "feedback loop", `${arrowDefs}${body}`, 1);
+}
+
+function renderVisual(article, type, title) {
+  const renderers = {
+    split: splitVisual,
+    timeline: timelineVisual,
+    lanes: lanesVisual,
+    cycle: cycleVisual,
+    steps: stepsVisual,
+    "stack-flow": stackFlowVisual,
+    bars: barsVisual,
+    numbers: numbersVisual,
+    units: unitsVisual,
+    pie: pieVisual,
+    funnel: funnelVisual,
+    equation: equationVisual,
+    "equation-reverse": (item, heading) => equationVisual(item, heading, true),
+    stacked: stackedVisual,
+    "stacked-total": (item, heading) => stackedVisual(item, heading, true),
+    triangle: triangleVisual,
+    hub: hubVisual,
+    layers: layersVisual,
+    balance: balanceVisual,
+    "cycle-system": cycleSystemVisual,
+  };
+  return (renderers[type] ?? hubVisual)(article, title);
+}
+
+async function writePng(svg, targets) {
+  const buffer = await sharp(Buffer.from(svg)).png({ palette: true, colours: 64, dither: 0 }).toBuffer();
+  for (const target of targets) {
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    fs.writeFileSync(target, buffer);
+  }
 }
 
 for (const article of articles) {
-  const targets = [
-    path.join(process.cwd(), "blogs", article.slug),
-    path.join(process.cwd(), "public", "blogs", article.slug),
+  const plan = visualPlans[article.slug];
+  const directory = path.join(process.cwd(), "blogs", article.slug);
+  const publicDirectory = path.join(process.cwd(), "public", "blogs", article.slug);
+  const names = ["decision-visual.png", "model-visual.png", "operating-visual.png"];
+  for (let index = 0; index < names.length; index++) {
+    await writePng(renderVisual(article, plan.types[index], plan.titles[index]), [path.join(directory, names[index]), path.join(publicDirectory, names[index])]);
+  }
+
+  const postPath = path.join(directory, "post.md");
+  let markdown = fs.readFileSync(postPath, "utf8");
+  const replacements = [
+    ["decision-flow.svg", names[0], `${plan.titles[0]} — a focused ${plan.types[0].replaceAll("-", " ")} for ${article.title}.`],
+    ["worked-model-bars.svg", names[1], `${plan.titles[1]} — an illustrative ${plan.types[1].replaceAll("-", " ")} for ${article.title}.`],
+    ["operating-model.svg", names[2], `${plan.titles[2]} — a focused ${plan.types[2].replaceAll("-", " ")} for ${article.title}.`],
   ];
-  const files = {
-    "decision-flow.svg": flowSvg(article),
-    "worked-model-bars.svg": barsSvg(article),
-    "operating-model.svg": cardsSvg(article),
-  };
-  for (const target of targets) {
-    fs.mkdirSync(target, { recursive: true });
-    for (const [name, svg] of Object.entries(files)) {
-      fs.writeFileSync(path.join(target, name), svg.trimStart(), "utf8");
+  for (const [oldName, newName, alt] of replacements) {
+    const imagePattern = new RegExp(`!\\[[^\\]]*\\]\\(\\/blogs\\/${article.slug}\\/${oldName.replace(".", "\\.")}\\)`);
+    markdown = markdown.replace(imagePattern, `![${alt}](/blogs/${article.slug}/${newName})`);
+  }
+  fs.writeFileSync(postPath, markdown, "utf8");
+
+  for (const root of [directory, publicDirectory]) {
+    for (const oldName of ["decision-flow.svg", "worked-model-bars.svg", "operating-model.svg"]) {
+      const oldPath = path.join(root, oldName);
+      if (fs.existsSync(oldPath)) fs.unlinkSync(oldPath);
     }
   }
 }
 
-console.log(`Generated ${articles.length * 3} SVGs in blogs/ and public/blogs/.`);
+const blogRoot = path.join(process.cwd(), "blogs");
+for (const slug of fs.readdirSync(blogRoot)) {
+  const directory = path.join(blogRoot, slug);
+  if (!fs.statSync(directory).isDirectory()) continue;
+  const publicDirectory = path.join(process.cwd(), "public", "blogs", slug);
+  const postPath = path.join(directory, "post.md");
+  let markdown = fs.existsSync(postPath) ? fs.readFileSync(postPath, "utf8") : "";
+  for (const name of fs.readdirSync(directory).filter((file) => file.endsWith(".svg"))) {
+    const source = path.join(directory, name);
+    const pngName = name.replace(/\.svg$/, ".png");
+    const png = await sharp(source, { density: 144 }).resize({ width: 700, withoutEnlargement: false }).png({ palette: true, colours: 64, dither: 0 }).toBuffer();
+    fs.writeFileSync(path.join(directory, pngName), png);
+    fs.mkdirSync(publicDirectory, { recursive: true });
+    fs.writeFileSync(path.join(publicDirectory, pngName), png);
+    markdown = markdown.replaceAll(`/blogs/${slug}/${name}`, `/blogs/${slug}/${pngName}`);
+    fs.unlinkSync(source);
+    const publicSource = path.join(publicDirectory, name);
+    if (fs.existsSync(publicSource)) fs.unlinkSync(publicSource);
+  }
+  if (postPath && markdown) fs.writeFileSync(postPath, markdown, "utf8");
+}
+
+console.log(`Generated ${articles.length * 3} focused 700px PNGs and removed blog SVG assets.`);

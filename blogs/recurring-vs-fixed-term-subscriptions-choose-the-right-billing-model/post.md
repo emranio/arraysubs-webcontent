@@ -33,7 +33,7 @@ The phrase “recurring versus fixed-term” hides a category error: recurring d
 | Prepaid fixed-term | Preset term or delivery count | Mainly upfront | Fund the term now, receive it over time |
 | Fixed-date term | Shared calendar cutoff | Periodic or upfront | Everyone reaches the same end date |
 
-![Decision flow for choosing ongoing or fixed-cycle recurring billing.](/blogs/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/decision-flow.svg)
+![What ends the agreement? — a focused split for Choose what ends the agreement.](/blogs/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/decision-visual.png)
 
 *First decide what ends the agreement; then decide how cash is collected.*
 
@@ -80,7 +80,7 @@ Assume a six-month program with a stated $240 price. Ignore tax, payment fees, d
 | Prepaid six months | $240 | $0 for covered term | $240 upfront | Term ends |
 | Fixed-date cohort | Policy-dependent | Policy-dependent | Must be disclosed per entry date | Shared cutoff |
 
-![Illustrative cash-timing bars for recurring and prepaid models.](/blogs/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/worked-model-bars.svg)
+![Cash timing — an illustrative bars for Choose what ends the agreement.](/blogs/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/model-visual.png)
 
 *Illustrative arithmetic only; replace the inputs with your own price and policy.*
 
@@ -98,7 +98,7 @@ Billing status does not fully define entitlement. Write explicit answers to thes
 
 WooCommerce Memberships' official integration demonstrates that subscription billing and access duration can be connected or independently defined ([Memberships + Subscriptions](https://woocommerce.com/document/woocommerce-memberships-subscriptions-integration/)).
 
-![Operating model for ongoing, fixed-cycle, and fixed-date subscription terms.](/blogs/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/operating-model.svg)
+![Three term models — a focused balance for Choose what ends the agreement.](/blogs/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/operating-visual.png)
 
 ## A seven-question decision framework
 

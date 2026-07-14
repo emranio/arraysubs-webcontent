@@ -34,7 +34,7 @@ A fixed date solves a calendar problem, not a billing-frequency problem. It does
 | Enrollment window | When may customers buy? | Aug 1–Sep 15 | Future access start |
 | Access window | When may service/content be used? | Sep 1–Jun 30 | Matching payment dates |
 
-![Fixed-date subscription decision flow.](/blogs/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/decision-flow.svg)
+![One shared calendar — a focused timeline for Fixed dates coordinate a shared calendar.](/blogs/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/decision-visual.png)
 
 ## When fixed date is the right model
 
@@ -72,7 +72,7 @@ Useful formulas are:
 
 These are policy models, not automatic ArraySubs calculations. Define endpoints, rounding, tax, coupons, cancelled units, and rescheduling.
 
-![Illustrative fixed-date pricing-policy bars.](/blogs/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/worked-model-bars.svg)
+![Late-entry policy — an illustrative numbers for Fixed dates coordinate a shared calendar.](/blogs/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/model-visual.png)
 
 ## Worked academic cohort
 
@@ -92,7 +92,7 @@ The product, cart, checkout, receipt, account, and policy should state access st
 
 Current ArraySubs Pro code suppresses a renewal whose next payment is at or after the fixed end. It can still allow an earlier full renewal. Therefore fixed date is a hard stop, not a final-period pricing engine.
 
-![Operating model for shared start, billing, and end responsibilities.](/blogs/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/operating-model.svg)
+![Cohort operating loop — a focused cycle system for Fixed dates coordinate a shared calendar.](/blogs/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/operating-visual.png)
 
 At the cutoff, current expiration can move active, trial, or on-hold subscriptions to Expired and unschedule renewal actions. Verify the actual entitlement integration; not every third-party content system is proven to revoke access at the same instant.
 

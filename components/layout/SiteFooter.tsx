@@ -34,10 +34,12 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
   {
     title: "Resources",
     links: [
-      ["Field Guides", "/deals/arraysubs/resources/"],
-      ["Documentation", "https://support.arrayhash.com/arraysubs/"],
+      ["Changelog", "/changelog/"],
+      ["Roadmap", "/roadmap/"],
+      ["Useful articles", "/deals/arraysubs/resources/"],
+      ["Knowledge", "https://support.arrayhash.com/"],
+      ["User portal login", "https://user-portal.arrayhash.com/"],
       ["Use Cases", "/deals/arraysubs/use-cases/"],
-      ["Support", "https://support.arrayhash.com/arraysubs/"],
       ["Become an Affiliate", "/become-an-affiliate/"],
     ],
   },

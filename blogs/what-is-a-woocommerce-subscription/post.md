@@ -37,7 +37,7 @@ When someone asks “what is a WooCommerce subscription?”, they often mean one
 
 WooCommerce's official documentation describes a subscription as an agreement for future transactions and an order as a record of a past or currently due transaction. A checkout-created subscription normally has at most one parent order and can have many renewal orders ([Subscription Products vs Subscriptions](https://woocommerce.com/document/subscriptions/subscription-product-vs-subscription/), [Subscription Orders](https://woocommerce.com/document/subscriptions/orders/)).
 
-![Relationship diagram from product and checkout to a parent order, subscription agreement, and repeated renewal orders.](/blogs/what-is-a-woocommerce-subscription/entity-map.svg)
+![Relationship diagram from product and checkout to a parent order, subscription agreement, and repeated renewal orders.](/blogs/what-is-a-woocommerce-subscription/entity-map.png)
 
 *The subscription is the continuing agreement. Orders are the transaction history around it.*
 
@@ -100,7 +100,7 @@ Renewal orders also create an audit trail. They let a merchant inspect the line 
 
 ## The subscription lifecycle, step by step
 
-![Flowchart from product configuration to checkout, subscription, automatic or manual renewal, success, hold, cancellation, or expiration.](/blogs/what-is-a-woocommerce-subscription/lifecycle.svg)
+![Flowchart from product configuration to checkout, subscription, automatic or manual renewal, success, hold, cancellation, or expiration.](/blogs/what-is-a-woocommerce-subscription/lifecycle.png)
 
 *The agreement persists while transaction orders are added around it.*
 
@@ -129,7 +129,7 @@ Woo's current status guide distinguishes Pending Cancellation from Cancelled and
 | Payment method | Stored method is reused unless changed | Customer can select an available method at renewal |
 | Typical email | Paid renewal receipt | Renewal invoice, then paid-order confirmation |
 
-![Split-path diagram comparing an automatic gateway charge with a customer-paid manual renewal.](/blogs/what-is-a-woocommerce-subscription/renewal-paths.svg)
+![Split-path diagram comparing an automatic gateway charge with a customer-paid manual renewal.](/blogs/what-is-a-woocommerce-subscription/renewal-paths.png)
 
 *Both paths begin with a scheduled renewal order; the difference is who completes payment.*
 
@@ -139,7 +139,7 @@ Woo states that automatic renewal requires a compatible gateway integration and 
 
 Assume a coffee subscription has no trial, charges once at signup, bills monthly, and expires after 12 total payments.
 
-![Horizontal bar timeline with one parent-order payment and eleven renewal-order payments ending at expiration.](/blogs/what-is-a-woocommerce-subscription/twelve-payments.svg)
+![Horizontal bar timeline with one parent-order payment and eleven renewal-order payments ending at expiration.](/blogs/what-is-a-woocommerce-subscription/twelve-payments.png)
 
 *A 12-total-payment plan contains payment one at signup plus 11 later renewals.*
 

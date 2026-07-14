@@ -53,6 +53,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: absoluteUrl("/roadmap/"),
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: absoluteUrl("/changelog/"),
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
     ...dealsRoutes.map(([path, priority]) => ({
       url: absoluteUrl(path),
       lastModified: new Date(),

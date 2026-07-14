@@ -24,7 +24,7 @@ A subscription dunning strategy is the coordinated policy for failed-payment ret
 
 ## Build the five-layer policy
 
-![A five-stage dunning flow from ownership through outcome.](/blogs/subscription-dunning-strategy-timing-messages-and-stop-rules/decision-flow.svg)
+![Dunning sequence — a focused timeline for Dunning coordinates retries, messages, and access.](/blogs/subscription-dunning-strategy-timing-messages-and-stop-rules/decision-visual.png)
 
 1. **Ownership:** who creates invoices and controls attempts?
 2. **Failure route:** retryable, customer action, hard stop, or unknown?
@@ -86,7 +86,7 @@ cancel threshold = due time + active grace + on-hold grace
 
 For remote billing, decide whether local service ends before, with, or after the gateway’s final recovery window. An accidental mismatch is a defect.
 
-![Bars aligning retry attempts, active grace, on-hold, and the final stop.](/blogs/subscription-dunning-strategy-timing-messages-and-stop-rules/worked-model-bars.svg)
+![Timing and contact — an illustrative numbers for Dunning coordinates retries, messages, and access.](/blogs/subscription-dunning-strategy-timing-messages-and-stop-rules/model-visual.png)
 
 *Planning timeline only; no universal cadence is recommended.*
 
@@ -115,7 +115,7 @@ incremental recovery at attempt N = first recoveries at N ÷ cases eligible imme
 
 Track duplicate charges, complaints, refunds, chargebacks, support, access/shipment mistakes, update completion, reconciliation mismatch, and email delivery. Test one material variable at a time—message, timing, or grace—not all three.
 
-![An operating model linking failure evidence, policy, customer actions, service state, and measurement.](/blogs/subscription-dunning-strategy-timing-messages-and-stop-rules/operating-model.svg)
+![Measure the outcome — a focused cycle system for Dunning coordinates retries, messages, and access.](/blogs/subscription-dunning-strategy-timing-messages-and-stop-rules/operating-visual.png)
 
 For implementation detail and a recovery runbook, read [Failed Subscription Payment Recovery](/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/).
 

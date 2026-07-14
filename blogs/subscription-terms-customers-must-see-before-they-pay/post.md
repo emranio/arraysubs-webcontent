@@ -45,7 +45,7 @@ The customer should not need to assemble the commercial promise from a price bad
 
 This is a checklist, not a universal legal form. The exact material terms depend on product, payment method, country/state, customer type, and contract.
 
-![Disclosure flow from product offer through customer account.](/blogs/subscription-terms-customers-must-see-before-they-pay/decision-flow.svg)
+![Terms before payment — a focused timeline for Put the complete recurring promise before payment.](/blogs/subscription-terms-customers-must-see-before-they-pay/decision-visual.png)
 
 ## Plain-language billing disclosure
 
@@ -61,7 +61,7 @@ Example:
 
 When a price changes after an introductory period, show both phases. When annual pricing is displayed as “$25/month,” keep “$300 billed annually” more prominent. When a free trial has a $20 setup fee, say “$20 due today,” not simply “free.”
 
-![Illustrative completeness bars for term groups that need review.](/blogs/subscription-terms-customers-must-see-before-they-pay/worked-model-bars.svg)
+![Disclosure coverage — an illustrative bars for Put the complete recurring promise before payment.](/blogs/subscription-terms-customers-must-see-before-they-pay/model-visual.png)
 
 *Template counts, not compliance scores or observed customer data.*
 
@@ -127,7 +127,7 @@ Use a non-preselected checkbox or another affirmative control when appropriate f
 
 If the customer omits consent, identify the control and describe the error in text. W3C form guidance recommends labels, grouped controls, instructions, validation, and user notifications; color alone is not enough ([Forms Tutorial](https://www.w3.org/WAI/tutorials/forms/), [Error Identification](https://www.w3.org/WAI/WCAG22/Understanding/error-identification)).
 
-![Three-part operating model for understandable, prominent, and provable subscription terms.](/blogs/subscription-terms-customers-must-see-before-they-pay/operating-model.svg)
+![Understandable and provable — a focused layers for Put the complete recurring promise before payment.](/blogs/subscription-terms-customers-must-see-before-they-pay/operating-visual.png)
 
 ## Preserve proof of the promise
 

@@ -51,7 +51,7 @@ Ordinary monthly service belongs in the recurring price. General advertising, cu
 
 Ask one test question: **Can support explain in one sentence what happens after this fee is paid that does not happen for an existing subscriber?** If not, charge $0 or include the value transparently in the recurring offer.
 
-![Decision flow for deciding whether a subscription needs a sign-up fee.](/blogs/subscription-sign-up-fees-unit-economics-ux-and-examples/decision-flow.svg)
+![Does setup need a fee? — a focused split for A sign-up fee must fund a real first-period cost.](/blogs/subscription-sign-up-fees-unit-economics-ux-and-examples/decision-visual.png)
 
 ## Calculate a defensible amount
 
@@ -79,7 +79,7 @@ Assume a service onboarding requires:
 
 If the plan is $120/month with no trial, the initial subtotal is $200 before tax: $80 setup plus $120 first period. With a free trial, the due-today subtotal is $80 before tax, and the recurring price begins according to the disclosed and tested trial schedule.
 
-![Illustrative sign-up fee, setup labor, and welcome-kit cost bars.](/blogs/subscription-sign-up-fees-unit-economics-ux-and-examples/worked-model-bars.svg)
+![First-period cost — an illustrative stacked for A sign-up fee must fund a real first-period cost.](/blogs/subscription-sign-up-fees-unit-economics-ux-and-examples/model-visual.png)
 
 *Fictional arithmetic for explaining the model, not a market price or benchmark.*
 
@@ -115,7 +115,7 @@ Example copy:
 
 When a trial applies, say “$80 setup fee due today; recurring service is free for 14 days,” not simply “14-day free trial.”
 
-![Three-part operating model for fee cost basis, customer value, and refund rule.](/blogs/subscription-sign-up-fees-unit-economics-ux-and-examples/operating-model.svg)
+![Fee policy — a focused layers for A sign-up fee must fund a real first-period cost.](/blogs/subscription-sign-up-fees-unit-economics-ux-and-examples/operating-visual.png)
 
 ## Refund and cancellation states
 

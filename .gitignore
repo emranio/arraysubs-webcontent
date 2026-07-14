@@ -15,6 +15,7 @@ next-env.d.ts
 .DS_Store
 *.pem
 /licenses/
+/storage/
 
 # debug
 npm-debug.log*

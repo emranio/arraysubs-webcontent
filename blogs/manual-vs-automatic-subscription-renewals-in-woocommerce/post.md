@@ -33,7 +33,7 @@ Use automatic renewals when the gateway and product support reliable off-session
 | Best fit | High-touch invoicing, unsupported methods, explicit approval | Ongoing access, replenishment, lower-friction continuity |
 | Required proof | Pay Now path and reminders | Off-session charge, reconciliation, retry, update-method path |
 
-![A decision flow for choosing manual, local automatic, or remote automatic renewal.](/blogs/manual-vs-automatic-subscription-renewals-in-woocommerce/decision-flow.svg)
+![Who initiates payment? — a focused lanes for Choose who initiates each renewal payment.](/blogs/manual-vs-automatic-subscription-renewals-in-woocommerce/decision-visual.png)
 
 ## How manual renewals work
 
@@ -63,7 +63,7 @@ Stripe Billing Smart Retries do not automatically control the current ArraySubs 
 
 ## Compare the operational workload
 
-![Illustrative bars comparing customer action, automation, reconciliation, and support work.](/blogs/manual-vs-automatic-subscription-renewals-in-woocommerce/worked-model-bars.svg)
+![Customer touchpoints — an illustrative bars for Choose who initiates each renewal payment.](/blogs/manual-vs-automatic-subscription-renewals-in-woocommerce/model-visual.png)
 
 *Conceptual workload, not measured performance.*
 
@@ -118,7 +118,7 @@ Choose **automatic** when:
 
 Offer both only when the product page and account clearly distinguish them and each path is tested.
 
-![An operating model linking customer, WooCommerce order, subscription engine, and gateway owner.](/blogs/manual-vs-automatic-subscription-renewals-in-woocommerce/operating-model.svg)
+![Automatic and manual — a focused balance for Choose who initiates each renewal payment.](/blogs/manual-vs-automatic-subscription-renewals-in-woocommerce/operating-visual.png)
 
 ## Verification checklist
 

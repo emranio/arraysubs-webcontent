@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "cards": [
+    {
+      "id": "installment-split-payments",
+      "product": "arraysubs",
+      "status": "planned",
+      "title": "Installment and split payments",
+      "description": "Break a purchase into a clear payment schedule while keeping subscription and order records aligned.",
+      "createdAt": "2026-07-09T00:00:00.000Z",
+      "updatedAt": "2026-07-09T00:00:00.000Z",
+      "submittedByHash": null,
+      "voterHashes": []
+    },
+    {
+      "id": "early-renewal",
+      "product": "arraysubs",
+      "status": "planned",
+      "title": "Early renewal",
+      "description": "Let customers renew before the due date with safeguards for dates, totals, and duplicate payments.",
+      "createdAt": "2026-07-09T00:00:00.000Z",
+      "updatedAt": "2026-07-09T00:00:00.000Z",
+      "submittedByHash": null,
+      "voterHashes": []
+    },
+    {
+      "id": "donation-crowdfunding",
+      "product": "arraysubs",
+      "status": "planned",
+      "title": "Donation and crowdfunding tools",
+      "description": "Support recurring contributions and campaign-style funding with flexible customer amounts.",
+      "createdAt": "2026-07-09T00:00:00.000Z",
+      "updatedAt": "2026-07-09T00:00:00.000Z",
+      "submittedByHash": null,
+      "voterHashes": []
+    },
+    {
+      "id": "customer-chosen-subscription-duration",
+      "product": "arraysubs",
+      "status": "released",
+      "title": "Customer-chosen subscription duration",
+      "description": "Customers can choose subscription length and billing period, with those choices preserved through renewals and plan changes.",
+      "createdAt": "2026-07-14T00:00:00.000Z",
+      "updatedAt": "2026-07-14T00:00:00.000Z",
+      "submittedByHash": null,
+      "voterHashes": []
+    },
+    {
+      "id": "renewal-synchronization",
+      "product": "arraysubs",
+      "status": "released",
+      "title": "Renewal synchronization",
+      "description": "Align new subscriptions to daily, weekly, monthly, or yearly renewal boundaries with clear first-charge choices.",
+      "createdAt": "2026-06-07T00:00:00.000Z",
+      "updatedAt": "2026-07-10T00:00:00.000Z",
+      "submittedByHash": null,
+      "voterHashes": []
+    },
+    {
+      "id": "block-content-restriction",
+      "product": "arraysubs",
+      "status": "released",
+      "title": "Block-level content restriction",
+      "description": "Protect Gutenberg blocks and Elementor content with member access controls directly in the editor.",
+      "createdAt": "2026-06-25T00:00:00.000Z",
+      "updatedAt": "2026-06-27T00:00:00.000Z",
+      "submittedByHash": null,
+      "voterHashes": []
+    }
+  ],
+  "voteEvents": []
+}

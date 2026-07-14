@@ -37,7 +37,7 @@ A **free trial** delays the recurring price for a defined evaluation period. It 
 
 A sign-up fee is a separate one-time amount. WooCommerce and ArraySubs both document that it may remain due during a free trial, so a “free trial” checkout is not necessarily $0 ([Woo subscription products](https://woocommerce.com/document/subscriptions/creating-subscription-products/), [ArraySubs product configuration](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html)).
 
-![Decision flow for choosing free, paid, or no subscription trial.](/blogs/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/decision-flow.svg)
+![Choose the trial — a focused split for Choose a trial by proof, cost, and abuse risk.](/blogs/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/decision-visual.png)
 
 ## Decide card timing separately
 
@@ -81,7 +81,7 @@ Use one eligibility denominator and a horizon that includes the trial, first sta
 
 This prevents a no-card trial from looking successful merely because it generates many low-quality starts, and prevents a card-required trial from looking successful merely because it filters people before the denominator begins.
 
-![Illustrative price-timing bars for free trial, paid evaluation, and no trial.](/blogs/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/worked-model-bars.svg)
+![Friction and exposure — an illustrative numbers for Choose a trial by proof, cost, and abuse risk.](/blogs/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/model-visual.png)
 
 *The visual is a decision aid, not observed conversion data.*
 
@@ -98,7 +98,7 @@ Track product COGS, shipping, staff minutes, tickets, abuse, gateway fees, refun
 | Coaching or managed service | Paid evaluation or no trial | Fixed scope, qualification, refund terms |
 | Physical subscription box | Paid first shipment or no trial | Address verification, quantity limits, shipping disclosure |
 
-![Operating model for trial friction, exposure, and proof of value.](/blogs/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/operating-model.svg)
+![Proof of value — a focused triangle for Choose a trial by proof, cost, and abuse risk.](/blogs/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/operating-visual.png)
 
 ## Run a defensible experiment
 

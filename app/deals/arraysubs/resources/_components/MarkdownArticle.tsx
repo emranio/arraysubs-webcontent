@@ -118,7 +118,7 @@ const components: Components = {
       alt={alt}
       loading="lazy"
       decoding="async"
-      className="my-9 h-auto w-full rounded-2xl border border-border bg-surface"
+      className="mx-auto my-9 h-auto w-full max-w-[43.75rem] rounded-2xl border border-border bg-surface"
       {...(props as ComponentPropsWithoutRef<"img">)}
     />
   ),

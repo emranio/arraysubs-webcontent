@@ -24,7 +24,7 @@ Changing a renewal date safely means changing the subscription’s authoritative
 
 ## Why a direct edit is dangerous
 
-![A dependency flow from next-payment date to invoice, charge, reminder, access, and gateway.](/blogs/changing-a-subscription-renewal-date-safely/decision-flow.svg)
+![Move the whole schedule — a focused timeline for A renewal-date change is a coordinated migration.](/blogs/changing-a-subscription-renewal-date-safely/decision-visual.png)
 
 Changing only `_next_payment_date` can leave an old scheduled charge, invoice, reminder, retry, cancellation, or deferred switch. A remote gateway may also keep its own date. WooCommerce developer guidance similarly warns that direct date changes without rescheduling actions leave the prior action in place ([subscription data structures](https://woocommerce.com/document/subscriptions/develop/data-structure/)).
 
@@ -70,7 +70,7 @@ Execute the smallest workflow matching the outcome. Do not combine date repair w
 
 ### 5. Verify proof
 
-![Bars comparing old and replacement invoice, renewal, and reminder schedules.](/blogs/changing-a-subscription-renewal-date-safely/worked-model-bars.svg)
+![Old date to new date — an illustrative numbers for A renewal-date change is a coordinated migration.](/blogs/changing-a-subscription-renewal-date-safely/model-visual.png)
 
 Confirm one correct future renewal action, one invoice action at the lead time, the new reminder, no stale retry, correct open-order disposition, remote/local agreement, and a private note with old/new values and actor.
 
@@ -91,7 +91,7 @@ A 14-day pause with an August 15 next date and December 15 end date shifts them 
 
 Moving a charge earlier shortens paid time and generally requires explicit consent and amount review. Moving it later while access continues gives extra service time and may need a credit or documented courtesy extension. Skipping a whole cycle normally also skips the associated service/fulfillment. There is no universal proration answer.
 
-![An operating model for controlled change, scheduler replacement, gateway check, and customer confirmation.](/blogs/changing-a-subscription-renewal-date-safely/operating-model.svg)
+![Controlled date change — a focused hub for A renewal-date change is a coordinated migration.](/blogs/changing-a-subscription-renewal-date-safely/operating-visual.png)
 
 ## Completion checklist
 

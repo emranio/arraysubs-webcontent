@@ -24,7 +24,7 @@ A subscription is the customer’s ongoing agreement, a parent order records the
 
 ## The record relationship
 
-![A flow from catalog product to parent order, subscription, and recurring renewal orders.](/blogs/subscription-order-vs-renewal-order-vs-parent-order/decision-flow.svg)
+![One record, one job — a focused timeline for Give every subscription record one clear job.](/blogs/subscription-order-vs-renewal-order-vs-parent-order/decision-visual.png)
 
 | Record | Owns | Does not own |
 | --- | --- | --- |
@@ -66,7 +66,7 @@ A catalog price change does not automatically reprice current ArraySubs subscrip
 
 A renewal order is the evidence for one cycle. Inspect it for product subtotal, recurring shipping, tax, fees, discounts, currency, payment method, transaction ID, failure message, timestamps, refund, and notes.
 
-![Illustrative bars comparing information stored on the agreement and transaction records.](/blogs/subscription-order-vs-renewal-order-vs-parent-order/worked-model-bars.svg)
+![Records after three cycles — an illustrative units for Give every subscription record one clear job.](/blogs/subscription-order-vs-renewal-order-vs-parent-order/model-visual.png)
 
 *Information-density illustration, not measured data.*
 
@@ -90,7 +90,7 @@ This differs from the grouping model documented by WooCommerce Subscriptions for
 | Refund missing | Affected order/gateway | Subscription cancellation or credit handled separately |
 | Catalog edit had no effect | Product versus subscription | Cohort and migration policy |
 
-![An operating model for tracing a customer issue across records, jobs, and gateway events.](/blogs/subscription-order-vs-renewal-order-vs-parent-order/operating-model.svg)
+![Trace the transaction — a focused hub for Give every subscription record one clear job.](/blogs/subscription-order-vs-renewal-order-vs-parent-order/operating-visual.png)
 
 ## Reporting without double counting
 

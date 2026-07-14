@@ -32,7 +32,7 @@ The phrase “WooCommerce subscription product types” can refer to three diffe
 2. **Payment and duration model:** Does the customer pay until cancellation, for a fixed number of cycles, upfront for a term, in installments, or once for lifetime access?
 3. **Delivery model:** Does the store ship goods, deliver files, provide a service, or grant access?
 
-![Three-column taxonomy for catalog structure, payment promise, and what the customer receives.](/blogs/woocommerce-subscription-product-types/three-axis-taxonomy.svg)
+![Three-column taxonomy for catalog structure, payment promise, and what the customer receives.](/blogs/woocommerce-subscription-product-types/three-axis-taxonomy.png)
 
 *The three-axis framework is an ArraySubs editorial model, not a vendor taxonomy.*
 
@@ -107,7 +107,7 @@ Do not assume ArraySubs bundle or composite behavior from Woo's documentation. I
 
 ## Axis 2: choose the payment and duration model
 
-![Flowchart for choosing ongoing, fixed-cycle, prepaid, installment, or lifetime terms.](/blogs/woocommerce-subscription-product-types/choose-model-flow.svg)
+![Flowchart for choosing ongoing, fixed-cycle, prepaid, installment, or lifetime terms.](/blogs/woocommerce-subscription-product-types/choose-model-flow.png)
 
 *Choose how the agreement ends before choosing the billing interval.*
 
@@ -157,7 +157,7 @@ Woo's billing-alignment guide explains that alignment changes renewal timing and
 
 The following chart uses a deterministic $150 example. It is not performance data and does not imply one model is more profitable.
 
-![Grouped bar chart comparing six 25 dollar payments with one 150 dollar prepaid payment.](/blogs/woocommerce-subscription-product-types/cash-timing-bars.svg)
+![Grouped bar chart comparing six 25 dollar payments with one 150 dollar prepaid payment.](/blogs/woocommerce-subscription-product-types/cash-timing-bars.png)
 
 *Illustrative cash timing for the same $150 stated price; excludes tax, fees, refunds, defaults, and the time value of money.*
 
@@ -175,7 +175,7 @@ A trial changes when the recurring charge begins. A sign-up fee adds a one-time 
 
 Woo's current example shows that a $75 recurring charge plus a $200 sign-up fee produces $275 at checkout when there is no trial. With a free trial, the $200 fee remains due at checkout while the $75 recurring charge is delayed ([creating a subscription product](https://woocommerce.com/document/subscriptions/creating-subscription-products/)).
 
-![Two donut charts comparing checkout components with and without a free trial.](/blogs/woocommerce-subscription-product-types/trial-fee-donuts.svg)
+![Two donut charts comparing checkout components with and without a free trial.](/blogs/woocommerce-subscription-product-types/trial-fee-donuts.png)
 
 *Worked example, not customer-behavior data: without a trial, $275 includes $200 fee and $75 first period; with a trial, $200 is due and the recurring charge waits.*
 
@@ -217,7 +217,7 @@ Billing and entitlement are connected but separate. Woo's official stack treats 
 
 The following editorial score is a planning rubric, not measured store data. It estimates the number of operational dimensions a team must test: offer combinations, renewal paths, fulfillment schedules, and change/cancellation rules.
 
-![Horizontal bar chart showing an illustrative operational-complexity rubric for simple, variable, prepaid physical, and installment models.](/blogs/woocommerce-subscription-product-types/complexity-bars.svg)
+![Horizontal bar chart showing an illustrative operational-complexity rubric for simple, variable, prepaid physical, and installment models.](/blogs/woocommerce-subscription-product-types/complexity-bars.png)
 
 *Illustrative planning rubric only. Use it to ask better questions, not to compare revenue or conversion.*
 

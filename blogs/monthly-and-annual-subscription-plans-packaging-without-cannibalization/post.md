@@ -38,7 +38,7 @@ Offer both when the same value can support both cash profiles. A variable WooCom
 
 Do not confuse a rolling annual plan with a fixed calendar membership year. If everyone ends on December 31, use a [fixed-date subscription model](/deals/arraysubs/resources/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/).
 
-![Decision flow for offering monthly, annual, or both subscription cadences.](/blogs/monthly-and-annual-subscription-plans-packaging-without-cannibalization/decision-flow.svg)
+![Monthly, annual, or both? — a focused split for Package monthly and annual plans around commitment.](/blogs/monthly-and-annual-subscription-plans-packaging-without-cannibalization/decision-visual.png)
 
 ## Calculate annual savings transparently
 
@@ -67,7 +67,7 @@ Gross-billing break-even count = A ÷ M
 
 These numbers ignore tax, gateway fees, refunds, failed payments, service cost, and time value of money. They explain price timing; they do not forecast retention or profit.
 
-![Illustrative monthly and annual price bars.](/blogs/monthly-and-annual-subscription-plans-packaging-without-cannibalization/worked-model-bars.svg)
+![Price view — an illustrative bars for Package monthly and annual plans around commitment.](/blogs/monthly-and-annual-subscription-plans-packaging-without-cannibalization/model-visual.png)
 
 Annual collects $300 at signup for the covered year. Monthly collects $30 at signup and up to eleven later $30 renewals across twelve paid months. Annual creates fewer payment events in the first term; that does not prove fewer failures or higher profitability.
 
@@ -112,7 +112,7 @@ Keep “$300 billed annually” visually prominent. The $25 equivalent is compar
 
 State cancellation and refund behavior near the choice: whether cancellation stops future renewal only, how long paid access remains, how physical deliveries continue, and when full or partial refunds apply. WooCommerce distinguishes automatic gateway refunds from manual refund records ([WooCommerce refunds](https://woocommerce.com/document/woocommerce-refunds/)).
 
-![Operating model comparing monthly, annual, and dual-cadence packaging.](/blogs/monthly-and-annual-subscription-plans-packaging-without-cannibalization/operating-model.svg)
+![Package the commitment — a focused balance for Package monthly and annual plans around commitment.](/blogs/monthly-and-annual-subscription-plans-packaging-without-cannibalization/operating-visual.png)
 
 ## Defaults and emphasis are experiments
 

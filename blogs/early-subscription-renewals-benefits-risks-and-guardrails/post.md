@@ -24,7 +24,7 @@ An early renewal lets a customer pay the next scheduled subscription obligation 
 
 ## Define the customer outcome first
 
-![A decision flow for identifying the cycle, charging safely, advancing schedule, and fulfilling.](/blogs/early-subscription-renewals-benefits-risks-and-guardrails/decision-flow.svg)
+![Advance value once — a focused cycle for Early renewal must advance value exactly once.](/blogs/early-subscription-renewals-benefits-risks-and-guardrails/decision-visual.png)
 
 Customers may ask to renew early because they are traveling, replacing a card, avoiding service interruption, restocking early, or spending a budget before a deadline. Those intents are different.
 
@@ -65,7 +65,7 @@ before charge:
 7. release the lock only after durable reconciliation
 ```
 
-![A worked comparison of one paid obligation versus an accidental duplicate.](/blogs/early-subscription-renewals-benefits-risks-and-guardrails/worked-model-bars.svg)
+![Duplicate-risk checks — an illustrative numbers for Early renewal must advance value exactly once.](/blogs/early-subscription-renewals-benefits-risks-and-guardrails/model-visual.png)
 
 *Risk illustration only; no incident rate is implied.*
 
@@ -91,7 +91,7 @@ ArraySubs Pro Subscription Shipping controls renewal shipping charges, not an in
 
 For a locally scheduled manual or Stripe renewal, the extension can potentially coordinate the cycle and charge. For PayPal or Paddle remote subscriptions, the provider owns the billing schedule. Collecting locally without changing or reconciling the remote plan can cause the provider to charge again on the original date.
 
-![An operating model connecting customer request, cycle lock, order, gateway, schedule, and fulfillment.](/blogs/early-subscription-renewals-benefits-risks-and-guardrails/operating-model.svg)
+![Early-renewal owners — a focused hub for Early renewal must advance value exactly once.](/blogs/early-subscription-renewals-benefits-risks-and-guardrails/operating-visual.png)
 
 ## Eligibility and guardrails
 

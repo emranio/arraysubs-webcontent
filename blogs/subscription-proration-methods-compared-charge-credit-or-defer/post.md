@@ -24,7 +24,7 @@ Use immediate proration when access should change now and the customer can settl
 
 ## Compare the three methods
 
-![A three-lane flow comparing immediate, deferred, and full-price plan changes.](/blogs/subscription-proration-methods-compared-charge-credit-or-defer/decision-flow.svg)
+![Three change paths — a focused lanes for Proration decides who keeps unused value.](/blogs/subscription-proration-methods-compared-charge-credit-or-defer/decision-visual.png)
 
 | Method | Cash at request | Access changes | Next billing anchor |
 | --- | --- | --- | --- |
@@ -55,7 +55,7 @@ net due = $15
 
 For a downgrade from $60 to $30, the same arithmetic creates a $15 credit candidate and $0 due now. Current ArraySubs stores that surplus as internal subscription credit; it is not automatically a gateway refund or a general store wallet.
 
-![Bars comparing the illustrative old-plan value, target-plan value, charge, and credit.](/blogs/subscription-proration-methods-compared-charge-credit-or-defer/worked-model-bars.svg)
+![Proration equation — an illustrative equation reverse for Proration decides who keeps unused value.](/blogs/subscription-proration-methods-compared-charge-credit-or-defer/model-visual.png)
 
 *Illustrative arithmetic excludes tax, shipping, coupons, fees, refunds, and gateway costs.*
 
@@ -73,7 +73,7 @@ Current “No Proration” behavior charges the full target recurring price now,
 
 Choose immediate when the buyer needs higher-tier access now, the adjustment can be paid reliably, and the store can explain the amount and next date. Choose deferred when paid access should remain intact or a clean boundary simplifies operations. Use full-price replacement only when overlapping value and the new anchor are deliberate.
 
-![An operating model connecting quote, payment, entitlement, credit, and future schedule.](/blogs/subscription-proration-methods-compared-charge-credit-or-defer/operating-model.svg)
+![Money, access, schedule — a focused triangle for Proration decides who keeps unused value.](/blogs/subscription-proration-methods-compared-charge-credit-or-defer/operating-visual.png)
 
 ## Current limitations to disclose
 

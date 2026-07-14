@@ -38,7 +38,7 @@ Write one approved sentence for each field before touching configuration:
 
 If the team cannot answer these consistently, return to the [subscription product-type guide](/deals/arraysubs/resources/subscription-foundations/woocommerce-subscription-product-types/).
 
-![A launch gate flow from offer definition through production monitoring.](/blogs/woocommerce-subscription-launch-readiness-checklist/decision-flow.svg)
+![Test the full loop — a focused cycle for Prove the full subscription loop before launch.](/blogs/woocommerce-subscription-launch-readiness-checklist/decision-visual.png)
 
 ## Gate 2: verify product and checkout truth
 
@@ -74,7 +74,7 @@ At minimum, retain screenshots, IDs, amounts, timestamps, and logs for:
 9. cancellation at the configured timing;
 10. access or fulfillment after each state change.
 
-![A bar-style launch scorecard for commercial, technical, operational, and customer checks.](/blogs/woocommerce-subscription-launch-readiness-checklist/worked-model-bars.svg)
+![Launch scorecard — an illustrative bars for Prove the full subscription loop before launch.](/blogs/woocommerce-subscription-launch-readiness-checklist/model-visual.png)
 
 *The scorecard is a planning aid, not a performance benchmark.*
 
@@ -126,7 +126,7 @@ Use exact amounts, dates, timezones, status outcomes, and actions. Do not expose
 
 ## Gate 8: define production observability
 
-![An operating model linking checkout, scheduler, gateway, fulfillment, support, and monitoring.](/blogs/woocommerce-subscription-launch-readiness-checklist/operating-model.svg)
+![Production owners — a focused hub for Prove the full subscription loop before launch.](/blogs/woocommerce-subscription-launch-readiness-checklist/operating-visual.png)
 
 Before enabling sales, create views or alerts for:
 

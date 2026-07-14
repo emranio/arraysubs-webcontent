@@ -36,7 +36,7 @@ The default should be simple. Add variations only when the choice is meaningful 
 | QA surface | One purchase path | Every valid variation and switch path |
 | Best fit | One membership, retainer, or box | Tier, size, format, or cadence choices |
 
-![Decision flow for choosing a simple or variable WooCommerce subscription.](/blogs/simple-vs-variable-woocommerce-subscriptions-which-product-type-fits/decision-flow.svg)
+![Choose by buyer choice — a focused split for Simple or variable? Choose by customer choice.](/blogs/simple-vs-variable-woocommerce-subscriptions-which-product-type-fits/decision-visual.png)
 
 *Use variations only when they clarify a real buying decision.*
 
@@ -69,7 +69,7 @@ The configuration surface grows multiplicatively:
 
 Two billing cadences and three tiers create six possible variations. Add four box sizes and the theoretical matrix becomes 24. You may omit invalid combinations, but every enabled one still needs coherent terms and a test path.
 
-![Illustrative bar chart showing how configuration work increases from simple to variable offers.](/blogs/simple-vs-variable-woocommerce-subscriptions-which-product-type-fits/worked-model-bars.svg)
+![Configuration load — an illustrative units for Simple or variable? Choose by customer choice.](/blogs/simple-vs-variable-woocommerce-subscriptions-which-product-type-fits/model-visual.png)
 
 *Illustrative planning model, not measured store performance.*
 
@@ -94,7 +94,7 @@ Putting plans under one parent does not automatically make them switchable. A sa
 
 WooCommerce Subscriptions can switch between eligible variations when switching is enabled, but the selected gateway must support required recurring amount or date changes ([Switching Guide](https://woocommerce.com/document/subscriptions/switching-guide/), [Payment Gateways](https://woocommerce.com/document/subscriptions/payment-gateways/)). ArraySubs likewise requires explicit eligible targets and policy; it supports product and variation identities separately.
 
-![Three-part operating model for catalog, checkout, and subscription operations.](/blogs/simple-vs-variable-woocommerce-subscriptions-which-product-type-fits/operating-model.svg)
+![Catalog to operations — a focused triangle for Simple or variable? Choose by customer choice.](/blogs/simple-vs-variable-woocommerce-subscriptions-which-product-type-fits/operating-visual.png)
 
 ## Reporting and catalog maintenance
 

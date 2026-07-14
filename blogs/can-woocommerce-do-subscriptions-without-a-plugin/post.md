@@ -28,7 +28,7 @@ WooCommerce core provides products, cart, checkout, customer accounts, one-time 
 
 What core does not create is the persistent customer-specific agreement that says what should renew, when it is due, how many cycles remain, which payment context applies, and what happens when payment, access, cancellation, or fulfillment changes. WooCommerce presents Subscriptions as a separate extension for recurring products and payments ([WooCommerce Subscriptions](https://woocommerce.com/products/woocommerce-subscriptions/)).
 
-![A simple decision flow showing core commerce, manual repetition, and a true subscription engine.](/blogs/can-woocommerce-do-subscriptions-without-a-plugin/decision-flow.svg)
+![Repeat sales or subscription? — a focused split for Separate repeat sales from subscription operations.](/blogs/can-woocommerce-do-subscriptions-without-a-plugin/decision-visual.png)
 
 ## Why “charge the card every month” is incomplete
 
@@ -60,7 +60,7 @@ A manual workflow can be legitimate when all of these are true:
 
 This is closer to recurring invoicing than automatic subscription billing. It can fit retainers, wholesale reorders, or high-touch services, but it should not be marketed as “automatic renewal.”
 
-![Illustrative workload bars comparing manual operations with an automated lifecycle.](/blogs/can-woocommerce-do-subscriptions-without-a-plugin/worked-model-bars.svg)
+![Operating workload — an illustrative bars for Separate repeat sales from subscription operations.](/blogs/can-woocommerce-do-subscriptions-without-a-plugin/model-visual.png)
 
 *Conceptual comparison only; use your own order and support data.*
 
@@ -86,7 +86,7 @@ A WooCommerce extension keeps the product, checkout, orders, taxes, shipping, an
 
 Neither architecture is automatically simpler. Choose the source of truth intentionally:
 
-![An operating model comparing WooCommerce-owned and remote-gateway-owned schedules.](/blogs/can-woocommerce-do-subscriptions-without-a-plugin/operating-model.svg)
+![Commerce system layers — a focused layers for Separate repeat sales from subscription operations.](/blogs/can-woocommerce-do-subscriptions-without-a-plugin/operating-visual.png)
 
 - **Plugin-owned schedule:** WordPress schedules invoices and charges; the gateway processes payment.
 - **Gateway-owned schedule:** the remote provider bills on its schedule; WordPress follows webhooks and reconciles local records.

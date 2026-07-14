@@ -26,7 +26,7 @@ A strong WooCommerce subscription product page makes the complete agreement unde
 
 The page should answer four questions in order: What do I get? What do I pay today? What happens later? How do I stop or change it? WooCommerce recommends showing recurring totals and subscription terms clearly, while online negative-option offers can also be subject to disclosure, consent, and cancellation requirements ([creating a subscription product](https://woocommerce.com/document/subscriptions/creating-subscription-products/), [ROSCA](https://www.congress.gov/bill/111th-congress/senate-bill/3386)). Legal obligations vary, so have qualified counsel review the actual offer and markets served.
 
-![A simple product-page flow from promise to price, proof, terms, and action.](/blogs/anatomy-of-a-high-converting-woocommerce-subscription-product-page/decision-flow.svg)
+![The buying sequence — a focused steps for Build the product page around the recurring promise.](/blogs/anatomy-of-a-high-converting-woocommerce-subscription-product-page/decision-visual.png)
 
 The headline should identify the outcome, not merely the product type. A short supporting sentence can name the audience and recurring delivery. The price block should remain close to the product selector and action button so the buyer does not have to reconstruct the deal from distant sections.
 
@@ -56,7 +56,7 @@ When variations change price, cadence, trial, or entitlement, update the complet
 
 The exact checkout total can still change with tax and shipping, but the page should explain which components are fixed and which are calculated later. Do not imply that an ordinary one-time coupon will recur unless the configured renewal mechanism has been tested.
 
-![Illustrative bars separating today's amount from later recurring charges.](/blogs/anatomy-of-a-high-converting-woocommerce-subscription-product-page/worked-model-bars.svg)
+![Decision coverage — an illustrative pie for Build the product page around the recurring promise.](/blogs/anatomy-of-a-high-converting-woocommerce-subscription-product-page/model-visual.png)
 
 *Illustrative amounts, not conversion data.*
 
@@ -98,7 +98,7 @@ Cancellation and refund are separate outcomes. “Cancel at period end” can pr
 
 ## The operating model behind the page
 
-![A product-page operating model connecting offer copy to checkout, renewal, fulfillment, and support.](/blogs/anatomy-of-a-high-converting-woocommerce-subscription-product-page/operating-model.svg)
+![Product-page system — a focused layers for Build the product page around the recurring promise.](/blogs/anatomy-of-a-high-converting-woocommerce-subscription-product-page/operating-visual.png)
 
 The page is accurate only when its claims match product configuration and downstream behavior. Before launch, buy the real product in a sandbox and verify:
 

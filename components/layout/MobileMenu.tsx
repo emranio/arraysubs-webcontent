@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/cn";
 import {
   gsap,
   prefersReducedMotion,
@@ -153,31 +154,91 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
       <Container className="flex flex-1 flex-col">
         <nav aria-label="Primary" className="py-24">
           <ul className="flex flex-col gap-3">
-            {HEADER_NAV_ITEMS.map((item) => (
-              <li key={item.href} data-menu-item>
-                <Link
-                  href={item.href}
-                  onClick={onClose}
-                  aria-label={
-                    item.badge ? `${item.label} ${item.badge}` : undefined
-                  }
-                  className="group flex items-center justify-between gap-3 rounded-md py-3 text-xl font-display font-bold text-foreground transition-colors hover:text-primary-strong"
-                >
-                  <span className="flex min-w-0 items-center gap-2">
-                    <span>{item.label}</span>
-                    {item.badge && (
-                      <span className="rounded-pill border border-border bg-surface px-2 py-1 text-xs leading-none font-semibold text-primary uppercase">
-                        {item.badge}
-                      </span>
-                    )}
-                  </span>
-                  <ArrowUpRight
-                    aria-hidden="true"
-                    className="size-5 shrink-0 text-faint transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary-strong"
-                  />
-                </Link>
-              </li>
-            ))}
+            {HEADER_NAV_ITEMS.map((item) => {
+              if (item.children?.length) {
+                return (
+                  <li key={item.label} data-menu-item className="py-3">
+                    <p className="text-sm font-semibold tracking-wider text-faint uppercase">
+                      {item.label}
+                    </p>
+                    <ul className="mt-3 flex flex-col gap-[0.1875rem] border-l border-border pl-4">
+                      {item.children.map((child) => {
+                        const classes = cn(
+                          "group flex items-center justify-between gap-3 rounded-md px-3 py-3 text-lg font-display font-semibold transition-colors",
+                          child.accent === "primary"
+                            ? "mt-1 bg-primary text-on-dark hover:bg-primary-strong"
+                            : "text-foreground hover:bg-card hover:text-primary-strong",
+                        );
+                        const content = (
+                          <>
+                            <span>{child.label}</span>
+                            <ArrowUpRight
+                              aria-hidden="true"
+                              className={cn(
+                                "size-5 shrink-0 transition-transform duration-200 group-hover:translate-x-1",
+                                child.accent === "primary"
+                                  ? "text-on-dark"
+                                  : "text-faint group-hover:text-primary-strong",
+                              )}
+                            />
+                          </>
+                        );
+
+                        return (
+                          <li key={child.href}>
+                            {child.external ? (
+                              <a
+                                href={child.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={onClose}
+                                className={classes}
+                              >
+                                {content}
+                              </a>
+                            ) : (
+                              <Link
+                                href={child.href}
+                                onClick={onClose}
+                                className={classes}
+                              >
+                                {content}
+                              </Link>
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                );
+              }
+
+              return (
+                <li key={item.href} data-menu-item>
+                  <Link
+                    href={item.href}
+                    onClick={onClose}
+                    aria-label={
+                      item.badge ? `${item.label} ${item.badge}` : undefined
+                    }
+                    className="group flex items-center justify-between gap-3 rounded-md py-3 text-xl font-display font-bold text-foreground transition-colors hover:text-primary-strong"
+                  >
+                    <span className="flex min-w-0 items-center gap-2">
+                      <span>{item.label}</span>
+                      {item.badge && (
+                        <span className="rounded-pill border border-border bg-surface px-2 py-1 text-xs leading-none font-semibold text-primary uppercase">
+                          {item.badge}
+                        </span>
+                      )}
+                    </span>
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      className="size-5 shrink-0 text-faint transition-transform duration-200 group-hover:translate-x-1 group-hover:text-primary-strong"
+                    />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </Container>

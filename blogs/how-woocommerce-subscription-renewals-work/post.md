@@ -26,7 +26,7 @@ A WooCommerce subscription renewal turns a stored customer agreement into a new 
 
 Current ArraySubs uses the stored next-payment date to coordinate an invoice-generation action and a due-time renewal action. Its default invoice lead is six hours, although the setting is configurable. WooCommerce’s general renewal documentation likewise separates the subscription from the renewal orders it creates ([renewal process](https://woocommerce.com/document/subscriptions/renewal-process/)).
 
-![A renewal flow from schedule to invoice, payment, reconciliation, and next date.](/blogs/how-woocommerce-subscription-renewals-work/decision-flow.svg)
+![Renewal lifecycle — a focused cycle for A renewal is a scheduled transaction workflow.](/blogs/how-woocommerce-subscription-renewals-work/decision-visual.png)
 
 The practical sequence is:
 
@@ -66,7 +66,7 @@ ArraySubs controls the local schedule for its current Stripe integration, create
 
 PayPal and Paddle can own the remote recurring schedule. ArraySubs waits for and reconciles webhooks into local renewal orders and subscription state. Operators must not start a second local retry engine without confirming the remote obligation is unpaid.
 
-![Illustrative bars comparing manual, local automatic, and remote renewal responsibilities.](/blogs/how-woocommerce-subscription-renewals-work/worked-model-bars.svg)
+![One renewal, four records — an illustrative numbers for A renewal is a scheduled transaction workflow.](/blogs/how-woocommerce-subscription-renewals-work/model-visual.png)
 
 *Responsibility comparison, not performance data.*
 
@@ -107,7 +107,7 @@ A failed automatic attempt can mark the renewal order failed, store a normalized
 
 Before retrying, current ArraySubs asks the gateway whether a missed webhook hid a successful charge. That reconciliation step reduces duplicate-charge risk and belongs before every manual intervention.
 
-![An operating model linking subscription, scheduler, order, gateway, email, and access.](/blogs/how-woocommerce-subscription-renewals-work/operating-model.svg)
+![System ownership — a focused hub for A renewal is a scheduled transaction workflow.](/blogs/how-woocommerce-subscription-renewals-work/operating-visual.png)
 
 ## How to verify a renewal
 

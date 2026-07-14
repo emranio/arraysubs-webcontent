@@ -24,7 +24,7 @@ Apply a plan change immediately when the customer needs the new entitlement now 
 
 ## Compare the state transitions
 
-![Two plan-change lanes showing immediate payment-gated access and next-renewal access.](/blogs/immediate-vs-next-renewal-plan-changes/decision-flow.svg)
+![Now or next renewal? — a focused lanes for Match the effective date to value delivery.](/blogs/immediate-vs-next-renewal-plan-changes/decision-visual.png)
 
 | Question | Immediate | At next renewal |
 | --- | --- | --- |
@@ -46,7 +46,7 @@ Deferred changes store the target configuration while the current agreement rema
 
 This model is often easier for downgrades because the customer retains the tier already purchased and no immediate unused-value credit is required. It also works for operational changes that should begin at a clean billing boundary.
 
-![Illustrative bars comparing cash and access timing for immediate and deferred changes.](/blogs/immediate-vs-next-renewal-plan-changes/worked-model-bars.svg)
+![Immediate settlement — an illustrative equation for Match the effective date to value delivery.](/blogs/immediate-vs-next-renewal-plan-changes/model-visual.png)
 
 *Timing comparison, not conversion or retention data.*
 
@@ -66,7 +66,7 @@ Plan direction is also based on normalized daily rates in current ArraySubs and 
 
 ## What the confirmation should show
 
-![An operating model for quote, confirmation, payment, access, and audit history.](/blogs/immediate-vs-next-renewal-plan-changes/operating-model.svg)
+![Match money to access — a focused balance for Match the effective date to value delivery.](/blogs/immediate-vs-next-renewal-plan-changes/operating-visual.png)
 
 Use a compact confirmation summary:
 

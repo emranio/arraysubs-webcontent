@@ -24,7 +24,7 @@ That is the short answer. The important part is that a subscription is not one c
 > - A successful first checkout is not a subscription launch test; prove at least one renewal and one failure path.
 > - Make the amount due today, future amount, cancellation rule, and end condition clear before checkout.
 
-![Flat diagram showing billing, access, fulfillment, and self-service feeding one subscription agreement.](/blogs/how-to-add-subscriptions-to-woocommerce/four-system-stack.svg)
+![Flat diagram showing billing, access, fulfillment, and self-service feeding one subscription agreement.](/blogs/how-to-add-subscriptions-to-woocommerce/four-system-stack.png)
 
 *The four systems every subscription offer must coordinate.*
 
@@ -59,7 +59,7 @@ The first question is not “monthly or yearly?” It is “will the customer be
 
 “Prepaid,” “fixed-term,” and “installment” are not interchangeable. Six future $40 charges are fixed-term recurring payments. One $240 charge followed by six monthly shipments is prepaid. Both total $240 before tax and fees, but their payment risk and recovery work are completely different.
 
-![Decision tree for choosing an open-ended, fixed-term, prepaid, installment, or lifetime model.](/blogs/how-to-add-subscriptions-to-woocommerce/model-decision-tree.svg)
+![Decision tree for choosing an open-ended, fixed-term, prepaid, installment, or lifetime model.](/blogs/how-to-add-subscriptions-to-woocommerce/model-decision-tree.png)
 
 *Start with whether another charge will occur, then decide whether the number of charges is predetermined.*
 
@@ -69,7 +69,7 @@ For a practical implementation, compare the [monthly-versus-annual variable reci
 
 The next chart uses simple illustrative arithmetic, not store performance data. Both examples total $240 before tax, refunds, processing fees, and failed payments.
 
-![Bar chart comparing six monthly 40 dollar payments with one 240 dollar prepaid charge.](/blogs/how-to-add-subscriptions-to-woocommerce/cash-timing-bars.svg)
+![Bar chart comparing six monthly 40 dollar payments with one 240 dollar prepaid charge.](/blogs/how-to-add-subscriptions-to-woocommerce/cash-timing-bars.png)
 
 *Illustrative cash timing: the same stated total collected in two different ways. This is not a benchmark.*
 
@@ -79,7 +79,7 @@ The collection schedule changes more than cash flow. With six future charges, th
 
 A sign-up fee, trial, tax, and shipping can make the amount due today different from the recurring amount. Put those numbers together wherever the customer makes a decision. WooCommerce's product-creation documentation describes recurring prices, intervals, total-payment limits, trials, sign-up fees, shipping, and stock behavior for its Subscriptions extension ([creating subscription products](https://woocommerce.com/document/subscriptions/creating-subscription-products/)). Your selected engine may label or count these fields differently.
 
-![Donut chart showing an illustrative 50 dollar first charge split into a 40 dollar recurring period and 10 dollar sign-up fee.](/blogs/how-to-add-subscriptions-to-woocommerce/first-charge-donut.svg)
+![Donut chart showing an illustrative 50 dollar first charge split into a 40 dollar recurring period and 10 dollar sign-up fee.](/blogs/how-to-add-subscriptions-to-woocommerce/first-charge-donut.png)
 
 *Illustrative arithmetic only: $50 due today = $40 for the first recurring period + a $10 sign-up fee.*
 
@@ -92,7 +92,7 @@ A recurring offer often contains more than one schedule. Write all four before c
 3. **Fulfillment clock:** when goods or services are delivered and whether shipping repeats.
 4. **Recovery clock:** retry dates, grace period, reminders, and the final stop condition.
 
-![Four-lane timeline for billing, access, fulfillment, and payment recovery.](/blogs/how-to-add-subscriptions-to-woocommerce/four-clocks.svg)
+![Four-lane timeline for billing, access, fulfillment, and payment recovery.](/blogs/how-to-add-subscriptions-to-woocommerce/four-clocks.png)
 
 *One subscription can contain four clocks. They should agree, but they do not have to tick on the same dates.*
 
@@ -205,7 +205,7 @@ At minimum, decide whether customers can see their dates and totals, pay a manua
 
 ## Step 7: understand the renewal lifecycle
 
-![Flowchart from checkout through parent order, subscription, scheduled renewal, payment success or failure, and ending.](/blogs/how-to-add-subscriptions-to-woocommerce/renewal-lifecycle.svg)
+![Flowchart from checkout through parent order, subscription, scheduled renewal, payment success or failure, and ending.](/blogs/how-to-add-subscriptions-to-woocommerce/renewal-lifecycle.png)
 
 *A successful checkout is the beginning of the lifecycle, not the end of implementation.*
 
@@ -240,7 +240,7 @@ WooCommerce Subscriptions has its own optional failed-payment retry system and r
 
 Use sandbox credentials and isolated test data. A test order can still send email or trigger connected systems, so separate it from production analytics and fulfillment ([WooCommerce test-order guidance](https://woocommerce.com/document/managing-orders/testing-orders/)). Never assume a copied production site is safe to run: clones can duplicate scheduled work unless the subscription engine and gateway provide staging protection.
 
-![Flat launch path from sandbox checkout to renewal, failure test, and monitoring.](/blogs/how-to-add-subscriptions-to-woocommerce/launch-test-flow.svg)
+![Flat launch path from sandbox checkout to renewal, failure test, and monitoring.](/blogs/how-to-add-subscriptions-to-woocommerce/launch-test-flow.png)
 
 *Collect proof at every stage instead of relying on a “payment succeeded” screen.*
 

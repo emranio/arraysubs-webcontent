@@ -31,7 +31,7 @@ Offer one-time and subscription choices together when customers repeatedly need 
 
 **Two linked products** uses one ordinary product and a separate subscription product, compared on a landing page or linked from each other. That can solve the shopper's task, but it needs deliberate stock synchronization, canonical URLs, review/feed handling, analytics attribution, and price updates.
 
-![Decision flow for earning a buy-once and subscribe offer.](/blogs/one-time-purchase-and-subscription-on-one-product-when-to-offer-both/decision-flow.svg)
+![Earn the second option — a focused split for Buy once or subscribe: earn the second option.](/blogs/one-time-purchase-and-subscription-on-one-product-when-to-offer-both/decision-visual.png)
 
 ## Pass seven gates before offering both
 
@@ -71,7 +71,7 @@ Assume a hypothetical replenishment item:
 
 The subscription discount is 11.1%. One completed subscribed delivery contributes $13; two contribute $26; three contribute $39 on $120 revenue. That does not prove the subscription is better: it excludes acquisition cost, renewal probability, timing, failures, refunds, tax, and organic full-price reorders.
 
-![Illustrative buy-once and subscription revenue bars.](/blogs/one-time-purchase-and-subscription-on-one-product-when-to-offer-both/worked-model-bars.svg)
+![Revenue is not contribution — an illustrative bars for Buy once or subscribe: earn the second option.](/blogs/one-time-purchase-and-subscription-on-one-product-when-to-offer-both/model-visual.png)
 
 *Illustrative arithmetic; the bars are not profit or retention data.*
 
@@ -105,7 +105,7 @@ Define:
 - quantity/cadence changes;
 - how promotions affect committed renewal stock.
 
-![Operating model for buy once, subscribe, and the dual offer.](/blogs/one-time-purchase-and-subscription-on-one-product-when-to-offer-both/operating-model.svg)
+![Keep the choice clear — a focused triangle for Buy once or subscribe: earn the second option.](/blogs/one-time-purchase-and-subscription-on-one-product-when-to-offer-both/operating-visual.png)
 
 With an ArraySubs two-product workaround, the records normally have separate stock. Similar names or SKUs do not create shared inventory. Any synchronization must be tested for simultaneous orders, renewals, refunds/restocks, manual edits, feeds, and failures.
 

@@ -24,7 +24,7 @@ Use a different first and renewal price when the same subscription should charge
 
 ## Choose the right pricing pattern
 
-![A decision flow comparing a price step, trial, signup fee, coupon, and permanent discount.](/blogs/different-first-and-renewal-prices-subscription-pricing-patterns/decision-flow.svg)
+![Price step over time — a focused timeline for Price the first period and steady state separately.](/blogs/different-first-and-renewal-prices-subscription-pricing-patterns/decision-visual.png)
 
 | Pattern | Best use | Transition |
 | --- | --- | --- |
@@ -61,7 +61,7 @@ illustrative contribution = $165 − $48 − $40 = $77
 modeled payback = fourth successful paid payment
 ```
 
-![Bars showing three introductory payments followed by later-price payments.](/blogs/different-first-and-renewal-prices-subscription-pricing-patterns/worked-model-bars.svg)
+![First and later payments — an illustrative bars for Price the first period and steady state separately.](/blogs/different-first-and-renewal-prices-subscription-pricing-patterns/model-visual.png)
 
 *Illustrative arithmetic excludes tax, fees, shipping, coupons, failures, refunds, and overhead. It does not predict retention.*
 
@@ -83,7 +83,7 @@ Online negative-option obligations vary. ROSCA’s statutory summary addresses m
 
 ## Operating and reporting model
 
-![An operating model from checkout disclosure through paid counter, price transition, and reporting.](/blogs/different-first-and-renewal-prices-subscription-pricing-patterns/operating-model.svg)
+![Disclosure to reporting — a focused layers for Price the first period and steady state separately.](/blogs/different-first-and-renewal-prices-subscription-pricing-patterns/operating-visual.png)
 
 Track:
 

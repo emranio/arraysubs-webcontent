@@ -24,7 +24,7 @@ Allow multiple subscriptions when customers genuinely need independent products,
 
 ## Separate the policy levels
 
-![A policy stack from cart and product quantity through customer identity and gateway capability.](/blogs/multiple-subscriptions-per-customer-policy-cart-and-billing-tradeoffs/decision-flow.svg)
+![Choose the duplicate policy — a focused stack flow for Choose the duplicate policy before checkout.](/blogs/multiple-subscriptions-per-customer-policy-cart-and-billing-tradeoffs/decision-visual.png)
 
 Current ArraySubs settings distinguish:
 
@@ -64,7 +64,7 @@ Current ArraySubs Pro applies a restrictive capability filter across enabled gat
 
 ## Allow, switch, or block?
 
-![Bars comparing one combined checkout with several independent future renewal opportunities.](/blogs/multiple-subscriptions-per-customer-policy-cart-and-billing-tradeoffs/worked-model-bars.svg)
+![Independent schedules — an illustrative numbers for Choose the duplicate policy before checkout.](/blogs/multiple-subscriptions-per-customer-policy-cart-and-billing-tradeoffs/model-visual.png)
 
 Ask:
 
@@ -88,7 +88,7 @@ A $30 monthly box quantity two plus $8 shipping produces a $68 pre-tax monthly r
 
 Separate subscriptions are useful for different recipients, addresses, cancellation dates, or teams. Quantity on one record is simpler when all units share one schedule, address, and lifecycle.
 
-![An operating model connecting the initial order to independent subscriptions, renewals, and support.](/blogs/multiple-subscriptions-per-customer-policy-cart-and-billing-tradeoffs/operating-model.svg)
+![One order, many agreements — a focused hub for Choose the duplicate policy before checkout.](/blogs/multiple-subscriptions-per-customer-policy-cart-and-billing-tradeoffs/operating-visual.png)
 
 ## Test matrix
 

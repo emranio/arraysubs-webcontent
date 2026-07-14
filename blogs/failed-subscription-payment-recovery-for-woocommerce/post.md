@@ -24,7 +24,7 @@ Recover failed subscription payments with a coordinated system: classify the fai
 
 ## Current ArraySubs lifecycle
 
-![A recovery lifecycle from reminder and invoice through classification, retry, grace, and outcome.](/blogs/failed-subscription-payment-recovery-for-woocommerce/decision-flow.svg)
+![Recovery lifecycle — a focused cycle for Recovery is a controlled path back to paid status.](/blogs/failed-subscription-payment-recovery-for-woocommerce/decision-visual.png)
 
 Current defaults create this baseline:
 
@@ -85,7 +85,7 @@ customer recovery = 7 ÷ 12 = 58.3%
 value recovery = $900 ÷ $1,600 = 56.25%
 ```
 
-![A flat recovery funnel using the illustrative closed-cohort numbers.](/blogs/failed-subscription-payment-recovery-for-woocommerce/worked-model-bars.svg)
+![Closed-cohort recovery — an illustrative funnel for Recovery is a controlled path back to paid status.](/blogs/failed-subscription-payment-recovery-for-woocommerce/model-visual.png)
 
 *Arithmetic example, not ArraySubs, WooCommerce, or industry performance.*
 
@@ -95,7 +95,7 @@ Segment by gateway, decline, first/later renewal, cadence, value band, tenure, a
 
 Stop when the order is paid, gateway says do not retry, the customer cancels or revokes authorization, new credentials/authentication are required, context is missing, maximum attempts are reached, status is ineligible, amount/schedule is wrong, remote recovery owns the obligation, or fraud/risk review is needed.
 
-![An operating model linking gateway evidence, retry, messages, access, support, and measured outcomes.](/blogs/failed-subscription-payment-recovery-for-woocommerce/operating-model.svg)
+![Recovery ownership — a focused hub for Recovery is a controlled path back to paid status.](/blogs/failed-subscription-payment-recovery-for-woocommerce/operating-visual.png)
 
 ## Operating runbook
 

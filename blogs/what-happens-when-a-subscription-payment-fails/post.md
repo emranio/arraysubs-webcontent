@@ -24,7 +24,7 @@ When a subscription payment fails, the renewal order remains unpaid or becomes f
 
 ## The default timeline
 
-![A horizontal timeline from reminder and invoice to failure, retries, on-hold, and cancellation.](/blogs/what-happens-when-a-subscription-payment-fails/decision-flow.svg)
+![Failure policy timeline — a focused timeline for A failed payment starts a policy branch.](/blogs/what-happens-when-a-subscription-payment-fails/decision-visual.png)
 
 | Relative time | Renewal order | Subscription/customer action |
 | --- | --- | --- |
@@ -77,7 +77,7 @@ paid late = July 17
 next date basis = July 15 + one month = August 15
 ```
 
-![Bars showing the current default active-grace and on-hold windows.](/blogs/what-happens-when-a-subscription-payment-fails/worked-model-bars.svg)
+![Retry candidates — an illustrative funnel for A failed payment starts a policy branch.](/blogs/what-happens-when-a-subscription-payment-fails/model-visual.png)
 
 *Current default configuration, not a universal recommended grace policy.*
 
@@ -94,7 +94,7 @@ next date basis = July 15 + one month = August 15
 9. After payment, verify paid order, active subscription, next date, jobs, and cleared failure state.
 10. Do not confuse Pro “Mark Resolved” with payment.
 
-![An operating model separating order, subscription, gateway, access, and customer action.](/blogs/what-happens-when-a-subscription-payment-fails/operating-model.svg)
+![Order, access, customer — a focused hub for A failed payment starts a policy branch.](/blogs/what-happens-when-a-subscription-payment-fails/operating-visual.png)
 
 For the complete recovery program, read [Failed Subscription Payment Recovery](/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/).
 

@@ -38,7 +38,7 @@ Important current status: ArraySubs Customer-Chosen Subscription Duration is a p
 
 Decide the end journey first. Will the subscription expire, invite repurchase, permit extension, or convert only after new express consent? Do not silently turn a finite choice into indefinite renewal.
 
-![Decision flow for bounded customer duration choices.](/blogs/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/decision-flow.svg)
+![Bound the duration — a focused steps for Flexible duration needs hard guardrails.](/blogs/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/decision-visual.png)
 
 ## When customer choice fits
 
@@ -93,7 +93,7 @@ Assume $40 per monthly payment, $15 variable cost, $60 acquisition/onboarding, a
 | 6 payments | $40 | 5 | $240 | $90 |
 | 12 payments | $40 | 11 | $480 | $240 |
 
-![Illustrative duration-choice bars.](/blogs/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/worked-model-bars.svg)
+![Illustrative choice mix — an illustrative pie for Flexible duration needs hard guardrails.](/blogs/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/model-visual.png)
 
 *Scheduled arithmetic, not guaranteed revenue or observed customer performance.*
 
@@ -117,7 +117,7 @@ Define how free trials, zero-total orders, failures, late manual payments, pause
 
 Show remaining payments to support, log selections and changes, send final-cycle communications, monitor outcomes by duration, test manual and every supported automatic gateway, and preserve original agreed terms when products change.
 
-![Four-part operating model for safe duration choice.](/blogs/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/operating-model.svg)
+![Duration guardrails — a focused layers for Flexible duration needs hard guardrails.](/blogs/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/operating-visual.png)
 
 ## Measure cohorts, not popularity alone
 

@@ -24,7 +24,7 @@ Use a recurring coupon only when the promotion’s incremental contribution and 
 
 ## Define the payment sequence
 
-![A coupon-cycle flow from checkout capture through eligibility, payment, decrement, and stop.](/blogs/recurring-subscription-coupons-economics-and-abuse-controls/decision-flow.svg)
+![Coupon stop rule — a focused cycle for Every recurring discount needs a stop rule.](/blogs/recurring-subscription-coupons-economics-and-abuse-controls/decision-visual.png)
 
 For “25% off three payments,” state whether the initial checkout consumes a cycle:
 
@@ -55,7 +55,7 @@ three-payment discount cost = 3 × $10 = $30
 contribution before acquisition each discounted period = $30 − $12 = $18
 ```
 
-![Bars showing three discounted payments and the first full-price payment.](/blogs/recurring-subscription-coupons-economics-and-abuse-controls/worked-model-bars.svg)
+![Discount equation — an illustrative equation for Every recurring discount needs a stop rule.](/blogs/recurring-subscription-coupons-economics-and-abuse-controls/model-visual.png)
 
 *Illustrative arithmetic; no conversion, retention, or abuse benchmark is claimed.*
 
@@ -77,7 +77,7 @@ Operational controls can also include authenticated customer-specific offers, ra
 - The renewal discount is a non-tax negative fee rather than a native coupon order item; tax, invoices, analytics, refunds, and exports need review.
 - Current gateway scope should be tested for Stripe, PayPal, Paddle, manual, and authentication cases.
 
-![An operating model joining coupon rules, subscription snapshot, renewal checks, reporting, and review.](/blogs/recurring-subscription-coupons-economics-and-abuse-controls/operating-model.svg)
+![Coupon controls — a focused hub for Every recurring discount needs a stop rule.](/blogs/recurring-subscription-coupons-economics-and-abuse-controls/operating-visual.png)
 
 ## Measure incrementality, not attributed sales
 

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { HEADER_NAV_ITEMS } from "@/lib/navigation";
 import { site, withTrailingSlash } from "@/lib/site";
@@ -13,7 +14,10 @@ import { MobileMenu } from "./MobileMenu";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false); // mobile fullscreen menu
+  const [resourcesOpen, setResourcesOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const resourcesRef = useRef<HTMLDivElement>(null);
+  const resourcesButtonRef = useRef<HTMLButtonElement>(null);
   const wasOpen = useRef(false);
   const pathname = usePathname() ?? "";
   const isArraySubsPath = withTrailingSlash(pathname).startsWith(
@@ -28,6 +32,33 @@ export function SiteHeader() {
     if (wasOpen.current && !open) toggleRef.current?.focus();
     wasOpen.current = open;
   }, [open]);
+
+  useEffect(() => {
+    setResourcesOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!resourcesOpen) return;
+
+    const closeOnOutsideClick = (event: PointerEvent) => {
+      if (!resourcesRef.current?.contains(event.target as Node)) {
+        setResourcesOpen(false);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setResourcesOpen(false);
+      resourcesButtonRef.current?.focus();
+    };
+
+    document.addEventListener("pointerdown", closeOnOutsideClick);
+    document.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.removeEventListener("pointerdown", closeOnOutsideClick);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [resourcesOpen]);
 
   const close = () => {
     setOpen(false);
@@ -78,6 +109,169 @@ export function SiteHeader() {
                 className="hidden items-center gap-3 xl:gap-5 lg:flex"
               >
                 {HEADER_NAV_ITEMS.map((item) => {
+                  if (item.children?.length) {
+                    const childIsCurrent = item.children.some(
+                      (child) =>
+                        !child.external &&
+                        withTrailingSlash(pathname).startsWith(child.href),
+                    );
+
+                    return (
+                      <div
+                        key={item.label}
+                        ref={resourcesRef}
+                        className="relative"
+                        onMouseEnter={() => setResourcesOpen(true)}
+                        onMouseLeave={() => {
+                          if (
+                            !resourcesRef.current?.contains(
+                              document.activeElement,
+                            )
+                          ) {
+                            setResourcesOpen(false);
+                          }
+                        }}
+                        onBlur={(event) => {
+                          if (
+                            event.relatedTarget instanceof Node &&
+                            event.currentTarget.contains(event.relatedTarget)
+                          ) {
+                            return;
+                          }
+                          setResourcesOpen(false);
+                        }}
+                      >
+                        <button
+                          ref={resourcesButtonRef}
+                          type="button"
+                          aria-expanded={resourcesOpen}
+                          aria-haspopup="menu"
+                          aria-controls="resources-menu"
+                          className={cn(
+                            "inline-flex cursor-pointer items-center gap-1 whitespace-nowrap bg-transparent p-0 text-sm font-medium transition-colors hover:text-foreground",
+                            childIsCurrent ? "text-foreground" : "text-muted",
+                          )}
+                          onClick={() => setResourcesOpen((value) => !value)}
+                          onKeyDown={(event) => {
+                            if (event.key !== "ArrowDown") return;
+                            event.preventDefault();
+                            setResourcesOpen(true);
+                            requestAnimationFrame(() => {
+                              resourcesRef.current
+                                ?.querySelector<HTMLAnchorElement>(
+                                  "#resources-menu a",
+                                )
+                                ?.focus();
+                            });
+                          }}
+                        >
+                          <span>{item.label}</span>
+                          <ChevronDown
+                            aria-hidden="true"
+                            className={cn(
+                              "size-4 transition-transform duration-200",
+                              resourcesOpen && "rotate-180",
+                            )}
+                          />
+                        </button>
+
+                        <div
+                          id="resources-menu"
+                          role="menu"
+                          aria-label="Resources"
+                          className={cn(
+                            "absolute top-full right-0 z-30 mt-3 w-64 rounded-xl border border-border bg-background p-2 transition-[opacity,transform,visibility] duration-200 before:absolute before:-top-3 before:right-0 before:h-3 before:w-full before:content-['']",
+                            resourcesOpen
+                              ? "visible translate-y-0 opacity-100"
+                              : "pointer-events-none invisible -translate-y-2 opacity-0",
+                          )}
+                          onKeyDown={(event) => {
+                            if (
+                              ![
+                                "ArrowDown",
+                                "ArrowUp",
+                                "Home",
+                                "End",
+                              ].includes(event.key)
+                            ) {
+                              return;
+                            }
+
+                            event.preventDefault();
+                            const menuItems = Array.from(
+                              event.currentTarget.querySelectorAll<HTMLAnchorElement>(
+                                "a[role='menuitem']",
+                              ),
+                            );
+                            const currentIndex = menuItems.indexOf(
+                              document.activeElement as HTMLAnchorElement,
+                            );
+                            const nextIndex =
+                              event.key === "Home"
+                                ? 0
+                                : event.key === "End"
+                                  ? menuItems.length - 1
+                                  : event.key === "ArrowUp"
+                                    ? (currentIndex - 1 + menuItems.length) %
+                                      menuItems.length
+                                    : (currentIndex + 1) % menuItems.length;
+                            menuItems[nextIndex]?.focus();
+                          }}
+                        >
+                          {item.children.map((child) => {
+                            const childCurrent =
+                              !child.external &&
+                              withTrailingSlash(pathname).startsWith(child.href);
+                            const classes = cn(
+                              "group flex items-center justify-between gap-3 rounded-md px-3 py-2.5 text-sm font-semibold transition-colors",
+                              child.accent === "primary"
+                                ? "mt-1 bg-primary text-on-dark hover:bg-primary-strong"
+                                : childCurrent
+                                  ? "bg-card text-primary"
+                                  : "text-muted hover:bg-card hover:text-foreground",
+                            );
+                            const content = (
+                              <>
+                                <span>{child.label}</span>
+                                {child.external && (
+                                  <ArrowUpRight
+                                    aria-hidden="true"
+                                    className="size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                  />
+                                )}
+                              </>
+                            );
+
+                            return child.external ? (
+                              <a
+                                key={child.href}
+                                href={child.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                role="menuitem"
+                                className={classes}
+                                onClick={() => setResourcesOpen(false)}
+                              >
+                                {content}
+                              </a>
+                            ) : (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                role="menuitem"
+                                aria-current={childCurrent ? "page" : undefined}
+                                className={classes}
+                                onClick={() => setResourcesOpen(false)}
+                              >
+                                {content}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  }
+
                   const isCurrent =
                     pathname === item.href || pathname === item.href.slice(0, -1);
 
