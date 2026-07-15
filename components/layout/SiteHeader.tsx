@@ -5,6 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/cn";
+import {
+  gsap,
+  prefersReducedMotion,
+  registerGsap,
+  useGSAP,
+} from "@/lib/gsap";
 import { HEADER_NAV_ITEMS } from "@/lib/navigation";
 import { site, withTrailingSlash } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
@@ -18,6 +24,11 @@ export function SiteHeader() {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const resourcesRef = useRef<HTMLDivElement>(null);
   const resourcesButtonRef = useRef<HTMLButtonElement>(null);
+  const resourcesMenuRef = useRef<HTMLDivElement>(null);
+  const resourcesChevronRef = useRef<SVGSVGElement>(null);
+  const resourcesTimelineRef = useRef<ReturnType<typeof gsap.timeline> | null>(
+    null,
+  );
   const wasOpen = useRef(false);
   const pathname = usePathname() ?? "";
   const isArraySubsPath = withTrailingSlash(pathname).startsWith(
@@ -26,6 +37,88 @@ export function SiteHeader() {
   const logoSubtitle = isArraySubsPath
     ? `${site.brand} - Subscription Manager for WooCommerce`
     : `Plugins, Code, and Commerce Solutions for WordPress`;
+
+  useGSAP(
+    () => {
+      const menu = resourcesMenuRef.current;
+      const chevron = resourcesChevronRef.current;
+      if (!menu || !chevron) return;
+
+      registerGsap();
+      const items = menu.querySelectorAll("[data-resource-menu-item]");
+      const reducedMotion = prefersReducedMotion();
+
+      gsap.set(menu, {
+        autoAlpha: 0,
+        pointerEvents: "none",
+        y: reducedMotion ? 0 : "-0.5rem",
+      });
+      gsap.set(items, {
+        autoAlpha: 0,
+        y: reducedMotion ? 0 : "-0.375rem",
+      });
+      gsap.set(chevron, { rotation: 0 });
+
+      const timeline = gsap.timeline({
+        paused: true,
+        defaults: { overwrite: "auto" },
+        onStart: () => gsap.set(menu, { pointerEvents: "auto" }),
+        onReverseComplete: () =>
+          gsap.set(menu, { pointerEvents: "none" }),
+      });
+
+      timeline
+        .to(
+          menu,
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: reducedMotion ? 0 : 0.32,
+            ease: "power2.out",
+          },
+          0,
+        )
+        .to(
+          items,
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: reducedMotion ? 0 : 0.22,
+            stagger: reducedMotion ? 0 : 0.025,
+            ease: "power2.out",
+          },
+          0,
+        )
+        .to(
+          chevron,
+          {
+            rotation: 180,
+            duration: reducedMotion ? 0 : 0.24,
+            ease: "power2.out",
+          },
+          0,
+        );
+
+      resourcesTimelineRef.current = timeline;
+
+      return () => {
+        timeline.kill();
+        resourcesTimelineRef.current = null;
+      };
+    },
+    { scope: resourcesRef },
+  );
+
+  useEffect(() => {
+    const timeline = resourcesTimelineRef.current;
+    if (!timeline) return;
+
+    if (resourcesOpen) {
+      timeline.play();
+    } else {
+      timeline.reverse();
+    }
+  }, [resourcesOpen]);
 
   // Return focus to the toggle when the mobile menu closes.
   useEffect(() => {
@@ -167,24 +260,20 @@ export function SiteHeader() {
                         >
                           <span>{item.label}</span>
                           <ChevronDown
+                            ref={resourcesChevronRef}
                             aria-hidden="true"
-                            className={cn(
-                              "size-4 transition-transform duration-200",
-                              resourcesOpen && "rotate-180",
-                            )}
+                            className="size-4"
                           />
                         </button>
 
                         <div
+                          ref={resourcesMenuRef}
                           id="resources-menu"
                           role="menu"
                           aria-label="Resources"
-                          className={cn(
-                            "absolute top-full right-0 z-30 mt-3 w-64 rounded-xl border border-border bg-background p-2 transition-[opacity,transform,visibility] duration-200 before:absolute before:-top-3 before:right-0 before:h-3 before:w-full before:content-['']",
-                            resourcesOpen
-                              ? "visible translate-y-0 opacity-100"
-                              : "pointer-events-none invisible -translate-y-2 opacity-0",
-                          )}
+                          aria-hidden={!resourcesOpen}
+                          inert={!resourcesOpen}
+                          className="pointer-events-none invisible absolute top-full right-0 z-30 mt-3 w-64 rounded-xl border border-border bg-background p-2 before:absolute before:-top-3 before:right-0 before:h-3 before:w-full before:content-['']"
                           onKeyDown={(event) => {
                             if (
                               ![
@@ -225,7 +314,7 @@ export function SiteHeader() {
                             const classes = cn(
                               "group flex items-center justify-between gap-3 rounded-md px-3 py-2.5 text-sm font-semibold transition-colors",
                               child.accent === "primary"
-                                ? "mt-1 bg-primary text-on-dark hover:bg-primary-strong"
+                                ? "mt-1 text-primary hover:text-primary-strong"
                                 : childCurrent
                                   ? "bg-card text-primary"
                                   : "text-muted hover:bg-card hover:text-foreground",
@@ -249,6 +338,7 @@ export function SiteHeader() {
                                 target="_blank"
                                 rel="noreferrer"
                                 role="menuitem"
+                                data-resource-menu-item
                                 className={classes}
                                 onClick={() => setResourcesOpen(false)}
                               >
@@ -260,6 +350,7 @@ export function SiteHeader() {
                                 href={child.href}
                                 role="menuitem"
                                 aria-current={childCurrent ? "page" : undefined}
+                                data-resource-menu-item
                                 className={classes}
                                 onClick={() => setResourcesOpen(false)}
                               >

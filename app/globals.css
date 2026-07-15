@@ -170,7 +170,7 @@
   }
 
   ::selection {
-    background-color: var(--color-highlight);
+    background-color: var(--color-border);
     color: var(--color-dark);
   }
 

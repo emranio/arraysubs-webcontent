@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type RefObject } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/cn";
 import {
   gsap,
@@ -28,11 +28,21 @@ type MobileMenuProps = {
  */
 export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
+  const resourcesPanelRef = useRef<HTMLDivElement>(null);
+  const resourcesChevronRef = useRef<SVGSVGElement>(null);
+  const resourcesTimelineRef = useRef<ReturnType<typeof gsap.timeline> | null>(
+    null,
+  );
   // Keep the overlay in the DOM until the close animation finishes.
   const [mounted, setMounted] = useState(open);
+  const [resourcesExpanded, setResourcesExpanded] = useState(false);
 
   useEffect(() => {
-    if (open) setMounted(true);
+    if (open) {
+      setResourcesExpanded(false);
+      resourcesTimelineRef.current?.pause(0);
+      setMounted(true);
+    }
   }, [open]);
 
   // Body scroll lock + ESC + focus trap — only while open.
@@ -141,6 +151,83 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
     { dependencies: [open, mounted], scope: overlayRef },
   );
 
+  useGSAP(
+    () => {
+      const panel = resourcesPanelRef.current;
+      const chevron = resourcesChevronRef.current;
+      if (!mounted || !panel || !chevron) return;
+
+      registerGsap();
+      const items = panel.querySelectorAll("[data-mobile-submenu-item]");
+      const reducedMotion = prefersReducedMotion();
+
+      gsap.set(panel, { autoAlpha: 0, height: 0 });
+      gsap.set(items, {
+        autoAlpha: 0,
+        y: reducedMotion ? 0 : "-0.375rem",
+      });
+      gsap.set(chevron, { rotation: 0 });
+
+      const timeline = gsap.timeline({
+        paused: true,
+        defaults: { overwrite: "auto" },
+      });
+
+      timeline
+        .to(
+          panel,
+          {
+            autoAlpha: 1,
+            height: () => panel.scrollHeight,
+            duration: reducedMotion ? 0 : 0.32,
+            ease: "power2.out",
+          },
+          0,
+        )
+        .to(
+          items,
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: reducedMotion ? 0 : 0.22,
+            stagger: reducedMotion ? 0 : 0.025,
+            ease: "power2.out",
+          },
+          0,
+        )
+        .to(
+          chevron,
+          {
+            rotation: 180,
+            duration: reducedMotion ? 0 : 0.24,
+            ease: "power2.out",
+          },
+          0,
+        );
+
+      resourcesTimelineRef.current = timeline;
+
+      return () => {
+        timeline.kill();
+        resourcesTimelineRef.current = null;
+      };
+    },
+    { dependencies: [mounted], scope: overlayRef },
+  );
+
+  const toggleResources = () => {
+    const nextExpanded = !resourcesExpanded;
+    const timeline = resourcesTimelineRef.current;
+
+    setResourcesExpanded(nextExpanded);
+
+    if (nextExpanded) {
+      timeline?.play();
+    } else {
+      timeline?.reverse();
+    }
+  };
+
   if (!mounted) return null;
 
   return (
@@ -157,58 +244,80 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
             {HEADER_NAV_ITEMS.map((item) => {
               if (item.children?.length) {
                 return (
-                  <li key={item.label} data-menu-item className="py-3">
-                    <p className="text-sm font-semibold tracking-wider text-faint uppercase">
-                      {item.label}
-                    </p>
-                    <ul className="mt-3 flex flex-col gap-[0.1875rem] border-l border-border pl-4">
-                      {item.children.map((child) => {
-                        const classes = cn(
-                          "group flex items-center justify-between gap-3 rounded-md px-3 py-3 text-lg font-display font-semibold transition-colors",
-                          child.accent === "primary"
-                            ? "mt-1 bg-primary text-on-dark hover:bg-primary-strong"
-                            : "text-foreground hover:bg-card hover:text-primary-strong",
-                        );
-                        const content = (
-                          <>
-                            <span>{child.label}</span>
-                            <ArrowUpRight
-                              aria-hidden="true"
-                              className={cn(
-                                "size-5 shrink-0 transition-transform duration-200 group-hover:translate-x-1",
-                                child.accent === "primary"
-                                  ? "text-on-dark"
-                                  : "text-faint group-hover:text-primary-strong",
-                              )}
-                            />
-                          </>
-                        );
+                  <li key={item.label} data-menu-item>
+                    <button
+                      id="mobile-resources-button"
+                      type="button"
+                      aria-expanded={resourcesExpanded}
+                      aria-controls="mobile-resources-panel"
+                      onClick={toggleResources}
+                      className="group flex w-full cursor-pointer items-center justify-between gap-3 rounded-md py-3 text-left text-xl font-display font-bold text-foreground transition-colors hover:text-primary-strong"
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown
+                        ref={resourcesChevronRef}
+                        aria-hidden="true"
+                        className="size-5 shrink-0 text-faint group-hover:text-primary-strong"
+                      />
+                    </button>
+                    <div
+                      ref={resourcesPanelRef}
+                      id="mobile-resources-panel"
+                      role="region"
+                      aria-labelledby="mobile-resources-button"
+                      aria-hidden={!resourcesExpanded}
+                      inert={!resourcesExpanded}
+                      className="invisible h-0 overflow-hidden"
+                    >
+                      <ul className="flex flex-col gap-[0.1875rem] border-l border-border pt-3 pl-4">
+                        {item.children.map((child) => {
+                          const classes = cn(
+                            "group flex items-center justify-between gap-3 rounded-md py-3 pl-3 text-lg font-display font-semibold transition-colors",
+                            child.accent === "primary"
+                              ? "mt-1 text-primary hover:text-primary-strong"
+                              : "text-foreground hover:bg-card hover:text-primary-strong",
+                          );
+                          const content = (
+                            <>
+                              <span>{child.label}</span>
+                              <ArrowUpRight
+                                aria-hidden="true"
+                                className={cn(
+                                  "size-5 shrink-0 transition-transform duration-200 group-hover:translate-x-1",
+                                  child.accent === "primary"
+                                    ? "text-primary group-hover:text-primary-strong"
+                                    : "text-faint group-hover:text-primary-strong",
+                                )}
+                              />
+                            </>
+                          );
 
-                        return (
-                          <li key={child.href}>
-                            {child.external ? (
-                              <a
-                                href={child.href}
-                                target="_blank"
-                                rel="noreferrer"
-                                onClick={onClose}
-                                className={classes}
-                              >
-                                {content}
-                              </a>
-                            ) : (
-                              <Link
-                                href={child.href}
-                                onClick={onClose}
-                                className={classes}
-                              >
-                                {content}
-                              </Link>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
+                          return (
+                            <li key={child.href} data-mobile-submenu-item>
+                              {child.external ? (
+                                <a
+                                  href={child.href}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={onClose}
+                                  className={classes}
+                                >
+                                  {content}
+                                </a>
+                              ) : (
+                                <Link
+                                  href={child.href}
+                                  onClick={onClose}
+                                  className={classes}
+                                >
+                                  {content}
+                                </Link>
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
                   </li>
                 );
               }

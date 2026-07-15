@@ -53,7 +53,7 @@ export function ProductResourceGrid({ active }: { active: ResourceKind }) {
               </p>
               <nav
                 aria-label={`${product.name} updates`}
-                className="mt-8 flex flex-wrap gap-x-8 gap-y-4"
+                className="mt-8 flex flex-wrap items-center justify-between gap-y-4"
               >
                 <ProductLink
                   href={product.changelogHref}

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { History } from "lucide-react";
 import { ChangelogTimeline } from "@/components/updates/ChangelogTimeline";
 import { ProductResourceGrid } from "@/components/updates/ProductResourceGrid";
-import { Button, Container, PageHero, Section } from "@/components/ui";
+import { Container, PageHero, Section } from "@/components/ui";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
@@ -27,16 +26,6 @@ export default function ChangelogPage() {
           "ArraySubs Pro",
           "Release notes in date order",
         ]}
-        actions={
-          <Button
-            href="#release-timeline"
-            size="lg"
-            magnetic
-            iconLeft={<History className="size-5" />}
-          >
-            Browse releases
-          </Button>
-        }
       />
 
       <Section surface="default" spacing="md">
