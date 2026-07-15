@@ -35,6 +35,17 @@
       "voterHashes": []
     },
     {
+      "id": "cart-info-editor",
+      "product": "arraysubs-pro",
+      "status": "released",
+      "title": "Cart Info Editor",
+      "description": "User-requested controls for hiding first billing cycle, shipping charge, and duration details across cart, checkout, mini cart, and emails.",
+      "createdAt": "2026-07-16T00:00:00.000Z",
+      "updatedAt": "2026-07-16T00:00:00.000Z",
+      "submittedByHash": "fd185ec8717d3b118fa88cf14f5b3e9d9679b36b499f75c39fe0edd20fe610b5",
+      "voterHashes": []
+    },
+    {
       "id": "customer-chosen-subscription-duration",
       "product": "arraysubs",
       "status": "released",
