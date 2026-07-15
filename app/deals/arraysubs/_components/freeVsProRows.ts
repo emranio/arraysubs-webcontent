@@ -75,6 +75,10 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
         proOnly: true,
       },
       {
+        label: "Hide first billing-cycle, shipping-charge & duration details in cart, checkout, mini-cart & emails",
+        proOnly: true,
+      },
+      {
         label: "Redirect or 404 direct product URLs to a sales page",
         proOnly: true,
       },
