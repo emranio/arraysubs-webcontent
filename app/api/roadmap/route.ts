@@ -4,6 +4,7 @@ import {
   ROADMAP_VISITOR_COOKIE,
   ROADMAP_VISITOR_MAX_AGE,
 } from "@/lib/roadmap";
+import { site } from "@/lib/site";
 import {
   hashRoadmapVisitor,
   readRoadmapStore,
@@ -28,7 +29,6 @@ const DAY_MS = 24 * 60 * 60 * 1_000;
 
 type RoadmapAction =
   | { action: "consent"; accepted?: unknown }
-  | { action: "revoke" }
   | { action: "upvote"; cardId?: unknown }
   | {
       action: "submit";
@@ -69,7 +69,38 @@ function isSameOrigin(request: NextRequest) {
   if (!origin) return false;
 
   try {
-    return new URL(origin).origin === request.nextUrl.origin;
+    const parsedOrigin = new URL(origin);
+    if (!["http:", "https:"].includes(parsedOrigin.protocol)) return false;
+
+    const forwardedProtocol = request.headers
+      .get("x-forwarded-proto")
+      ?.split(",")[0]
+      ?.trim();
+    const protocol =
+      forwardedProtocol === "http" || forwardedProtocol === "https"
+        ? `${forwardedProtocol}:`
+        : request.nextUrl.protocol;
+    const hosts = [
+      request.headers.get("x-forwarded-host")?.split(",")[0]?.trim(),
+      request.headers.get("host")?.trim(),
+      request.nextUrl.host,
+    ];
+    const allowedOrigins = new Set([
+      request.nextUrl.origin,
+      new URL(site.url).origin,
+    ]);
+
+    hosts.forEach((host) => {
+      if (!host) return;
+
+      try {
+        allowedOrigins.add(new URL(`${protocol}//${host}`).origin);
+      } catch {
+        // Ignore malformed proxy headers and keep the request denied by default.
+      }
+    });
+
+    return allowedOrigins.has(parsedOrigin.origin);
   } catch {
     return false;
   }
@@ -154,34 +185,6 @@ export async function POST(request: NextRequest) {
       console.error("Roadmap consent failed", error);
       return noStoreJson(
         { error: "Roadmap participation is temporarily unavailable." },
-        500,
-      );
-    }
-  }
-
-  if (body.action === "revoke") {
-    try {
-      const data = await readRoadmapStore();
-      const response = noStoreJson({
-        cards: toPublicRoadmapCards(data, null),
-        participationEnabled: false,
-        message: "The roadmap cookie was removed from this browser.",
-      });
-      response.cookies.set({
-        name: ROADMAP_VISITOR_COOKIE,
-        value: "",
-        httpOnly: true,
-        sameSite: "lax",
-        secure: process.env.NODE_ENV === "production",
-        path: "/",
-        maxAge: 0,
-        expires: new Date(0),
-      });
-      return response;
-    } catch (error) {
-      console.error("Roadmap consent revocation failed", error);
-      return noStoreJson(
-        { error: "The roadmap cookie could not be removed right now." },
         500,
       );
     }

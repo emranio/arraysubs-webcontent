@@ -17,6 +17,7 @@ export type PublicRoadmapCard = {
   updatedAt: string;
   upvotes: number;
   hasUpvoted: boolean;
+  isCommunityRequest: boolean;
 };
 
 export type RoadmapApiResponse = {

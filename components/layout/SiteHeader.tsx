@@ -158,15 +158,16 @@ export function SiteHeader() {
   };
 
   return (
-    <header
-      className={cn(
-        "top-0 z-50",
-        // While the fullscreen menu is open, pin the header with `fixed` instead
-        // of `sticky`: the menu's scroll-lock (overflow:hidden) disables sticky
-        // pinning, so a scrolled-down page would drop the header off-screen.
-        open ? "fixed inset-x-0" : "sticky",
-      )}
-    >
+    <>
+      <header
+        className={cn(
+          "top-0 z-50",
+          // While the fullscreen menu is open, pin the header with `fixed` instead
+          // of `sticky`: the menu's scroll-lock (overflow:hidden) disables sticky
+          // pinning, so a scrolled-down page would drop the header off-screen.
+          open ? "fixed inset-x-0" : "sticky",
+        )}
+      >
       {/* Frosted bar — full-width. The blur lives HERE, not on <header>, so the
           fixed MobileMenu stays viewport-sized. */}
       {/* `transform-gpu` promotes the frosted bar to its own compositor layer —
@@ -451,13 +452,16 @@ export function SiteHeader() {
         </Container>
       </div>
 
-      <div id="mobile-menu">
-        <MobileMenu
-          open={open}
-          onClose={() => setOpen(false)}
-          triggerRef={toggleRef}
-        />
-      </div>
-    </header>
+        <div id="mobile-menu">
+          <MobileMenu
+            open={open}
+            onClose={() => setOpen(false)}
+            triggerRef={toggleRef}
+          />
+        </div>
+      </header>
+
+      {open && <div aria-hidden="true" className="h-[4.0625rem] lg:hidden" />}
+    </>
   );
 }

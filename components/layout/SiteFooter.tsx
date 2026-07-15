@@ -18,15 +18,15 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
     title: "Compare",
     links: [
       [
-        "vs WooCommerce Subscriptions",
+        "Vs WooCommerce Subscriptions",
         "/deals/arraysubs/alternatives/woocommerce-subscriptions/",
       ],
       [
-        "vs WooCommerce Memberships",
+        "Vs WooCommerce Memberships",
         "/deals/arraysubs/alternatives/woocommerce-memberships/",
       ],
       [
-        "vs YITH Subscription",
+        "Vs YITH Subscription",
         "/deals/arraysubs/alternatives/yith-woocommerce-subscription/",
       ],
     ],
@@ -36,9 +36,9 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
     links: [
       ["Changelog", "/changelog/"],
       ["Roadmap", "/roadmap/"],
-      ["Useful articles", "/deals/arraysubs/resources/"],
-      ["Knowledge", "https://support.arrayhash.com/"],
-      ["User portal login", "https://user-portal.arrayhash.com/"],
+      ["Useful Articles", "/deals/arraysubs/resources/"],
+      ["Documentations", "https://support.arrayhash.com/"],
+      ["User Portal Login", "https://user-portal.arrayhash.com/"],
       ["Use Cases", "/deals/arraysubs/use-cases/"],
       ["Become an Affiliate", "/become-an-affiliate/"],
     ],

@@ -16,7 +16,7 @@ export function PrivacyChoicesButton({ className }: { className?: string }) {
       onClick={() => window.dispatchEvent(new Event(COOKIE_CONSENT_EVENT))}
     >
       <SlidersHorizontal aria-hidden="true" className="size-4" />
-      Privacy choices
+      Privacy Choices
     </button>
   );
 }

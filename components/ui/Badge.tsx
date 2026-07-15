@@ -7,6 +7,8 @@ type Tone =
   | "secondary"
   | "dark"
   | "highlight"
+  | "info"
+  | "pink"
   | "outline";
 
 const tones: Record<Tone, string> = {
@@ -15,6 +17,8 @@ const tones: Record<Tone, string> = {
   secondary: "bg-secondary text-on-dark",
   dark: "bg-dark text-on-dark",
   highlight: "bg-highlight text-dark",
+  info: "bg-info text-on-dark",
+  pink: "bg-pink text-on-dark",
   outline: "border border-current text-current",
 };
 

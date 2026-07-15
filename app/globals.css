@@ -36,6 +36,8 @@
   /* ---- Feedback --------------------------------------------------------- */
   --color-danger: #B83A7A; /* AA on white                                  */
   --color-success: #6040DB;
+  --color-info: #2563EB;
+  --color-pink: #D946A8;
   --color-gold: #873EFF; /* star ratings                                    */
 
   /* ---- On dark surfaces ------------------------------------------------- */
@@ -170,7 +172,7 @@
   }
 
   ::selection {
-    background-color: var(--color-border);
+    background-color: #d4bfff;
     color: var(--color-dark);
   }
 

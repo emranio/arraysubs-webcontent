@@ -277,14 +277,15 @@ export default function PrivacyPolicyPage() {
             The roadmap file stores the submitted feature title and description,
             creation and update timestamps, and one-way hashes derived from the
             random identifier. The public API exposes only the idea text, status,
-            timestamps, upvote count, and whether the current browser already
-            voted. It never exposes the cookie value or stored hashes.
+            timestamps, whether it is a community request, the upvote count, and
+            whether the current browser already voted. It never exposes the
+            cookie value or stored hashes.
           </p>
           <p>
-            You can withdraw this choice at any time with the <strong>Forget
-            roadmap cookie</strong> control on the roadmap page. This removes the
-            browser cookie immediately. Previously recorded anonymous vote hashes
-            may remain so published totals stay consistent.
+            The roadmap cookie expires automatically after one year. Visitors
+            can remove it sooner through their browser&apos;s site-data controls.
+            Previously recorded anonymous vote hashes may remain so published
+            totals stay consistent.
           </p>
           <PolicyNote title="If you do not allow the cookie">
             <p>

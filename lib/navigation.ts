@@ -21,14 +21,14 @@ export const HEADER_NAV_ITEMS: NavItem[] = [
     children: [
       { label: "Changelog", href: "/changelog/" },
       { label: "Roadmap", href: "/roadmap/" },
-      { label: "Useful articles", href: "/deals/arraysubs/resources/" },
+      { label: "Useful Articles", href: "/deals/arraysubs/resources/" },
       {
-        label: "Knowledge",
+        label: "Documentations",
         href: "https://support.arrayhash.com/",
         external: true,
       },
       {
-        label: "User portal login",
+        label: "User Portal Login",
         href: "https://user-portal.arrayhash.com/",
         external: true,
         accent: "primary",

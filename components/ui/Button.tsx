@@ -17,7 +17,7 @@ type Variant =
   | "highlight"
   | "outline"
   | "ghost";
-type Size = "xs" | "sm" | "md" | "lg";
+type Size = "xxs" | "xs" | "sm" | "md" | "lg";
 type Layers = "3layer" | "2layer";
 
 type OwnProps = {
@@ -84,6 +84,7 @@ const variants: Record<
 };
 
 const sizes: Record<Size, string> = {
+  xxs: "px-3 py-1.5 text-xs",
   xs: "px-4 py-2 text-sm",
   sm: "px-5 py-2.5 text-sm",
   md: "px-7 py-3 text-base",

@@ -227,6 +227,8 @@ Feedback tokens:
 
 - `danger` - validation and destructive/error text.
 - `success` - success states.
+- `info` - informational and planned-state emphasis.
+- `pink` - positive celebratory and community-engagement emphasis.
 - `gold` currently maps to primary purple for ratings.
 
 Do not add a new color because one page feels different. First try existing

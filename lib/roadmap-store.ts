@@ -251,6 +251,7 @@ export function toPublicRoadmapCards(
       createdAt: card.createdAt,
       updatedAt: card.updatedAt,
       upvotes: card.voterHashes.length,
+      isCommunityRequest: card.submittedByHash !== null,
       hasUpvoted: Boolean(
         visitorHash && card.voterHashes.includes(visitorHash),
       ),

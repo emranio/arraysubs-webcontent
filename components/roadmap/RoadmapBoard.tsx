@@ -5,10 +5,11 @@ import Link from "next/link";
 import {
   ArrowUp,
   Check,
-  Cookie,
+  Heart,
   Lightbulb,
   LoaderCircle,
   Plus,
+  Rocket,
 } from "lucide-react";
 import {
   Badge,
@@ -49,7 +50,11 @@ type ApiPayload = Partial<RoadmapApiResponse> & {
 
 const COLUMNS: Record<
   RoadmapStatus,
-  { title: string; description: string; badgeTone: "primary" | "highlight" | "secondary" | "dark" }
+  {
+    title: string;
+    description: string;
+    badgeTone: "primary" | "info" | "secondary" | "pink";
+  }
 > = {
   requested: {
     title: "Requested",
@@ -59,7 +64,7 @@ const COLUMNS: Record<
   planned: {
     title: "Planned",
     description: "Accepted for a future release.",
-    badgeTone: "highlight",
+    badgeTone: "info",
   },
   "in-development": {
     title: "In development",
@@ -69,7 +74,7 @@ const COLUMNS: Record<
   released: {
     title: "Released",
     description: "Available in ArraySubs or ArraySubs Pro.",
-    badgeTone: "dark",
+    badgeTone: "pink",
   },
 };
 
@@ -97,8 +102,6 @@ export function RoadmapBoard() {
   const [consentOpen, setConsentOpen] = useState(false);
   const [consentBusy, setConsentBusy] = useState(false);
   const [pendingAction, setPendingAction] = useState<PendingAction | null>(null);
-  const [participationEnabled, setParticipationEnabled] = useState(false);
-  const [forgettingCookie, setForgettingCookie] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -116,7 +119,6 @@ export function RoadmapBoard() {
         }
 
         setCards(payload.cards);
-        setParticipationEnabled(payload.participationEnabled === true);
       } catch (error) {
         if (controller.signal.aborted) return;
         setLoadError(
@@ -132,6 +134,20 @@ export function RoadmapBoard() {
     void loadRoadmap();
     return () => controller.abort();
   }, []);
+
+  useEffect(() => {
+    if (!notice) return;
+
+    const timeoutId = window.setTimeout(() => setNotice(""), 4_000);
+    return () => window.clearTimeout(timeoutId);
+  }, [notice]);
+
+  useEffect(() => {
+    if (!actionError) return;
+
+    const timeoutId = window.setTimeout(() => setActionError(""), 5_000);
+    return () => window.clearTimeout(timeoutId);
+  }, [actionError]);
 
   useGSAP(
     () => {
@@ -206,7 +222,6 @@ export function RoadmapBoard() {
       }
 
       setCards(payload.cards);
-      setParticipationEnabled(payload.participationEnabled === true);
       setNotice(payload.message || "The roadmap was updated.");
 
       if (action.type === "submit") {
@@ -246,7 +261,6 @@ export function RoadmapBoard() {
       }
 
       if (payload.cards) setCards(payload.cards);
-      setParticipationEnabled(payload.participationEnabled === true);
 
       const action = pendingAction;
       setPendingAction(null);
@@ -275,39 +289,6 @@ export function RoadmapBoard() {
     void runAction({ type: "submit", title, description, website });
   };
 
-  const forgetRoadmapCookie = async () => {
-    setForgettingCookie(true);
-    setActionError("");
-    setNotice("");
-
-    try {
-      const response = await fetch("/api/roadmap/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: "revoke" }),
-      });
-      const payload = await parseResponse(response);
-
-      if (!response.ok || !payload.cards) {
-        throw new Error(
-          payload.error || "The roadmap cookie could not be removed.",
-        );
-      }
-
-      setCards(payload.cards);
-      setParticipationEnabled(false);
-      setNotice(payload.message || "The roadmap cookie was removed.");
-    } catch (error) {
-      setActionError(
-        error instanceof Error
-          ? error.message
-          : "The roadmap cookie could not be removed.",
-      );
-    } finally {
-      setForgettingCookie(false);
-    }
-  };
-
   return (
     <div ref={boardRef}>
       <SectionTitle
@@ -329,36 +310,27 @@ export function RoadmapBoard() {
           <Check aria-hidden="true" className="size-4 text-primary" />
           Community ideas always enter Requested
         </span>
-        {participationEnabled && (
-          <Button
-            type="button"
-            variant="ghost"
-            size="xs"
-            layers="2layer"
-            disabled={forgettingCookie}
-            iconLeft={
-              forgettingCookie ? (
-                <LoaderCircle className="size-4 animate-spin" />
-              ) : (
-                <Cookie className="size-4" />
-              )
-            }
-            onClick={() => void forgetRoadmapCookie()}
-          >
-            {forgettingCookie ? "Removing…" : "Forget roadmap cookie"}
-          </Button>
-        )}
       </div>
 
       {notice && (
-        <p className="mt-5 rounded-md border border-border bg-card px-4 py-3 text-sm font-medium text-primary" role="status">
-          {notice}
-        </p>
+        <div className="pointer-events-none fixed inset-x-0 bottom-[20vh] z-[80] flex justify-center px-4">
+          <p
+            className="w-fit max-w-[calc(100vw-2rem)] rounded-pill border border-secondary-strong bg-secondary px-4 py-2 text-center text-sm font-semibold text-on-dark shadow-lg"
+            role="status"
+          >
+            {notice}
+          </p>
+        </div>
       )}
       {actionError && (
-        <p className="mt-5 rounded-md border border-danger bg-background px-4 py-3 text-sm font-medium text-danger" role="alert">
-          {actionError}
-        </p>
+        <div className="pointer-events-none fixed inset-x-0 bottom-[20vh] z-[80] flex justify-center px-4">
+          <p
+            className="w-fit max-w-[calc(100vw-2rem)] rounded-pill border border-danger bg-danger px-4 py-2 text-center text-sm font-semibold text-on-dark shadow-lg"
+            role="alert"
+          >
+            {actionError}
+          </p>
+        </div>
       )}
 
       {loading ? (
@@ -395,7 +367,12 @@ export function RoadmapBoard() {
                       {column.description}
                     </p>
                   </div>
-                  <Badge tone={column.badgeTone}>{columnCards.length}</Badge>
+                  <Badge tone={column.badgeTone}>
+                    {status === "released" && (
+                      <Rocket aria-hidden="true" className="size-3.5" />
+                    )}
+                    {columnCards.length}
+                  </Badge>
                 </div>
 
                 <div className="grid gap-[0.1875rem]">
@@ -532,7 +509,7 @@ function RequestIdeaForm({
         </p>
         <Button
           type="button"
-          variant="outline"
+          variant="primary"
           size="xs"
           layers="2layer"
           iconLeft={<Plus className="size-4" />}
@@ -636,35 +613,60 @@ function RoadmapCard({
   voting: boolean;
   onUpvote: () => void;
 }) {
-  const voteLabel = card.hasUpvoted
-    ? `Upvoted · ${card.upvotes}`
-    : card.upvotes > 0
-      ? `${card.upvotes} ${card.upvotes === 1 ? "upvote" : "upvotes"}`
-      : "Upvote";
+  const voteLabel = card.hasUpvoted ? "Upvoted" : "Upvote";
 
   return (
     <article className="rounded-xl border border-border bg-card p-4">
-      <h4 className="font-display text-lg">{card.title}</h4>
+      <div className="min-w-0">
+        <h4 className="font-display text-lg">{card.title}</h4>
+        {card.isCommunityRequest && (
+          <p className="mt-2 text-xs font-semibold tracking-wide text-primary uppercase">
+            Requested by a customer
+          </p>
+        )}
+      </div>
       <p className="mt-2 text-sm leading-6 text-muted">{card.description}</p>
-      <Button
-        type="button"
-        variant={card.hasUpvoted ? "highlight" : "outline"}
-        size="xs"
-        layers="2layer"
-        iconLeft={
-          voting ? (
-            <LoaderCircle className="size-4 animate-spin" />
-          ) : (
-            <ArrowUp className="size-4" />
-          )
-        }
-        className="mt-4"
-        aria-pressed={card.hasUpvoted}
-        disabled={voting || card.hasUpvoted}
-        onClick={onUpvote}
+      <div
+        className={`mt-4 flex items-center gap-3 ${card.status === "released" ? "justify-end" : "justify-between"}`}
       >
-        {voting ? "Voting…" : voteLabel}
-      </Button>
+        {card.status !== "released" && (
+          <Button
+            type="button"
+            variant={card.hasUpvoted ? "highlight" : "outline"}
+            size="xxs"
+            layers="2layer"
+            iconLeft={
+              voting ? (
+                <LoaderCircle className="size-3.5 animate-spin" />
+              ) : (
+                <ArrowUp className="size-3.5" />
+              )
+            }
+            aria-pressed={card.hasUpvoted}
+            disabled={voting || card.hasUpvoted}
+            onClick={onUpvote}
+          >
+            {voting ? "Voting…" : voteLabel}
+          </Button>
+        )}
+        {card.upvotes > 0 && (
+          <span
+            aria-label={`${card.upvotes} ${card.upvotes === 1 ? "upvote" : "upvotes"}`}
+            className="relative flex size-6 shrink-0 items-center justify-center"
+          >
+            <Heart
+              aria-hidden="true"
+              className="absolute inset-0 size-6 fill-pink text-pink"
+            />
+            <span
+              aria-hidden="true"
+              className="relative z-10 -mt-px text-[0.625rem] leading-none font-bold tracking-tight text-on-dark"
+            >
+              {card.upvotes}
+            </span>
+          </span>
+        )}
+      </div>
     </article>
   );
 }
