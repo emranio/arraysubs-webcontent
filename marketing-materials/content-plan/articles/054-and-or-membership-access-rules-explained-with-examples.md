@@ -1,5 +1,7 @@
 # A054 — AND/OR Membership Access Rules Explained with Examples
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** AND/OR Membership Access Rules Explained with Examples

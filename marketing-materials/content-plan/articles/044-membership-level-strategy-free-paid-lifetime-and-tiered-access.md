@@ -1,5 +1,7 @@
 # A044 — Membership Level Strategy: Free, Paid, Lifetime, and Tiered Access
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Membership Level Strategy: Free, Paid, Lifetime, and Tiered Access

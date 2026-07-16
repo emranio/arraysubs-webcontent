@@ -1,5 +1,7 @@
 # A038 — Auto-Downgrade After Payment Failure: When It Beats Cancellation
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Auto-Downgrade After Payment Failure: When It Beats Cancellation

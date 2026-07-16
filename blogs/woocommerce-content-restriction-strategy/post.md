@@ -146,6 +146,10 @@ Important current behavior:
 
 Maintain a rule inventory rather than relying on memory.
 
+Review that inventory as a dependency graph, not only a list. A product variation, feature key, WordPress role, URL prefix, post type, taxonomy term, redirect destination, and cache rule may each be referenced by several policies. Before renaming or removing one, identify every consuming rule and the customer states it affects. A harmless catalog cleanup can otherwise become an immediate access incident.
+
+For a high-impact change, record the old and new dependency values, test one allowed and one denied account, verify recovery routes, and keep a timed rollback. If the rule has no owner or its dependencies cannot be traced, pause the change until the operating record is repaired.
+
 ## What should a denied visitor see?
 
 | Visitor state | Useful response | Avoid |

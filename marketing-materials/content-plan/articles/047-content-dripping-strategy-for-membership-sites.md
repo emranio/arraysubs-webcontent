@@ -1,5 +1,7 @@
 # A047 — Content Dripping Strategy for Membership Sites
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Content Dripping Strategy for Membership Sites

@@ -200,6 +200,26 @@ Record before launch:
 
 Guardrails should include organic clicks and indexed coverage, engagement to the gate, return-to-SERP or bounce proxy, member login completion, support contacts, authentication errors, refunds/cancellations, and cache incidents. Never publish invented conversion lifts or a universal ideal depth.
 
+## Which readers should be separated in a gate experiment?
+
+One blended conversion rate can hide opposite experiences. Segment at least these paths before interpreting the gate:
+
+| Reader path | What the gate is doing | Useful outcome |
+| --- | --- | --- |
+| New anonymous visitor | explaining the premium difference | pricing exploration or qualified signup |
+| Returning anonymous visitor | building on prior familiarity | conversion without excessive repeated friction |
+| Logged-in nonmember | identifying the missing condition | upgrade, purchase, or clear not-eligible result |
+| Existing entitled member | restoring access after login | successful authentication and content view |
+| On-hold or expired member | supporting recovery | Pay Now, method update, renewal, or support resolution |
+| Search visitor | satisfying informational intent before the boundary | useful engagement without query mismatch |
+| Email/direct visitor | continuing a promised campaign journey | gate behavior consistent with the referring message |
+
+Do not count an existing member's login as acquisition, and do not treat a payment-recovery click as an upgrade. Record the entry source, authentication state, known entitlement state, gate version, action, and final outcome with a declared retention and privacy policy.
+
+When results differ by segment, change the experience before moving the content boundary. Existing members may need a better return URL, lapsed members may need recovery copy, and search visitors may need more public proof. Only prospects who understand the premium offer should feed the primary acquisition test.
+
+Also check whether the experiment changes who reaches the gate. Moving it higher can increase impressions by counting less-engaged readers while lowering the apparent click rate. Compare eligible cohorts and report both page entrances and gate impressions so the denominator remains visible.
+
 ## Partial-gate SEO and security QA
 
 - [ ] Guest page source does not contain the protected text.

@@ -1,5 +1,7 @@
 # A037 — Failed Payment Email Sequence: A Message-by-Message Playbook
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Failed Payment Email Sequence: A Message-by-Message Playbook

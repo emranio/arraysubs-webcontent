@@ -87,9 +87,15 @@ Those values are defaults and allowed ranges, not universal recommendations. The
 
 ```text
 Payment due
-→ ACTIVE for configured active-grace days
-→ ON HOLD for configured on-hold days
-→ CANCELLED when the final overdue policy becomes eligible
+→ ACTIVE
+  for configured
+  active-grace days
+→ ON HOLD
+  for configured
+  on-hold days
+→ CANCELLED
+  when final overdue policy
+  is eligible
 ```
 
 The overdue checker currently runs hourly. It looks for eligible subscriptions beyond the configured threshold and verifies that an unpaid renewal exists. If it cannot find the unpaid renewal order, it can create one and allow recovery time instead of immediately applying the hold. When it moves a subscription on hold, it records an on-hold timestamp and triggers the related lifecycle action. Final overdue cancellation checks both the combined threshold from the due date and the elapsed on-hold period.
@@ -97,14 +103,21 @@ The overdue checker currently runs hourly. It looks for eligible subscriptions b
 The practical formula is:
 
 ```text
-active-grace end = due timestamp + active-grace duration
+active-grace end
+= due timestamp
+  + active-grace duration
 
-on-hold target = first successful overdue check
-                 after active-grace end
+on-hold target
+= first successful overdue check
+  after active-grace end
 
-final target = first eligible overdue check after the later of:
-               due + active grace + on-hold grace
-               actual on-hold time + on-hold grace
+final target
+= first eligible overdue check
+  after the later of:
+  - due + active grace
+    + on-hold grace
+  - actual on-hold time
+    + on-hold grace
 ```
 
 Because the checker is hourly and uses eligibility comparisons, these are thresholds rather than second-perfect promises. A zero-day active grace does not mean synchronous cancellation at the due instant. WordPress cron and Action Scheduler also have to run reliably.
@@ -183,11 +196,22 @@ An updated card is not proof of payment. A paid remote transaction is not proof 
 The following uses current ArraySubs defaults only to demonstrate the arithmetic; it is not a recommended policy.
 
 ```text
-Renewal due:             July 16, 09:00 UTC
-Active-grace threshold: July 19, 09:00 UTC
-On-hold transition:     first successful hourly check after that threshold
-On-hold grace:          seven days from the recorded on-hold time
-Final cancellation:     first eligible check after the on-hold window
+Renewal due:
+July 16, 09:00 UTC
+
+Active-grace threshold:
+July 19, 09:00 UTC
+
+On-hold transition:
+first successful hourly check
+after that threshold
+
+On-hold grace:
+seven days from recorded on-hold time
+
+Final cancellation:
+first eligible check
+after the on-hold window
 ```
 
 Suppose a physical shipment has a July 18, 15:00 warehouse cutoff. The fulfillment system should hold the shipment at that cutoff even though the subscription may remain active until the next day's lifecycle threshold. If payment arrives July 20, recovery must verify both payment/access restoration and whether the missed shipment should be released, skipped, or handled manually.

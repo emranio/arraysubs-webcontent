@@ -1,5 +1,7 @@
 # A039 — Involuntary Churn Recovery Checklist
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Involuntary Churn Recovery Checklist

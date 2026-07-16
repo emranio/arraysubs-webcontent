@@ -1,5 +1,7 @@
 # A045 — WooCommerce Content Restriction Strategy
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** WooCommerce Content Restriction Strategy

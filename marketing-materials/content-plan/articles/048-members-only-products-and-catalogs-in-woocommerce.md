@@ -1,5 +1,7 @@
 # A048 — Members-Only Products and Catalogs in WooCommerce
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Members-Only Products and Catalogs in WooCommerce

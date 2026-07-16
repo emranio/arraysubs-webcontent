@@ -1,5 +1,7 @@
 # A052 — URL-Based Content Restriction: Prefixes, Wildcards, and Regex
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** URL-Based Content Restriction: Prefixes, Wildcards, and Regex

@@ -1,5 +1,7 @@
 # A035 — Subscription Grace Periods Explained
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Subscription Grace Periods Explained

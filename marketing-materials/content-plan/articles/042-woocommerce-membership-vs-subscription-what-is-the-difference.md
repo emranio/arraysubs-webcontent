@@ -1,5 +1,7 @@
 # A042 — WooCommerce Membership vs Subscription: What Is the Difference?
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** WooCommerce Membership vs Subscription: What Is the Difference?

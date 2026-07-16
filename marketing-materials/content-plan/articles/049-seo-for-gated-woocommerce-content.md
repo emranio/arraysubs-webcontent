@@ -1,5 +1,7 @@
 # A049 — SEO for Gated WooCommerce Content
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** SEO for Gated WooCommerce Content

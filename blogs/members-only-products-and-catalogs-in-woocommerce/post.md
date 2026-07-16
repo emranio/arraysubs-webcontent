@@ -94,6 +94,27 @@ Current ArraySubs implementation covers more than the button:
 
 Administrators and shop managers bypass current restrictions for management. Never use an administrator session as proof that a member or guest path works.
 
+## How should price and member discounts fit the catalog policy?
+
+Product visibility, price visibility, purchase authorization, and discount eligibility are four separate decisions. A public product with a members-only purchase rule can still show its ordinary price. A member discount can change the payable amount without making the product private. Do not describe “member pricing” when the implemented rule only blocks nonmember checkout.
+
+Write the intended states before configuration:
+
+| Visitor | Product visible? | Price shown? | Purchase allowed? | Discount applied? |
+| --- | --- | --- | --- | --- |
+| Guest | policy decision | policy decision | normally no for member-only purchase | no |
+| Logged-in nonmember | policy decision | policy decision | no | no |
+| Qualifying member | yes unless intentionally private | accurate member/public presentation | yes | only when a separate discount rule qualifies |
+| On-hold or expired member | lifecycle decision | avoid implying current eligibility | recovery or denial policy | according to documented status rule |
+
+Test price fragments, product schema, cart totals, coupons, taxes, renewal/recovery products, and cached product pages. If individualized wholesale pricing, organization contracts, or quote approval determines the amount, a dedicated B2B pricing system may need to own that decision.
+
+## What happens if access changes after add-to-cart?
+
+Authorization is not finished when a product enters the cart. A member can add an item, open another tab, then lose eligibility through cancellation, expiration, a plan switch, or an administrator correction. The store must revalidate at cart and checkout rather than trusting the earlier button click.
+
+Define the customer experience for that transition: remove the item with a specific explanation, retain it but block checkout, or route the customer to payment recovery when the membership is recoverable. Then test restored carts, checkout links, Store API sessions, and mobile handoff. The message should identify the membership problem without exposing sensitive account detail or discarding unrelated public items unnecessarily.
+
 ## Which membership conditions can be used?
 
 The current inspected builder can evaluate:

@@ -61,6 +61,12 @@ The protected fragment still needs separate file/API protection. A gated block t
 
 Choose before writing. A fully private resource should not be assigned an organic traffic target. A search-acquisition page needs enough public value to deserve the click independently of the premium upsell.
 
+Write two promises before drafting: the **search promise** describes the complete value an unauthorized visitor receives, and the **member promise** describes the additional outcome behind the gate. If either sentence is vague, the boundary is not ready.
+
+For example, “learn how to choose a protected-download architecture” can be the public promise, while “use the member-only configuration worksheet and red-team test sheet” is the paid promise. The public title, description, headings, and internal links should satisfy the first sentence. The gate card and member onboarding should deliver the second. This separation prevents metadata from advertising material that the crawler and search visitor cannot obtain.
+
+Review the two promises whenever a section moves across the boundary. A content edit can change search intent and conversion truth even when the URL, canonical, and access rule remain unchanged.
+
 ## How much content should remain public?
 
 There is no universal percentage or word count. Use the **ANSWER** framework:

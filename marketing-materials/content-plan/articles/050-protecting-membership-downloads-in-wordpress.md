@@ -1,5 +1,7 @@
 # A050 — Protecting Membership Downloads in WordPress
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Protecting Membership Downloads in WordPress

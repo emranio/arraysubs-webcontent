@@ -85,6 +85,22 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       "Measure recovery by cohort without relying on unsupported benchmarks",
     ],
   },
+  {
+    slug: "membership-strategy",
+    name: "Membership Strategy",
+    eyebrow: "Turn commerce into access",
+    description:
+      "Architecture and operating guides for membership models, access rules, content gates, catalogs, downloads, entitlements, paywalls, and lifecycle policy.",
+    intro: [
+      "A membership system converts products, purchases, subscriptions, roles, and feature values into access decisions. These guides help you separate billing from entitlement, choose the right public and protected surfaces, and document what happens through trial, payment recovery, cancellation, expiration, switching, and re-entry.",
+      "Start with the membership-site architecture and subscription-versus-membership comparison, then move into tier design, rule governance, content strategy, catalogs, downloads, SEO, and Boolean conditions. Product behavior is versioned, limitations are explicit, and every high-impact rule is paired with a practical test path.",
+    ],
+    highlights: [
+      "Separate the member promise, commerce record, and access decision",
+      "Design recoverable lifecycle and denied-user experiences",
+      "Test content, routes, files, products, roles, and caches end to end",
+    ],
+  },
 ];
 
 export const RESOURCE_ARTICLES: ResourceArticle[] = [
@@ -1140,6 +1156,642 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
       image:
         "/blogs/automatic-retry-for-failed-subscription-payments-what-good-looks-like/hero.png",
       tone: "primary",
+    },
+  },
+  {
+    id: "A035",
+    slug: "subscription-grace-periods-explained",
+    categorySlug: "payment-recovery",
+    title: "Subscription Grace Periods Explained",
+    seoTitle: "Subscription Grace Periods Explained",
+    metaDescription:
+      "Learn how subscription grace periods coordinate payment recovery, customer access, fulfillment, on-hold status, cancellation, and late-payment restoration.",
+    excerpt:
+      "Separate temporary active access from an on-hold recovery window, then align retries, notices, fulfillment, and the final unpaid outcome.",
+    directAnswer:
+      "A subscription grace period is the defined time after payment becomes due when a customer can still recover the renewal before the subscription reaches its final unpaid state. A two-phase policy separates temporary active access from an on-hold recovery window, so payment retries, customer notices, access, fulfillment, and cancellation do not change at the same moment.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "17 min read",
+    format: "Explainer",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "subscription grace period explained",
+      "WooCommerce subscription grace period",
+      "failed payment recovery access",
+      "two-phase subscription grace period",
+    ],
+    cover: {
+      label: "Grace without ambiguity",
+      image: "/blogs/subscription-grace-periods-explained/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A036",
+    slug: "expired-cards-and-subscription-recovery",
+    categorySlug: "payment-recovery",
+    title: "Expired Cards and Subscription Recovery",
+    seoTitle: "Expired Cards and Subscription Recovery",
+    metaDescription:
+      "Recover WooCommerce subscriptions after card expiration with secure updates, correct gateway ownership, payment collection, and full lifecycle reconciliation.",
+    excerpt:
+      "Treat expiration as a payment-method problem, use the gateway's secure update path, and reconcile every renewal and access record after recovery.",
+    directAnswer:
+      "An expired card does not make the subscription itself unusable, but it can make the saved payment token unable to fund the next renewal. Recovery requires a secure gateway-hosted update or reauthorization, a correctly timed retry, and reconciliation of the renewal order, subscription status, access, and next billing date after payment succeeds.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "15 min read",
+    format: "Guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "expired card subscription recovery",
+      "update expired card WooCommerce subscription",
+      "card updater recurring payments",
+      "recover subscription after card expiration",
+    ],
+    cover: {
+      label: "Recover expired-card renewals",
+      image: "/blogs/expired-cards-and-subscription-recovery/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A037",
+    slug: "failed-payment-email-sequence-a-message-by-message-playbook",
+    categorySlug: "payment-recovery",
+    title: "Failed Payment Email Sequence: A Message-by-Message Playbook",
+    seoTitle: "Failed Payment Email Sequence Playbook",
+    metaDescription:
+      "Build a failed-payment email sequence with state-based triggers, adaptable copy, secure actions, stop rules, access deadlines, and honest recovery metrics.",
+    excerpt:
+      "Match each message to the real payment state, give one secure recovery action, and stop immediately when the lifecycle changes.",
+    directAnswer:
+      "A failed-payment email sequence should explain the problem immediately, provide one secure recovery action, increase specificity as the access deadline approaches, and stop as soon as payment succeeds or the lifecycle changes. Each message must match the actual retry, grace, and access policy; a persuasive email cannot fix an incorrect token, webhook, or renewal state.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "16 min read",
+    format: "Guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "failed payment email sequence",
+      "subscription payment failed email examples",
+      "dunning email copy WooCommerce",
+      "card update reminder sequence",
+    ],
+    cover: {
+      label: "Messages that follow payment state",
+      image:
+        "/blogs/failed-payment-email-sequence-a-message-by-message-playbook/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A038",
+    slug: "auto-downgrade-after-payment-failure-when-it-beats-cancellation",
+    categorySlug: "payment-recovery",
+    title: "Auto-Downgrade After Payment Failure: When It Beats Cancellation",
+    seoTitle: "Auto-Downgrade After Subscription Payment Failure",
+    metaDescription:
+      "Decide when auto-downgrade should replace cancellation after failed subscription payments, with entitlement, gateway, abuse, and reactivation guardrails.",
+    excerpt:
+      "Use a lower-cost fallback only when it preserves real customer value without creating hidden fulfillment, access, or abuse risk.",
+    directAnswer:
+      "Auto-downgrade can beat cancellation when a subscription has a genuinely useful lower or free tier, the reduced entitlement is inexpensive to serve, and customers can later reauthorize payment without losing their work. It is usually a poor fit for shipped goods, costly human services, regulated access, or products whose “free” state creates ongoing fulfillment risk.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "15 min read",
+    format: "Strategy guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "auto downgrade after failed subscription payment",
+      "failed payment downgrade to free plan",
+      "subscription fallback plan strategy",
+      "retain user after payment failure",
+    ],
+    cover: {
+      label: "Downgrade instead of cancelling",
+      image:
+        "/blogs/auto-downgrade-after-payment-failure-when-it-beats-cancellation/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A039",
+    slug: "involuntary-churn-recovery-checklist",
+    categorySlug: "payment-recovery",
+    title: "Involuntary Churn Recovery Checklist",
+    seoTitle: "Involuntary Churn Recovery Checklist",
+    metaDescription:
+      "Audit involuntary churn recovery across gateways, tokens, retries, email, grace, access, support, reconciliation, and closed-cohort measurement.",
+    excerpt:
+      "Audit prevention, decline routing, retries, communication, access, support, reconciliation, and measurement as one recovery system.",
+    directAnswer:
+      "An involuntary-churn recovery checklist must cover more than retries: verify gateway and token health, prevent avoidable expiration failures, classify declines, coordinate retries and customer messages, define grace and access rules, reconcile webhooks and renewal orders, give support safe recovery tools, and measure closed cohorts only after every eligible invoice reaches a final state.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "14 min read",
+    format: "Checklist",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "involuntary churn recovery checklist",
+      "reduce failed payment churn ecommerce",
+      "subscription payment recovery checklist",
+      "involuntary churn prevention WooCommerce",
+    ],
+    cover: {
+      label: "Audit the full recovery system",
+      image: "/blogs/involuntary-churn-recovery-checklist/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A040",
+    slug: "subscription-payment-failure-codes-a-practical-triage-guide",
+    categorySlug: "payment-recovery",
+    title: "Subscription Payment Failure Codes: A Practical Triage Guide",
+    seoTitle: "Subscription Payment Failure Codes: Triage Guide",
+    metaDescription:
+      "Translate Stripe, PayPal, and Paddle subscription payment failures into retry, update, authenticate, stop, or reconciliation actions safely.",
+    excerpt:
+      "Translate provider evidence into retry, update, authenticate, stop, or investigate actions without exposing sensitive decline detail.",
+    directAnswer:
+      "Subscription payment failure codes are gateway evidence, not universal instructions. Translate each code into one merchant action: retry later, ask the customer to update payment details, complete authentication, stop and escalate, or investigate a technical/reconciliation fault. Preserve the raw provider evidence privately, show customers safe language, and verify payment before changing access or retrying manually.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "14 min read",
+    format: "Troubleshooting guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "subscription payment failure codes",
+      "Stripe decline codes recurring payments",
+      "PayPal subscription payment errors",
+      "hard vs soft payment decline",
+    ],
+    cover: {
+      label: "Route failures to the right action",
+      image:
+        "/blogs/subscription-payment-failure-codes-a-practical-triage-guide/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A041",
+    slug: "how-to-create-a-woocommerce-membership-site-architecture-before-configuration",
+    categorySlug: "membership-strategy",
+    title:
+      "How to Create a WooCommerce Membership Site: Architecture Before Configuration",
+    seoTitle: "How to Create a WooCommerce Membership Site",
+    metaDescription:
+      "Plan a WooCommerce membership site by separating the member promise, commerce, source of truth, access rules, lifecycle, portal, and operations.",
+    excerpt:
+      "Define the member promise, commerce model, access evidence, lifecycle, denied experience, and operating owner before configuring rules.",
+    directAnswer:
+      "To create a WooCommerce membership site, define the member promise first, then separate six jobs: payment collection, the subscription or purchase record, access conditions, protected-content scope, lifecycle policy, and the customer portal. Choose the WordPress plugin stack only after mapping how signup, payment failure, cancellation, expiration, and re-entry change access.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "21 min read",
+    format: "Pillar guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "how to create a WooCommerce membership site",
+      "WooCommerce membership site planning guide",
+      "build a paid membership with WooCommerce",
+      "subscription membership architecture",
+    ],
+    cover: {
+      label: "Plan membership before configuration",
+      image:
+        "/blogs/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A042",
+    slug: "woocommerce-membership-vs-subscription-what-is-the-difference",
+    categorySlug: "membership-strategy",
+    title: "WooCommerce Membership vs Subscription: What Is the Difference?",
+    seoTitle: "WooCommerce Membership vs Subscription",
+    metaDescription:
+      "Compare WooCommerce memberships and subscriptions: access entitlement versus recurring billing, when to use one or both, and how ArraySubs models them.",
+    excerpt:
+      "Separate recurring billing from access entitlement, then decide whether one model, both models, or an independent membership ledger fits.",
+    directAnswer:
+      "In WooCommerce, a subscription is a billing and lifecycle agreement; a membership is an access entitlement. A subscription can sell recurring products without protected content, and a membership can be free, one-time, fixed-term, or lifetime. Use both when recurring payment status should control content, products, discounts, downloads, community, or services.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "17 min read",
+    format: "Comparison",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "WooCommerce membership vs subscription",
+      "subscription vs membership difference WooCommerce",
+      "WooCommerce subscriptions and memberships",
+      "recurring billing vs content access",
+    ],
+    cover: {
+      label: "Billing and access are different",
+      image:
+        "/blogs/woocommerce-membership-vs-subscription-what-is-the-difference/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A043",
+    slug: "woocommerce-subscriptions-and-memberships-together-the-complete-architecture",
+    categorySlug: "membership-strategy",
+    title:
+      "WooCommerce Subscriptions and Memberships Together: The Complete Architecture",
+    seoTitle: "WooCommerce Subscriptions and Memberships Together",
+    metaDescription:
+      "Connect WooCommerce subscription billing to membership access with explicit systems of record, lifecycle contracts, entitlement rules, and reconciliation tests.",
+    excerpt:
+      "Connect billing to access through an explicit lifecycle contract, reconciliation path, recovery exclusions, and end-to-end transition tests.",
+    directAnswer:
+      "To run WooCommerce subscriptions and memberships together, choose separate systems of record for money and access, then define an explicit status-to-access contract between them. Every checkout, renewal, failure, grace period, pause, cancellation, expiration, refund, and plan switch must update or re-evaluate the member's entitlements without blocking payment recovery or creating duplicate access.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "14 min read",
+    format: "Guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "WooCommerce subscriptions and memberships together",
+      "recurring membership WooCommerce architecture",
+      "connect subscription billing to content access",
+      "subscription status controls membership access",
+    ],
+    cover: {
+      label: "Connect money to access safely",
+      image:
+        "/blogs/woocommerce-subscriptions-and-memberships-together-the-complete-architecture/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A044",
+    slug: "membership-level-strategy-free-paid-lifetime-and-tiered-access",
+    categorySlug: "membership-strategy",
+    title: "Membership Level Strategy: Free, Paid, Lifetime, and Tiered Access",
+    seoTitle: "Membership Level Strategy: Free, Paid, and Tiered",
+    metaDescription:
+      "Design membership levels around distinct outcomes, sustainable delivery, free and lifetime economics, enforceable entitlements, switching, and grandfathering.",
+    excerpt:
+      "Build tiers around distinct member outcomes, explicit entitlement differences, sustainable delivery cost, switching, and grandfathering policy.",
+    directAnswer:
+      "A strong membership level strategy gives each tier a distinct member outcome, not merely more features. Start with one clear paid level, add free access only when it creates a deliberate acquisition path, add tiers when segments need meaningfully different value or service cost, and offer lifetime access only when future obligations remain economically supportable.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "14 min read",
+    format: "Strategy guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "membership level strategy",
+      "how many membership tiers",
+      "free vs paid membership levels",
+      "lifetime membership vs recurring membership",
+    ],
+    cover: {
+      label: "Design sustainable membership levels",
+      image:
+        "/blogs/membership-level-strategy-free-paid-lifetime-and-tiered-access/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A045",
+    slug: "woocommerce-content-restriction-strategy",
+    categorySlug: "membership-strategy",
+    title: "WooCommerce Content Restriction Strategy",
+    seoTitle: "WooCommerce Content Restriction Strategy",
+    metaDescription:
+      "Design WooCommerce content restrictions with deliberate public/member classes, narrow targets, reliable conditions, priority, denied UX, governance, and testing.",
+    excerpt:
+      "Classify public and protected content first, then govern the narrowest enforceable scope, condition, priority, denied path, and rollback.",
+    directAnswer:
+      "A sound WooCommerce content restriction strategy classifies content before creating rules: public discovery, preview, member access, tier access, account recovery, and staff-only. For each protected item, define one authoritative condition, the narrowest target scope, rule priority, denied experience, schedule, and test cases. Never gate login, payment recovery, password reset, checkout, or support accidentally.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "14 min read",
+    format: "Guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "content restriction strategy WooCommerce",
+      "WooCommerce gated content best practices",
+      "restrict content by subscription plan",
+      "membership access control architecture",
+    ],
+    cover: {
+      label: "Govern every access rule",
+      image: "/blogs/woocommerce-content-restriction-strategy/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A046",
+    slug: "hard-paywall-vs-metered-paywall-vs-freemium-content",
+    categorySlug: "membership-strategy",
+    title: "Hard Paywall vs Metered Paywall vs Freemium Content",
+    seoTitle: "Hard Paywall vs Metered Paywall vs Freemium",
+    metaDescription:
+      "Compare hard, metered, freemium, and partial-content paywalls by audience habit, discovery, identity, privacy, implementation, and member value.",
+    excerpt:
+      "Choose a paywall by content uniqueness, audience habit, public proof, identity maturity, member aftercare, and operating burden.",
+    directAnswer:
+      "Choose a hard paywall when nearly all premium value can sit behind membership, a meter when readers need several complete samples before conversion, and freemium when selected content should remain permanently public while premium resources stay gated. The best model depends on audience habit, content uniqueness, acquisition channels, implementation accuracy, and the value members receive after subscribing.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "17 min read",
+    format: "Comparison",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "hard paywall vs metered paywall vs freemium",
+      "best paywall model for WordPress",
+      "metered paywall vs membership",
+      "partial vs full content restriction",
+    ],
+    cover: {
+      label: "Choose the right paywall model",
+      image:
+        "/blogs/hard-paywall-vs-metered-paywall-vs-freemium-content/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A047",
+    slug: "content-dripping-strategy-for-membership-sites",
+    categorySlug: "membership-strategy",
+    title: "Content Dripping Strategy for Membership Sites",
+    seoTitle: "Content Dripping Strategy for Membership Sites",
+    metaDescription:
+      "Choose immediate, relative, cohort, completion, editorial, or hybrid content release with explicit anchors, catch-up, notifications, and honest measurement.",
+    excerpt:
+      "Use delayed release only when sequence, pacing, cohort timing, or ongoing publishing creates value, then document every timing boundary.",
+    directAnswer:
+      "Use content dripping when sequence, pacing, cohort timing, or ongoing release creates real member value—not merely to delay access. Choose an explicit anchor, release interval, catch-up policy, notification path, and expiry rule; show members what is available next. Offer immediate access when reference use, urgent results, self-paced learning, or experienced members make waiting harmful.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "13 min read",
+    format: "Strategy guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "content dripping strategy membership site",
+      "drip content schedule best practices",
+      "membership content release schedule",
+      "course content dripping strategy",
+    ],
+    cover: {
+      label: "Release content with purpose",
+      image: "/blogs/content-dripping-strategy-for-membership-sites/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A048",
+    slug: "members-only-products-and-catalogs-in-woocommerce",
+    categorySlug: "membership-strategy",
+    title: "Members-Only Products and Catalogs in WooCommerce",
+    seoTitle: "Members-Only Products and Catalogs in WooCommerce",
+    metaDescription:
+      "Choose discoverable, private, or login-first WooCommerce member catalogs and enforce product visibility and purchase authorization across every route.",
+    excerpt:
+      "Choose public discovery with purchase blocking, a genuinely private catalog, or a login-first journey—and secure every commerce path.",
+    directAnswer:
+      "A WooCommerce members-only catalog can hide products completely, keep product pages discoverable while blocking purchase, or redirect unauthorized visitors to login or pricing. The right model depends on whether organic discovery or inventory privacy matters more. ArraySubs enforces current shop rules across product pages, catalog queries, cart validation, checkout, Store API requests, and qualifying member conditions.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "14 min read",
+    format: "Guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "members only products WooCommerce strategy",
+      "private WooCommerce catalog membership",
+      "restrict products for members",
+      "member only pricing and products",
+    ],
+    cover: {
+      label: "Public, private, or login-first catalog",
+      image:
+        "/blogs/members-only-products-and-catalogs-in-woocommerce/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A049",
+    slug: "seo-for-gated-woocommerce-content",
+    categorySlug: "membership-strategy",
+    title: "SEO for Gated WooCommerce Content",
+    seoTitle: "SEO for Gated WooCommerce Content",
+    metaDescription:
+      "Plan SEO for gated WooCommerce content with useful public answers, server-side authorization, honest metadata, paywall schema, cache QA, and rendering tests.",
+    excerpt:
+      "Write separate search and member promises, authorize the premium layer server-side, and validate exactly what crawlers and guests receive.",
+    directAnswer:
+      "Gated WooCommerce content can rank only to the extent that search engines can crawl useful public material. With ArraySubs server-side gating, an unauthorized crawler receives the same teaser or denial output as a guest, not the protected body. Publish a substantial public answer, gate the premium section, keep metadata honest, and test the rendered guest response in Google Search Console.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "14 min read",
+    format: "Guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "SEO for gated content WooCommerce",
+      "membership content SEO",
+      "paywall SEO WordPress",
+      "index protected content safely",
+    ],
+    cover: {
+      label: "Make gated content discoverable honestly",
+      image: "/blogs/seo-for-gated-woocommerce-content/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A050",
+    slug: "protecting-membership-downloads-in-wordpress",
+    categorySlug: "membership-strategy",
+    title: "Protecting Membership Downloads in WordPress",
+    seoTitle: "Protecting Membership Downloads in WordPress",
+    metaDescription:
+      "Protect WordPress membership downloads with request-time authorization, private storage, secure delivery, revocation tests, and honest security boundaries.",
+    excerpt:
+      "Combine current entitlement checks with a private origin, controlled delivery, revocation tests, and an incident-response plan for leaked objects.",
+    directAnswer:
+      "To protect membership downloads in WordPress, authorize the member every time the file is requested and prevent direct public access to the underlying object. ArraySubs checks login, a WordPress nonce, current membership conditions, and any release schedule. Sensitive files still need private origin storage or server/CDN enforcement because a public Media Library or permanent CDN URL can bypass the protected endpoint.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "14 min read",
+    format: "Guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "protect membership downloads WordPress",
+      "secure WooCommerce member downloads",
+      "prevent direct download URL sharing",
+      "subscription gated file access",
+    ],
+    cover: {
+      label: "Protect the file, not the button",
+      image: "/blogs/protecting-membership-downloads-in-wordpress/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A051",
+    slug: "wordpress-roles-vs-membership-levels-vs-feature-entitlements",
+    categorySlug: "membership-strategy",
+    title: "WordPress Roles vs Membership Levels vs Feature Entitlements",
+    seoTitle: "WordPress Roles vs Membership Levels",
+    metaDescription:
+      "Compare WordPress roles, membership levels, and feature entitlements—and design a subscription access model that avoids stale roles and excessive privilege.",
+    excerpt:
+      "Keep commercial truth in subscription or purchase records, define granular entitlements, and emit least-privilege roles only for interoperability.",
+    directAnswer:
+      "WordPress roles answer “what can this account do across WordPress,” membership levels answer “which commercial plan and lifecycle state does this customer currently have,” and feature entitlements answer “which specific capability or limit is available.” Use subscription or purchase records as commercial truth, explicit entitlements for fine-grained access, and least-privilege roles only where WordPress or another plugin needs them.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "17 min read",
+    format: "Comparison",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "WordPress roles vs membership levels",
+      "subscription plan vs user role WordPress",
+      "membership access vs feature entitlement",
+      "roles for WooCommerce members",
+    ],
+    cover: {
+      label: "Separate roles, levels, and entitlements",
+      image:
+        "/blogs/wordpress-roles-vs-membership-levels-vs-feature-entitlements/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A052",
+    slug: "url-based-content-restriction-prefixes-wildcards-and-regex",
+    categorySlug: "membership-strategy",
+    title: "URL-Based Content Restriction: Prefixes, Wildcards, and Regex",
+    seoTitle: "URL-Based Content Restriction in WordPress",
+    metaDescription:
+      "Use exact, prefix, contains, and regex URL restrictions safely in WordPress, with ArraySubs matching semantics, priority, exclusions, and a QA matrix.",
+    excerpt:
+      "Choose the least expressive matcher that fits, order specific and broad rules deliberately, and test normalization, exclusions, and redirects.",
+    directAnswer:
+      "For URL-based content restriction in WordPress, ArraySubs compares the request path—without its query string—using exact, starts-with, contains, or case-insensitive regex matching. Exact, prefix, and contains comparisons are case-sensitive; exclusions are prefix checks; lower priority numbers run first. The first matching, non-excluded URL rule decides access, so broad patterns and overlaps require an explicit test matrix.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "14 min read",
+    format: "Guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "URL based content restriction WordPress",
+      "restrict WordPress URL path by membership",
+      "wildcard content restriction rules",
+      "regex URL access control",
+    ],
+    cover: {
+      label: "Match routes without surprises",
+      image:
+        "/blogs/url-based-content-restriction-prefixes-wildcards-and-regex/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A053",
+    slug: "partial-content-restriction-seo-conversion-and-reader-experience",
+    categorySlug: "membership-strategy",
+    title:
+      "Partial Content Restriction: SEO, Conversion, and Reader Experience",
+    seoTitle: "Partial Content Restriction: SEO and Conversion",
+    metaDescription:
+      "Use partial content restriction without bait-and-switch: preserve useful public answers, gate premium value server-side, and test SEO, conversion, cache, and UX.",
+    excerpt:
+      "Resolve and prove the public answer, bridge to a concrete premium outcome, then test the server-side boundary by reader segment.",
+    directAnswer:
+      "Partial content restriction can preserve organic usefulness and create a legitimate membership conversion moment when a complete public answer appears before a server-side gate. ArraySubs can restrict shortcode, Gutenberg block, or Elementor Container content and return a denial message to nonmembers. Only the public response is crawlable by default, so place the boundary according to search intent and measured reader behavior—not a universal word count.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "14 min read",
+    format: "Guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "partial content restriction SEO",
+      "gate part of a WordPress page",
+      "content teaser membership conversion",
+      "inline paywall SEO best practices",
+    ],
+    cover: {
+      label: "Gate deeper value, not the answer",
+      image:
+        "/blogs/partial-content-restriction-seo-conversion-and-reader-experience/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A054",
+    slug: "and-or-membership-access-rules-explained-with-examples",
+    categorySlug: "membership-strategy",
+    title: "AND/OR Membership Access Rules Explained with Examples",
+    seoTitle: "AND/OR Membership Access Rules Explained",
+    metaDescription:
+      "Translate membership policy into AND, OR, and grouped access rules with truth tables, ArraySubs examples, multi-select caveats, and a complete test checklist.",
+    excerpt:
+      "Translate plain-language policy into mandatory and alternative facts, build one nested group, and turn every Boolean branch into a test persona.",
+    directAnswer:
+      "In AND/OR membership access rules, AND means every condition must pass, while OR means any condition can pass. Parentheses define which facts belong together: `A AND (B OR C)` requires A plus either B or C. Current ArraySubs supports a top-level ALL/ANY operator and one nested group level, covering most practical subscription, purchase, role, spend, and feature policies.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "13 min read",
+    format: "Explainer",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "AND OR membership access rules",
+      "combine membership access conditions",
+      "nested content restriction rules WordPress",
+      "membership rule logic examples",
+    ],
+    cover: {
+      label: "Build access logic people can test",
+      image:
+        "/blogs/and-or-membership-access-rules-explained-with-examples/hero.png",
+      tone: "highlight",
     },
   },
 ];

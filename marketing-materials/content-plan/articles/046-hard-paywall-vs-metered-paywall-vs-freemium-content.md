@@ -1,5 +1,7 @@
 # A046 — Hard Paywall vs Metered Paywall vs Freemium Content
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Hard Paywall vs Metered Paywall vs Freemium Content

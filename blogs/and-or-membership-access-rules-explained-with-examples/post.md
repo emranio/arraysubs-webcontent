@@ -136,7 +136,11 @@ Example facts:
 ### Step 3: add variables and parentheses
 
 ```text
-Active Academy AND (Purchased Course A OR Role Instructor)
+Active Academy
+AND (
+  Purchased Course A
+  OR Role Instructor
+)
 ```
 
 Only then reproduce the expression in ArraySubs with top-level ALL plus a nested ANY group.
@@ -164,7 +168,8 @@ Use one active-subscription condition selecting both products when its internal-
 **Expression:**
 
 ```text
-Active Academy AND Purchased Prerequisite
+Active Academy
+AND Purchased Prerequisite
 ```
 
 Use top-level ALL with two conditions.
@@ -188,7 +193,11 @@ Use a narrow, controlled custom role. Never use Administrator, Shop Manager, or 
 **Expression:**
 
 ```text
-Active Pro AND (Purchased Certification OR Role Instructor)
+Active Pro
+AND (
+  Purchased Certification
+  OR Role Instructor
+)
 ```
 
 This is the canonical nested-group example.
@@ -200,7 +209,8 @@ This is the canonical nested-group example.
 **Expression:**
 
 ```text
-Active Agency AND Feature team_seats >= 10
+Active Agency
+AND Feature team_seats >= 10
 ```
 
 This feature-value condition depends on ArraySubs Pro Feature Manager. The result also depends on the feature's configured aggregation behavior. A numeric entitlement is not automatically a usage counter.
@@ -244,7 +254,8 @@ Unknown or deleted products, variations, roles, and feature keys should fail saf
 Conceptually, a scheduled restriction often means:
 
 ```text
-condition expression passes AND release time has arrived
+condition expression passes
+AND release time has arrived
 ```
 
 But the current subsystems apply schedules separately from the shared condition tree. Test time boundaries, reference dates, timezone, renewal/reset behavior, and lifecycle state explicitly. Do not place a fake “date condition” in a diagram when the current builder represents scheduling elsewhere.

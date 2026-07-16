@@ -228,6 +228,27 @@ Pro is not required for basic Members Access in the inspected current version. C
 
 The implementation details belong in the [combined-conditions recipe](/deals/arraysubs/use-cases/recipes/combined-conditions/), [URL-prefix lockdown recipe](/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/), and [inline content-gating recipe](/deals/arraysubs/use-cases/recipes/inline-content-gating/).
 
+## Who should own the membership architecture after launch?
+
+A membership site becomes fragile when billing belongs to finance, protected content belongs to editorial, access rules belong to a developer, and nobody owns the complete outcome. Assign one accountable policy owner who can approve the relationship among all four. That person does not need to perform every change, but must be able to answer why a user has access, which record granted it, and how to reverse an incorrect decision.
+
+Create a small operating record for every access policy:
+
+| Operating field | What to record | Why it matters during an incident |
+| --- | --- | --- |
+| Business promise | the member outcome and qualifying plan | prevents a technical rule from drifting away from the offer |
+| Source evidence | product, variation, subscription state, purchase, role, or feature | lets support trace the decision to a real record |
+| Protected surface | content object, route, section, download, product, or external system | exposes gaps between the page and the underlying asset |
+| Lifecycle transitions | trial, recovery, hold, cancellation, expiry, refund, switch, and rejoin | turns vague “active member” language into testable behavior |
+| Recovery path | login, Pay Now, method update, rejoin, upgrade, and support | prevents the restriction from blocking its own remedy |
+| Change control | owner, reviewer, evidence, release time, and rollback value | makes a live policy edit reversible |
+
+Support also needs a repeatable diagnostic trace. Start with the customer, identify every qualifying subscription or purchase, resolve the current lifecycle state and dates, evaluate the exact condition tree, identify the first applicable rule, inspect its schedule, and then check cache and delivery behavior. Record the first failing step rather than “fixing” the account with a manual role that may conceal the defect.
+
+Treat rule changes like application releases. A renamed product, feature key, route prefix, or role can alter access without changing the public offer. Review dependencies before the edit, test a thin slice with normal customer accounts, keep the previous values, and schedule a follow-up check after caches and background lifecycle jobs have run. Editorial, commerce, engineering, and support should all know where this operating record lives.
+
+A launch is operationally ready only when the team can demonstrate three things without relying on the original implementer: grant the correct access from a documented source record, explain a denial from current evidence, and roll back a bad policy without opening unrelated content. That is the difference between a configured plugin and a maintainable membership system.
+
 ## How should a WooCommerce membership site be launched?
 
 Build one thin slice first: one real product, one qualifying customer, one protected page/section, one denied experience, one payment, and the complete lifecycle.

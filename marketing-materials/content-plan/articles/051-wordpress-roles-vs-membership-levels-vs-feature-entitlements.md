@@ -1,5 +1,7 @@
 # A051 — WordPress Roles vs Membership Levels vs Feature Entitlements
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** WordPress Roles vs Membership Levels vs Feature Entitlements

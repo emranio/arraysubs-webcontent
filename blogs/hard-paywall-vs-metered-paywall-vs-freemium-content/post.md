@@ -67,6 +67,24 @@ Score each candidate qualitatively on ten factors:
 
 Do not select a meter because it feels “less aggressive.” It is the most complex model here and can become both porous and privacy-heavy when identity is weak.
 
+## What value should remain after the reader subscribes?
+
+A paywall can improve the moment of conversion and still fail the membership. Before choosing the gate, describe the first 30 minutes, first week, and first renewal period after purchase.
+
+The member should be able to find a complete next action immediately: a saved reading list, a valuable archive entry, a downloadable tool, an onboarding sequence, an upcoming session, or another benefit that proves the offer. If the entire promise is “the article you just tried to read,” the membership may have weak depth even when the gate converts.
+
+Audit the post-conversion experience with five questions:
+
+1. Does checkout return the member to the resource that created intent?
+2. Can the new member discover two or three related premium assets without searching blindly?
+3. Is the release cadence visible and credible?
+4. Can the member manage billing, recover payment, and understand access dates?
+5. Does the next renewal have a clear reason beyond avoiding a lockout?
+
+Hard paywalls need strong public proof and strong member navigation because the collection itself is hidden. Meters need the paid experience to feel better than repeated counting interruptions. Freemium needs a premium layer that is materially deeper than the public catalog. Partial gates need the protected asset to deliver exactly what the bridge promised.
+
+This aftercare criterion belongs in model selection because a technically perfect gate cannot compensate for a thin premium product.
+
 ## When should a hard paywall be used?
 
 A hard paywall fits when the premium collection is highly differentiated, the value can be explained through public landing pages and examples, and membership grants a coherent library or service rather than a single hidden article.
@@ -198,6 +216,39 @@ member content activation
 ```
 
 Also monitor search landing mix, return frequency, support contacts, access incidents, refunds, cancellation reasons, premium usage, cache leakage, and contribution margin. No benchmark is claimed here.
+
+## How should a paywall experiment be designed?
+
+Start with a decision the business can reverse. Examples include moving one coherent collection from public to freemium, adding a partial gate around a workbook, or changing a public product explanation before testing a harder boundary. Do not change the gate model, price, offer copy, checkout, and onboarding simultaneously; the result will not explain which change mattered.
+
+Write an experiment card before launch:
+
+| Field | Required decision |
+| --- | --- |
+| Hypothesis | which audience behavior should change, and why this model should cause it |
+| Eligible audience | new visitors, returning anonymous readers, logged-in nonmembers, or a defined acquisition channel |
+| Primary outcome | one declared conversion or member-activation event |
+| Guardrails | search entrances, login completion, support, refunds, cache incidents, and member usage |
+| Observation window | long enough to include the relevant return and buying cycle |
+| Exclusions | staff, bots, existing members, previews, campaigns, and known technical failures |
+| Rollback | exact content/rule state to restore and the owner who can restore it |
+
+Keep existing-member authentication separate from prospect conversion. A login click from a paying member is a restoration event, not a new-sale signal. Likewise, a reader who never reaches the gate should not be included in the gate-impression denominator.
+
+Interpret conflicting results rather than declaring a winner from one rate. A deeper gate may raise checkout starts while reducing organic entrances or increasing refunds. A freemium collection may attract more new visitors but fail to lead them toward premium value. A meter may increase registrations while generating more privacy or counting complaints. The business decision should weigh the primary outcome, guardrails, contribution margin, and member activation together.
+
+After rollout, annotate the exact rule and content version. Compare closed cohorts that experienced the same boundary, then read back acquisition and member outcomes after the planned window. Keep the old policy available until the new model has passed access, cache, search, support, and retention checks.
+
+## What does each paywall model require every week?
+
+| Model | Recurring editorial work | Recurring technical work | Recurring support question |
+| --- | --- | --- | --- |
+| Hard | maintain public proof, taxonomy descriptions, and representative samples | audit access, redirects, caches, and recovery routes | “Why can’t I open this, and which plan qualifies?” |
+| Metered | maintain the eligible content set and exceptions | validate identity, counts, resets, privacy, and cross-device behavior | “Why did this view count, and can you correct it?” |
+| Freemium | classify every new item consistently and review old classifications | keep public/premium routes, feeds, and metadata aligned | “What is included free versus with membership?” |
+| Partial | write a complete public answer and a specific premium bridge | verify server rendering plus file/API protection | “I paid—why is this section still locked?” |
+
+Choose the operating burden the team can sustain, not only the mockup that looks best on launch day.
 
 ## Reversible paywall migration path
 

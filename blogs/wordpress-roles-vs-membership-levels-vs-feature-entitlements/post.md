@@ -88,6 +88,22 @@ Entitlements prevent “role explosion.” Instead of creating a role for every 
 
 A numeric entitlement is not automatically usage metering. “10 exports” may describe an allowed limit, but a separate reliable counter is needed to record consumption, reset windows, handle concurrency, and prevent overspend.
 
+## Why does one role per plan break down?
+
+Suppose a business has three plans, monthly and annual billing, two regions, an optional analytics add-on, and a community benefit. Encoding every combination as a role can produce dozens of names even though the underlying decisions are only plan, region, analytics, and community access.
+
+The role model then accumulates avoidable questions:
+
+- Does `pro_annual_eu` outrank `standard_monthly_eu` when both remain assigned?
+- Is analytics implied by the role name or checked separately?
+- Which role represents a customer during downgrade-at-renewal?
+- Who removes the old role after a manual purchase or refund?
+- What happens when a forum plugin and the billing plugin both manage `pro_member`?
+
+Adding more roles does not answer those questions; it hides product attributes inside labels. A layered model represents each fact once, resolves conflicts deliberately, and emits only the small compatibility role set that external WordPress components require.
+
+Role count alone is not the problem. The problem is using a persistent, multi-owner capability bundle as a compressed record of price, term, lifecycle, geography, and product packaging.
+
 ## Recommended architecture: commercial truth first
 
 Use this direction of data flow:
@@ -146,6 +162,44 @@ Examples:
 The evaluator can consider active/trial subscriptions and purchased product IDs. Do not say feature entitlements are inherently subscription-only. Define each feature's commercial source, lifecycle, default, type, and aggregation rule.
 
 Feature definitions are a Pro capability. Core ArraySubs can consume the feature-value condition when that Pro system is available; do not represent Feature Manager as part of the free core feature set.
+
+## How should an entitlement dictionary be designed?
+
+Treat feature keys as a public contract between product packaging, access rules, application code, support, and reporting. Give every key a definition before attaching values to products.
+
+| Dictionary field | Example | Decision to document |
+| --- | --- | --- |
+| Stable key | `team_seats` | machine identifier; avoid plan names and display copy |
+| Meaning | concurrent team-member allowance | what the value authorizes and what it does not |
+| Type | number | toggle, number, or controlled text |
+| Default | `0` | safe result when no source qualifies |
+| Sources | Pro monthly, Pro annual, seat add-on | every product/variation that can contribute |
+| Aggregation | `sum` | whether multiple sources add, choose a maximum, or satisfy any |
+| Lifecycle | active and trial; recovery policy documented | which states contribute and when they stop |
+| Consumer | team invitation service | every gate, API, UI, or remote integration that reads it |
+| Migration owner | product operations | who reviews renames, deletions, and value changes |
+
+Use `sum` only when separate purchases genuinely stack. Seat packs may add; independent subscriptions that duplicate the same base allowance may not. Use `max` when the strongest qualifying plan should win without double-counting. Use `any` for a boolean-style right where one qualifying source is sufficient. For text values, define allowed values and precedence rather than assuming arbitrary strings form a meaningful hierarchy.
+
+Keep **entitlement**, **usage**, and **availability** distinct. An entitlement might allow 10 exports; usage says 7 have been consumed; availability resolves to 3 only after a counter, reset window, concurrency policy, and correction process exist. Likewise, `storage_gb = 100` does not provision storage or delete excess data when the value falls. The consuming system must safely implement the transition.
+
+Renaming a feature key is a schema migration. Inventory every product value, rule, code check, report, and support playbook that consumes it. Write the new key, migrate producers and consumers, test accounts with overlapping sources, and remove the old key only after a readback proves it is unused.
+
+## How should support trace an access decision?
+
+A useful diagnostic follows the data flow instead of editing the final role:
+
+1. identify the customer and all current subscriptions/purchases;
+2. confirm product, variation, lifecycle state, and effective dates;
+3. resolve the commercial membership level;
+4. list each feature source and its aggregation result;
+5. list role adapters, their owners, and their last synchronization event;
+6. evaluate the exact rule for the denied resource;
+7. check cache and any remote consumer after the source result is correct.
+
+The diagnostic should distinguish “source does not qualify,” “policy resolved no access,” “derived role is stale,” and “downstream surface served stale data.” Those failures need different fixes. Manually adding a role may restore one screen while leaving the actual lifecycle, feature, or cache defect unresolved.
+
+Record the correction at the owning layer and re-run the same trace. Support can then explain the decision to the customer and engineering can see whether the issue belongs to commerce data, entitlement policy, role synchronization, or delivery.
 
 ## When should each layer make the access decision?
 

@@ -1,5 +1,7 @@
 # A053 — Partial Content Restriction: SEO, Conversion, and Reader Experience
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Partial Content Restriction: SEO, Conversion, and Reader Experience

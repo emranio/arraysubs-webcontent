@@ -1,5 +1,7 @@
 # A040 — Subscription Payment Failure Codes: A Practical Triage Guide
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Subscription Payment Failure Codes: A Practical Triage Guide

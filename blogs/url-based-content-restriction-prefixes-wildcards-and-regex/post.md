@@ -160,6 +160,39 @@ Option B uses the public preview as an exclusion from the membership rule. Choos
 
 The table should become a real expected-results sheet with user personas, not remain an article example.
 
+## How should a complete URL rule set be reviewed?
+
+Individual rules can look correct while the ordered set is wrong. Export or transcribe every enabled URL rule into one table with its numeric priority, matcher, pattern, exclusions, condition summary, schedule, denied action, destination, and owner. Then sort it exactly as the runtime does.
+
+Review the table in four passes:
+
+1. **Coverage:** every protected route family has a rule, including base paths and expected descendants.
+2. **Overmatch:** prefix and contains rules do not capture similarly named public, account, or recovery routes.
+3. **Shadowing:** a broad early rule does not decide before a specific later rule can run.
+4. **Escape:** login, password reset, pricing, checkout, My Account, Pay Now, support, privacy, and redirect destinations remain reachable.
+
+Add a representative URL for every row and at least one deliberate non-match. For a prefix such as `/academy/`, test `/academy`, `/academy/lesson`, `/academyplus`, localized variants, and the destination used when access fails. For regex, keep the reviewed expression and adversarial test path in the same record.
+
+Treat the table as release evidence. A rule edit is incomplete until the ordered set and expected-results sheet are both updated.
+
+## What happens when the site's URL structure changes?
+
+A permalink, language, reverse-proxy, subdirectory, or application-route migration can silently move requests outside the stored policy. Plan access-rule migration alongside redirects and canonical changes.
+
+Before the route change:
+
+- inventory old protected paths, public exceptions, and redirect destinations;
+- define the new normalized path for every representative request;
+- create tests for old URL, redirect hop, final URL, query-string variants, and both user states;
+- decide whether the old route remains protected before redirecting;
+- confirm that the redirect destination is not caught by the same denied rule.
+
+During rollout, keep old and new rules only when their ordering cannot create an unintended allow or redirect loop. Test direct requests that bypass a navigation link. After search, email, bookmarks, and application clients have moved, retire the old rule deliberately rather than leaving overlapping patterns indefinitely.
+
+If a route carries a private resource, a redirect is not the authorization boundary. The final controller, file endpoint, or application still needs its own current access check.
+
+Keep a temporary request log or test report during the migration so unexpected old-path traffic can be distinguished from authorization defects. Remove sensitive query values, limit retention, and record only what the team needs to prove the normalized path, selected rule, and outcome. The goal is evidence for the cutover, not permanent surveillance of member browsing.
+
 ## Which denied action should a URL rule use?
 
 Current ArraySubs URL rules can:

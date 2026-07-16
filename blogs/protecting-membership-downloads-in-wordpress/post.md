@@ -190,6 +190,14 @@ Run these tests in a non-production or controlled account context:
 
 Use browser developer tools or `curl` to check status, redirect location, response headers, and the raw path. Do not assume a button disappearing means the test passed.
 
+## What should happen after a suspected download leak?
+
+Prepare the response before publishing a valuable file. Identify which object or URL was exposed, whether the path bypassed application authorization, which logs can show requests, and whether the file contains personal or regulated data. Preserve evidence before rotating links or deleting logs.
+
+Then close the exposed route, replace any permanent external URL, invalidate relevant CDN/cache entries, and re-test as guest, another account, and a revoked member. If the asset itself escaped, changing the member page cannot recall copies already downloaded. Decide whether to issue a revised watermarked file, notify affected customers, update legal/security stakeholders, or migrate the collection to stronger private delivery.
+
+Finish with a root-cause record: storage boundary, rule state, cache behavior, affected versions, exposure window, proof of remediation, and the control added to prevent recurrence. This turns a one-off link repair into an improvement to the delivery system.
+
 ## When WordPress is not the right security boundary
 
 Use a specialized document or media platform when the requirement includes regulated data, detailed audit trails, strong identity assurance, per-recipient watermarking, device controls, rapid global revocation, or legal-grade access evidence. ArraySubs is a practical membership authorization layer; it is not a data-loss-prevention or DRM product.

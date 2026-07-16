@@ -1,5 +1,7 @@
 # A041 — How to Create a WooCommerce Membership Site: Architecture Before Configuration
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** How to Create a WooCommerce Membership Site: Architecture Before Configuration

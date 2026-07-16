@@ -154,6 +154,36 @@ Then ask:
 
 Do not select a stack before those answers exist.
 
+## Which record should be the source of truth?
+
+The most important architecture choice is not whether a settings page contains the word “membership.” It is which record can authoritatively explain the current commercial and access state.
+
+| Decision | Strong source of truth | Risky substitute |
+| --- | --- | --- |
+| Was this renewal paid? | renewal order and subscription timeline | a member role still attached to the user |
+| Which plan is current? | qualifying product/variation plus effective switch state | the label shown on an old account screen |
+| When should access end? | documented membership/subscription end source | the date a role happened to be removed |
+| Can this user open a resource? | current membership record or evaluated condition | a cached page from an earlier session |
+| How many seats or exports are allowed? | explicit entitlement value | plan name parsed inside application code |
+
+In a separate-ledger architecture, the billing record and membership record can both be authoritative for different facts. The integration must define which events create, pause, extend, or end the membership record and what happens if synchronization fails. Staff may need a reconciliation report because “subscription active, membership expired” is possible when two records drift.
+
+In an integrated-entitlement architecture, the access decision is recomputed from current commerce evidence. There is less duplicate state, but a shared rule or feature-key change can immediately affect every matching customer. That model needs versioned rules, dependency review, and a diagnostic view that shows the evidence used for the decision.
+
+Neither design removes the need for an audit trail. Record the source subscription or purchase, the policy version, the target resource, the resolved result, and enough timing context to explain a support case. A user role may be one output of that decision, but it should not erase the evidence that produced it.
+
+### A practical system-of-record test
+
+Give the team a real customer scenario and ask five questions:
+
+1. Which record proves the customer paid or otherwise qualified?
+2. Which policy converts that record into access?
+3. Which date or event changes the result next?
+4. Which user-facing route lets the customer recover or change the state?
+5. Which log, screen, or report lets support explain the result?
+
+If the answers require inspecting unrelated roles, guessing from order notes, or asking the original developer, the architecture is not ready to scale.
+
 ## How should subscription status affect membership access?
 
 The subscription lifecycle is more detailed than paid/unpaid. WooCommerce documents distinct active, on-hold, pending-cancellation, cancelled, and expired meanings ([WooCommerce Subscriptions status guide](https://woocommerce.com/document/subscriptions/statuses/)). The membership policy must map each state.
@@ -171,6 +201,33 @@ The subscription lifecycle is more detailed than paid/unpaid. WooCommerce docume
 | Refund/chargeback | what financial record changed? | revoke, retain, or send to review? |
 
 The answer depends on the selected architecture. Do not copy WooCommerce Memberships behavior into ArraySubs documentation without a versioned ArraySubs test.
+
+## How do combined subscription and membership models fail?
+
+Most failures occur at transitions, not during the ordinary active state.
+
+**A renewal fails but access stays open forever.** The billing system moved the subscription on hold, yet the access rule checks a persistent role that no current process owns. Fix the architecture by resolving access from current lifecycle evidence or by giving the role mapping an explicit recovery and removal policy.
+
+**Cancel-at-period-end removes access immediately.** The cancellation request and the access end are treated as the same event even though the customer has paid-through time remaining. Store and test the effective end separately from “another renewal will not occur.”
+
+**A downgrade creates an entitlement gap.** The old plan is removed before the future plan becomes effective. Define whether the change is immediate or next renewal, then make billing, level, and feature changes share that boundary.
+
+**Two subscriptions grant the same benefit, but cancelling one removes it.** Authorization must consider every qualifying source before removing a shared role or entitlement. Test overlapping monthly/annual records, bundles, manual purchases, and legacy grants.
+
+**A refund changes the order but not the membership.** Decide whether a refund is informational, automatically revokes access, or sends the account to manual review. The correct answer can differ for a consumed service, shipped product, lifetime library, or fraud case.
+
+**A member recovers payment but remains denied.** The subscription may be active while a role, cache, remote community, or membership record is stale. Recovery testing must cover the entire path from payment evidence to the final protected surface—not only the subscription status label.
+
+Turn those cases into acceptance tests before launch:
+
+- capture the starting subscription, order, membership, role, and entitlement state;
+- perform exactly one lifecycle event;
+- verify the effective date and every derived access output;
+- test both a fresh request and a previously cached session;
+- confirm the account, payment, login, and support routes still work;
+- reverse the event or use the documented rollback and verify recovery.
+
+This transition-first method catches the distinction that feature checklists miss: a subscription engine can collect correctly while the membership experience is still wrong.
 
 ## How does current ArraySubs model subscriptions and memberships?
 

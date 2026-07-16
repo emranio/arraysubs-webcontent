@@ -1,5 +1,7 @@
 # A036 — Expired Cards and Subscription Recovery
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Expired Cards and Subscription Recovery

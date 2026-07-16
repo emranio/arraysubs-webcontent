@@ -1,5 +1,7 @@
 # A043 — WooCommerce Subscriptions and Memberships Together: The Complete Architecture
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** WooCommerce Subscriptions and Memberships Together: The Complete Architecture
