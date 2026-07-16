@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Zero-downtime: deploy.sh builds an isolated release under
+      # .deploy/releases/, atomically switches the .deploy/current symlink,
+      # and graceful-reloads PM2 in cluster mode. Rollback and release
+      # pruning live in deploy.sh so the flow is identical for manual runs.
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.2.0
         with:
@@ -25,100 +29,11 @@ jobs:
           script: |
             set -euo pipefail
 
-            DEPLOY_PATH="${{ secrets.DEPLOY_PATH }}"
-            TARGET_SHA="${{ github.sha }}"
-            APP_NAME="arrayhash-com-next"
-            STAGING_DIR="$(mktemp -d "${DEPLOY_PATH}.deploy.XXXXXX")"
-            PREVIOUS_SHA=""
-            ROLLBACK_READY=0
-
-            cleanup() {
-              status=$?
-              set +e
-
-              if [ "$status" -ne 0 ] && [ "$ROLLBACK_READY" -eq 1 ]; then
-                echo "==> Activation failed; restoring previous release"
-                cd "$DEPLOY_PATH"
-                pm2 stop "$APP_NAME" >/dev/null 2>&1 || true
-                rm -rf .next node_modules
-
-                if [ -d "$STAGING_DIR/previous.next" ]; then
-                  mv "$STAGING_DIR/previous.next" .next
-                fi
-
-                if [ -d "$STAGING_DIR/previous.node_modules" ]; then
-                  mv "$STAGING_DIR/previous.node_modules" node_modules
-                fi
-
-                git reset --hard "$PREVIOUS_SHA"
-                cp .env.production .env
-                pm2 startOrReload ecosystem.config.cjs --env production --update-env
-              fi
-
-              rm -rf "$STAGING_DIR"
-              exit "$status"
-            }
-
-            trap cleanup EXIT
-
-            cd "$DEPLOY_PATH"
-            PREVIOUS_SHA="$(git rev-parse HEAD)"
-
-            echo "==> Syncing latest code"
+            cd "${{ secrets.DEPLOY_PATH }}"
             git fetch --prune origin main
-            git archive "$TARGET_SHA" | tar -x -C "$STAGING_DIR"
-
-            echo "==> Copying .env.production to .env"
-            cp "$STAGING_DIR/.env.production" "$STAGING_DIR/.env"
-
-            echo "==> Installing dependencies in staging"
-            cd "$STAGING_DIR"
-            npm ci
-
-            echo "==> Building isolated release"
-            npm run build
-
-            echo "==> Activating release"
-            cd "$DEPLOY_PATH"
-            pm2 stop "$APP_NAME" >/dev/null 2>&1 || true
-            ROLLBACK_READY=1
-
-            if [ -d .next ]; then
-              mv .next "$STAGING_DIR/previous.next"
-            fi
-
-            if [ -d node_modules ]; then
-              mv node_modules "$STAGING_DIR/previous.node_modules"
-            fi
-
-            git reset --hard "$TARGET_SHA"
-            cp .env.production .env
-            mv "$STAGING_DIR/.next" .next
-            mv "$STAGING_DIR/node_modules" node_modules
-
-            echo "==> Starting PM2"
-            pm2 startOrReload ecosystem.config.cjs --env production --update-env
-
-            echo "==> Checking local app health"
-            APP_PORT="$(sed -n 's/^PORT=//p' .env | tail -1)"
-            APP_PORT="${APP_PORT:-3000}"
-            for attempt in $(seq 1 30); do
-              if curl -fsS "http://127.0.0.1:${APP_PORT}/deals/arraysubs/" >/dev/null; then
-                break
-              fi
-
-              if [ "$attempt" -eq 30 ]; then
-                pm2 logs arrayhash-com-next --lines 80 --nostream
-                exit 1
-              fi
-
-              sleep 1
-            done
-
-            ROLLBACK_READY=0
-            pm2 save
-
-            echo "==> Done"
+            git reset --hard "${{ github.sha }}"
+            chmod +x deploy.sh
+            TARGET_SHA="${{ github.sha }}" ./deploy.sh
 
       - name: Purge Cloudflare Cache
         run: |

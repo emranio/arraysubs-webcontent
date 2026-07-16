@@ -41,6 +41,9 @@ const runtimeEnv = {
   PORT: process.env.PORT || fileEnv.PORT || "3000",
 };
 
+const instancesRaw = process.env.APP_INSTANCES || fileEnv.APP_INSTANCES || "2";
+const instances = Number.parseInt(instancesRaw, 10);
+
 if (process.env.NEXT_HOSTNAME || fileEnv.HOSTNAME) {
   runtimeEnv.HOSTNAME = process.env.NEXT_HOSTNAME || fileEnv.HOSTNAME;
 }
@@ -53,8 +56,12 @@ module.exports = {
       script: nextBinary,
       args: "start",
       interpreter: "node",
-      exec_mode: "fork",
-      instances: 1,
+      // Cluster mode so `pm2 reload` is zero-downtime: workers are replaced
+      // one by one and the old ones keep serving until the new ones listen.
+      exec_mode: "cluster",
+      instances: Number.isInteger(instances) && instances > 0 ? instances : 2,
+      listen_timeout: 30000,
+      kill_timeout: 15000,
       autorestart: true,
       watch: false,
       max_memory_restart: "512M",

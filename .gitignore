@@ -37,3 +37,6 @@ yarn-error.log*
 .idea
 .DS_Store
 .DS_Store
+
+# deploy releases (server-side, created by deploy.sh)
+/.deploy/
