@@ -1110,6 +1110,38 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
       tone: "highlight",
     },
   },
+  {
+    id: "A034",
+    slug: "automatic-retry-for-failed-subscription-payments-what-good-looks-like",
+    categorySlug: "payment-recovery",
+    title: "Automatic Retry for Failed Subscription Payments: What Good Looks Like",
+    seoTitle: "Automatic Retry for Failed Subscription Payments",
+    metaDescription:
+      "Design safe automatic retries for failed subscription payments with decline routing, ownership rules, duplicate-charge checks, timing, and recovery metrics.",
+    excerpt:
+      "Design a bounded retry system that routes failures correctly, respects collection ownership, prevents duplicate charges, and measures verified recovery.",
+    directAnswer:
+      "Good automatic retry identifies who owns collection, separates retryable failures from customer-action and stop conditions, verifies the renewal was not already paid, spaces a limited number of attempts inside the grace window, and reconciles payment, subscription, access, and scheduling state after recovery.",
+    publishedAt: "2026-07-16",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-16",
+    readTime: "18 min read",
+    format: "Guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "automatic retry failed subscription payments",
+      "WooCommerce failed payment retry rules",
+      "smart retry recurring payments",
+      "failed subscription recovery",
+    ],
+    cover: {
+      label: "Safe automatic payment recovery",
+      image:
+        "/blogs/automatic-retry-for-failed-subscription-payments-what-good-looks-like/hero.png",
+      tone: "primary",
+    },
+  },
 ];
 
 export function getResourceCategory(slug: string) {

@@ -2,6 +2,7 @@
 
 ## Article specification
 
+- **Status:** Published
 - **Proposed title:** Automatic Retry for Failed Subscription Payments: What Good Looks Like
 - **Content cluster:** C03 — Failed payments, dunning, and grace recovery
 - **Content category:** Payment Recovery
