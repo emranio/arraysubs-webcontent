@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 concurrency:
   group: arrayhash-production-deploy
@@ -37,7 +38,29 @@ jobs:
 
       - name: Purge Cloudflare Cache
         run: |
-          curl -s -X POST "${{ secrets.CF_PURGE_CACHE_URL }}" \
+          curl --fail-with-body --silent --show-error -X POST "${{ secrets.CF_PURGE_CACHE_URL }}" \
             -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
             -H "Content-Type: application/json" \
             --data '{"purge_everything":true}'
+
+      - name: Verify Public Site
+        run: |
+          set -euo pipefail
+
+          for path in / /deals/arraysubs/; do
+            url="https://arrayhash.com${path}"
+            healthy=0
+
+            for attempt in $(seq 1 30); do
+              if curl -fsS --max-time 10 -H "Cache-Control: no-cache" "$url" >/dev/null; then
+                healthy=1
+                break
+              fi
+              sleep 2
+            done
+
+            if [ "$healthy" -ne 1 ]; then
+              echo "Public health check failed: $url" >&2
+              exit 1
+            fi
+          done

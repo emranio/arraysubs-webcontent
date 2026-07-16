@@ -20,9 +20,9 @@ set -Eeuo pipefail
 
 APP_NAME="${APP_NAME:-arrayhash-com-next}"
 APP_HOST="${APP_HOST:-127.0.0.1}"
-HEALTH_PATH="${HEALTH_PATH:-/deals/arraysubs/}"
 HEALTH_RETRIES="${HEALTH_RETRIES:-30}"
 KEEP_RELEASES="${KEEP_RELEASES:-2}"
+HEALTH_PATHS=("/" "/deals/arraysubs/")
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DEPLOY_DIR="$ROOT_DIR/.deploy"
@@ -68,7 +68,7 @@ cleanup() {
       if [ -n "$rollback_target" ]; then
         echo "==> Deploy failed; rolling back to $rollback_target" >&2
         switch_current_to "$rollback_target"
-        pm2 startOrReload "$rollback_target/ecosystem.config.cjs" --env production --update-env
+        pm2 startOrReload "$ROOT_DIR/ecosystem.config.cjs" --env production --update-env
       else
         echo "==> Deploy failed and no previous release exists to roll back to." >&2
       fi
@@ -114,56 +114,62 @@ npm ci
 echo "==> Building"
 npm run build
 
-# `pm2 reload` cannot change exec_mode; the app used to run in fork mode, so
-# delete it once so it can come back in cluster mode.
-current_mode="$(pm2 jlist 2>/dev/null | node -e '
-  let raw = "";
-  process.stdin.on("data", (chunk) => (raw += chunk));
-  process.stdin.on("end", () => {
-    const start = raw.indexOf("[");
-    let mode = "none";
-    if (start !== -1) {
-      try {
-        const list = JSON.parse(raw.slice(start));
-        const app = list.find((proc) => proc.name === process.argv[1]);
-        if (app) mode = app.pm2_env.exec_mode || "unknown";
-      } catch {
-        mode = "unknown";
-      }
-    }
-    process.stdout.write(mode);
-  });
-' "$APP_NAME" || echo unknown)"
-
-if [ "$current_mode" != "none" ] && [ "$current_mode" != "unknown" ] && [ "$current_mode" != "cluster_mode" ]; then
-  echo "==> $APP_NAME runs in $current_mode; deleting once so it restarts in cluster mode (one-time brief restart)"
-  pm2 delete "$APP_NAME"
-fi
-
 PREVIOUS_TARGET="$(readlink "$CURRENT_LINK" 2>/dev/null || true)"
 
 echo "==> Activating release"
 switch_current_to "$RELEASE_DIR"
 SWAPPED=1
 
-pm2 startOrReload "$RELEASE_DIR/ecosystem.config.cjs" --env production --update-env
+stable_launcher="$ROOT_DIR/server-launcher.cjs"
+
+# Old deployments registered Next's binary from a versioned release as PM2's
+# entry point. Once that release was pruned, later worker restarts served 500s.
+# Replace that legacy process once; future reloads keep this stable launcher.
+if pm2 jlist 2>/dev/null | node -e '
+  let raw = "";
+  process.stdin.on("data", (chunk) => (raw += chunk));
+  process.stdin.on("end", () => {
+    const start = raw.indexOf("[");
+    if (start === -1) process.exit(1);
+    let list;
+    try { list = JSON.parse(raw.slice(start)); } catch { process.exit(1); }
+    const app = list.find((proc) => proc.name === process.argv[1]);
+    if (!app) process.exit(1);
+    const stable = app.pm2_env.exec_mode === "cluster_mode"
+      && app.pm2_env.pm_exec_path === process.argv[2];
+    process.exit(stable ? 0 : 2);
+  });
+' "$APP_NAME" "$stable_launcher"; then
+  :
+else
+  pm2_state=$?
+  if [ "$pm2_state" -eq 2 ]; then
+    echo "==> Replacing legacy PM2 entry point with stable launcher"
+    pm2 delete "$APP_NAME"
+  fi
+fi
+
+pm2 startOrReload "$ROOT_DIR/ecosystem.config.cjs" --env production --update-env
 
 echo "==> Health check"
-health_url="http://$APP_HOST:$APP_PORT$HEALTH_PATH"
-healthy=0
-for attempt in $(seq 1 "$HEALTH_RETRIES"); do
-  if curl -fsS --max-time 5 "$health_url" >/dev/null 2>&1; then
-    healthy=1
-    break
-  fi
-  sleep 1
-done
+for health_path in "${HEALTH_PATHS[@]}"; do
+  health_url="http://$APP_HOST:$APP_PORT$health_path"
+  healthy=0
 
-if [ "$healthy" -ne 1 ]; then
-  echo "Health check failed: $health_url" >&2
-  pm2 logs "$APP_NAME" --lines 80 --nostream || true
-  exit 1
-fi
+  for attempt in $(seq 1 "$HEALTH_RETRIES"); do
+    if curl -fsS --max-time 5 "$health_url" >/dev/null 2>&1; then
+      healthy=1
+      break
+    fi
+    sleep 1
+  done
+
+  if [ "$healthy" -ne 1 ]; then
+    echo "Health check failed: $health_url" >&2
+    pm2 logs "$APP_NAME" --lines 80 --nostream || true
+    exit 1
+  fi
+done
 
 # The reload is graceful, so curl can succeed against old workers; also
 # require every PM2 instance to report online.

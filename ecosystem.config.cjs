@@ -2,8 +2,9 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = __dirname;
-const envFile = path.join(root, ".env");
-const nextBinary = path.join(root, "node_modules/next/dist/bin/next");
+const currentRelease = path.join(root, ".deploy", "current");
+const envFile = path.join(currentRelease, ".env");
+const serverLauncher = path.join(root, "server-launcher.cjs");
 
 function readEnv(filePath) {
   if (!fs.existsSync(filePath)) {
@@ -53,8 +54,7 @@ module.exports = {
     {
       name: "arrayhash-com-next",
       cwd: root,
-      script: nextBinary,
-      args: "start",
+      script: serverLauncher,
       interpreter: "node",
       // Cluster mode so `pm2 reload` is zero-downtime: workers are replaced
       // one by one and the old ones keep serving until the new ones listen.
