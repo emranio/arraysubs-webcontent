@@ -1013,40 +1013,39 @@ export const FEATURES: Feature[] = [
     icon: SlidersHorizontal,
     name: "Customer-Chosen Subscription Duration",
     cardDescription:
-      "Coming soon: let customers choose how many cycles or periods their subscription should run before checkout.",
+      "Let customers choose how many billing cycles — and optionally which billing period — their subscription runs, within limits you set.",
     tier: "Pro",
-    status: "coming-soon",
     summary:
       "Let customers choose the subscription length that fits their need while the store keeps guardrails in place.",
     h1: "Let customers choose subscription duration",
-    highlights: ["Coming soon", "Pro product control", "Customer-selected length"],
+    highlights: ["Pro product control", "Customer-selected length", "Optional period choice"],
     intro:
-      "Customer-Chosen Subscription Duration is a planned Pro product workflow for stores that want buyers to choose ==how many cycles, months, weeks, or other billing periods a subscription should run==. Merchants can offer controlled duration choices while keeping checkout, renewal scheduling, and expiration behavior aligned.",
+      "Customer-Chosen Subscription Duration is a Pro product workflow that adds a **Subscription Type** selector to each subscription product. Choose ==Flexible Length== so buyers pick how many billing cycles they want up to a maximum you set, or ==Full Flexible== so they also pick the billing period from a list you approve. The choice flows through the cart into the subscription, so renewals and automatic expiry follow exactly what the customer selected — while checkout, scheduling, and limits stay in your control.",
     capabilities: [
       {
-        title: "Customer duration choices",
+        title: "Three subscription modes",
         description:
-          "Offer approved cycle or period options during purchase instead of forcing one fixed subscription length.",
+          "Switch each product (or variation) between Fixed, Flexible Length, and Full Flexible from one toggle in the Subscription tab.",
       },
       {
         title: "Product-level guardrails",
         description:
-          "Keep the merchant in control of minimum, maximum, and allowed duration choices.",
+          "Set the maximum number of cycles and the exact billing periods customers may choose. Every choice is re-validated on the server.",
       },
       {
         title: "Schedule-aware checkout",
         description:
-          "Carry the selected duration into the subscription schedule so renewal and end behavior stay predictable.",
+          "Carry the selected period and length into the subscription so renewal billing and automatic expiration stay predictable.",
       },
       {
         title: "Clear buyer messaging",
         description:
-          "Make the selected length visible during purchase and in account-facing subscription details.",
+          "Show a live summary of the chosen terms on the product page, and the same terms in the cart, checkout, and subscription details.",
       },
     ],
     stats: [
       { value: "Pro", label: "Availability" },
-      { value: "Soon", label: "Status" },
+      { value: "3", label: "Subscription modes" },
       { value: "Cycles", label: "Choice model" },
       { value: "Product", label: "Setup scope" },
     ],
@@ -1054,12 +1053,12 @@ export const FEATURES: Feature[] = [
       {
         question: "Is customer-chosen duration available in the free core?",
         answer:
-          "No. This is planned as a Pro product workflow and is marked as coming soon.",
+          "No. It is a Pro product workflow. With only the free core active, every subscription product behaves as Fixed.",
       },
       {
         question: "Can stores limit the choices?",
         answer:
-          "Yes. The planned workflow is designed around merchant-approved duration options, not unrestricted customer input.",
+          "Yes. You set the maximum length and the exact billing periods customers may pick, and the plugin re-validates every choice on the server.",
       },
     ],
     related: ["subscription-products", "fixed-date-subscriptions", "billing-and-renewals"],

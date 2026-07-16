@@ -150,7 +150,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Which features are Pro-only?",
-    answer: `There are ${PRO_ONLY_MODULE_COUNT} Pro-only features, including the Checkout Page Builder, automatic Stripe/PayPal/Paddle billing, Flexible Renewal Sync, Auto-Retry, Auto-Downgrade, Fixed-Date Subscriptions, Subscription Shipping, Product Page Redirection, Multi-Login Prevention, Feature Manager, Feature-Based Conditions, Member Insight, Store Credit, Gateway Health, and the coming-soon Early Renew, Installment / Split Payments, Customer-Chosen Subscription Duration, and Donation & Crowdfunding modules.`,
+    answer: `There are ${PRO_ONLY_MODULE_COUNT} Pro-only features, including the Checkout Page Builder, automatic Stripe/PayPal/Paddle billing, Flexible Renewal Sync, Auto-Retry, Auto-Downgrade, Fixed-Date Subscriptions, Customer-Chosen Subscription Duration, Subscription Shipping, Product Page Redirection, Multi-Login Prevention, Feature Manager, Feature-Based Conditions, Member Insight, Store Credit, Gateway Health, and the coming-soon Early Renew, Installment / Split Payments, and Donation & Crowdfunding modules.`,
   },
   {
     question: "Are all features in one plugin, or paid add-ons?",

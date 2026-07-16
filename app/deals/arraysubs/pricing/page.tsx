@@ -136,7 +136,6 @@ const PRO_FEATURES: {
       title: "Customer-Chosen Subscription Duration",
       description:
         "Let customers choose how many cycles or periods their subscription should run, within merchant-defined limits.",
-      status: "coming-soon",
     },
     {
       icon: <Wallet className="size-6" />,

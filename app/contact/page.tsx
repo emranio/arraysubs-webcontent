@@ -94,7 +94,10 @@ export default function ContactPage() {
         <Container>
           <div className="grid items-stretch gap-[0.1875rem] lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]">
             {/* Message form */}
-            <div className="h-full rounded-2xl bg-card p-6 text-foreground sm:p-8">
+            <div
+              id="contact-form"
+              className="h-full scroll-mt-28 rounded-2xl bg-card p-6 text-foreground sm:p-8"
+            >
               <h2 className="font-display text-2xl sm:text-3xl">
                 Share your contact details
               </h2>

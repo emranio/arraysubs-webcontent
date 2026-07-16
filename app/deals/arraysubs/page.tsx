@@ -110,6 +110,7 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
     bullets: [
       "Intro prices can move to a different renewal price after the chosen cycle",
       "Fixed-date subscriptions keep cohorts, seasons, and memberships on a known period",
+      "Customers can choose their own subscription length, and billing period, within your limits",
       "Trials, signup fees, and checkout shortcuts stay inside the product editor",
     ],
     linkLabel: "All product features",
@@ -118,6 +119,7 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
       "subscription-products",
       "different-renewal-price",
       "fixed-date-subscriptions",
+      "customer-chosen-subscription-duration",
       "free-trials",
       "signup-fees",
       "lifetime-deals",

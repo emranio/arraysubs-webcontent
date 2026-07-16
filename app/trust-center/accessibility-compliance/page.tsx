@@ -18,6 +18,7 @@ import {
 } from "../_components";
 
 const ACCESSIBILITY_REVIEWED_DATE = "June 25, 2026";
+const ACCESSIBILITY_REPORT_URL = "/contact/#contact-form";
 
 export const metadata: Metadata = createMetadata({
   title: "Accessibility Statement",
@@ -46,7 +47,7 @@ export default function AccessibilityCompliancePage() {
         ]}
         actions={
           <Button
-            href={`mailto:${site.email}?subject=Accessibility%20issue`}
+            href={ACCESSIBILITY_REPORT_URL}
             size="lg"
             magnetic
             iconLeft={<Mail className="size-5" />}
@@ -213,12 +214,12 @@ export default function AccessibilityCompliancePage() {
             details or private customer exports.
           </p>
           <Button
-            href={`mailto:${site.email}?subject=Accessibility%20issue`}
+            href={ACCESSIBILITY_REPORT_URL}
             size="lg"
             magnetic
             iconLeft={<Mail className="size-5" />}
           >
-            Email accessibility issue
+            Report accessibility issue
           </Button>
         </PolicySection>
       </PolicyBody>

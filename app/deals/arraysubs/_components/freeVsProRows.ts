@@ -83,8 +83,7 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
         proOnly: true,
       },
       {
-        label: "Customer-chosen subscription length at checkout",
-        hint: "Coming soon",
+        label: "Customer-chosen subscription length and billing period at checkout",
         proOnly: true,
       },
       {

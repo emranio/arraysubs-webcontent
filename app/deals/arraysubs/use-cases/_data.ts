@@ -1753,7 +1753,7 @@ export const USE_CASE_CAN_DO: Record<string, UseCaseFaq[]> = {
     {
       question: "Can I let customers renew early or choose their term?",
       answer:
-        "Early Renew and Customer-Chosen Subscription Duration are planned Pro modules (coming soon); today, Fixed-Date Subscriptions cover set licensing windows.",
+        "Customer-Chosen Subscription Duration (Pro) lets buyers pick their subscription length — and optionally the billing period — within limits you set, while Fixed-Date Subscriptions cover set licensing windows. Early Renew is a planned Pro module (coming soon).",
     },
     {
       question: "Can I sell a fixed-price product in installments?",
