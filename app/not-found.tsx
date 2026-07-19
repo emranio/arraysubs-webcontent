@@ -17,8 +17,8 @@ export default function NotFound() {
       title="Page not found"
       subtitle="The page you requested does not exist or has moved."
       actions={
-        <Button href="/design-system/" size="sm">
-          Design System
+        <Button href="/" size="sm">
+          Back to Home
         </Button>
       }
     />

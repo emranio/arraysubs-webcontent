@@ -12,14 +12,14 @@ export default function ErrorPage({ reset }: ErrorPageProps) {
     <PageHero
       eyebrow="Error"
       title="Something went wrong"
-      subtitle="The page could not load. Try again or return to the design system."
+      subtitle="The page could not load. Try again or return home."
       actions={
         <>
           <Button type="button" size="sm" onClick={reset}>
             Try again
           </Button>
-          <Button href="/design-system/" variant="outline" size="sm">
-            Design System
+          <Button href="/" variant="outline" size="sm">
+            Back to Home
           </Button>
         </>
       }

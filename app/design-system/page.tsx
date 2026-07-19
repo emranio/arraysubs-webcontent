@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -334,6 +335,10 @@ const WPORG_REVIEWS = [
 ];
 
 export default function DesignSystemPage() {
+  if (process.env.NODE_ENV === "production") {
+    notFound();
+  }
+
   return (
     <>
       {/* ---- Page intro ------------------------------------------------- */}
