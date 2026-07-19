@@ -15,6 +15,7 @@ import {
   StepCard,
 } from "@/components/ui";
 import { getFeature, type FeatureTier } from "../features/_data";
+import { pillarPathForModule } from "../features/_pillars";
 import type { UseCase } from "./_data";
 import { highlight } from "../_highlight";
 
@@ -226,6 +227,7 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
                   icon={<feature.icon className="size-6" />}
                   title={feature.name}
                   description={feature.cardDescription}
+                  href={pillarPathForModule(feature.slug)}
                   badge={<Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>}
                 />
               ))}

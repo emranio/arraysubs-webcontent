@@ -26,6 +26,7 @@ import {
   type Feature,
   type FeatureTier,
 } from "./_data";
+import { PILLARS, pillarPath, pillarPathForModule } from "./_pillars";
 import { FreeVsProTable } from "../_components/FreeVsProTable";
 
 const MODULE_COUNT = FEATURES.length;
@@ -208,6 +209,34 @@ export default function FeaturesHubPage() {
         secondaryLabel="Browse features"
       />
 
+      {/* ---- Feature guides --------------------------------------------- */}
+      <Section id="feature-guides" surface="surface" spacing="md">
+        <Container>
+          <SectionTitle
+            eyebrow="Feature guides"
+            title="15 deep-dive feature guides"
+            subtitle="Every major feature area explained in depth — how it works, what's free vs Pro, setup steps, and the questions merchants actually ask."
+            align="center"
+          />
+          <ScrollReveal
+            stagger={0.03}
+            y={0}
+            className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {PILLARS.map((pillar) => (
+              <IconCard
+                key={pillar.slug}
+                icon={<pillar.icon className="size-6" />}
+                title={pillar.name}
+                description={pillar.cardDescription}
+                href={pillarPath(pillar.slug)}
+                badge={<Badge tone={tierTone(pillar.tier)}>{pillar.tier}</Badge>}
+              />
+            ))}
+          </ScrollReveal>
+        </Container>
+      </Section>
+
       {/* ---- Workflow map ----------------------------------------------- */}
       <Section surface="default" spacing="md">
         <Container>
@@ -254,6 +283,7 @@ export default function FeaturesHubPage() {
                       icon={<feature.icon className="size-6" />}
                       title={feature.name}
                       description={feature.cardDescription}
+                      href={pillarPathForModule(feature.slug)}
                       badge={featureBadges(feature)}
                     />
                   ))}
@@ -383,6 +413,7 @@ export default function FeaturesHubPage() {
                   icon={<feature.icon className="size-6" />}
                   title={feature.name}
                   description={feature.cardDescription}
+                  href={pillarPathForModule(feature.slug)}
                   badge={featureBadges(feature)}
                 />
               ))}

@@ -15,6 +15,23 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
     ],
   },
   {
+    title: "Feature Guides",
+    links: [
+      [
+        "Subscription Products",
+        "/deals/arraysubs/features/subscriptions-and-recurring-products/",
+      ],
+      ["Member Access Control", "/deals/arraysubs/features/member-access-control/"],
+      [
+        "Billing & Renewals",
+        "/deals/arraysubs/features/billing-renewals-and-refunds/",
+      ],
+      ["Retention Flow", "/deals/arraysubs/features/retention-flow-builder/"],
+      ["Payment Gateways", "/deals/arraysubs/features/payment-gateways/"],
+      ["Store Credit", "/deals/arraysubs/features/store-credit/"],
+    ],
+  },
+  {
     title: "Compare",
     links: [
       [
@@ -63,7 +80,7 @@ export function SiteFooter() {
   return (
     <footer data-surface="dark" className="on-dark bg-dark text-on-dark">
       <Container>
-        <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.6fr_repeat(4,1fr)]">
+        <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.4fr_repeat(5,1fr)]">
           <div className="flex max-w-xs flex-col gap-4">
             <img
               src={site.logo}

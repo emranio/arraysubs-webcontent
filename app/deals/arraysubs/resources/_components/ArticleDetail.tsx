@@ -28,6 +28,10 @@ import {
   type ResourceArticle,
 } from "../_data";
 import type { ArticleFaq, ArticleHeading } from "../_content";
+import {
+  PILLARS,
+  pillarPath,
+} from "@/app/deals/arraysubs/features/_pillars";
 import { MarkdownArticle } from "./MarkdownArticle";
 
 type ArticleDetailProps = {
@@ -52,6 +56,10 @@ export function ArticleDetail({
   if (!category) return null;
 
   const related = getRelatedArticles(article);
+  // Feature guide that cites this article, for the strategy → feature bridge.
+  const featurePillar = PILLARS.find((pillar) =>
+    pillar.articleSlugs.includes(article.slug),
+  );
 
   return (
     <>
@@ -98,9 +106,19 @@ export function ArticleDetail({
                   billing, and customer-workflow configuration.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-3">
+                  {featurePillar && (
+                    <Button
+                      href={pillarPath(featurePillar.slug)}
+                      variant="outline"
+                      size="sm"
+                      iconRight={<ArrowRight className="size-4" />}
+                    >
+                      {featurePillar.name} feature guide
+                    </Button>
+                  )}
                   <Button
                     href="/deals/arraysubs/features/"
-                    variant="outline"
+                    variant={featurePillar ? "ghost" : "outline"}
                     size="sm"
                     iconRight={<ArrowRight className="size-4" />}
                   >

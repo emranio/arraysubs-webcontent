@@ -97,6 +97,9 @@ type BenefitBlock = {
   linkLabel: string;
   /** Deep link into the matching category anchor on the features hub. */
   linkHref: string;
+  /** Optional deep-dive pillar guide for this benefit area. */
+  guideHref?: string;
+  guideLabel?: string;
   slugs: string[];
   customCards?: BenefitCustomCard[];
   surface: "surface" | "default";
@@ -115,6 +118,8 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
     ],
     linkLabel: "All product features",
     linkHref: `${ALL_FEATURES}#products-checkout`,
+    guideHref: `${ALL_FEATURES}subscriptions-and-recurring-products/`,
+    guideLabel: "Subscription products guide",
     slugs: [
       "subscription-products",
       "different-renewal-price",
@@ -137,6 +142,8 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
     ],
     linkLabel: "All payment features",
     linkHref: `${ALL_FEATURES}#payment-gateways`,
+    guideHref: `${ALL_FEATURES}payment-gateways/`,
+    guideLabel: "Payment gateways guide",
     slugs: [
       "stripe-payments",
       "paypal-payments",
@@ -156,6 +163,8 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
     ],
     linkLabel: "All retention features",
     linkHref: `${ALL_FEATURES}#retention-revenue`,
+    guideHref: `${ALL_FEATURES}retention-flow-builder/`,
+    guideLabel: "Retention flow guide",
     slugs: [
       "retention-and-refunds",
       "customer-portal",
@@ -191,6 +200,8 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
     ],
     linkLabel: "Browse related features",
     linkHref: ALL_FEATURES,
+    guideHref: `${ALL_FEATURES}store-credit/`,
+    guideLabel: "Store credit guide",
     slugs: [
       "store-credit",
       "create-subscription-admin",
@@ -212,6 +223,8 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
     ],
     linkLabel: "All renewal features",
     linkHref: `${ALL_FEATURES}#subscription-operations`,
+    guideHref: `${ALL_FEATURES}billing-renewals-and-refunds/`,
+    guideLabel: "Billing & renewals guide",
     slugs: [
       "billing-and-renewals",
       "grace-period-recovery",
@@ -231,6 +244,8 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
     ],
     linkLabel: "All membership features",
     linkHref: `${ALL_FEATURES}#member-experience`,
+    guideHref: `${ALL_FEATURES}member-access-control/`,
+    guideLabel: "Member access guide",
     slugs: [
       "member-access",
       "member-discounts",
@@ -250,6 +265,8 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
     ],
     linkLabel: "All content restriction features",
     linkHref: `${ALL_FEATURES}#member-experience`,
+    guideHref: `${ALL_FEATURES}member-access-control/`,
+    guideLabel: "Content restriction guide",
     slugs: [
       "cpt-content-restrictions",
       "url-path-rules",
@@ -271,6 +288,8 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
     ],
     linkLabel: "All analytics features",
     linkHref: `${ALL_FEATURES}#analytics-infrastructure`,
+    guideHref: `${ALL_FEATURES}analytics/`,
+    guideLabel: "Analytics guide",
     slugs: ["analytics", "audits-and-logs", "gateway-health"],
     customCards: [
       {
@@ -497,7 +516,7 @@ export default function ArraySubsPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8">
+                <div className="mt-8 flex flex-wrap items-center gap-3">
                   <Button
                     href={block.linkHref}
                     variant="outline"
@@ -507,6 +526,16 @@ export default function ArraySubsPage() {
                   >
                     {block.linkLabel}
                   </Button>
+                  {block.guideHref && block.guideLabel && (
+                    <Button
+                      href={block.guideHref}
+                      variant="ghost"
+                      size="sm"
+                      iconRight={<ArrowRight className="size-4" />}
+                    >
+                      {block.guideLabel}
+                    </Button>
+                  )}
                 </div>
               </div>
               <ScrollReveal
