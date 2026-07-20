@@ -96,12 +96,25 @@ if [ ! -d "$SHARED_DIR/storage" ]; then
   fi
 fi
 
+# .env holds the real credentials and is untracked, so `git archive` never
+# produces one; like storage/ it lives in shared/ and is linked into every
+# release. Bootstrap it from the checkout on first run.
+if [ ! -f "$SHARED_DIR/.env" ] && [ -f "$ROOT_DIR/.env" ]; then
+  cp "$ROOT_DIR/.env" "$SHARED_DIR/.env"
+  echo "==> Bootstrapped $SHARED_DIR/.env from checkout .env"
+fi
+
+if [ ! -f "$SHARED_DIR/.env" ]; then
+  echo "$SHARED_DIR/.env is missing; create it before deploying." >&2
+  exit 1
+fi
+
 echo "==> Preparing release $RELEASE_DIR"
 mkdir -p "$RELEASE_DIR"
 git archive "$TARGET_SHA" | tar -x -C "$RELEASE_DIR"
 
-cp "$RELEASE_DIR/.env.production" "$RELEASE_DIR/.env"
 ln -sfn "$SHARED_DIR/storage" "$RELEASE_DIR/storage"
+ln -sfn "$SHARED_DIR/.env" "$RELEASE_DIR/.env"
 
 APP_PORT="$(sed -n 's/^PORT=//p' "$RELEASE_DIR/.env" | tail -1)"
 APP_PORT="${APP_PORT:-3000}"

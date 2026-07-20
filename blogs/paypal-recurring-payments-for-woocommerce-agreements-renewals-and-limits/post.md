@@ -293,11 +293,16 @@ Say “event-ID duplicate suppression” rather than “exactly once.” Test th
 
 PayPal owns debit retries. ArraySubs records local failure and gateway state. A difficult sequence is:
 
-1. PayPal emits `BILLING.SUBSCRIPTION.PAYMENT.FAILED`.
-2. ArraySubs fails the pending renewal order and marks the gateway errored.
-3. PayPal keeps the remote Subscription active and retries under plan rules.
-4. A later retry succeeds and emits `PAYMENT.SALE.COMPLETED`.
-5. ArraySubs completes a local order, but current source did not clearly reset the gateway status from errored to active.
+```text
+PayPal reports payment failure
+→ local renewal order fails
+→ local gateway becomes errored
+→ remote agreement may retry
+→ later PayPal sale succeeds
+→ local order completes
+→ gateway-state recovery
+  remains unproven
+```
 
 That can display contradictory states. It also creates duplicate-collection risk if support sees a local failure, sends a manual invoice, and collects it while PayPal is still retrying.
 
