@@ -1,5 +1,7 @@
 # A060 — Paddle Merchant of Record for WooCommerce Subscriptions
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Paddle Merchant of Record for WooCommerce Subscriptions

@@ -1,5 +1,7 @@
 # A061 — Automatic vs Manual Gateway Support for Subscriptions
 
+**Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Automatic vs Manual Gateway Support for Subscriptions

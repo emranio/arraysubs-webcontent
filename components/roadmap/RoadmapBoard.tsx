@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   ArrowUp,
   Check,
+  ChevronDown,
   Heart,
   Lightbulb,
   LoaderCircle,
@@ -20,6 +21,7 @@ import {
   SectionTitle,
   Textarea,
 } from "@/components/ui";
+import { cn } from "@/lib/cn";
 import {
   gsap,
   prefersReducedMotion,
@@ -78,6 +80,9 @@ const COLUMNS: Record<
   },
 };
 
+/** Cards rendered per column before the show-more toggle reveals the rest. */
+const VISIBLE_CARD_LIMIT = 5;
+
 async function parseResponse(response: Response): Promise<ApiPayload> {
   try {
     return (await response.json()) as ApiPayload;
@@ -102,6 +107,9 @@ export function RoadmapBoard() {
   const [consentOpen, setConsentOpen] = useState(false);
   const [consentBusy, setConsentBusy] = useState(false);
   const [pendingAction, setPendingAction] = useState<PendingAction | null>(null);
+  const [expandedColumns, setExpandedColumns] = useState<
+    Partial<Record<RoadmapStatus, boolean>>
+  >({});
 
   useEffect(() => {
     const controller = new AbortController();
@@ -289,6 +297,12 @@ export function RoadmapBoard() {
     void runAction({ type: "submit", title, description, website });
   };
 
+  const toggleColumn = (status: RoadmapStatus) =>
+    setExpandedColumns((current) => ({
+      ...current,
+      [status]: !current[status],
+    }));
+
   return (
     <div ref={boardRef}>
       <SectionTitle
@@ -350,6 +364,13 @@ export function RoadmapBoard() {
           {ROADMAP_STATUSES.map((status) => {
             const column = COLUMNS[status];
             const columnCards = cards.filter((card) => card.status === status);
+            const expanded = expandedColumns[status] ?? false;
+            const collapsible = columnCards.length > VISIBLE_CARD_LIMIT;
+            const hiddenCount = columnCards.length - VISIBLE_CARD_LIMIT;
+            const visibleCards =
+              collapsible && !expanded
+                ? columnCards.slice(0, VISIBLE_CARD_LIMIT)
+                : columnCards;
 
             return (
               <section
@@ -375,7 +396,7 @@ export function RoadmapBoard() {
                   </Badge>
                 </div>
 
-                <div className="grid gap-[0.1875rem]">
+                <div id={`${status}-cards`} className="grid gap-[0.1875rem]">
                   {status === "requested" && (
                     <RequestIdeaForm
                       open={formOpen}
@@ -392,7 +413,7 @@ export function RoadmapBoard() {
                     />
                   )}
 
-                  {columnCards.map((card) => (
+                  {visibleCards.map((card) => (
                     <RoadmapCard
                       key={card.id}
                       card={card}
@@ -402,6 +423,25 @@ export function RoadmapBoard() {
                       }
                     />
                   ))}
+
+                  {collapsible && (
+                    <button
+                      type="button"
+                      onClick={() => toggleColumn(status)}
+                      aria-expanded={expanded}
+                      aria-controls={`${status}-cards`}
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-pill px-2 py-2 text-sm font-semibold text-primary underline-offset-4 transition-colors hover:text-primary-strong hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    >
+                      {expanded ? "Show fewer" : `Show ${hiddenCount} more`}
+                      <ChevronDown
+                        aria-hidden="true"
+                        className={cn(
+                          "size-4 transition-transform duration-200",
+                          expanded && "rotate-180",
+                        )}
+                      />
+                    </button>
+                  )}
 
                   {columnCards.length === 0 && (
                     <div className="rounded-xl border border-dashed border-border bg-background/55 p-5 text-sm leading-6 text-muted">

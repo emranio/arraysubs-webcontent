@@ -1,5 +1,7 @@
 # A062 — SCA and 3D Secure for Subscription Renewals
 
+**Status:** Published
+
 ## Article specification
 
 - **Proposed title:** SCA and 3D Secure for Subscription Renewals

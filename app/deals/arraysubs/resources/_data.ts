@@ -1972,6 +1972,101 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
       tone: "dark",
     },
   },
+  {
+    id: "A060",
+    slug: "paddle-merchant-of-record-for-woocommerce-subscriptions",
+    categorySlug: "payments-and-compliance",
+    title: "Paddle Merchant of Record for WooCommerce Subscriptions",
+    seoTitle: "Paddle Merchant of Record for WooCommerce",
+    metaDescription:
+      "Learn how Paddle Merchant of Record works with WooCommerce and ArraySubs, including tax, checkout, renewals, webhooks, refunds, payouts, and limits.",
+    excerpt:
+      "Understand Paddle’s buyer-facing MoR responsibility, remote billing architecture, product synchronization, tax documents, lifecycle, and reconciliation limits.",
+    directAnswer:
+      "Paddle can be the Merchant of Record for an eligible software or digital subscription sold from a WooCommerce storefront. Paddle becomes the buyer-facing reseller and handles payment collection, applicable sales-tax/VAT administration, transaction documents, refunds, and chargeback operations. The supplier still owns product eligibility, delivery, support, privacy, accounting, and correct ArraySubs–Paddle lifecycle reconciliation.",
+    publishedAt: "2026-02-28",
+    updatedAt: "2026-05-26",
+    lastVerifiedAt: "2026-07-20",
+    readTime: "27 min read",
+    format: "Technical guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "Paddle Merchant of Record WooCommerce",
+      "use Paddle for WooCommerce subscriptions",
+      "merchant of record recurring billing WordPress",
+      "Paddle subscription tax handling",
+    ],
+    cover: {
+      label: "Map the Merchant-of-Record responsibility shift",
+      image:
+        "/blogs/paddle-merchant-of-record-for-woocommerce-subscriptions/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A061",
+    slug: "automatic-vs-manual-gateway-support-for-subscriptions",
+    categorySlug: "payments-and-compliance",
+    title: "Automatic vs Manual Gateway Support for Subscriptions",
+    seoTitle: "Automatic vs Manual Subscription Gateway Support",
+    metaDescription:
+      "Learn why a WooCommerce gateway can work at checkout but not auto-renew, and how to qualify tokens, schedules, SCA, invoices, failures, and switching.",
+    excerpt:
+      "Separate checkout acceptance from true automatic-renewal readiness with a capability ladder, lifecycle tests, fallback safeguards, and gateway-specific schedule ownership.",
+    directAnswer:
+      "A WooCommerce gateway can work at checkout yet remain manual-only for subscriptions. Automatic renewal needs a subscription-aware integration that preserves reusable customer authority, owns or recognizes the future schedule, handles off-session and authentication states, records one renewal order, and reconciles gateway events. Without that complete chain, a manual renewal invoice is the safe model.",
+    publishedAt: "2026-06-04",
+    updatedAt: "2026-07-13",
+    lastVerifiedAt: "2026-07-20",
+    readTime: "34 min read",
+    format: "Technical explainer",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "automatic vs manual subscription gateway support",
+      "WooCommerce gateway automatic renewal support",
+      "manual renewal invoice payment gateway",
+      "why a gateway cannot auto renew subscriptions",
+    ],
+    cover: {
+      label: "Qualify the complete renewal lifecycle",
+      image:
+        "/blogs/automatic-vs-manual-gateway-support-for-subscriptions/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A062",
+    slug: "sca-and-3d-secure-for-subscription-renewals",
+    categorySlug: "payments-and-compliance",
+    title: "SCA and 3D Secure for Subscription Renewals",
+    seoTitle: "SCA and 3D Secure for Subscription Renewals",
+    metaDescription:
+      "Learn how SCA and 3D Secure affect subscription renewals, off-session payments, issuer challenges, Stripe recovery, webhooks, retries, and testing.",
+    excerpt:
+      "Understand how authenticated setup, off-session renewal, issuer challenges, pending recovery, webhook evidence, and gateway ownership fit together.",
+    directAnswer:
+      "SCA-ready subscription renewals begin with an authenticated, reusable payment method and clear authority for future charges. Later renewals can be attempted off-session, often as merchant-initiated transactions, but an issuer may still require 3D Secure. The store therefore needs a customer recovery link, reliable webhooks, pending-payment handling, and reconciliation before any retry.",
+    publishedAt: "2026-01-15",
+    updatedAt: "2026-07-02",
+    lastVerifiedAt: "2026-07-20",
+    readTime: "29 min read",
+    format: "Technical guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "SCA 3D Secure subscription renewals",
+      "strong customer authentication recurring payments",
+      "off session WooCommerce subscription renewal",
+      "3DS failed subscription payment",
+    ],
+    cover: {
+      label: "Recover issuer-required renewal authentication",
+      image: "/blogs/sca-and-3d-secure-for-subscription-renewals/hero.png",
+      tone: "dark",
+    },
+  },
 ];
 
 export function getResourceCategory(slug: string) {
