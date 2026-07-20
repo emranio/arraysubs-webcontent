@@ -47,5 +47,4 @@ export { RadioGroup, type RadioOption } from "./form/RadioGroup";
 export { Switch } from "./form/Switch";
 export { Range } from "./form/Range";
 export { ContactForm } from "./form/ContactForm";
-export { AffiliateForm } from "./form/AffiliateForm";
 export { MultiStepForm } from "./form/MultiStepForm";

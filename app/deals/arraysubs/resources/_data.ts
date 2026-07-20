@@ -101,6 +101,22 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       "Test content, routes, files, products, roles, and caches end to end",
     ],
   },
+  {
+    slug: "payments-and-compliance",
+    name: "Payments & Compliance",
+    eyebrow: "Make recurring money reliable",
+    description:
+      "Evidence-backed comparisons and operating guides for subscription gateways, tokens, SCA, webhooks, tax, Merchant-of-Record choices, and payment compliance.",
+    intro: [
+      "A subscription payment system is more than a checkout form. It decides who initiates each renewal, where the reusable payment authority lives, how an off-session charge is authenticated, which events update WooCommerce, how customers replace a failed method, and who owns tax, refunds, disputes, and compliance. These guides make those responsibilities explicit before a merchant commits to a gateway or migration.",
+      "Start with the gateway comparison, then use the focused Stripe, PayPal, Paddle, manual-billing, SCA, token, webhook, and tax guides to test the exact architecture. Product behavior is verified against current ArraySubs releases and provider documentation, operational limitations are visible, and legal or tax questions are clearly separated from software behavior so engineering, finance, support, and leadership can make one defensible decision together.",
+    ],
+    highlights: [
+      "Choose the renewal and Merchant-of-Record architecture first",
+      "Test tokens, authentication, webhooks, refunds, and recovery",
+      "Assign operational, tax, and compliance ownership explicitly",
+    ],
+  },
 ];
 
 export const RESOURCE_ARTICLES: ResourceArticle[] = [
@@ -1824,6 +1840,136 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
       image:
         "/blogs/preventing-shared-membership-accounts-without-punishing-families/hero.png",
       tone: "primary",
+    },
+  },
+  {
+    id: "A056",
+    slug: "best-payment-gateways-for-woocommerce-subscriptions",
+    categorySlug: "payments-and-compliance",
+    title: "Best Payment Gateways for WooCommerce Subscriptions in 2026",
+    seoTitle: "Best WooCommerce Subscription Gateways (2026)",
+    metaDescription:
+      "Compare Stripe, PayPal, Paddle, and manual renewal gateways for WooCommerce subscriptions by automation, SCA, recovery, tax ownership, fit, and risk.",
+    excerpt:
+      "Choose the renewal architecture first, then compare Stripe, PayPal, Paddle, and manual billing by cart fit, recovery, operations, and responsibility.",
+    directAnswer:
+      "For most WooCommerce subscription stores, Stripe is the best primary automatic-renewal gateway, PayPal is the best additional wallet for customers who actively prefer it, and Paddle is the strongest ArraySubs option for eligible software and digital businesses that want a Merchant of Record. Manual renewals remain valid for invoice-led B2B sales, bank transfer, and regional gateways.",
+    publishedAt: "2026-02-11",
+    updatedAt: "2026-06-29",
+    lastVerifiedAt: "2026-07-20",
+    readTime: "33 min read",
+    format: "Comparison guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "best payment gateways for WooCommerce subscriptions",
+      "WooCommerce recurring payment gateway comparison",
+      "Stripe PayPal Paddle subscriptions",
+      "automatic subscription renewals",
+    ],
+    cover: {
+      label: "Choose the recurring-payment architecture",
+      image:
+        "/blogs/best-payment-gateways-for-woocommerce-subscriptions/hero.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A057",
+    slug: "stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing",
+    categorySlug: "payments-and-compliance",
+    title: "Stripe vs PayPal vs Paddle for WooCommerce Recurring Billing",
+    seoTitle: "Stripe vs PayPal vs Paddle for Recurring Billing",
+    metaDescription:
+      "Compare Stripe, PayPal, and Paddle for WooCommerce recurring billing by control, carts, SCA, recovery, tax ownership, webhooks, refunds, and total cost.",
+    excerpt:
+      "Compare three billing control planes: WooCommerce-led Stripe, buyer-approved PayPal agreements, and Paddle's Merchant-of-Record commerce stack.",
+    directAnswer:
+      "Choose Stripe when you want WooCommerce to control renewals and need the most flexible carts, saved-payment recovery, and direct payment operations. Add PayPal when buyer preference justifies its one-plan checkout constraints. Choose Paddle for eligible software or digital subscriptions when Merchant-of-Record tax and compliance ownership matters more than Woo-native control.",
+    publishedAt: "2026-03-18",
+    updatedAt: "2026-07-11",
+    lastVerifiedAt: "2026-07-20",
+    readTime: "32 min read",
+    format: "Comparison guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "Stripe vs PayPal vs Paddle for WooCommerce recurring billing",
+      "best subscription gateway Stripe or PayPal",
+      "Paddle vs Stripe merchant of record WooCommerce",
+      "PayPal vs Paddle recurring payments",
+    ],
+    cover: {
+      label: "Compare recurring-payment control planes",
+      image:
+        "/blogs/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/hero.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A058",
+    slug: "stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test",
+    categorySlug: "payments-and-compliance",
+    title:
+      "Stripe Recurring Payments for WooCommerce: How They Work and What to Test",
+    seoTitle: "Stripe Recurring Payments for WooCommerce",
+    metaDescription:
+      "Learn how WooCommerce Stripe recurring payments work with ArraySubs, including tokens, PaymentIntents, SCA, webhooks, retries, and launch testing.",
+    excerpt:
+      "Trace a Stripe renewal from reusable payment authority through local scheduling, off-session PaymentIntent states, webhooks, recovery, and reconciliation.",
+    directAnswer:
+      "Stripe recurring payments for WooCommerce work when checkout creates reusable payment authority, WooCommerce stores a safe payment token, ArraySubs schedules a renewal order, and ArraySubs Pro confirms a new off-session Stripe PaymentIntent when that renewal becomes due. Stripe moves the money, but the WordPress store—not Stripe Billing—owns the subscription schedule in this architecture.",
+    publishedAt: "2026-01-24",
+    updatedAt: "2026-06-15",
+    lastVerifiedAt: "2026-07-20",
+    readTime: "29 min read",
+    format: "Technical guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "Stripe recurring payments for WooCommerce",
+      "WooCommerce Stripe subscription renewals",
+      "Stripe saved cards off session payments",
+      "test Stripe subscriptions WooCommerce",
+    ],
+    cover: {
+      label: "Test the complete Stripe renewal lifecycle",
+      image:
+        "/blogs/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/hero.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A059",
+    slug: "paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits",
+    categorySlug: "payments-and-compliance",
+    title:
+      "PayPal Recurring Payments for WooCommerce: Agreements, Renewals, and Limits",
+    seoTitle: "PayPal Recurring Payments for WooCommerce",
+    metaDescription:
+      "Learn how PayPal recurring payments work with WooCommerce and ArraySubs, including approval, plans, webhooks, renewals, refunds, and current limits.",
+    excerpt:
+      "Trace PayPal Product, Plan, Subscription, approval, sale, and webhook objects—and understand the current cart and lifecycle boundaries.",
+    directAnswer:
+      "PayPal recurring payments in the current ArraySubs Pro integration use PayPal’s Subscriptions REST API. Checkout creates a PayPal Product, Billing Plan, and Subscription, then redirects the buyer to PayPal for approval. PayPal controls later charges and retries; ArraySubs creates and reconciles WooCommerce renewal orders from scheduled jobs and verified webhooks.",
+    publishedAt: "2026-04-04",
+    updatedAt: "2026-07-03",
+    lastVerifiedAt: "2026-07-20",
+    readTime: "27 min read",
+    format: "Technical guide",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "PayPal recurring payments WooCommerce",
+      "WooCommerce PayPal subscription renewal",
+      "PayPal billing agreement WooCommerce",
+      "automatic recurring payments PayPal limitations",
+    ],
+    cover: {
+      label: "Separate approval, settlement, and renewal",
+      image:
+        "/blogs/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/hero.png",
+      tone: "dark",
     },
   },
 ];

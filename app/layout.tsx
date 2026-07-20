@@ -3,6 +3,7 @@ import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { absoluteUrl, site } from "@/lib/site";
+import { GOAFFPRO_LOADER_URL } from "@/lib/goaffpro";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 import { CustomCursor } from "@/components/animation/CustomCursor";
@@ -71,6 +72,14 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="antialiased" suppressHydrationWarning>
+        {/* GoAffPro affiliate tracker. Unlike GTM (consent-gated, loads after
+            hydration), this runs before any interaction so the 60-day
+            attribution cookie is set on the very first visit. React 19 hoists
+            this async script into <head>. The loader owns all referral-link
+            parsing and cookie handling itself; which URL params count as a
+            referral code (ref/aff/wpam_id/click_id/sub_id/hash) is configured
+            in the GoAffPro dashboard, not here. */}
+        <script async src={GOAFFPRO_LOADER_URL} />
         <div id="accessibility-widget-host">
           <a
             href="#main"

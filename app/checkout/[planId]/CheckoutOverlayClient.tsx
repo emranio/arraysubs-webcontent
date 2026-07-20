@@ -4,6 +4,11 @@ import Script from "next/script";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, CheckCircle2, Loader2, TriangleAlert } from "lucide-react";
 import { absoluteUrl } from "@/lib/site";
+import {
+  GOAFFPRO_REFERRAL_CLAIM_URL,
+  getGoaffproRefCode,
+  getGoaffproVisitorId,
+} from "@/lib/goaffpro";
 import { Button } from "@/components/ui/Button";
 import type { ArraySubsProPlan } from "../../deals/arraysubs/pricing/_plans";
 import {
@@ -34,9 +39,17 @@ type CheckoutOpenOptions = {
   success?: (response: CheckoutResponse) => void;
 };
 
+type CheckoutPurchase = {
+  id?: number | string;
+  license_id?: number | string;
+  plan_id?: number | string;
+  user_id?: number | string;
+};
+
 type CheckoutResponse = {
-  user?: { email?: string };
-  license?: { key?: string };
+  user?: { email?: string; id?: number | string };
+  license?: { key?: string; id?: number | string };
+  purchase?: CheckoutPurchase | null;
 };
 
 type CheckoutInstance = {
@@ -80,6 +93,57 @@ export function CheckoutOverlayClient({
   );
   const openedRef = useRef(false);
   const checkoutRef = useRef<CheckoutInstance | null>(null);
+  const claimSentRef = useRef(false);
+
+  /**
+   * File a GoAffPro referral claim with the user portal when this browser
+   * carries an affiliate ref cookie. The claim links the ref code to the
+   * purchase identity only — the actual commission is created later by the
+   * portal's Freemius payment webhook, using Freemius' own amounts. Organic
+   * checkouts (no ref cookie) post nothing. Fire-and-forget: affiliate
+   * tracking must never interrupt the checkout experience. Trial checkouts
+   * also file their claim — the payment webhook arrives when the trial
+   * converts, within the claim window.
+   */
+  const sendReferralClaim = useCallback(
+    async (response: CheckoutResponse) => {
+      if (claimSentRef.current) return;
+
+      const refCode = getGoaffproRefCode();
+
+      if (!refCode) return;
+
+      claimSentRef.current = true;
+
+      try {
+        const result = await fetch(GOAFFPRO_REFERRAL_CLAIM_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            refCode,
+            visitorId: getGoaffproVisitorId(),
+            email: response.user?.email ?? "",
+            fsUserId: String(response.user?.id ?? response.purchase?.user_id ?? ""),
+            fsLicenseId: String(
+              response.purchase?.license_id ?? response.license?.id ?? "",
+            ),
+            fsPlanId: String(response.purchase?.plan_id ?? plan.id),
+            billingCycle,
+            sourcePath: window.location.pathname,
+          }),
+        });
+
+        if (!result.ok) {
+          throw new Error(`Referral claim failed (${result.status})`);
+        }
+      } catch (error) {
+        // Allow the later success callback to retry once more.
+        claimSentRef.current = false;
+        console.error("Affiliate referral claim failed", error);
+      }
+    },
+    [billingCycle, plan.id],
+  );
 
   const closeCheckout = useCallback(() => {
     const checkout = checkoutRef.current;
@@ -147,14 +211,10 @@ export function CheckoutOverlayClient({
         coupon: couponCode,
         ...(trialMode ? { trial: trialMode } : {}),
         purchaseCompleted: (response) => {
-          console.log("Purchase completed:", response);
-          console.log("User email:", response.user?.email);
-          console.log("License key:", response.license?.key);
+          void sendReferralClaim(response);
         },
         success: (response) => {
-          console.log("Checkout closed after successful purchase:", response);
-          console.log("User email:", response.user?.email);
-          console.log("License key:", response.license?.key);
+          void sendReferralClaim(response);
           setStatus("success");
           setMessage("Purchase completed. Your license has been confirmed.");
         },
@@ -164,7 +224,7 @@ export function CheckoutOverlayClient({
       setStatus("error");
       setMessage("Secure checkout could not open. Please refresh the page.");
     }
-  }, [billingCycle, couponCode, plan.id, plan.sites, trialMode]);
+  }, [billingCycle, couponCode, plan.id, plan.sites, sendReferralClaim, trialMode]);
 
   useEffect(() => {
     if (!scriptReady || openedRef.current) {

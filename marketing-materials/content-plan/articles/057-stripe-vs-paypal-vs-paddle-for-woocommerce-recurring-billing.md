@@ -1,5 +1,7 @@
 # A057 — Stripe vs PayPal vs Paddle for WooCommerce Recurring Billing
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Stripe vs PayPal vs Paddle for WooCommerce Recurring Billing

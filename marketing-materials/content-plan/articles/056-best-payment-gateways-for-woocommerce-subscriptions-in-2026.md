@@ -1,5 +1,7 @@
 # A056 — Best Payment Gateways for WooCommerce Subscriptions in 2026
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Best Payment Gateways for WooCommerce Subscriptions in 2026

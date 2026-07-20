@@ -1,5 +1,7 @@
 # A058 — Stripe Recurring Payments for WooCommerce: How They Work and What to Test
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Stripe Recurring Payments for WooCommerce: How They Work and What to Test

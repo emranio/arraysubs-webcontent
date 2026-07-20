@@ -2,16 +2,14 @@ import type { Metadata } from "next";
 import {
   ArrowRight,
   CalendarClock,
-  CircleDollarSign,
+  Check,
   Cookie,
   HandCoins,
   Megaphone,
-  Repeat,
   ShieldCheck,
   UserPlus,
   Wallet,
 } from "lucide-react";
-import { cn } from "@/lib/cn";
 import { createMetadata, faqSchema } from "@/lib/seo";
 import { site } from "@/lib/site";
 import {
@@ -19,15 +17,11 @@ import {
   formatUsd,
 } from "@/app/deals/arraysubs/pricing/_plans";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { ScrollReveal } from "@/components/animation/ScrollReveal";
 import {
   Accordion,
-  AffiliateForm,
-  Badge,
   Button,
   Container,
   CTA,
-  Eyebrow,
   IconCard,
   PageHero,
   Section,
@@ -36,14 +30,18 @@ import {
 } from "@/components/ui";
 
 export const metadata: Metadata = createMetadata({
-  title: "Become an ArrayHash Affiliate — Earn 35% Recurring Commission",
+  title: "Become an ArrayHash Affiliate — Earn 35% Commission",
   description:
-    "Join the ArrayHash affiliate program and earn 35% commission on every new ArrayHash Pro license — plus recurring commission on automatic renewals. 60-day cookie, monthly PayPal payouts.",
+    "Join the ArrayHash affiliate program and earn 35% commission on every new ArrayHash Pro license — yearly or lifetime. 60-day cookie, monthly PayPal payouts.",
   path: "/become-an-affiliate/",
 });
 
 const APPLY = "#apply";
 const PRODUCT = "/deals/arraysubs/";
+
+/** Affiliate sign-up and dashboard live in the GoAffPro portal. */
+const AFFILIATE_SIGNUP_URL = "https://arrayhash.goaffpro.com/create-account";
+const AFFILIATE_LOGIN_URL = "https://arrayhash.goaffpro.com/login";
 
 const STATS: { value: string; label: string }[] = [
   { value: "35%", label: "Commission on every new license" },
@@ -54,14 +52,14 @@ const STATS: { value: string; label: string }[] = [
 
 const STEPS: { title: string; description: string }[] = [
   {
-    title: "Apply in two minutes",
+    title: "Sign up in a minute",
     description:
-      "Fill in the short form below. We review every application personally — no giant network, no waiting in a queue.",
+      "Create your account in the affiliate portal below. No giant network, no approval queue — you're in straight away.",
   },
   {
     title: "Get your referral link",
     description:
-      "Once you're approved, you get a unique link with a 60-day tracking cookie already working in your favour.",
+      "Your dashboard hands you a unique link with a 60-day tracking cookie already working in your favour.",
   },
   {
     title: "Recommend ArrayHash",
@@ -71,7 +69,7 @@ const STEPS: { title: string; description: string }[] = [
   {
     title: "Earn on every sale",
     description:
-      "Collect 35% on new licenses and on renewals. Cash out monthly via PayPal once your balance passes $100.",
+      "Collect 35% on every new license you refer. Cash out monthly via PayPal once your balance passes $100.",
   },
 ];
 
@@ -107,70 +105,20 @@ const TERMS: {
 ];
 
 // Commission math shown in real dollars, driven by live ArrayHash Pro pricing
-// (Personal + Agency, yearly and lifetime) so the numbers never drift.
+// so the numbers never drift.
 const COMMISSION_RATE = 0.35;
 
-const personalPlan = ARRAYSUBS_PRO_PLANS.find((plan) => plan.name === "Personal")!;
 const agencyPlan = ARRAYSUBS_PRO_PLANS.find((plan) => plan.name === "Agency")!;
 
 function commissionUsd(amount: number) {
   return formatUsd(Math.round(amount * COMMISSION_RATE));
 }
 
-type CommissionExample = {
-  plan: string;
-  cycle: string;
-  price: string;
-  cut: string;
-  cadence: string;
-  recurring: boolean;
-};
-
-const COMMISSION_EXAMPLES: CommissionExample[] = [
-  {
-    plan: "ArrayHash Pro Personal",
-    cycle: "Yearly",
-    price: `${formatUsd(personalPlan.annualPrice)}/yr`,
-    cut: commissionUsd(personalPlan.annualPrice),
-    cadence: "every year they renew",
-    recurring: true,
-  },
-  {
-    plan: "ArrayHash Pro Agency",
-    cycle: "Yearly",
-    price: `${formatUsd(agencyPlan.annualPrice)}/yr`,
-    cut: commissionUsd(agencyPlan.annualPrice),
-    cadence: "every year they renew",
-    recurring: true,
-  },
-  {
-    plan: "ArrayHash Pro Personal",
-    cycle: "Lifetime",
-    price: formatUsd(personalPlan.lifetimePrice),
-    cut: commissionUsd(personalPlan.lifetimePrice),
-    cadence: "one-time",
-    recurring: false,
-  },
-  {
-    plan: "ArrayHash Pro Agency",
-    cycle: "Lifetime",
-    price: formatUsd(agencyPlan.lifetimePrice),
-    cut: commissionUsd(agencyPlan.lifetimePrice),
-    cadence: "one-time",
-    recurring: false,
-  },
-];
-
 const FAQ_ITEMS = [
   {
     question: "How much can I earn as an ArrayHash affiliate?",
     answer:
-      "You earn 35% commission on every new ArrayHash Pro license purchased through your link — and you keep earning 35% when those licenses renew automatically. There's no cap on how much you can make.",
-  },
-  {
-    question: "Do I really earn commission on renewals?",
-    answer:
-      "Yes. ArrayHash products are subscription-based, so the customers you refer bill on a recurring cycle and their licenses auto-renew. You get your commission on those automatic renewals too, not just the first sale — so one good referral can pay you month after month.",
+      "You earn 35% commission on every new ArrayHash Pro license purchased through your link — on both yearly and lifetime plans. There's no cap on how much you can make.",
   },
   {
     question: "When and how do I get paid?",
@@ -185,7 +133,7 @@ const FAQ_ITEMS = [
   {
     question: "Who can join the program?",
     answer:
-      "Anyone with a relevant audience — bloggers, YouTubers, course creators, agencies, freelancers and WooCommerce communities. Tell us how you plan to promote ArrayHash in the application and we'll take it from there.",
+      "Anyone with a relevant audience — bloggers, YouTubers, course creators, agencies, freelancers and WooCommerce communities. Create your account in the affiliate portal and you can start sharing your link right away.",
   },
 ];
 
@@ -199,10 +147,10 @@ export default function BecomeAnAffiliatePage() {
           { name: "Become an Affiliate", href: "/become-an-affiliate/" },
         ]}
         title="Earn 35% for every store you send to ArrayHash."
-        subtitle="Recommend ArrayHash to your audience and earn a generous, recurring commission on every customer you refer — on the first sale and every renewal after it."
+        subtitle="Recommend ArrayHash to your audience and earn a generous 35% commission on every customer you refer to ArrayHash Pro."
         highlights={[
-          "35% on new licenses",
-          "Recurring commission on renewals",
+          "35% on every new license",
+          "Yearly & lifetime plans count",
           "60-day tracking cookie",
         ]}
         actions={
@@ -213,7 +161,7 @@ export default function BecomeAnAffiliatePage() {
               magnetic
               iconRight={<ArrowRight className="size-5" />}
             >
-              Apply to become an affiliate
+              Become an affiliate
             </Button>
             <Button href={PRODUCT} variant="outline" size="lg" magnetic>
               See what you&apos;ll promote
@@ -242,48 +190,6 @@ export default function BecomeAnAffiliatePage() {
               </div>
             ))}
           </dl>
-        </Container>
-      </Section>
-
-      {/* ---- Dedicated recurring-commission section ------------------- */}
-      <Section surface="dark" spacing="lg">
-        <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
-            <div>
-              <Eyebrow className="text-on-dark-muted">Recurring by design</Eyebrow>
-              <h2 className="mt-4 font-display text-4xl text-balance sm:text-display-sm">
-                You get paid again every time they renew.
-              </h2>
-              <p className="mt-6 max-w-xl text-lg text-pretty text-on-dark/85 sm:text-xl">
-                {
-                  "ArrayHash products are subscription-based — the customers you refer keep paying on a recurring cycle, and their licenses auto-renew. Your 35% doesn't stop at the first sale. You earn it on every automatic renewal, so a single referral can keep paying you month after month."
-                }
-              </p>
-              <ul className="mt-8 flex flex-col gap-4">
-                {[
-                  "Commission on the first license and on every automated renewal.",
-                  "Recurring revenue for the store means recurring commission for you.",
-                  "The longer their customers stay subscribed, the more you earn.",
-                ].map((point) => (
-                  <li key={point} className="flex items-start gap-3">
-                    <Repeat
-                      aria-hidden="true"
-                      className="mt-0.5 size-5 shrink-0 text-highlight"
-                    />
-                    <span className="text-on-dark/90">{point}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-8 text-sm text-on-dark-muted">
-                Renewal commissions follow the same 30-day refund reserve as new
-                sales — you&apos;re paid once each renewal clears the refund window.
-              </p>
-            </div>
-
-            <ScrollReveal y={1}>
-              <CommissionExamples />
-            </ScrollReveal>
-          </div>
         </Container>
       </Section>
 
@@ -335,7 +241,7 @@ export default function BecomeAnAffiliatePage() {
         <Container>
           <SectionTitle
             eyebrow="FAQ"
-            title="Before you apply"
+            title="Before you sign up"
             subtitle="Quick answers to the questions affiliates ask most."
             align="center"
           />
@@ -353,26 +259,26 @@ export default function BecomeAnAffiliatePage() {
             {/* Persuasion recap */}
             <div className="lg:pr-8">
               <SectionTitle
-                eyebrow="Apply now"
+                eyebrow="Sign up"
                 title="Join the ArrayHash affiliate program"
-                subtitle="Tell us a little about your audience. We review every application personally and reply by email — you'll also hear from Emran, our founder."
+                subtitle="Create your account in the affiliate portal and get your referral link straight away — no waiting, no approval queue."
               />
               <ul className="mt-8 flex flex-col gap-5">
                 {[
                   {
                     icon: UserPlus,
-                    title: "Apply",
-                    text: "Share your details and how you plan to promote ArrayHash.",
+                    title: "Create your account",
+                    text: "Sign up in the affiliate portal — it takes about a minute.",
                   },
                   {
                     icon: Megaphone,
-                    title: "Get approved",
-                    text: "We review it personally and send your referral link.",
+                    title: "Grab your link",
+                    text: "Get your referral link and share it with your audience.",
                   },
                   {
                     icon: HandCoins,
                     title: "Start earning",
-                    text: "35% on new licenses and renewals, paid monthly via PayPal.",
+                    text: "35% on every new license, paid monthly via PayPal.",
                   },
                 ].map((item) => (
                   <li key={item.title} className="flex items-start gap-4">
@@ -391,13 +297,54 @@ export default function BecomeAnAffiliatePage() {
               </ul>
             </div>
 
-            {/* Application form */}
-            <div className="rounded-2xl bg-card p-6 text-foreground sm:p-8">
+            {/* Sign-up: handled by the GoAffPro affiliate portal */}
+            <div className="flex flex-col rounded-2xl bg-card p-6 text-foreground sm:p-8">
               <h3 className="font-display text-2xl sm:text-3xl">
-                Affiliate application
+                Create your affiliate account
               </h3>
               <p className="mt-2 text-muted">
-                It takes about two minutes. Prefer email? Write to{" "}
+                Sign up in our affiliate portal. You&apos;ll get your referral
+                link and a dashboard to track clicks, sales and commissions in
+                real time.
+              </p>
+
+              <ul className="mt-7 flex flex-col gap-3">
+                {[
+                  "Your own referral link and marketing assets",
+                  "Live clicks, sales and commission tracking",
+                  "Payout requests once your balance clears $100",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <Check
+                      aria-hidden="true"
+                      className="mt-0.5 size-5 shrink-0 text-primary"
+                    />
+                    <span className="text-muted">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8">
+                <Button
+                  href={AFFILIATE_SIGNUP_URL}
+                  size="lg"
+                  fullWidth
+                  magnetic
+                  iconRight={<ArrowRight className="size-5" />}
+                >
+                  Create affiliate account
+                </Button>
+              </div>
+
+              <p className="mt-5 text-sm text-faint">
+                Already an affiliate?{" "}
+                <a
+                  href={AFFILIATE_LOGIN_URL}
+                  className="font-medium text-foreground underline decoration-primary decoration-2 underline-offset-4 hover:decoration-dark"
+                >
+                  Log in to your dashboard
+                </a>
+                . Questions? Write to{" "}
                 <a
                   href={`mailto:${site.email}`}
                   className="font-medium text-foreground underline decoration-primary decoration-2 underline-offset-4 hover:decoration-dark"
@@ -406,7 +353,6 @@ export default function BecomeAnAffiliatePage() {
                 </a>
                 .
               </p>
-              <AffiliateForm className="mt-8" />
             </div>
           </div>
         </Container>
@@ -419,13 +365,13 @@ export default function BecomeAnAffiliatePage() {
             surface="primary"
             flat
             eyebrow="Ready when you are"
-            title="Turn recommendations into recurring income"
-            subtitle="Promote ArrayHash software that store owners actually keep — and earn 35% on every sale and renewal."
+            title="Turn recommendations into real income"
+            subtitle="Promote ArrayHash software that store owners actually keep — and earn 35% on every new license you refer."
             microcopy="Free to join · No minimum audience"
             actions={
               <>
                 <Button href={APPLY} variant="dark" size="lg" layers="2layer" magnetic>
-                  Apply to become an affiliate
+                  Become an affiliate
                 </Button>
                 <Button
                   href={PRODUCT}
@@ -466,14 +412,14 @@ function HeroCommissionCard() {
         <div className="flex items-center justify-between gap-3 rounded-xl bg-surface px-4 py-3.5">
           <dt className="flex items-center gap-2.5 font-medium">
             <HandCoins aria-hidden="true" className="size-5 text-primary" />
-            New ArrayHash Pro sale
+            New Pro license, yearly
           </dt>
           <dd className="font-bold text-primary">35%</dd>
         </div>
         <div className="flex items-center justify-between gap-3 rounded-xl bg-surface px-4 py-3.5">
           <dt className="flex items-center gap-2.5 font-medium">
-            <Repeat aria-hidden="true" className="size-5 text-primary" />
-            Every automatic renewal
+            <HandCoins aria-hidden="true" className="size-5 text-primary" />
+            New Pro license, lifetime
           </dt>
           <dd className="font-bold text-primary">35%</dd>
         </div>
@@ -481,63 +427,16 @@ function HeroCommissionCard() {
 
       <p className="mt-4 rounded-xl bg-highlight px-4 py-3 text-sm text-dark">
         <span className="font-semibold">Example:</span> an ArrayHash Pro Agency
-        license at {formatUsd(agencyPlan.annualPrice)}/yr pays you{" "}
+        license at {formatUsd(agencyPlan.annualPrice)} pays you{" "}
         <span className="font-semibold">
           {commissionUsd(agencyPlan.annualPrice)}
-        </span>{" "}
-        — every year they renew.
+        </span>
+        .
       </p>
 
       <p className="mt-4 flex items-center gap-2 text-sm text-muted">
         <Cookie aria-hidden="true" className="size-4 shrink-0 text-primary" />
         60-day tracking cookie after the first visit
-      </p>
-    </div>
-  );
-}
-
-/** Recurring section visual: what one referral pays you, in real dollars. */
-function CommissionExamples() {
-  return (
-    <div className="rounded-2xl bg-card p-6 text-foreground sm:p-8">
-      <div className="flex items-center justify-between gap-3">
-        <p className="font-display text-lg">What one referral pays you</p>
-        <Badge tone="primary">35%</Badge>
-      </div>
-      <p className="mt-2 flex items-center gap-2 text-sm text-muted">
-        <CircleDollarSign
-          aria-hidden="true"
-          className="size-4 shrink-0 text-primary"
-        />
-        Real ArrayHash Pro pricing — your 35%, in dollars.
-      </p>
-
-      <ul className="mt-5 flex flex-col gap-[0.1875rem]">
-        {COMMISSION_EXAMPLES.map((example) => (
-          <li
-            key={`${example.plan}-${example.cycle}`}
-            className={cn(
-              "flex items-center justify-between gap-3 rounded-xl px-4 py-3",
-              example.recurring ? "bg-highlight" : "bg-surface",
-            )}
-          >
-            <div className="min-w-0">
-              <p className="truncate font-medium">{example.plan}</p>
-              <p className="text-xs text-muted">
-                {example.cycle} · {example.price}
-              </p>
-            </div>
-            <div className="shrink-0 text-right">
-              <p className="font-bold text-primary">+{example.cut}</p>
-              <p className="text-xs text-faint">{example.cadence}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-
-      <p className="mt-4 text-xs text-muted">
-        Yearly plans renew, so you earn your 35% again every year they stay.
-        Shown on list price.
       </p>
     </div>
   );

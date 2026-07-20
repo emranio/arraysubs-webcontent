@@ -1,5 +1,7 @@
 # A059 — PayPal Recurring Payments for WooCommerce: Agreements, Renewals, and Limits
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** PayPal Recurring Payments for WooCommerce: Agreements, Renewals, and Limits
