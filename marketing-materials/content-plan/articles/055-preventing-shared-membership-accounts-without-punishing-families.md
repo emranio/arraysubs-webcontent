@@ -1,5 +1,7 @@
 # A055 — Preventing Shared Membership Accounts Without Punishing Families
 
+- **Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Preventing Shared Membership Accounts Without Punishing Families
