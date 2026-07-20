@@ -2067,6 +2067,38 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
       tone: "dark",
     },
   },
+  {
+    id: "A063",
+    slug: "subscription-payment-tokens-and-card-updates-explained",
+    categorySlug: "payments-and-compliance",
+    title: "Subscription Payment Tokens and Card Updates Explained",
+    seoTitle: "Subscription Payment Tokens and Card Updates",
+    metaDescription:
+      "Learn how WooCommerce subscription payment tokens, provider vaults, card updates, defaults, expiry, portability, and ArraySubs renewal context work.",
+    excerpt:
+      "Understand provider-vault references, subscription-specific payment context, customer and network updates, portability limits, and renewal verification.",
+    directAnswer:
+      "A subscription payment token is a gateway-specific reference to a vaulted card or billing authorization, not a portable copy of the card. WooCommerce can store a customer token, but each subscription still needs the correct provider customer, payment-method, mandate, or agreement context. Card updates must reach that renewal context and then be proven with a test renewal.",
+    publishedAt: "2026-05-07",
+    updatedAt: "2026-06-18",
+    lastVerifiedAt: "2026-07-20",
+    readTime: "27 min read",
+    format: "Technical explainer",
+    author: "Emran",
+    reviewer: "ArraySubs Engineering Team",
+    keywords: [
+      "subscription payment tokens and card updates",
+      "WooCommerce subscription payment token",
+      "update payment method recurring order",
+      "expired card token WooCommerce",
+    ],
+    cover: {
+      label: "Trace each renewal payment reference",
+      image:
+        "/blogs/subscription-payment-tokens-and-card-updates-explained/hero.png",
+      tone: "highlight",
+    },
+  },
 ];
 
 export function getResourceCategory(slug: string) {

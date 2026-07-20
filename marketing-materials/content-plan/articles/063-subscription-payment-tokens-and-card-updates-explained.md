@@ -1,5 +1,7 @@
 # A063 — Subscription Payment Tokens and Card Updates Explained
 
+**Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Subscription Payment Tokens and Card Updates Explained
