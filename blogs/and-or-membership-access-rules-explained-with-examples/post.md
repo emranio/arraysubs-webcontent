@@ -311,7 +311,7 @@ OWASP recommends least privilege, deny-safe policy, validation on every request,
 
 Write the access sentence, identify mandatory and alternative facts, add parentheses, then build it with ALL, ANY, and at most one nested group. Treat multi-select rows carefully, reject accidental empty policies, and turn every Boolean branch into a test persona. Simple logic written precisely is safer than clever rules no one can explain.
 
-Use the [combined-conditions recipe](/deals/arraysubs/use-cases/recipes/combined-conditions/) for the product workflow. After the policy and QA sheet are approved, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and [member-experience features](/deals/arraysubs/features/#member-experience).
+Use the [combined-conditions recipe](/deals/arraysubs/use-cases/recipes/combined-conditions/) for the product workflow. After the policy and QA sheet are approved, connect the rule to the [ArraySubs WooCommerce membership system](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) when feature-entitlement conditions are required.
 
 ## Frequently asked questions
 

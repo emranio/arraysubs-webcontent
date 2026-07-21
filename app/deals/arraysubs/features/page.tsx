@@ -218,10 +218,31 @@ export default function FeaturesHubPage() {
             subtitle="Every major feature area explained in depth — how it works, what's free vs Pro, setup steps, and the questions merchants actually ask."
             align="center"
           />
+          <div className="mt-12 grid items-center gap-8 rounded-2xl bg-dark p-6 text-on-dark sm:p-8 lg:grid-cols-[1fr_auto] lg:p-10">
+            <div>
+              <Badge tone="primary">Commercial guide</Badge>
+              <h3 className="mt-5 font-display text-3xl text-balance sm:text-4xl">
+                WooCommerce Membership
+              </h3>
+              <p className="mt-4 max-w-3xl text-lg leading-8 text-on-dark-muted text-pretty">
+                See how plans, recurring billing, content and product access,
+                dripping, protected downloads, self-service, and retention work
+                as one membership system.
+              </p>
+            </div>
+            <Button
+              href="/deals/arraysubs/features/woocommerce-membership/"
+              variant="highlight"
+              size="md"
+              iconRight={<ArrowRight className="size-5" />}
+            >
+              Explore memberships
+            </Button>
+          </div>
           <ScrollReveal
             stagger={0.03}
             y={0}
-            className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3"
+            className="mt-[0.1875rem] grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3"
           >
             {PILLARS.map((pillar) => (
               <IconCard

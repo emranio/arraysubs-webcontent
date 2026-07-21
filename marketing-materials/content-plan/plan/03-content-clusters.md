@@ -7,7 +7,7 @@
 | C01 | WooCommerce subscription setup and product models | 16 | P0 | A001 | `/deals/arraysubs/` |
 | C02 | Billing, renewals, synchronization, and proration | 14 | P1 | A017 | `/deals/arraysubs/features/#subscription-operations` |
 | C03 | Failed payments, dunning, and grace recovery | 10 | P0 | A031 | `/deals/arraysubs/features/#subscription-operations` |
-| C04 | Memberships, access control, and content dripping | 15 | P0 | A041 | `/deals/arraysubs/features/#member-experience` |
+| C04 | Memberships, access control, and content dripping | 15 | P0 | A041 | `/deals/arraysubs/features/woocommerce-membership/` |
 | C05 | Payment gateways, SCA, tax, and Merchant of Record | 14 | P1 | A056 | `/deals/arraysubs/features/#payment-gateways` |
 | C06 | Retention, churn, and cancellation flows | 16 | P0 | A070 | `/deals/arraysubs/features/#retention-revenue` |
 | C07 | Subscription analytics, forecasting, and KPIs | 12 | P1 | A086 | `/deals/arraysubs/features/#analytics-infrastructure` |
@@ -89,7 +89,8 @@
 
 **Category:** Membership Strategy  
 **Purpose:** Build topical authority around membership architecture, paywalls, access policy, and protected-content SEO.  
-**Commercial pillar:** `/deals/arraysubs/features/#member-experience`  
+**Commercial pillar:** `/deals/arraysubs/features/woocommerce-membership/`
+
 **Editorial pillar:** A041
 
 - A041 — [How to Create a WooCommerce Membership Site: Architecture Before Configuration](../articles/041-how-to-create-a-woocommerce-membership-site-architecture-before-configuration.md) — `how to create a WooCommerce membership site`

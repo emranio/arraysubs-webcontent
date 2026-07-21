@@ -456,7 +456,7 @@ Keep the article at 6-8 contextual internal links. Use varied anchors and do not
 1. Early architecture context: `/deals/arraysubs/resources/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/` — anchor such as “membership architecture before configuration.”
 2. Billing-versus-access distinction: `/deals/arraysubs/resources/membership-strategy/woocommerce-membership-vs-subscription-what-is-the-difference/` — anchor such as “separate subscription billing from membership access.”
 3. Lifecycle/source-of-truth context: `/deals/arraysubs/resources/membership-strategy/woocommerce-subscriptions-and-memberships-together-the-complete-architecture/` — anchor such as “connect recurring billing to member entitlements.”
-4. Product capability after the neutral framework: `/deals/arraysubs/features/#member-experience` — anchor such as “ArraySubs member experience features.”
+4. Product capability after the neutral framework: `/deals/arraysubs/features/woocommerce-membership/` — anchor such as “ArraySubs WooCommerce membership features.”
 5. Narrow global-cap setup: `/deals/arraysubs/use-cases/recipes/limit-concurrent-logins/` — anchor such as “configure the ArraySubs Pro concurrent-login limit.” This recipe owns step-by-step setup.
 6. Per-tier example: `/deals/arraysubs/use-cases/recipes/session-limit-per-tier/` — anchor such as “set plan-specific session allowances.”
 7. Conditional rule context, only if discussed: `/deals/arraysubs/use-cases/recipes/combined-conditions/` — anchor such as “combine membership eligibility conditions.”

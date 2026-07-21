@@ -18,6 +18,10 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
     title: "Feature Guides",
     links: [
       [
+        "WooCommerce Membership",
+        "/deals/arraysubs/features/woocommerce-membership/",
+      ],
+      [
         "Subscription Products",
         "/deals/arraysubs/features/subscriptions-and-recurring-products/",
       ],

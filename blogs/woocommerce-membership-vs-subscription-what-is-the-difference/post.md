@@ -293,7 +293,7 @@ For the complete planning sequence, read [How to Create a WooCommerce Membership
 
 Name the business job before choosing the plugin stack. Use a subscription for billing and lifecycle, a membership for access and privileges, and both only when payment state genuinely controls a protected experience. Then choose whether access needs an independent membership ledger or can be evaluated directly from WooCommerce and ArraySubs data.
 
-After the decision and lifecycle table are complete, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and the wider [member experience features](/deals/arraysubs/features/#member-experience).
+After the decision and lifecycle table are complete, see how [ArraySubs connects subscription billing to WooCommerce membership access](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) for automatic gateway billing and advanced controls.
 
 ## Frequently asked questions
 

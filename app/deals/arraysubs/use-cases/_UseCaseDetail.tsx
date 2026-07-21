@@ -20,6 +20,14 @@ import type { UseCase } from "./_data";
 import { highlight } from "../_highlight";
 
 const GET_PRO = "/deals/arraysubs/pricing/";
+const MEMBERSHIP_FEATURE =
+  "/deals/arraysubs/features/woocommerce-membership/";
+const MEMBERSHIP_USE_CASES = new Set([
+  "membership-sites",
+  "online-courses",
+  "content-publishers",
+  "b2b-wholesale-memberships",
+]);
 
 const tierTone = (tier: FeatureTier) =>
   tier === "Free" ? "highlight" : tier === "Pro" ? "dark" : "primary";
@@ -50,14 +58,21 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
         subtitle={useCase.heroSubtitle}
         highlights={useCase.heroHighlights}
         actions={
-          <Button
-            href={GET_PRO}
-            size="lg"
-            magnetic
-            iconRight={<ArrowRight className="size-5" />}
-          >
-            Start Trial
-          </Button>
+          <>
+            <Button
+              href={GET_PRO}
+              size="lg"
+              magnetic
+              iconRight={<ArrowRight className="size-5" />}
+            >
+              Start Trial
+            </Button>
+            {MEMBERSHIP_USE_CASES.has(useCase.slug) && (
+              <Button href={MEMBERSHIP_FEATURE} variant="outline" size="lg">
+                Membership features
+              </Button>
+            )}
+          </>
         }
         trust="No credit card required"
       />

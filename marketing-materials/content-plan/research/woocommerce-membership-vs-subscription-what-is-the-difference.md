@@ -203,7 +203,7 @@ Do not use the official Woo integration’s answer as the presumed ArraySubs ans
 
 ## Internal-link plan
 
-- **Commercial pillar:** `/deals/arraysubs/features/#member-experience`
+- **Commercial pillar:** `/deals/arraysubs/features/woocommerce-membership/`
 - **Recipes:** combined conditions, URL prefix lockdown, inline content gating.
 - **Siblings:** A041 architecture pillar, A043 combined architecture, A044 membership level strategy.
 - **Supporting concepts:** A045 content restriction, A047 content dripping, A051 roles vs membership levels vs entitlements.

@@ -35,6 +35,8 @@ import { highlight } from "../_highlight";
 
 const GET_PRO = "/deals/arraysubs/pricing/";
 const ALL_FEATURES = "/deals/arraysubs/features/";
+const MEMBERSHIP_FEATURE =
+  "/deals/arraysubs/features/woocommerce-membership/";
 
 const tierTone = (tier: FeatureTier) =>
   tier === "Free" ? "highlight" : tier === "Pro" ? "dark" : "primary";
@@ -87,7 +89,19 @@ export function PillarDetail({ pillar }: { pillar: FeaturePillar }) {
             >
               Start Trial
             </Button>
-            <Button href={ALL_FEATURES} variant="outline" size="lg" magnetic>
+            {pillar.slug === "member-access-control" && (
+              <Button href={MEMBERSHIP_FEATURE} variant="outline" size="lg">
+                Membership overview
+              </Button>
+            )}
+            <Button
+              href={ALL_FEATURES}
+              variant={
+                pillar.slug === "member-access-control" ? "ghost" : "outline"
+              }
+              size="lg"
+              magnetic
+            >
               All features
             </Button>
           </>

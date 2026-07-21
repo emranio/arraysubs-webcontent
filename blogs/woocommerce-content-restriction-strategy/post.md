@@ -223,7 +223,7 @@ It is also unsafe to rely on any membership plugin when a cache/CDN cannot keep 
 
 Classify content first, use the narrowest enforceable target, select evidence closest to the promise, design the denied journey, and govern priority, schedules, cache, exceptions, and rollback. Treat every restriction as live authorization code—even when it is configured through a friendly form.
 
-After the inventory and test matrix pass, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and [member experience features](/deals/arraysubs/features/#member-experience).
+After the inventory and test matrix pass, connect the rules to the [ArraySubs WooCommerce membership feature system](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) when the implementation needs paid automation.
 
 ## Frequently asked questions
 

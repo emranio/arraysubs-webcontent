@@ -228,7 +228,7 @@ For each, verify page body, archive/listing, direct URL, REST/Store API if relev
 
 ## Internal-link plan
 
-- **Commercial pillar:** `/deals/arraysubs/features/#member-experience`
+- **Commercial pillar:** `/deals/arraysubs/features/woocommerce-membership/`
 - **Implementation recipes:**
   - `/deals/arraysubs/use-cases/recipes/combined-conditions/`
   - `/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/`

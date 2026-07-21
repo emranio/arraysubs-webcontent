@@ -33,6 +33,7 @@ export { Testimonials, type TestimonialItem } from "./Testimonials";
 export { ModuleShowcase } from "./ModuleShowcase";
 export { Gallery, type GalleryItem } from "./Gallery";
 export { Dialog } from "./Dialog";
+export { MediaFeature, ProductScreenshot } from "./MediaFeature";
 
 // Form controls
 export { Field } from "./form/Field";

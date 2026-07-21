@@ -205,7 +205,7 @@ Customer workspaces, licensed source files, personal output, internal community 
 
 Decide what search visitors may genuinely receive, publish a substantial public answer, authorize premium material server-side, and keep metadata/schema honest. Validate the rendered guest response, member response, cache, robots, canonical, social previews, and Search Console independently. Treat structured data as description—not an access key or ranking shortcut.
 
-After the architecture is proven, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and [member experience features](/deals/arraysubs/features/#member-experience).
+After the architecture is proven, see how [ArraySubs membership features implement public, partial, and protected experiences](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) if the operating model needs paid automation.
 
 ## Frequently asked questions
 

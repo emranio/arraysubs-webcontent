@@ -254,7 +254,7 @@ An LMS or membership platform with those primitives may be a better authority, w
 
 ## Internal-link plan
 
-- **Commercial pillar:** `/deals/arraysubs/features/#member-experience`
+- **Commercial pillar:** `/deals/arraysubs/features/woocommerce-membership/`
 - **Recipes:** combined conditions, URL prefix lockdown, inline content gating where applicable.
 - **Siblings:** A046 paywall models, A048 members-only products/catalogs, A049 gated-content SEO.
 - **Supporting:** A035 grace periods, A043 combined architecture, A052 URL restrictions, A053 partial content, A152 online course blueprint.

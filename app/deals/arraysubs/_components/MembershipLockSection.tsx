@@ -168,7 +168,7 @@ export function MembershipLockSection() {
 
           <div className="mt-10 flex justify-center">
             <Button
-              href="/deals/arraysubs/features/#member-experience"
+              href="/deals/arraysubs/features/woocommerce-membership/"
               variant="highlight"
               size="md"
               magnetic

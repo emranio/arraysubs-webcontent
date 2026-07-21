@@ -258,7 +258,7 @@ For private resources, create a public explanation page and keep the actual work
 
 Place the gate after genuine resolution and evidence, then make the premium value explicit. Authorize the fragment on the server, protect media and APIs independently, and test what guests, members, crawlers, social bots, and caches actually receive. Optimize the boundary with declared funnel metrics and guardrails—not arbitrary percentages or copied benchmarks.
 
-Use the [inline content-gating recipe](/deals/arraysubs/use-cases/recipes/inline-content-gating/) for product-specific setup. After the editorial and security model is proven, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and [member-experience features](/deals/arraysubs/features/#member-experience).
+Use the [inline content-gating recipe](/deals/arraysubs/use-cases/recipes/inline-content-gating/) for product-specific setup. After the editorial and security model is proven, review the [ArraySubs membership feature path from billing to partial access](/deals/arraysubs/features/woocommerce-membership/), then [compare Pro plans](/deals/arraysubs/pricing/) if the model needs paid automation.
 
 ## Frequently asked questions
 

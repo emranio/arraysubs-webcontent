@@ -225,7 +225,7 @@ ArraySubs fits product/variation-driven tiers with WordPress/Woo content access.
 
 ## Internal-link plan
 
-- **Commercial pillar:** `/deals/arraysubs/features/#member-experience`
+- **Commercial pillar:** `/deals/arraysubs/features/woocommerce-membership/`
 - **Recipes:** combined conditions and inline content gating where relevant.
 - **Siblings:** A043 combined architecture, A045 content restriction, A046 paywall models.
 - **Supporting:** A008 monthly/annual packaging, A012 lifetime deals vs recurring, A021 proration, A022 switch timing, A051 roles vs levels vs entitlements.

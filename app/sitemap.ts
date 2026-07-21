@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const dealsRoutes = [
     ["/deals/arraysubs/pricing/", 0.8],
     ["/deals/arraysubs/features/", 0.8],
+    ["/deals/arraysubs/features/woocommerce-membership/", 0.9],
     ["/deals/arraysubs/use-cases/", 0.8],
     ["/deals/arraysubs/use-cases/can-i/", 0.7],
     ["/deals/arraysubs/alternatives/", 0.8],

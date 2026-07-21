@@ -271,7 +271,7 @@ Conversely, a complex SaaS application with high-volume metering, tenant isolati
 
 Keep the source of truth closest to the fact: subscription records for commercial lifecycle, entitlement definitions for specific capabilities, and WordPress roles for site capabilities and interoperability. Map outward from current commerce state, grant least privilege, and test every lifecycle transition plus overlapping ownership.
 
-After mapping the architecture, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and the [member-experience feature set](/deals/arraysubs/features/#member-experience).
+After mapping the architecture, see how [ArraySubs connects membership levels, role mapping, and feature entitlements](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) when per-plan feature conditions are required.
 
 ## Frequently asked questions
 

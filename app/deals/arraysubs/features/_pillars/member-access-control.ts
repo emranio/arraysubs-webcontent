@@ -8,9 +8,9 @@ export const memberAccessControl: FeaturePillar = {
   cardDescription:
     "Gate pages, CPTs, URLs, downloads, and the shop with a free rule engine — 8 condition types in nested AND/OR groups, plus dripping, discounts, and role mapping.",
   tier: "Free + Pro",
-  seoTitle: "WooCommerce Membership & Content Access Control",
+  seoTitle: "WooCommerce Content Restriction & Member Access Control",
   metaDescription:
-    "WooCommerce membership plugin with free content restriction: gate pages, CPTs, URLs, downloads & the shop with 8 condition types — Pro adds feature entitlements.",
+    "Restrict WooCommerce pages, CPTs, URLs, downloads, products, and the shop with 8 free condition types. Pro adds feature-entitlement access rules.",
   h1: "Restrict WooCommerce content and products by membership",
   heroSubtitle:
     "One free rule engine gates pages, custom post types, URLs, downloads, discounts, and the shop itself — with conditions that combine in nested AND/OR groups, so real membership tiers fit without duplicated rules.",
@@ -20,7 +20,7 @@ export const memberAccessControl: FeaturePillar = {
     "Shop, URL & download gating",
   ],
   directAnswer:
-    "Member Access Control is the content restriction engine in ArraySubs, a free WooCommerce membership plugin with a Pro tier. The free core gates pages, posts, custom post types, URLs, downloads, products, and the whole shop using eight condition types — from active subscription to lifetime spend and WordPress role — combined in nested AND/OR groups. Pro adds one more condition type, feature entitlements from Feature Manager, plus concurrent-login limits.",
+    "Member Access Control is ArraySubs' free WooCommerce content restriction engine. It gates pages, posts, custom post types, URLs, downloads, products, and the whole shop using eight condition types — from active subscription to lifetime spend and WordPress role — combined in nested AND/OR groups. Pro adds feature-entitlement rules and concurrent-login limits.",
   intro:
     "Most membership plugins charge for the rule engine; ArraySubs ships it in the ==free core==. Build rules from eight condition types — subscriptions, purchases, lifetime spend, WordPress roles — and combine them in ==nested AND/OR groups== that mirror how your tiers actually work. The same conditions drive every surface: page and CPT gating, URL rules, gated downloads, member discounts, shop restrictions, and role mapping. Pro adds a single condition on top — ==per-plan feature entitlements== — so access can follow exactly what each plan includes.",
   stats: [

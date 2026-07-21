@@ -248,7 +248,7 @@ ArraySubs fits relative subscription-start delays across WordPress/WooCommerce r
 
 Drip only when waiting creates a better outcome. Choose the model and anchor explicitly, open orientation and first value immediately, design catch-up and lifecycle behavior, keep notifications reconciled with access, and measure release eligibility and meaningful use rather than assuming weekly delay improves retention.
 
-After confirming that relative rule delays match the program, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and [member experience features](/deals/arraysubs/features/#member-experience).
+After confirming that relative rule delays match the program, see how [content dripping fits the complete ArraySubs membership journey](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) for any paid lifecycle automation.
 
 ## Frequently asked questions
 

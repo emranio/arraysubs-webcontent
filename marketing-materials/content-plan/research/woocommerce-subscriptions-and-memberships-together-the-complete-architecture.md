@@ -210,7 +210,7 @@ If any link fails, the customer can be charged without access or retain access w
 
 ## Internal-link plan
 
-- **Commercial pillar:** `/deals/arraysubs/features/#member-experience`
+- **Commercial pillar:** `/deals/arraysubs/features/woocommerce-membership/`
 - **Recipes:** combined conditions, URL prefix lockdown, inline content gating.
 - **Siblings:** A042 definitions, A044 levels, A045 content restriction.
 - **Supporting:** A035 grace periods, A051 roles vs levels vs entitlements, A118 lifecycle statuses, A124 plan switching.

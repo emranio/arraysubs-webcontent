@@ -141,7 +141,7 @@ Do not choose a method only because it is called “secure.” Verify the actual
 
 ## How to configure a rule without confusing setup with security
 
-Use the [membership-download workflow](/deals/arraysubs/features/#member-experience) after deciding where the object will live. The strategic sequence is:
+Use the [protected-download workflow inside the ArraySubs membership system](/deals/arraysubs/features/woocommerce-membership/) after deciding where the object will live. The strategic sequence is:
 
 1. Name the rule by the member outcome, such as “Active Research members receive the July dataset.”
 2. Add the file and identify whether ArraySubs will recognize it as local or treat it as external.
@@ -208,7 +208,7 @@ Likewise, do not place a secret in a WordPress page and expect partial content r
 
 Treat protected downloads as an authorization-and-delivery system. Let ArraySubs decide whether the current account qualifies, but make the origin private, use a delivery method that does not reveal a permanent public object, and test direct paths plus revocation. That layered design is honest, debuggable, and much stronger than hiding a button.
 
-After the architecture passes its red-team checklist, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and the [member-experience feature set](/deals/arraysubs/features/#member-experience).
+After the architecture passes its red-team checklist, connect delivery to the [complete ArraySubs membership feature set](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) for paid automation and controls.
 
 ## Frequently asked questions
 

@@ -34,6 +34,10 @@ import {
 } from "@/app/deals/arraysubs/features/_pillars";
 import { MarkdownArticle } from "./MarkdownArticle";
 
+const MEMBERSHIP_FEATURE =
+  "/deals/arraysubs/features/woocommerce-membership/";
+const MEMBERSHIP_USE_CASE = "/deals/arraysubs/use-cases/membership-sites/";
+
 type ArticleDetailProps = {
   article: ResourceArticle;
   markdown: string;
@@ -56,10 +60,23 @@ export function ArticleDetail({
   if (!category) return null;
 
   const related = getRelatedArticles(article);
+  const isMembershipArticle = article.categorySlug === "membership-strategy";
   // Feature guide that cites this article, for the strategy → feature bridge.
   const featurePillar = PILLARS.find((pillar) =>
     pillar.articleSlugs.includes(article.slug),
   );
+  const implementationFeature =
+    isMembershipArticle
+      ? {
+          href: MEMBERSHIP_FEATURE,
+          label: "Explore membership features",
+        }
+      : featurePillar
+        ? {
+            href: pillarPath(featurePillar.slug),
+            label: `${featurePillar.name} feature guide`,
+          }
+        : undefined;
 
   return (
     <>
@@ -67,6 +84,7 @@ export function ArticleDetail({
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Resources", href: RESOURCE_BASE },
+          { name: category.name, href: getCategoryPath(category.slug) },
           { name: article.title, href: getArticlePath(article) },
         ]}
         title={article.title}
@@ -95,42 +113,63 @@ export function ArticleDetail({
                 className="mt-14 border-y border-border py-10"
               >
                 <p className="text-sm font-semibold tracking-[0.12em] text-primary uppercase">
-                  Continue from strategy to setup
+                  {isMembershipArticle
+                    ? "Apply this membership strategy"
+                    : "Continue from strategy to setup"}
                 </p>
                 <h2 id="implementation-title" className="mt-3 text-3xl">
-                  Use a recipe when the model is settled
+                  {isMembershipArticle
+                    ? "See the complete WooCommerce membership system"
+                    : "Use a recipe when the model is settled"}
                 </h2>
                 <p className="mt-5 text-lg leading-8 text-muted">
-                  These articles own the decision and operating model. The
-                  ArraySubs feature map and recipes cover the exact product,
-                  billing, and customer-workflow configuration.
+                  {isMembershipArticle
+                    ? "Connect the decision you just made to recurring or one-time billing, eight free access conditions, content dripping, protected downloads, member self-service, and retention in ArraySubs."
+                    : "These articles own the decision and operating model. The ArraySubs feature map and recipes cover the exact product, billing, and customer-workflow configuration."}
                 </p>
                 <div className="mt-7 flex flex-wrap gap-3">
-                  {featurePillar && (
+                  {implementationFeature && (
                     <Button
-                      href={pillarPath(featurePillar.slug)}
+                      href={implementationFeature.href}
                       variant="outline"
                       size="sm"
                       iconRight={<ArrowRight className="size-4" />}
                     >
-                      {featurePillar.name} feature guide
+                      {implementationFeature.label}
+                    </Button>
+                  )}
+                  {isMembershipArticle && featurePillar ? (
+                    <Button
+                      href={pillarPath(featurePillar.slug)}
+                      variant="ghost"
+                      size="sm"
+                      iconRight={<ArrowRight className="size-4" />}
+                    >
+                      {featurePillar.name}
+                    </Button>
+                  ) : (
+                    <Button
+                      href="/deals/arraysubs/features/"
+                      variant={implementationFeature ? "ghost" : "outline"}
+                      size="sm"
+                      iconRight={<ArrowRight className="size-4" />}
+                    >
+                      Browse features
                     </Button>
                   )}
                   <Button
-                    href="/deals/arraysubs/features/"
-                    variant={featurePillar ? "ghost" : "outline"}
-                    size="sm"
-                    iconRight={<ArrowRight className="size-4" />}
-                  >
-                    Browse features
-                  </Button>
-                  <Button
-                    href="/deals/arraysubs/use-cases/"
+                    href={
+                      isMembershipArticle
+                        ? MEMBERSHIP_USE_CASE
+                        : "/deals/arraysubs/use-cases/"
+                    }
                     variant="ghost"
                     size="sm"
                     iconRight={<ArrowRight className="size-4" />}
                   >
-                    Explore recipes
+                    {isMembershipArticle
+                      ? "See the membership use case"
+                      : "Explore recipes"}
                   </Button>
                 </div>
               </section>
@@ -148,8 +187,8 @@ export function ArticleDetail({
                     {article.author} // {site.name}
                   </h2>
                   <p className="mt-3 leading-7 text-muted">
-                    Research and practical guidance for WooCommerce
-                    subscription operators and implementation teams.
+                    Research and practical guidance for WooCommerce membership
+                    and subscription operators and implementation teams.
                   </p>
                 </div>
                 <div className="rounded-xl bg-card p-6 sm:p-7">
@@ -216,7 +255,9 @@ export function ArticleDetail({
             Keep learning
           </p>
           <h2 id="related-title" className="mt-3 text-4xl sm:text-5xl">
-            Continue the foundation cluster
+            {isMembershipArticle
+              ? "Continue the membership strategy cluster"
+              : "Continue the foundation cluster"}
           </h2>
           <div className="mt-8 grid gap-[0.1875rem] md:grid-cols-2">
             {related.map((relatedArticle) => (
@@ -244,21 +285,60 @@ export function ArticleDetail({
           <CTA
             surface="primary"
             flat
-            eyebrow="From plan to working store"
-            title="Build the subscription system you just mapped"
-            subtitle="Start with the free ArraySubs core, then add Pro automation when the store needs supported automatic gateways and deeper operations."
-            microcopy="No credit card required · Keep the same subscription records as you grow"
+            eyebrow={
+              isMembershipArticle
+                ? "From strategy to membership system"
+                : "From plan to working store"
+            }
+            title={
+              isMembershipArticle
+                ? "Turn this membership strategy into a working store"
+                : "Build the subscription system you just mapped"
+            }
+            subtitle={
+              isMembershipArticle
+                ? "See how ArraySubs connects the member offer, billing record, access policy, protected value, self-service, and lifecycle operations."
+                : "Start with the free ArraySubs core, then add Pro automation when the store needs supported automatic gateways and deeper operations."
+            }
+            microcopy={
+              isMembershipArticle
+                ? "Eight access conditions, dripping, downloads, and role mapping ship in the free core"
+                : "No credit card required · Keep the same subscription records as you grow"
+            }
             actions={
-              <Button
-                href="/deals/arraysubs/pricing/"
-                variant="dark"
-                size="lg"
-                layers="2layer"
-                magnetic
-                iconRight={<ArrowRight className="size-5" />}
-              >
-                View Pro Pricing
-              </Button>
+              isMembershipArticle ? (
+                <>
+                  <Button
+                    href={MEMBERSHIP_FEATURE}
+                    variant="dark"
+                    size="lg"
+                    layers="2layer"
+                    magnetic
+                    iconRight={<ArrowRight className="size-5" />}
+                  >
+                    Explore Membership Features
+                  </Button>
+                  <Button
+                    href="/deals/arraysubs/pricing/"
+                    variant="highlight"
+                    size="lg"
+                    layers="2layer"
+                  >
+                    View Pro Pricing
+                  </Button>
+                </>
+              ) : (
+                <Button
+                  href="/deals/arraysubs/pricing/"
+                  variant="dark"
+                  size="lg"
+                  layers="2layer"
+                  magnetic
+                  iconRight={<ArrowRight className="size-5" />}
+                >
+                  View Pro Pricing
+                </Button>
+              )
             }
           />
         </Container>
@@ -281,6 +361,13 @@ export function ArticleDetail({
             articleSection: category.name,
             format: article.format,
             keywords: article.keywords,
+            topics: isMembershipArticle
+              ? [
+                  "WooCommerce memberships",
+                  "WooCommerce content restriction",
+                  "Membership access strategy",
+                ]
+              : undefined,
             wordCount,
           }),
           ...(faqs.length >= 2

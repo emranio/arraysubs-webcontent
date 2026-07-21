@@ -350,7 +350,7 @@ ArraySubs is a good fit when a WooCommerce membership needs an explainable concu
 
 Sell the access unit first, then enforce it. Use a concurrent-session allowance when simultaneous credential sharing is the problem, make the number realistic for normal multi-device use, and keep the newest login plus a clear recovery path. Give families and teams separate identities, review repeated patterns before sanctions, and measure support, appeals, accessibility, and churn alongside limit events.
 
-After the policy, account model, and browser test pass, review [ArraySubs member-experience features](/deals/arraysubs/features/#member-experience), then [view ArraySubs Pro pricing](/deals/arraysubs/pricing/).
+After the policy, account model, and browser test pass, review how [ArraySubs connects membership access with concurrent-session controls](/deals/arraysubs/features/woocommerce-membership/), then [view ArraySubs Pro pricing](/deals/arraysubs/pricing/).
 
 ## Frequently asked questions
 

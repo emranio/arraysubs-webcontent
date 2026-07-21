@@ -261,7 +261,7 @@ Do not begin by editing the regex. Most surprises come from normalization, prefi
 
 Use exact for one path, prefix for a clear route tree, contains only after an overmatch inventory, and anchored regex as the last resort. Write expected outcomes first, put specific exceptions ahead of broad rules or encode exclusions, and test escape routes plus every membership state. Route controls are powerful when their semantics are documented precisely.
 
-After validation, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and the [member-experience feature set](/deals/arraysubs/features/#member-experience).
+After validation, connect the route policy to the [ArraySubs WooCommerce membership access system](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) if the broader implementation needs paid automation.
 
 ## Frequently asked questions
 

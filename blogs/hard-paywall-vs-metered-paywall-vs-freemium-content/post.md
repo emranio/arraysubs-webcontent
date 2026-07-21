@@ -269,7 +269,7 @@ ArraySubs fits subscription, purchase, role, and feature-driven access inside Wo
 
 Choose the model that matches audience frequency, content uniqueness, public proof, acquisition, identity capability, and member aftercare. Start with a reversible classification, protect server responses correctly, measure closed cohorts, and add a meter only when the organization can operate its identity, privacy, cache, and counting system responsibly.
 
-After choosing a model that ArraySubs actually supports, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and [member experience features](/deals/arraysubs/features/#member-experience).
+After choosing a model that ArraySubs actually supports, map it to the [WooCommerce membership feature system](/deals/arraysubs/features/woocommerce-membership/), then [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) if automatic billing or advanced controls are required.
 
 ## Frequently asked questions
 

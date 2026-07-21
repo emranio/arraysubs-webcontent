@@ -39,8 +39,8 @@
 
 ## C04 — Memberships, access control, and content dripping
 
-- Commercial destination: `/deals/arraysubs/features/#member-experience`
-- Feature/use-case destination: `/deals/arraysubs/features/#member-experience`
+- Commercial destination: `/deals/arraysubs/features/woocommerce-membership/`
+- Feature/use-case destination: `/deals/arraysubs/features/member-access-control/`
 - Supporting implementation pages: `/deals/arraysubs/use-cases/recipes/combined-conditions/`, `/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/`, `/deals/arraysubs/use-cases/recipes/inline-content-gating/`
 - Article set: A041, A042, A043, A044, A045, A046, A047, A048, A049, A050, A051, A052, A053, A054, A055
 - Rule: pillar links to every cluster article; each article links back to the pillar and to 2-3 contextually adjacent siblings.

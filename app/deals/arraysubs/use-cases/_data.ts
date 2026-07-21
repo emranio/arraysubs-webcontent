@@ -248,22 +248,22 @@ export const USE_CASES: UseCase[] = [
       "Run gated communities and premium libraries — tiered access, content dripping, role mapping, and self-service member management.",
     seoTitle: "Build a Membership Site on WooCommerce",
     metaDescription:
-      "Build a complete WooCommerce membership site — restrict content by tier with 10+ access conditions, drip course material, map roles automatically, run recurring billing, and give members a self-service portal.",
+      "Build a WooCommerce membership site with 8 free access conditions, content dripping, automatic role mapping, recurring billing, and member self-service.",
     h1: "Build a complete WooCommerce membership site",
     heroSubtitle:
-      "Recurring billing, precise content access, member tiers, and scheduled content dripping — all in one plugin with a generous free core, configured in minutes by a guided wizard.",
+      "Recurring billing, precise content access, member tiers, and scheduled content dripping — all in one plugin with a generous free core and a guided setup wizard.",
     heroHighlights: [
-      "10+ access conditions, AND/OR logic",
+      "8 free access conditions, AND/OR logic",
       "Scheduled content dripping",
       "Self-service member portal",
     ],
     intro:
-      "Membership sites live or die on four things working together: ==recurring billing, precise content access, member tiers, and scheduled content==. Stitch those from separate plugins and you get conflicts, role mismatches, and members emailing you to make every change. ArraySubs does ==all four in one plugin==. Build Silver, Gold, and Platinum plans as variable Subscription Products, gate pages, posts, any CPT, URL paths, and Restricted Downloads with a ==10+ condition Member Access engine== that supports nested AND/OR logic, drip content on a schedule, and ==map WordPress roles automatically== so the rest of your stack honors your tiers. Members manage their own subscriptions in the Customer Portal, and the Easy Setup Wizard configures the whole thing in minutes.",
+      "Membership sites live or die on four things working together: ==recurring billing, precise content access, member tiers, and scheduled content==. Stitch those from separate plugins and you get conflicts, role mismatches, and members emailing you to make every change. ArraySubs does ==all four in one plugin==. Build Silver, Gold, and Platinum plans as variable Subscription Products, gate pages, posts, any CPT, URL paths, and Restricted Downloads with an ==8-condition free Member Access engine== that supports nested AND/OR logic, drip content on a schedule, and ==map WordPress roles automatically== so the rest of your stack honors your tiers. Members manage their own subscriptions in the Customer Portal, and the Easy Setup Wizard gives configuration a clear starting point.",
     stats: [
-      { value: "10+", label: "Access conditions" },
+      { value: "8", label: "Free access conditions" },
       { value: "AND/OR", label: "Nested rule logic" },
       { value: "Free", label: "Core, forever" },
-      { value: "<10 min", label: "To first live tier" },
+      { value: "1", label: "Connected system" },
     ],
     audience: [
       {

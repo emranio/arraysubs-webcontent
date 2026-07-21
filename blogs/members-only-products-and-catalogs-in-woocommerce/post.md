@@ -207,7 +207,7 @@ ArraySubs protects the WordPress/WooCommerce surfaces it integrates with. It is 
 
 Choose the catalog model from the business goal: public product pages plus server-side purchase blocking for discovery, real 404 behavior for confidential inventory, or login/pricing redirects for known member journeys. Exclude signup and recovery products, enforce every commerce path, and test with real guest and customer sessions.
 
-After the policy and QA matrix pass, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and the broader [member experience features](/deals/arraysubs/features/#member-experience).
+After the policy and QA matrix pass, connect the catalog rules to the broader [ArraySubs WooCommerce membership system](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) if automatic billing or advanced controls are needed.
 
 ## Frequently asked questions
 

@@ -59,8 +59,8 @@ Create a guide for membership operators, publishers, course creators, and WooCom
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#member-experience`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#member-experience`
+- Commercial pillar: `/deals/arraysubs/features/woocommerce-membership/`
+- Relevant feature/use-case hub: `/deals/arraysubs/features/member-access-control/`
 - Supporting ArraySubs recipes or implementation pages:
   - `/deals/arraysubs/use-cases/recipes/combined-conditions/`
   - `/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/`

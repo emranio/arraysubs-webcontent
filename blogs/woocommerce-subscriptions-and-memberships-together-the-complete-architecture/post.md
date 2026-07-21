@@ -219,7 +219,7 @@ Use [combined conditions](/deals/arraysubs/use-cases/recipes/combined-conditions
 
 Treat subscriptions and memberships together as a controlled contract between financial state and authorization. Name every system of record, map every lifecycle state, preserve recovery routes, govern rule precedence, and test the complete gateway-to-entitlement chain—including multiple subscriptions and missed events—before launch.
 
-After that architecture is proven, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and the wider [member experience feature set](/deals/arraysubs/features/#member-experience).
+After that architecture is proven, map it to the [ArraySubs system for subscriptions and WooCommerce memberships together](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) for automatic gateways and deeper lifecycle automation.
 
 ## Frequently asked questions
 

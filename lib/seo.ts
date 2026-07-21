@@ -218,6 +218,7 @@ export type BlogPostInput = {
   articleSection: string;
   format: string;
   keywords: string[];
+  topics?: string[];
   wordCount: number;
 };
 
@@ -275,7 +276,10 @@ export function blogPostSchema(input: BlogPostInput) {
       logo: { "@id": logoId },
     },
     about: [
-      { "@type": "Thing", name: "WooCommerce subscriptions" },
+      ...(input.topics ?? ["WooCommerce subscriptions"]).map((name) => ({
+        "@type": "Thing",
+        name,
+      })),
       { "@type": "SoftwareApplication", name: "WooCommerce" },
     ],
     mentions: {

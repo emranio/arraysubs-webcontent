@@ -293,7 +293,7 @@ ArraySubs is a fit when WooCommerce products, purchases, and subscriptions shoul
 
 Build the policy before the paywall. Define the continuing promise, select the commercial model, name the billing and access records, inventory every target, decide lifecycle behavior, design recovery UX, and prove one thin slice through the full state matrix. Only then should rules be expanded across the site.
 
-After the architecture and launch tests are documented, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and the broader [member experience feature set](/deals/arraysubs/features/#member-experience).
+After the architecture and launch tests are documented, translate the model into the [ArraySubs WooCommerce membership feature system](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) for the automation the store requires.
 
 ## Frequently asked questions
 

@@ -266,7 +266,7 @@ ArraySubs fits product/variation-driven levels where WordPress and WooCommerce c
 
 Start with one clear promise and add a level only when a distinct segment, enforceable entitlement, sustainable economics, and complete customer journey justify it. Treat free, fixed-term, recurring, and lifetime as different obligations—not merely price options—and preserve legacy access with versioned products, features, and rules.
 
-After the level architecture and lifecycle tests are documented, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and [member experience features](/deals/arraysubs/features/#member-experience).
+After the level architecture and lifecycle tests are documented, connect the tiers to [ArraySubs WooCommerce membership features](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) for the automation the model requires.
 
 ## Frequently asked questions
 
