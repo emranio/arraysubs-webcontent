@@ -1,6 +1,3 @@
-export const DIRECT_ANSWER =
-  "ArraySubs is a WooCommerce membership plugin that connects recurring billing, content and product restriction, content dripping, protected downloads, and member self-service in one system. The access engine and manual renewals are free; Pro adds automatic gateway billing, per-plan entitlements, advanced member insight, and concurrent-login limits.";
-
 export const MEMBERSHIP_MODELS = [
   {
     label: "Free access",
@@ -31,29 +28,6 @@ export const MEMBERSHIP_MODELS = [
     title: "Lifetime access",
     description:
       "Sell a lifetime deal that still participates in member access rules without generating renewal invoices.",
-  },
-] as const;
-
-export const SETUP_STEPS = [
-  {
-    title: "Choose the member promise",
-    description:
-      "Decide whether access is free, recurring, fixed-term, fixed-date, or lifetime, and write down what the member receives.",
-  },
-  {
-    title: "Create the WooCommerce offer",
-    description:
-      "Build the product and its billing terms, including tiers, cycles, trials, signup fees, and the supported payment path.",
-  },
-  {
-    title: "Connect access to the offer",
-    description:
-      "Protect content, products, paths, downloads, discounts, or roles with conditions that reflect the actual membership policy.",
-  },
-  {
-    title: "Test the full lifecycle",
-    description:
-      "Verify checkout, member and non-member access, My Account actions, cancellation, expiration, and payment-failure behavior.",
   },
 ] as const;
 

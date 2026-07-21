@@ -1,5 +1,5 @@
 import { ArrowRight, ArrowUpRight, BookOpen, Check } from "lucide-react";
-import { faqSchema, howToSchema } from "@/lib/seo";
+import { faqSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   Accordion,
@@ -155,6 +155,32 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
               </tbody>
             </table>
           </div>
+
+          {manualRefs.length > 0 && (
+            <div className="mx-auto mt-[0.1875rem] max-w-3xl rounded-2xl bg-card p-6 text-foreground sm:p-8">
+              <Eyebrow>From the manual</Eyebrow>
+              <p className="mt-3 text-muted text-pretty">
+                This configuration is built from these ArraySubs user-manual
+                guides:
+              </p>
+              <ul className="mt-4 flex flex-col gap-2">
+                {manualRefs.map((ref) => (
+                  <li key={ref.href}>
+                    <a
+                      href={manualUrl(ref)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
+                    >
+                      <BookOpen aria-hidden="true" className="size-4" />
+                      {ref.label}
+                      <ArrowUpRight aria-hidden="true" className="size-3.5" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </Container>
       </Section>
 
@@ -185,155 +211,65 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
         </Container>
       </Section>
 
-      {/* ---- How to set it up ------------------------------------------- */}
-      <Section surface="surface" spacing="md" id="setup">
-        <Container>
-          <SectionTitle
-            eyebrow="Set up"
-            title={`Set it up in ${recipe.steps.length} steps`}
-            subtitle="A step-by-step guide drawn from the ArraySubs user manual. Open the linked page for the full walkthrough and screenshots."
-            align="center"
-          />
-          <ol className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
-            {recipe.steps.map((step, index) => (
-              <li
-                key={step.title}
-                className="flex h-full flex-col rounded-2xl bg-card px-6 py-5 text-foreground sm:px-8 sm:py-6"
-              >
-                <span
-                  aria-hidden="true"
-                  className="font-display text-5xl leading-none font-bold tabular-nums text-primary sm:text-6xl"
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-8 font-display text-lg leading-tight font-bold text-balance sm:text-xl">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-muted text-pretty">{step.description}</p>
-                {step.manual && (
-                  <a
-                    href={manualUrl(step.manual)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-                  >
-                    <BookOpen aria-hidden="true" className="size-4" />
-                    {step.manual.label}
-                    <ArrowUpRight aria-hidden="true" className="size-3.5" />
-                  </a>
-                )}
-              </li>
-            ))}
-          </ol>
-
-          {manualRefs.length > 0 && (
-            <div className="mx-auto mt-12 max-w-3xl rounded-2xl bg-card p-6 text-foreground sm:p-8">
-              <Eyebrow>From the manual</Eyebrow>
-              <p className="mt-3 text-muted text-pretty">
-                This recipe is built from these ArraySubs user-manual guides:
-              </p>
-              <ul className="mt-4 flex flex-col gap-2">
-                {manualRefs.map((ref) => (
-                  <li key={ref.href}>
-                    <a
-                      href={manualUrl(ref)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
-                    >
-                      <BookOpen aria-hidden="true" className="size-4" />
-                      {ref.label}
-                      <ArrowUpRight aria-hidden="true" className="size-3.5" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </Container>
-        <JsonLd
-          data={howToSchema(
-            recipe.h1,
-            recipe.steps.map((step) => ({
-              name: step.title,
-              text: step.description,
-            })),
-          )}
-        />
-      </Section>
-
-      {/* ---- Good to know ----------------------------------------------- */}
-      {recipe.notes.length > 0 && (
-        <Section surface="default" spacing="md">
-          <Container>
-            <SectionTitle eyebrow="Good to know" title="Notes & edge cases" align="center" />
-            <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
-              {recipe.notes.map((note) => (
-                <div
-                  key={note}
-                  className="rounded-2xl bg-card p-6 text-muted text-pretty"
-                >
-                  {note}
-                </div>
-              ))}
-            </div>
-          </Container>
-        </Section>
-      )}
-
-      {/* ---- Related features ------------------------------------------- */}
-      {relatedFeatures.length > 0 && (
+      {/* ---- Related features and recipes ------------------------------- */}
+      {(relatedFeatures.length > 0 || relatedRecipes.length > 0) && (
         <Section surface="surface" spacing="md">
           <Container>
             <SectionTitle
-              eyebrow="Built with"
-              title="Modules behind this recipe"
-              subtitle="The ArraySubs modules this setup relies on."
+              eyebrow="Build and explore"
+              title="Modules and related setups"
+              subtitle="See what powers this configuration, then explore recipes that reuse the same building blocks."
               align="center"
             />
-            <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
-              {relatedFeatures.map((feature) => (
-                <IconCard
-                  key={feature.slug}
-                  icon={<feature.icon className="size-6" />}
-                  title={feature.name}
-                  description={feature.cardDescription}
-                  badge={<Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>}
-                />
-              ))}
-            </div>
-          </Container>
-        </Section>
-      )}
-
-      {/* ---- Related recipes -------------------------------------------- */}
-      {relatedRecipes.length > 0 && (
-        <Section surface="default" spacing="md">
-          <Container>
-            <SectionTitle
-              eyebrow="More recipes"
-              title="Related setups to explore"
-              subtitle="Other configurations you can build with the same modules."
-              align="center"
-            />
-            <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
-              {relatedRecipes.map((item) => (
-                <IconCard
-                  key={item.slug}
-                  icon={<item.icon className="size-6" />}
-                  title={item.name}
-                  description={item.cardDescription}
-                  href={`/deals/arraysubs/use-cases/recipes/${item.slug}/`}
-                  badge={<Badge tone={tierTone(item.tier)}>{item.tier}</Badge>}
-                />
-              ))}
-            </div>
+            {relatedFeatures.length > 0 && (
+              <div className="mt-12">
+                <h3 className="font-display text-2xl text-balance">
+                  Modules used in this recipe
+                </h3>
+                <div className="mt-6 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
+                  {relatedFeatures.map((feature) => (
+                    <IconCard
+                      key={feature.slug}
+                      icon={<feature.icon className="size-6" />}
+                      title={feature.name}
+                      description={feature.cardDescription}
+                      badge={
+                        <Badge tone={tierTone(feature.tier)}>
+                          {feature.tier}
+                        </Badge>
+                      }
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+            {relatedRecipes.length > 0 && (
+              <div className="mt-12 border-t border-border pt-12">
+                <h3 className="font-display text-2xl text-balance">
+                  Related setups to explore
+                </h3>
+                <div className="mt-6 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
+                  {relatedRecipes.map((item) => (
+                    <IconCard
+                      key={item.slug}
+                      icon={<item.icon className="size-6" />}
+                      title={item.name}
+                      description={item.cardDescription}
+                      href={`/deals/arraysubs/use-cases/recipes/${item.slug}/`}
+                      badge={
+                        <Badge tone={tierTone(item.tier)}>{item.tier}</Badge>
+                      }
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
           </Container>
         </Section>
       )}
 
       {/* ---- FAQ -------------------------------------------------------- */}
-      <Section surface="surface" spacing="md">
+      <Section surface="default" spacing="md">
         <Container>
           <SectionTitle eyebrow="FAQ" title="Questions, answered" align="center" />
           <div className="mx-auto mt-12 max-w-3xl">

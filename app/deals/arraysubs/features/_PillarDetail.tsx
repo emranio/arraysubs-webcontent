@@ -1,9 +1,5 @@
 import { ArrowRight, Check, Sparkles } from "lucide-react";
-import {
-  faqSchema,
-  howToSchema,
-  softwareApplicationSchema,
-} from "@/lib/seo";
+import { faqSchema, softwareApplicationSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
 import {
@@ -18,13 +14,10 @@ import {
   PageHero,
   Section,
   SectionTitle,
-  StepCard,
   TagCard,
 } from "@/components/ui";
-import { getFeature, type FeatureTier } from "./_data";
 import { getPillar } from "./_pillars";
 import type { FeaturePillar } from "./_pillars/types";
-import { USE_CASES } from "../use-cases/_data";
 import {
   RESOURCE_ARTICLES,
   RESOURCE_CATEGORIES,
@@ -38,9 +31,6 @@ const ALL_FEATURES = "/deals/arraysubs/features/";
 const MEMBERSHIP_FEATURE =
   "/deals/arraysubs/features/woocommerce-membership/";
 
-const tierTone = (tier: FeatureTier) =>
-  tier === "Free" ? "highlight" : tier === "Pro" ? "dark" : "primary";
-
 /**
  * Shared template for the 15 `/deals/arraysubs/features/<slug>/` pillar pages.
  * All copy comes from `_pillars/`; this file only arranges it with the design
@@ -51,16 +41,8 @@ const tierTone = (tier: FeatureTier) =>
 export function PillarDetail({ pillar }: { pillar: FeaturePillar }) {
   const path = `/deals/arraysubs/features/${pillar.slug}/`;
 
-  const modules = pillar.moduleSlugs
-    .map((slug) => getFeature(slug))
-    .filter((item): item is NonNullable<typeof item> => Boolean(item));
-
   const articles = pillar.articleSlugs
     .map((slug) => RESOURCE_ARTICLES.find((article) => article.slug === slug))
-    .filter((item): item is NonNullable<typeof item> => Boolean(item));
-
-  const useCases = pillar.useCaseSlugs
-    .map((slug) => USE_CASES.find((useCase) => useCase.slug === slug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
   const relatedPillars = pillar.relatedPillars
@@ -109,32 +91,12 @@ export function PillarDetail({ pillar }: { pillar: FeaturePillar }) {
         trust="No credit card required · Free core on WordPress.org"
       />
 
-      {/* ---- Lead + quick answer + at-a-glance --------------------------- */}
+      {/* ---- Lead -------------------------------------------------------- */}
       <Section surface="default" spacing="md">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-start">
-            <p className="text-xl leading-9 text-muted text-pretty sm:text-2xl sm:leading-10">
-              {highlight(pillar.intro)}
-            </p>
-            <aside className="rounded-2xl bg-card p-6 text-foreground sm:p-8">
-              <Eyebrow>Quick answer</Eyebrow>
-              <p className="mt-4 leading-7 text-muted text-pretty">
-                {pillar.directAnswer}
-              </p>
-              <ul className="mt-6 grid grid-cols-2 gap-[0.1875rem] border-t border-border pt-6">
-                {pillar.stats.map((stat) => (
-                  <li key={stat.label} className="p-2 text-center">
-                    <span className="block font-display text-2xl font-bold text-primary sm:text-3xl">
-                      {stat.value}
-                    </span>
-                    <span className="mt-1 block text-sm text-muted text-pretty">
-                      {stat.label}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </aside>
-          </div>
+          <p className="mx-auto max-w-5xl text-xl leading-9 text-muted text-pretty sm:text-2xl sm:leading-10">
+            {highlight(pillar.intro)}
+          </p>
         </Container>
       </Section>
 
@@ -191,6 +153,14 @@ export function PillarDetail({ pillar }: { pillar: FeaturePillar }) {
                     </a>
                   </li>
                 ))}
+                <li className="lg:border-l lg:border-border">
+                  <a
+                    href="#frequently-asked-questions"
+                    className="block rounded-md text-sm text-muted transition-colors hover:text-primary max-lg:whitespace-nowrap max-lg:rounded-pill max-lg:bg-card max-lg:px-4 max-lg:py-2 lg:-ml-px lg:border-l lg:border-transparent lg:py-2 lg:pl-4 lg:hover:border-primary"
+                  >
+                    Frequently asked questions
+                  </a>
+                </li>
               </ul>
             </nav>
 
@@ -233,44 +203,26 @@ export function PillarDetail({ pillar }: { pillar: FeaturePillar }) {
                   )}
                 </article>
               ))}
+
+              <section
+                id="frequently-asked-questions"
+                className="mt-12 scroll-mt-24 border-t border-border pt-12"
+              >
+                <h2 className="font-display text-2xl text-balance sm:text-3xl">
+                  {pillar.name} questions, answered
+                </h2>
+                <div className="mt-6">
+                  <Accordion items={pillar.faq} defaultOpen={[0]} />
+                </div>
+              </section>
             </div>
           </div>
         </Container>
-      </Section>
-
-      {/* ---- Setup steps ------------------------------------------------- */}
-      <Section surface="surface" spacing="md">
-        <Container>
-          <SectionTitle
-            eyebrow="Set up"
-            title={`Set it up in ${pillar.steps.length} steps`}
-            subtitle="From install to live — no developer required."
-            align="center"
-          />
-          <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-4">
-            {pillar.steps.map((step, index) => (
-              <StepCard
-                key={step.title}
-                number={index + 1}
-                title={step.title}
-                description={step.description}
-              />
-            ))}
-          </div>
-        </Container>
-        <JsonLd
-          data={howToSchema(
-            `How to set up ${pillar.name.toLowerCase()} in WooCommerce with ArraySubs`,
-            pillar.steps.map((step) => ({
-              name: step.title,
-              text: step.description,
-            })),
-          )}
-        />
+        <JsonLd data={faqSchema(pillar.faq, path)} />
       </Section>
 
       {/* ---- Free vs Pro for this area ----------------------------------- */}
-      <Section surface="default" spacing="md">
+      <Section surface="surface" spacing="md">
         <Container>
           <SectionTitle
             eyebrow="Free vs Pro"
@@ -328,139 +280,68 @@ export function PillarDetail({ pillar }: { pillar: FeaturePillar }) {
         </Container>
       </Section>
 
-      {/* ---- Modules behind this pillar ---------------------------------- */}
-      {modules.length > 0 && (
-        <Section surface="surface" spacing="md">
-          <Container>
-            <SectionTitle
-              eyebrow="Under the hood"
-              title="The modules behind it"
-              subtitle="Each card is a dedicated module in the all-features hub."
-              align="center"
-            />
-            <ScrollReveal
-              stagger={0.04}
-              y={0}
-              className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3"
-            >
-              {modules.map((feature) => (
-                <IconCard
-                  key={feature.slug}
-                  icon={<feature.icon className="size-6" />}
-                  title={feature.name}
-                  description={feature.cardDescription}
-                  href={`${ALL_FEATURES}#${feature.category}`}
-                  badge={
-                    <Badge tone={tierTone(feature.tier)}>{feature.tier}</Badge>
-                  }
-                />
-              ))}
-            </ScrollReveal>
-          </Container>
-        </Section>
-      )}
-
-      {/* ---- Related pillar guides --------------------------------------- */}
-      {relatedPillars.length > 0 && (
+      {/* ---- Further reading + related guides ---------------------------- */}
+      {(articles.length > 0 || relatedPillars.length > 0) && (
         <Section surface="default" spacing="md">
           <Container>
             <SectionTitle
-              eyebrow="Keep exploring"
-              title="Related feature guides"
-              subtitle="The subscription stack is one system — these guides cover the neighboring pieces."
+              eyebrow="Go deeper"
+              title="From the resource library"
+              subtitle="Strategy articles and neighboring feature guides for the harder questions around this part of the subscription system."
               align="center"
             />
-            <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-3">
-              {relatedPillars.map((related) => (
-                <TagCard
-                  key={related.slug}
-                  tag={related.tier}
-                  title={related.name}
-                  description={related.cardDescription}
-                  href={`/deals/arraysubs/features/${related.slug}/`}
-                  cta={`Read the ${related.name} guide`}
-                />
-              ))}
-            </div>
-          </Container>
-        </Section>
-      )}
-
-      {/* ---- Further reading + use cases --------------------------------- */}
-      {(articles.length > 0 || useCases.length > 0) && (
-        <Section surface="surface" spacing="md">
-          <Container>
             {articles.length > 0 && (
-              <>
-                <SectionTitle
-                  eyebrow="Go deeper"
-                  title="From the resource library"
-                  subtitle="Strategy-first articles that answer the harder questions behind this feature area."
-                  align="center"
-                />
-                <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
-                  {articles.map((article) => (
-                    <ArticleCard
-                      key={article.slug}
-                      href={getArticlePath(article)}
-                      category={
-                        RESOURCE_CATEGORIES.find(
-                          (category) => category.slug === article.categorySlug,
-                        )?.name ?? "Resources"
-                      }
-                      title={article.title}
-                      excerpt={article.excerpt}
-                      date={formatArticleDate(article.updatedAt)}
-                      dateTime={article.updatedAt}
-                      readTime={article.readTime}
-                      coverLabel={article.cover.label}
-                      coverImage={article.cover.image}
-                      coverTone={article.cover.tone}
-                      headingLevel="h3"
-                    />
-                  ))}
-                </div>
-              </>
+              <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
+                {articles.map((article) => (
+                  <ArticleCard
+                    key={article.slug}
+                    href={getArticlePath(article)}
+                    category={
+                      RESOURCE_CATEGORIES.find(
+                        (category) => category.slug === article.categorySlug,
+                      )?.name ?? "Resources"
+                    }
+                    title={article.title}
+                    excerpt={article.excerpt}
+                    date={formatArticleDate(article.updatedAt)}
+                    dateTime={article.updatedAt}
+                    readTime={article.readTime}
+                    coverLabel={article.cover.label}
+                    coverImage={article.cover.image}
+                    coverTone={article.cover.tone}
+                    headingLevel="h3"
+                  />
+                ))}
+              </div>
             )}
-            {useCases.length > 0 && (
-              <>
-                <SectionTitle
-                  eyebrow="In practice"
-                  title="Use cases this powers"
-                  align="center"
-                  className={articles.length > 0 ? "mt-20" : undefined}
-                />
-                <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
-                  {useCases.map((useCase) => (
-                    <IconCard
-                      key={useCase.slug}
-                      icon={<useCase.icon className="size-6" />}
-                      title={useCase.name}
-                      description={useCase.cardDescription}
-                      href={`/deals/arraysubs/use-cases/${useCase.slug}/`}
+            {relatedPillars.length > 0 && (
+              <div
+                className={
+                  articles.length > 0
+                    ? "mt-12 border-t border-border pt-12"
+                    : "mt-12"
+                }
+              >
+                <h3 className="font-display text-2xl text-balance">
+                  Related feature guides
+                </h3>
+                <div className="mt-6 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
+                  {relatedPillars.map((related) => (
+                    <TagCard
+                      key={related.slug}
+                      tag={related.tier}
+                      title={related.name}
+                      description={related.cardDescription}
+                      href={`/deals/arraysubs/features/${related.slug}/`}
+                      cta={`Read the ${related.name} guide`}
                     />
                   ))}
                 </div>
-              </>
+              </div>
             )}
           </Container>
         </Section>
       )}
-
-      {/* ---- FAQ --------------------------------------------------------- */}
-      <Section surface="default" spacing="md">
-        <Container>
-          <SectionTitle
-            eyebrow="FAQ"
-            title={`${pillar.name} questions, answered`}
-            align="center"
-          />
-          <div className="mx-auto mt-12 max-w-3xl">
-            <Accordion items={pillar.faq} defaultOpen={[0]} />
-          </div>
-        </Container>
-        <JsonLd data={faqSchema(pillar.faq, path)} />
-      </Section>
 
       {/* ---- CTA --------------------------------------------------------- */}
       <Section surface="primary" spacing="md">

@@ -12,7 +12,6 @@ import {
   PageHero,
   Section,
   SectionTitle,
-  StepCard,
 } from "@/components/ui";
 import { getFeature, type FeatureTier } from "../features/_data";
 import { pillarPathForModule } from "../features/_pillars";
@@ -176,30 +175,8 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
         </Container>
       </Section>
 
-      {/* ---- How to set it up ------------------------------------------- */}
-      <Section surface="surface" spacing="md">
-        <Container>
-          <SectionTitle
-            eyebrow="Set up"
-            title={`Launch in ${useCase.steps.length} steps`}
-            subtitle="From install to a live, billing subscription — no developer required."
-            align="center"
-          />
-          <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
-            {useCase.steps.map((step, index) => (
-              <StepCard
-                key={step.title}
-                number={index + 1}
-                title={step.title}
-                description={step.description}
-              />
-            ))}
-          </div>
-        </Container>
-      </Section>
-
       {/* ---- Example setups --------------------------------------------- */}
-      <Section surface="default" spacing="md">
+      <Section surface="surface" spacing="md">
         <Container>
           <SectionTitle
             eyebrow="Playbooks"
@@ -227,7 +204,7 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
 
       {/* ---- Related features (use case -> features) -------------------- */}
       {relatedFeatures.length > 0 && (
-        <Section surface="surface" spacing="md">
+        <Section surface="default" spacing="md">
           <Container>
             <SectionTitle
               eyebrow="Built with"
@@ -252,7 +229,7 @@ export function UseCaseDetail({ useCase }: { useCase: UseCase }) {
       )}
 
       {/* ---- FAQ -------------------------------------------------------- */}
-      <Section surface="default" spacing="md">
+      <Section surface="surface" spacing="md">
         <Container>
           <SectionTitle
             eyebrow="FAQ"

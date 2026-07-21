@@ -28,13 +28,11 @@ import {
   ProductScreenshot,
   Section,
   SectionTitle,
-  StepCard,
   TagCard,
 } from "@/components/ui";
 import {
   createMetadata,
   faqSchema,
-  howToSchema,
   softwareApplicationSchema,
 } from "@/lib/seo";
 import { getPillar, pillarPath } from "../_pillars";
@@ -46,12 +44,10 @@ import {
   getArticlePath,
 } from "../../resources/_data";
 import {
-  DIRECT_ANSWER,
   FAQ_ITEMS,
   FREE_MEMBERSHIP_FEATURES,
   MEMBERSHIP_MODELS,
   PRO_MEMBERSHIP_FEATURES,
-  SETUP_STEPS,
 } from "./_content";
 
 const PATH = "/deals/arraysubs/features/woocommerce-membership/";
@@ -189,57 +185,44 @@ export default function WooCommerceMembershipPage() {
 
       <Section surface="default" spacing="md">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[1.18fr_0.82fr] lg:items-start">
-            <div>
-              <Eyebrow>Quick answer</Eyebrow>
-              <p className="mt-4 text-xl leading-9 text-muted text-pretty sm:text-2xl sm:leading-10">
-                {DIRECT_ANSWER}
-              </p>
-              <p className="mt-6 text-sm font-medium text-faint">
-                Product scope verified against the current ArraySubs build · July
-                22, 2026
-              </p>
+          <div className="mx-auto max-w-5xl rounded-2xl bg-card p-6 text-foreground sm:p-8">
+            <Eyebrow>Membership vs subscription</Eyebrow>
+            <div className="mt-5 grid gap-[0.1875rem] sm:grid-cols-2">
+              <div className="rounded-xl bg-background p-5">
+                <Repeat2 aria-hidden="true" className="size-6 text-primary" />
+                <h2 className="mt-4 text-xl">Subscription</h2>
+                <p className="mt-2 leading-7 text-muted">
+                  Controls billing, renewal dates, and lifecycle state.
+                </p>
+              </div>
+              <div className="rounded-xl bg-background p-5">
+                <ShieldCheck
+                  aria-hidden="true"
+                  className="size-6 text-primary"
+                />
+                <h2 className="mt-4 text-xl">Membership</h2>
+                <p className="mt-2 leading-7 text-muted">
+                  Controls access, benefits, and what the customer can use.
+                </p>
+              </div>
             </div>
-
-            <aside className="rounded-2xl bg-card p-6 text-foreground sm:p-8">
-              <Eyebrow>Membership vs subscription</Eyebrow>
-              <div className="mt-5 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                <div className="rounded-xl bg-background p-5">
-                  <Repeat2 aria-hidden="true" className="size-6 text-primary" />
-                  <h2 className="mt-4 text-xl">Subscription</h2>
-                  <p className="mt-2 leading-7 text-muted">
-                    Controls billing, renewal dates, and lifecycle state.
-                  </p>
-                </div>
-                <div className="rounded-xl bg-background p-5">
-                  <ShieldCheck
-                    aria-hidden="true"
-                    className="size-6 text-primary"
-                  />
-                  <h2 className="mt-4 text-xl">Membership</h2>
-                  <p className="mt-2 leading-7 text-muted">
-                    Controls access, benefits, and what the customer can use.
-                  </p>
-                </div>
-              </div>
-              <p className="mt-5 leading-7 text-muted">
-                ArraySubs connects both while still supporting one-time and
-                lifetime access.
-              </p>
-              <div className="mt-6">
-                <Button
-                  href="/deals/arraysubs/resources/membership-strategy/woocommerce-membership-vs-subscription-what-is-the-difference/"
-                  variant="ghost"
-                  size="sm"
-                  iconRight={<ArrowRight className="size-4" />}
-                >
-                  Read the full distinction
-                </Button>
-              </div>
-            </aside>
+            <p className="mt-5 leading-7 text-muted">
+              ArraySubs connects both while still supporting one-time and
+              lifetime access.
+            </p>
+            <div className="mt-6">
+              <Button
+                href="/deals/arraysubs/resources/membership-strategy/woocommerce-membership-vs-subscription-what-is-the-difference/"
+                variant="ghost"
+                size="sm"
+                iconRight={<ArrowRight className="size-4" />}
+              >
+                Read the full distinction
+              </Button>
+            </div>
           </div>
 
-          <ul className="mt-12 grid grid-cols-2 gap-[0.1875rem] lg:grid-cols-4">
+          <ul className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-[0.1875rem] lg:grid-cols-4">
             {[
               ["8", "Free access conditions"],
               ["2", "Native builder controls"],
@@ -681,46 +664,6 @@ export default function WooCommerceMembershipPage() {
       <Section surface="default" spacing="md">
         <Container>
           <SectionTitle
-            eyebrow="Launch path"
-            title="Launch your first membership in four steps"
-            subtitle="The configuration stays simple when the member promise, billing terms, access policy, and lifecycle tests are decided in that order."
-            align="center"
-          />
-          <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-4">
-            {SETUP_STEPS.map((step, index) => (
-              <StepCard
-                key={step.title}
-                number={index + 1}
-                title={step.title}
-                description={step.description}
-              />
-            ))}
-          </div>
-          <div className="mt-8 flex justify-center">
-            <Button
-              href="/deals/arraysubs/resources/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/"
-              variant="outline"
-              size="sm"
-              iconRight={<ArrowRight className="size-4" />}
-            >
-              Plan the membership architecture
-            </Button>
-          </div>
-        </Container>
-        <JsonLd
-          data={howToSchema(
-            "How to launch a WooCommerce membership with ArraySubs",
-            SETUP_STEPS.map((step) => ({
-              name: step.title,
-              text: step.description,
-            })),
-          )}
-        />
-      </Section>
-
-      <Section surface="surface" spacing="md">
-        <Container>
-          <SectionTitle
             eyebrow="Feature guides"
             title="Explore the system behind the membership"
             subtitle="Go deeper on the product engine, access rules, member portal, retention, profiles, and day-to-day operations."
@@ -741,7 +684,7 @@ export default function WooCommerceMembershipPage() {
         </Container>
       </Section>
 
-      <Section surface="default" spacing="md">
+      <Section surface="surface" spacing="md">
         <Container>
           <SectionTitle
             eyebrow="Membership strategy"
@@ -776,7 +719,7 @@ export default function WooCommerceMembershipPage() {
         </Container>
       </Section>
 
-      <Section surface="surface" spacing="md">
+      <Section surface="default" spacing="md">
         <Container>
           <SectionTitle
             eyebrow="FAQ"
