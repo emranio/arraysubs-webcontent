@@ -182,20 +182,16 @@ export default function FeaturesHubPage() {
           `${MODULE_COUNT} features across billing, access, and retention`,
         ]}
         actions={
-          <>
-            <Button
-              href={GET_PRO}
-              size="lg"
-              magnetic
-              iconRight={<ArrowRight className="size-5" />}
-            >
-              Start Trial
-            </Button>
-            <span className="whitespace-nowrap text-sm font-medium text-muted">
-              No credit card required
-            </span>
-          </>
+          <Button
+            href={GET_PRO}
+            size="lg"
+            magnetic
+            iconRight={<ArrowRight className="size-5" />}
+          >
+            Start Trial
+          </Button>
         }
+        trust="No credit card required"
       />
 
       <ModuleShowcase

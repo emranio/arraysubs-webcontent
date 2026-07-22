@@ -30,7 +30,6 @@ const MODULE_COUNT = FEATURES.length;
 const CORE_MODULE_COUNT = FEATURES.filter((feature) => feature.tier !== "Pro").length;
 const PRO_ONLY_FEATURES = FEATURES.filter((feature) => feature.tier === "Pro");
 const PRO_ONLY_MODULE_COUNT = PRO_ONLY_FEATURES.length;
-const PRO_ONLY_MODULE_NAMES = PRO_ONLY_FEATURES.map((feature) => feature.name).join(", ");
 const RECIPE_COUNT = RECIPES.length;
 
 /** Visual treatment per "who wins this difference" verdict. */
@@ -88,48 +87,51 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
       />
 
       {/* ---- Verdict / TL;DR (answer-first — the GEO money block) -------- */}
-      <Section surface="highlight" spacing="md">
+      <Section surface="default" spacing="md">
         <Container>
-          <SectionTitle
-            eyebrow="The verdict"
-            title={`ArraySubs vs ${c.competitorShort}, in short`}
-            align="center"
-          />
-          <p className="mx-auto mt-8 max-w-3xl text-center text-xl leading-9 text-dark text-pretty sm:text-2xl sm:leading-10">
-            {highlight(c.verdict.summary)}
-          </p>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-[0.1875rem] sm:grid-cols-2">
-            <div className="rounded-2xl bg-card p-8">
-              <h3 className="font-display text-xl text-foreground">
-                Choose ArraySubs if…
-              </h3>
-              <ul className="mt-5 flex flex-col gap-3">
-                {c.verdict.arraysubsBestFor.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-muted">
-                    <Check
-                      aria-hidden="true"
-                      className="mt-0.5 size-5 shrink-0 text-primary"
-                    />
-                    <span className="text-pretty">{item}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+            <div>
+              <SectionTitle
+                eyebrow="The verdict"
+                title={`ArraySubs vs ${c.competitorShort}, in short`}
+              />
+              <p className="mt-8 max-w-3xl text-xl leading-9 text-dark text-pretty sm:text-2xl sm:leading-10">
+                {highlight(c.verdict.summary)}
+              </p>
             </div>
-            <div className="rounded-2xl bg-card p-8">
-              <h3 className="font-display text-xl text-foreground">
-                Choose {c.competitorShort} if…
-              </h3>
-              <ul className="mt-5 flex flex-col gap-3">
-                {c.verdict.competitorBestFor.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-muted">
-                    <Check
-                      aria-hidden="true"
-                      className="mt-0.5 size-5 shrink-0 text-faint"
-                    />
-                    <span className="text-pretty">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="grid gap-[0.1875rem]">
+              <div className="rounded-2xl bg-card p-8">
+                <h3 className="font-display text-xl text-foreground">
+                  Choose ArraySubs if…
+                </h3>
+                <ul className="mt-5 flex flex-col gap-3">
+                  {c.verdict.arraysubsBestFor.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-muted">
+                      <Check
+                        aria-hidden="true"
+                        className="mt-0.5 size-5 shrink-0 text-primary"
+                      />
+                      <span className="text-pretty">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl bg-card p-8">
+                <h3 className="font-display text-xl text-foreground">
+                  Choose {c.competitorShort} if…
+                </h3>
+                <ul className="mt-5 flex flex-col gap-3">
+                  {c.verdict.competitorBestFor.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-muted">
+                      <Check
+                        aria-hidden="true"
+                        className="mt-0.5 size-5 shrink-0 text-faint"
+                      />
+                      <span className="text-pretty">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </Container>
@@ -141,52 +143,41 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
           <SectionTitle
             eyebrow="Module coverage"
             title={`One plugin, ${MODULE_COUNT} modules, ${RECIPE_COUNT} ready setups`}
-            subtitle={`${CORE_MODULE_COUNT} modules are free/core-accessible and ${PRO_ONLY_MODULE_COUNT} are Pro-only (${PRO_ONLY_MODULE_NAMES}) — consolidating what stores otherwise license as 5–6 separate plugins, with ${RECIPE_COUNT} documented, copy-me configurations to start from.`}
-            align="center"
+            subtitle={`${CORE_MODULE_COUNT} modules are free/core-accessible. The remaining ${PRO_ONLY_MODULE_COUNT} Pro-only modules are:`}
           />
-          <ul className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-[0.1875rem] lg:grid-cols-4">
-            <li className="rounded-2xl bg-card p-6 text-center">
-              <span className="block font-display text-4xl font-semibold text-primary">
-                {MODULE_COUNT}
-              </span>
-              <span className="mt-2 block text-sm text-muted">
-                root modules
-              </span>
-            </li>
-            <li className="rounded-2xl bg-card p-6 text-center">
-              <span className="block font-display text-4xl font-semibold text-primary">
-                {CORE_MODULE_COUNT}
-              </span>
-              <span className="mt-2 block text-sm text-muted">
-                core-accessible
-              </span>
-            </li>
-            <li className="rounded-2xl bg-card p-6 text-center">
-              <span className="block font-display text-4xl font-semibold text-primary">
-                {PRO_ONLY_MODULE_COUNT}
-              </span>
-              <span className="mt-2 block text-sm text-muted">
-                Pro-only
-              </span>
-            </li>
-            <li className="rounded-2xl bg-card p-6 text-center">
-              <span className="block font-display text-4xl font-semibold text-primary">
-                {RECIPE_COUNT}
-              </span>
-              <span className="mt-2 block text-sm text-muted">
-                documented setups
-              </span>
-            </li>
+          <ul className="mt-10 grid list-disc gap-x-12 gap-y-3 pl-5 text-muted marker:text-primary-strong sm:grid-cols-2 lg:grid-cols-3">
+            {PRO_ONLY_FEATURES.map((feature) => (
+              <li key={feature.slug} className="pl-1 text-pretty">
+                {feature.name}
+              </li>
+            ))}
           </ul>
+          <p className="mt-8 max-w-4xl text-lg leading-8 text-muted text-pretty">
+            Together, these modules consolidate what stores otherwise license as
+            5–6 separate plugins, with {RECIPE_COUNT} documented, copy-me
+            configurations to start from.
+          </p>
         </Container>
       </Section>
 
       {/* ---- Overview / definition lead --------------------------------- */}
-      <Section surface="default" spacing="md">
+      <Section surface="dark" spacing="md">
         <Container>
-          <p className="mx-auto max-w-3xl text-lg leading-8 text-muted text-pretty sm:text-xl sm:leading-9">
+          <blockquote className="relative mx-auto max-w-4xl px-10 py-8 font-display text-xl leading-9 text-on-dark text-pretty italic sm:px-16 sm:py-10 sm:text-2xl sm:leading-10 [&_mark]:text-on-dark [&_mark]:[background-image:none]">
+            <span
+              aria-hidden="true"
+              className="absolute top-0 left-0 font-display text-7xl leading-none text-highlight not-italic sm:text-8xl"
+            >
+              “
+            </span>
             {highlight(c.intro)}
-          </p>
+            <span
+              aria-hidden="true"
+              className="absolute right-0 bottom-0 font-display text-7xl leading-none text-highlight not-italic sm:text-8xl"
+            >
+              ”
+            </span>
+          </blockquote>
         </Container>
       </Section>
 

@@ -1,7 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import type { ElementType, ReactNode } from "react";
+import {
+  Children,
+  Fragment,
+  isValidElement,
+  type ElementType,
+  type ReactNode,
+} from "react";
 import { cn } from "@/lib/cn";
 import { breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -22,7 +28,7 @@ type PageHeroProps = {
   highlights?: ReactNode[];
   /** Buttons / CTA row. */
   actions?: ReactNode;
-  /** Trust badges / logo row beneath the actions. */
+  /** Trust note: inline after one action, otherwise beneath the action row. */
   trust?: ReactNode;
   /** Optional visual for product-led landing page heroes. */
   visual?: ReactNode;
@@ -34,6 +40,27 @@ type PageHeroProps = {
   headingLevel?: ElementType;
   className?: string;
 };
+
+/** Count rendered action items, including children nested in fragments. */
+function countActionItems(actions: ReactNode): number {
+  let count = 0;
+
+  Children.forEach(actions, (action) => {
+    if (
+      isValidElement<{ children?: ReactNode }>(action) &&
+      action.type === Fragment
+    ) {
+      count += countActionItems(action.props.children);
+      return;
+    }
+
+    if (action !== null && action !== undefined && action !== false) {
+      count += 1;
+    }
+  });
+
+  return count;
+}
 
 /**
  * Shared page title header. This intentionally matches the design-system page
@@ -55,6 +82,9 @@ export function PageHero({
   headingLevel: Heading = "h1",
   className,
 }: PageHeroProps) {
+  const trustFollowsSingleAction = Boolean(
+    trust && actions && countActionItems(actions) === 1,
+  );
   const breadcrumbJsonLd =
     breadcrumbs && withBreadcrumbSchema ? (
       <JsonLd
@@ -130,10 +160,20 @@ export function PageHero({
           )}
         >
           {actions}
+          {trustFollowsSingleAction && (
+            <div
+              className={cn(
+                "shrink-0 whitespace-nowrap text-sm font-medium text-muted",
+                layout === "showcase" && "hidden lg:block",
+              )}
+            >
+              {trust}
+            </div>
+          )}
         </div>
       )}
 
-      {trust && (
+      {trust && !trustFollowsSingleAction && (
         <div
           className={cn(
             "text-sm text-muted",
