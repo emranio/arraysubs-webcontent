@@ -1,5 +1,7 @@
 # A065 — Sales Tax and VAT on WooCommerce Subscriptions
 
+**Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Sales Tax and VAT on WooCommerce Subscriptions

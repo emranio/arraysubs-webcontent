@@ -49,7 +49,7 @@ const components: Components = {
   },
   ul: ({ children, ...props }) => (
     <ul
-      className="mt-6 grid list-disc gap-3 rounded-xl bg-surface p-6 pl-11 text-foreground marker:text-primary sm:p-7 sm:pl-12"
+      className="mt-6 grid list-disc gap-3 overflow-hidden rounded-xl bg-surface p-6 pl-11 text-foreground marker:text-primary sm:p-7 sm:pl-12"
       {...props}
     >
       {children}
@@ -57,14 +57,14 @@ const components: Components = {
   ),
   ol: ({ children, ...props }) => (
     <ol
-      className="mt-6 grid list-decimal gap-4 rounded-xl bg-surface p-6 pl-12 text-foreground marker:font-semibold marker:text-primary sm:p-7 sm:pl-14"
+      className="mt-6 grid list-decimal gap-4 overflow-hidden rounded-xl bg-surface p-6 pl-12 text-foreground marker:font-semibold marker:text-primary sm:p-7 sm:pl-14"
       {...props}
     >
       {children}
     </ol>
   ),
   li: ({ children, ...props }) => (
-    <li className="pl-1 leading-7" {...props}>
+    <li className="min-w-0 pl-1 leading-7" {...props}>
       {children}
     </li>
   ),
@@ -124,7 +124,7 @@ const components: Components = {
   ),
   code: ({ children, ...props }) => (
     <code
-      className="rounded-md bg-surface px-1.5 py-0.5 font-mono text-[0.9em] text-primary-strong"
+      className="break-words [overflow-wrap:anywhere] rounded-md bg-surface px-1.5 py-0.5 font-mono text-[0.9em] text-primary-strong"
       {...props}
     >
       {children}

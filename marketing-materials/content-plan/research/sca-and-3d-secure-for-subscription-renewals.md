@@ -1,5 +1,27 @@
 # Research packet: SCA and 3D Secure for Subscription Renewals
 
+## Verified screenshot replacement plan — 2026-07-22
+
+These clean originals were captured from the confirmed staging site after ArraySubs Pro activation. They replace or supplement untraceable screenshot references while preserving all prior image files. Each original was inspected twice before annotation and contains no API key, webhook secret, customer identity, payment token, or recovery URL.
+
+1. **Official Stripe account connection**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=wc-settings&tab=checkout&section=stripe`
+   - Original: `a062-stripe-account-connection-original.png`
+   - Placement: “Store a provider token, not raw card data.”
+   - Marker queries: `Outline the official Stripe connection card and label it "Official Stripe".`; `Outline the Create or connect a test account action and label it "Test environment".`; `Outline the Create or connect an account button and label it "Live account".`
+2. **WooCommerce Stripe provider row**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=wc-settings&tab=checkout`
+   - Original: `a062-woocommerce-stripe-provider-original.png`
+   - Placement: immediately before the Stripe connection screenshot to distinguish installed checkout visibility from configured SCA readiness.
+   - Marker queries: `Outline the full Stripe payment-provider row and label it "Official Stripe".`; `Outline the Complete setup button in the Stripe row and label it "Connect Stripe".`; `Outline the Official badge in the Stripe row and label it "Woo extension".`
+3. **ArraySubs Stripe Gateway Health**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=arraysubs-mainadmin#/settings/gateways`
+   - Original: `a062-stripe-gateway-health-original.png`
+   - Placement: “Why do webhooks matter to SCA recovery?”
+   - Marker queries: `Outline the expanded Stripe gateway card and label it "Stripe health".`; `Outline the Official Woo Stripe webhook status row and label it "Official webhook".`; `Outline the ArraySubs secondary webhook status row and label it "ArraySubs webhook".`
+
+Annotation contract for all three: purple `#873EFF`, focused crop, three review passes, and no unresolved markers allowed. Accepted annotated files must be copied byte-for-byte into both the article source directory and its public mirror.
+
 ## Research metadata
 
 - **Article ID:** A062

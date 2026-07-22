@@ -4,7 +4,7 @@ meta_description: "Learn how Paddle Merchant of Record works with WooCommerce an
 focus_keyword: "Paddle Merchant of Record WooCommerce"
 published: "2026-02-28"
 updated: "2026-05-26"
-last_verified: "2026-07-20"
+last_verified: "2026-07-22"
 author: "Emran"
 author_affiliation: "ArrayHash"
 reviewer: "ArraySubs Engineering Team"
@@ -138,7 +138,7 @@ The Paddle payment context is not a portable Woo card token. ArraySubs stores re
 
 ArraySubs Pro registers a distinct Paddle (ArraySubs) provider in WooCommerce.
 
-![Annotated WooCommerce payment-method list identifying Paddle (ArraySubs) and its Manage action.](/blogs/paddle-merchant-of-record-for-woocommerce-subscriptions/woocommerce-paddle-payment-method.png)
+![Annotated WooCommerce payment-provider list identifying the Paddle (ArraySubs) gateway with its Enable and Manage actions.](/blogs/paddle-merchant-of-record-for-woocommerce-subscriptions/woocommerce-paddle-payment-method-verified.png)
 
 The classic checkout sequence is:
 
@@ -173,7 +173,7 @@ Test both checkout types for:
 
 The staged settings screen shows the three controls that must agree: gateway enablement, sandbox mode, and environment-specific credentials.
 
-![Annotated Paddle gateway settings showing enablement, Sandbox mode, and a blank API Key field.](/blogs/paddle-merchant-of-record-for-woocommerce-subscriptions/paddle-sandbox-settings.png)
+![Annotated Paddle gateway settings showing Sandbox mode, the API and client-token fields, and Seller ID without exposing credentials.](/blogs/paddle-merchant-of-record-for-woocommerce-subscriptions/paddle-sandbox-settings-verified.png)
 
 A correct setup also needs a matching client-side token, webhook secret, approved/default checkout domain, and exact event subscriptions. Keep API keys and webhook secrets out of browser source, screenshots, logs, support tickets, and public documentation. Follow Paddle’s current [go-live checklist](https://developer.paddle.com/build/go-live-checklist/).
 
@@ -307,7 +307,7 @@ Test:
 
 Paddle explicitly documents [at-least-once delivery](https://developer.paddle.com/webhooks/about/how-webhooks-work/) and no guaranteed chronological order. Every handler must therefore be idempotent at the event and business-object level.
 
-![Annotated ArraySubs Gateway Health screen identifying the Paddle card and webhook event log.](/blogs/paddle-merchant-of-record-for-woocommerce-subscriptions/paddle-gateway-health.png)
+![Annotated ArraySubs Gateway Health screen identifying the Paddle health card, webhook endpoint, and event-evidence log.](/blogs/paddle-merchant-of-record-for-woocommerce-subscriptions/paddle-gateway-health-verified.png)
 
 The current verifier reads the exact raw body, parses `Paddle-Signature`, calculates HMAC SHA-256 for `timestamp:body`, rejects old timestamps using a five-minute tolerance, and compares safely. Paddle’s [signature guide](https://developer.paddle.com/webhooks/about/signature-verification/) supports multiple `h1` signatures during rotation; the current parser retains only one, so rotation needs a specific test.
 
@@ -355,7 +355,7 @@ Document:
 - how local fixed-term/cancellation stops remote collection; and
 - how support confirms no remote retry before asking for another payment.
 
-For general recovery policy, read [What Happens When a Subscription Payment Fails](/deals/arraysubs/resources/billing-strategy/what-happens-when-a-subscription-payment-fails/). Do not impose a separate ArraySubs charge retry on a Paddle-managed schedule.
+For general recovery policy, read [What Happens When a Subscription Payment Fails](/deals/arraysubs/resources/payment-recovery/what-happens-when-a-subscription-payment-fails/). Do not impose a separate ArraySubs charge retry on a Paddle-managed schedule.
 
 ## Lifecycle operations have provider-specific timing
 
@@ -593,3 +593,19 @@ signed events + reconciliation
 Before launch, fix and test the current interval/trial metadata mismatch, stale Price behavior, commercial-total omissions, refund Adjustment flow, webhook ordering/idempotency, fixed-term stop, and payout reconciliation. Those are not edge polish; they determine whether the buyer is charged the disclosed amount and whether Woo access/accounting matches Paddle truth.
 
 ArraySubs Pro supplies Paddle catalog/checkout wiring, local subscription and renewal-order integration, customer portal routing, lifecycle hooks, and Gateway Health around that provider-controlled system. Use [ArraySubs payment gateway features](/deals/arraysubs/features/#payment-gateways) after the independent architecture decision is settled, and enable live billing only after the full intended offer passes sandbox and production-readiness testing.
+
+[View ArraySubs Pro pricing](/deals/arraysubs/pricing/) when Paddle’s Merchant-of-Record model fits your catalog and the intended offer has passed the article’s launch gates.
+
+## Verification scope, limitations, and update log
+
+This guide was last reverified on July 22, 2026, by Emran at ArrayHash and reviewed by the ArraySubs Engineering Team. The review combined ArraySubs Free and Pro source inspection, current Paddle legal/developer documentation, and fresh staging captures of the Paddle settings, WooCommerce provider row, and ArraySubs Gateway Health interface.
+
+The staging pass verified installed versions, configuration surfaces, provider visibility, sandbox controls, capability labels, the webhook URL display, and the event-log interface. It did **not** enter Paddle credentials, enable the gateway, synchronize a live catalog, create a sandbox Transaction or Subscription, open Paddle Checkout, receive provider-originated events, pause or resume a remote subscription, update a payment method, request an Adjustment, test a chargeback, or reconcile a payout. The implementation gaps and launch blockers in this guide come from first-party source inspection and remain subject to sandbox proof after code changes.
+
+Update history:
+
+- **July 22, 2026:** Recaptured and strictly annotated three real staging screenshots, recorded their provenance and marker plans, mirrored accepted bytes into both asset trees, refreshed the verification limitations, and added the Pro pricing CTA.
+- **May 26, 2026:** Updated the article’s operational guidance and metadata.
+- **February 28, 2026:** Original publication.
+
+Reverify after ArraySubs changes Paddle catalog sync, checkout totals, event correlation, lifecycle actions, portal routing, Adjustment/refund handling, or Gateway Health; after Paddle changes legal terms, eligibility, prices, APIs, event schemas, refund approval, tax treatment, or payout reporting; and after WooCommerce changes payment-provider or Checkout Block behavior.

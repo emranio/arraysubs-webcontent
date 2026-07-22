@@ -4,7 +4,7 @@ meta_description: "Learn how SCA and 3D Secure affect subscription renewals, off
 focus_keyword: "SCA 3D Secure subscription renewals"
 published: "2026-01-15"
 updated: "2026-07-02"
-last_verified: "2026-07-20"
+last_verified: "2026-07-22"
 author: "Emran"
 author_affiliation: "ArrayHash"
 reviewer: "ArraySubs Engineering Team"
@@ -28,7 +28,7 @@ That direct answer contains the important tension: good setup can reduce recurri
 > - PayPal and Paddle own their remote renewal and authentication flows; ArraySubs consumes their provider events rather than applying Stripe’s local `requires_action` model.
 > - Recovery links, webhook health, deadline accuracy, and reconciliation are part of SCA readiness, not cleanup after it.
 
-This guide provides general technical and regulatory information, not jurisdiction-specific legal, payments-network, or compliance advice. It reflects an ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 code review plus user-confirmed staging UI verified July 20, 2026. Provider rules, regulation, product behavior, and versions change.
+This guide provides general technical and regulatory information, not jurisdiction-specific legal, payments-network, or compliance advice. It reflects an ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 code review plus user-confirmed staging UI verified July 22, 2026. Provider rules, regulation, product behavior, and versions change.
 
 ## What do SCA and 3D Secure actually mean?
 
@@ -104,7 +104,11 @@ A zero-value trial needs special attention. If there is no initial charge, the g
 
 WooCommerce and its Stripe extension store provider token references and masked display data. ArraySubs should never receive or store the raw card number or CVC. Current ArraySubs Pro works with the official WooCommerce Stripe Gateway at checkout rather than replacing its sensitive card form.
 
-![Annotated Stripe connection screen identifying the environment-specific account connection action used before SCA testing.](/blogs/sca-and-3d-secure-for-subscription-renewals/stripe-account-connection.png)
+![Annotated WooCommerce payment-provider row identifying the official Stripe extension and its account-setup action.](/blogs/sca-and-3d-secure-for-subscription-renewals/woocommerce-stripe-provider-verified.png)
+
+Seeing Stripe in the provider list proves the extension is installed and available to configure. It does not prove that an account is connected, the right mode is active, reusable payment authority is captured, or either webhook path is healthy.
+
+![Annotated Stripe connection screen separating the live account connection from the test-environment connection used before SCA testing.](/blogs/sca-and-3d-secure-for-subscription-renewals/stripe-account-connection-verified.png)
 
 This staging capture shows the official Stripe connection surface. Treat live and test accounts as separate environments. Credentials, webhooks, customers, tokens, PaymentIntents, and test-card behavior must not be mixed between them.
 
@@ -317,7 +321,7 @@ Stripe recommends monitoring PaymentIntent status through webhooks in its [statu
 
 ArraySubs Pro’s Stripe architecture can involve two event surfaces: the official WooCommerce Stripe endpoint and an ArraySubs secondary endpoint. They have separate configuration and delivery evidence.
 
-![Annotated Stripe Gateway Health details highlighting the official Woo Stripe and ArraySubs secondary webhook configuration checks.](/blogs/sca-and-3d-secure-for-subscription-renewals/stripe-webhook-health.png)
+![Annotated Stripe Gateway Health details separating the official Woo Stripe webhook check from the ArraySubs secondary webhook check.](/blogs/sca-and-3d-secure-for-subscription-renewals/stripe-webhook-health-verified.png)
 
 This confirmed staging capture intentionally shows Stripe disabled and both webhook checks unconfigured. It proves that Gateway Health exposes the checks; it does not represent a production-ready installation. A truthful production test requires the expected endpoints, current successful deliveries, and correctly processed events.
 
@@ -552,9 +556,19 @@ No in the current inspected architecture. ArraySubs owns the local schedule and 
 
 PayPal and Paddle own their remote subscription, checkout/payment, and provider authentication flows. ArraySubs consumes their signed lifecycle events. The adapters’ local `sca=false` capability means there is no ArraySubs-owned Stripe-style handler, not that those providers never use SCA or 3DS.
 
-## Methodology and final decision rule
+## Methodology, limitations, and update log
 
-This article combined primary regulator, standards-body, Stripe, WooCommerce, PayPal, and Paddle documentation with a first-party review of ArraySubs 1.8.11, ArraySubs Pro 1.1.2, and the confirmed staging interface. The screenshots show real product surfaces, including deliberately unconfigured negative states; they do not prove a live issuer challenge or production gateway health.
+This article was last reverified on July 22, 2026, by Emran at ArrayHash and reviewed by the ArraySubs Engineering Team. It combines primary regulator, standards-body, Stripe, WooCommerce, PayPal, and Paddle documentation with a first-party review of ArraySubs 1.8.11, ArraySubs Pro 1.1.2, and the confirmed staging interface.
+
+The staging pass verified the official Stripe provider and account-connection surfaces, ArraySubs’ Stripe capability display, and the separate official and secondary webhook checks. It did **not** connect a Stripe account, use a test card, create a SetupIntent or PaymentIntent, invoke 3D Secure, receive a provider-originated webhook, complete a recovery link, update a payment method, or execute a renewal. The screenshots intentionally show unconfigured negative states; they demonstrate what operators can inspect, not a healthy production environment or live issuer behavior.
+
+Update history:
+
+- **July 22, 2026:** Recaptured and strictly annotated three real Stripe/ArraySubs staging screenshots, recorded their full provenance and marker plans, added the provider-list distinction, mirrored accepted files byte-for-byte, and expanded the limitations disclosure.
+- **July 2, 2026:** Updated the article’s regulatory, recovery, and testing guidance.
+- **January 15, 2026:** Original publication.
+
+Reverify after changes to ArraySubs Stripe scheduling, PaymentIntent state handling, verification URLs, retries, method updates, or webhook routing; after WooCommerce Stripe changes its tokenization, account setup, checkout, or webhook contracts; and whenever applicable SCA rules, EMV 3DS, Stripe test behavior, payment-method support, or issuer guidance changes.
 
 An SCA-ready subscription system does not promise a frictionless future. It establishes authority while the customer is present, submits later charges with the correct provider context, lets the issuer decide whether more authentication is needed, preserves actionable pending payments, returns the customer safely, trusts signed events, reconciles before retry, and keeps access, email, finance, and compliance policy synchronized.
 

@@ -922,4 +922,7 @@ Review quarterly and immediately after any of these changes:
 - Paddle changes Acceptable Use Policy, MoR coverage, seller-country availability, currency/payment-method support, catalog/Price rules, portal, or refund approval.
 - SCA/3DS, card-network credential-on-file, tax, consumer renewal, or cancellation regulations change.
 - Provider prices or cross-border/FX/refund/dispute terms change.
+## 2026-07-22 completion audit
+
+Rechecked the published article’s adapter matrix against installed ArraySubs 1.8.11, ArraySubs Pro 1.1.2, WooCommerce 10.9.4, and WooCommerce Stripe Gateway 10.8.4. Confirmed the long-form comparison, internal links, Pro CTA, screenshot evidence, and visible limitations/update log are present. Provider-reach documentation remains dated July 20, 2026 and must be rechecked before launch; no live/sandbox provider transaction was performed in this audit.
 

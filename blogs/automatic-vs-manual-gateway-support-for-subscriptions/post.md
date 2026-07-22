@@ -4,7 +4,7 @@ meta_description: "Learn why a WooCommerce gateway can work at checkout but not 
 focus_keyword: "automatic vs manual subscription gateway support"
 published: "2026-06-04"
 updated: "2026-07-13"
-last_verified: "2026-07-20"
+last_verified: "2026-07-22"
 author: "Emran"
 author_affiliation: "ArrayHash"
 reviewer: "ArraySubs Engineering Team"
@@ -31,7 +31,7 @@ That distinction matters because the first payment happens while the customer is
 > - Paying one manual renewal through another gateway does not prove that future automatic renewals migrated.
 > - Qualify the exact offer, country, currency, checkout surface, lifecycle, and failure cases—not the gateway logo.
 
-This guide reflects current ArraySubs and ArraySubs Pro source behavior and a user-confirmed staging interface verified July 20, 2026. Payment-provider behavior, countries, methods, regulations, and integration versions change. It is technical and operational guidance, not legal, PCI, banking, or compliance advice.
+This guide reflects current ArraySubs and ArraySubs Pro source behavior and a user-confirmed staging interface verified July 22, 2026. Payment-provider behavior, countries, methods, regulations, and integration versions change. It is technical and operational guidance, not legal, PCI, banking, or compliance advice.
 
 ## Why can a gateway work at checkout but fail to auto-renew?
 
@@ -52,7 +52,7 @@ Automatic renewal asks a much larger set of questions:
 
 The WooCommerce payment settings screen can therefore contain three very different kinds of provider: a checkout-only gateway, an offline/manual method, and a subscription-aware automatic integration. Their presence on the same page does not make their renewal capabilities equivalent.
 
-![Annotated WooCommerce payment-provider rows showing that checkout-visible providers still require separate recurring-payment qualification.](/blogs/automatic-vs-manual-gateway-support-for-subscriptions/woocommerce-payment-provider-choices.png)
+![Annotated WooCommerce payment-provider rows distinguishing a manual path, provider-scheduled adapters, and the site-scheduled Stripe adapter.](/blogs/automatic-vs-manual-gateway-support-for-subscriptions/woocommerce-payment-provider-choices-verified.png)
 
 This is a first-party staging observation, not a certification screen. The rows show that the payment methods are installed or available to configure. They do not prove that every method can preserve recurring authority, process an off-session renewal, or synchronize the whole subscription lifecycle.
 
@@ -297,7 +297,7 @@ An operator should therefore treat automatic readiness as a continuously evidenc
 
 ### Pre-due email classification and due-time readiness can differ
 
-In the source version verified July 20, 2026, the logic that suppresses a pre-due manual renewal invoice for an automatic subscription uses a broader classification than the due-time automatic-charge gate. A subscription can name a registered/enabled automatic gateway with auto-renew on, while its actual provider payment-method context is missing or locally inactive.
+In the source version verified July 22, 2026, the logic that suppresses a pre-due manual renewal invoice for an automatic subscription uses a broader classification than the due-time automatic-charge gate. A subscription can name a registered/enabled automatic gateway with auto-renew on, while its actual provider payment-method context is missing or locally inactive.
 
 Possible sequence:
 
@@ -431,7 +431,7 @@ Qualification should produce evidence at each lifecycle stage. Record the plugin
 
 ArraySubs Pro Gateway Health collects useful operational signals for current Stripe, PayPal, and Paddle integrations. The current screen exposes gateway status cards, subscription counts, last-webhook timing, endpoint/settings routes, declared capabilities, and a filterable event log.
 
-![Annotated ArraySubs Gateway Health screen highlighting provider status cards and the Webhook Event Log as separate operational signals.](/blogs/automatic-vs-manual-gateway-support-for-subscriptions/arraysubs-gateway-health-overview.png)
+![Annotated ArraySubs Gateway Health screen separating automatic-adapter cards, readiness signals, and webhook evidence.](/blogs/automatic-vs-manual-gateway-support-for-subscriptions/arraysubs-gateway-health-overview-verified.png)
 
 This first-party staging view is intentionally empty/disabled; it demonstrates the information architecture, not production uptime or transaction performance. Use the [Gateway Health monitoring recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) to configure an operating routine.
 
@@ -536,6 +536,10 @@ The fix is not to detach more metadata. First retrieve and preserve the remote I
 
 Collect evidence before retrying, reinvoicing, detaching, or telling the customer to pay again.
 
+![Annotated ArraySubs subscription controls showing lifecycle-state filters, customer search, and the gateway filter in a privacy-safe no-result state.](/blogs/automatic-vs-manual-gateway-support-for-subscriptions/subscription-gateway-triage-verified.png)
+
+Start the local triage by narrowing the subscription list to the relevant lifecycle state and gateway. The screenshot deliberately shows a no-result search so no customer row or email is published; it demonstrates the investigation controls, not production subscription volume.
+
 ### Minimum record set
 
 - subscription ID, status, next date, and pending-cancellation state;
@@ -615,3 +619,17 @@ Do not ask only, “Is this gateway supported?” Ask whether this exact subscri
 Anything less may still be an excellent manual-renewal gateway. It should not be presented as automatic.
 
 Use the [ArraySubs payment gateway feature overview](/deals/arraysubs/features/#payment-gateways) to compare the current integration surfaces, then validate the exact lifecycle with the recipes linked above. If the current Pro adapters fit your payment architecture and acceptance matrix, [View Pro Pricing](/deals/arraysubs/pricing/).
+
+## Verification scope, limitations, and update log
+
+This explainer was last reverified on July 22, 2026, by Emran at ArrayHash and reviewed by the ArraySubs Engineering Team. Verification combined ArraySubs Free and Pro source inspection, current primary gateway and WooCommerce documentation, and fresh staging captures of WooCommerce payment providers, ArraySubs Gateway Health, and privacy-safe subscription triage controls.
+
+The staging pass verified installed interfaces, provider rows, automatic-adapter visibility, readiness metrics, event-log controls, and gateway/lifecycle filters. It did **not** enable or fund any gateway, create a new renewal, perform an off-session charge, deliver a provider webhook, authenticate with 3D Secure, switch a subscription across providers, cancel a remote PayPal/Paddle agreement, or pay the manual renewal shown in the preserved customer-portal screenshot. The capability classifications and code gaps are version-specific and must be tested against the exact offer, country, method, and integration versions before launch.
+
+Update history:
+
+- **July 22, 2026:** Recaptured and strictly annotated three real plugin screenshots, rejected and replaced one capture that exposed a synthetic customer email, recorded full provenance and marker plans, added the privacy-safe support-triage visual, and refreshed verification disclosures.
+- **July 13, 2026:** Updated the article’s gateway-capability analysis and metadata.
+- **June 4, 2026:** Original publication.
+
+Reverify after changes to ArraySubs renewal routing, manual fallback, payment-context validation, gateway registration, remote cancellation, or Gateway Health; after WooCommerce changes payment-provider or pay-for-order behavior; and whenever Stripe, PayPal, Paddle, SCA, supported methods, countries, or event contracts change.

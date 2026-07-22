@@ -546,3 +546,6 @@ Review quarterly and immediately after any of these changes:
 - “Gateway Health guarantees future renewals.”
 - “All payment methods supported at one-time checkout can be reused off-session.”
 - Any exact fee, country count, approval time, or refund time not verified beside the claim on publication day.
+## 2026-07-22 completion audit
+
+Rechecked the published article’s installed plugin versions, long-form depth, internal-link set, Pro CTA, preserved screenshot evidence, and visible test-scope/limitations/update-log section. The accepted staging screenshots captured July 20, 2026 remain unchanged; no live/sandbox charge or provider onboarding was performed in this completion audit.

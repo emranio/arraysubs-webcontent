@@ -4,7 +4,7 @@ meta_description: "Learn how PayPal recurring payments work with WooCommerce and
 focus_keyword: "PayPal recurring payments WooCommerce"
 published: "2026-04-04"
 updated: "2026-07-03"
-last_verified: "2026-07-20"
+last_verified: "2026-07-22"
 author: "Emran"
 author_affiliation: "ArrayHash"
 reviewer: "ArraySubs Engineering Team"
@@ -87,7 +87,7 @@ The create-subscription request uses `user_action: SUBSCRIBE_NOW` and `shipping_
 
 The staged PayPal settings screen keeps credentials blank while showing the three controls operators must distinguish: gateway availability, sandbox mode, and credential entry.
 
-![Annotated ArraySubs PayPal settings showing the gateway enable control, Sandbox mode, and blank Client ID field.](/blogs/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/paypal-sandbox-settings.png)
+![Annotated ArraySubs PayPal settings showing Sandbox mode, API credential fields, and the PayPal webhook ID field without exposing credentials.](/blogs/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/paypal-sandbox-settings-verified.png)
 
 Use separate PayPal sandbox business and buyer accounts. A correct sandbox setup needs:
 
@@ -104,7 +104,7 @@ A local hostname is fine for examining WordPress admin screens, but PayPal canno
 
 WooCommerce lists PayPal (ArraySubs) as a distinct provider. The Manage action opens the adapter’s settings; it does not mean every Woo checkout configuration is compatible.
 
-![Annotated WooCommerce payment-provider screen highlighting the PayPal (ArraySubs) row and its Manage action.](/blogs/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/woocommerce-paypal-payment-method.png)
+![Annotated WooCommerce payment-provider screen highlighting the PayPal (ArraySubs) row with its Enable and Manage actions.](/blogs/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/woocommerce-paypal-payment-method-verified.png)
 
 Automatic gateway support means the subscription engine understands approval, the remote object, renewal events, failure states, refunds, cancellation, and local reconciliation—not just that a button can collect the first payment. Read [Automatic vs Manual Gateway Support for Subscriptions](/deals/arraysubs/resources/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/) for that distinction.
 
@@ -256,7 +256,7 @@ The adapter submits PayPal transmission headers, the raw event body, and the con
 
 PayPal requires a public HTTPS listener and successful `2xx` responses; failed deliveries can be retried. Read PayPal’s [webhook overview](https://developer.paypal.com/api/rest/webhooks/) and [REST webhook guide](https://developer.paypal.com/api/rest/webhooks/rest/). The simulator is useful for listener mechanics but does not prove a real sandbox Subscription, sale, funding failure, tax calculation, or dispute correlation.
 
-![Annotated ArraySubs Gateway Health view identifying PayPal status and the shared webhook event log.](/blogs/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/paypal-gateway-health.png)
+![Annotated ArraySubs Gateway Health view identifying the PayPal health card, webhook endpoint, and shared event-evidence log.](/blogs/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/paypal-gateway-health-verified.png)
 
 Gateway Health helps expose setup/availability/test-mode state, linked-subscription counts, webhook URL, recent event context, and logs. Treat it as observability, not proof of successful billing. A green setup still needs real subscription tests.
 
@@ -528,3 +528,19 @@ ArraySubs Pro’s current PayPal foundation gets several important things right:
 Its limits are equally important. Do not promise synchronized finite terms, pause/skip, customer payment updates, plan/tax/price edits, Checkout Blocks, direct-provider cancellation, external refund accounting, or seamless retry-state recovery until the exact installed versions pass those tests.
 
 That honest boundary protects customers from duplicate collection and merchants from invisible amount or lifecycle drift. Once the test matrix passes for the intended offer, [ArraySubs payment gateway features](/deals/arraysubs/features/#payment-gateways) provide the shared subscription, renewal-order, customer-portal, audit, and gateway-health operating surface around the provider-owned PayPal schedule.
+
+[View ArraySubs Pro pricing](/deals/arraysubs/pricing/) when the verified PayPal boundary matches your offer and you are ready to add provider-owned automatic renewals to ArraySubs.
+
+## Verification scope, limitations, and update log
+
+This guide was last reverified on July 22, 2026, by Emran at ArrayHash and reviewed by the ArraySubs Engineering Team. The review combined ArraySubs Free and Pro source inspection, current PayPal and WooCommerce documentation, and fresh staging captures of the PayPal settings, WooCommerce provider list, and ArraySubs Gateway Health screen.
+
+The staging pass verified configuration surfaces, installed versions, gateway visibility, capability labels, the webhook URL display, and the event-log interface. It did **not** enter PayPal credentials, enable the gateway, create a sandbox subscription, approve a buyer agreement, receive a PayPal-originated webhook, force a retry, revise a plan, refund a sale, open a dispute, or prove Checkout Blocks compatibility. The article treats those as launch tests and does not convert source-level implementation observations into claims of completed payment behavior.
+
+Update history:
+
+- **July 22, 2026:** Recaptured and strictly annotated three real plugin screenshots from staging, recorded their provenance and marker plans, mirrored accepted bytes into the source and public asset trees, refreshed the verification disclosure, and added the Pro pricing CTA.
+- **July 3, 2026:** Updated the article’s operational guidance and metadata.
+- **April 4, 2026:** Original publication.
+
+Reverify after changes to ArraySubs PayPal checkout, local renewal reconciliation, webhook routing, cancellation, refund mapping, or gateway health; after PayPal changes Subscription APIs, retry rules, event contracts, or refund endpoints; and after WooCommerce changes payment-provider or Checkout Block integration behavior.

@@ -695,6 +695,102 @@ Every source below was checked on 2026-07-20.
 - https://docs.stripe.com/disputes — dispute fundamentals.
 - https://docs.stripe.com/disputes/responding — notifications and response workflow.
 
+## Citation placement audit — 2026-07-22
+
+The published post currently contains internal links but no external citations. Add the following primary-source links immediately beside the quoted provider-facing claims. Do not use WooCommerce or Stripe documentation to substantiate ArraySubs implementation details; those details remain first-party code observations under the article's disclosed tested versions and limitations.
+
+1. **Opening and “The shortest accurate architecture” — the subscription is local, not a Stripe Billing subscription.**
+   - Exact passages: “Stripe moves the money, but the WordPress store—not Stripe Billing—owns the subscription schedule in this architecture.” and “This is not Stripe Billing. You should not expect to find a Stripe Subscription, Stripe Price, or Stripe Invoice that controls the cadence.”
+   - Cite WooCommerce's explicit statement that its Stripe extension does not use Stripe Billing and instead supports renewals with secure tokens: https://woocommerce.com/document/stripe/admin-experience/stripe-billing/
+   - Keep the ArraySubs ownership/scheduling half labeled as an ArraySubs first-party implementation observation; the WooCommerce page does not document ArraySubs.
+
+2. **Key takeaways and object glossary — saved methods are tokenized and raw card details are not stored by WooCommerce.**
+   - Exact passages: “A WooCommerce payment token is a local reference to a Stripe PaymentMethod. Raw card data does not belong in WordPress.” and “The official WooCommerce Stripe extension keeps raw card details out of WordPress. WooCommerce stores a token object containing safe provider references.”
+   - Cite WooCommerce's saved-payment documentation beside the first occurrence: https://woocommerce.com/document/stripe/customer-experience/saved-payment-information/
+   - Stripe's PaymentMethod model can support the glossary distinction between a reusable provider object and raw payment details: https://docs.stripe.com/api/payment_methods/object
+
+3. **“Step 1: configure the official Stripe gateway first” — test/live separation and webhook health.**
+   - Exact passage: “Test and live modes have separate objects, endpoints, signing secrets, customers, methods, payments, and event histories.”
+   - Cite the official WooCommerce test-mode connection procedure: https://woocommerce.com/document/stripe/customer-experience/testing/
+   - For the “Configured” Live and Test webhook-status checks, cite: https://woocommerce.com/document/stripe/setup-and-configuration/stripe-webhooks/
+   - For the broader connection/status settings, cite: https://woocommerce.com/document/stripe/setup-and-configuration/settings-guide/
+
+4. **“Step 3: establish future-use authority at checkout” — PaymentIntent versus SetupIntent and future-use setup.**
+   - Exact passages: “When an initial payment is collected, the PaymentIntent should be configured for future off-session use.” and “When no money is due—for example, a free trial—a SetupIntent or equivalent setup path may establish the reusable method without charging it.”
+   - Cite Stripe's Intent lifecycle explanation, which distinguishes charging with a PaymentIntent from saving without a charge with a SetupIntent: https://docs.stripe.com/payments/paymentintents/lifecycle
+   - Cite Stripe's Setup Intents guide for future-payment setup, authentication, and the no-charge behavior: https://docs.stripe.com/payments/setup-intents
+   - Cite the save-and-reuse guide for customer permission and off-session reuse: https://docs.stripe.com/payments/save-and-reuse
+
+5. **“Step 5: confirm a new off-session PaymentIntent” — the state table is a Stripe state machine, not a Boolean result.**
+   - Exact placement: the five-row table beginning “PaymentIntent result | Meaning | Local response,” especially `succeeded`, `processing`, `requires_action`, and `requires_payment_method`.
+   - Cite Stripe's lifecycle page in the sentence immediately introducing or following the table: https://docs.stripe.com/payments/paymentintents/lifecycle
+   - For the canonical status field and enum, cite: https://docs.stripe.com/api/payment_intents/object#payment_intent_object-status
+   - The “Local response” column is ArraySubs operational guidance/first-party behavior and must not be presented as if Stripe mandates those exact WooCommerce state transitions.
+
+6. **“SCA: the first payment and renewal are different moments” — customer-present setup does not guarantee every future off-session charge.**
+   - Exact passage: “A renewal happens off session, where the issuer may apply an exemption, approve frictionlessly, or require the customer to return.”
+   - Cite Stripe's SCA overview for saved credentials and subsequent merchant-initiated/off-session payments: https://docs.stripe.com/strong-customer-authentication
+   - Cite Stripe's save-and-reuse card flow for how an off-session payment can return an authentication-required error: https://docs.stripe.com/payments/save-and-reuse-cards-only
+   - Cite the current Stripe testing page beside the SCA scenario list because it supplies explicit 3DS and off-session test cases: https://docs.stripe.com/testing#regulatory-cards
+
+7. **“Two webhook paths must stay healthy” — signature verification, raw body, duplicates, ordering, and quick acknowledgement.**
+   - Exact placement: the checklist beginning “A valid webhook handler should.”
+   - Cite Stripe's webhook guide at the end of that checklist: https://docs.stripe.com/webhooks
+   - Useful direct subsections for individual claims are https://docs.stripe.com/webhooks#verify-webhook-signatures, https://docs.stripe.com/webhooks#handle-duplicate-events, https://docs.stripe.com/webhooks#event-ordering, and https://docs.stripe.com/webhooks#quickly-return-a-2xx-response
+   - Cite WooCommerce separately for the official Woo Stripe endpoint and its Live/Test health indicators: https://woocommerce.com/document/stripe/setup-and-configuration/stripe-webhooks/
+   - The existence and behavior of the second ArraySubs endpoint remain ArraySubs first-party observations.
+
+8. **“Webhook deduplication is not charge idempotency” — duplicate deliveries and request idempotency are separate controls.**
+   - Exact passages: “Webhook event deduplication prevents the same `evt_...` delivery from applying its local effect twice.” and “Payment request idempotency asks Stripe to treat repeated creation requests with the same operation key as one logical request.”
+   - Cite Stripe's duplicate-event guidance for the first claim: https://docs.stripe.com/webhooks#handle-duplicate-events
+   - Cite Stripe's idempotent-request semantics for the second: https://docs.stripe.com/api/idempotent_requests
+   - The sentence about the inspected Woo Stripe request layer generating a fresh UUID is a local source-code finding, not a claim supported by Stripe's generic idempotency documentation.
+
+9. **“The most dangerous failure: an ambiguous timeout” — reconcile an unknown result before creating another payment.**
+   - Exact passages: “Locally, the request looks failed. Remotely, money moved.” and “The safe sequence is to search the known stored intent and recent Stripe PaymentIntents ... before issuing a new charge.”
+   - Cite Stripe's low-level error guide, especially its different treatment of network/server uncertainty and retry safety: https://docs.stripe.com/error-low-level
+   - Pair it with the stable-key behavior documented at: https://docs.stripe.com/api/idempotent_requests
+   - Preserve the article's wording as operational risk guidance; do not imply the generic Stripe documents prove ArraySubs' particular reconciliation search implementation.
+
+10. **“Failures, retries, grace, and stop rules” — decline classes and customer-safe recovery.**
+    - Exact passages: “Issuer decline reasons can be sensitive or inaccurate” and the distinction between authentication-required outcomes, temporary failures, and hard declines.
+    - Cite Stripe's decline-handling guidance: https://docs.stripe.com/declines/card
+    - Cite the official decline-code meanings only where a specific code is discussed: https://docs.stripe.com/declines/codes
+    - The “three attempts separated by one day” default is an ArraySubs code observation and needs the tested-version disclosure, not a Stripe citation.
+
+11. **“Payment-method updates need an end-to-end proof” — a customer default and a subscription-specific method can diverge.**
+    - Exact passages: “A portal update may change provider state without updating every local pointer your next renewal uses.” and “Stripe also has customer-level default settings.”
+    - Cite Stripe's portal integration documentation, which tells integrations to process `payment_method.attached`, `payment_method.detached`, and `customer.updated`, and distinguishes customer-level defaults from subscription overrides: https://docs.stripe.com/customer-management/integrate-customer-portal#webhooks
+    - Cite the portal configuration documentation for enabling payment-method updates: https://docs.stripe.com/customer-management/configure-portal
+    - Cite WooCommerce for the separate My Account saved-method/default interface: https://woocommerce.com/document/stripe/customer-experience/saved-payment-information/
+    - Keep the suspected ArraySubs pointer-synchronization gap explicitly framed as a first-party verification gap.
+
+12. **“Refunds, disputes, and provider truth” — Woo-admin refunds, asynchronous refund events, and disputes.**
+    - Exact passage: “ArraySubs delegates a normal Stripe refund to the official WooCommerce Stripe Gateway.” Cite the official WooCommerce refund workflow: https://woocommerce.com/document/stripe/admin-experience/refunding-orders/
+    - Exact placement: the external-refund and granular-event discussion. Cite Stripe's current refund lifecycle and recommended `refund.created`, `refund.updated`, and `refund.failed` events: https://docs.stripe.com/refunds
+    - Exact placement: “Disputes also need their own policy.” Cite Stripe's dispute lifecycle: https://docs.stripe.com/disputes and the response/evidence workflow: https://docs.stripe.com/disputes/responding
+    - The ArraySubs Charge/PaymentIntent normalization and local event mapping are first-party implementation observations.
+
+13. **“A serious pre-launch test matrix” — use official sandbox values for success, declines, 3DS, refunds, and disputes.**
+    - Exact placement: the opening sentence of the matrix plus the checkout, renewal-state, and refund/dispute subsections.
+    - Cite the official WooCommerce Stripe test-mode workflow: https://woocommerce.com/document/stripe/customer-experience/testing/
+    - Cite Stripe's current sandbox/test-value catalog: https://docs.stripe.com/testing
+    - Do not copy full card numbers into the article; link readers to the maintained official table so the test data remains current.
+
+14. **Key takeaway and “Mistake 6: making localhost your webhook test” — distinguish registered public delivery from CLI forwarding.**
+    - Exact passages: “Test mode needs a publicly reachable HTTPS webhook endpoint for real provider callbacks.” and “Stripe cannot deliver an internet webhook to an unexposed local hostname.”
+    - Cite Stripe's webhook registration requirement and local-forwarding instructions: https://docs.stripe.com/webhooks#register-your-endpoint and https://docs.stripe.com/webhooks#forward-events-to-a-local-endpoint
+    - A precise supporting CLI page is: https://docs.stripe.com/stripe-cli/use-cli#forward-events-to-a-local-webhook-endpoint
+    - Keep the existing qualification “without a tunnel or public staging URL”; Stripe CLI forwarding is a valid local test method, but it is not evidence that the production endpoint is reachable.
+
+15. **Payment-method coverage and the launch matrix — avoid implying every checkout method is reusable off session.**
+    - Exact passages: “A gateway that can take one checkout payment does not necessarily support reusable off-session authorization” and the matrix cases involving cards, bank debits, wallets, and non-card `processing` states.
+    - Cite Stripe's current support matrix because availability depends on method, country, currency, product, and recurring/payment mode: https://docs.stripe.com/payments/payment-methods/payment-method-support
+    - Cite WooCommerce's current list of methods its extension can save: https://woocommerce.com/document/stripe/customer-experience/saved-payment-information/#which-payment-methods-can-be-saved
+    - ArraySubs' narrower supported-method set must still come from inspected ArraySubs code and installed-version tests.
+
+**Placement priority:** items 1, 2, 4–9, and 12–14 are launch-blocking citation gaps because they support the article's core architecture, payment-state, SCA, webhook, duplicate-charge, refund, and testing claims. Items 3, 10, 11, and 15 should be added in the same pass because they cover time-sensitive configuration, recovery, and capability statements. Prefer one or two tightly scoped links beside the relevant sentence or table rather than a detached bibliography.
+
 ## Claims to avoid
 
 - “ArraySubs creates Stripe Billing subscriptions.”

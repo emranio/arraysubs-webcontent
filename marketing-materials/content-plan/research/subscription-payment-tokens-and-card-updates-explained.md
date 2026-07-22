@@ -760,3 +760,23 @@ All current-behavior citations were checked on 2026-07-20. Use claim-adjacent li
 6. Do not call a method update a recovered subscription until any unpaid renewal, local status, retry state, access, and next date are reconciled.
 7. Do not turn the article into the member-update recipe, expired-card recovery guide, SCA guide, webhook guide, or migration guide; link those narrower intents.
 8. Present implementation caveats as source-reviewed limitations of ArraySubs 1.8.11 / Pro 1.1.2 on 2026-07-20, not as timeless architecture.
+
+## 2026-07-22 staging screenshot remediation plan and provenance
+
+These captures were taken from the user-confirmed staging site at `http://localhost:10013` in the isolated `blog-remediation` browser session. ArraySubs Pro was temporarily active so the article could show the actual Pro gateway capabilities. The three clean originals were inspected twice before annotation. Existing article image files remain preserved; accepted annotations will be installed under new `-verified.png` filenames.
+
+| Clean original | Source route and visible state | Article placement | Privacy and crop decision | Exact annotation queries |
+| --- | --- | --- | --- | --- |
+| `a063-woocommerce-payment-methods-original.png` | `/my-account/payment-methods/`; authenticated WooCommerce My Account screen showing an empty saved-method state | Replace the account-level screenshot beneath “The customer-account link and subscription context are separate” | No customer name, email, address, token, or card details appear in the content area. Crop to the page title, account navigation, and empty-state notice. | `Payment methods` — “The account-level saved-method area”; `No saved methods found.` — “No reusable method is stored for this account” |
+| `a063-subscription-billing-context-original.png` | `/wp-admin/admin.php?page=arraysubs-mainadmin#/subscriptions`; active subscription detail showing its Billing Information card | Replace the provider-row screenshot beneath “Gateway presence does not make references interchangeable” because it directly proves that one subscription retains a specific renewal method | The full page contains test customer contact data, so only the Billing Information card is allowed in the crop. Exclude customer, address, order, timeline, and note panels. | `Billing Information` — “The subscription keeps its own billing context”; `Payment Method:` — “This value belongs to this subscription” |
+| `a063-stripe-payment-method-health-original.png` | `/wp-admin/admin.php?page=arraysubs-mainadmin#/settings/gateways`; Stripe Gateway Health card expanded on a disabled/unconfigured staging gateway | Replace the old Stripe health screenshot in the auditable-update section | No customer data, provider secrets, live token IDs, or credentials are visible. Crop to the Stripe card and its capability/webhook context; retain the disabled/not-configured labels so the image cannot imply successful setup. | `Payment Method Update` — “ArraySubs reports this gateway capability”; `Card Auto Update` — “Provider-managed update support is surfaced”; `Not configured` — “Capability still requires working gateway setup” |
+
+Annotation policy for all three: `#873EFF`, strict crop, three review passes, one to three sparse short labels, and no unresolved-query override. A screenshot is accepted only when the annotation tool reports every query resolved.
+
+### Accepted annotation results
+
+- `a063-subscription-billing-context-original/annotated.png`: 2/2 queries resolved, 0 unresolved, all three review passes completed. Installed byte-identically as `subscription-billing-context-verified.png` in both source and public article directories; SHA-256 `c677f85d2fb3b6c4386211e945366d1d99312db4a905f44d33fc60708c6305d6`.
+- `a063-woocommerce-payment-methods-original/annotated.png`: 2/2 queries resolved, 0 unresolved, accepted on review pass 2/3. Installed byte-identically as `woocommerce-payment-methods-verified.png` in both source and public article directories; SHA-256 `122edc71688c871bb0c95f8fbf85ab61c28dd6e45bf1eeff44b90732ca8bf4fb`.
+- `a063-stripe-payment-method-health-original/annotated.png`: 3/3 queries resolved, 0 unresolved, all three review passes completed. Installed byte-identically as `stripe-payment-method-health-verified.png` in both source and public article directories; SHA-256 `82c49a39a92de9858ff63cd66d0175b6e90a5ef56e2fdfea0572970bbca7ea61`.
+
+The clean originals, intermediate annotation directories, and pre-existing article images were retained. No annotated result was manually retouched or visually reinterpreted after the tool’s review loop.

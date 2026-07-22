@@ -4,7 +4,7 @@ meta_description: "Compare Stripe, PayPal, and Paddle for WooCommerce recurring 
 focus_keyword: "Stripe vs PayPal vs Paddle for WooCommerce recurring billing"
 published: "2026-03-18"
 updated: "2026-07-11"
-last_verified: "2026-07-20"
+last_verified: "2026-07-22"
 author: "Emran"
 author_affiliation: "ArrayHash"
 reviewer: "ArraySubs Engineering Team"
@@ -89,7 +89,7 @@ same visible outcome at signup
 
 ## First-party ArraySubs comparison matrix
 
-The following matrix was verified against ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 20, 2026. It describes the current adapters—not every feature the provider platforms advertise.
+The following matrix was reverified against ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 22, 2026. It describes the current adapters—not every feature the provider platforms advertise.
 
 | Criterion | Stripe + ArraySubs Pro | PayPal + ArraySubs Pro | Paddle + ArraySubs Pro |
 | --- | --- | --- | --- |
@@ -553,7 +553,7 @@ No. A PayPal agreement does not become a Stripe PaymentMethod. The customer need
 
 ## Test scope, limitations, and update log
 
-- **Verified:** July 20, 2026 against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, WooCommerce 10.9.4, and official WooCommerce Stripe Gateway 10.8.4.
+- **Verified:** July 22, 2026 against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, WooCommerce 10.9.4, and official WooCommerce Stripe Gateway 10.8.4. Provider-reach documentation was last checked July 20, 2026 and remains a pre-launch recheck item.
 - **Evidence:** Current plugin source, official current provider documentation, and safe staging UI with sandbox/blank credential states.
 - **Not claimed:** No live or sandbox charge, 3DS challenge, retry, refund, dispute, remote portal action, catalog mutation, remote cancellation, or signed provider-to-staging webhook delivery was represented as completed.
 - **Availability:** Countries, currencies, methods, prices, underwriting, product policy, and legal/tax responsibility can change; recheck provider terms and obtain qualified legal, tax, accounting, and payment-compliance advice.

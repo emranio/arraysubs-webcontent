@@ -1,5 +1,27 @@
 # A060 research pack — Paddle Merchant of Record for WooCommerce Subscriptions
 
+## Verified screenshot replacement plan — 2026-07-22
+
+These screenshots replace the article’s untraceable published screenshot references with fresh, clean originals from the confirmed staging site. Existing image files remain preserved. Each original was inspected twice before annotation, exposes no API key, client token, seller ID, webhook secret, or customer data, and remains in `marketing-materials/content-plan/screenshots/live-ui/`.
+
+1. **Paddle sandbox settings**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=wc-settings&tab=checkout&section=arraysubs_paddle`
+   - Original: `a060-paddle-sandbox-settings-original.png`
+   - Placement: “Sandbox configuration.”
+   - Marker queries: `Outline the Test Mode row and label it "Sandbox mode".`; `Outline the API Key and Client-Side Token fields together and label them "Paddle credentials".`; `Outline the Seller ID field and label it "Seller ID".`
+2. **WooCommerce payment-provider list**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=wc-settings&tab=checkout`
+   - Original: `a060-woocommerce-paddle-payment-method-original.png`
+   - Placement: “How checkout works.”
+   - Marker queries: `Outline the full Paddle (ArraySubs) payment-provider row and label it "Paddle gateway".`; `Outline the Enable button in the Paddle row and label it "Enable".`; `Outline the Manage button in the Paddle row and label it "Configure".`
+3. **ArraySubs Gateway Health**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=arraysubs-mainadmin#/settings/gateways`
+   - Original: `a060-paddle-gateway-health-original.png`
+   - Placement: “Webhooks, ordering, duplicate delivery, and race conditions.”
+   - Marker queries: `Outline the expanded Paddle gateway card and label it "Paddle health".`; `Outline the Webhook URL field inside the Paddle card and label it "Webhook endpoint".`; `Outline the Webhook Event Log panel and label it "Event evidence".`
+
+Annotation contract for all three: purple `#873EFF`, focused crop, three review passes, and no unresolved markers allowed. Accepted annotated files must be copied byte-for-byte into both the article source directory and its public mirror.
+
 **Research date:** 2026-07-20  
 **Article brief:** `web-content/marketing-materials/content-plan/articles/060-paddle-merchant-of-record-for-woocommerce-subscriptions.md`  
 **Focus keyword:** `Paddle Merchant of Record WooCommerce`  

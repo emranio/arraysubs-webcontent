@@ -4,7 +4,7 @@ meta_description: "Learn how WooCommerce subscription payment tokens, provider v
 focus_keyword: "subscription payment tokens and card updates"
 published: "2026-05-07"
 updated: "2026-06-18"
-last_verified: "2026-07-20"
+last_verified: "2026-07-22"
 author: "Emran"
 author_affiliation: "ArrayHash"
 reviewer: "ArraySubs Engineering Team"
@@ -28,7 +28,7 @@ The important idea is not “the card was updated.” It is: **which object chan
 > - Updating a payment method does not automatically pay an older failed renewal or clear on-hold/retry state.
 > - Gateway switching requires provider-supported migration or new customer authorization, not copied database rows.
 
-This guide reflects a first-party code review of ArraySubs 1.8.11, ArraySubs Pro 1.1.2, WooCommerce core, and the official WooCommerce Stripe Gateway, plus user-confirmed staging UI verified July 20, 2026. No live card update, network updater, or production renewal was performed for this article. Provider behavior and versions change.
+This guide reflects a first-party code review of ArraySubs 1.8.11, ArraySubs Pro 1.1.2, WooCommerce core, and the official WooCommerce Stripe Gateway, plus user-confirmed staging UI reverified July 22, 2026. No live card update, network updater, or production renewal was performed for this article. Provider behavior and versions change.
 
 ## What is a subscription payment token?
 
@@ -53,9 +53,9 @@ WooCommerce’s [Payment Token API](https://developer.woocommerce.com/docs/featu
 
 ### Gateway presence does not make references interchangeable
 
-![Annotated WooCommerce provider rows showing Stripe, PayPal, and Paddle as separate gateway contexts rather than one portable token system.](/blogs/subscription-payment-tokens-and-card-updates-explained/gateway-specific-payment-methods.png)
+![Annotated ArraySubs Billing Information card showing that the current subscription retains its own payment-method context.](/blogs/subscription-payment-tokens-and-card-updates-explained/subscription-billing-context-verified.png)
 
-This staging screen proves that multiple gateways can coexist. It does not prove that one provider’s saved method can be sent to another. A Stripe PaymentMethod ID is meaningless to PayPal or Paddle. A PayPal subscription ID is not a card token. A Paddle subscription ID cannot be passed into a Stripe PaymentIntent.
+This privacy-cropped staging screen proves that ArraySubs presents billing information—including the payment method—on the individual subscription record. It does not prove that the displayed method is automatically reusable, correctly vaulted, or portable. A Stripe PaymentMethod ID is meaningless to PayPal or Paddle. A PayPal subscription ID is not a card token. A Paddle subscription ID cannot be passed into a Stripe PaymentIntent.
 
 ## Why does a subscription need its own payment context?
 
@@ -124,9 +124,9 @@ Four mechanisms are regularly described as “card update,” but they solve dif
 
 ### The customer-account link and subscription context are separate
 
-![Annotated ArraySubs customer subscription view isolating the displayed Payment Method and Manage payment methods account link.](/blogs/subscription-payment-tokens-and-card-updates-explained/manage-subscription-payment-method.png)
+![Annotated WooCommerce My Account payment-method screen showing the account-level saved-method area and its current empty state.](/blogs/subscription-payment-tokens-and-card-updates-explained/woocommerce-payment-methods-verified.png)
 
-The core customer view can send eligible active, on-hold, or trial subscriptions to WooCommerce’s account-level payment-method screen. ArraySubs Pro can additionally expose a gateway-specific update route when the gateway advertises support and the subscription is not waiting for cancellation.
+The staging account currently has no saved methods, which is a useful boundary: an account-level screen can be empty even while an ArraySubs subscription record displays its own payment-method label. The core customer view can send eligible active, on-hold, or trial subscriptions to this WooCommerce account-level screen. ArraySubs Pro can additionally expose a gateway-specific update route when the gateway advertises support and the subscription is not waiting for cancellation.
 
 The [member payment-method update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/) owns the click-by-click setup. This article owns the verification question: what provider object and local subscription reference actually changed?
 
@@ -357,7 +357,7 @@ An operator should reconstruct the change without seeing raw credentials.
 
 ArraySubs already writes payment logs, private subscription notes, gateway event records, and update source/time for some Stripe events. That is useful evidence, but the current implementation should not be described as a universal immutable audit trail or reliable multi-subscription fan-out.
 
-![Annotated Stripe Gateway Health detail showing the gateway’s subscription count and webhook context used during token/update diagnosis.](/blogs/subscription-payment-tokens-and-card-updates-explained/stripe-token-health-context.png)
+![Annotated Stripe Gateway Health detail showing payment-method update capabilities alongside the disabled and not-configured staging state.](/blogs/subscription-payment-tokens-and-card-updates-explained/stripe-payment-method-health-verified.png)
 
 The staging capture shows a deliberately disabled/unconfigured state. It proves the UI exposes connection, subscription-count, and event/webhook checks; it does not prove token validity or production readiness. The [Gateway Health monitoring recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) explains the operational setup.
 
@@ -470,6 +470,14 @@ It is not a network account updater, card-data vault, universal token migration 
 - the verified PayPal/Paddle limitations conflict with a promised self-service flow.
 
 Use the [ArraySubs payment-gateway capabilities](/deals/arraysubs/features/#payment-gateways) as a starting point, then validate the source-grounded constraints in this guide.
+
+## Verification scope, limitations, and update log
+
+This article separates inspected behavior from assumptions. The source-level review covered ArraySubs 1.8.11, ArraySubs Pro 1.1.2, WooCommerce’s token model, and the official gateway documentation cited beside the relevant claims. On July 22, 2026, we reverified three visible surfaces on the user-confirmed staging site: the subscription Billing Information card, the WooCommerce My Account payment-method screen, and the expanded Stripe Gateway Health card. The screenshots are privacy-cropped annotations of those actual surfaces.
+
+The staging Stripe gateway was disabled and its webhook checks were not configured. The account-level saved-method screen contained no reusable methods, and the inspected subscription used Direct bank transfer. We therefore did **not** enter card data, create a live or sandbox provider token, open a hosted update session, exercise a network account updater, fire an authentic provider webhook, or run a card-backed renewal. These captures verify interface structure and visible capabilities only; they do not prove a functioning Stripe, PayPal, or Paddle update path.
+
+**Update log:** Published May 7, 2026; editorially updated June 18, 2026; staging UI and image provenance reverified July 22, 2026. Recheck the implementation and provider documentation after relevant ArraySubs, WooCommerce, gateway-extension, or provider API changes.
 
 ## Frequently asked questions
 

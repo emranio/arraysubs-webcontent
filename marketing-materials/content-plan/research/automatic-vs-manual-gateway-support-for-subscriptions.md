@@ -1,5 +1,28 @@
 # Research packet — Automatic vs Manual Gateway Support for Subscriptions (A061)
 
+## Verified screenshot replacement plan — 2026-07-22
+
+These clean originals were captured from the confirmed staging site after ArraySubs Pro activation. They replace or supplement untraceable screenshot references while preserving every prior image file. Each original was inspected twice before annotation. The subscriptions-list capture deliberately uses a no-result search so no customer identity is published.
+
+1. **WooCommerce payment-provider choices**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=wc-settings&tab=checkout`
+   - Original: `a061-woocommerce-payment-providers-original.png`
+   - Placement: “Why can a gateway work at checkout but fail to auto-renew?”
+   - Marker queries: `Outline the Take offline payments row and label it "Manual path".`; `Outline the Paddle (ArraySubs) and PayPal (ArraySubs) rows together and label them "Provider-scheduled".`; `Outline the Stripe row and label it "Site-scheduled".`
+2. **ArraySubs Gateway Health overview**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=arraysubs-mainadmin#/settings/gateways`
+   - Original: `a061-gateway-health-overview-original.png`
+   - Placement: “Gateway Health: what it proves and what it does not.”
+   - Marker queries: `Outline the Paddle, PayPal, and Stripe gateway cards together and label them "Automatic adapters".`; `Outline the status, subscription count, and last webhook metrics across the three cards and label them "Readiness signals".`; `Outline the Webhook Event Log panel and label it "Webhook evidence".`
+3. **ArraySubs subscription gateway triage**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=arraysubs-mainadmin#/subscriptions`
+   - Original: `a061-subscription-gateway-filter-original.png`
+   - Placement: “Support runbook: classify before acting.”
+   - Privacy state: a deliberate no-result customer search prevents customer rows from appearing.
+   - Marker queries: `Outline the subscription status filter row and label it "Lifecycle states".`; `Outline the customer search box and label it "Customer search".`; `Outline the All Gateways dropdown and label it "Gateway filter".`
+
+Annotation contract for all three: purple `#873EFF`, focused crop, three review passes, and no unresolved markers allowed. Accepted annotated files must be copied byte-for-byte into both the article source directory and its public mirror.
+
 **Research completed:** 2026-07-20  
 **Intended article:** A061 — Automatic vs Manual Gateway Support for Subscriptions  
 **Canonical slug:** `automatic-vs-manual-gateway-support-for-subscriptions`  

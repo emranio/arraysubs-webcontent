@@ -1,5 +1,27 @@
 # Research Evidence Pack — A059: PayPal Recurring Payments for WooCommerce: Agreements, Renewals, and Limits
 
+## Verified screenshot replacement plan — 2026-07-22
+
+These screenshots replace the article’s untraceable published screenshot references with new, clean originals from the confirmed staging site. Existing published files are intentionally preserved. Each original was inspected twice before annotation, contains no credentials, and remains in `marketing-materials/content-plan/screenshots/live-ui/`.
+
+1. **PayPal sandbox settings**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=wc-settings&tab=checkout&section=arraysubs_paypal`
+   - Original: `a059-paypal-sandbox-settings-original.png`
+   - Placement: “Configure sandbox before enabling the gateway.”
+   - Marker queries: `Outline the Test Mode row and label it "Sandbox mode".`; `Outline the Client ID and Client Secret fields together and label them "API credentials".`; `Outline the Webhook ID field and label it "Webhook ID".`
+2. **WooCommerce payment-provider list**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=wc-settings&tab=checkout`
+   - Original: `a059-woocommerce-paypal-payment-method-original.png`
+   - Placement: “Enablement is not capability proof.”
+   - Marker queries: `Outline the full PayPal (ArraySubs) payment-provider row and label it "PayPal gateway".`; `Outline the Enable button in the PayPal row and label it "Enable".`; `Outline the Manage button in the PayPal row and label it "Configure".`
+3. **ArraySubs Gateway Health**
+   - Source route: `http://localhost:10013/wp-admin/admin.php?page=arraysubs-mainadmin#/settings/gateways`
+   - Original: `a059-paypal-gateway-health-original.png`
+   - Placement: “Signed webhooks are the operating backbone.”
+   - Marker queries: `Outline the expanded PayPal gateway card and label it "PayPal health".`; `Outline the Webhook URL field inside the PayPal card and label it "Webhook endpoint".`; `Outline the Webhook Event Log panel and label it "Event evidence".`
+
+Annotation contract for all three: purple `#873EFF`, focused crop, three review passes, and no unresolved markers allowed. Accepted annotated files must be copied byte-for-byte into both the article source directory and its public mirror.
+
 ## Research scope and publication snapshot
 
 - **Research date / last verified:** 2026-07-20 (Asia/Dhaka).

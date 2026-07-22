@@ -1,5 +1,7 @@
 # A064 — Subscription Webhooks: Events Every WooCommerce Store Should Monitor
 
+**Status:** Published
+
 ## Article specification
 
 - **Proposed title:** Subscription Webhooks: Events Every WooCommerce Store Should Monitor
