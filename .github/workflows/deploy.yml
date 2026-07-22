@@ -13,38 +13,9 @@ concurrency:
 jobs:
   deploy:
     name: Build & Reload on Server
-    runs-on: [self-hosted, codex-deploy-debug]
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Inspect origin SSH controls
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script_stop: true
-          script: |
-            set -u
-
-            echo "==> SSH listeners"
-            ss -ltn | grep -E ':(22|2222)[[:space:]]' || true
-
-            if command -v ufw >/dev/null 2>&1; then
-              echo "==> UFW"
-              ufw status verbose || true
-            fi
-
-            if command -v fail2ban-client >/dev/null 2>&1; then
-              echo "==> Fail2ban"
-              fail2ban-client status || true
-              fail2ban-client status sshd || true
-            fi
-
-            if command -v nft >/dev/null 2>&1; then
-              echo "==> nftables input rules"
-              nft list chain inet filter input || true
-            fi
-
       # Zero-downtime: deploy.sh builds an isolated release under
       # .deploy/releases/, atomically switches the .deploy/current symlink,
       # and graceful-reloads PM2 in cluster mode. Rollback and release
