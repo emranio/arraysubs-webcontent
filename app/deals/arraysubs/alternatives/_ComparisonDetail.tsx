@@ -15,6 +15,7 @@ import {
   SectionTitle,
 } from "@/components/ui";
 import {
+  COMPARISONS,
   comparisonColumns,
   getComparison,
   type Comparison,
@@ -46,13 +47,22 @@ const WINNER_META: Record<
  * Shared template for every `/deals/arraysubs/alternatives/<slug>/` page. All
  * copy comes from `_data.ts`; this only arranges it with the design system,
  * GEO-ordered: answer-first verdict, then table, pricing, balanced differences,
- * migration, FAQ and related comparisons.
+ * related comparisons and FAQ.
  */
 export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
   const c = comparison;
-  const related = c.related
-    .map((slug) => getComparison(slug))
-    .filter((item): item is Comparison => Boolean(item));
+  const usedRelatedSlugs = new Set<string>();
+  const related = [...c.related, ...COMPARISONS.map((item) => item.slug)]
+    .flatMap((slug) => {
+      if (slug === c.slug || usedRelatedSlugs.has(slug)) return [];
+
+      const item = getComparison(slug);
+      if (!item) return [];
+
+      usedRelatedSlugs.add(slug);
+      return [item];
+    })
+    .slice(0, 3);
 
   const winnerLabel = (winner: DifferenceWinner) =>
     winner === "arraysubs"
@@ -270,53 +280,6 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
         </Container>
       </Section>
 
-      {/* ---- Migration -------------------------------------------------- */}
-      {c.migration && (
-        <Section surface="default" spacing="md">
-          <Container>
-            <div className="mx-auto max-w-3xl">
-              <SectionTitle
-                eyebrow="Switching"
-                title={`Moving from ${c.competitorShort} to ArraySubs`}
-              />
-              <p className="mt-6 text-lg leading-8 text-muted text-pretty">
-                {c.migration}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Button
-                  href="/deals/arraysubs/features/"
-                  variant="outline"
-                  iconRight={<ArrowRight className="size-5" />}
-                >
-                  See all features
-                </Button>
-                <Button
-                  href={GET_PRO}
-                  iconRight={<ArrowRight className="size-5" />}
-                >
-                  Start Trial
-                </Button>
-              </div>
-            </div>
-          </Container>
-        </Section>
-      )}
-
-      {/* ---- FAQ -------------------------------------------------------- */}
-      <Section surface="surface" spacing="md">
-        <Container>
-          <SectionTitle
-            eyebrow="FAQ"
-            title={`ArraySubs vs ${c.competitorShort}: common questions`}
-            align="center"
-          />
-          <div className="mx-auto mt-12 max-w-3xl">
-            <Accordion items={c.faq} defaultOpen={[0]} />
-          </div>
-        </Container>
-        <JsonLd data={faqSchema(c.faq)} />
-      </Section>
-
       {/* ---- Related comparisons ---------------------------------------- */}
       {related.length > 0 && (
         <Section surface="default" spacing="md">
@@ -341,6 +304,21 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
           </Container>
         </Section>
       )}
+
+      {/* ---- FAQ -------------------------------------------------------- */}
+      <Section surface="surface" spacing="md">
+        <Container>
+          <SectionTitle
+            eyebrow="FAQ"
+            title={`ArraySubs vs ${c.competitorShort}: common questions`}
+            align="center"
+          />
+          <div className="mx-auto mt-12 max-w-3xl">
+            <Accordion items={c.faq} defaultOpen={[0]} />
+          </div>
+        </Container>
+        <JsonLd data={faqSchema(c.faq)} />
+      </Section>
 
       {/* ---- CTA -------------------------------------------------------- */}
       <Section surface="primary" spacing="md">
