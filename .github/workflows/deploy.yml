@@ -13,7 +13,10 @@ concurrency:
 jobs:
   deploy:
     name: Build & Reload on Server
-    runs-on: ubuntu-latest
+    # The origin firewall drops Azure-hosted Linux runner traffic. Standard
+    # macOS runners use a separate GitHub egress range, and ssh-action ships a
+    # native Darwin client for both supported runner architectures.
+    runs-on: macos-latest
 
     steps:
       # Zero-downtime: deploy.sh builds an isolated release under
