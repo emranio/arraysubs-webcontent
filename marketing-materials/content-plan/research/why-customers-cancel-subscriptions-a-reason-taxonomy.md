@@ -317,7 +317,15 @@ Before calculating category shares, deduplicate the 150 event rows to 120 journe
 
 ## Screenshot and UI opportunities
 
-No new screenshot was captured. Verify the current UI and remove customer data before reusing repository assets.
+### Production screenshot pass — 2026-07-22
+
+The confirmed local staging flow was exercised with a synthetic subscription. The configured reason set, one customer primary-reason dialog, and Retention Analytics operational view were captured and published. No real customer data, offer acceptance, or cancellation was used.
+
+- `screenshots/live-ui/a072-cancellation-reasons-original.png` → `cancellation-reasons.png`
+- `screenshots/live-ui/a075-cancellation-survey-modal-original.png` → `customer-reason-dialog.png`
+- `screenshots/live-ui/a070-retention-analytics-original.png` → `retention-analytics.png`
+
+The attempted retention screenshot annotation could not reliably locate its requested targets, so clean originals were used without callouts. Captions explicitly distinguish configuration and event evidence from prevalence, unique-journey counts, or causal lift.
 
 | UI | Route / existing asset | What it proves | Caption caveat |
 |---|---|---|---|

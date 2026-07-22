@@ -117,6 +117,22 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       "Assign operational, tax, and compliance ownership explicitly",
     ],
   },
+  {
+    slug: "retention-and-churn",
+    name: "Retention & Churn",
+    eyebrow: "Keep the right customers",
+    description:
+      "Measurement-first guides for voluntary and involuntary churn, cancellation reasons, ethical exit flows, save offers, customer research, and durable paid-renewal outcomes.",
+    intro: [
+      "Subscription retention is not one discount button or one dashboard percentage. It begins with a metric dictionary, a journey-level distinction between customer intent and terminal payment failure, and evidence that connects reasons to product, billing, usage, service, fulfillment, and gateway behavior.",
+      "Use these guides to build a clear cancellation experience, compare pause, skip, discount, and downgrade interventions, design useful reason capture, and measure later paid renewals and contribution margin without mistaking offer acceptance or repeated event rows for causal retention.",
+    ],
+    highlights: [
+      "Separate voluntary, involuntary, policy, technical, and unresolved journeys",
+      "Keep cancellation clear while presenting only relevant eligible alternatives",
+      "Measure paid renewals and margin beyond offer acceptance",
+    ],
+  },
 ];
 
 export const RESOURCE_ARTICLES: ResourceArticle[] = [
@@ -2161,6 +2177,327 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
       image:
         "/blogs/sales-tax-and-vat-on-woocommerce-subscriptions/hero.png",
       tone: "highlight",
+    },
+  },
+  {
+    id: "A066",
+    slug: "merchant-of-record-vs-payment-processor-for-subscription-businesses",
+    categorySlug: "payments-and-compliance",
+    title:
+      "Merchant of Record vs Payment Processor for Subscription Businesses",
+    seoTitle: "Merchant of Record vs Payment Processor: Subscription Guide",
+    metaDescription:
+      "Compare Merchant of Record and payment processor models for subscriptions across tax, invoices, disputes, control, cost, data, and migration risk.",
+    excerpt:
+      "Map seller identity, tax, invoices, disputes, cash, data, integrations, and exit obligations before choosing a Merchant of Record or processor model.",
+    directAnswer:
+      "A payment processor moves money while the subscription business remains the seller responsible for tax, invoices, refunds, disputes, compliance, and customer terms. A Merchant of Record becomes the buyer-facing seller for eligible transactions and takes on more of that transaction responsibility, but the supplier still owns product eligibility, delivery, support, privacy, accounting, integration, and exit risk.",
+    publishedAt: "2026-05-21",
+    updatedAt: "2026-07-06",
+    lastVerifiedAt: "2026-07-22",
+    readTime: "23 min read",
+    format: "Decision guide",
+    author: "ArraySubs Editorial Team",
+    reviewer: "ArraySubs Product Team",
+    keywords: [
+      "Merchant of Record vs payment processor subscriptions",
+      "subscription payment processor responsibilities",
+      "Merchant of Record tax invoices disputes",
+      "WooCommerce subscription payment architecture",
+    ],
+    cover: {
+      label: "Assign every subscription-selling responsibility",
+      image:
+        "/blogs/merchant-of-record-vs-payment-processor-for-subscription-businesses/featured-image.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A067",
+    slug: "migrating-subscription-gateways-without-breaking-renewals",
+    categorySlug: "payments-and-compliance",
+    title: "Migrating Subscription Gateways Without Breaking Renewals",
+    seoTitle: "Migrate a Subscription Gateway Without Breaking Renewals",
+    metaDescription:
+      "A phased WooCommerce subscription gateway migration runbook covering tokens, mandates, schedules, webhooks, cohorts, reconciliation, rollback, and ArraySubs limits.",
+    excerpt:
+      "Inventory billing authority and renewal context, prove a pilot cohort, reconcile both systems, and move in bounded waves with an explicit rollback boundary.",
+    directAnswer:
+      "A safe subscription gateway migration separates new checkout traffic from existing renewal agreements, inventories every subscription's gateway-specific payment authority and billing owner, validates what can and cannot be ported, pilots a small cohort, reconciles local and provider state, and expands only after duplicate-charge, missed-renewal, webhook, and rollback controls pass.",
+    publishedAt: "2026-03-27",
+    updatedAt: "2026-06-20",
+    lastVerifiedAt: "2026-07-22",
+    readTime: "23 min read",
+    format: "Migration runbook",
+    author: "ArraySubs Editorial Team",
+    reviewer: "ArraySubs Product Team",
+    keywords: [
+      "migrate WooCommerce subscription gateway",
+      "subscription gateway migration runbook",
+      "move recurring payments without failed renewals",
+      "payment token migration subscriptions",
+    ],
+    cover: {
+      label: "Move renewal authority in verified cohorts",
+      image:
+        "/blogs/migrating-subscription-gateways-without-breaking-renewals/featured-image.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A068",
+    slug: "choosing-a-subscription-gateway-by-country-and-business-model",
+    categorySlug: "payments-and-compliance",
+    title: "Choosing a Subscription Gateway by Country and Business Model",
+    seoTitle: "Choose a Subscription Gateway by Country and Business Model",
+    metaDescription:
+      "Use a hard-gate framework to choose a WooCommerce subscription gateway by seller country, product, recurring method, mandate, payout, tax, and integration.",
+    excerpt:
+      "Eliminate gateways that fail seller-country, product, method, recurring-authority, settlement, compliance, or integration requirements before comparing price.",
+    directAnswer:
+      "Choose a subscription gateway by applying hard gates in order: seller country and entity eligibility, product/business-model acceptance, customer payment methods, recurring authority and billing ownership, settlement and currencies, tax/compliance responsibility, lifecycle capabilities, and the exact ArraySubs integration. Compare fees only among options that pass every required gate.",
+    publishedAt: "2026-06-12",
+    updatedAt: "2026-07-18",
+    lastVerifiedAt: "2026-07-22",
+    readTime: "21 min read",
+    format: "Decision framework",
+    author: "ArraySubs Editorial Team",
+    reviewer: "ArraySubs Product Team",
+    keywords: [
+      "choose subscription gateway by country",
+      "WooCommerce recurring payment gateway business model",
+      "subscription payment gateway eligibility",
+      "Stripe PayPal Paddle country comparison",
+    ],
+    cover: {
+      label: "Apply hard gates before comparing fees",
+      image:
+        "/blogs/choosing-a-subscription-gateway-by-country-and-business-model/featured-image.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A069",
+    slug: "multi-gateway-resilience-for-subscription-stores",
+    categorySlug: "payments-and-compliance",
+    title: "Multi-Gateway Resilience for Subscription Stores",
+    seoTitle: "Multi-Gateway Resilience for Subscription Stores",
+    metaDescription:
+      "Design multi-gateway resilience for WooCommerce subscriptions without assuming token portability or automatic renewal failover. Includes metrics, failure domains, and an incident runbook.",
+    excerpt:
+      "Use gateway diversity for checkout continuity and bounded migration while protecting each subscription's non-portable payment authority and renewal history.",
+    directAnswer:
+      "Multi-gateway resilience gives a subscription store alternative checkout and migration paths, but it does not provide automatic failover for existing renewals. Tokens, mandates, agreements, remote billing schedules, and customer authorization are gateway-specific. Design resilience around failure-domain isolation, observability, reconciliation, customer-safe recovery, and tested cohort migration.",
+    publishedAt: "2026-02-17",
+    updatedAt: "2026-05-29",
+    lastVerifiedAt: "2026-07-22",
+    readTime: "21 min read",
+    format: "Architecture guide",
+    author: "ArraySubs Editorial Team",
+    reviewer: "ArraySubs Product Team",
+    keywords: [
+      "multi-gateway resilience subscription store",
+      "subscription payment gateway failover",
+      "WooCommerce recurring payment resilience",
+      "multi processor subscription architecture",
+    ],
+    cover: {
+      label: "Isolate gateway failures without false failover",
+      image:
+        "/blogs/multi-gateway-resilience-for-subscription-stores/featured-image.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A070",
+    slug: "how-to-reduce-woocommerce-subscription-churn",
+    categorySlug: "retention-and-churn",
+    title: "How to Reduce WooCommerce Subscription Churn",
+    seoTitle: "How to Reduce WooCommerce Subscription Churn",
+    metaDescription:
+      "A measurement-first WooCommerce subscription churn guide covering voluntary and involuntary churn, cohorts, failed-payment recovery, cancellation flows, offers, and a 90-day plan.",
+    excerpt:
+      "Define the churn metric, diagnose the affected cohort, fix root causes, recover failed payments, and measure durable paid-renewal outcomes.",
+    directAnswer:
+      "Reduce WooCommerce subscription churn with the sequence define, diagnose, prevent, save, recover, win back, and measure incrementality. Separate voluntary cancellation from terminal failed-payment loss, segment by cohort and lifecycle moment, fix product and billing causes before incentives, and treat an offer as successful only when later paid renewals and margin improve at acceptable customer cost.",
+    publishedAt: "2026-01-09",
+    updatedAt: "2026-07-14",
+    lastVerifiedAt: "2026-07-22",
+    readTime: "23 min read",
+    format: "Operating guide",
+    author: "ArraySubs Editorial Team",
+    reviewer: "ArraySubs Product Team",
+    keywords: [
+      "how to reduce WooCommerce subscription churn",
+      "subscription retention WooCommerce",
+      "voluntary involuntary churn",
+      "subscription save offers",
+    ],
+    cover: {
+      label: "Diagnose and repair the churn system",
+      image:
+        "/blogs/how-to-reduce-woocommerce-subscription-churn/featured-image.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A071",
+    slug: "voluntary-vs-involuntary-churn",
+    categorySlug: "retention-and-churn",
+    title: "Voluntary vs Involuntary Churn",
+    seoTitle: "Voluntary vs Involuntary Churn: A Practical Guide",
+    metaDescription:
+      "Separate voluntary cancellation from terminal failed-payment churn with clear definitions, evidence, formulas, ownership, and WooCommerce operating playbooks.",
+    excerpt:
+      "Classify completed churn by first trigger and terminal outcome, keep unresolved payment failures open, and route each cause to the right owner.",
+    directAnswer:
+      "Voluntary churn is a completed loss whose first material trigger is an explicit customer decision. Involuntary churn is a completed loss after an unintended renewal-payment failure does not recover within the defined retry, grace, and observation policy. Keep merchant-policy, technical, unresolved, and unknown journeys separate instead of inferring cause from status.",
+    publishedAt: "2026-04-23",
+    updatedAt: "2026-06-11",
+    lastVerifiedAt: "2026-07-22",
+    readTime: "22 min read",
+    format: "Measurement guide",
+    author: "ArraySubs Editorial Team",
+    reviewer: "ArraySubs Product Team",
+    keywords: [
+      "voluntary vs involuntary churn",
+      "subscription payment failure churn",
+      "customer cancellation churn",
+      "WooCommerce churn classification",
+    ],
+    cover: {
+      label: "Classify the trigger and completed outcome",
+      image: "/blogs/voluntary-vs-involuntary-churn/featured-image.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A072",
+    slug: "why-customers-cancel-subscriptions-a-reason-taxonomy",
+    categorySlug: "retention-and-churn",
+    title: "Why Customers Cancel Subscriptions: A Reason Taxonomy",
+    seoTitle: "Why Customers Cancel Subscriptions: Reason Taxonomy",
+    metaDescription:
+      "Build a useful subscription cancellation-reason taxonomy across price, value, usage, experience, technical, and life-event causes without confusing stated answers with root cause.",
+    excerpt:
+      "Preserve raw answers, stable reason codes, and evidence-based root-cause hypotheses as separate layers in a versioned cancellation taxonomy.",
+    directAnswer:
+      "Customers commonly cancel for price or affordability, value or plan fit, usage or timing, experience or service, technical reliability, and external life changes. Treat those as a starting codebook rather than a universal ranking. Preserve the customer's raw answer, map it to a stable versioned code, and require supporting evidence before calling it the root cause.",
+    publishedAt: "2026-03-08",
+    updatedAt: "2026-07-09",
+    lastVerifiedAt: "2026-07-22",
+    readTime: "22 min read",
+    format: "Taxonomy guide",
+    author: "ArraySubs Editorial Team",
+    reviewer: "ArraySubs Product Team",
+    keywords: [
+      "why customers cancel subscriptions",
+      "subscription cancellation reason taxonomy",
+      "cancellation reason codes",
+      "subscription churn root cause",
+    ],
+    cover: {
+      label: "Separate answers, codes, and root-cause evidence",
+      image:
+        "/blogs/why-customers-cancel-subscriptions-a-reason-taxonomy/featured-image.png",
+      tone: "dark",
+    },
+  },
+  {
+    id: "A073",
+    slug: "anatomy-of-an-effective-subscription-cancellation-flow",
+    categorySlug: "retention-and-churn",
+    title: "Anatomy of an Effective Subscription Cancellation Flow",
+    seoTitle: "Anatomy of an Effective Subscription Cancellation Flow",
+    metaDescription:
+      "Design a clear subscription cancellation flow with visible actions, plain consequences, one neutral reason, relevant alternatives, confirmed outcomes, accessibility, and reliable measurement.",
+    excerpt:
+      "Make cancellation findable, explain consequences, ask once, offer only relevant alternatives, preserve a direct exit, and prove the final state.",
+    directAnswer:
+      "An effective subscription cancellation flow is easy to find, explains immediate or end-of-period consequences, asks only one necessary neutral reason, offers at most a few relevant eligible alternatives, keeps a direct cancellation control visible, prevents duplicate submission, and confirms the committed status, date, billing, access, and fulfillment result.",
+    publishedAt: "2026-05-02",
+    updatedAt: "2026-07-16",
+    lastVerifiedAt: "2026-07-22",
+    readTime: "22 min read",
+    format: "UX and operations guide",
+    author: "ArraySubs Editorial Team",
+    reviewer: "ArraySubs Product Team",
+    keywords: [
+      "subscription cancellation flow",
+      "WooCommerce cancellation UX",
+      "ethical cancellation design",
+      "subscription retention flow",
+    ],
+    cover: {
+      label: "Keep the exit clear and the outcome provable",
+      image:
+        "/blogs/anatomy-of-an-effective-subscription-cancellation-flow/featured-image.png",
+      tone: "primary",
+    },
+  },
+  {
+    id: "A074",
+    slug: "subscription-save-offers-compared-discount-pause-skip-or-downgrade",
+    categorySlug: "retention-and-churn",
+    title:
+      "Subscription Save Offers Compared: Discount, Pause, Skip, or Downgrade",
+    seoTitle: "Subscription Save Offers: Discount, Pause, Skip, Downgrade",
+    metaDescription:
+      "Compare subscription discount, pause, skip, and downgrade offers by customer problem, eligibility, lifecycle impact, margin, gateway support, and durable renewal outcomes.",
+    excerpt:
+      "Match price pressure, temporary timing, one unwanted cycle, and lasting plan mismatch to the smallest honest system-supported intervention.",
+    directAnswer:
+      "Use a short discount for temporary affordability when margin permits, pause for a temporary interruption, skip for exactly one unwanted cycle, and downgrade for a lasting plan or price mismatch. If the system cannot honor the terms or the option does not solve the problem, preserve an easy cancellation. Judge success by later paid renewals and contribution margin, not acceptance.",
+    publishedAt: "2026-01-26",
+    updatedAt: "2026-06-30",
+    lastVerifiedAt: "2026-07-22",
+    readTime: "22 min read",
+    format: "Comparison guide",
+    author: "ArraySubs Editorial Team",
+    reviewer: "ArraySubs Product Team",
+    keywords: [
+      "subscription save offers",
+      "subscription discount pause skip downgrade",
+      "cancellation retention offers",
+      "WooCommerce subscription pause downgrade",
+    ],
+    cover: {
+      label: "Match each offer to the problem it can solve",
+      image:
+        "/blogs/subscription-save-offers-compared-discount-pause-skip-or-downgrade/featured-image.png",
+      tone: "highlight",
+    },
+  },
+  {
+    id: "A075",
+    slug: "cancellation-survey-questions-that-produce-useful-data",
+    categorySlug: "retention-and-churn",
+    title: "Cancellation Survey Questions That Produce Useful Data",
+    seoTitle: "Cancellation Survey Questions That Produce Useful Data",
+    metaDescription:
+      "Use neutral cancellation survey questions, stable reason codes, optional detail, privacy controls, quality metrics, and evidence review to produce actionable subscription data.",
+    excerpt:
+      "Ask one neutral primary reason, preserve optional detail safely, version the codebook, audit survey quality, and keep analysis separate from customer evidence.",
+    directAnswer:
+      "Ask one neutral primary question with short options for price, value, usage, service, technical reliability, external change, Other, and Prefer not to say. Keep detail optional, store stable keys separately from labels, version every change, restrict raw text, deduplicate cancellation journeys, and report missing, Other, uncodable, duplicate, and version effects.",
+    publishedAt: "2026-06-07",
+    updatedAt: "2026-07-20",
+    lastVerifiedAt: "2026-07-22",
+    readTime: "22 min read",
+    format: "Survey design guide",
+    author: "ArraySubs Editorial Team",
+    reviewer: "ArraySubs Product Team",
+    keywords: [
+      "cancellation survey questions",
+      "subscription cancellation questionnaire",
+      "cancellation reason survey",
+      "subscription churn feedback",
+    ],
+    cover: {
+      label: "Ask less and preserve better evidence",
+      image:
+        "/blogs/cancellation-survey-questions-that-produce-useful-data/featured-image.png",
+      tone: "dark",
     },
   },
 ];

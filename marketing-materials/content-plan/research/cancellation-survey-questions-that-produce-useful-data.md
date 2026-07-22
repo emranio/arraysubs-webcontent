@@ -156,6 +156,17 @@ For every answer choice, record:
 
 ## Screenshot and UI evidence opportunities
 
+### Production screenshot pass — 2026-07-22
+
+The confirmed local staging site was exercised with a synthetic subscription. The current reason configuration, one customer primary-reason dialog, the configured save-offer dialog, and one synthetic Retention Analytics event were captured and published. No real customer text, offer acceptance, or cancellation was used.
+
+- `screenshots/live-ui/a072-cancellation-reasons-original.png` → `cancellation-reasons.png`
+- `screenshots/live-ui/a075-cancellation-survey-modal-original.png` → `customer-reason-dialog.png`
+- `screenshots/live-ui/a074-customer-save-offers-original.png` → `customer-save-offers.png`
+- `screenshots/live-ui/a070-retention-analytics-original.png` → `retention-analytics.png`
+
+The annotation helper could not reliably locate the requested retention targets, so clean originals were published without callouts. Captions emphasize that operational records are not anonymous survey responses and that offer exposure can bias reason interpretation.
+
 No screenshots were captured for this research task. Later original captures could show:
 
 1. Retention Flow reason editor with stable keys and editable/reorderable labels.

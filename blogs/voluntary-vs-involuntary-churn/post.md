@@ -298,6 +298,70 @@ In the inspected code, manual subscriptions and automatic Stripe subscriptions c
 
 Test every live gateway, product, and cancellation type before comparing performance.
 
+## Validate the classifier before trusting the split
+
+A classification model is only as reliable as its evidence and review process. Start with a bounded sample of recent journeys that includes customer cancellations, first payment failures, recoveries, unresolved failures, terminal failed-payment losses, administrator actions, pauses, and known incidents. Have two reviewers independently assign the first trigger, terminal outcome, primary class, and contributing factors. Then compare disagreements.
+
+Disagreement is useful. It exposes vague rules such as “the last actor determines the cause” or “cancelled after a decline is always involuntary.” Rewrite those rules with concrete examples and an evidence priority. A practical evidence order can be:
+
+1. timestamped customer or administrator action with authenticated actor;
+2. renewal order, transaction, and gateway event sequence;
+3. scheduler and webhook evidence;
+4. stored cancellation reason and type;
+5. support or incident evidence tied to the journey;
+6. current status only as supporting context.
+
+The order is not absolute. A provider event may arrive late, a customer reason may be vague, or a support case may reveal a preceding outage. Record the source used and allow a reviewed reclassification while preserving the original class and audit trail.
+
+Track a small set of classifier-quality measures:
+
+| Quality measure | What it reveals |
+|---|---|
+| Unknown primary-class rate | Missing actors, missing timelines, or rules that demand unsupported precision |
+| Unresolved failure rate | Recent cohorts that have not completed recovery |
+| Journeys lacking a first trigger | Logging or join gaps |
+| Duplicate events per journey | Risk of inflated cancellation or offer totals |
+| Reviewer disagreement rate | Ambiguous class definitions or insufficient evidence |
+| Reclassification rate | Late evidence, unstable rules, or operational data lag |
+
+Do not optimize the unknown rate by guessing. A visible unknown category is safer than a clean but fictional split. Instead, fix the missing evidence: store the actor, link the renewal order, preserve the gateway, record the cancellation type, capture the first failure, and make scheduler or webhook diagnostics retrievable.
+
+### Use cohorts with enough time to finish
+
+Calendar-month reporting mixes journeys of different ages. A renewal that fails on the first day may complete retries and grace before month end; one that fails on the last day cannot. Comparing their apparent terminal rates creates maturity bias.
+
+For recovery, group cases by first-failure week or month and close the cohort only after every case has either recovered, reached terminal loss, or passed the selected censoring rule. Show unresolved count and recurring value until then. For voluntary cancellation, choose whether the cohort begins at request time or effective end time. If end-of-period notice varies by billing cadence, report pending-cancel exposure separately from realized outcomes.
+
+When comparing products or gateways, check exposure and mechanics:
+
+- Did the same proportion receive automatic renewal attempts?
+- Did each gateway support the same payment-update and retention paths?
+- Were retry and grace policies equivalent?
+- Were plan prices, billing intervals, and customer tenure comparable?
+- Did one segment contain more remote-scheduled billing?
+- Did a product change, outage, price update, or acquisition campaign affect only one cohort?
+
+A raw “Gateway A has lower involuntary churn than Gateway B” statement is not useful when the populations, capabilities, and observation windows differ. Treat the comparison as diagnostic until those differences are controlled or disclosed.
+
+## Connect the split to financial planning
+
+Customer-count churn and recurring-value loss answer different questions. A store can lose many low-value subscribers voluntarily while a few high-value terminal payment failures create the larger revenue exposure. Report both unique journeys and recurring amount, with currency and tax conventions documented.
+
+For pending voluntary cancellation, show expected recurring value at risk rather than calling it cash lost. For unresolved failures, show value in recovery. For recovered cases, confirm the actual paid renewal. For terminal loss, distinguish booked recurring value from contribution margin and recognize that a saved customer may receive a discount or lower-priced plan.
+
+An operating table can use these columns:
+
+| Segment | Unique journeys | Recurring value | State | Next owner action |
+|---|---:|---:|---|---|
+| Pending voluntary cancellation | count | value at risk | Not terminal | Relevant save path or respectful completion |
+| Recovered failed payments | count | paid value | Recovered | Confirm order and monitor next renewal |
+| Unresolved failed payments | count | value in recovery | Open/censored | Retry, update, reconcile, or customer action |
+| Terminal voluntary | count | recurring value lost | Closed | Root-cause and product/pricing work |
+| Terminal involuntary | count | recurring value lost | Closed | Recovery-policy and payment-path work |
+| Policy/operational/unknown | count | value affected | Closed or under review | Risk, incident, or evidence remediation |
+
+This table prevents a single churn percentage from becoming the entire plan. It also makes ownership explicit: value at risk is not realized revenue, recovery is not confirmed without payment evidence, and an accepted discount has different economics from a full-price renewal.
+
 ## Measurement review checklist
 
 Before presenting voluntary and involuntary churn to leadership, verify:

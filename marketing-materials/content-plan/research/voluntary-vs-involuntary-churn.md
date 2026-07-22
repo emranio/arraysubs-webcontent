@@ -260,7 +260,15 @@ This matters to comparison: a lower save rate on PayPal/Paddle might reflect off
 
 ## Screenshot and UI opportunities
 
-No screenshot was captured during this research pass. Recheck existing images for current UI and sensitive information.
+### Production screenshot pass — 2026-07-22
+
+The existing annotated Renewal Failure Audit and on-hold subscription-detail captures were rechecked and published with captions that treat them as investigation evidence, not terminal churn proof. The clean synthetic Retention Analytics capture from the confirmed local staging pass was also published. No offer was accepted, payment failed, or subscription cancelled for this article.
+
+- `screenshots/live-ui/13-on-hold-subscription-detail-annotated.png` → `on-hold-subscription-detail.png`
+- `screenshots/live-ui/11-renewal-failure-audit-annotated.png` → `renewal-failure-audit.png`
+- `screenshots/live-ui/a070-retention-analytics-original.png` → `retention-analytics.png`
+
+The new retention screenshot annotation attempt failed to locate its requested targets, so the clean analytics original was used without callouts. It contains only synthetic staging evidence and is captioned with the event-count and classification limits documented here.
 
 | Pair | Existing asset / route | Editorial use | Caveat |
 |---|---|---|---|

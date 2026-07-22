@@ -131,6 +131,17 @@ ArraySubs currently logs `cancelled`, `scheduled_cancel`, `cancel_undone`, `offe
 
 ## Screenshot and UI evidence opportunities
 
+### Production screenshot pass — 2026-07-22
+
+The confirmed local staging site was exercised with a synthetic subscription. The customer subscription actions, primary-reason dialog, configured save-offer dialog, and a synthetic Retention Analytics event view were captured and published. The flow was closed without accepting an offer or completing cancellation.
+
+- `screenshots/live-ui/a073-customer-subscription-actions-original.png` → `customer-subscription-actions.png`
+- `screenshots/live-ui/a075-cancellation-survey-modal-original.png` → `customer-reason-dialog.png`
+- `screenshots/live-ui/a074-customer-save-offers-original.png` → `customer-save-offers.png`
+- `screenshots/live-ui/a070-retention-analytics-original.png` → `retention-analytics.png`
+
+The annotation helper could not reliably locate the requested retention targets, so clean originals were used without callouts. Captions state that these are configuration and instrumentation checks, not accessibility certification, legal compliance, save lift, or realized revenue.
+
 No screenshots were captured for this research task. If the article later enters the screenshot stage, useful original captures are:
 
 1. Customer subscription view with the cancellation entry point in context.

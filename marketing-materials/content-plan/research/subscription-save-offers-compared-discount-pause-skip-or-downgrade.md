@@ -168,6 +168,17 @@ These are operational indicators, not causal proof. A customer may accept and ca
 
 ## Screenshot and UI evidence opportunities
 
+### Production screenshot pass — 2026-07-22
+
+The confirmed local staging site was exercised with a synthetic subscription. Current retention-offer controls, the customer discount/pause dialog, related plan-switching settings, and one synthetic Retention Analytics offer event were captured and published. No offer was accepted and no subscription, payment, schedule, or product was changed.
+
+- `screenshots/live-ui/a074-retention-offer-controls-original.png` → `retention-offer-controls.png`
+- `screenshots/live-ui/a074-customer-save-offers-original.png` → `customer-save-offers.png`
+- `screenshots/live-ui/10-plan-switching-settings-original.png` → `plan-switching-settings.png`
+- `screenshots/live-ui/a070-retention-analytics-original.png` → `retention-analytics.png`
+
+The annotation helper did not reliably find the new retention targets, so clean originals were used. Captions distinguish settings/exposure from effectiveness, gateway parity, realized revenue, or causal lift.
+
 No screenshots were captured for this research task. Later, use synthetic data to capture:
 
 1. Retention Flow offer editor with reason triggers and eligibility settings.
