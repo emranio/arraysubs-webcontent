@@ -82,7 +82,7 @@ export function EditorialArtwork({
           className={cn(
             "font-display leading-[1.05] font-semibold text-balance",
             compact
-              ? "mt-5 text-lg sm:text-xl lg:text-2xl"
+              ? "mt-10 text-[1.4rem] leading-[1.1]"
               : "mt-3 text-xl sm:text-2xl lg:text-3xl",
           )}
         >

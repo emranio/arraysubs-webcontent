@@ -13,6 +13,7 @@ import {
   RESOURCE_ARTICLES,
   RESOURCE_BASE,
   RESOURCE_CATEGORIES,
+  RESOURCE_PAGE_SIZE,
   formatArticleDate,
   getArticlePath,
   getCategoryPath,
@@ -38,7 +39,7 @@ export function ResourceArchive({
   heading = "Latest field guides",
 }: ResourceArchiveProps) {
   const paginated = paginateArticles(articles, page);
-  const firstItem = (page - 1) * 6 + 1;
+  const firstItem = (page - 1) * RESOURCE_PAGE_SIZE + 1;
   const lastItem = Math.min(firstItem + paginated.articles.length - 1, articles.length);
 
   return (

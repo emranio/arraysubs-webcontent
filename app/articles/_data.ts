@@ -35,7 +35,7 @@ export type ResourceArticle = {
 
 /** Public archive base. Individual articles intentionally live at /{category}/{slug}/. */
 export const RESOURCE_BASE = "/articles/";
-export const RESOURCE_PAGE_SIZE = 6;
+export const RESOURCE_PAGE_SIZE = 15;
 
 export const RESOURCE_CATEGORIES: ResourceCategory[] = [
   {

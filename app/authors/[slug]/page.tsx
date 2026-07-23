@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   ArrowRight,
@@ -13,11 +14,11 @@ import {
 import { createMetadata, profilePageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
-  ArticleCard,
   Button,
   Container,
   CTA,
   PageHero,
+  Pagination,
   Section,
 } from "@/components/ui";
 import { site } from "@/lib/site";
@@ -36,11 +37,14 @@ import {
   RESOURCE_CATEGORIES,
   formatArticleDate,
   getArticlePath,
+  paginateArticles,
+  readPageNumber,
 } from "@/app/articles/_data";
 
 export const dynamicParams = false;
 
 type RouteParams = Promise<{ slug: string }>;
+type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 
 export function generateStaticParams() {
   return AUTHOR_LIST.map((author) => ({ slug: author.slug }));
@@ -48,17 +52,24 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: RouteParams;
+  searchParams: SearchParams;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
   const author = getAuthor(slug);
   if (!author) return {};
+  const page = readPageNumber(query.page);
+  const authorPath = getAuthorPath(author);
 
   return createMetadata({
-    title: `${author.name} — ${author.jobTitle}`,
+    title:
+      page > 1
+        ? `${author.name} — ${author.jobTitle} — Page ${page}`
+        : `${author.name} — ${author.jobTitle}`,
     description: author.headline,
-    path: getAuthorPath(author),
+    path: page > 1 ? `${authorPath}?page=${page}` : authorPath,
     ogImage: author.image,
   });
 }
@@ -66,6 +77,7 @@ export async function generateMetadata({
 const CATEGORY_NAME = new Map(
   RESOURCE_CATEGORIES.map((category) => [category.slug, category.name]),
 );
+const AUTHOR_ARTICLES_PAGE_SIZE = 15;
 
 function getAuthoredArticles(author: Author) {
   return RESOURCE_ARTICLES.filter(
@@ -85,14 +97,20 @@ function isExternal(url: string) {
 
 export default async function AuthorPage({
   params,
+  searchParams,
 }: {
   params: RouteParams;
+  searchParams: SearchParams;
 }) {
-  const { slug } = await params;
+  const [{ slug }, query] = await Promise.all([params, searchParams]);
   const author = getAuthor(slug);
   if (!author) notFound();
 
   const articles = getAuthoredArticles(author);
+  const page = readPageNumber(query.page);
+  const paginated = paginateArticles(articles, page, AUTHOR_ARTICLES_PAGE_SIZE);
+  if (page > paginated.totalPages) notFound();
+  const authorPath = getAuthorPath(author);
 
   return (
     <>
@@ -128,7 +146,7 @@ export default async function AuthorPage({
       <Section surface="default" spacing="md">
         <Container>
           <div className="grid items-start gap-12 xl:grid-cols-[minmax(0,1fr)_20rem] xl:gap-20">
-            <div className="min-w-0 max-w-3xl">
+            <div className="w-full min-w-0 max-w-none xl:max-w-3xl">
               <figure className="mb-10 flex items-center gap-4 lg:hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -153,7 +171,12 @@ export default async function AuthorPage({
                 </h2>
                 <div className="mt-5 grid gap-5 text-lg leading-8 text-muted">
                   {author.bio.map((paragraph) => (
-                    <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+                    <p
+                      key={paragraph.slice(0, 32)}
+                      className="text-left"
+                    >
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
               </section>
@@ -310,24 +333,41 @@ export default async function AuthorPage({
           <h2 id="articles-title" className="mt-3 text-4xl sm:text-5xl">
             Articles by {author.name}
           </h2>
-          <div className="mt-8 grid gap-[0.1875rem] md:grid-cols-2 xl:grid-cols-3">
-            {articles.map((article) => (
-              <ArticleCard
-                key={article.slug}
-                href={getArticlePath(article)}
-                category={CATEGORY_NAME.get(article.categorySlug) ?? "Resource"}
-                title={article.title}
-                excerpt={article.excerpt}
-                date={formatArticleDate(article.updatedAt)}
-                dateTime={article.updatedAt}
-                readTime={article.readTime}
-                coverLabel={article.cover.label}
-                coverImage={article.cover.image}
-                coverTone={article.cover.tone}
-                headingLevel="h3"
-              />
+          <ul className="mt-8 grid gap-[0.1875rem] md:grid-cols-2 xl:grid-cols-3">
+            {paginated.articles.map((article) => (
+              <li key={article.slug}>
+                <Link
+                  href={getArticlePath(article)}
+                  className="group flex h-full flex-col rounded-xl bg-background p-6 outline-none transition-colors hover:bg-card focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:p-7"
+                >
+                  <span className="text-sm font-semibold tracking-[0.1em] text-primary uppercase">
+                    {CATEGORY_NAME.get(article.categorySlug) ?? "Resource"}
+                  </span>
+                  <h3 className="mt-4 text-2xl leading-tight transition-colors group-hover:text-primary">
+                    {article.title}
+                  </h3>
+                  <span className="mt-auto flex flex-wrap items-center gap-x-2 gap-y-1 pt-7 text-sm font-medium text-faint">
+                    <time dateTime={article.updatedAt}>
+                      Updated {formatArticleDate(article.updatedAt)}
+                    </time>
+                    <span aria-hidden="true">·</span>
+                    <span>{article.readTime}</span>
+                  </span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
+
+          <Pagination
+            currentPage={page}
+            totalPages={paginated.totalPages}
+            label={`Articles by ${author.name} pages`}
+            hrefForPage={(targetPage) =>
+              targetPage === 1
+                ? `${authorPath}#articles`
+                : `${authorPath}?page=${targetPage}#articles`
+            }
+          />
         </Container>
       </Section>
 
