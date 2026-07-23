@@ -4,10 +4,9 @@ meta_description: "Build a WooCommerce failed subscription payment recovery syst
 focus_keyword: "WooCommerce failed subscription payment recovery"
 published: "2026-05-25"
 updated: "2026-06-07"
-last_verified: "2026-07-13"
+last_verified: "2026-06-07"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Failed Subscription Payment Recovery for WooCommerce

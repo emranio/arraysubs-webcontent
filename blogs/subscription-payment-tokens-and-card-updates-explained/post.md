@@ -4,10 +4,9 @@ meta_description: "Learn how WooCommerce subscription payment tokens, provider v
 focus_keyword: "subscription payment tokens and card updates"
 published: "2026-05-07"
 updated: "2026-06-18"
-last_verified: "2026-07-22"
+last_verified: "2026-06-18"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Subscription Payment Tokens and Card Updates Explained

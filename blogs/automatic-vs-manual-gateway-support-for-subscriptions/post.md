@@ -4,10 +4,9 @@ meta_description: "Learn why a WooCommerce gateway can work at checkout but not 
 focus_keyword: "automatic vs manual subscription gateway support"
 published: "2026-06-04"
 updated: "2026-07-13"
-last_verified: "2026-07-22"
+last_verified: "2026-07-13"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Automatic vs Manual Gateway Support for Subscriptions
@@ -622,7 +621,7 @@ Use the [ArraySubs payment gateway feature overview](/deals/arraysubs/features/#
 
 ## Verification scope, limitations, and update log
 
-This explainer was last reverified on July 22, 2026, by Emran at ArrayHash and reviewed by the ArraySubs Engineering Team. Verification combined ArraySubs Free and Pro source inspection, current primary gateway and WooCommerce documentation, and fresh staging captures of WooCommerce payment providers, ArraySubs Gateway Health, and privacy-safe subscription triage controls.
+This explainer was written and fact-checked by Emran at ArrayHash. Verification during the latest update combined ArraySubs Free and Pro source inspection, current primary gateway and WooCommerce documentation, and fresh staging captures of WooCommerce payment providers, ArraySubs Gateway Health, and privacy-safe subscription triage controls.
 
 The staging pass verified installed interfaces, provider rows, automatic-adapter visibility, readiness metrics, event-log controls, and gateway/lifecycle filters. It did **not** enable or fund any gateway, create a new renewal, perform an off-session charge, deliver a provider webhook, authenticate with 3D Secure, switch a subscription across providers, cancel a remote PayPal/Paddle agreement, or pay the manual renewal shown in the preserved customer-portal screenshot. The capability classifications and code gaps are version-specific and must be tested against the exact offer, country, method, and integration versions before launch.
 

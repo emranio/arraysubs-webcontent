@@ -4,10 +4,9 @@ meta_description: "See the WooCommerce subscription payment failure timeline acr
 focus_keyword: "what happens when subscription payment fails WooCommerce"
 published: "2026-06-23"
 updated: "2026-06-24"
-last_verified: "2026-07-13"
+last_verified: "2026-06-24"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # What Happens When a Subscription Payment Fails?

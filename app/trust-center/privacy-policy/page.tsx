@@ -17,12 +17,12 @@ import {
   TrustCrossLinks,
 } from "../_components";
 
-const PRIVACY_REVIEWED_DATE = "July 15, 2026";
+const PRIVACY_REVIEWED_DATE = "July 23, 2026";
 
 export const metadata: Metadata = createMetadata({
   title: "Privacy Policy",
   description:
-    "ArrayHash privacy policy for ArraySubs, including website forms, roadmap participation, GA4 analytics, payment providers, cookies, privacy rights, and the no plugin telemetry commitment.",
+    "ArrayHash privacy policy for ArraySubs, including website forms, roadmap participation, GA4 analytics, affiliate attribution, payment providers, cookies, privacy rights, and the no plugin telemetry commitment.",
   path: "/trust-center/privacy-policy/",
 });
 
@@ -35,7 +35,7 @@ export default function PrivacyPolicyPage() {
           { name: "Privacy Policy", href: "/trust-center/privacy-policy/" },
         ]}
         title="Privacy Policy"
-        subtitle="This policy explains what ArrayHash collects on the ArraySubs website, how GA4 and payment providers are used, and what data ArraySubs does not collect from WordPress stores."
+        subtitle="This policy explains what ArrayHash collects on the ArraySubs website, how analytics, affiliate attribution and payment providers are used, and what data ArraySubs does not collect from WordPress stores."
         highlights={[
           "No plugin telemetry",
           "No sale of personal data",
@@ -119,7 +119,12 @@ export default function PrivacyPolicyPage() {
                 "Understand aggregate website usage and improve pages.",
               ],
               [
-                "Payment and checkout providers",
+                "Affiliate attribution",
+                "Referral code, GoAffPro visitor identifier, and landing or referral information needed to attribute a purchase",
+                "Remember an affiliate referral, validate attribution and process commissions.",
+              ],
+              [
+                "Stripe and Freemius",
                 "Checkout, transaction, tax, invoice, license and account records needed to process purchases",
                 "Complete payments, handle licenses, issue refunds, prevent fraud and meet legal obligations.",
               ],
@@ -175,6 +180,11 @@ export default function PrivacyPolicyPage() {
                 "Advertising and retargeting tags load only after the visitor opts in, and the choice can be withdrawn at any time.",
               ],
               [
+                "Affiliate attribution and commission handling",
+                "Legitimate interests and contract",
+                "GoAffPro helps recognize referrals, validate purchase attribution and process valid affiliate commissions.",
+              ],
+              [
                 "Roadmap suggestions and upvotes",
                 "Consent and legitimate interests",
                 "The anonymous participation cookie is created only after an on-demand choice. Duplicate-vote and submission limits protect the public roadmap from ordinary abuse.",
@@ -182,7 +192,7 @@ export default function PrivacyPolicyPage() {
               [
                 "Payments, licenses, tax and refunds",
                 "Contract and legal obligation",
-                "Payment and checkout providers process license and transaction records needed for the purchase.",
+                "Stripe and Freemius process the license and transaction records needed for the purchase.",
               ],
               [
                 "Security and abuse prevention",
@@ -216,6 +226,20 @@ export default function PrivacyPolicyPage() {
                 "Loaded on every visit.",
               ],
               [
+                "ref",
+                "Affiliate attribution",
+                "Stores the GoAffPro affiliate referral code associated with the visit.",
+                "Up to 60 days",
+                "Set by the site-wide GoAffPro loader when a referral is recognized.",
+              ],
+              [
+                "gfp_v_id",
+                "Affiliate attribution",
+                "Stores the GoAffPro visit identifier used to support referral attribution.",
+                "Up to 60 days",
+                "Set by the site-wide GoAffPro loader.",
+              ],
+              [
                 "array_hash_re_ok",
                 "Retargeting",
                 "Records that the visitor opted in to retargeting so advertising tags may load.",
@@ -245,6 +269,15 @@ export default function PrivacyPolicyPage() {
             the footer Privacy choices control. Rejecting or withdrawing
             retargeting consent clears the first-party retargeting marker
             (array_hash_re_ok) that is visible to this site.
+          </p>
+          <p>
+            The GoAffPro affiliate loader runs site-wide before interaction so
+            a qualifying referral can be remembered from the first landing
+            page. It may set the <strong>ref</strong> and{" "}
+            <strong>gfp_v_id</strong> cookies for affiliate attribution. The
+            configured affiliate attribution window is 60 days. Affiliate
+            commission reporting is completed after Freemius confirms a
+            qualifying payment; this is separate from advertising retargeting.
           </p>
           <p>
             ArrayHash uses advertising and retargeting tags only after a visitor
@@ -318,9 +351,28 @@ export default function PrivacyPolicyPage() {
                 </>,
               ],
               [
-                "Checkout and licensing provider",
+                "Freemius",
                 "Checkout, licensing, account and transaction management",
-                "Used for payment and licensing workflows, not ArraySubs plugin telemetry.",
+                <>
+                  Used for payment and licensing workflows, not ArraySubs
+                  plugin telemetry. See the{" "}
+                  <ExternalLink href="https://freemius.com/privacy/">
+                    Freemius privacy policy
+                  </ExternalLink>
+                  .
+                </>,
+              ],
+              [
+                "GoAffPro",
+                "Affiliate referral attribution and commission processing",
+                <>
+                  Receives referral and purchase-attribution information needed
+                  to validate affiliate commissions. See the{" "}
+                  <ExternalLink href="https://goaffpro.com/privacy/">
+                    GoAffPro privacy policy
+                  </ExternalLink>
+                  .
+                </>,
               ],
               [
                 "Hosting provider",
@@ -351,6 +403,10 @@ export default function PrivacyPolicyPage() {
               [
                 "GA4 analytics",
                 "Collected on every visit and retained according to the active GA4 property settings.",
+              ],
+              [
+                "Affiliate referral and attribution data",
+                "Referral cookies use the configured 60-day attribution window. Commission and transaction attribution records are retained as needed for affiliate accounting, fraud prevention and legal obligations.",
               ],
               [
                 "Roadmap ideas and vote records",

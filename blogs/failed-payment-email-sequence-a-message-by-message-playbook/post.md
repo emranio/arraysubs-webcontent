@@ -4,10 +4,9 @@ meta_description: "Build a failed-payment email sequence with state-based trigge
 focus_keyword: "failed payment email sequence"
 published: "2026-02-17"
 updated: "2026-03-26"
-last_verified: "2026-07-16"
+last_verified: "2026-03-26"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Failed Payment Email Sequence: A Message-by-Message Playbook
@@ -338,7 +337,6 @@ Verified payment, manual resolution, voluntary cancellation, completed downgrade
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes payment-failure hooks, WooCommerce email templates, lifecycle emails, retry state, and stop-condition evidence.
 
 **Verification environment:** Source and settings review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current official WooCommerce, Stripe, and Google sender documentation. No production sequence or deliverability experiment was run.
 

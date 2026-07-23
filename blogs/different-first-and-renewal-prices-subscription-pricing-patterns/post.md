@@ -4,10 +4,9 @@ meta_description: "Design a different first and renewal price in WooCommerce wit
 focus_keyword: "different first and renewal price WooCommerce"
 published: "2026-06-27"
 updated: "2026-07-16"
-last_verified: "2026-07-13"
+last_verified: "2026-07-16"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Different First and Renewal Prices: Subscription Pricing Patterns

@@ -4,10 +4,9 @@ meta_description: "Build a clear WooCommerce subscription product page with comp
 focus_keyword: "WooCommerce subscription product page"
 published: "2026-04-16"
 updated: "2026-04-29"
-last_verified: "2026-07-13"
+last_verified: "2026-04-29"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Anatomy of a High-Converting WooCommerce Subscription Product Page

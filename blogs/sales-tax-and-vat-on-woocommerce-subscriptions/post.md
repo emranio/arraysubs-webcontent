@@ -4,10 +4,9 @@ meta_description: "Learn how sales tax and VAT work on WooCommerce subscriptions
 focus_keyword: "sales tax and VAT on WooCommerce subscriptions"
 published: "2026-01-31"
 updated: "2026-06-25"
-last_verified: "2026-07-22"
+last_verified: "2026-06-25"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Sales Tax and VAT on WooCommerce Subscriptions

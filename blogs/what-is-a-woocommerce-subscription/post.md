@@ -4,10 +4,9 @@ meta_description: "Learn how WooCommerce subscription products, customer agreeme
 focus_keyword: "what is a WooCommerce subscription"
 published: "2026-05-30"
 updated: "2026-06-08"
-last_verified: "2026-07-13"
+last_verified: "2026-06-08"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # What Is a WooCommerce Subscription? Products, Orders, and Renewals Explained
@@ -239,6 +238,6 @@ ArraySubs uses this WooCommerce-centered model for subscription products, agreem
 
 **Editorial disclosure:** ArraySubs is an ArrayHash product and this article is published on the ArraySubs site. Linked official WooCommerce sources support the educational definitions.
 
-**Verification note:** Documentation was verified on July 13, 2026. No ArraySubs end-to-end checkout or renewal transaction was run specifically for this explainer.
+**Verification note:** Documentation was rechecked during the article's latest update. No ArraySubs end-to-end checkout or renewal transaction was run specifically for this explainer.
 
 **Update log:** July 2026 — Initial publication; entity relationships, renewal paths, status terminology, and WooCommerce Subscriptions 9.0-era product language verified.

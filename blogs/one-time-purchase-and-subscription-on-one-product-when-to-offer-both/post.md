@@ -4,10 +4,9 @@ meta_description: "Decide when to offer buy once or subscribe on one WooCommerce
 focus_keyword: "one time purchase and subscription same product"
 published: "2026-07-05"
 updated: "2026-07-16"
-last_verified: "2026-07-13"
+last_verified: "2026-07-16"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # One-Time Purchase and Subscription on One Product: When to Offer Both

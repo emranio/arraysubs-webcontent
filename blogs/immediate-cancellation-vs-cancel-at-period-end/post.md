@@ -4,10 +4,9 @@ meta_description: "Compare immediate subscription cancellation with cancel at pe
 focus_keyword: "immediate vs end of period cancellation"
 published: "2026-04-28"
 updated: "2026-04-29"
-last_verified: "2026-07-13"
+last_verified: "2026-04-29"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Immediate Cancellation vs Cancel at Period End

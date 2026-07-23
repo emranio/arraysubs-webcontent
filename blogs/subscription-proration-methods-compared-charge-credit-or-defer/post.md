@@ -4,10 +4,9 @@ meta_description: "Compare immediate subscription proration, deferred plan chang
 focus_keyword: "subscription proration methods"
 published: "2026-03-04"
 updated: "2026-06-03"
-last_verified: "2026-07-13"
+last_verified: "2026-06-03"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Subscription Proration Methods Compared: Charge, Credit, or Defer

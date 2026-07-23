@@ -4,10 +4,9 @@ meta_description: "Learn how SCA and 3D Secure affect subscription renewals, off
 focus_keyword: "SCA 3D Secure subscription renewals"
 published: "2026-01-15"
 updated: "2026-07-02"
-last_verified: "2026-07-22"
+last_verified: "2026-07-02"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # SCA and 3D Secure for Subscription Renewals
@@ -558,7 +557,7 @@ PayPal and Paddle own their remote subscription, checkout/payment, and provider 
 
 ## Methodology, limitations, and update log
 
-This article was last reverified on July 22, 2026, by Emran at ArrayHash and reviewed by the ArraySubs Engineering Team. It combines primary regulator, standards-body, Stripe, WooCommerce, PayPal, and Paddle documentation with a first-party review of ArraySubs 1.8.11, ArraySubs Pro 1.1.2, and the confirmed staging interface.
+This article was written and fact-checked by Emran at ArrayHash. Verification during the latest update combined primary regulator, standards-body, Stripe, WooCommerce, PayPal, and Paddle documentation with a first-party review of ArraySubs 1.8.11, ArraySubs Pro 1.1.2, and the confirmed staging interface.
 
 The staging pass verified the official Stripe provider and account-connection surfaces, ArraySubs’ Stripe capability display, and the separate official and secondary webhook checks. It did **not** connect a Stripe account, use a test card, create a SetupIntent or PaymentIntent, invoke 3D Secure, receive a provider-originated webhook, complete a recovery link, update a payment method, or execute a renewal. The screenshots intentionally show unconfigured negative states; they demonstrate what operators can inspect, not a healthy production environment or live issuer behavior.
 

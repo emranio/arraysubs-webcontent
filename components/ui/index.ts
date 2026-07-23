@@ -8,6 +8,7 @@ export { SectionTitle } from "./SectionTitle";
 export { Button } from "./Button";
 export { Badge } from "./Badge";
 export { EditorialArtwork } from "./EditorialArtwork";
+export { OrganicPortrait } from "./OrganicPortrait";
 export { Breadcrumbs, type BreadcrumbItem } from "./Breadcrumbs";
 export { IconCard } from "./IconCard";
 export { OfferCard } from "./OfferCard";

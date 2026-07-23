@@ -4,10 +4,9 @@ meta_description: "Use this WooCommerce subscription disclosure checklist for pr
 focus_keyword: "subscription terms on product page"
 published: "2026-04-03"
 updated: "2026-07-06"
-last_verified: "2026-07-13"
+last_verified: "2026-07-06"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Subscription Terms Customers Must See Before They Pay

@@ -4,10 +4,9 @@ meta_description: "Translate membership policy into AND, OR, and grouped access 
 focus_keyword: "AND OR membership access rules"
 published: "2026-06-08"
 updated: "2026-06-24"
-last_verified: "2026-07-16"
+last_verified: "2026-06-24"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # AND/OR Membership Access Rules Explained with Examples
@@ -343,7 +342,6 @@ No. URL, shop, content, download, and pricing subsystems can differ. Check each 
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce membership architecture, access policy, and technical education.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes shared condition evaluation, builder nesting, condition types, multi-select behavior, schedules, and subsystem precedence.
 
 **Verification environment:** Source and read-only live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026. The screenshot used unsaved UI state; no access rule or member data was changed.
 

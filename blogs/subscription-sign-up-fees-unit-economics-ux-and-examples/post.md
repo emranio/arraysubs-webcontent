@@ -4,10 +4,9 @@ meta_description: "Calculate a defensible subscription sign-up fee, disclose the
 focus_keyword: "subscription sign up fee best practices"
 published: "2026-06-06"
 updated: "2026-07-14"
-last_verified: "2026-07-13"
+last_verified: "2026-07-14"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Subscription Sign-Up Fees: Unit Economics, UX, and Examples

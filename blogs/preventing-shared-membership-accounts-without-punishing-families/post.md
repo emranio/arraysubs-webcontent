@@ -4,10 +4,9 @@ meta_description: "Prevent shared membership accounts with session limits, famil
 focus_keyword: "prevent shared membership accounts"
 published: "2026-02-11"
 updated: "2026-03-15"
-last_verified: "2026-07-20"
+last_verified: "2026-03-15"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Preventing Shared Membership Accounts Without Punishing Families
@@ -390,7 +389,6 @@ No. It is an ArraySubs Pro module. The free core still provides the shared membe
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscriptions, membership architecture, access policy, and technical SEO.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes WordPress session handling, effective-limit resolution, conditional rules, oldest-session invalidation, admin and impersonation behavior, and product boundaries.
 
 **Verification environment:** Source review of current local ArraySubs and ArraySubs Pro on July 20, 2026; browser review of **Member Access → Login Limit** on the user-supplied local staging site with ArraySubs 1.8.11 and ArraySubs Pro 1.1.2; and a read-only mirror comparison. Pro was temporarily activated for the local screenshots, the example rule was not saved, and Pro was restored to inactive afterward. No end-to-end session-eviction timing claim was made.
 

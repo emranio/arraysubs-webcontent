@@ -4,10 +4,9 @@ meta_description: "Compare hard, metered, freemium, and partial-content paywalls
 focus_keyword: "hard paywall vs metered paywall vs freemium"
 published: "2026-05-13"
 updated: "2026-07-04"
-last_verified: "2026-07-16"
+last_verified: "2026-07-04"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Hard Paywall vs Metered Paywall vs Freemium Content
@@ -301,7 +300,6 @@ Authorize before serving protected content and bypass or vary caches with reliab
 
 **Author:** Emran, ArrayHash — product and editorial work across WordPress membership and content-access strategy.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes restriction surfaces, rendering, archive/denied behavior, scheduling, cache risk, and native-meter boundaries.
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current Google Search, WooCommerce Memberships, and MemberPress documentation. No paywall conversion, search, or cohort experiment was performed.
 

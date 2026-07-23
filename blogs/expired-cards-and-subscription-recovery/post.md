@@ -4,10 +4,9 @@ meta_description: "Recover WooCommerce subscriptions after card expiration with 
 focus_keyword: "expired card subscription recovery"
 published: "2026-03-09"
 updated: "2026-05-28"
-last_verified: "2026-07-16"
+last_verified: "2026-05-28"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Expired Cards and Subscription Recovery
@@ -255,7 +254,6 @@ A verified successful payment on the exact renewal plus a paid order, intended s
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes payment-method coordination, gateway portal paths, safe descriptors, Stripe events, renewal collection, and lifecycle reconciliation.
 
 **Verification environment:** Source and UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current official WooCommerce, Stripe, PayPal, Paddle, and PCI SSC documentation. No real card was allowed to expire and no live gateway recovery was executed.
 

@@ -5,9 +5,8 @@ meta_description: "Design multi-gateway resilience for WooCommerce subscriptions
 focus_keyphrase: "multi-gateway resilience subscription store"
 published: "2026-02-17"
 updated: "2026-05-29"
-last_verified: "2026-07-22"
-author: "ArraySubs Editorial Team"
-reviewer: "ArraySubs Product Team"
+last_verified: "2026-05-29"
+author: "Emran"
 ---
 
 # Multi-Gateway Resilience for Subscription Stores
@@ -350,7 +349,7 @@ The exercise passes when the team distinguishes new checkout from installed rene
 
 ## Verification environment and limits
 
-This guide was last verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, WordPress 7.0.2, WooCommerce 10.9.4, current code, fresh local Gateway Health screens, and the primary provider and WooCommerce sources below.
+This guide was verified during its latest update against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, WordPress 7.0.2, WooCommerce 10.9.4, current code, fresh local Gateway Health screens, and the primary provider and WooCommerce sources below.
 
 We did not simulate a production provider outage, run a live renewal failure, migrate credentials, test every cart portfolio, replay live webhooks, or verify every customer update flow. Provider status and account behavior can change. Re-run the incident tests on the exact store before relying on them.
 

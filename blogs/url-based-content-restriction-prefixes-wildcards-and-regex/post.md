@@ -4,10 +4,9 @@ meta_description: "Use exact, prefix, contains, and regex URL restrictions safel
 focus_keyword: "URL based content restriction WordPress"
 published: "2026-02-26"
 updated: "2026-04-24"
-last_verified: "2026-07-16"
+last_verified: "2026-04-24"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # URL-Based Content Restriction: Prefixes, Wildcards, and Regex
@@ -293,7 +292,6 @@ No. Protect the file endpoint and underlying object separately.
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce membership access and technical SEO.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes request normalization, matcher behavior, exclusions, priority, redirects, regex risk, and live UI evidence.
 
 **Verification environment:** Source and read-only live UI review of ArraySubs 1.8.11 on July 16, 2026. No URL rule, user, or content setting was saved or changed.
 

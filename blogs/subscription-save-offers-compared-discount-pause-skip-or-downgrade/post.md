@@ -5,9 +5,8 @@ meta_description: "Compare subscription discount, pause, skip, and downgrade off
 focus_keyphrase: "subscription save offers"
 published: "2026-01-26"
 updated: "2026-06-30"
-last_verified: "2026-07-22"
-author: "ArraySubs Editorial Team"
-reviewer: "ArraySubs Product Team"
+last_verified: "2026-06-30"
+author: "Emran"
 ---
 
 # Subscription Save Offers Compared: Discount, Pause, Skip, or Downgrade
@@ -472,7 +471,7 @@ No. The inspected capability check currently allows automatic Stripe and manual 
 
 ## Verification environment and limits
 
-This guide was verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, current retention-offer, pause, skip, plan-switching, scheduling, gateway, and analytics source, plus a safe local staging reason-to-offer sequence.
+This guide was verified during its latest update against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, current retention-offer, pause, skip, plan-switching, scheduling, gateway, and analytics source, plus a safe local staging reason-to-offer sequence.
 
 The staging flow showed configured discount and pause options and created one synthetic offer-shown event. No offer was accepted, no subscription changed, no renewal was skipped, no downgrade was completed, and no payment was attempted. No save-rate or revenue-lift claim is made.
 

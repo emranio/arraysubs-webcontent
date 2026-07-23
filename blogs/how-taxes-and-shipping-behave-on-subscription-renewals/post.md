@@ -4,10 +4,9 @@ meta_description: "Reconcile WooCommerce subscription renewal tax and shipping a
 focus_keyword: "WooCommerce subscription renewal tax shipping"
 published: "2026-06-14"
 updated: "2026-07-01"
-last_verified: "2026-07-13"
+last_verified: "2026-07-01"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # How Taxes and Shipping Behave on Subscription Renewals

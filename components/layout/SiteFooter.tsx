@@ -74,6 +74,7 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
       ["Terms", "/trust-center/terms-of-service/"],
       ["GDPR + CCPA", "/trust-center/gdpr-ccpa-compliance/"],
       ["Accessibility", "/trust-center/accessibility-compliance/"],
+      ["Editorial Standards", "/trust-center/editorial-standards/"],
       ["Contact", "/contact/"],
     ],
   },

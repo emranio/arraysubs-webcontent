@@ -4,10 +4,9 @@ meta_description: "Decide when to allow multiple WooCommerce subscriptions per c
 focus_keyword: "multiple WooCommerce subscriptions per customer"
 published: "2026-01-12"
 updated: "2026-02-06"
-last_verified: "2026-07-13"
+last_verified: "2026-02-06"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Multiple Subscriptions per Customer: Policy, Cart, and Billing Tradeoffs

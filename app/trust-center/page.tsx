@@ -29,16 +29,17 @@ import {
   ExternalLink,
   InlineLink,
   PolicyList,
-  REVIEWED_DATE,
   TRUST_LINKS,
 } from "./_components";
 
 export const metadata: Metadata = createMetadata({
   title: "Trust Center",
   description:
-    "ArrayHash Trust Center for ArraySubs privacy, data safety, refunds, terms, GDPR and CCPA compliance, accessibility, payment providers, and GA4 practices.",
+    "ArrayHash Trust Center for ArraySubs privacy, data safety, refunds, terms, GDPR and CCPA compliance, accessibility, editorial standards, payment providers, and GA4 practices.",
   path: "/trust-center/",
 });
+
+const TRUST_CENTER_REVIEWED_DATE = "July 23, 2026";
 
 const TRUST_ITEMS = [
   {
@@ -77,6 +78,12 @@ const TRUST_ITEMS = [
     description: TRUST_LINKS[5].description,
     href: TRUST_LINKS[5].href,
   },
+  {
+    icon: <BadgeCheck className="size-6" />,
+    title: TRUST_LINKS[6].title,
+    description: TRUST_LINKS[6].description,
+    href: TRUST_LINKS[6].href,
+  },
 ];
 
 export default function TrustCenterPage() {
@@ -88,9 +95,9 @@ export default function TrustCenterPage() {
           { name: "Trust Center", href: "/trust-center/" },
         ]}
         title="Trust Center — Everything legal and operational in one place"
-        subtitle="Clear policies for ArrayHash, ArraySubs, website analytics, payment processing, licensing, refunds, privacy rights, and accessibility. These pages explain what ArrayHash collects on this website, what payment and licensing providers process, and what ArraySubs does not send from your WordPress site."
+        subtitle="Clear policies for ArrayHash, ArraySubs, website analytics, affiliate attribution, payment processing, licensing, refunds, privacy rights, accessibility, and editorial standards. These pages explain what ArrayHash collects on this website, what Stripe, Freemius, and GoAffPro process, and what ArraySubs does not send from your WordPress site."
         highlights={[
-          "Consent-gated analytics disclosed",
+          "Always-on aggregate analytics disclosed",
           "No plugin telemetry or WooCommerce store metrics",
           "Privacy rights handled by email",
         ]}
@@ -163,8 +170,9 @@ export default function TrustCenterPage() {
                 <PolicyList
                   items={[
                     "Website forms collect only the fields needed for signup, license request, newsletter, support and contact workflows.",
-                    "GA4/GTM analytics loads only after analytics consent is accepted.",
-                    "Payment, checkout and licensing providers are active for purchases, licenses, taxes where applicable, account management and transaction support.",
+                    "GA4/GTM analytics loads as necessary aggregate measurement; retargeting loads only after opt-in.",
+                    "Stripe and Freemius are active for purchases, licenses, taxes where applicable, account management and transaction support.",
+                    "GoAffPro supports affiliate referral attribution and commission processing.",
                     "ArraySubs does not collect plugin or theme installations, activations, usage telemetry, WooCommerce store metrics, WordPress admin emails, user emails or plugin logs.",
                   ]}
                 />
@@ -180,9 +188,10 @@ export default function TrustCenterPage() {
               />
               <dl className="mt-8 grid gap-[0.1875rem]">
                 {[
-                  ["Google Analytics 4 / GTM", "Consent-gated aggregate website analytics"],
+                  ["Google Analytics 4 / GTM", "Always-on aggregate website analytics"],
                   ["Stripe", "Payment processing and card handling"],
-                  ["Checkout and licensing provider", "Checkout, licensing, account and transaction management"],
+                  ["Freemius", "Checkout, licensing, account, tax and transaction management"],
+                  ["GoAffPro", "Affiliate referral attribution and commission processing"],
                 ].map(([name, value]) => (
                   <div
                     key={name}
@@ -207,7 +216,7 @@ export default function TrustCenterPage() {
               <p className="mt-3 text-muted">
                 Trust pages are reviewed when data practices, providers, payment
                 flows or legal requirements change. Current review date:{" "}
-                {REVIEWED_DATE}. Effective date: {EFFECTIVE_DATE}.
+                {TRUST_CENTER_REVIEWED_DATE}. Effective date: {EFFECTIVE_DATE}.
               </p>
             </div>
             <div className="rounded-xl bg-card p-6 text-foreground">

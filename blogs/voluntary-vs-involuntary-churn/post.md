@@ -5,9 +5,8 @@ meta_description: "Separate voluntary cancellation from terminal failed-payment 
 focus_keyphrase: "voluntary vs involuntary churn"
 published: "2026-04-23"
 updated: "2026-06-11"
-last_verified: "2026-07-22"
-author: "ArraySubs Editorial Team"
-reviewer: "ArraySubs Product Team"
+last_verified: "2026-06-11"
+author: "Emran"
 ---
 
 # Voluntary vs Involuntary Churn
@@ -407,7 +406,7 @@ Not rigorously in the inspected implementation. It supplies useful cancellation,
 
 ## Verification environment and limits
 
-This guide was verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, current cancellation, renewal, retry, gateway, and Retention Analytics source, plus safe local staging screens for cancellation controls, on-hold lifecycle evidence, renewal-failure audit, and retention activity.
+This guide was verified during its latest update against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, current cancellation, renewal, retry, gateway, and Retention Analytics source, plus safe local staging screens for cancellation controls, on-hold lifecycle evidence, renewal-failure audit, and retention activity.
 
 No live charge, failed-payment recovery, offer acceptance, or customer cancellation was completed for this article. The formulas and classification framework are original editorial recommendations, not built-in reports or performance claims.
 

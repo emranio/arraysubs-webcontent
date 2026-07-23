@@ -4,10 +4,9 @@ meta_description: "Protect WordPress membership downloads with request-time auth
 focus_keyword: "protect membership downloads WordPress"
 published: "2026-04-06"
 updated: "2026-05-25"
-last_verified: "2026-07-16"
+last_verified: "2026-05-25"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Protecting Membership Downloads in WordPress
@@ -240,7 +239,6 @@ No. Authorize the file, media stream, or API independently.
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscriptions, membership access, and technical SEO.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes request-time conditions, nonce semantics, local/external delivery, origin security, scheduling, and revocation.
 
 **Verification environment:** Source and read-only live UI review of ArraySubs 1.8.11 and WooCommerce/WordPress documentation on July 16, 2026. No live download rule or customer data was changed.
 

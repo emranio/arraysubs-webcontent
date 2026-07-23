@@ -26,7 +26,7 @@ const articleComponents: Components = {
     </h4>
   ),
   p: ({ children }) => (
-    <p className="mt-5 hyphens-auto text-justify text-lg leading-8 text-muted">
+    <p className="mt-5 text-left text-lg leading-8 text-muted md:text-justify">
       {children}
     </p>
   ),
@@ -66,7 +66,7 @@ const articleComponents: Components = {
     </ol>
   ),
   li: ({ children, ...props }) => (
-    <li className="min-w-0 hyphens-auto pl-1 text-justify leading-7" {...props}>
+    <li className="min-w-0 pl-1 text-left leading-7 md:text-justify" {...props}>
       {children}
     </li>
   ),

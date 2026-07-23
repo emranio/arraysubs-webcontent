@@ -4,10 +4,9 @@ meta_description: "Design membership levels around distinct outcomes, sustainabl
 focus_keyword: "membership level strategy"
 published: "2026-04-26"
 updated: "2026-05-18"
-last_verified: "2026-07-16"
+last_verified: "2026-05-18"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Membership Level Strategy: Free, Paid, Lifetime, and Tiered Access
@@ -298,7 +297,6 @@ Yes, variations can represent cadences, but decide whether both grant identical 
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce membership packaging and access architecture.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes product/variation levels, roles, feature aggregation, lifetime products, fixed periods, switching, and access-rule change risk.
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current WooCommerce and WordPress documentation. No pricing conversion, churn, or willingness-to-pay dataset was supplied.
 

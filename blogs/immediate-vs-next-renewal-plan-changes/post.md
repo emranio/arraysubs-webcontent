@@ -4,10 +4,9 @@ meta_description: "Choose whether WooCommerce subscription upgrades and downgrad
 focus_keyword: "immediate vs next renewal plan change"
 published: "2026-01-20"
 updated: "2026-04-30"
-last_verified: "2026-07-13"
+last_verified: "2026-04-30"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Immediate vs Next-Renewal Subscription Plan Changes

@@ -4,10 +4,9 @@ meta_description: "Learn which WooCommerce subscription webhooks to monitor acro
 focus_keyword: "WooCommerce subscription webhooks"
 published: "2026-03-02"
 updated: "2026-07-19"
-last_verified: "2026-07-22"
+last_verified: "2026-07-19"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Subscription Webhooks: Events Every WooCommerce Store Should Monitor

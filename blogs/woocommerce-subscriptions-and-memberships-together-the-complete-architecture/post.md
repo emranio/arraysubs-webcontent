@@ -4,10 +4,9 @@ meta_description: "Connect WooCommerce subscription billing to membership access
 focus_keyword: "WooCommerce subscriptions and memberships together"
 published: "2026-04-09"
 updated: "2026-07-13"
-last_verified: "2026-07-16"
+last_verified: "2026-07-13"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # WooCommerce Subscriptions and Memberships Together: The Complete Architecture
@@ -251,7 +250,6 @@ No equivalent membership-plan/user-membership CPT exists in the inspected versio
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription and membership architecture.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes billing/access records, statuses, role lifecycle, rules, conflicts, schedules, gateways, and reconciliation.
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current WooCommerce and WordPress documentation. No live status transition or access mutation was performed on the mirror.
 

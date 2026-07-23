@@ -4,10 +4,9 @@ meta_description: "Audit involuntary churn recovery across gateways, tokens, ret
 focus_keyword: "involuntary churn recovery checklist"
 published: "2026-06-11"
 updated: "2026-06-22"
-last_verified: "2026-07-16"
+last_verified: "2026-06-22"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Involuntary Churn Recovery Checklist
@@ -257,7 +256,6 @@ Until the full retry and grace window has closed and the invoice reaches a final
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes gateway ownership, retry/grace boundaries, renewal audits, payment reconciliation, customer recovery, and analytics semantics.
 
 **Verification environment:** Source and UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current official WooCommerce, Stripe, PayPal, Paddle, Google, and PCI SSC guidance. No statistically valid recovery cohort or live gateway matrix was run.
 

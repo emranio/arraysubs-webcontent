@@ -4,10 +4,9 @@ meta_description: "Understand WooCommerce subscription records, parent orders, a
 focus_keyword: "subscription order vs renewal order"
 published: "2026-07-19"
 updated: "2026-07-20"
-last_verified: "2026-07-13"
+last_verified: "2026-07-20"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Subscription Order vs Renewal Order vs Parent Order

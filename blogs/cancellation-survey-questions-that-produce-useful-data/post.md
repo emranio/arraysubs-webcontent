@@ -5,9 +5,8 @@ meta_description: "Use neutral cancellation survey questions, stable reason code
 focus_keyphrase: "cancellation survey questions"
 published: "2026-06-07"
 updated: "2026-07-20"
-last_verified: "2026-07-22"
-author: "ArraySubs Editorial Team"
-reviewer: "ArraySubs Product Team"
+last_verified: "2026-07-20"
+author: "Emran"
 ---
 
 # Cancellation Survey Questions That Produce Useful Data
@@ -530,7 +529,7 @@ Not necessarily. The current implementation can count scheduled and terminal eve
 
 ## Verification environment and limits
 
-This guide was verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, current reason, cancellation, offer, and analytics source, plus a safe local staging cancellation flow with a synthetic subscription.
+This guide was verified during its latest update against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, current reason, cancellation, offer, and analytics source, plus a safe local staging cancellation flow with a synthetic subscription.
 
 The staging pass confirmed the editable reason configuration, one primary reason selector, conditional Other detail, configured discount/pause offers, and one synthetic `offer_shown` event. No real customer data, offer acceptance, cancellation, controlled study, or published reason distribution was used. The recommended question set requires merchant-specific pretesting, accessibility/privacy review, and appropriate legal review.
 

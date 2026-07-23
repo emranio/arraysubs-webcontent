@@ -4,10 +4,9 @@ meta_description: "Design recurring WooCommerce subscription coupons with paymen
 focus_keyword: "WooCommerce recurring coupon strategy"
 published: "2026-01-31"
 updated: "2026-06-14"
-last_verified: "2026-07-13"
+last_verified: "2026-06-14"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Recurring Subscription Coupons: Economics and Abuse Controls

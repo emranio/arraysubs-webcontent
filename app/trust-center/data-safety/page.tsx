@@ -12,15 +12,16 @@ import {
   PolicyNote,
   PolicySection,
   PolicyTable,
-  REVIEWED_DATE,
   TrustContactCta,
   TrustCrossLinks,
 } from "../_components";
 
+const DATA_SAFETY_REVIEWED_DATE = "July 23, 2026";
+
 export const metadata: Metadata = createMetadata({
   title: "Data Safety",
   description:
-    "How ArrayHash handles data safety for ArraySubs, including website forms, GA4, payment providers, and the no plugin telemetry commitment.",
+    "How ArrayHash handles data safety for ArraySubs, including website forms, GA4, affiliate attribution, Stripe, Freemius, and the no plugin telemetry commitment.",
   path: "/trust-center/data-safety/",
 });
 
@@ -37,7 +38,7 @@ export default function DataSafetyPage() {
         highlights={[
           "Website forms collect name, country and email",
           "Plugin data stays on the merchant site",
-          "Payment and licensing providers handle purchase flows",
+          "Stripe and Freemius handle purchase flows",
         ]}
         actions={
           <Button
@@ -54,9 +55,9 @@ export default function DataSafetyPage() {
       <PolicyIntro
         facts={[
           { label: "Effective date", value: EFFECTIVE_DATE },
-          { label: "Last reviewed", value: REVIEWED_DATE },
+          { label: "Last reviewed", value: DATA_SAFETY_REVIEWED_DATE },
           { label: "Analytics", value: "Always-on GA4/GTM" },
-          { label: "Payment providers", value: "Payment and licensing providers" },
+          { label: "Purchase providers", value: "Stripe and Freemius" },
         ]}
       />
 
@@ -71,9 +72,9 @@ export default function DataSafetyPage() {
                 The website collects the fields needed for signup, license
                 request, newsletter, support and contact forms. GA4/GTM
                 analytics loads on every visit as necessary measurement, and
-                retargeting loads only after the visitor opts in. Payment and
-                licensing providers process checkout, license and transaction
-                workflows.
+                retargeting loads only after the visitor opts in. GoAffPro
+                supports affiliate referral attribution. Stripe and Freemius
+                process checkout, license and transaction workflows.
               </p>
             </PolicyNote>
             <PolicyNote title="Merchant WordPress site">
@@ -104,8 +105,13 @@ export default function DataSafetyPage() {
                 "Aggregate website performance and content measurement.",
               ],
               [
+                "Affiliate referral code, visit identifier and purchase attribution",
+                "When a visitor arrives through or is associated with an affiliate referral",
+                "Remember referral attribution and process valid commissions through GoAffPro.",
+              ],
+              [
                 "Payment, invoice, tax and license records",
-                "Yes, through payment and licensing providers",
+                "Yes, through Stripe and Freemius",
                 "Checkout, payment processing, licensing, refunds and compliance.",
               ],
               [
@@ -229,9 +235,14 @@ export default function DataSafetyPage() {
                 "Checkout and transaction data required to complete payment.",
               ],
               [
-                "Checkout and licensing provider",
+                "Freemius",
                 "Checkout, licensing, accounts, tax and transaction support",
                 "License, account, invoice, refund and payment-related records.",
+              ],
+              [
+                "GoAffPro",
+                "Affiliate referral attribution and commission processing",
+                "Referral code, visit identifier and qualifying purchase-attribution information.",
               ],
               [
                 "Hosting provider",

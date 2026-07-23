@@ -4,10 +4,9 @@ meta_description: "Plan a WooCommerce membership site by separating the member p
 focus_keyword: "how to create a WooCommerce membership site"
 published: "2026-05-28"
 updated: "2026-07-17"
-last_verified: "2026-07-16"
+last_verified: "2026-07-17"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # How to Create a WooCommerce Membership Site: Architecture Before Configuration
@@ -325,7 +324,6 @@ Not in the inspected current version. Basic access conditions and major gate sur
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription and membership architecture.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes Members Access surfaces, rule precedence, scheduling, role lifecycle, Feature Manager, product billing, and recovery routes.
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current WooCommerce, WordPress, Google Search, and MemberPress documentation. No new live membership or customer was created on the mirror site.
 

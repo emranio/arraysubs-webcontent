@@ -44,6 +44,12 @@ export const TRUST_LINKS = [
     description:
       "Accessibility standards, supported interaction patterns, and issue reporting.",
   },
+  {
+    title: "Editorial Standards",
+    href: "/trust-center/editorial-standards/",
+    description:
+      "How ArrayHash writes, fact-checks, corrects, updates, and responsibly uses AI assistance in technical content.",
+  },
 ] as const;
 
 type Fact = {

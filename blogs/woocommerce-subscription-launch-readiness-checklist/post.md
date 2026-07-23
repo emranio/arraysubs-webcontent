@@ -4,10 +4,9 @@ meta_description: "Use this WooCommerce subscription launch checklist to verify 
 focus_keyword: "WooCommerce subscription launch checklist"
 published: "2026-06-25"
 updated: "2026-07-05"
-last_verified: "2026-07-13"
+last_verified: "2026-07-05"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # WooCommerce Subscription Launch Readiness Checklist

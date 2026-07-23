@@ -4,10 +4,9 @@ meta_description: "Use partial content restriction without bait-and-switch: pres
 focus_keyword: "partial content restriction SEO"
 published: "2026-03-05"
 updated: "2026-05-19"
-last_verified: "2026-07-16"
+last_verified: "2026-05-19"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Partial Content Restriction: SEO, Conversion, and Reader Experience
@@ -290,7 +289,6 @@ The inspected partial gate is condition-based, not a publication-wide metered-pa
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce membership strategy, conversion, and technical SEO.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes server-side shortcode/Gutenberg/Elementor behavior, condition defaults, media boundaries, caches, and current UI evidence.
 
 **Verification environment:** Source and read-only live UI review of ArraySubs 1.8.11 on July 16, 2026, plus current Google paywall, AI-feature, robots, and helpful-content guidance. No live content or restriction rule was saved.
 

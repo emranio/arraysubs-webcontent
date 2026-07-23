@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CalendarDays, Clock3 } from "lucide-react";
+import { ArrowRight, BadgeCheck, CalendarDays, Clock3 } from "lucide-react";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   authorSchemaInput,
@@ -202,13 +202,22 @@ export function ArticleDetail({
                     </span>
                   </div>
                   <p className="mt-4 leading-7 text-muted">{author.headline}</p>
-                  <Link
-                    href={getAuthorPath(author)}
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
-                  >
-                    View author profile
-                    <ArrowRight aria-hidden="true" className="size-4" />
-                  </Link>
+                  <div className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
+                    <Link
+                      href={getAuthorPath(author)}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                    >
+                      View author profile
+                      <ArrowRight aria-hidden="true" className="size-4" />
+                    </Link>
+                    <Link
+                      href="/trust-center/editorial-standards/"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                    >
+                      Content Standard and Correction Requests
+                      <ArrowRight aria-hidden="true" className="size-4" />
+                    </Link>
+                  </div>
                 </div>
               </section>
             </article>
@@ -391,6 +400,14 @@ export function ArticleDetail({
 
 function ArticleMeta({ article }: { article: ResourceArticle }) {
   const author = getAuthorByName(article.author);
+  const reviewerCandidate = article.reviewer
+    ? getAuthorByName(article.reviewer)
+    : undefined;
+  const reviewer =
+    reviewerCandidate?.name === article.reviewer
+      ? reviewerCandidate
+      : undefined;
+
   return (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-foreground">
       <Link
@@ -405,12 +422,33 @@ function ArticleMeta({ article }: { article: ResourceArticle }) {
           alt={`Portrait of ${author.name}`}
           className="size-6 rounded-full object-cover"
         />
-        {author.name}
+        Written by {author.name}
       </Link>
+      <span className="inline-flex items-center gap-2">
+        <CalendarDays aria-hidden="true" className="size-4 text-primary" />
+        <time dateTime={article.publishedAt}>
+          Published {formatArticleDate(article.publishedAt)}
+        </time>
+      </span>
       <span className="inline-flex items-center gap-2">
         <CalendarDays aria-hidden="true" className="size-4 text-primary" />
         <time dateTime={article.updatedAt}>
           Updated {formatArticleDate(article.updatedAt)}
+        </time>
+      </span>
+      {reviewer && (
+        <Link
+          href={getAuthorPath(reviewer)}
+          className="inline-flex items-center gap-2 font-semibold transition-colors hover:text-primary"
+        >
+          <BadgeCheck aria-hidden="true" className="size-4 text-primary" />
+          Reviewed by {reviewer.name}
+        </Link>
+      )}
+      <span className="inline-flex items-center gap-2">
+        <BadgeCheck aria-hidden="true" className="size-4 text-primary" />
+        <time dateTime={article.lastVerifiedAt}>
+          Last verified {formatArticleDate(article.lastVerifiedAt)}
         </time>
       </span>
       <span className="inline-flex items-center gap-2">

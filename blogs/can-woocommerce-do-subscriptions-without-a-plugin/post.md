@@ -4,10 +4,9 @@ meta_description: "Learn what WooCommerce core can and cannot do for subscriptio
 focus_keyword: "WooCommerce subscriptions without a plugin"
 published: "2026-05-22"
 updated: "2026-06-21"
-last_verified: "2026-07-13"
+last_verified: "2026-06-21"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Can WooCommerce Do Subscriptions Without a Plugin?

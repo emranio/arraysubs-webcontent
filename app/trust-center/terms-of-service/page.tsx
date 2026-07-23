@@ -35,7 +35,7 @@ export default function TermsOfServicePage() {
         title="Terms of Service"
         subtitle="These terms govern use of the ArrayHash website, ArraySubs Pro licenses, payment and licensing workflows, and related support communications."
         highlights={[
-          "Payment and licensing providers power checkout",
+          "Stripe and Freemius power checkout",
           "Refunds follow the 30-day policy",
           "Free plugin availability remains separate from Pro licensing",
         ]}
@@ -109,17 +109,17 @@ export default function TermsOfServicePage() {
 
         <PolicySection title="Payments, billing and licensing providers">
           <p>
-            Payment and licensing providers are active for checkout, payment
-            processing, license and account management, taxes where applicable,
-            fraud prevention, transaction support and refunds. ArrayHash does
-            not store full card numbers or card security codes.
+            Stripe and Freemius are active for checkout, payment processing,
+            license and account management, taxes where applicable, fraud
+            prevention, transaction support and refunds. ArrayHash does not
+            store full card numbers or card security codes.
           </p>
           <PolicyTable
             caption="Provider responsibilities"
             headers={["Provider", "Role"]}
             rows={[
               ["Stripe", "Payment processing and card handling."],
-              ["Checkout and licensing provider", "Checkout, licensing, accounts, invoices, taxes where applicable, transaction support and refund workflows."],
+              ["Freemius", "Checkout, licensing, accounts, invoices, taxes where applicable, transaction support and refund workflows."],
               ["ArrayHash", "Product, website, customer communication, license policy, refund policy and support."],
             ]}
           />

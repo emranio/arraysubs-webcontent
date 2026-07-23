@@ -4,10 +4,9 @@ meta_description: "Choose discoverable, private, or login-first WooCommerce memb
 focus_keyword: "members only products WooCommerce strategy"
 published: "2026-03-19"
 updated: "2026-06-10"
-last_verified: "2026-07-16"
+last_verified: "2026-06-10"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Members-Only Products and Catalogs in WooCommerce
@@ -239,7 +238,6 @@ No. Administrators and shop managers currently bypass Shop Access rules. Test gu
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce membership and catalog authorization.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes product-query filtering, direct requests, add-to-cart/cart/checkout, REST, Store API, sitemap integration, conditions, and rule order.
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current WooCommerce, Google Search, and OWASP guidance. No live shop rule was saved on the mirror.
 

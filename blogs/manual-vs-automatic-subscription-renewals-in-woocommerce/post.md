@@ -4,10 +4,9 @@ meta_description: "Compare manual and automatic WooCommerce subscription renewal
 focus_keyword: "manual vs automatic WooCommerce subscription renewals"
 published: "2026-04-07"
 updated: "2026-04-16"
-last_verified: "2026-07-13"
+last_verified: "2026-04-16"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Manual vs Automatic Subscription Renewals in WooCommerce

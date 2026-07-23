@@ -4,10 +4,9 @@ meta_description: "Create a WooCommerce subscription dunning strategy for retry 
 focus_keyword: "subscription dunning strategy WooCommerce"
 published: "2026-06-02"
 updated: "2026-06-25"
-last_verified: "2026-07-13"
+last_verified: "2026-06-25"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Subscription Dunning Strategy: Timing, Messages, and Stop Rules

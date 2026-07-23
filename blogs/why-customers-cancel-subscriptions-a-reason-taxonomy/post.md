@@ -5,9 +5,8 @@ meta_description: "Build a useful subscription cancellation-reason taxonomy acro
 focus_keyphrase: "why customers cancel subscriptions"
 published: "2026-03-08"
 updated: "2026-07-09"
-last_verified: "2026-07-22"
-author: "ArraySubs Editorial Team"
-reviewer: "ArraySubs Product Team"
+last_verified: "2026-07-09"
+author: "Emran"
 ---
 
 # Why Customers Cancel Subscriptions: A Reason Taxonomy
@@ -490,7 +489,7 @@ No. It can capture reasons and useful lifecycle/retention evidence. A merchant s
 
 ## Verification environment and limits
 
-This guide was verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, the current cancellation and Retention Analytics source, and a safe local staging cancellation sequence. The staging flow showed configured reasons, one primary selection, optional Other detail behavior, relevant save offers, and one synthetic `offer_shown` analytics event.
+This guide was verified during its latest update against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, the current cancellation and Retention Analytics source, and a safe local staging cancellation sequence. The staging flow showed configured reasons, one primary selection, optional Other detail behavior, relevant save offers, and one synthetic `offer_shown` analytics event.
 
 No real-customer dataset, interview, reason distribution, controlled experiment, offer acceptance, or cancellation was used. The six-family taxonomy and codebook practices are original editorial recommendations and require validation, privacy review, and appropriate legal review in the merchant's context.
 

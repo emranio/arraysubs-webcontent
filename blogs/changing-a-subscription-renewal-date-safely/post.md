@@ -4,10 +4,9 @@ meta_description: "Change a WooCommerce subscription renewal date safely by coor
 focus_keyword: "change WooCommerce subscription renewal date"
 published: "2026-07-14"
 updated: "2026-07-14"
-last_verified: "2026-07-13"
+last_verified: "2026-07-14"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Changing a Subscription Renewal Date Safely

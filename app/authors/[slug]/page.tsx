@@ -17,6 +17,7 @@ import {
   Button,
   Container,
   CTA,
+  OrganicPortrait,
   PageHero,
   Pagination,
   Section,
@@ -126,20 +127,13 @@ export default async function AuthorPage({
         subtitle={author.headline}
         highlights={author.credentials.slice(0, 3)}
         visual={
-          <figure className="mx-auto w-full max-w-sm rounded-2xl bg-card p-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={author.image}
-              width={author.imageWidth}
-              height={author.imageHeight}
-              alt={`Portrait of ${author.name}`}
-              className="aspect-square w-full rounded-xl object-cover"
-            />
-            <figcaption className="flex items-center gap-2 px-2 py-3 text-sm font-medium text-muted">
-              <ShieldCheck aria-hidden="true" className="size-4 text-primary" />
-              {author.jobTitle}
-            </figcaption>
-          </figure>
+          <OrganicPortrait
+            src={author.image}
+            width={author.imageWidth}
+            height={author.imageHeight}
+            alt={`Portrait of ${author.name}`}
+            caption={author.jobTitle}
+          />
         }
       />
 
@@ -173,7 +167,7 @@ export default async function AuthorPage({
                   {author.bio.map((paragraph) => (
                     <p
                       key={paragraph.slice(0, 32)}
-                      className="text-left"
+                      className="text-left md:text-justify"
                     >
                       {paragraph}
                     </p>

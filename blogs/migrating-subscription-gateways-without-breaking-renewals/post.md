@@ -5,9 +5,8 @@ meta_description: "A phased WooCommerce subscription gateway migration runbook c
 focus_keyphrase: "migrate WooCommerce subscription gateway"
 published: "2026-03-27"
 updated: "2026-06-20"
-last_verified: "2026-07-22"
-author: "ArraySubs Editorial Team"
-reviewer: "ArraySubs Product Team"
+last_verified: "2026-06-20"
+author: "Emran"
 ---
 
 # Migrating Subscription Gateways Without Breaking Renewals
@@ -362,7 +361,7 @@ Inventory remote products, plans, subscriptions/agreements, local state, and nex
 
 ## Verification environment and limits
 
-This guide was last verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, WordPress 7.0.2, WooCommerce 10.9.4, current local gateway interfaces, and the primary provider and card-network sources below.
+This guide was verified during its latest update against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, WordPress 7.0.2, WooCommerce 10.9.4, current local gateway interfaces, and the primary provider and card-network sources below.
 
 We did not execute a production provider migration, secure PAN transfer, buyer reauthorization, live renewal, webhook replay, refund, or rollback. The UI evidence is a synthetic/local environment. Provider account, contract, country, payment method, and network rules must be verified for the actual migration.
 

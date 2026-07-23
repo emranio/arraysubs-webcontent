@@ -4,10 +4,9 @@ meta_description: "Learn how WooCommerce Stripe recurring payments work with Arr
 focus_keyword: "Stripe recurring payments for WooCommerce"
 published: "2026-01-24"
 updated: "2026-06-15"
-last_verified: "2026-07-22"
+last_verified: "2026-06-15"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Stripe Recurring Payments for WooCommerce: How They Work and What to Test
@@ -630,7 +629,7 @@ Next, review [SCA and 3D Secure for Subscription Renewals](/payments-and-complia
 
 ## Verification scope, limitations, and update log
 
-This guide was last reverified on July 22, 2026, by Emran at ArrayHash and reviewed by the ArraySubs Engineering Team. The verification combined direct inspection of ArraySubs Free and ArraySubs Pro, the installed official WooCommerce Stripe integration, and the staging UI shown in the article with current official WooCommerce and Stripe documentation.
+This guide was written and fact-checked by Emran at ArrayHash. Verification during the latest update combined direct inspection of ArraySubs Free and ArraySubs Pro, the installed official WooCommerce Stripe integration, and the staging UI shown in the article with current official WooCommerce and Stripe documentation.
 
 The first-party review confirmed the local subscription ownership model, separate invoice-generation and due-time scheduling, ArraySubs locking and retry surfaces, stored gateway context, Pro’s off-session PaymentIntent bridge, Gateway Health, the secondary Stripe webhook route, refund delegation, and the customer payment-management entry point. It did **not** execute a real or sandbox charge, force an SCA challenge, simulate a network timeout, deliver provider-originated webhooks, complete a Stripe-hosted payment-method change, create a refund, or open a dispute. Those remain environment-specific launch tests, and the article deliberately labels uncertain provider-to-local synchronization as a verification gap rather than a guaranteed capability.
 

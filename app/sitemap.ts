@@ -39,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/trust-center/data-safety/", 0.6],
     ["/trust-center/gdpr-ccpa-compliance/", 0.6],
     ["/trust-center/accessibility-compliance/", 0.6],
+    ["/trust-center/editorial-standards/", 0.6],
   ] as const;
 
   return [

@@ -4,10 +4,9 @@ meta_description: "Package monthly and annual WooCommerce subscriptions with tra
 focus_keyword: "monthly vs annual subscription plans WooCommerce"
 published: "2026-06-03"
 updated: "2026-06-15"
-last_verified: "2026-07-13"
+last_verified: "2026-06-15"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Monthly and Annual Subscription Plans: Packaging Without Cannibalization

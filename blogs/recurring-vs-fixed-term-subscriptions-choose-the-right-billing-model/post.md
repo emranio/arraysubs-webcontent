@@ -4,10 +4,9 @@ meta_description: "Compare ongoing, fixed-cycle, fixed-date, and prepaid subscri
 focus_keyword: "recurring vs fixed term subscriptions"
 published: "2026-01-05"
 updated: "2026-05-22"
-last_verified: "2026-07-13"
+last_verified: "2026-05-22"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Recurring vs Fixed-Term Subscriptions: Choose the Right Billing Model

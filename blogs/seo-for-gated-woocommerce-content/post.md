@@ -4,10 +4,9 @@ meta_description: "Plan SEO for gated WooCommerce content with useful public ans
 focus_keyword: "SEO for gated content WooCommerce"
 published: "2026-04-19"
 updated: "2026-06-16"
-last_verified: "2026-07-16"
+last_verified: "2026-06-16"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # SEO for Gated WooCommerce Content
@@ -237,7 +236,6 @@ A canonical consolidates duplicate URL signals; it does not grant crawler access
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce content, membership, and technical SEO.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes server-side rendering, partial gates, archive modes, cache risk, metadata/schema boundaries, and live UI evidence.
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current Google Search documentation. No Search Console property or live cache configuration was changed.
 

@@ -4,10 +4,9 @@ meta_description: "Use fixed-date WooCommerce subscriptions for cohorts and seas
 focus_keyword: "fixed date WooCommerce subscriptions"
 published: "2026-04-01"
 updated: "2026-06-07"
-last_verified: "2026-07-13"
+last_verified: "2026-06-07"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Fixed-Date WooCommerce Subscriptions for Cohorts, Seasons, and Enrollment Windows

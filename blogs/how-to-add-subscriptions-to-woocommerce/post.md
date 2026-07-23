@@ -4,10 +4,9 @@ meta_description: "Learn how to add subscriptions to WooCommerce, choose a billi
 focus_keyword: "how to add subscriptions to WooCommerce"
 published: "2026-02-23"
 updated: "2026-03-20"
-last_verified: "2026-07-13"
+last_verified: "2026-03-20"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # How to Add Subscriptions to WooCommerce: The Complete 2026 Guide

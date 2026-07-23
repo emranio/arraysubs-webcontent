@@ -4,10 +4,9 @@ meta_description: "Design customer-chosen WooCommerce subscription durations wit
 focus_keyword: "customer chosen subscription duration WooCommerce"
 published: "2026-03-06"
 updated: "2026-05-18"
-last_verified: "2026-07-13"
+last_verified: "2026-05-18"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Customer-Chosen Subscription Duration: Use Cases, UX, and Risk Controls

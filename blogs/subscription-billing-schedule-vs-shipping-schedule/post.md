@@ -4,10 +4,9 @@ meta_description: "Separate subscription billing from fulfillment and delivery s
 focus_keyword: "subscription billing schedule vs shipping schedule"
 published: "2026-03-14"
 updated: "2026-05-28"
-last_verified: "2026-07-13"
+last_verified: "2026-05-28"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Subscription Billing Schedule vs Shipping Schedule

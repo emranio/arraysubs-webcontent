@@ -5,9 +5,8 @@ meta_description: "Design a clear subscription cancellation flow with visible ac
 focus_keyphrase: "subscription cancellation flow"
 published: "2026-05-02"
 updated: "2026-07-16"
-last_verified: "2026-07-22"
-author: "ArraySubs Editorial Team"
-reviewer: "ArraySubs Product Team"
+last_verified: "2026-07-16"
+author: "Emran"
 ---
 
 # Anatomy of an Effective Subscription Cancellation Flow
@@ -439,7 +438,7 @@ No. It provides design, implementation, and testing guidance. Have qualified cou
 
 ## Verification environment and limits
 
-This guide was verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, current cancellation, retention-offer, lifecycle, gateway, and analytics source, plus a safe local staging journey using a synthetic subscription.
+This guide was verified during its latest update against ArraySubs 1.8.11, ArraySubs Pro 1.1.2, current cancellation, retention-offer, lifecycle, gateway, and analytics source, plus a safe local staging journey using a synthetic subscription.
 
 The staging pass opened the customer subscription actions, selected a reason, displayed configured discount and pause offers, and produced one synthetic `offer_shown` event. No offer was accepted, no subscription was cancelled, and no charge was created. Accessibility observations are design/test requirements, not a conformance certification.
 

@@ -4,10 +4,9 @@ meta_description: "Compare WooCommerce subscription product types by catalog str
 focus_keyword: "WooCommerce subscription product types"
 published: "2026-04-13"
 updated: "2026-05-05"
-last_verified: "2026-07-13"
+last_verified: "2026-05-05"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # WooCommerce Subscription Product Types Explained
@@ -95,7 +94,7 @@ The [monthly-versus-annual recipe](/deals/arraysubs/use-cases/recipes/monthly-vs
 
 ### A current WooCommerce Subscriptions 9.0 note
 
-As verified on July 13, 2026, WooCommerce Subscriptions 9.0.1 recommends subscription plans on supported standard simple, variable, bundle, and composite products for new stores. The older dedicated Simple Subscription and Variable Subscription types remain supported; Woo states there is no fixed removal date or forced migration ([creating a subscription product](https://woocommerce.com/document/subscriptions/creating-subscription-products/), [Subscriptions FAQ](https://woocommerce.com/document/subscriptions/faq/)).
+At the article's latest update, WooCommerce Subscriptions 9.0.1 recommends subscription plans on supported standard simple, variable, bundle, and composite products for new stores. The older dedicated Simple Subscription and Variable Subscription types remain supported; Woo states there is no fixed removal date or forced migration ([creating a subscription product](https://woocommerce.com/document/subscriptions/creating-subscription-products/), [Subscriptions FAQ](https://woocommerce.com/document/subscriptions/faq/)).
 
 That is a WooCommerce Subscriptions-specific interface change, not a universal rule for every extension. ArraySubs' current public setup path focuses on enabling subscription behavior on simple and variable WooCommerce products. Review the [ArraySubs product and checkout feature map](/deals/arraysubs/features/#products-checkout) for current scope.
 

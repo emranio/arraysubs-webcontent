@@ -4,10 +4,9 @@ meta_description: "Design safe automatic retries for failed subscription payment
 focus_keyword: "automatic retry failed subscription payments"
 published: "2026-03-21"
 updated: "2026-04-05"
-last_verified: "2026-07-16"
+last_verified: "2026-04-05"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Automatic Retry for Failed Subscription Payments: What Good Looks Like
@@ -305,7 +304,6 @@ Do not assume it does. Verify that the paid order, subscription status, next pay
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes ArraySubs core/Pro retry contracts, Stripe payment reconciliation, gateway ownership, lifecycle scheduling, and access recovery.
 
 **Verification environment:** Source review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current official WooCommerce, Stripe, PayPal, Paddle, and PCI SSC documentation. No live decline or scheduler-race test was performed for this article.
 

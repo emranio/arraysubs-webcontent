@@ -4,10 +4,9 @@ meta_description: "Follow a WooCommerce subscription renewal from schedule and i
 focus_keyword: "how WooCommerce subscription renewals work"
 published: "2026-07-17"
 updated: "2026-07-19"
-last_verified: "2026-07-13"
+last_verified: "2026-07-19"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # How WooCommerce Subscription Renewals Work

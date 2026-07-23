@@ -4,10 +4,9 @@ meta_description: "Compare WordPress roles, membership levels, and feature entit
 focus_keyword: "WordPress roles vs membership levels"
 published: "2026-03-10"
 updated: "2026-05-16"
-last_verified: "2026-07-16"
+last_verified: "2026-05-16"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # WordPress Roles vs Membership Levels vs Feature Entitlements
@@ -303,7 +302,6 @@ The inspected feature-definition system is in ArraySubs Pro. Label Pro-dependent
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscriptions, membership architecture, and access policy.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes WordPress capabilities, role ownership, lifecycle mapping, overlapping subscriptions, and Pro feature aggregation.
 
 **Verification environment:** Source and read-only live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026. No role mapping, feature value, subscription, or user was changed.
 

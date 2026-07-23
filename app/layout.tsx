@@ -72,8 +72,8 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="antialiased" suppressHydrationWarning>
-        {/* GoAffPro affiliate tracker. Unlike GTM (consent-gated, loads after
-            hydration), this runs before any interaction so the 60-day
+        {/* GoAffPro affiliate tracker. Unlike GTM (loaded after hydration),
+            this runs before any interaction so the 60-day
             attribution cookie is set on the very first visit. React 19 hoists
             this async script into <head>. The loader owns all referral-link
             parsing and cookie handling itself; which URL params count as a

@@ -5,9 +5,8 @@ meta_description: "Compare Merchant of Record and payment processor models for s
 focus_keyphrase: "Merchant of Record vs payment processor subscriptions"
 published: "2026-05-21"
 updated: "2026-07-06"
-last_verified: "2026-07-22"
-author: "ArraySubs Editorial Team"
-reviewer: "ArraySubs Product Team"
+last_verified: "2026-07-06"
+author: "Emran"
 ---
 
 # Merchant of Record vs Payment Processor for Subscription Businesses
@@ -309,7 +308,7 @@ Require the answer to identify the contract section or current product document.
 
 ## Verification environment and limits
 
-This guide was last verified on **July 22, 2026** against:
+This guide was verified during its latest update against:
 
 - WordPress 7.0.2 and WooCommerce 10.9.4 in a local non-production store;
 - ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 source;

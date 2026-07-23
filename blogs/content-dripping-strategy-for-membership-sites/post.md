@@ -4,10 +4,9 @@ meta_description: "Choose immediate, relative, cohort, completion, editorial, or
 focus_keyword: "content dripping strategy membership site"
 published: "2026-07-20"
 updated: "2026-07-20"
-last_verified: "2026-07-16"
+last_verified: "2026-07-20"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Content Dripping Strategy for Membership Sites
@@ -280,7 +279,6 @@ No built-in unlock-notification scheduler was found in the inspected Members Acc
 
 **Author:** Emran, ArrayHash — product and editorial work across membership curriculum, access, and lifecycle strategy.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes ScheduleEvaluator, qualifying statuses, anchors, units, surfaces, multiple-subscription edge cases, and notification boundaries.
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current WooCommerce Memberships and MemberPress documentation. No live time-travel, scheduler, or learning-outcome experiment was run.
 

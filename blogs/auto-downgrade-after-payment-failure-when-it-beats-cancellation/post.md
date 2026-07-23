@@ -4,10 +4,9 @@ meta_description: "Decide when auto-downgrade should replace cancellation after 
 focus_keyword: "auto downgrade after failed subscription payment"
 published: "2026-06-10"
 updated: "2026-06-20"
-last_verified: "2026-07-16"
+last_verified: "2026-06-20"
 author: "Emran"
 author_affiliation: "ArrayHash"
-reviewer: "ArraySubs Engineering Team"
 ---
 
 # Auto-Downgrade After Payment Failure: When It Beats Cancellation
@@ -272,7 +271,6 @@ State disagreement: the remote paid agreement continues charging while local acc
 
 **Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
 
-**Technical reviewer:** ArraySubs Engineering Team — review scope includes plan-switching triggers, fallback validation, overdue cancellation, gateway detachment, access mapping, and audit behavior.
 
 **Verification environment:** Source and UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026. No live gateway-backed subscription was advanced from failed renewal through overdue cancellation into fallback.
 
