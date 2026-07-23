@@ -23,6 +23,7 @@ import {
   type ManualRef,
   type Recipe,
 } from "./_recipes";
+import { RecipeLongFormGuide } from "./_RecipeLongFormGuide";
 
 const tierTone = (tier: FeatureTier) =>
   tier === "Free" ? "highlight" : tier === "Pro" ? "dark" : "primary";
@@ -183,6 +184,8 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
           )}
         </Container>
       </Section>
+
+      <RecipeLongFormGuide recipe={recipe} group={group} />
 
       {/* ---- Best for --------------------------------------------------- */}
       <Section surface="default" spacing="md">
