@@ -4,22 +4,22 @@
 
 | Category | Articles | Recommended hub |
 |---|---:|---|
-| Analytics & Economics | 12 | `/deals/arraysubs/resources/analytics-and-economics/` |
-| Billing Strategy | 14 | `/deals/arraysubs/resources/billing-strategy/` |
-| Checkout & Conversion | 11 | `/deals/arraysubs/resources/checkout-and-conversion/` |
-| Comparisons & Migration | 17 | `/deals/arraysubs/resources/comparisons-and-migration/` |
-| Customer & Admin Operations | 11 | `/deals/arraysubs/resources/customer-and-admin-operations/` |
-| Industry Playbooks | 10 | `/deals/arraysubs/resources/industry-playbooks/` |
-| Membership Strategy | 15 | `/deals/arraysubs/resources/membership-strategy/` |
-| Payment Recovery | 10 | `/deals/arraysubs/resources/payment-recovery/` |
-| Payments & Compliance | 14 | `/deals/arraysubs/resources/payments-and-compliance/` |
-| Research & Strategy | 8 | `/deals/arraysubs/resources/research-and-strategy/` |
-| Retention & Churn | 16 | `/deals/arraysubs/resources/retention-and-churn/` |
-| SaaS & Digital Products | 12 | `/deals/arraysubs/resources/saas-and-digital-products/` |
-| Store Credit & Loyalty | 9 | `/deals/arraysubs/resources/store-credit-and-loyalty/` |
-| Subscription Commerce | 11 | `/deals/arraysubs/resources/subscription-commerce/` |
-| Subscription Foundations | 16 | `/deals/arraysubs/resources/subscription-foundations/` |
-| Technical Operations | 14 | `/deals/arraysubs/resources/technical-operations/` |
+| Analytics & Economics | 12 | `/articles/analytics-and-economics/` |
+| Billing Strategy | 14 | `/articles/billing-strategy/` |
+| Checkout & Conversion | 11 | `/articles/checkout-and-conversion/` |
+| Comparisons & Migration | 17 | `/articles/comparisons-and-migration/` |
+| Customer & Admin Operations | 11 | `/articles/customer-and-admin-operations/` |
+| Industry Playbooks | 10 | `/articles/industry-playbooks/` |
+| Membership Strategy | 15 | `/articles/membership-strategy/` |
+| Payment Recovery | 10 | `/articles/payment-recovery/` |
+| Payments & Compliance | 14 | `/articles/payments-and-compliance/` |
+| Research & Strategy | 8 | `/articles/research-and-strategy/` |
+| Retention & Churn | 16 | `/articles/retention-and-churn/` |
+| SaaS & Digital Products | 12 | `/articles/saas-and-digital-products/` |
+| Store Credit & Loyalty | 9 | `/articles/store-credit-and-loyalty/` |
+| Subscription Commerce | 11 | `/articles/subscription-commerce/` |
+| Subscription Foundations | 16 | `/articles/subscription-foundations/` |
+| Technical Operations | 14 | `/articles/technical-operations/` |
 
 Each category hub should contain a 150-250 word original introduction, featured pillar, subtopic navigation, latest updates, and links to the relevant commercial/use-case pillar. Do not auto-generate thin tag archives.
 

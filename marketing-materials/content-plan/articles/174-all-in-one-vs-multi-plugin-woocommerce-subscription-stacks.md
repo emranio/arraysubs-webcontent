@@ -5,7 +5,7 @@
 - **Proposed title:** All-in-One vs Multi-Plugin WooCommerce Subscription Stacks
 - **Content cluster:** C14 — Plugin comparisons, alternatives, and migrations
 - **Content category:** Comparisons & Migration
-- **Recommended URL:** `/deals/arraysubs/resources/comparisons-and-migration/all-in-one-vs-multi-plugin-woocommerce-subscription-stacks/`
+- **Recommended URL:** `/comparisons-and-migration/all-in-one-vs-multi-plugin-woocommerce-subscription-stacks/`
 - **Search intent:** Commercial investigation
 - **Funnel stage:** Consideration
 - **Priority:** P0 · Wave 2
@@ -75,7 +75,7 @@ Create a comparison for buyers, switchers, agencies, and technical decision-make
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Comparisons & Migration`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

@@ -268,9 +268,9 @@ Do not promise that result from the current manual alone. The inspected code sto
 - Free-first-month coupon recipe: `/deals/arraysubs/use-cases/recipes/free-first-month-coupon/`
 - Coupon promotion insights recipe: `/deals/arraysubs/use-cases/recipes/coupon-promo-insights/`
 - Canonical retention-discount recipe, after route verification
-- Different first and renewal prices: `/deals/arraysubs/resources/billing-strategy/different-first-and-renewal-prices-subscription-pricing-patterns/`
-- Proration methods: `/deals/arraysubs/resources/billing-strategy/subscription-proration-methods-compared-charge-credit-or-defer/`
-- Plan-change timing: `/deals/arraysubs/resources/billing-strategy/immediate-vs-next-renewal-plan-changes/`
+- Different first and renewal prices: `/billing-strategy/different-first-and-renewal-prices-subscription-pricing-patterns/`
+- Proration methods: `/billing-strategy/subscription-proration-methods-compared-charge-credit-or-defer/`
+- Plan-change timing: `/billing-strategy/immediate-vs-next-renewal-plan-changes/`
 
 Verify generated routes. The article should own economics and controls; recipes should own configuration.
 

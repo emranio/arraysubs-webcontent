@@ -113,7 +113,7 @@ Refunds need a policy for both the money and the schedule. Refunding the early o
 
 As verified July 13, 2026, ArraySubs identifies Early Renew as **coming soon**, not a shipped customer workflow. Do not publish setup steps or sell the capability as available today. Merchants who need it should use a separate supported order or carefully specified custom implementation after gateway and schedule review.
 
-For current supported timing changes, use [Changing a Subscription Renewal Date Safely](/deals/arraysubs/resources/billing-strategy/changing-a-subscription-renewal-date-safely/).
+For current supported timing changes, use [Changing a Subscription Renewal Date Safely](/billing-strategy/changing-a-subscription-renewal-date-safely/).
 
 ## Final recommendation
 

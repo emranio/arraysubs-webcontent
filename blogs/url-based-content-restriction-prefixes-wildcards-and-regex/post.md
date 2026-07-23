@@ -238,7 +238,7 @@ Test every relevant combination:
 - [ ] guest/member cache behavior after login, logout, and status change;
 - [ ] invalid regex and an intentionally long adversarial path in staging.
 
-For combined conditions inside a rule, use the [combined-conditions recipe](/deals/arraysubs/use-cases/recipes/combined-conditions/) and [AND/OR Membership Access Rules](/deals/arraysubs/resources/membership-strategy/and-or-membership-access-rules-explained-with-examples/). For setup-specific path examples, follow the [URL-prefix lockdown recipe](/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/).
+For combined conditions inside a rule, use the [combined-conditions recipe](/deals/arraysubs/use-cases/recipes/combined-conditions/) and [AND/OR Membership Access Rules](/membership-strategy/and-or-membership-access-rules-explained-with-examples/). For setup-specific path examples, follow the [URL-prefix lockdown recipe](/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/).
 
 ## Debugging an unexpected match
 

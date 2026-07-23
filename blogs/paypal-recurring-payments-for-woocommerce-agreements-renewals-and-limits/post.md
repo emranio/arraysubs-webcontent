@@ -106,7 +106,7 @@ WooCommerce lists PayPal (ArraySubs) as a distinct provider. The Manage action o
 
 ![Annotated WooCommerce payment-provider screen highlighting the PayPal (ArraySubs) row with its Enable and Manage actions.](/blogs/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/woocommerce-paypal-payment-method-verified.png)
 
-Automatic gateway support means the subscription engine understands approval, the remote object, renewal events, failure states, refunds, cancellation, and local reconciliation—not just that a button can collect the first payment. Read [Automatic vs Manual Gateway Support for Subscriptions](/deals/arraysubs/resources/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/) for that distinction.
+Automatic gateway support means the subscription engine understands approval, the remote object, renewal events, failure states, refunds, cancellation, and local reconciliation—not just that a button can collect the first payment. Read [Automatic vs Manual Gateway Support for Subscriptions](/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/) for that distinction.
 
 ## Approval, activation, and settlement are three different facts
 
@@ -187,7 +187,7 @@ The PayPal adapter represents one buyer subscription to one remote plan. Its cur
 | Paid trial | Not represented | Current code models a zero-price trial phase |
 | Physical renewal with changing shipping | Unproven/high risk | `NO_SHIPPING` plus a fixed remote plan can diverge from Woo renewal totals |
 
-When Stripe and PayPal are enabled together, ArraySubs Pro currently applies the most restrictive enabled-gateway policy to shared cart permissions before validating the selected gateway. Enabling PayPal can therefore narrow cart composition even if a buyer intends to select Stripe. The [Stripe vs PayPal vs Paddle comparison](/deals/arraysubs/resources/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/) explains that cross-gateway effect.
+When Stripe and PayPal are enabled together, ArraySubs Pro currently applies the most restrictive enabled-gateway policy to shared cart permissions before validating the selected gateway. Enabling PayPal can therefore narrow cart composition even if a buyer intends to select Stripe. The [Stripe vs PayPal vs Paddle comparison](/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/) explains that cross-gateway effect.
 
 ## Plan construction: cadence, trials, setup fee, and failure preferences
 
@@ -316,7 +316,7 @@ Before asking for manual payment, check:
 - whether an external/manual collection already exists; and
 - whether access/fulfillment has changed.
 
-The broader [failed subscription payment recovery guide](/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) helps coordinate customer messages and access, but PayPal’s remote retry clock remains authoritative for money movement.
+The broader [failed subscription payment recovery guide](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) helps coordinate customer messages and access, but PayPal’s remote retry clock remains authoritative for money movement.
 
 ## Customer payment updates and plan migration are not complete
 
@@ -503,7 +503,7 @@ PayPal can be a defensible choice when:
 - mandatory Checkout Blocks; or
 - operations that cannot review remote/local mismatches.
 
-If those workflows are essential, Stripe’s site-initiated model may fit better; read [Stripe Recurring Payments for WooCommerce](/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/). If the goal is Merchant-of-Record tax/compliance ownership for eligible software, consider [Paddle Merchant of Record for WooCommerce Subscriptions](/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/).
+If those workflows are essential, Stripe’s site-initiated model may fit better; read [Stripe Recurring Payments for WooCommerce](/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/). If the goal is Merchant-of-Record tax/compliance ownership for eligible software, consider [Paddle Merchant of Record for WooCommerce Subscriptions](/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/).
 
 ## Final recommendation
 

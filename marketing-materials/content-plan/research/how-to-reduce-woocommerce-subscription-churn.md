@@ -3,7 +3,7 @@
 ## Research record
 
 - Content-plan ID: A070
-- Planned URL: `/deals/arraysubs/resources/retention-and-churn/how-to-reduce-woocommerce-subscription-churn/`
+- Planned URL: `/retention-and-churn/how-to-reduce-woocommerce-subscription-churn/`
 - Research date: 2026-07-22
 - Product source inspected: ArraySubs Free 1.8.11 and ArraySubs Pro 1.1.2 in the current working tree
 - Scope: evidence, calculation rules, product truth, and editorial inputs only; this is not an article draft
@@ -397,11 +397,11 @@ The screenshot annotation helper could not reliably locate the requested analyti
 ## Internal-link plan
 
 - Primary feature anchor: `/deals/arraysubs/features/#retention-revenue`
-- Companion: `/deals/arraysubs/resources/retention-and-churn/voluntary-vs-involuntary-churn/` (A071)
-- Companion: `/deals/arraysubs/resources/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/` (A072)
-- Companion: `/deals/arraysubs/resources/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/` (A073)
-- Cross-cluster recovery guide: `/deals/arraysubs/resources/payment-recovery/involuntary-churn-recovery-checklist/` (A039)
-- Cross-cluster recovery guide: `/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/` (A031)
+- Companion: `/retention-and-churn/voluntary-vs-involuntary-churn/` (A071)
+- Companion: `/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/` (A072)
+- Companion: `/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/` (A073)
+- Cross-cluster recovery guide: `/payment-recovery/involuntary-churn-recovery-checklist/` (A039)
+- Cross-cluster recovery guide: `/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/` (A031)
 - Recipe: `/deals/arraysubs/use-cases/recipes/require-reason-targeted-funnel/`
 - Recipe: `/deals/arraysubs/use-cases/recipes/pause-need-a-break/`
 - Recipe: `/deals/arraysubs/use-cases/recipes/downgrade-offer/`

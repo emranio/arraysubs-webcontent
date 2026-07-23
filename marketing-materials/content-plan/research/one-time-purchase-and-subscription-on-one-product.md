@@ -722,9 +722,9 @@ This is the clearest way to satisfy the content plan's instruction to identify w
 | `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/` | “configure monthly and annual subscription variations” | Where multiple recurring cadences are distinguished from one-time vs recurring mode. |
 | `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/` | “prepaid or fixed-cycle recipe” | When the buyer wants a defined number of deliveries rather than indefinite renewal. |
 | `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/` | “lifetime deal one-time recipe” | When the real offer is permanent access, not buy once versus recurring replenishment. |
-| `/deals/arraysubs/resources/subscription-foundations/monthly-and-annual-subscription-plans-packaging-without-cannibalization/` | “monthly versus annual packaging” | Do not repeat annual discount/cadence strategy. |
-| `/deals/arraysubs/resources/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/` | “fixed-date subscriptions” | Where a shared season/cohort end date is the actual requirement. |
-| `/deals/arraysubs/resources/subscription-foundations/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/` | “customer-chosen subscription duration” | Where shoppers need to choose a term rather than choose one-time vs recurring. |
+| `/subscription-foundations/monthly-and-annual-subscription-plans-packaging-without-cannibalization/` | “monthly versus annual packaging” | Do not repeat annual discount/cadence strategy. |
+| `/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/` | “fixed-date subscriptions” | Where a shared season/cohort end date is the actual requirement. |
+| `/subscription-foundations/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/` | “customer-chosen subscription duration” | Where shoppers need to choose a term rather than choose one-time vs recurring. |
 | `/deals/arraysubs/pricing/` | “View Pro Pricing” | After the core educational answer and implementation boundary, never in the opening. |
 
 ### Optional relevant links if published

@@ -104,7 +104,7 @@ Use your own capacity and failure data. There is no universal best renewal day.
 8. Confirm existing subscriptions remain unchanged unless an explicit migration is approved.
 9. Monitor action volume and gateway rate limits at the boundary.
 
-For a broader schedule-safety model, read [Changing a Subscription Renewal Date Safely](/deals/arraysubs/resources/billing-strategy/changing-a-subscription-renewal-date-safely/).
+For a broader schedule-safety model, read [Changing a Subscription Renewal Date Safely](/billing-strategy/changing-a-subscription-renewal-date-safely/).
 
 ## Final recommendation
 

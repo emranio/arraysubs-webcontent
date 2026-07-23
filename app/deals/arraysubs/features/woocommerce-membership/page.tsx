@@ -42,7 +42,7 @@ import {
   RESOURCE_CATEGORIES,
   formatArticleDate,
   getArticlePath,
-} from "../../resources/_data";
+} from "@/app/articles/_data";
 import {
   FAQ_ITEMS,
   FREE_MEMBERSHIP_FEATURES,
@@ -212,7 +212,7 @@ export default function WooCommerceMembershipPage() {
             </p>
             <div className="mt-6">
               <Button
-                href="/deals/arraysubs/resources/membership-strategy/woocommerce-membership-vs-subscription-what-is-the-difference/"
+                href="/membership-strategy/woocommerce-membership-vs-subscription-what-is-the-difference/"
                 variant="ghost"
                 size="sm"
                 iconRight={<ArrowRight className="size-4" />}
@@ -375,7 +375,7 @@ export default function WooCommerceMembershipPage() {
             ]}
             actions={
               <Button
-                href="/deals/arraysubs/resources/membership-strategy/partial-content-restriction-seo-conversion-and-reader-experience/"
+                href="/membership-strategy/partial-content-restriction-seo-conversion-and-reader-experience/"
                 variant="outline"
                 size="sm"
                 iconRight={<ArrowRight className="size-4" />}
@@ -416,7 +416,7 @@ export default function WooCommerceMembershipPage() {
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button
-              href="/deals/arraysubs/resources/membership-strategy/members-only-products-and-catalogs-in-woocommerce/"
+              href="/membership-strategy/members-only-products-and-catalogs-in-woocommerce/"
               variant="outline"
               size="sm"
               iconRight={<ArrowRight className="size-4" />}
@@ -424,7 +424,7 @@ export default function WooCommerceMembershipPage() {
               Plan a members-only catalog
             </Button>
             <Button
-              href="/deals/arraysubs/resources/membership-strategy/protecting-membership-downloads-in-wordpress/"
+              href="/membership-strategy/protecting-membership-downloads-in-wordpress/"
               variant="ghost"
               size="sm"
               iconRight={<ArrowRight className="size-4" />}

@@ -5,7 +5,7 @@
 - **Proposed title:** Subscription Notes and Audit Trails for Support Teams
 - **Content cluster:** C10 — Customer portal, self-service, and admin operations
 - **Content category:** Customer & Admin Operations
-- **Recommended URL:** `/deals/arraysubs/resources/customer-and-admin-operations/subscription-notes-and-audit-trails-for-support-teams/`
+- **Recommended URL:** `/customer-and-admin-operations/subscription-notes-and-audit-trails-for-support-teams/`
 - **Search intent:** Informational
 - **Funnel stage:** Interest
 - **Priority:** P1 · Wave 3
@@ -74,7 +74,7 @@ Create a guide for support teams, subscription administrators, and customer-expe
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Customer & Admin Operations`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

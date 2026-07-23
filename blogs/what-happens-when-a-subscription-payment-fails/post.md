@@ -96,7 +96,7 @@ next date basis = July 15 + one month = August 15
 
 ![Order, access, customer — a focused hub for A failed payment starts a policy branch.](/blogs/what-happens-when-a-subscription-payment-fails/operating-visual.png)
 
-For the complete recovery program, read [Failed Subscription Payment Recovery](/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/).
+For the complete recovery program, read [Failed Subscription Payment Recovery](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/).
 
 ## Final recommendation
 

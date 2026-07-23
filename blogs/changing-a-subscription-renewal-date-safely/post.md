@@ -104,7 +104,7 @@ Moving a charge earlier shortens paid time and generally requires explicit conse
 - customer confirmation states old/new date, amount, access, and shipment;
 - audit history records actor, reason, and evidence.
 
-For alignment at signup, read [Renewal Synchronization Explained](/deals/arraysubs/resources/billing-strategy/woocommerce-renewal-synchronization-explained/).
+For alignment at signup, read [Renewal Synchronization Explained](/billing-strategy/woocommerce-renewal-synchronization-explained/).
 
 ## Final recommendation
 

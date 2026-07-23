@@ -6,7 +6,7 @@
 - **Proposed title:** Subscription Order vs Renewal Order vs Parent Order
 - **Content cluster:** C02 — Billing, renewals, synchronization, and proration
 - **Content category:** Billing Strategy
-- **Recommended URL:** `/deals/arraysubs/resources/billing-strategy/subscription-order-vs-renewal-order-vs-parent-order/`
+- **Recommended URL:** `/billing-strategy/subscription-order-vs-renewal-order-vs-parent-order/`
 - **Search intent:** Informational
 - **Funnel stage:** Awareness
 - **Priority:** P1 · Wave 2
@@ -75,7 +75,7 @@ Create an explainer for store owners, finance operators, and WooCommerce impleme
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Billing Strategy`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

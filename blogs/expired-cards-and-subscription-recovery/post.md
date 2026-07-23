@@ -149,7 +149,7 @@ Before an administrator starts a manual collection, check whether the gateway al
 
 ## How should access behave while the customer updates a card?
 
-Use the documented [subscription grace-period policy](/deals/arraysubs/resources/payment-recovery/subscription-grace-periods-explained/) rather than inventing a special access rule for every decline. The customer should retain a secure login and recovery route throughout every eligible phase, even if paid content, features, downloads, shipments, or booked work are reduced.
+Use the documented [subscription grace-period policy](/payment-recovery/subscription-grace-periods-explained/) rather than inventing a special access rule for every decline. The customer should retain a secure login and recovery route throughout every eligible phase, even if paid content, features, downloads, shipments, or booked work are reduced.
 
 For a digital membership, preserving account identity and data while restricting premium actions may be appropriate. For physical goods, shipment release should wait for verified payment. For scheduled services, the booking or staffing cutoff may precede the payment deadline.
 
@@ -217,7 +217,7 @@ ArraySubs is useful when WooCommerce owns local renewal orders and operators wan
 
 It is also not a substitute for gateway configuration, signed webhooks, reliable Action Scheduler execution, customer identity controls, or qualified PCI/security review. If a provider cannot expose an editable method, a new authorization may be the only honest path.
 
-For timing and messages, choose a documented [lenient dunning recipe](/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict dunning recipe](/deals/arraysubs/use-cases/recipes/strict-dunning-grace/), then adapt the [failed-payment email sequence](/deals/arraysubs/resources/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/) to the actual gateway action.
+For timing and messages, choose a documented [lenient dunning recipe](/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict dunning recipe](/deals/arraysubs/use-cases/recipes/strict-dunning-grace/), then adapt the [failed-payment email sequence](/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/) to the actual gateway action.
 
 ## Final recommendation
 

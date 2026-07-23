@@ -5,7 +5,7 @@
 - **Proposed title:** Merchant of Record vs Payment Processor for Subscription Businesses
 - **Content cluster:** C05 — Payment gateways, SCA, tax, and Merchant of Record
 - **Content category:** Payments & Compliance
-- **Recommended URL:** `/deals/arraysubs/resources/payments-and-compliance/merchant-of-record-vs-payment-processor-for-subscription-businesses/`
+- **Recommended URL:** `/payments-and-compliance/merchant-of-record-vs-payment-processor-for-subscription-businesses/`
 - **Search intent:** Commercial investigation
 - **Funnel stage:** Consideration
 - **Priority:** P1 · Wave 3
@@ -74,7 +74,7 @@ Create a comparison for global WooCommerce merchants, developers, and finance te
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Payments & Compliance`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

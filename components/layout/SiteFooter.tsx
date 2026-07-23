@@ -57,7 +57,7 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
     links: [
       ["Changelog", "/changelog/"],
       ["Roadmap", "/roadmap/"],
-      ["Useful Articles", "/deals/arraysubs/resources/"],
+      ["Useful Articles", "/articles/"],
       ["Documentations", "https://support.arrayhash.com/"],
       ["User Portal Login", "https://user-portal.arrayhash.com/"],
       ["Use Cases", "/deals/arraysubs/use-cases/"],

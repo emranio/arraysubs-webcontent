@@ -5,7 +5,7 @@
 - **Proposed title:** Ethical Subscription Cancellation UX and Negative-Option Compliance
 - **Content cluster:** C16 — Pricing strategy, compliance, and 2026 trends
 - **Content category:** Research & Strategy
-- **Recommended URL:** `/deals/arraysubs/resources/research-and-strategy/ethical-subscription-cancellation-ux-and-negative-option-compliance/`
+- **Recommended URL:** `/research-and-strategy/ethical-subscription-cancellation-ux-and-negative-option-compliance/`
 - **Search intent:** Informational
 - **Funnel stage:** Consideration
 - **Priority:** P2 · Wave 4
@@ -74,7 +74,7 @@ Create a guide for subscription founders, executives, finance teams, and industr
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Research & Strategy`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

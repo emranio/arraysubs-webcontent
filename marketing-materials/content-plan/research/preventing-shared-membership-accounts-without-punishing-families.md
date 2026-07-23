@@ -444,7 +444,7 @@ Use short answers directly below these question headings:
 - Put citations beside factual claims rather than collecting unsupported assertions at the end.
 - Use the four-model table, fairness table, SHARE table, policy template, and formulas as extractable units.
 - Clearly label local-code observations, current browser-test observations, external standards, examples from other vendors, and operator recommendations.
-- Use `Article` or `TechArticle` plus `BreadcrumbList` only when metadata matches the visible article. Do not promise FAQ rich results or invent anti-sharing schema.
+- Use `Article` or `TechArticle` only when metadata matches the visible article. Use the visible and structured breadcrumb path `Home / Articles / Membership Strategy`; omit the article title from the UI and `BreadcrumbList`. Do not promise FAQ rich results or invent anti-sharing schema.
 - Google says normal SEO rules apply to AI Overviews/AI Mode and no special AI markup is required. Important content should remain textual, crawlable, internally linked, and supported by useful images.
 - Bing AI Performance can be used to monitor cited URLs and grounding queries. OpenAI says public pages need to be crawlable by OAI-SearchBot to be eligible for ChatGPT search discovery.
 - Refresh after changes to WordPress session management, ArraySubs Multi-Login Prevention, the current UI route, the family/team product model, WCAG authentication guidance, privacy law/guidance, or major platform account-sharing policies.
@@ -453,9 +453,9 @@ Use short answers directly below these question headings:
 
 Keep the article at 6-8 contextual internal links. Use varied anchors and do not repeat the recipe's configuration walkthrough.
 
-1. Early architecture context: `/deals/arraysubs/resources/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/` — anchor such as “membership architecture before configuration.”
-2. Billing-versus-access distinction: `/deals/arraysubs/resources/membership-strategy/woocommerce-membership-vs-subscription-what-is-the-difference/` — anchor such as “separate subscription billing from membership access.”
-3. Lifecycle/source-of-truth context: `/deals/arraysubs/resources/membership-strategy/woocommerce-subscriptions-and-memberships-together-the-complete-architecture/` — anchor such as “connect recurring billing to member entitlements.”
+1. Early architecture context: `/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/` — anchor such as “membership architecture before configuration.”
+2. Billing-versus-access distinction: `/membership-strategy/woocommerce-membership-vs-subscription-what-is-the-difference/` — anchor such as “separate subscription billing from membership access.”
+3. Lifecycle/source-of-truth context: `/membership-strategy/woocommerce-subscriptions-and-memberships-together-the-complete-architecture/` — anchor such as “connect recurring billing to member entitlements.”
 4. Product capability after the neutral framework: `/deals/arraysubs/features/woocommerce-membership/` — anchor such as “ArraySubs WooCommerce membership features.”
 5. Narrow global-cap setup: `/deals/arraysubs/use-cases/recipes/limit-concurrent-logins/` — anchor such as “configure the ArraySubs Pro concurrent-login limit.” This recipe owns step-by-step setup.
 6. Per-tier example: `/deals/arraysubs/use-cases/recipes/session-limit-per-tier/` — anchor such as “set plan-specific session allowances.”

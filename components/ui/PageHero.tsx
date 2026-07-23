@@ -24,6 +24,7 @@ type PageHeroProps = {
   eyebrow?: ReactNode;
   title: ReactNode;
   subtitle?: ReactNode;
+  subtitleClassName?: string;
   /** Short proof points shown under the subtitle. */
   highlights?: ReactNode[];
   /** Buttons / CTA row. */
@@ -73,6 +74,7 @@ export function PageHero({
   eyebrow,
   title,
   subtitle,
+  subtitleClassName,
   highlights,
   actions,
   trust,
@@ -127,6 +129,7 @@ export function PageHero({
             layout === "showcase"
               ? "mt-6 max-w-2xl text-base leading-7 sm:mt-7 sm:text-xl sm:leading-8"
               : "mt-10 text-lg leading-8 sm:text-xl",
+            subtitleClassName,
           )}
         >
           {subtitle}

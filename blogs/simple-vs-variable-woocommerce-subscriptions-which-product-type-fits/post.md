@@ -120,7 +120,7 @@ ArraySubs is not currently a fit for mixed one-time and subscription variations 
 
 Start with one simple subscription unless consolidation clearly improves the customer's decision. Choose a variable product only when the options share one promise, belong on one page, and justify the added QA and lifecycle work. Then document switching and migration separately from catalog structure.
 
-For the wider model decision, read [WooCommerce Subscription Product Types Explained](/deals/arraysubs/resources/subscription-foundations/woocommerce-subscription-product-types/) and [Recurring vs Fixed-Term Subscriptions](/deals/arraysubs/resources/subscription-foundations/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/).
+For the wider model decision, read [WooCommerce Subscription Product Types Explained](/subscription-foundations/woocommerce-subscription-product-types/) and [Recurring vs Fixed-Term Subscriptions](/subscription-foundations/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/).
 
 [Compare ArraySubs plans](/deals/arraysubs/pricing/) after you have chosen the product structure and renewal requirements.
 

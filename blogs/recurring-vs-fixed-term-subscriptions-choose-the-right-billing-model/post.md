@@ -59,7 +59,7 @@ A fixed-date term ends on a shared calendar date. A January and March joiner mig
 
 Fixed date is not billing-date alignment. Alignment controls when renewals occur; it does not by itself create a shared access end, and Woo says enabling alignment does not retroactively realign existing subscriptions ([Billing Date Alignment](https://woocommerce.com/document/subscriptions/billing-date-alignment/)).
 
-Late enrollment creates a policy choice: charge full price for less time, prorate, delay entry, add bonus access, or close enrollment. A010 covers the detailed [fixed-date WooCommerce subscription model](/deals/arraysubs/resources/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/).
+Late enrollment creates a policy choice: charge full price for less time, prorate, delay entry, add bonus access, or close enrollment. A010 covers the detailed [fixed-date WooCommerce subscription model](/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/).
 
 ## Prepaid fixed-term subscriptions
 
@@ -110,7 +110,7 @@ WooCommerce Memberships' official integration demonstrates that subscription bil
 6. Does the customer owe a balance after cancellation? Use an installment/credit workflow, not ordinary subscription length.
 7. What happens on failure, pause, refund, switch, final payment, and expiration? Define those states before launch.
 
-For catalog structure, read [Simple vs Variable WooCommerce Subscriptions](/deals/arraysubs/resources/subscription-foundations/simple-vs-variable-woocommerce-subscriptions-which-product-type-fits/).
+For catalog structure, read [Simple vs Variable WooCommerce Subscriptions](/subscription-foundations/simple-vs-variable-woocommerce-subscriptions-which-product-type-fits/).
 
 ## Current ArraySubs model boundaries
 

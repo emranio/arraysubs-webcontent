@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHero } from "@/components/ui";
-import { createMetadata } from "@/lib/seo";
-import { ResourceArchive } from "../_components/ResourceArchive";
+import { ResourceArchive } from "@/app/articles/_components/ResourceArchive";
 import {
+  RESOURCE_BASE,
   RESOURCE_CATEGORIES,
   getCategoryArticles,
   getCategoryPath,
   getResourceCategory,
   paginateArticles,
   readPageNumber,
-} from "../_data";
+} from "@/app/articles/_data";
+import { PageHero } from "@/components/ui";
+import { createMetadata } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -70,12 +71,21 @@ export default async function ResourceCategoryPage({
       <PageHero
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Resources", href: "/deals/arraysubs/resources/" },
+          { name: "Articles", href: RESOURCE_BASE },
           { name: category.name, href: categoryPath },
         ]}
         title={`${category.name}.`}
         titleSize="article"
-        subtitle={category.description}
+        subtitle={
+          <span className="grid gap-4">
+            {category.intro.map((paragraph) => (
+              <span key={paragraph} className="block">
+                {paragraph}
+              </span>
+            ))}
+          </span>
+        }
+        subtitleClassName="mt-7 max-w-4xl text-base leading-7 sm:mt-8 sm:text-lg sm:leading-8"
         highlights={category.highlights}
       />
 
@@ -85,7 +95,6 @@ export default async function ResourceCategoryPage({
         basePath={categoryPath}
         activeCategory={category.slug}
         heading={`${category.name} guides`}
-        intro={category.intro}
       />
     </>
   );

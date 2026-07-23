@@ -285,7 +285,7 @@ none of the above alone
 = proof that the exact next renewal will succeed
 ```
 
-Link to the existing broad recovery article rather than reproducing its dunning steps: `/deals/arraysubs/resources/payment-recovery/expired-cards-and-subscription-recovery/`.
+Link to the existing broad recovery article rather than reproducing its dunning steps: `/payment-recovery/expired-cards-and-subscription-recovery/`.
 
 ## Gateway switching and token portability
 
@@ -553,14 +553,14 @@ Required links and natural anchors:
 | `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/` | “Stripe automatic billing and SCA recipe” | Stripe future-use setup section |
 | `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/` | “Gateway Health monitoring recipe” | Audit/diagnosis section |
 | `/deals/arraysubs/pricing/` | “view ArraySubs Pro pricing” | After the core answer and practical value, never in opening |
-| `/deals/arraysubs/resources/payment-recovery/expired-cards-and-subscription-recovery/` | “expired-card recovery guide” | Expiry and failed-renewal distinction |
-| `/deals/arraysubs/resources/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/` | “SCA and 3D Secure for renewals” | Stripe off-session setup/caveat |
-| `/deals/arraysubs/resources/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/` | “subscription webhook monitoring guide” | Event ordering/idempotency paragraph if A064 is published before A063 finalization; otherwise omit until live |
-| `/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/` | “compare subscription gateway architectures” | Gateway model table |
-| `/deals/arraysubs/resources/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/` | “Stripe, PayPal, and Paddle billing models” | Provider comparison section |
-| `/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/` | “Stripe recurring-payment test guide” | Stripe verification checklist |
-| `/deals/arraysubs/resources/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/` | “PayPal agreement limitations” | PayPal section |
-| `/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/` | “Paddle Merchant of Record architecture” | Paddle section |
+| `/payment-recovery/expired-cards-and-subscription-recovery/` | “expired-card recovery guide” | Expiry and failed-renewal distinction |
+| `/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/` | “SCA and 3D Secure for renewals” | Stripe off-session setup/caveat |
+| `/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/` | “subscription webhook monitoring guide” | Event ordering/idempotency paragraph if A064 is published before A063 finalization; otherwise omit until live |
+| `/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/` | “compare subscription gateway architectures” | Gateway model table |
+| `/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/` | “Stripe, PayPal, and Paddle billing models” | Provider comparison section |
+| `/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/` | “Stripe recurring-payment test guide” | Stripe verification checklist |
+| `/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/` | “PayPal agreement limitations” | PayPal section |
+| `/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/` | “Paddle Merchant of Record architecture” | Paddle section |
 
 Do not force both feature-hub duplicates from the brief into separate links; one contextual link to the payment-gateway anchor satisfies both commercial-pillar and feature-hub intent.
 

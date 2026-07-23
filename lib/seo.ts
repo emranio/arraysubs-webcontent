@@ -180,6 +180,69 @@ export function faqSchema(items: Faq[], path?: string) {
   };
 }
 
+/* ----------------------------------------------------------------------------
+   AUTHOR / PERSON  (E-E-A-T: named, credentialed, externally verifiable author)
+   -------------------------------------------------------------------------- */
+
+export type AuthorSchemaInput = {
+  name: string;
+  /** Canonical author-page path beginning with "/". */
+  path: string;
+  /** Headshot path or absolute URL. */
+  image: string;
+  jobTitle: string;
+  /** One-line factual summary of the person. */
+  description: string;
+  /** Verifiable external profiles (personal site, WordPress.org, GitHub, LinkedIn). */
+  sameAs: string[];
+  /** Topics the person is qualified to cover. */
+  knowsAbout?: string[];
+  /** Formal education institution. */
+  alumniOf?: string;
+};
+
+/**
+ * Person JSON-LD for an author. Emitted inline on each article (so every page
+ * carries author authority standalone) and as the `mainEntity` of the author
+ * ProfilePage. The shared `@id` lets search and AI engines resolve one entity.
+ */
+export function authorPersonSchema(author: AuthorSchemaInput) {
+  const url = absoluteUrl(author.path);
+  const organizationId = `${absoluteUrl("/")}#organization`;
+
+  return {
+    "@type": "Person",
+    "@id": `${url}#person`,
+    name: author.name,
+    url,
+    image: absoluteUrl(author.image),
+    jobTitle: author.jobTitle,
+    description: author.description,
+    worksFor: { "@id": organizationId },
+    sameAs: author.sameAs,
+    ...(author.knowsAbout ? { knowsAbout: author.knowsAbout } : {}),
+    ...(author.alumniOf
+      ? { alumniOf: { "@type": "CollegeOrUniversity", name: author.alumniOf } }
+      : {}),
+  };
+}
+
+/** ProfilePage JSON-LD wrapping the author Person for a dedicated author page. */
+export function profilePageSchema(author: AuthorSchemaInput) {
+  const url = absoluteUrl(author.path);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${url}#profilepage`,
+    url,
+    name: `${author.name} — Author profile`,
+    isPartOf: { "@id": `${absoluteUrl("/")}#website` },
+    publisher: { "@id": `${absoluteUrl("/")}#organization` },
+    mainEntity: authorPersonSchema(author),
+  };
+}
+
 export type HowToStep = { name: string; text: string };
 
 /**
@@ -210,8 +273,7 @@ export type BlogPostInput = {
   datePublished: string;
   /** ISO date (YYYY-MM-DD) of the last meaningful update — drives freshness. */
   dateModified: string;
-  author: string;
-  reviewer: string;
+  author: AuthorSchemaInput;
   image: string;
   imageWidth: number;
   imageHeight: number;
@@ -259,15 +321,7 @@ export function blogPostSchema(input: BlogPostInput) {
       caption: input.headline,
     },
     thumbnailUrl: imageUrl,
-    author: {
-      "@type": "Person",
-      name: input.author,
-      worksFor: { "@id": organizationId },
-    },
-    reviewedBy: {
-      "@type": "Organization",
-      name: input.reviewer,
-    },
+    author: authorPersonSchema(input.author),
     publisher: {
       "@type": "Organization",
       "@id": organizationId,

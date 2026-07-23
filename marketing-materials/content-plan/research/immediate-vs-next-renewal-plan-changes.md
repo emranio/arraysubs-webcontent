@@ -208,7 +208,7 @@ Current code supports replacing an existing pending switch only after explicit c
 - Customer self-service switch recipe: `/deals/arraysubs/use-cases/recipes/customer-self-serve-switch/`
 - Switch fees recipe: `/deals/arraysubs/use-cases/recipes/switch-fees/`
 - Subscription notes/timeline recipe: `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
-- Proration comparison: `/deals/arraysubs/resources/billing-strategy/subscription-proration-methods-compared-charge-credit-or-defer/`
+- Proration comparison: `/billing-strategy/subscription-proration-methods-compared-charge-credit-or-defer/`
 
 Do not duplicate recipe configuration steps.
 

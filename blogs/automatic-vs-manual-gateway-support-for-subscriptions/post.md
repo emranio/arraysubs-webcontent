@@ -112,7 +112,7 @@ Level 2 must remain separate from Level 3. Finding a token in WordPress does not
 
 Level 3 must remain separate from Level 4. A sandbox success on one renewal does not test expired cards, SCA, webhook duplication, late events, refunds, cancellation, a method update, a price change, or disabling the integration. Subscriptions live long enough for the unhappy paths to become normal operations.
 
-For broader commercial advice about choosing the customer experience, see [manual versus automatic subscription renewals](/deals/arraysubs/resources/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/). This guide stays focused on qualifying the gateway and integration.
+For broader commercial advice about choosing the customer experience, see [manual versus automatic subscription renewals](/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/). This guide stays focused on qualifying the gateway and integration.
 
 ## What does an automatic subscription gateway actually need?
 
@@ -242,19 +242,19 @@ The current Pro adapters all support an automatic concept, but they do not share
 
 For current Stripe renewals, ArraySubs owns the local schedule and creates the WooCommerce renewal order. It resolves stored Stripe customer/payment-method context and creates a new off-session PaymentIntent. It can classify `succeeded`, `processing`, and customer-action states such as `requires_action`, store transaction evidence, reconcile webhooks, and use bounded local retry policy.
 
-This is not a Stripe Billing Subscription/Invoice implementation. Stripe Billing Smart Retries do not own these PaymentIntents. The detailed architecture and acceptance tests are in [Stripe recurring payments for WooCommerce](/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/).
+This is not a Stripe Billing Subscription/Invoice implementation. Stripe Billing Smart Retries do not own these PaymentIntents. The detailed architecture and acceptance tests are in [Stripe recurring payments for WooCommerce](/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/).
 
 ### PayPal: the remote subscription owns future billing
 
 The current PayPal adapter creates remote Product, Plan, and Subscription objects. At local due time, ArraySubs does not create a new PayPal charge; it records that it is awaiting the provider. PayPal’s subscription sale and lifecycle events supply the remote payment result that must reconcile to the Woo renewal cycle.
 
-Because PayPal owns the remote agreement, local disablement or a manual order is not proof that remote billing stopped. Current plan limits, fixed-price behavior, Blocks caveats, and reauthorization boundaries are covered in [PayPal recurring payments for WooCommerce](/deals/arraysubs/resources/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/).
+Because PayPal owns the remote agreement, local disablement or a manual order is not proof that remote billing stopped. Current plan limits, fixed-price behavior, Blocks caveats, and reauthorization boundaries are covered in [PayPal recurring payments for WooCommerce](/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/).
 
 ### Paddle: the remote subscription owns the transaction schedule
 
 Paddle also owns automatic renewal timing and creates a recurring Transaction from its Subscription. Verified events reconcile the remote transaction, Woo order, and local subscription. Paddle’s Merchant-of-Record role further changes buyer-facing tax documents, checkout, refunds, payouts, and financial reconciliation.
 
-The current implementation has important product-sync, interval/trial, total-parity, refund, and reconciliation limits. Review [Paddle Merchant of Record for WooCommerce subscriptions](/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) before treating it as a drop-in gateway.
+The current implementation has important product-sync, interval/trial, total-parity, refund, and reconciliation limits. Review [Paddle Merchant of Record for WooCommerce subscriptions](/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) before treating it as a drop-in gateway.
 
 ### Current declared capability snapshot
 
@@ -474,7 +474,7 @@ For current Stripe renewals, support should inspect the local scheduled action, 
 
 For current PayPal and Paddle subscriptions, start with the provider’s subscription and transaction state. The provider owns charge timing and usually retry behavior. Local work should interpret signed events and align the Woo order without adding a second local collection engine.
 
-The broader [failed subscription payment recovery guide](/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) explains decline routing and recovery policy, while [what happens when a subscription payment fails](/deals/arraysubs/resources/payment-recovery/what-happens-when-a-subscription-payment-fails/) follows the customer-facing lifecycle.
+The broader [failed subscription payment recovery guide](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) explains decline routing and recovery policy, while [what happens when a subscription payment fails](/payment-recovery/what-happens-when-a-subscription-payment-fails/) follows the customer-facing lifecycle.
 
 ## Can a customer switch gateways by paying one manual renewal?
 

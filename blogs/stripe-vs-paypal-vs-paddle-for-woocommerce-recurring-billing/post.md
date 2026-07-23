@@ -36,7 +36,7 @@ In ArraySubs Pro, Stripe renewals are initiated by the WordPress store, while Pa
 | One simple subscription with unusually high PayPal preference | **PayPal can be primary** | Stripe for future flexibility | The remote agreement is defensible when the one-plan constraint matches the offer |
 | Lean software company wanting global tax/invoice/chargeback operations outsourced | **Paddle** | Stripe if a separate direct-processing route is strategically justified | MoR responsibility may matter more than checkout control |
 
-For a wider shortlist that also covers manual renewal and regional-gateway scenarios, read [Best Payment Gateways for WooCommerce Subscriptions](/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/). This guide goes deeper on the architectural choice among ArraySubs Pro’s three automatic integrations.
+For a wider shortlist that also covers manual renewal and regional-gateway scenarios, read [Best Payment Gateways for WooCommerce Subscriptions](/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/). This guide goes deeper on the architectural choice among ArraySubs Pro’s three automatic integrations.
 
 ## Compare control planes, not payment logos
 
@@ -228,7 +228,7 @@ The adapter maps refund and dispute events and uses a sync guard to avoid echo l
 - Tax, disputes, refunds, and compliance operations exceed internal capacity.
 - Fully provider-managed schedule is a strategic requirement.
 
-Read [Stripe Recurring Payments for WooCommerce: How They Work and What to Test](/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/) for the complete lifecycle once that focused guide is the next implementation question.
+Read [Stripe Recurring Payments for WooCommerce: How They Work and What to Test](/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/) for the complete lifecycle once that focused guide is the next implementation question.
 
 ## PayPal in depth: buyer preference with a narrower agreement
 
@@ -266,7 +266,7 @@ The adapter refunds a PayPal **sale transaction**, not a remote subscription ID.
 - Business wants a seamless embedded card editor rather than buyer reauthorization.
 - Operations cannot reconcile remote agreement, sale transaction, signed events, and local orders.
 
-Use the focused [PayPal recurring payments guide](/deals/arraysubs/resources/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/) when the agreement lifecycle is the main implementation question.
+Use the focused [PayPal recurring payments guide](/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/) when the agreement lifecycle is the main implementation question.
 
 ## Paddle in depth: Merchant of Record and remote catalog
 
@@ -305,7 +305,7 @@ Refunds create Paddle Adjustments. Paddle documents that a live refund can start
 - Business refuses a remote catalog, hosted checkout/portal, or external invoice/tax record.
 - Easy provider exit and Woo-native object ownership outrank MoR operations.
 
-For a dedicated responsibility and implementation analysis, continue to [Paddle Merchant of Record for WooCommerce Subscriptions](/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/).
+For a dedicated responsibility and implementation analysis, continue to [Paddle Merchant of Record for WooCommerce Subscriptions](/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/).
 
 ## Payment-source updates reveal the real architecture
 

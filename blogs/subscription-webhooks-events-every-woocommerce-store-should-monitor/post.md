@@ -51,7 +51,7 @@ For Stripe renewals in current ArraySubs Pro, WordPress and Action Scheduler own
 
 PayPal and Paddle are different. Each can own a remote recurring agreement/subscription and its collection schedule. Their webhooks tell the store about activity initiated remotely. That difference is why a universal “listen for invoice paid” checklist is incomplete.
 
-For the broader scheduling model, read [how WooCommerce subscription renewals work](/deals/arraysubs/resources/billing-strategy/how-woocommerce-subscription-renewals-work/) and the [automatic-versus-manual gateway explainer](/deals/arraysubs/resources/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/). The webhook layer must match the gateway’s actual collection owner.
+For the broader scheduling model, read [how WooCommerce subscription renewals work](/billing-strategy/how-woocommerce-subscription-renewals-work/) and the [automatic-versus-manual gateway explainer](/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/). The webhook layer must match the gateway’s actual collection owner.
 
 ## What is the difference between webhooks, scheduled jobs, and reconciliation?
 
@@ -182,7 +182,7 @@ The last row summarizes `payment_method.automatically_updated` and `payment_meth
 
 Stripe advises subscribing only to event types the integration needs. Receiving everything increases load and makes alerting noisy. The correct inventory is a contract between the endpoint configuration and the code version actually deployed.
 
-The [Stripe recurring-payment test guide](/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/) explains the complete charge path. The [SCA and 3D Secure renewal guide](/deals/arraysubs/resources/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/) explains why a `requires_action` outcome is a recovery state, not permission to keep retrying.
+The [Stripe recurring-payment test guide](/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/) explains the complete charge path. The [SCA and 3D Secure renewal guide](/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/) explains why a `requires_action` outcome is a recovery state, not permission to keep retrying.
 
 ### Verify both account scope and delivery route
 
@@ -196,7 +196,7 @@ For every Stripe incident, record:
 - Woo order transaction ID; and
 - ArraySubs subscription ID.
 
-A correct-looking event ID from another account or mode is not valid evidence for this site. The [payment-token and card-update explainer](/deals/arraysubs/resources/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/) covers the same scoping rule for vaulted methods.
+A correct-looking event ID from another account or mode is not valid evidence for this site. The [payment-token and card-update explainer](/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/) covers the same scoping rule for vaulted methods.
 
 ## Which PayPal subscription events should be monitored?
 
@@ -230,7 +230,7 @@ Current ArraySubs PayPal code can proactively confirm an approved order when the
 
 Verify the PayPal sale/agreement ID, Woo order, ArraySubs subscription, and final provider state. A return page alone does not prove settlement; a later webhook must not duplicate the local completion.
 
-For the broader agreement model and its limits, use [PayPal recurring payments for WooCommerce](/deals/arraysubs/resources/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/).
+For the broader agreement model and its limits, use [PayPal recurring payments for WooCommerce](/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/).
 
 ## Which Paddle subscription events should be monitored?
 
@@ -247,7 +247,7 @@ Current ArraySubs Pro maps:
 
 Paddle documents that `transaction.paid` is an early point at which funds are captured, while `transaction.completed` means Paddle has finished internal transaction processing. Current ArraySubs uses `transaction.completed` as its mapped success event. Monitor the event the deployed handler actually consumes, not a generic checklist copied from another integration. See Paddle’s [transaction.completed reference](https://developer.paddle.com/webhooks/transactions/transaction-completed/) and [subscription provisioning guidance](https://developer.paddle.com/build/subscriptions/provision-access-webhooks/).
 
-The [Paddle Merchant-of-Record guide](/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) covers tax documents, refunds, and MoR responsibility. Webhook correctness does not move those legal/accounting responsibilities back to WooCommerce.
+The [Paddle Merchant-of-Record guide](/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) covers tax documents, refunds, and MoR responsibility. Webhook correctness does not move those legal/accounting responsibilities back to WooCommerce.
 
 ## Are WooCommerce webhooks the same as gateway webhooks?
 
@@ -335,7 +335,7 @@ Every arrow must be defensible. Common correlation sources include provider meta
 - The newest unpaid order is not automatically the event’s order.
 - An email address is not a safe unique transaction key.
 
-The [subscription order versus renewal order guide](/deals/arraysubs/resources/billing-strategy/subscription-order-vs-renewal-order-vs-parent-order/) explains the local object distinctions that webhook handlers must preserve.
+The [subscription order versus renewal order guide](/billing-strategy/subscription-order-vs-renewal-order-vs-parent-order/) explains the local object distinctions that webhook handlers must preserve.
 
 ## What symptoms indicate a webhook monitoring gap?
 
@@ -350,7 +350,7 @@ The [subscription order versus renewal order guide](/deals/arraysubs/resources/b
 | Event exists but no local object | Missing metadata/mapping or event arrived before local commit | Attach it to the first customer match |
 | Replayed event repeats refund/access change | Business mutation is not idempotent | Disable retries globally |
 
-The [failed-subscription-payment recovery pillar](/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) covers customer recovery; this table focuses on systems evidence.
+The [failed-subscription-payment recovery pillar](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) covers customer recovery; this table focuses on systems evidence.
 
 ## Incident runbook: provider shows paid, WooCommerce shows unpaid
 

@@ -114,7 +114,7 @@ Count refunds and chargebacks against the affected transaction. Use closed cohor
 - Make webhook and job handlers idempotent.
 - Never update a next date without reconciling scheduled actions.
 
-For the transaction sequence, read [How WooCommerce subscription renewals work](/deals/arraysubs/resources/billing-strategy/how-woocommerce-subscription-renewals-work/).
+For the transaction sequence, read [How WooCommerce subscription renewals work](/billing-strategy/how-woocommerce-subscription-renewals-work/).
 
 ## Final recommendation
 

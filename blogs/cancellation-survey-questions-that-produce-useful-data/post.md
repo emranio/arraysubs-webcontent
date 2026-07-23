@@ -534,7 +534,7 @@ This guide was verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs
 
 The staging pass confirmed the editable reason configuration, one primary reason selector, conditional Other detail, configured discount/pause offers, and one synthetic `offer_shown` event. No real customer data, offer acceptance, cancellation, controlled study, or published reason distribution was used. The recommended question set requires merchant-specific pretesting, accessibility/privacy review, and appropriate legal review.
 
-Continue with the [cancellation reason taxonomy](/deals/arraysubs/resources/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/), [effective cancellation flow](/deals/arraysubs/resources/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/), and [subscription save-offer comparison](/deals/arraysubs/resources/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/).
+Continue with the [cancellation reason taxonomy](/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/), [effective cancellation flow](/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/), and [subscription save-offer comparison](/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/).
 
 ## Primary sources
 

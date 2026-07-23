@@ -3,7 +3,7 @@
 ## Research record
 
 - Content-plan ID: A072
-- Planned URL: `/deals/arraysubs/resources/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/`
+- Planned URL: `/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/`
 - Research date: 2026-07-22
 - Product source inspected: ArraySubs Free 1.8.11 and ArraySubs Pro 1.1.2 in the current working tree
 - Scope: evidence, taxonomy, coding method, product truth, and editorial inputs only; this is not an article draft
@@ -338,10 +338,10 @@ The attempted retention screenshot annotation could not reliably locate its requ
 ## Internal-link plan
 
 - Primary feature anchor: `/deals/arraysubs/features/#retention-revenue`
-- Pillar: `/deals/arraysubs/resources/retention-and-churn/how-to-reduce-woocommerce-subscription-churn/` (A070)
-- Explainer: `/deals/arraysubs/resources/retention-and-churn/voluntary-vs-involuntary-churn/` (A071)
-- Related: `/deals/arraysubs/resources/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/` (A073)
-- Related: `/deals/arraysubs/resources/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/` (A074)
+- Pillar: `/retention-and-churn/how-to-reduce-woocommerce-subscription-churn/` (A070)
+- Explainer: `/retention-and-churn/voluntary-vs-involuntary-churn/` (A071)
+- Related: `/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/` (A073)
+- Related: `/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/` (A074)
 - Recipe: `/deals/arraysubs/use-cases/recipes/require-reason-targeted-funnel/`
 - Recipe: `/deals/arraysubs/use-cases/recipes/pause-need-a-break/`
 - Recipe: `/deals/arraysubs/use-cases/recipes/downgrade-offer/`

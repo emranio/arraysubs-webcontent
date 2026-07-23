@@ -124,7 +124,7 @@ A failed renewal is not automatically a final loss. Determine:
 - what verified late payment restores;
 - what happens when recovery ends: cancellation, manual review, or fallback.
 
-Use the [subscription grace-period explainer](/deals/arraysubs/resources/payment-recovery/subscription-grace-periods-explained/) to design the four clocks. Never gate `/my-account/`, login, password reset, Pay Now, payment-method updates, checkout, gateway return routes, webhooks, privacy, or support with a broad member-only prefix unless a tested exception preserves them.
+Use the [subscription grace-period explainer](/payment-recovery/subscription-grace-periods-explained/) to design the four clocks. Never gate `/my-account/`, login, password reset, Pay Now, payment-method updates, checkout, gateway return routes, webhooks, privacy, or support with a broad member-only prefix unless a tested exception preserves them.
 
 ## What happens during cancellation, expiration, and fixed periods?
 
@@ -205,7 +205,7 @@ Test at least:
 15. cached member page served to guest, and vice versa;
 16. payment/account routes under a broad URL rule.
 
-For each case, verify the full reconciliation chain and capture before/after evidence. The complete planning worksheet is in [How to Create a WooCommerce Membership Site](/deals/arraysubs/resources/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/).
+For each case, verify the full reconciliation chain and capture before/after evidence. The complete planning worksheet is in [How to Create a WooCommerce Membership Site](/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/).
 
 ## When is a separate membership, LMS, or identity layer needed?
 

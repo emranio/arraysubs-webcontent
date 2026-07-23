@@ -443,7 +443,7 @@ This guide was verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs
 
 The staging pass opened the customer subscription actions, selected a reason, displayed configured discount and pause offers, and produced one synthetic `offer_shown` event. No offer was accepted, no subscription was cancelled, and no charge was created. Accessibility observations are design/test requirements, not a conformance certification.
 
-Continue with the [cancellation reason taxonomy](/deals/arraysubs/resources/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/), [save-offer comparison](/deals/arraysubs/resources/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/), and [retention feature overview](/deals/arraysubs/features/#retention-revenue).
+Continue with the [cancellation reason taxonomy](/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/), [save-offer comparison](/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/), and [retention feature overview](/deals/arraysubs/features/#retention-revenue).
 
 ## Primary sources
 

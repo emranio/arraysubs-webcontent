@@ -400,7 +400,7 @@ Use contextual anchors such as “design the complete dunning policy,” “choo
 12. **Conclusion and CTA**
     - Three takeaways maximum; contextual links; pricing CTA only after the complete answer.
 13. **Publishing trust elements**
-    - Named author and technical reviewer; test environment; published/last-verified dates; limitations; source-adjacent citations; meaningful update log; `Article`/`TechArticle` and `BreadcrumbList` only if visible/current guidance supports them.
+    - Named author and technical reviewer; test environment; published/last-verified dates; limitations; source-adjacent citations; meaningful update log; `Article`/`TechArticle` only if visible/current guidance supports it; visible and structured breadcrumb path `Home / Articles / Payment Recovery`, with the article title omitted from the UI and `BreadcrumbList`.
 
 ## Distinct inline-image teaching objectives
 
@@ -427,4 +427,3 @@ Each image should teach one idea and avoid repeating a dashboard/card-grid compo
 - Action Scheduler or status hooks change the retry/on-hold ordering.
 - PCI DSS guidance affecting logs/screenshots changes.
 - Quarterly primary-source review because gateway behavior is time-sensitive, plus review after every relevant WordPress, WooCommerce, ArraySubs, or gateway release.
-

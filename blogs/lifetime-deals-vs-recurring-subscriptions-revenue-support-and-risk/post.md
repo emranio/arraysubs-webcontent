@@ -147,7 +147,7 @@ Do not translate that into immutable permanent access. Current customer cancella
 
 Use “ongoing access under the stated entitlement and status terms,” not an unconditional promise that access can never end. The [Lifetime Deal recipe](/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/) owns the setup steps.
 
-For the recurring alternative, read [Monthly and Annual Subscription Plans](/deals/arraysubs/resources/subscription-foundations/monthly-and-annual-subscription-plans-packaging-without-cannibalization/). For finite choices, read [Customer-Chosen Subscription Duration](/deals/arraysubs/resources/subscription-foundations/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/).
+For the recurring alternative, read [Monthly and Annual Subscription Plans](/subscription-foundations/monthly-and-annual-subscription-plans-packaging-without-cannibalization/). For finite choices, read [Customer-Chosen Subscription Duration](/subscription-foundations/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/).
 
 ## Final recommendation
 

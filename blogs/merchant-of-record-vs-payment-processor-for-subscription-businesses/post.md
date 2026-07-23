@@ -106,7 +106,7 @@ A conventional processor can provide strong calculation tools while the merchant
 
 An MoR can assume more of those transaction duties for covered sales because it is the buyer-facing seller. The supplier still has to give the MoR accurate classification and transaction data, handle sales outside the scope, keep appropriate business records, and obtain advice about its own taxes and reporting.
 
-For a deeper operational breakdown, read [Sales Tax and VAT on WooCommerce Subscriptions](/deals/arraysubs/resources/payments-and-compliance/sales-tax-and-vat-on-woocommerce-subscriptions/). It separates address evidence, product tax class, recurring-order calculations, exemptions, invoices, refunds, and filing work instead of treating “tax support” as a yes/no gateway feature.
+For a deeper operational breakdown, read [Sales Tax and VAT on WooCommerce Subscriptions](/payments-and-compliance/sales-tax-and-vat-on-woocommerce-subscriptions/). It separates address evidence, product tax class, recurring-order calculations, exemptions, invoices, refunds, and filing work instead of treating “tax support” as a yes/no gateway feature.
 
 > **Tax and legal notice:** this guide is an operational comparison, not tax or legal advice. Country, product, entity, buyer, and contract details can change the result. Confirm the allocation with the provider and qualified advisers.
 
@@ -260,7 +260,7 @@ Ask for a written exit answer to each of these questions:
 - Can the buyer still access transaction documents after exit?
 - How will old and new provider records reconcile in finance and support systems?
 
-Our next guide, [Migrating Subscription Gateways Without Breaking Renewals](/deals/arraysubs/resources/payments-and-compliance/migrating-subscription-gateways-without-breaking-renewals/), turns those questions into an inventory, cohort, pilot, cutover, and rollback plan.
+Our next guide, [Migrating Subscription Gateways Without Breaking Renewals](/payments-and-compliance/migrating-subscription-gateways-without-breaking-renewals/), turns those questions into an inventory, cohort, pilot, cutover, and rollback plan.
 
 ## How this maps to WooCommerce and ArraySubs
 
@@ -288,9 +288,9 @@ For Stripe automatic billing, the current ArraySubs path depends on the official
 
 ![Paddle gateway health details in the ArraySubs test environment](/blogs/merchant-of-record-vs-payment-processor-for-subscription-businesses/paddle-gateway-health.png)
 
-Paddle can fit eligible digital products that want an MoR transaction model, but its presence in Gateway Health is not blanket approval. The [Paddle Merchant of Record guide](/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) covers the integration-specific setup and limits.
+Paddle can fit eligible digital products that want an MoR transaction model, but its presence in Gateway Health is not blanket approval. The [Paddle Merchant of Record guide](/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) covers the integration-specific setup and limits.
 
-For the broader provider shortlist, compare [Stripe vs PayPal vs Paddle for WooCommerce recurring billing](/deals/arraysubs/resources/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/) and [the best payment gateways for WooCommerce subscriptions](/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/).
+For the broader provider shortlist, compare [Stripe vs PayPal vs Paddle for WooCommerce recurring billing](/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/) and [the best payment gateways for WooCommerce subscriptions](/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/).
 
 ## Contract questions to send every provider
 

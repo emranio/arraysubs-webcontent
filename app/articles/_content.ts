@@ -12,7 +12,7 @@ export type ArticleFaq = {
   answer: string;
 };
 
-function articleFile(slug: string) {
+function articleContentFile(slug: string) {
   return path.join(process.cwd(), "blogs", slug, "post.md");
 }
 
@@ -48,7 +48,7 @@ function markdownToPlainText(markdown: string) {
 }
 
 export function getArticleMarkdown(slug: string) {
-  const raw = fs.readFileSync(articleFile(slug), "utf8");
+  const raw = fs.readFileSync(articleContentFile(slug), "utf8");
   return stripDocumentTitle(stripFrontmatter(raw)).trim();
 }
 

@@ -94,7 +94,7 @@ Use a lawful, credible control or counterfactual. Coupon-attributed revenue incl
 
 Pause or revise when observed sequence differs from copy, technical exceptions affect counters/tax/reporting, contribution falls below the merchant’s defined floor, abuse/support/refunds cross a predeclared tolerance, or first full-price outcomes materially diverge from a comparable cohort. The correct thresholds come from merchant economics, not a universal benchmark.
 
-For a universal product-level price step, read [Different First and Renewal Prices](/deals/arraysubs/resources/billing-strategy/different-first-and-renewal-prices-subscription-pricing-patterns/).
+For a universal product-level price step, read [Different First and Renewal Prices](/billing-strategy/different-first-and-renewal-prices-subscription-pricing-patterns/).
 
 ## Final recommendation
 

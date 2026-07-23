@@ -411,7 +411,7 @@ This guide was verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs
 
 No live charge, failed-payment recovery, offer acceptance, or customer cancellation was completed for this article. The formulas and classification framework are original editorial recommendations, not built-in reports or performance claims.
 
-Continue with [how to reduce WooCommerce subscription churn](/deals/arraysubs/resources/retention-and-churn/how-to-reduce-woocommerce-subscription-churn/), build a [cancellation reason taxonomy](/deals/arraysubs/resources/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/), review the [involuntary churn recovery checklist](/deals/arraysubs/resources/payment-recovery/involuntary-churn-recovery-checklist/), or explore [subscription retention features](/deals/arraysubs/features/#retention-revenue).
+Continue with [how to reduce WooCommerce subscription churn](/retention-and-churn/how-to-reduce-woocommerce-subscription-churn/), build a [cancellation reason taxonomy](/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/), review the [involuntary churn recovery checklist](/payment-recovery/involuntary-churn-recovery-checklist/), or explore [subscription retention features](/deals/arraysubs/features/#retention-revenue).
 
 ## Primary sources
 

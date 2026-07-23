@@ -9,6 +9,8 @@ type EditorialArtworkProps = {
   byline?: string;
   updatedAt?: string;
   updatedLabel?: string;
+  compact?: boolean;
+  preserveImageAspect?: boolean;
   className?: string;
 };
 
@@ -39,6 +41,8 @@ export function EditorialArtwork({
   byline,
   updatedAt,
   updatedLabel,
+  compact = false,
+  preserveImageAspect = false,
   className,
 }: EditorialArtworkProps) {
   const palette = tones[tone];
@@ -59,23 +63,37 @@ export function EditorialArtwork({
       <div className="absolute inset-y-0 left-[42%] border-l border-current opacity-20" />
       <div className="absolute inset-x-0 top-[32%] border-t border-current opacity-20" />
 
-      <div className="absolute top-[28%] left-5 z-20 w-[45%] sm:left-6">
+      <div
+        className={cn(
+          "absolute left-5 z-20 sm:left-6",
+          compact ? "top-5 w-[35%] sm:top-6" : "top-[28%] w-[45%]",
+        )}
+      >
         <p
           className={cn(
             "text-[0.6875rem] font-semibold tracking-[0.12em] uppercase",
             palette.muted,
+            compact && "pl-7 sm:pl-8",
           )}
         >
           ArraySubs field guide
         </p>
-        <p className="mt-3 font-display text-xl leading-[1.05] font-semibold text-balance sm:text-2xl lg:text-3xl">
+        <p
+          className={cn(
+            "font-display leading-[1.05] font-semibold text-balance",
+            compact
+              ? "mt-5 text-lg sm:text-xl lg:text-2xl"
+              : "mt-3 text-xl sm:text-2xl lg:text-3xl",
+          )}
+        >
           {title}
         </p>
       </div>
 
       <div
         className={cn(
-          "absolute right-5 bottom-5 z-10 h-[54%] w-[52%] overflow-hidden rounded-lg border sm:right-6 sm:bottom-6",
+          "absolute right-5 bottom-5 z-10 w-[52%] overflow-hidden rounded-lg border sm:right-6 sm:bottom-6",
+          preserveImageAspect ? "aspect-[16/9]" : "h-[54%]",
           palette.frame,
         )}
       >
@@ -85,7 +103,10 @@ export function EditorialArtwork({
           width={1440}
           height={1000}
           decoding="async"
-          className="h-full w-full object-cover object-top"
+          className={cn(
+            "h-full w-full object-top",
+            preserveImageAspect ? "object-contain" : "object-cover",
+          )}
         />
       </div>
 

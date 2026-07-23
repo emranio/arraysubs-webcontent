@@ -27,7 +27,6 @@ type ResourceArchiveProps = {
   activeCategory?: string;
   featuredArticle?: ResourceArticle;
   heading?: string;
-  intro?: string[];
 };
 
 export function ResourceArchive({
@@ -37,7 +36,6 @@ export function ResourceArchive({
   activeCategory,
   featuredArticle,
   heading = "Latest field guides",
-  intro,
 }: ResourceArchiveProps) {
   const paginated = paginateArticles(articles, page);
   const firstItem = (page - 1) * 6 + 1;
@@ -47,18 +45,6 @@ export function ResourceArchive({
     <>
       <Section surface="default" spacing="sm">
         <Container>
-          {intro && intro.length > 0 && (
-            <div className="mb-10 grid gap-6 border-b border-border pb-10 lg:grid-cols-[16rem_1fr]">
-              <p className="font-display text-2xl font-semibold text-primary">
-                About this topic
-              </p>
-              <div className="grid max-w-4xl gap-5 text-lg leading-8 text-muted">
-                {intro.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-            </div>
-          )}
           <CategoryNavigation activeCategory={activeCategory} />
 
           {featuredArticle && page === 1 && (
@@ -114,7 +100,7 @@ export function ResourceArchive({
           <Pagination
             currentPage={page}
             totalPages={paginated.totalPages}
-            label={activeCategory ? `${heading} pages` : "Resource library pages"}
+            label={activeCategory ? `${heading} pages` : "Article library pages"}
             hrefForPage={(targetPage) =>
               targetPage === 1 ? basePath : `${basePath}?page=${targetPage}`
             }
@@ -127,8 +113,8 @@ export function ResourceArchive({
 
 function CategoryNavigation({ activeCategory }: { activeCategory?: string }) {
   return (
-    <nav aria-label="Resource categories">
-      <div className="flex items-center justify-between gap-5">
+    <nav aria-label="Article categories">
+      <div className="flex items-baseline gap-3">
         <p className="font-display text-xl font-semibold">Explore by topic</p>
         <span className="hidden text-sm font-medium text-faint sm:inline">
           {RESOURCE_ARTICLES.length} practical guides
@@ -138,7 +124,7 @@ function CategoryNavigation({ activeCategory }: { activeCategory?: string }) {
         <li>
           <CategoryLink
             href={RESOURCE_BASE}
-            label="All resources"
+            label="All articles"
             count={RESOURCE_ARTICLES.length}
             active={!activeCategory}
           />

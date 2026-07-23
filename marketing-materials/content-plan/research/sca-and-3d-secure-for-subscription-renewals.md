@@ -999,7 +999,7 @@ These four contexts are intentionally different. Pair them with three to four re
 - Prefer descriptive questions as H2s. Keep paragraphs short enough for technical scanning.
 - Place primary-source links beside the exact claim, especially for regulation, Stripe states, 3DS behavior, and vendor boundaries.
 - Label repository findings as “ArraySubs first-party code inspection” and screenshots as “staging capture” with the environment limitations.
-- Use Article or TechArticle/BreadcrumbList markup only when the visible byline, dates, reviewer, and content match it. Do not promise FAQ rich results.
+- Use Article or TechArticle markup only when the visible byline, dates, reviewer, and content match it. Use the visible and structured breadcrumb path `Home / Articles / Payments & Compliance`; omit the article title from the UI and `BreadcrumbList`. Do not promise FAQ rich results.
 
 ## Final one-paragraph editorial thesis
 

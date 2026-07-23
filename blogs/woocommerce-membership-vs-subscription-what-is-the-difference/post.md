@@ -287,7 +287,7 @@ Prefer a separate ledger when staff must manually manage a durable membership re
 
 An integrated ArraySubs model fits when product, purchase, subscription, role, and feature evidence is an acceptable source of truth and the business wants one access engine across WordPress content, URLs, products, downloads, discounts, and roles.
 
-For the complete planning sequence, read [How to Create a WooCommerce Membership Site](/deals/arraysubs/resources/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/). For implementation patterns, use [combined conditions](/deals/arraysubs/use-cases/recipes/combined-conditions/), [URL prefix lockdown](/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/), and [inline content gating](/deals/arraysubs/use-cases/recipes/inline-content-gating/).
+For the complete planning sequence, read [How to Create a WooCommerce Membership Site](/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/). For implementation patterns, use [combined conditions](/deals/arraysubs/use-cases/recipes/combined-conditions/), [URL prefix lockdown](/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/), and [inline content gating](/deals/arraysubs/use-cases/recipes/inline-content-gating/).
 
 ## Final recommendation
 

@@ -49,6 +49,7 @@ export function ArticleCard({
         title={coverLabel}
         image={coverImage}
         tone={coverTone}
+        compact
         className="rounded-none"
       />
 

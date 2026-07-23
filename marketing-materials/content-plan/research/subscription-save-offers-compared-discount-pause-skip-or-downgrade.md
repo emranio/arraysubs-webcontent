@@ -193,9 +193,9 @@ Redact customer identifiers, order/subscription IDs, email, payment data, API ke
 
 ## Internal-link recommendations
 
-- Cancellation-flow foundation: `/deals/arraysubs/resources/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/` (A073)
-- Survey/reason design: `/deals/arraysubs/resources/retention-and-churn/cancellation-survey-questions-that-produce-useful-data/` (A075)
-- Experiment guide: `/deals/arraysubs/resources/retention-and-churn/how-to-ab-test-subscription-retention-offers-without-hurting-cx/` (A076)
+- Cancellation-flow foundation: `/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/` (A073)
+- Survey/reason design: `/retention-and-churn/cancellation-survey-questions-that-produce-useful-data/` (A075)
+- Experiment guide: `/retention-and-churn/how-to-ab-test-subscription-retention-offers-without-hurting-cx/` (A076)
 - Feature anchor: `/features/subscription-retention/`
 - Recipe: `/recipes/offer-discounts-during-subscription-cancellation/`
 - Recipe: `/recipes/let-customers-pause-or-skip-a-subscription/`

@@ -69,7 +69,7 @@ Record safe IDs and timestamps, not secrets: subscription/order IDs, remote obje
 - [ ] Verify the customer can recognize the store, subscription, and destination domain in notices.
 - [ ] Do not claim ArraySubs operates a network account updater.
 
-Read [Expired Cards and Subscription Recovery](/deals/arraysubs/resources/payment-recovery/expired-cards-and-subscription-recovery/) for the distinction between a network-updated credential, a portal update, and a fully recovered renewal.
+Read [Expired Cards and Subscription Recovery](/payment-recovery/expired-cards-and-subscription-recovery/) for the distinction between a network-updated credential, a portal update, and a fully recovered renewal.
 
 ## 3. Failure detection and classification
 
@@ -110,7 +110,7 @@ Current ArraySubs Pro Stripe inspection found a fixed local schedule of up to th
 - [ ] Authenticate the sending domain and monitor bounces, complaints, and broken links.
 - [ ] Never ask customers to email card details or security codes.
 
-Use the [failed-payment email sequence playbook](/deals/arraysubs/resources/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/) for adaptable state-based templates. Google documents authentication and other sender requirements for Gmail, with additional expectations for higher-volume senders ([Google email sender guidelines](https://support.google.com/mail/answer/81126)). Compliance with those guidelines does not guarantee inbox placement.
+Use the [failed-payment email sequence playbook](/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/) for adaptable state-based templates. Google documents authentication and other sender requirements for Gmail, with additional expectations for higher-volume senders ([Google email sender guidelines](https://support.google.com/mail/answer/81126)). Compliance with those guidelines does not guarantee inbox placement.
 
 ## 6. Grace, access, and fulfillment
 
@@ -119,7 +119,7 @@ Use the [failed-payment email sequence playbook](/deals/arraysubs/resources/paym
 - [ ] State what changes when the subscription moves on hold.
 - [ ] Configure and test roles, content rules, downloads, features, APIs, and caches explicitly.
 - [ ] Stop physical shipment or human-delivered service at the correct operational cutoff.
-- [ ] Define cancellation versus [fallback downgrade](/deals/arraysubs/resources/payment-recovery/auto-downgrade-after-payment-failure-when-it-beats-cancellation/).
+- [ ] Define cancellation versus [fallback downgrade](/payment-recovery/auto-downgrade-after-payment-failure-when-it-beats-cancellation/).
 - [ ] Document customer data and credit retention.
 - [ ] Align the local final state with the remote provider's recovery or cancellation state.
 
@@ -219,7 +219,7 @@ Current first-party review on July 16, 2026 found:
 
 This was a source and interface review, not a statistically valid gateway matrix or recovery benchmark.
 
-For implementation, start with a documented [lenient grace recipe](/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict grace recipe](/deals/arraysubs/use-cases/recipes/strict-dunning-grace/) and keep the complete [failed-payment recovery guide](/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) beside this checklist.
+For implementation, start with a documented [lenient grace recipe](/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict grace recipe](/deals/arraysubs/use-cases/recipes/strict-dunning-grace/) and keep the complete [failed-payment recovery guide](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) beside this checklist.
 
 ## Final recommendation
 

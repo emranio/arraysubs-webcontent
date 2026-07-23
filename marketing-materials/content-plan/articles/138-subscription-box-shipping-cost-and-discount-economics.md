@@ -5,7 +5,7 @@
 - **Proposed title:** Subscription Box Shipping Cost and Discount Economics
 - **Content cluster:** C11 — Subscription boxes, shipping, inventory, and fulfillment
 - **Content category:** Subscription Commerce
-- **Recommended URL:** `/deals/arraysubs/resources/subscription-commerce/subscription-box-shipping-cost-and-discount-economics/`
+- **Recommended URL:** `/subscription-commerce/subscription-box-shipping-cost-and-discount-economics/`
 - **Search intent:** Informational
 - **Funnel stage:** Consideration
 - **Priority:** P2 · Wave 4
@@ -74,7 +74,7 @@ Create a calculator guide for subscription-box founders, replenishment brands, a
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Subscription Commerce`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

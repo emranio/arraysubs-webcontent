@@ -9,7 +9,12 @@ import {
   RESOURCE_CATEGORIES,
   getArticlePath,
   getCategoryPath,
-} from "@/app/deals/arraysubs/resources/_data";
+} from "@/app/articles/_data";
+import {
+  AUTHOR_BASE,
+  AUTHOR_LIST,
+  getAuthorPath,
+} from "@/app/authors/_data";
 
 /**
  * Add a route entry here when a new indexable page ships.
@@ -23,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/deals/arraysubs/use-cases/", 0.8],
     ["/deals/arraysubs/use-cases/can-i/", 0.7],
     ["/deals/arraysubs/alternatives/", 0.8],
-    ["/deals/arraysubs/resources/", 0.8],
+    ["/articles/", 0.8],
   ] as const;
 
   const trustRoutes = [
@@ -108,6 +113,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(`${article.updatedAt}T00:00:00Z`),
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    })),
+    {
+      url: absoluteUrl(AUTHOR_BASE),
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    ...AUTHOR_LIST.map((author) => ({
+      url: absoluteUrl(getAuthorPath(author)),
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
     ...trustRoutes.map(([path, priority]) => ({
       url: absoluteUrl(path),

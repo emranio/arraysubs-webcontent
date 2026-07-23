@@ -169,7 +169,7 @@ The setup steps live in the [flat monthly fee recipe](/deals/arraysubs/use-cases
 
 Use a sign-up fee when it funds a real one-time outcome and the amount follows a documented cost and subsidy policy. Itemize the fee, today’s total, renewal terms, delivery state, and refund rule. Otherwise, simplify the offer and put continuing value in the recurring price.
 
-Read the adjacent [Free Trial, Paid Trial, or No Trial framework](/deals/arraysubs/resources/subscription-foundations/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/) before combining a fee with an evaluation period.
+Read the adjacent [Free Trial, Paid Trial, or No Trial framework](/subscription-foundations/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/) before combining a fee with an evaluation period.
 
 [Compare ArraySubs plans](/deals/arraysubs/pricing/) after the product, gateway, and refund requirements are clear.
 

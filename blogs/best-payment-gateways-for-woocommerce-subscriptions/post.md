@@ -65,7 +65,7 @@ That responsibility transfer can be a strategic advantage for an eligible global
 
 The subscription system creates a renewal order and invoice, but the customer or buyer must take action to pay it. ArraySubs Free supports this path. It can be appropriate for bank transfer, cheque, cash, purchase-order workflows, high-value B2B contracts, or a WooCommerce gateway outside the automatic list.
 
-Manual is not a defective version of automatic billing. It is a different collection model. Its costs appear in days-sales-outstanding, reminders, human follow-up, service-access policy, and churn from forgotten invoices. Read [Manual vs Automatic Subscription Renewals in WooCommerce](/deals/arraysubs/resources/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/) before treating the two modes as interchangeable.
+Manual is not a defective version of automatic billing. It is a different collection model. Its costs appear in days-sales-outstanding, reminders, human follow-up, service-access policy, and churn from forgotten invoices. Read [Manual vs Automatic Subscription Renewals in WooCommerce](/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/) before treating the two modes as interchangeable.
 
 ![A technical cutaway traces site-initiated, provider-managed, Merchant-of-Record, and manual-invoice renewal paths.](/blogs/best-payment-gateways-for-woocommerce-subscriptions/gateway-billing-architecture.png)
 
@@ -288,7 +288,7 @@ Stripe explains the off-session model in its [SCA documentation](https://docs.st
 - updating the method actually changes what the next renewal uses;
 - the successful recovery does not create a second charge.
 
-The next article in this cluster will cover [SCA and 3D Secure for subscription renewals](/deals/arraysubs/resources/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/) in depth. Until then, treat SCA as an end-to-end lifecycle concern rather than a checkout badge.
+The next article in this cluster will cover [SCA and 3D Secure for subscription renewals](/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/) in depth. Until then, treat SCA as an end-to-end lifecycle concern rather than a checkout badge.
 
 ## Gateway Health is part of the gateway decision
 
@@ -342,7 +342,7 @@ Define:
 - how duplicate processing is prevented;
 - which team reviews stuck or mismatched states.
 
-Use [Failed Subscription Payment Recovery for WooCommerce](/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) and [Automatic Retry for Failed Subscription Payments](/deals/arraysubs/resources/payment-recovery/automatic-retry-for-failed-subscription-payments-what-good-looks-like/) to design that policy. A gateway with a slightly lower headline fee can be more expensive if its failure recovery creates avoidable churn and support work.
+Use [Failed Subscription Payment Recovery for WooCommerce](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) and [Automatic Retry for Failed Subscription Payments](/payment-recovery/automatic-retry-for-failed-subscription-payments-what-good-looks-like/) to design that policy. A gateway with a slightly lower headline fee can be more expensive if its failure recovery creates avoidable churn and support work.
 
 ## Pre-launch test plan for every automatic gateway
 

@@ -17,11 +17,11 @@ export const HEADER_NAV_ITEMS: NavItem[] = [
   { label: "Compare", href: "/deals/arraysubs/alternatives/" },
   {
     label: "Resources",
-    href: "/deals/arraysubs/resources/",
+    href: "/articles/",
     children: [
       { label: "Changelog", href: "/changelog/" },
       { label: "Roadmap", href: "/roadmap/" },
-      { label: "Useful Articles", href: "/deals/arraysubs/resources/" },
+      { label: "Useful Articles", href: "/articles/" },
       {
         label: "Documentations",
         href: "https://support.arrayhash.com/",

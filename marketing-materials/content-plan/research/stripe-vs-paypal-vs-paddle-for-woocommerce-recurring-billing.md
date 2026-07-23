@@ -3,7 +3,7 @@
 ## Research record
 
 - Brief: `articles/057-stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing.md`
-- Recommended URL: `/deals/arraysubs/resources/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/`
+- Recommended URL: `/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/`
 - Content cluster: C05 — Payment gateways, SCA, tax, and Merchant of Record
 - Search intent: commercial investigation
 - Focus query: `Stripe vs PayPal vs Paddle for WooCommerce recurring billing`
@@ -785,13 +785,13 @@ Avoid making every visual a dashboard, flowchart, or comparison card. Use at lea
 
 ### Sibling article links
 
-- A056 — `/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/`
+- A056 — `/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/`
   - Use once as the broader gateway shortlist: “compare the best WooCommerce subscription gateways.”
-- A058 — `/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/`
+- A058 — `/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/`
   - Use from Stripe renewal/SCA detail.
-- A059 — `/deals/arraysubs/resources/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/`
+- A059 — `/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/`
   - Use from PayPal agreement limitations.
-- A060 — `/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/`
+- A060 — `/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/`
   - Use from the MoR responsibility section if published by article time.
 
 The cluster rule requires this article to link back to the commercial pillar and to 2–3 contextually adjacent siblings. Do not list every sibling merely for link count.

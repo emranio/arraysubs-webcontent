@@ -86,7 +86,7 @@ Test upgrade, downgrade, and crossgrade with same and different cadences; zero a
 
 Also test target products with trials, signup fees, and different-renewal-price schedules. Current research does not support promising that all target pricing-phase metadata transfers reliably through immediate or deferred switches.
 
-For calculation choices, see [Subscription Proration Methods Compared](/deals/arraysubs/resources/billing-strategy/subscription-proration-methods-compared-charge-credit-or-defer/).
+For calculation choices, see [Subscription Proration Methods Compared](/billing-strategy/subscription-proration-methods-compared-charge-credit-or-defer/).
 
 ## Final recommendation
 

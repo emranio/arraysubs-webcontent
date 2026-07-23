@@ -269,7 +269,7 @@ AND/OR explains conditions **inside one rule**. It does not define how every lis
 - Pricing/discount systems can have their own selection or combination behavior.
 - Content-type restrictions may evaluate applicable rules differently.
 
-Read the relevant subsystem's precedence rules. For URL behavior, see [URL-Based Content Restriction](/deals/arraysubs/resources/membership-strategy/url-based-content-restriction-prefixes-wildcards-and-regex/). Never assume a later “allow” rule rescues an earlier denial.
+Read the relevant subsystem's precedence rules. For URL behavior, see [URL-Based Content Restriction](/membership-strategy/url-based-content-restriction-prefixes-wildcards-and-regex/). Never assume a later “allow” rule rescues an earlier denial.
 
 ## Reusable policy worksheet
 

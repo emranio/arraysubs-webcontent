@@ -143,7 +143,7 @@ If one SKU with both modes is non-negotiable, use a system that documents and pa
 
 Offer both only after repeat demand, cadence, contribution, inventory, consent, and attribution pass their gates. Use the smallest recurring discount that communicates real value and clears the floor. If current ArraySubs is selected, present two products honestly rather than claiming a native same-product selector.
 
-Read [Monthly and Annual Subscription Plans](/deals/arraysubs/resources/subscription-foundations/monthly-and-annual-subscription-plans-packaging-without-cannibalization/) when the choice is between recurring cadences, not buy once versus recurring.
+Read [Monthly and Annual Subscription Plans](/subscription-foundations/monthly-and-annual-subscription-plans-packaging-without-cannibalization/) when the choice is between recurring cadences, not buy once versus recurring.
 
 [Compare ArraySubs plans](/deals/arraysubs/pricing/) after the product-mode and gateway requirements are clear.
 

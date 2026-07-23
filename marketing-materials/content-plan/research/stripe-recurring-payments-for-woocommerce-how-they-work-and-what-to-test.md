@@ -3,7 +3,7 @@
 ## Research record
 
 - Brief: `articles/058-stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test.md`
-- Recommended URL: `/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/`
+- Recommended URL: `/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/`
 - Researched and source-verified: 2026-07-20
 - Search intent: informational
 - Focus query: `Stripe recurring payments WooCommerce`
@@ -601,22 +601,22 @@ Required commercial/product destinations:
 
 Adjacent C05 sibling articles:
 
-- A056: `/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/`
-- A057: `/deals/arraysubs/resources/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/`
-- A059: `/deals/arraysubs/resources/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/`
-- A060: `/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/`
-- A061: `/deals/arraysubs/resources/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/`
-- A062: `/deals/arraysubs/resources/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/`
-- A063: `/deals/arraysubs/resources/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/`
-- A064: `/deals/arraysubs/resources/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/`
+- A056: `/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/`
+- A057: `/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/`
+- A059: `/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/`
+- A060: `/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/`
+- A061: `/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/`
+- A062: `/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/`
+- A063: `/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/`
+- A064: `/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/`
 
 Useful already-published cross-cluster context:
 
-- Renewal lifecycle: `/deals/arraysubs/resources/subscription-foundations/how-woocommerce-subscription-renewals-work/`
-- Manual vs automatic renewals: `/deals/arraysubs/resources/subscription-foundations/manual-vs-automatic-subscription-renewals-in-woocommerce/`
-- Failed-payment recovery: `/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/`
-- Expired-card recovery: `/deals/arraysubs/resources/payment-recovery/expired-cards-and-subscription-recovery/`
-- Dunning strategy: `/deals/arraysubs/resources/payment-recovery/subscription-dunning-strategy-timing-messages-and-stop-rules/`
+- Renewal lifecycle: `/subscription-foundations/how-woocommerce-subscription-renewals-work/`
+- Manual vs automatic renewals: `/subscription-foundations/manual-vs-automatic-subscription-renewals-in-woocommerce/`
+- Failed-payment recovery: `/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/`
+- Expired-card recovery: `/payment-recovery/expired-cards-and-subscription-recovery/`
+- Dunning strategy: `/payment-recovery/subscription-dunning-strategy-timing-messages-and-stop-rules/`
 
 Cannibalization rule: this guide owns the broad Stripe recurring-payment architecture and the launch test matrix. Link to the Stripe/SCA recipe for click-by-click ArraySubs configuration rather than duplicating it. A062 owns the deep regulatory/SCA explanation; A063 owns token/card-update depth; A064 owns the cross-gateway webhook catalog.
 

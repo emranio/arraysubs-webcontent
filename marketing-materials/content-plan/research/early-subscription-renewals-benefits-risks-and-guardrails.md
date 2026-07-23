@@ -259,9 +259,9 @@ No current early-renew feature was found in ArraySubs 1.8.9 or Pro 1.1.0. First-
 - ArraySubs feature index/status: `/deals/arraysubs/features/`
 - Subscription notes/timeline recipe: `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
 - Switch-at-renewal recipe: `/deals/arraysubs/use-cases/recipes/switch-at-renewal/`
-- Billing versus shipping schedule: `/deals/arraysubs/resources/billing-strategy/subscription-billing-schedule-vs-shipping-schedule/`
-- Different first and renewal prices: `/deals/arraysubs/resources/billing-strategy/different-first-and-renewal-prices-subscription-pricing-patterns/`
-- Recurring coupon strategy: `/deals/arraysubs/resources/billing-strategy/recurring-subscription-coupons-economics-and-abuse-controls/`
+- Billing versus shipping schedule: `/billing-strategy/subscription-billing-schedule-vs-shipping-schedule/`
+- Different first and renewal prices: `/billing-strategy/different-first-and-renewal-prices-subscription-pricing-patterns/`
+- Recurring coupon strategy: `/billing-strategy/recurring-subscription-coupons-economics-and-abuse-controls/`
 
 Do not link to a setup recipe that implies a current ArraySubs early-renew workflow.
 

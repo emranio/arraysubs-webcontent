@@ -5,7 +5,7 @@
 - **Proposed title:** Why Customers Cancel Subscriptions: A Reason Taxonomy
 - **Content cluster:** C06 — Retention, churn, and cancellation flows
 - **Content category:** Retention & Churn
-- **Recommended URL:** `/deals/arraysubs/resources/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/`
+- **Recommended URL:** `/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/`
 - **Search intent:** Informational
 - **Funnel stage:** Awareness
 - **Priority:** P0 · Wave 1
@@ -74,7 +74,7 @@ Create a guide for subscription founders, growth teams, customer success, and ec
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Retention & Churn`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

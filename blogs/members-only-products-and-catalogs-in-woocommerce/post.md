@@ -195,7 +195,7 @@ For a private catalog, focus public acquisition on the membership/wholesale land
 - [ ] Product/condition changes have an owner and rollback.
 - [ ] Customer-facing messages match actual plan and recovery routes.
 
-For general rule governance, read [WooCommerce Content Restriction Strategy](/deals/arraysubs/resources/membership-strategy/woocommerce-content-restriction-strategy/). Use the closest existing shop-access recipe after confirming its route rather than copying undocumented steps.
+For general rule governance, read [WooCommerce Content Restriction Strategy](/membership-strategy/woocommerce-content-restriction-strategy/). Use the closest existing shop-access recipe after confirming its route rather than copying undocumented steps.
 
 ## When is ArraySubs Shop Access not sufficient?
 

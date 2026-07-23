@@ -185,7 +185,7 @@ Show the remedy, not the raw payload.
 | technical/reconciliation fault | “We are checking a processing issue; no card details are needed by email.” | telling the customer to replace a valid card |
 | risk/stop signal | “We could not complete this payment. Use a secure alternate method or contact support.” | disclosing fraud/lost-card detail unnecessarily |
 
-Match the copy to the [failed-payment email sequence](/deals/arraysubs/resources/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/) and the actual [expired-card recovery](/deals/arraysubs/resources/payment-recovery/expired-cards-and-subscription-recovery/) path.
+Match the copy to the [failed-payment email sequence](/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/) and the actual [expired-card recovery](/payment-recovery/expired-cards-and-subscription-recovery/) path.
 
 ## Safe logging, privacy, and escalation checklist
 
@@ -231,7 +231,7 @@ The live subscription payment timeline and notes help reconstruct this mismatch:
 
 Keep provider evidence raw and private, but make the merchant response stable: retry, update, authenticate, stop, or reconcile. Begin with the current remote payment state, never infer a precise cause from generic evidence, and close the case only after the payment, renewal order, subscription, access, messages, and next date agree.
 
-Use the complete [involuntary churn recovery checklist](/deals/arraysubs/resources/payment-recovery/involuntary-churn-recovery-checklist/) beside your triage runbook. After sandbox and support testing, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) or the wider [subscription operations features](/deals/arraysubs/features/#subscription-operations).
+Use the complete [involuntary churn recovery checklist](/payment-recovery/involuntary-churn-recovery-checklist/) beside your triage runbook. After sandbox and support testing, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) or the wider [subscription operations features](/deals/arraysubs/features/#subscription-operations).
 
 ## Frequently asked questions
 

@@ -71,7 +71,7 @@ Separate the parties. A payment gateway moves money. A tax engine can calculate 
 
 PayPal’s official seller terms place applicable tax determination, assessment, collection, reporting, and remittance responsibilities on the seller; a tax percentage field does not make PayPal the seller. HMRC likewise distinguishes a party that merely processes payment from a digital platform treated as supplier ([PayPal seller terms](https://www.paypal.com/us/legalhub/paypal/pp-pos-ps?country.x=US&locale.x=en_US), [HMRC digital-services guidance](https://www.gov.uk/guidance/the-vat-rules-if-you-supply-digital-services-to-private-consumers)).
 
-Paddle’s model is different. Paddle says it acts as reseller and Merchant of Record for eligible transactions, calculates and remits applicable VAT, sales tax, and GST, and issues customer invoices. That does not erase the supplier’s product-classification, eligibility, accounting, delivery, privacy, or reconciliation duties ([Paddle tax responsibility](https://www.paddle.com/help/start/intro-to-paddle/how-paddle-is-able-to-take-on-your-vat-and-tax-responsibilities)). Read the deeper [Paddle Merchant of Record guide](/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) before treating a gateway switch as a tax migration.
+Paddle’s model is different. Paddle says it acts as reseller and Merchant of Record for eligible transactions, calculates and remits applicable VAT, sales tax, and GST, and issues customer invoices. That does not erase the supplier’s product-classification, eligibility, accounting, delivery, privacy, or reconciliation duties ([Paddle tax responsibility](https://www.paddle.com/help/start/intro-to-paddle/how-paddle-is-able-to-take-on-your-vat-and-tax-responsibilities)). Read the deeper [Paddle Merchant of Record guide](/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) before treating a gateway switch as a tax migration.
 
 ## What do EU VAT, UK VAT, and US sales tax change for subscriptions?
 
@@ -171,7 +171,7 @@ That formula is a control model, not a substitute for Woo’s actual calculation
 
 ![Annotated ArraySubs subscription settings separating recurring price, trial/sign-up components, and renewal-specific controls.](/blogs/sales-tax-and-vat-on-woocommerce-subscriptions/arraysubs-renewal-tax-components.png)
 
-The screenshot shows why one “subscription price” is insufficient. Signup can include a one-time fee, a trial can move the first paid event, a different renewal price can change later cycles, and recurring versus one-time shipping changes the taxable base. The detailed [tax and shipping renewal guide](/deals/arraysubs/resources/billing-strategy/how-taxes-and-shipping-behave-on-subscription-renewals/) owns those narrow mechanics.
+The screenshot shows why one “subscription price” is insufficient. Signup can include a one-time fee, a trial can move the first paid event, a different renewal price can change later cycles, and recurring versus one-time shipping changes the taxable base. The detailed [tax and shipping renewal guide](/billing-strategy/how-taxes-and-shipping-behave-on-subscription-renewals/) owns those narrow mechanics.
 
 ### Worked example: an exclusive-tax rate change
 
@@ -296,7 +296,7 @@ Your invoice control should verify:
 
 ## How do Stripe, PayPal, and Paddle differ in ArraySubs tax handling?
 
-Gateway choice changes where calculation happens, who controls renewal timing, and which ledger is authoritative. Review the [payment-gateway feature overview](/deals/arraysubs/features/#payment-gateways) and the [automatic-versus-manual gateway guide](/deals/arraysubs/resources/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/) before building one tax runbook for every provider.
+Gateway choice changes where calculation happens, who controls renewal timing, and which ledger is authoritative. Review the [payment-gateway feature overview](/deals/arraysubs/features/#payment-gateways) and the [automatic-versus-manual gateway guide](/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/) before building one tax runbook for every provider.
 
 ### Stripe: Woo calculates, ArraySubs charges the final order total
 
@@ -369,7 +369,7 @@ For each cycle, prove:
 5. the tax service, return, or MoR statement contains the transaction exactly once; and
 6. any difference is classified, approved, and repaired.
 
-Webhook monitoring is part of that chain, not its conclusion. Use the [subscription webhook monitoring guide](/deals/arraysubs/resources/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/) and [Gateway Health recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) to distinguish provider delivery from successful business reconciliation.
+Webhook monitoring is part of that chain, not its conclusion. Use the [subscription webhook monitoring guide](/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/) and [Gateway Health recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) to distinguish provider delivery from successful business reconciliation.
 
 ## What changes should trigger tax review?
 
@@ -525,4 +525,4 @@ Treat every subscription cycle as a new controlled transaction:
 
 ArraySubs can provide the recurring agreement, new Woo renewal order, lifecycle controls, address records, gateway integrations, webhooks, audits, and recovery context. Your tax architecture must decide how those facts become a compliant calculation and filing or a correctly reconciled Merchant-of-Record transaction.
 
-Use this article as the operating framework, the [tax-and-shipping renewal guide](/deals/arraysubs/resources/billing-strategy/how-taxes-and-shipping-behave-on-subscription-renewals/) for local calculation mechanics, the [Paddle MoR guide](/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) for the reseller model, and the [webhook monitoring guide](/deals/arraysubs/resources/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/) for delivery and reconciliation evidence.
+Use this article as the operating framework, the [tax-and-shipping renewal guide](/billing-strategy/how-taxes-and-shipping-behave-on-subscription-renewals/) for local calculation mechanics, the [Paddle MoR guide](/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) for the reseller model, and the [webhook monitoring guide](/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/) for delivery and reconciliation evidence.

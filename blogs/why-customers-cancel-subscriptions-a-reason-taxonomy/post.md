@@ -182,7 +182,7 @@ If a chart is titled “Why customers chose to cancel,” exclude journeys where
 | Operational/technical loss | Scheduler, gateway, integration, or data failure causes termination | It requires incident remediation |
 | Unknown initiator | Actor and first trigger unavailable | A clean guess would create false precision |
 
-Keep these classes in the overall churn system. Just do not mix them into a voluntary-reason distribution. See [voluntary vs involuntary churn](/deals/arraysubs/resources/retention-and-churn/voluntary-vs-involuntary-churn/) for the journey-level classification.
+Keep these classes in the overall churn system. Just do not mix them into a voluntary-reason distribution. See [voluntary vs involuntary churn](/retention-and-churn/voluntary-vs-involuntary-churn/) for the journey-level classification.
 
 ## Design the question before interpreting the answer
 
@@ -494,7 +494,7 @@ This guide was verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs
 
 No real-customer dataset, interview, reason distribution, controlled experiment, offer acceptance, or cancellation was used. The six-family taxonomy and codebook practices are original editorial recommendations and require validation, privacy review, and appropriate legal review in the merchant's context.
 
-Next, review the [effective cancellation flow guide](/deals/arraysubs/resources/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/), compare [subscription save offers](/deals/arraysubs/resources/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/), or explore [reason-targeted retention features](/deals/arraysubs/features/#retention-revenue).
+Next, review the [effective cancellation flow guide](/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/), compare [subscription save offers](/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/), or explore [reason-targeted retention features](/deals/arraysubs/features/#retention-revenue).
 
 ## Primary sources
 

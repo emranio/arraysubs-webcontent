@@ -117,7 +117,7 @@ Track duplicate charges, complaints, refunds, chargebacks, support, access/shipm
 
 ![Measure the outcome — a focused cycle system for Dunning coordinates retries, messages, and access.](/blogs/subscription-dunning-strategy-timing-messages-and-stop-rules/operating-visual.png)
 
-For implementation detail and a recovery runbook, read [Failed Subscription Payment Recovery](/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/).
+For implementation detail and a recovery runbook, read [Failed Subscription Payment Recovery](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/).
 
 ## Final recommendation
 

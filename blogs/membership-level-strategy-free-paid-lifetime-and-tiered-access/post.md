@@ -254,7 +254,7 @@ Also inspect support contacts, feature usage, cancellation reasons, failed-payme
 - [ ] Tier metrics use plan versions and closed cohorts.
 - [ ] Merge levels that do not pass the five-part justification test.
 
-For architecture, read [WooCommerce Subscriptions and Memberships Together](/deals/arraysubs/resources/membership-strategy/woocommerce-subscriptions-and-memberships-together-the-complete-architecture/). Use [combined conditions](/deals/arraysubs/use-cases/recipes/combined-conditions/) and [inline content gating](/deals/arraysubs/use-cases/recipes/inline-content-gating/) only after the offer contract is complete.
+For architecture, read [WooCommerce Subscriptions and Memberships Together](/membership-strategy/woocommerce-subscriptions-and-memberships-together-the-complete-architecture/). Use [combined conditions](/deals/arraysubs/use-cases/recipes/combined-conditions/) and [inline content gating](/deals/arraysubs/use-cases/recipes/inline-content-gating/) only after the offer contract is complete.
 
 ## When is ArraySubs not the best tier engine?
 

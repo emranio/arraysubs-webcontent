@@ -50,7 +50,7 @@ The practical sequence is:
 | Scheduled action | Future invoice, charge, retry, reminder, pause, or cancellation work |
 | Gateway event | Processor-side result or remote schedule update |
 
-The parent order should not be reused for every charge. Separate renewal orders provide a transaction ledger for tax, shipping, refunds, gateway IDs, and reporting. Read [subscription orders explained](/deals/arraysubs/resources/billing-strategy/subscription-order-vs-renewal-order-vs-parent-order/) for the full record model.
+The parent order should not be reused for every charge. Separate renewal orders provide a transaction ledger for tax, shipping, refunds, gateway IDs, and reporting. Read [subscription orders explained](/billing-strategy/subscription-order-vs-renewal-order-vs-parent-order/) for the full record model.
 
 ## Three payment ownership models
 
@@ -119,7 +119,7 @@ Before retrying, current ArraySubs asks the gateway whether a missed webhook hid
 6. After payment, verify status, counters, notes, next date, and new future actions.
 7. Check fulfillment or access only after the payment state required by policy.
 
-Do not edit the date or order independently to “fix” a renewal. Use [changing a renewal date safely](/deals/arraysubs/resources/billing-strategy/changing-a-subscription-renewal-date-safely/) for dependency-aware options.
+Do not edit the date or order independently to “fix” a renewal. Use [changing a renewal date safely](/billing-strategy/changing-a-subscription-renewal-date-safely/) for dependency-aware options.
 
 ## Final recommendation
 

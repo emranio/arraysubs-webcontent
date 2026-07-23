@@ -202,7 +202,7 @@ Finish with a root-cause record: storage boundary, rule state, cache behavior, a
 
 Use a specialized document or media platform when the requirement includes regulated data, detailed audit trails, strong identity assurance, per-recipient watermarking, device controls, rapid global revocation, or legal-grade access evidence. ArraySubs is a practical membership authorization layer; it is not a data-loss-prevention or DRM product.
 
-Likewise, do not place a secret in a WordPress page and expect partial content restriction to secure the linked file. See [SEO for Gated WooCommerce Content](/deals/arraysubs/resources/membership-strategy/seo-for-gated-woocommerce-content/) and [Partial Content Restriction](/deals/arraysubs/resources/membership-strategy/partial-content-restriction-seo-conversion-and-reader-experience/) for the HTML boundary.
+Likewise, do not place a secret in a WordPress page and expect partial content restriction to secure the linked file. See [SEO for Gated WooCommerce Content](/membership-strategy/seo-for-gated-woocommerce-content/) and [Partial Content Restriction](/membership-strategy/partial-content-restriction-seo-conversion-and-reader-experience/) for the HTML boundary.
 
 ## Final recommendation
 

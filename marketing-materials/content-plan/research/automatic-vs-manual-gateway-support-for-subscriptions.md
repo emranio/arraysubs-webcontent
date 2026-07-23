@@ -55,8 +55,8 @@ For current ArraySubs:
 
 This article must own **gateway qualification and diagnosis**, not the broader business choice between manual and automatic customer journeys.
 
-- A018, [Manual vs Automatic Subscription Renewals in WooCommerce](/deals/arraysubs/resources/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/), owns the commercial decision: which renewal model fits a business, customer contract, and operating model.
-- A056, [Best Payment Gateways for WooCommerce Subscriptions in 2026](/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/), owns gateway selection and comparison.
+- A018, [Manual vs Automatic Subscription Renewals in WooCommerce](/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/), owns the commercial decision: which renewal model fits a business, customer contract, and operating model.
+- A056, [Best Payment Gateways for WooCommerce Subscriptions in 2026](/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/), owns gateway selection and comparison.
 - A058, A059, and A060 own the provider-specific Stripe, PayPal, and Paddle architectures.
 - A062 owns detailed SCA/3DS analysis.
 - A063 owns detailed token and card-update analysis.
@@ -311,7 +311,7 @@ Current Paddle behavior is also provider-owned. The ArraySubs renewal method doe
 
 Paddle’s official webhook guidance says subscription state should be synchronized from events and calls for reconciliation to repair missed-event drift. It also documents at-least-once delivery and possible out-of-order events, requiring idempotent processing and event-time comparison.
 
-For full current Paddle limitations—tax/category mapping, price synchronization, totals, refunds, fixed terms, and reconciliation—the article should link to [Paddle Merchant of Record for WooCommerce Subscriptions](/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) rather than repeating that investigation.
+For full current Paddle limitations—tax/category mapping, price synchronization, totals, refunds, fixed terms, and reconciliation—the article should link to [Paddle Merchant of Record for WooCommerce Subscriptions](/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) rather than repeating that investigation.
 
 ## Current ArraySubs gateway capability matrix
 
@@ -919,14 +919,14 @@ Required and verified intended routes:
 
 Contextual published links:
 
-- `/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/` — gateway selection/comparison, not qualification mechanics.
-- `/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/` — current Stripe architecture.
-- `/deals/arraysubs/resources/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/` — current PayPal architecture and limits.
-- `/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/` — current Paddle/MoR architecture and limitations.
-- `/deals/arraysubs/resources/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/` — business-model comparison.
-- `/deals/arraysubs/resources/billing-strategy/how-woocommerce-subscription-renewals-work/` — full local renewal lifecycle.
-- `/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/` — decline routing, retry ownership, and recovery policy.
-- `/deals/arraysubs/resources/payment-recovery/what-happens-when-a-subscription-payment-fails/` — customer-facing failure timeline.
+- `/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/` — gateway selection/comparison, not qualification mechanics.
+- `/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/` — current Stripe architecture.
+- `/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/` — current PayPal architecture and limits.
+- `/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/` — current Paddle/MoR architecture and limitations.
+- `/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/` — business-model comparison.
+- `/billing-strategy/how-woocommerce-subscription-renewals-work/` — full local renewal lifecycle.
+- `/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/` — decline routing, retry ownership, and recovery policy.
+- `/payment-recovery/what-happens-when-a-subscription-payment-fails/` — customer-facing failure timeline.
 
 Future siblings should only be linked if actually published before A061 goes live:
 

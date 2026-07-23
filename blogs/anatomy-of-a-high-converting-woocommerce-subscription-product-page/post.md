@@ -112,7 +112,7 @@ The page is accurate only when its claims match product configuration and downst
 - cancellation and failed-payment outcomes;
 - mobile layout, keyboard navigation, labels, and contrast.
 
-For the end-to-end process, use the [WooCommerce subscription launch checklist](/deals/arraysubs/resources/subscription-foundations/woocommerce-subscription-launch-readiness-checklist/). If the underlying model is not settled, begin with [WooCommerce subscription product types](/deals/arraysubs/resources/subscription-foundations/woocommerce-subscription-product-types/).
+For the end-to-end process, use the [WooCommerce subscription launch checklist](/subscription-foundations/woocommerce-subscription-launch-readiness-checklist/). If the underlying model is not settled, begin with [WooCommerce subscription product types](/subscription-foundations/woocommerce-subscription-product-types/).
 
 ## Final recommendation
 

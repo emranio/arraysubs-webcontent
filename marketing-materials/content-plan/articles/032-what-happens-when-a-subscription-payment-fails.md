@@ -6,7 +6,7 @@
 - **Proposed title:** What Happens When a Subscription Payment Fails?
 - **Content cluster:** C03 — Failed payments, dunning, and grace recovery
 - **Content category:** Payment Recovery
-- **Recommended URL:** `/deals/arraysubs/resources/payment-recovery/what-happens-when-a-subscription-payment-fails/`
+- **Recommended URL:** `/payment-recovery/what-happens-when-a-subscription-payment-fails/`
 - **Search intent:** Informational
 - **Funnel stage:** Awareness
 - **Priority:** P0 · Wave 1
@@ -75,7 +75,7 @@ Create an explainer for subscription operators, finance teams, and customer-succ
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Payment Recovery`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

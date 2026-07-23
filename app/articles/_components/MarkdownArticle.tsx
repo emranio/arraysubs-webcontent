@@ -3,7 +3,7 @@ import ReactMarkdown, { type Components } from "react-markdown";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
-const components: Components = {
+const articleComponents: Components = {
   h2: ({ children, ...props }) => (
     <h2
       className="mt-14 scroll-mt-28 border-t border-border pt-11 font-display text-3xl leading-tight text-foreground first:mt-0 first:border-0 first:pt-0 sm:text-4xl"
@@ -26,7 +26,9 @@ const components: Components = {
     </h4>
   ),
   p: ({ children }) => (
-    <p className="mt-5 text-lg leading-8 text-muted text-pretty">{children}</p>
+    <p className="mt-5 hyphens-auto text-justify text-lg leading-8 text-muted">
+      {children}
+    </p>
   ),
   strong: ({ children }) => (
     <strong className="font-semibold text-foreground">{children}</strong>
@@ -64,7 +66,7 @@ const components: Components = {
     </ol>
   ),
   li: ({ children, ...props }) => (
-    <li className="min-w-0 pl-1 leading-7" {...props}>
+    <li className="min-w-0 hyphens-auto pl-1 text-justify leading-7" {...props}>
       {children}
     </li>
   ),
@@ -138,7 +140,7 @@ export function MarkdownArticle({ markdown }: { markdown: string }) {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeSlug]}
-        components={components}
+        components={articleComponents}
       >
         {markdown}
       </ReactMarkdown>

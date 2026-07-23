@@ -190,7 +190,7 @@ For dripping, state the trigger and time math. Current ArraySubs rule schedules 
 
 Protected downloads need authorization at delivery time. Catalog/page hiding alone is not enough if a static file remains public. Shop-access rules should distinguish viewing from buying and should keep public exceptions and account routes reachable.
 
-See [Membership Level Strategy](/deals/arraysubs/resources/membership-strategy/membership-level-strategy-free-paid-lifetime-and-tiered-access/) and [Content Dripping Strategy](/deals/arraysubs/resources/membership-strategy/content-dripping-strategy-for-membership-sites/) for deeper policy design.
+See [Membership Level Strategy](/membership-strategy/membership-level-strategy-free-paid-lifetime-and-tiered-access/) and [Content Dripping Strategy](/membership-strategy/content-dripping-strategy-for-membership-sites/) for deeper policy design.
 
 ## What does current ArraySubs implement in core and Pro?
 

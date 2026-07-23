@@ -160,7 +160,7 @@ To avoid this change, [pay/update/authenticate] securely before the deadline.
 
 Name the affected surface: premium downloads, API requests, community posting, the next shipment, or a scheduled service. Do not say “your account will be deleted” unless deletion is a real, documented, reviewed action.
 
-For physical subscriptions, billing grace and warehouse release are separate. A box may need to stop before the subscription reaches on hold. For digital access, the store may preserve login and progress while restricting paid capabilities. Build the wording from the actual [subscription grace-period policy](/deals/arraysubs/resources/payment-recovery/subscription-grace-periods-explained/).
+For physical subscriptions, billing grace and warehouse release are separate. A box may need to stop before the subscription reaches on hold. For digital access, the store may preserve login and progress while restricting paid capabilities. Build the wording from the actual [subscription grace-period policy](/payment-recovery/subscription-grace-periods-explained/).
 
 ## Message 4: explain the final outcome without a fake countdown
 
@@ -185,7 +185,7 @@ remain on hold for manual review].
 [Complete payment] [Choose fallback, if available] [Contact support]
 ```
 
-If an [auto-downgrade after payment failure](/deals/arraysubs/resources/payment-recovery/auto-downgrade-after-payment-failure-when-it-beats-cancellation/) is the chosen final state, name the fallback plan and lost/retained entitlements. Do not describe a downgrade as successful payment recovery; it is a retention and access outcome after the paid plan could not be collected.
+If an [auto-downgrade after payment failure](/payment-recovery/auto-downgrade-after-payment-failure-when-it-beats-cancellation/) is the chosen final state, name the fallback plan and lost/retained entitlements. Do not describe a downgrade as successful payment recovery; it is a retention and access outcome after the paid plan could not be collected.
 
 ## Recovery confirmation: close the loop only after reconciliation
 

@@ -169,9 +169,9 @@ Use synthetic customer names, emails, order IDs, and subscription IDs. Crop or r
 - Recipe: `/recipes/add-cancellation-surveys-to-subscriptions/`
 - Recipe: `/recipes/offer-discounts-during-subscription-cancellation/`
 - Recipe: `/recipes/let-customers-pause-or-skip-a-subscription/`
-- Prerequisite explainer: `/deals/arraysubs/resources/retention-and-churn/subscription-churn-voluntary-vs-involuntary-and-why-it-matters/` (A072)
-- Offer comparison: `/deals/arraysubs/resources/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/` (A074)
-- Survey design: `/deals/arraysubs/resources/retention-and-churn/cancellation-survey-questions-that-produce-useful-data/` (A075)
+- Prerequisite explainer: `/retention-and-churn/subscription-churn-voluntary-vs-involuntary-and-why-it-matters/` (A072)
+- Offer comparison: `/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/` (A074)
+- Survey design: `/retention-and-churn/cancellation-survey-questions-that-produce-useful-data/` (A075)
 
 Place the feature/recipe link only after the reader has the complete flow and limitations. A074 belongs beside the offer-selection section; A075 belongs beside the reason-question section.
 

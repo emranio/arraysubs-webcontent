@@ -36,7 +36,7 @@ Monthly-only can be a strong learning cadence. It surfaces renewal, cancellation
 
 Offer both when the same value can support both cash profiles. A variable WooCommerce product with a Billing attribute is often a clean model because customers compare monthly and annual on one page.
 
-Do not confuse a rolling annual plan with a fixed calendar membership year. If everyone ends on December 31, use a [fixed-date subscription model](/deals/arraysubs/resources/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/).
+Do not confuse a rolling annual plan with a fixed calendar membership year. If everyone ends on December 31, use a [fixed-date subscription model](/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/).
 
 ![Monthly, annual, or both? — a focused split for Package monthly and annual plans around commitment.](/blogs/monthly-and-annual-subscription-plans-packaging-without-cannibalization/decision-visual.png)
 
@@ -149,7 +149,7 @@ Measure support contacts by reason, not merely total tickets. One low ticket cou
 
 **Start monthly, switch later:** let customers experience value, then make an eligible annual switch available. Define whether the switch is immediate and prorated, immediate without proration, or applied at renewal.
 
-Use a [sign-up fee](/deals/arraysubs/resources/subscription-foundations/subscription-sign-up-fees-unit-economics-ux-and-examples/) when onboarding is a genuine separate one-time cost. Use a [fixed-cycle model](/deals/arraysubs/resources/subscription-foundations/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/) for a defined number of payments, and a [lifetime deal](/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/) for a one-time permanent-access promise.
+Use a [sign-up fee](/subscription-foundations/subscription-sign-up-fees-unit-economics-ux-and-examples/) when onboarding is a genuine separate one-time cost. Use a [fixed-cycle model](/subscription-foundations/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/) for a defined number of payments, and a [lifetime deal](/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/) for a one-time permanent-access promise.
 
 ## Current ArraySubs behavior
 

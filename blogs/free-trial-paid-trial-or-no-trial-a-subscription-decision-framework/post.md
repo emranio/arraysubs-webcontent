@@ -128,7 +128,7 @@ ArraySubs does **not** currently expose a dedicated paid-trial price or lifecycl
 
 Current code and public copy are not fully aligned on the exact first post-trial charge timing. Do not promise an immediate charge at the trial boundary without end-to-end verification for the selected gateway. Test the entire path before publishing customer-facing dates.
 
-See the [ArraySubs products and checkout feature map](/deals/arraysubs/features/#products-checkout) and [Subscription Sign-Up Fees](/deals/arraysubs/resources/subscription-foundations/subscription-sign-up-fees-unit-economics-ux-and-examples/) for the adjacent one-time charge decision.
+See the [ArraySubs products and checkout feature map](/deals/arraysubs/features/#products-checkout) and [Subscription Sign-Up Fees](/subscription-foundations/subscription-sign-up-fees-unit-economics-ux-and-examples/) for the adjacent one-time charge decision.
 
 ## Final recommendation
 

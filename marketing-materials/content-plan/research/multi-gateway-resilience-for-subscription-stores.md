@@ -3,7 +3,7 @@
 ## Research record
 
 - Content-plan ID: A069
-- Planned URL: `/deals/arraysubs/resources/payments-and-compliance/multi-gateway-resilience-for-subscription-stores/`
+- Planned URL: `/payments-and-compliance/multi-gateway-resilience-for-subscription-stores/`
 - Research date: 2026-07-22
 - Product source inspected: ArraySubs Free 1.8.11 and ArraySubs Pro 1.1.2 in the current working tree
 - Scope: evidence and editorial inputs only; this is not an article draft
@@ -319,11 +319,11 @@ When those are requirements, recommend architecture/support scoping rather than 
 ## Internal-link plan
 
 - Primary feature anchor: `/deals/arraysubs/features/#payment-gateways`
-- Related article: `/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/` (A056)
-- Related article: `/deals/arraysubs/resources/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/` (A057)
-- Related article: `/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/` (A058)
-- Related article: `/deals/arraysubs/resources/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/` (A063)
-- Related article: `/deals/arraysubs/resources/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/` (A064)
+- Related article: `/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/` (A056)
+- Related article: `/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/` (A057)
+- Related article: `/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/` (A058)
+- Related article: `/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/` (A063)
+- Related article: `/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/` (A064)
 - Recipe: `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
 - Recipe: `/deals/arraysubs/use-cases/recipes/member-update-payment/`
 - Recipe: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`

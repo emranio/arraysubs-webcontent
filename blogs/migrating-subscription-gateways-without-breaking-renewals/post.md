@@ -53,7 +53,7 @@ This can be possible through a coordinated PCI-controlled transfer. Stripe, for 
 
 PayPal buyer-approved subscriptions, Paddle subscriptions, bank mandates, and other provider-hosted agreements may require a provider migration program, a new agreement, or buyer reauthorization. Do not generalize a card-transfer process to a wallet or reseller agreement.
 
-The [Merchant of Record vs payment processor guide](/deals/arraysubs/resources/payments-and-compliance/merchant-of-record-vs-payment-processor-for-subscription-businesses/) explains why seller role, data control, and exit terms should have been evaluated before the original provider was selected.
+The [Merchant of Record vs payment processor guide](/payments-and-compliance/merchant-of-record-vs-payment-processor-for-subscription-businesses/) explains why seller role, data control, and exit terms should have been evaluated before the original provider was selected.
 
 ## The seven-plane migration model
 
@@ -117,7 +117,7 @@ Use this decision sequence:
 6. What consent, notice, SCA, or reauthorization action is required?
 7. What update-payment fallback exists for records that cannot transfer?
 
-The [subscription payment tokens and card updates guide](/deals/arraysubs/resources/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/) covers the difference between display metadata, provider tokens, reusable methods, and account/customer references.
+The [subscription payment tokens and card updates guide](/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/) covers the difference between display metadata, provider tokens, reusable methods, and account/customer references.
 
 ## PayPal and Paddle need remote-agreement planning
 

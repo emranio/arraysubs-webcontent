@@ -7,7 +7,7 @@
 - **Proposed title:** Failed Payment Email Sequence: A Message-by-Message Playbook
 - **Content cluster:** C03 — Failed payments, dunning, and grace recovery
 - **Content category:** Payment Recovery
-- **Recommended URL:** `/deals/arraysubs/resources/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/`
+- **Recommended URL:** `/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/`
 - **Search intent:** Informational
 - **Funnel stage:** Interest
 - **Priority:** P0 · Wave 2
@@ -76,7 +76,7 @@ Create a guide for subscription operators, finance teams, and customer-success t
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Payment Recovery`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

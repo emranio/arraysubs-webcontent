@@ -36,7 +36,7 @@ Write one approved sentence for each field before touching configuration:
 | Fulfillment | what is delivered after each paid obligation |
 | Cancellation | immediate or period-end; refund handled separately |
 
-If the team cannot answer these consistently, return to the [subscription product-type guide](/deals/arraysubs/resources/subscription-foundations/woocommerce-subscription-product-types/).
+If the team cannot answer these consistently, return to the [subscription product-type guide](/subscription-foundations/woocommerce-subscription-product-types/).
 
 ![Test the full loop — a focused cycle for Prove the full subscription loop before launch.](/blogs/woocommerce-subscription-launch-readiness-checklist/decision-visual.png)
 
@@ -146,7 +146,7 @@ Define who responds, how quickly, where evidence is recorded, and when sales pau
 
 On launch day, place one production transaction using an approved low-risk product and immediately verify all records. Watch logs, scheduler queues, gateway webhooks, email delivery, analytics, and support. At the first real renewal boundary, sample orders across gateway, product, coupon, tax, shipping, and customer segments before declaring the system stable.
 
-For a broader implementation sequence, read [How to Add Subscriptions to WooCommerce](/deals/arraysubs/resources/subscription-foundations/how-to-add-subscriptions-to-woocommerce/).
+For a broader implementation sequence, read [How to Add Subscriptions to WooCommerce](/subscription-foundations/how-to-add-subscriptions-to-woocommerce/).
 
 ## Final recommendation
 

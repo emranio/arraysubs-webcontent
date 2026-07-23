@@ -115,7 +115,7 @@ ArraySubs Pro lets customers/admins update the subscription address. The current
 7. Match the gateway transaction and accounting/export record.
 8. Save evidence and obtain qualified tax/accounting review.
 
-For cadence differences, read [Billing Schedule vs Shipping Schedule](/deals/arraysubs/resources/billing-strategy/subscription-billing-schedule-vs-shipping-schedule/).
+For cadence differences, read [Billing Schedule vs Shipping Schedule](/billing-strategy/subscription-billing-schedule-vs-shipping-schedule/).
 
 ## Final recommendation
 

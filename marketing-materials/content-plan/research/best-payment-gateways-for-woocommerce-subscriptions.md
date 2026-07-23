@@ -3,7 +3,7 @@
 ## Research record
 
 - Brief: `articles/056-best-payment-gateways-for-woocommerce-subscriptions-in-2026.md`
-- Recommended URL: `/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/`
+- Recommended URL: `/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/`
 - Researched and source-verified: 2026-07-20
 - Search intent: commercial investigation
 - Focus query: `best payment gateways for WooCommerce subscriptions`

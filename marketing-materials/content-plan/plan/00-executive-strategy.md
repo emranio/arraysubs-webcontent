@@ -31,4 +31,4 @@ Build the missing editorial authority layer around ArraySubs while protecting th
 
 ## Recommended URL architecture
 
-Use `/deals/arraysubs/resources/<category>/<evergreen-slug>/`. Keep years out of URLs even when a title uses “2026,” and maintain category hubs plus a unified resources hub, RSS feed, author pages, editorial policy, and real `dateModified` values.
+Use `/articles/<category>/<evergreen-slug>/`. Keep years out of URLs even when a title uses “2026,” and maintain category hubs plus a unified resources hub, RSS feed, author pages, editorial policy, and real `dateModified` values.

@@ -109,7 +109,7 @@ units needed in lead-time window
 
 Use actual carrier, packaging, handling, damage, and reshipment data. One-time shipping does not make later deliveries costless; the merchant may simply embed the cost in product price.
 
-For tax and renewal reconciliation, read [How Taxes and Shipping Behave on Subscription Renewals](/deals/arraysubs/resources/billing-strategy/how-taxes-and-shipping-behave-on-subscription-renewals/).
+For tax and renewal reconciliation, read [How Taxes and Shipping Behave on Subscription Renewals](/billing-strategy/how-taxes-and-shipping-behave-on-subscription-renewals/).
 
 ## Final recommendation
 

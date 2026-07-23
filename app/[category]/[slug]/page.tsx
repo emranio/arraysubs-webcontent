@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { createMetadata } from "@/lib/seo";
-import { ArticleDetail } from "../../_components/ArticleDetail";
+import { ArticleDetail } from "@/app/articles/_components/ArticleDetail";
 import {
   RESOURCE_ARTICLES,
   getArticlePath,
   getResourceArticle,
-} from "../../_data";
+} from "@/app/articles/_data";
 import {
   getArticleFaqs,
   getArticleHeadings,
   getArticleMarkdown,
   getArticleWordCount,
-} from "../../_content";
+} from "@/app/articles/_content";
+import { createMetadata } from "@/lib/seo";
 
 export const dynamicParams = false;
 

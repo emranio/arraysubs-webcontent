@@ -64,7 +64,7 @@ This leads to a useful operating pattern:
 
 Deactivating an extension is not the same as disabling its method for new checkout. In the WooCommerce ecosystem, deactivation can cause existing renewals to become manual. In ArraySubs, adapter availability and stored gateway context similarly affect whether automatic or manual behavior applies. Test the exact version and cohort before an incident.
 
-The [gateway migration guide](/deals/arraysubs/resources/payments-and-compliance/migrating-subscription-gateways-without-breaking-renewals/) covers the controlled process for changing that installed-base context. Do not bulk-edit `_payment_gateway` metadata or copy provider token strings.
+The [gateway migration guide](/payments-and-compliance/migrating-subscription-gateways-without-breaking-renewals/) covers the controlled process for changing that installed-base context. Do not bulk-edit `_payment_gateway` metadata or copy provider token strings.
 
 ## Failure domains: what a second gateway does not fix
 
@@ -99,7 +99,7 @@ ArraySubs Pro creates Paddle products, prices, transactions, and subscriptions. 
 
 When no active automatic adapter applies, core can create a payable WooCommerce renewal order. This can provide a controlled contingency if customers are informed and access/grace behavior is defined. It is not automatic failover and requires customer action.
 
-The [automatic versus manual subscription payment guide](/deals/arraysubs/resources/payments-and-compliance/automatic-vs-manual-subscription-payment-gateways/) explains that capability boundary in more detail.
+The [automatic versus manual subscription payment guide](/payments-and-compliance/automatic-vs-manual-subscription-payment-gateways/) explains that capability boundary in more detail.
 
 ## Why payment updates do not create cross-gateway failover
 
@@ -107,7 +107,7 @@ The current `PaymentMethodCoordinator` resolves the subscription’s existing ga
 
 That is correct conceptually: updating a card inside a provider account is different from transferring a credential or creating a new wallet/MoR agreement. A customer seeing an “Update payment method” button should not be told that it selects any enabled gateway.
 
-See [subscription payment tokens and card updates explained](/deals/arraysubs/resources/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/) and the [member payment-update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/).
+See [subscription payment tokens and card updates explained](/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/) and the [member payment-update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/).
 
 ## Build a gateway continuity card for every provider
 

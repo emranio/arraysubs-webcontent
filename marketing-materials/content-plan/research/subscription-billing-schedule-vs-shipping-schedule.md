@@ -214,8 +214,8 @@ Model all fulfillment costs, then allocate them across billing events. If twelve
 - Recurring shipping box recipe: `/deals/arraysubs/use-cases/recipes/recurring-shipping-box/`
 - One-time welcome-kit shipping recipe: `/deals/arraysubs/use-cases/recipes/one-time-shipping-welcome-kit/`
 - Customer shipping-address recipe: `/deals/arraysubs/use-cases/recipes/member-update-shipping/`
-- Early-renew strategy: `/deals/arraysubs/resources/billing-strategy/early-subscription-renewals-benefits-risks-and-guardrails/`
-- Cancellation comparison: `/deals/arraysubs/resources/billing-strategy/immediate-cancellation-vs-cancel-at-period-end/`
+- Early-renew strategy: `/billing-strategy/early-subscription-renewals-benefits-risks-and-guardrails/`
+- Cancellation comparison: `/billing-strategy/immediate-cancellation-vs-cancel-at-period-end/`
 
 Verify every route exists before publication; if recipe slugs differ in the app data, use the canonical generated URL. Keep setup details in recipes.
 

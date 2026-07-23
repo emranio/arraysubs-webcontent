@@ -78,7 +78,7 @@ State:
 - confirmation/reminder timing;
 - refund, return, and access-revocation rules.
 
-Paid trial, discounted first period, sign-up fee, deposit, and money-back guarantee are different promises. Use the [trial decision framework](/deals/arraysubs/resources/subscription-foundations/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/) and [sign-up fee guide](/deals/arraysubs/resources/subscription-foundations/subscription-sign-up-fees-unit-economics-ux-and-examples/) for those strategy decisions.
+Paid trial, discounted first period, sign-up fee, deposit, and money-back guarantee are different promises. Use the [trial decision framework](/subscription-foundations/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/) and [sign-up fee guide](/subscription-foundations/subscription-sign-up-fees-unit-economics-ux-and-examples/) for those strategy decisions.
 
 Visa's subscription merchant material discusses clear enrollment terms, evidence that a cardholder agreed to future transactions, post-trial notification, and easy online cancellation for relevant merchants ([Visa policy](https://usa.visa.com/dam/VCOM/global/support-legal/documents/subscription-merchants-visa-public.pdf)). Confirm current network, gateway, and acquirer requirements; Visa guidance is not universal law.
 

@@ -13,7 +13,7 @@
 
 ## Strengths
 
-- Canonical site configuration, crawlable sitemap, robots allowing all crawlers, breadcrumbs, structured tables, FAQs, direct-answer comparison copy, and a large implementation library.
+- Canonical site configuration, crawlable sitemap, robots allowing all crawlers, article breadcrumbs using `Home / Articles / {Category name}` without the article title, matching `BreadcrumbList` markup, structured tables, FAQs, direct-answer comparison copy, and a large implementation library.
 - Broad product coverage across recurring billing, memberships, retention, store credit, checkout, analytics, and operations.
 - Strong vertical proof surface: SaaS/digital, memberships, boxes, courses, publishers, services, B2B, support operations, and loyalty.
 

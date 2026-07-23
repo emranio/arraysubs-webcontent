@@ -87,7 +87,7 @@ Choose immediate when the buyer needs higher-tier access now, the adjustment can
 
 WooCommerce’s own switching documentation is useful ecosystem context, but its formulas and coupon behavior should not be attributed to ArraySubs without testing ([switching costs](https://woocommerce.com/document/subscriptions/switching-guide/switching-process-and-costs/)).
 
-For the timing decision without the formulas, read [Immediate vs Next-Renewal Plan Changes](/deals/arraysubs/resources/billing-strategy/immediate-vs-next-renewal-plan-changes/).
+For the timing decision without the formulas, read [Immediate vs Next-Renewal Plan Changes](/billing-strategy/immediate-vs-next-renewal-plan-changes/).
 
 ## Final recommendation
 

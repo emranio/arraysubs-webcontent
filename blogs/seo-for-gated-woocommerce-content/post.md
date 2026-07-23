@@ -195,7 +195,7 @@ Do not claim rankings or AI citations from schema. Compare closed cohorts and an
 - [ ] Search Console live rendering is reviewed.
 - [ ] Metrics use explicit denominators and guardrails.
 
-Use the [inline content-gating recipe](/deals/arraysubs/use-cases/recipes/inline-content-gating/) after choosing the public/premium boundary, and read [WooCommerce Content Restriction Strategy](/deals/arraysubs/resources/membership-strategy/woocommerce-content-restriction-strategy/) for rule governance.
+Use the [inline content-gating recipe](/deals/arraysubs/use-cases/recipes/inline-content-gating/) after choosing the public/premium boundary, and read [WooCommerce Content Restriction Strategy](/membership-strategy/woocommerce-content-restriction-strategy/) for rule governance.
 
 ## When should content stay fully private?
 

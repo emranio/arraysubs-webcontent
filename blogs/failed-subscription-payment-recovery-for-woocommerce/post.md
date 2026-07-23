@@ -110,7 +110,7 @@ Stop when the order is paid, gateway says do not retry, the customer cancels or 
 9. After payment, verify order, status, next date, jobs, and cleared metadata.
 10. Record resolution source; “Mark Resolved” in the Pro failures screen is an administrative dismissal, not payment.
 
-For the customer-facing sequence, read [What Happens When a Subscription Payment Fails?](/deals/arraysubs/resources/payment-recovery/what-happens-when-a-subscription-payment-fails/).
+For the customer-facing sequence, read [What Happens When a Subscription Payment Fails?](/payment-recovery/what-happens-when-a-subscription-payment-fails/).
 
 ## Final recommendation
 

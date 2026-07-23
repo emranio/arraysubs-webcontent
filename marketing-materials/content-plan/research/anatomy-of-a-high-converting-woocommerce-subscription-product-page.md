@@ -123,7 +123,7 @@ The article should include an authored SVG or HTML wireframe with accurate label
 
 ```text
 ┌──────────────────────────────────────────────────────────────┐
-│ Breadcrumb                                                   │
+│ Breadcrumb: Home / Articles / Subscription Foundations       │
 │ ┌──────────── media ───────────┐  H1 + one-line outcome      │
 │ │ product/service evidence     │  Plan selector              │
 │ │                              │  Due today                   │
@@ -263,4 +263,3 @@ Use flat ArraySubs styling: white and pale lavender surfaces, #873EFF/#6F22E6 pu
 6. ArraySubs current product experience manual: `user-manual/markdowns/subscription-products/product-experience.md`
 7. ArraySubs current checkout manual: `user-manual/markdowns/checkout-and-payments/subscription-checkout.md`
 8. ArraySubs product implementation: `arraysubs/src/Features/SubscriptionProducts/`
-

@@ -75,7 +75,7 @@ Before downgrade:
 - verify the exact renewal is genuinely unpaid;
 - check for successful remote payment and webhook mismatch;
 - complete permitted retries and customer-action windows;
-- respect the disclosed [subscription grace period](/deals/arraysubs/resources/payment-recovery/subscription-grace-periods-explained/);
+- respect the disclosed [subscription grace period](/payment-recovery/subscription-grace-periods-explained/);
 - confirm the provider agreement will not keep collecting after local fallback;
 - exclude disputes, fraud, abuse, and manual-review cases.
 
@@ -209,7 +209,7 @@ Do not declare victory based only on the number downgraded. A high fallback rate
 
 State that payment was not recovered, identify the new plan, name retained and removed capabilities, explain data/fulfillment behavior, and provide a tested path back to paid service. Also disclose that future automatic billing may require a new payment method or authorization.
 
-Avoid “your payment was recovered” and avoid implying the fallback is a penalty. The customer should understand the current state and control the next step. Adapt the message and stop rules from the [failed-payment email sequence playbook](/deals/arraysubs/resources/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/).
+Avoid “your payment was recovered” and avoid implying the fallback is a penalty. The customer should understand the current state and control the next step. Adapt the message and stop rules from the [failed-payment email sequence playbook](/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/).
 
 ## Auto-downgrade launch and rollback checklist
 

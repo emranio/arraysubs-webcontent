@@ -127,7 +127,7 @@ A co-parenting family, a student away from home, or a caregiver may not fit a si
 
 A business account needs to know who joined, who left, who owns billing, and whose access should be revoked when employment changes. Raising a shared login to ten simultaneous sessions preserves none of that accountability. Use named accounts and a seat lifecycle. A per-user session cap can remain as a security or licensing guardrail after seats exist.
 
-If family subaccounts, seat invitations, linked billing, child profiles, or organization managers are essential, [design the membership architecture before configuration](/deals/arraysubs/resources/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/). ArraySubs Multi-Login Prevention alone is not a family- or team-account system.
+If family subaccounts, seat invitations, linked billing, child profiles, or organization managers are essential, [design the membership architecture before configuration](/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/). ArraySubs Multi-Login Prevention alone is not a family- or team-account system.
 
 ## What does ArraySubs Pro Multi-Login Prevention actually do?
 
@@ -141,7 +141,7 @@ ArraySubs Pro uses WordPress sessions as the enforcement unit. Current source sh
 - Administrators are exempt by default unless the operator deliberately includes them.
 - ArraySubs **Login as User** impersonation sessions are excluded from counting and eviction, so a support session does not consume the customer's allowance.
 
-That behavior connects recurring billing and member access without pretending they are the same record. If your policy depends on the member's commercial state, first [separate subscription billing from membership access](/deals/arraysubs/resources/membership-strategy/woocommerce-membership-vs-subscription-what-is-the-difference/) and document which lifecycle states qualify.
+That behavior connects recurring billing and member access without pretending they are the same record. If your policy depends on the member's commercial state, first [separate subscription billing from membership access](/membership-strategy/woocommerce-membership-vs-subscription-what-is-the-difference/) and document which lifecycle states qualify.
 
 ![ArraySubs Pro Multi-Login Prevention global controls show the fallback maximum, administrator exemption, oldest-session behavior, and Login as User exclusion.](/blogs/preventing-shared-membership-accounts-without-punishing-families/arraysubs-multi-login-global-controls.png)
 
@@ -267,7 +267,7 @@ Do not paste unsupported product behavior into the policy. With current ArraySub
 
 **Policy:** the owner manages billing and invitations; every learner has an account; seat additions, removals, and offboarding are auditable. Never solve the requirement by increasing one department password to twenty sessions.
 
-**ArraySubs fit:** plan- and role-aware caps can be one layer. Seat commerce, invitations, team managers, and linked billing need a dedicated team-account architecture. [Connect recurring billing to member entitlements](/deals/arraysubs/resources/membership-strategy/woocommerce-subscriptions-and-memberships-together-the-complete-architecture/) before adding enforcement.
+**ArraySubs fit:** plan- and role-aware caps can be one layer. Seat commerce, invitations, team managers, and linked billing need a dedicated team-account architecture. [Connect recurring billing to member entitlements](/membership-strategy/woocommerce-subscriptions-and-memberships-together-the-complete-architecture/) before adding enforcement.
 
 ## How do you measure deterrence without rewarding false positives?
 

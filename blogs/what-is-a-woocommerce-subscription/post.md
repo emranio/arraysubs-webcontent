@@ -195,7 +195,7 @@ Use a consistent order of inspection:
 6. Check scheduled actions for what is due next.
 7. Confirm the customer portal and access state match the intended agreement status.
 
-This sequence prevents a single transaction from being mistaken for the whole relationship. For a full setup and test process, continue with [How to Add Subscriptions to WooCommerce](/deals/arraysubs/resources/subscription-foundations/how-to-add-subscriptions-to-woocommerce/). For catalog choices, see [WooCommerce Subscription Product Types Explained](/deals/arraysubs/resources/subscription-foundations/woocommerce-subscription-product-types/).
+This sequence prevents a single transaction from being mistaken for the whole relationship. For a full setup and test process, continue with [How to Add Subscriptions to WooCommerce](/subscription-foundations/how-to-add-subscriptions-to-woocommerce/). For catalog choices, see [WooCommerce Subscription Product Types Explained](/subscription-foundations/woocommerce-subscription-product-types/).
 
 ## Where the model has limits
 

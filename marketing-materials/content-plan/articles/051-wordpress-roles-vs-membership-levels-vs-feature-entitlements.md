@@ -7,7 +7,7 @@
 - **Proposed title:** WordPress Roles vs Membership Levels vs Feature Entitlements
 - **Content cluster:** C04 — Memberships, access control, and content dripping
 - **Content category:** Membership Strategy
-- **Recommended URL:** `/deals/arraysubs/resources/membership-strategy/wordpress-roles-vs-membership-levels-vs-feature-entitlements/`
+- **Recommended URL:** `/membership-strategy/wordpress-roles-vs-membership-levels-vs-feature-entitlements/`
 - **Search intent:** Informational
 - **Funnel stage:** Awareness
 - **Priority:** P0 · Wave 2
@@ -76,7 +76,7 @@ Create a comparison for membership operators, publishers, course creators, and W
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Membership Strategy`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

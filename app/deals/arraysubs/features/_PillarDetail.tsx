@@ -23,7 +23,7 @@ import {
   RESOURCE_CATEGORIES,
   formatArticleDate,
   getArticlePath,
-} from "../resources/_data";
+} from "@/app/articles/_data";
 import { highlight } from "../_highlight";
 
 const GET_PRO = "/deals/arraysubs/pricing/";

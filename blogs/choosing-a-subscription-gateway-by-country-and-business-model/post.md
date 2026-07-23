@@ -194,7 +194,7 @@ The inspected ArraySubs Stripe adapter schedules locally and creates off-session
 
 That is not a claim that Stripe is unavailable in India or that every Indian card fails. It is a precise warning about the current documented API architecture and a particular recurring requirement.
 
-For the broader authentication model, use [SCA and 3D Secure for subscription renewals](/deals/arraysubs/resources/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/).
+For the broader authentication model, use [SCA and 3D Secure for subscription renewals](/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/).
 
 ## Provider research: what the official pages prove
 
@@ -321,9 +321,9 @@ PayPal settings and credentials can prove configuration. Provider API responses,
 
 Gateway Health helps operators see setup, mode, availability, subscription counts, webhook state, endpoint, and capabilities. It is not a legal, country, product, payout, or payment-method eligibility certificate. Use the [Gateway Health monitor recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) and retain provider evidence alongside it.
 
-For provider-level comparisons, read [Stripe vs PayPal vs Paddle for WooCommerce recurring billing](/deals/arraysubs/resources/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/), the [Paddle MoR guide](/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/), and [best payment gateways for WooCommerce subscriptions](/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/).
+For provider-level comparisons, read [Stripe vs PayPal vs Paddle for WooCommerce recurring billing](/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/), the [Paddle MoR guide](/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/), and [best payment gateways for WooCommerce subscriptions](/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/).
 
-If the country decision is part of a provider change, plan [gateway migration without breaking renewals](/deals/arraysubs/resources/payments-and-compliance/migrating-subscription-gateways-without-breaking-renewals/) before onboarding the first replacement cohort.
+If the country decision is part of a provider change, plan [gateway migration without breaking renewals](/payments-and-compliance/migrating-subscription-gateways-without-breaking-renewals/) before onboarding the first replacement cohort.
 
 ## Verification environment and limits
 

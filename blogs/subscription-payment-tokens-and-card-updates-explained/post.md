@@ -134,7 +134,7 @@ The [member payment-method update recipe](/deals/arraysubs/use-cases/recipes/mem
 
 If the subscription is on hold because a renewal order remains unpaid, changing a future method is only half the recovery. The operator/customer must still pay or reconcile that specific renewal order, clear the pending/failure/retry state, restore eligible access, and compute the next date from the correct billing anchor.
 
-For authentication-required renewals, read [SCA and 3D Secure for subscription renewals](/deals/arraysubs/resources/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/). For expired-card dunning, use the [expired-card recovery guide](/deals/arraysubs/resources/payment-recovery/expired-cards-and-subscription-recovery/).
+For authentication-required renewals, read [SCA and 3D Secure for subscription renewals](/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/). For expired-card dunning, use the [expired-card recovery guide](/payment-recovery/expired-cards-and-subscription-recovery/).
 
 ## What is a network account updater?
 
@@ -163,7 +163,7 @@ ArraySubs Pro relies on the official WooCommerce Stripe Gateway for checkout. It
 
 At renewal, the Stripe delegate creates an off-session PaymentIntent and explicitly passes the subscription’s stored Customer and PaymentMethod IDs. This is why the subscription reference is decisive.
 
-The [Stripe automatic billing and SCA recipe](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) explains the setup. The [Stripe recurring-payment test guide](/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/) provides the larger architecture.
+The [Stripe automatic billing and SCA recipe](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) explains the setup. The [Stripe recurring-payment test guide](/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/) provides the larger architecture.
 
 ### Provider-account and mode scope matter
 
@@ -232,7 +232,7 @@ Use this source-grounded wording:
 
 > PayPal customers may manage eligible automatic-payment funding inside PayPal, but the inspected ArraySubs Pro update link does not yet complete a merchant-side replacement-agreement flow. Verify the deployed experience before promising self-service reauthorization.
 
-For the wider plan/agreement limitations, read [PayPal recurring payments for WooCommerce](/deals/arraysubs/resources/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/).
+For the wider plan/agreement limitations, read [PayPal recurring payments for WooCommerce](/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/).
 
 ### Paddle: subscription-owned method and hosted portal
 
@@ -246,7 +246,7 @@ Current implementation wording:
 
 > ArraySubs Pro can send an eligible Paddle customer to Paddle’s hosted portal. The verified release opens the portal overview rather than the subscription-specific update route, and local method descriptor synchronization after an update remains an acceptance test.
 
-See the [Paddle Merchant-of-Record architecture guide](/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) for the larger product, tax, refund, and reconciliation context.
+See the [Paddle Merchant-of-Record architecture guide](/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/) for the larger product, tax, refund, and reconciliation context.
 
 ### Provider comparison
 
@@ -259,7 +259,7 @@ See the [Paddle Merchant-of-Record architecture guide](/deals/arraysubs/resource
 | Current local sync confidence | Must test exact subscription; event-order/multi-subscription risks | Completed replacement flow not found | Descriptor sync after portal unproven | Applies to that invoice, not automatic-renew context |
 | Portable | No | No | No | Requires new automatic authorization later |
 
-The broader [Stripe, PayPal, and Paddle comparison](/deals/arraysubs/resources/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/) helps choose the schedule-owner model before update UX is designed.
+The broader [Stripe, PayPal, and Paddle comparison](/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/) helps choose the schedule-owner model before update UX is designed.
 
 ## What does an expiry date actually prove?
 

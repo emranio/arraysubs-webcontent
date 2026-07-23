@@ -191,8 +191,8 @@ The target product is placed on the next invoice, but the actual subscription pr
 - Subscription notes/timeline recipe: `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
 - Upgrade tiers recipe: `/deals/arraysubs/use-cases/recipes/upgrade-path-tiers/`
 - Crossgrade recipe: `/deals/arraysubs/use-cases/recipes/crossgrade-lateral/`
-- Companion strategy article: `/deals/arraysubs/resources/billing-strategy/immediate-vs-next-renewal-plan-changes/`
-- Cancellation comparison: `/deals/arraysubs/resources/billing-strategy/immediate-cancellation-vs-cancel-at-period-end/`
+- Companion strategy article: `/billing-strategy/immediate-vs-next-renewal-plan-changes/`
+- Cancellation comparison: `/billing-strategy/immediate-cancellation-vs-cancel-at-period-end/`
 
 Do not reproduce the recipe's click-by-click setup. The article owns decision policy and arithmetic; recipes own configuration.
 

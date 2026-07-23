@@ -476,7 +476,7 @@ This guide was verified on **July 22, 2026** against ArraySubs 1.8.11, ArraySubs
 
 The staging flow showed configured discount and pause options and created one synthetic offer-shown event. No offer was accepted, no subscription changed, no renewal was skipped, no downgrade was completed, and no payment was attempted. No save-rate or revenue-lift claim is made.
 
-Next, review the [effective cancellation flow](/deals/arraysubs/resources/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/), [reason taxonomy](/deals/arraysubs/resources/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/), [pause recipe](/deals/arraysubs/use-cases/recipes/pause-need-a-break/), and [downgrade recipe](/deals/arraysubs/use-cases/recipes/downgrade-offer/).
+Next, review the [effective cancellation flow](/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/), [reason taxonomy](/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/), [pause recipe](/deals/arraysubs/use-cases/recipes/pause-need-a-break/), and [downgrade recipe](/deals/arraysubs/use-cases/recipes/downgrade-offer/).
 
 ## Primary sources
 

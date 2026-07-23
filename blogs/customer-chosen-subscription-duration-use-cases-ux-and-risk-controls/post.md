@@ -135,7 +135,7 @@ An interim pattern is separate products or a variable subscription with merchant
 
 Current source has two expiration-counting paths with different possible treatment of zero-total orders. Do not promise how trials, coupons, or credit-zeroed cycles count until the behavior is reconciled and tested.
 
-The [fixed-cycle recipe](/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/) provides adjacent configuration concepts, but its recurring charges are not true full prepayment. For shared dates, read [Fixed-Date WooCommerce Subscriptions](/deals/arraysubs/resources/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/).
+The [fixed-cycle recipe](/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/) provides adjacent configuration concepts, but its recurring charges are not true full prepayment. For shared dates, read [Fixed-Date WooCommerce Subscriptions](/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/).
 
 ## Final recommendation
 

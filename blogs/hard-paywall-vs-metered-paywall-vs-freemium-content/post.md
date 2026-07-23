@@ -259,7 +259,7 @@ Choose the operating burden the team can sustain, not only the mockup that looks
 5. Implement a meter only when repeat frequency, identity, privacy, and data capability justify it.
 6. Preserve URLs, version rules, annotate changes, compare closed cohorts, and maintain rollback.
 
-Use the broader [WooCommerce content restriction strategy](/deals/arraysubs/resources/membership-strategy/woocommerce-content-restriction-strategy/) for rule governance.
+Use the broader [WooCommerce content restriction strategy](/membership-strategy/woocommerce-content-restriction-strategy/) for rule governance.
 
 ## When is ArraySubs not the right paywall system?
 

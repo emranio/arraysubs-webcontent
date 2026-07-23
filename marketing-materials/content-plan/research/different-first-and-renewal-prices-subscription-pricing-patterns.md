@@ -239,9 +239,9 @@ Not through the current different-renewal-price feature. It supports one introdu
 - Intro-pricing step-up recipe: `/deals/arraysubs/use-cases/recipes/intro-pricing-step-up/`
 - Free-first-month coupon recipe: `/deals/arraysubs/use-cases/recipes/free-first-month-coupon/`
 - Signup-fee strategy/article or recipe where canonical
-- Recurring coupon strategy: `/deals/arraysubs/resources/billing-strategy/recurring-subscription-coupons-economics-and-abuse-controls/`
+- Recurring coupon strategy: `/billing-strategy/recurring-subscription-coupons-economics-and-abuse-controls/`
 - Trial strategy: use the canonical A006 URL from the article registry
-- Plan-switch timing: `/deals/arraysubs/resources/billing-strategy/immediate-vs-next-renewal-plan-changes/`
+- Plan-switch timing: `/billing-strategy/immediate-vs-next-renewal-plan-changes/`
 
 Verify canonical generated routes before publication and leave configuration steps in the recipe.
 

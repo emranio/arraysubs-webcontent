@@ -1,12 +1,11 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  CalendarDays,
-  Clock3,
-  FileCheck2,
-  UserRound,
-} from "lucide-react";
+import { ArrowRight, CalendarDays, Clock3 } from "lucide-react";
 import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  authorSchemaInput,
+  getAuthorByName,
+  getAuthorPath,
+} from "@/app/authors/_data";
 import {
   ArticleCard,
   Button,
@@ -17,7 +16,6 @@ import {
   Section,
 } from "@/components/ui";
 import { blogPostSchema, faqSchema } from "@/lib/seo";
-import { site } from "@/lib/site";
 import {
   RESOURCE_BASE,
   RESOURCE_CATEGORIES,
@@ -59,6 +57,7 @@ export function ArticleDetail({
 
   if (!category) return null;
 
+  const author = getAuthorByName(article.author);
   const related = getRelatedArticles(article);
   const isMembershipArticle = article.categorySlug === "membership-strategy";
   // Feature guide that cites this article, for the strategy → feature bridge.
@@ -83,9 +82,8 @@ export function ArticleDetail({
       <PageHero
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Resources", href: RESOURCE_BASE },
+          { name: "Articles", href: RESOURCE_BASE },
           { name: category.name, href: getCategoryPath(category.slug) },
-          { name: article.title, href: getArticlePath(article) },
         ]}
         title={article.title}
         titleSize="article"
@@ -101,11 +99,12 @@ export function ArticleDetail({
             title={article.cover.label}
             image={article.cover.image}
             tone={article.cover.tone}
+            preserveImageAspect
             className="aspect-[4/3] min-h-0 sm:aspect-[16/7] sm:min-h-[19rem]"
           />
 
           <div className="mt-12 grid items-start gap-12 xl:grid-cols-[minmax(0,1fr)_20rem] xl:gap-20">
-            <article className="min-w-0 max-w-4xl">
+            <article className="w-full min-w-0 max-w-none xl:max-w-4xl">
               <MarkdownArticle markdown={markdown} />
 
               <section
@@ -174,38 +173,50 @@ export function ArticleDetail({
                 </div>
               </section>
 
-              <section
-                aria-labelledby="author-title"
-                className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2"
-              >
+              <section aria-labelledby="author-title" className="mt-12">
                 <div className="rounded-xl bg-card p-6 sm:p-7">
-                  <UserRound aria-hidden="true" className="size-7 text-primary" />
-                  <p className="mt-5 text-sm font-semibold tracking-[0.12em] text-faint uppercase">
+                  <p className="text-sm font-semibold tracking-[0.12em] text-faint uppercase">
                     Written by
                   </p>
-                  <h2 id="author-title" className="mt-2 text-2xl">
-                    {article.author} // {site.name}
-                  </h2>
-                  <p className="mt-3 leading-7 text-muted">
-                    Research and practical guidance for WooCommerce membership
-                    and subscription operators and implementation teams.
-                  </p>
-                </div>
-                <div className="rounded-xl bg-card p-6 sm:p-7">
-                  <FileCheck2 aria-hidden="true" className="size-7 text-primary" />
-                  <p className="mt-5 text-sm font-semibold tracking-[0.12em] text-faint uppercase">
-                    Technical review
-                  </p>
-                  <h2 className="mt-2 text-2xl">{article.reviewer}</h2>
-                  <p className="mt-3 leading-7 text-muted">
-                    Reviewed against current ArraySubs code, product
-                    documentation, and the linked primary platform sources.
-                  </p>
+                  <div className="mt-4 flex items-center gap-4">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={author.image}
+                      width={author.imageWidth}
+                      height={author.imageHeight}
+                      alt={`Portrait of ${author.name}`}
+                      className="size-16 shrink-0 rounded-xl object-cover"
+                    />
+                    <span className="min-w-0">
+                      <h2 id="author-title" className="text-xl leading-tight">
+                        <Link
+                          href={getAuthorPath(author)}
+                          className="transition-colors hover:text-primary"
+                        >
+                          {author.name}
+                        </Link>
+                      </h2>
+                      <span className="mt-1 block text-sm font-medium text-primary">
+                        {author.jobTitle}
+                      </span>
+                    </span>
+                  </div>
+                  <p className="mt-4 leading-7 text-muted">{author.headline}</p>
+                  <Link
+                    href={getAuthorPath(author)}
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                  >
+                    View author profile
+                    <ArrowRight aria-hidden="true" className="size-4" />
+                  </Link>
                 </div>
               </section>
             </article>
 
-            <aside className="xl:sticky xl:top-24" aria-label="Article navigation">
+            <aside
+              className="hidden xl:sticky xl:top-24 xl:block"
+              aria-label="Article navigation"
+            >
               <div className="rounded-xl bg-surface p-6">
                 <p className="font-display text-xl font-semibold">On this page</p>
                 <nav
@@ -353,8 +364,7 @@ export function ArticleDetail({
             path: getArticlePath(article),
             datePublished: article.publishedAt,
             dateModified: article.updatedAt,
-            author: article.author,
-            reviewer: article.reviewer,
+            author: authorSchemaInput(author),
             image: article.cover.image,
             imageWidth: 1672,
             imageHeight: 941,
@@ -380,12 +390,23 @@ export function ArticleDetail({
 }
 
 function ArticleMeta({ article }: { article: ResourceArticle }) {
+  const author = getAuthorByName(article.author);
   return (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-foreground">
-      <span className="inline-flex items-center gap-2 font-semibold">
-        <UserRound aria-hidden="true" className="size-4 text-primary" />
-        {article.author} // {site.name}
-      </span>
+      <Link
+        href={getAuthorPath(author)}
+        className="group inline-flex items-center gap-2 font-semibold transition-colors hover:text-primary"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={author.image}
+          width={author.imageWidth}
+          height={author.imageHeight}
+          alt={`Portrait of ${author.name}`}
+          className="size-6 rounded-full object-cover"
+        />
+        {author.name}
+      </Link>
       <span className="inline-flex items-center gap-2">
         <CalendarDays aria-hidden="true" className="size-4 text-primary" />
         <time dateTime={article.updatedAt}>

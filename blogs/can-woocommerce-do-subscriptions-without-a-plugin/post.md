@@ -78,7 +78,7 @@ At minimum, look for these capabilities:
 | Recovery lifecycle | Handles declines, grace, on-hold, communication, and stop rules |
 | Reporting/audit | Connects subscription, orders, actions, gateway events, and support history |
 
-ArraySubs core provides WooCommerce-based subscription products and manual renewal workflows. ArraySubs Pro adds current automatic-payment integrations and premium operations. Review [manual versus automatic renewals](/deals/arraysubs/resources/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/) before choosing the required scope.
+ArraySubs core provides WooCommerce-based subscription products and manual renewal workflows. ArraySubs Pro adds current automatic-payment integrations and premium operations. Review [manual versus automatic renewals](/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/) before choosing the required scope.
 
 ## Plugin versus external billing platform
 
@@ -105,7 +105,7 @@ Do not run two independent schedulers against the same charge.
 7. Check Action Scheduler or the extension’s job system.
 8. Review data ownership, exports, uninstall/migration, support, updates, and security.
 9. Test core behavior with premium components disabled where the architecture claims that separation.
-10. Use the [subscription launch readiness checklist](/deals/arraysubs/resources/subscription-foundations/woocommerce-subscription-launch-readiness-checklist/).
+10. Use the [subscription launch readiness checklist](/subscription-foundations/woocommerce-subscription-launch-readiness-checklist/).
 
 ## The real cost comparison
 

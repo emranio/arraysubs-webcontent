@@ -75,7 +75,7 @@ export type FeaturePillar = {
   planSplit: { free: string[]; pro: string[] };
   /** Granular module slugs from `../_data.ts` rendered as hub cross-links. */
   moduleSlugs: string[];
-  /** Resource article slugs from `../../resources/_data.ts`. */
+  /** Article slugs from `app/articles/_data.ts`. */
   articleSlugs: string[];
   /** Use-case slugs from `../../use-cases/_data.ts`. */
   useCaseSlugs: string[];

@@ -6,7 +6,7 @@
 - **Proposed title:** Free Trial, Paid Trial, or No Trial? A Subscription Decision Framework
 - **Content cluster:** C01 — WooCommerce subscription setup and product models
 - **Content category:** Subscription Foundations
-- **Recommended URL:** `/deals/arraysubs/resources/subscription-foundations/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/`
+- **Recommended URL:** `/subscription-foundations/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/`
 - **Search intent:** Informational
 - **Funnel stage:** Consideration
 - **Priority:** P0 · Wave 1
@@ -75,7 +75,7 @@ Create a strategy guide for first-time WooCommerce subscription operators, imple
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Subscription Foundations`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

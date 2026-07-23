@@ -131,7 +131,7 @@ Offer both only when the product page and account clearly distinguish them and e
 7. Drop or delay a webhook in a controlled test and confirm reconciliation before another charge.
 8. Cancel and verify both local and remote schedules stop correctly.
 
-For the surrounding lifecycle, read [How WooCommerce subscription renewals work](/deals/arraysubs/resources/billing-strategy/how-woocommerce-subscription-renewals-work/).
+For the surrounding lifecycle, read [How WooCommerce subscription renewals work](/billing-strategy/how-woocommerce-subscription-renewals-work/).
 
 ## Final recommendation
 

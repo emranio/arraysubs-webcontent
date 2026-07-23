@@ -40,7 +40,7 @@ WooCommerce core includes standard product structures such as Simple, Grouped, E
 
 “WooCommerce-native” can mean an extension uses WooCommerce products, checkout, orders, coupons, tax, shipping, and HPOS. It does **not** mean subscription billing ships in WooCommerce core.
 
-For the difference between a catalog product, customer agreement, and transaction orders, read [What Is a WooCommerce Subscription?](/deals/arraysubs/resources/subscription-foundations/what-is-a-woocommerce-subscription/).
+For the difference between a catalog product, customer agreement, and transaction orders, read [What Is a WooCommerce Subscription?](/subscription-foundations/what-is-a-woocommerce-subscription/).
 
 ## The product-type decision table
 

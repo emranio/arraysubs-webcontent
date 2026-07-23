@@ -33,7 +33,8 @@ export type ResourceArticle = {
   };
 };
 
-export const RESOURCE_BASE = "/deals/arraysubs/resources/";
+/** Public archive base. Individual articles intentionally live at /{category}/{slug}/. */
+export const RESOURCE_BASE = "/articles/";
 export const RESOURCE_PAGE_SIZE = 6;
 
 export const RESOURCE_CATEGORIES: ResourceCategory[] = [
@@ -2197,7 +2198,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-22",
     readTime: "23 min read",
     format: "Decision guide",
-    author: "ArraySubs Editorial Team",
+    author: "Emran",
     reviewer: "ArraySubs Product Team",
     keywords: [
       "Merchant of Record vs payment processor subscriptions",
@@ -2229,7 +2230,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-22",
     readTime: "23 min read",
     format: "Migration runbook",
-    author: "ArraySubs Editorial Team",
+    author: "Emran",
     reviewer: "ArraySubs Product Team",
     keywords: [
       "migrate WooCommerce subscription gateway",
@@ -2261,7 +2262,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-22",
     readTime: "21 min read",
     format: "Decision framework",
-    author: "ArraySubs Editorial Team",
+    author: "Emran",
     reviewer: "ArraySubs Product Team",
     keywords: [
       "choose subscription gateway by country",
@@ -2293,7 +2294,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-22",
     readTime: "21 min read",
     format: "Architecture guide",
-    author: "ArraySubs Editorial Team",
+    author: "Emran",
     reviewer: "ArraySubs Product Team",
     keywords: [
       "multi-gateway resilience subscription store",
@@ -2325,7 +2326,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-22",
     readTime: "23 min read",
     format: "Operating guide",
-    author: "ArraySubs Editorial Team",
+    author: "Emran",
     reviewer: "ArraySubs Product Team",
     keywords: [
       "how to reduce WooCommerce subscription churn",
@@ -2357,7 +2358,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-22",
     readTime: "22 min read",
     format: "Measurement guide",
-    author: "ArraySubs Editorial Team",
+    author: "Emran",
     reviewer: "ArraySubs Product Team",
     keywords: [
       "voluntary vs involuntary churn",
@@ -2388,7 +2389,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-22",
     readTime: "22 min read",
     format: "Taxonomy guide",
-    author: "ArraySubs Editorial Team",
+    author: "Emran",
     reviewer: "ArraySubs Product Team",
     keywords: [
       "why customers cancel subscriptions",
@@ -2420,7 +2421,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-22",
     readTime: "22 min read",
     format: "UX and operations guide",
-    author: "ArraySubs Editorial Team",
+    author: "Emran",
     reviewer: "ArraySubs Product Team",
     keywords: [
       "subscription cancellation flow",
@@ -2453,7 +2454,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-22",
     readTime: "22 min read",
     format: "Comparison guide",
-    author: "ArraySubs Editorial Team",
+    author: "Emran",
     reviewer: "ArraySubs Product Team",
     keywords: [
       "subscription save offers",
@@ -2485,7 +2486,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-22",
     readTime: "22 min read",
     format: "Survey design guide",
-    author: "ArraySubs Editorial Team",
+    author: "Emran",
     reviewer: "ArraySubs Product Team",
     keywords: [
       "cancellation survey questions",
@@ -2520,7 +2521,7 @@ export function getCategoryArticles(categorySlug: string) {
 }
 
 export function getArticlePath(article: ResourceArticle) {
-  return `${RESOURCE_BASE}${article.categorySlug}/${article.slug}/`;
+  return `/${article.categorySlug}/${article.slug}/`;
 }
 
 export function getCategoryPath(categorySlug: string) {

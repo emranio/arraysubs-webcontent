@@ -180,11 +180,11 @@ Use fake names, emails, customer IDs, order/subscription IDs, text responses, an
 
 ## Internal-link recommendations
 
-- Save-offer selection: `/deals/arraysubs/resources/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/` (A074)
-- Experiment design: `/deals/arraysubs/resources/retention-and-churn/how-to-ab-test-subscription-retention-offers-without-hurting-cx/` (A076)
-- Segmentation: `/deals/arraysubs/resources/retention-and-churn/retention-segmentation-by-tenure-plan-payment-method-and-engagement/` (A077)
-- Flow foundation: `/deals/arraysubs/resources/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/` (A073)
-- Churn foundation: `/deals/arraysubs/resources/retention-and-churn/subscription-churn-voluntary-vs-involuntary-and-why-it-matters/` (A072)
+- Save-offer selection: `/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/` (A074)
+- Experiment design: `/retention-and-churn/how-to-ab-test-subscription-retention-offers-without-hurting-cx/` (A076)
+- Segmentation: `/retention-and-churn/retention-segmentation-by-tenure-plan-payment-method-and-engagement/` (A077)
+- Flow foundation: `/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/` (A073)
+- Churn foundation: `/retention-and-churn/subscription-churn-voluntary-vs-involuntary-and-why-it-matters/` (A072)
 - Feature anchor: `/features/subscription-retention/`
 - Recipe: `/recipes/add-cancellation-surveys-to-subscriptions/`
 

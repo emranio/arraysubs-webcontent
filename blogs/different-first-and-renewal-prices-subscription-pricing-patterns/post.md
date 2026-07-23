@@ -69,7 +69,7 @@ modeled payback = fourth successful paid payment
 
 Use a price schedule when every eligible buyer receives the same captured one-step sequence and no campaign code is needed. Use a coupon when expiry, email/product restrictions, usage limits, attribution, or code-based eligibility matters.
 
-Avoid stacking both until tested. A zero-total coupon can delay the successful-payment counter, so customer-observed timing may differ from “three months.” For coupon economics and controls, read [Recurring Subscription Coupons](/deals/arraysubs/resources/billing-strategy/recurring-subscription-coupons-economics-and-abuse-controls/).
+Avoid stacking both until tested. A zero-total coupon can delay the successful-payment counter, so customer-observed timing may differ from “three months.” For coupon economics and controls, read [Recurring Subscription Coupons](/billing-strategy/recurring-subscription-coupons-economics-and-abuse-controls/).
 
 ## Write unambiguous customer copy
 

@@ -7,7 +7,7 @@
 - **Proposed title:** Sales Tax and VAT on WooCommerce Subscriptions
 - **Content cluster:** C05 — Payment gateways, SCA, tax, and Merchant of Record
 - **Content category:** Payments & Compliance
-- **Recommended URL:** `/deals/arraysubs/resources/payments-and-compliance/sales-tax-and-vat-on-woocommerce-subscriptions/`
+- **Recommended URL:** `/payments-and-compliance/sales-tax-and-vat-on-woocommerce-subscriptions/`
 - **Search intent:** Informational
 - **Funnel stage:** Interest
 - **Priority:** P1 · Wave 3
@@ -76,7 +76,7 @@ Create a guide for global WooCommerce merchants, developers, and finance teams. 
 - Use descriptive question headings, short factual paragraphs, and a concise key-takeaways box.
 - Source claims beside the claim; prefer first-party vendor docs, standards bodies, regulators, and original ArraySubs tests.
 - Include FAQ-style follow-up questions only when they add information. Do not promise FAQ or HowTo rich results, and do not add unsupported schema.
-- Use `Article`/`TechArticle` and `BreadcrumbList` markup only when it matches visible content and current search-engine guidance.
+- Use `Article`/`TechArticle` only when it matches visible content and current search-engine guidance. Use the visible and structured breadcrumb path `Home / Articles / Payments & Compliance`; omit the article title from both the UI and `BreadcrumbList` markup.
 - Refresh quarterly for comparisons, prices, regulations, gateways, and plugin behavior; otherwise refresh after a relevant WooCommerce, WordPress, or ArraySubs release.
 
 ## Truth and cannibalization guardrail

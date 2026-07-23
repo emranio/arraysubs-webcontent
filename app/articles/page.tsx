@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHero } from "@/components/ui";
-import { createMetadata } from "@/lib/seo";
-import { ResourceArchive } from "./_components/ResourceArchive";
 import {
   RESOURCE_ARTICLES,
   RESOURCE_BASE,
   paginateArticles,
   readPageNumber,
-} from "./_data";
+} from "@/app/articles/_data";
+import { ResourceArchive } from "@/app/articles/_components/ResourceArchive";
+import { PageHero } from "@/components/ui";
+import { createMetadata } from "@/lib/seo";
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 
@@ -45,8 +45,7 @@ export default async function ResourcesPage({
       <PageHero
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "ArraySubs", href: "/deals/arraysubs/" },
-          { name: "Resources", href: RESOURCE_BASE },
+          { name: "Articles", href: RESOURCE_BASE },
         ]}
         title={
           <>

@@ -76,7 +76,7 @@ An **off-session** payment is attempted when the customer is absent. A monthly r
 
 ![Editorial comparison of an on-session checkout with an active customer and an overnight off-session renewal with a saved method and action notification.](/blogs/sca-and-3d-secure-for-subscription-renewals/on-session-vs-off-session.png)
 
-This is why initial checkout and future renewal are not the same technical event. For a broader gateway-level explanation, read [automatic versus manual subscription gateway support](/deals/arraysubs/resources/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/).
+This is why initial checkout and future renewal are not the same technical event. For a broader gateway-level explanation, read [automatic versus manual subscription gateway support](/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/).
 
 ## How should the first checkout prepare a future renewal?
 

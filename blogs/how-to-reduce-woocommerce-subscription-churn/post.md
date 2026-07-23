@@ -168,7 +168,7 @@ Voluntary churn begins with customer intent: cancellation, non-renewal, a reques
 
 Involuntary churn begins with a failed collection or billing-system problem and becomes churn only when the recovery lifecycle ends. It points toward issuer declines, expired/replaced credentials, missing methods, authentication, provider/API problems, scheduler failures, webhook lag, retry policy, customer notices, and payment-update access.
 
-Read [Voluntary vs Involuntary Churn](/deals/arraysubs/resources/retention-and-churn/voluntary-vs-involuntary-churn/) for the full taxonomy. Keep owners separate even when they share a dashboard:
+Read [Voluntary vs Involuntary Churn](/retention-and-churn/voluntary-vs-involuntary-churn/) for the full taxonomy. Keep owners separate even when they share a dashboard:
 
 - product, customer success, pricing, and support usually own voluntary causes;
 - billing operations, engineering, finance, and support usually own failed-payment recovery;
@@ -207,7 +207,7 @@ A cancellation answer is a customer’s stated main reason in a particular inter
 
 “Too expensive” can reflect a price increase, insufficient usage, unclear value, a wrong tier, temporary cash flow, a competitor, or a broader budget change. “Technical issues” can reflect a product defect, billing problem, support gap, device incompatibility, or an incident. Store the stable reason key and the text shown, then investigate operational evidence.
 
-Use [Why Customers Cancel Subscriptions: A Reason Taxonomy](/deals/arraysubs/resources/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/) to keep actionable categories mutually understandable and to separate survey response from analyst hypothesis.
+Use [Why Customers Cancel Subscriptions: A Reason Taxonomy](/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/) to keep actionable categories mutually understandable and to separate survey response from analyst hypothesis.
 
 ## Match interventions to evidence
 
@@ -263,7 +263,7 @@ An effective flow:
 6. confirms the committed result;
 7. records events for analysis without treating friction as retention.
 
-The [anatomy of an effective subscription cancellation flow](/deals/arraysubs/resources/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/) covers the detailed customer contract.
+The [anatomy of an effective subscription cancellation flow](/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/) covers the detailed customer contract.
 
 ### Offer eligibility is gateway-specific today
 
@@ -279,7 +279,7 @@ In the observed test flow, choosing “Too expensive” displayed a 20% discount
 
 Core retry defaults in the inspected source are enabled with three retries 24 hours apart, while Pro adapters can override behavior. Renewal settings also default to three grace days before on-hold and seven additional days before cancellation. Stored merchant settings and provider-owned schedules can differ.
 
-Use the [involuntary churn recovery checklist](/deals/arraysubs/resources/payment-recovery/involuntary-churn-recovery-checklist/) and [failed subscription payment recovery for WooCommerce](/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) for the operational runbook.
+Use the [involuntary churn recovery checklist](/payment-recovery/involuntary-churn-recovery-checklist/) and [failed subscription payment recovery for WooCommerce](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) for the operational runbook.
 
 For every first failure, retain:
 

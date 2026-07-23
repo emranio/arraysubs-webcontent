@@ -259,7 +259,7 @@ Do not perform a big-bang role cleanup without a mapping table and rollback path
 - [ ] Support can trace the level, entitlement, and role to source records.
 - [ ] Access changes invalidate or vary relevant caches.
 
-For complex grouped policies, use [AND/OR Membership Access Rules](/deals/arraysubs/resources/membership-strategy/and-or-membership-access-rules-explained-with-examples/) and the [combined-conditions recipe](/deals/arraysubs/use-cases/recipes/combined-conditions/).
+For complex grouped policies, use [AND/OR Membership Access Rules](/membership-strategy/and-or-membership-access-rules-explained-with-examples/) and the [combined-conditions recipe](/deals/arraysubs/use-cases/recipes/combined-conditions/).
 
 ## When a layered model may be unnecessary
 

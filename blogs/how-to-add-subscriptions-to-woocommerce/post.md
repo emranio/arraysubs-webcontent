@@ -43,7 +43,7 @@ The engine you choose must keep four kinds of records or responsibilities unders
 
 Do not merge these concepts. The product is a reusable offer; the subscription is one customer's live agreement; orders record individual transactions. Woo's official order documentation makes the same distinction and explains that one subscription can accumulate many renewal orders over its life ([subscription order relationships](https://woocommerce.com/document/subscriptions/orders/)).
 
-If you want the deeper entity model first, read [What Is a WooCommerce Subscription?](/deals/arraysubs/resources/subscription-foundations/what-is-a-woocommerce-subscription/).
+If you want the deeper entity model first, read [What Is a WooCommerce Subscription?](/subscription-foundations/what-is-a-woocommerce-subscription/).
 
 ## Step 1: choose the commercial model
 
@@ -146,7 +146,7 @@ The labels vary by subscription engine and version, but the setup sequence is st
 
 *Current ArraySubs and ArraySubs Pro product controls, captured on the live test store on July 13, 2026. The screenshot proves the implementation surface; the commercial model should still be decided first.*
 
-Use the simplest catalog shape that communicates the offer. Variations are valuable when they represent a real customer choice, but every variation becomes another path to test and support. [WooCommerce Subscription Product Types Explained](/deals/arraysubs/resources/subscription-foundations/woocommerce-subscription-product-types/) helps with that decision.
+Use the simplest catalog shape that communicates the offer. Variations are valuable when they represent a real customer choice, but every variation becomes another path to test and support. [WooCommerce Subscription Product Types Explained](/subscription-foundations/woocommerce-subscription-product-types/) helps with that decision.
 
 ### Product-page disclosure checklist
 

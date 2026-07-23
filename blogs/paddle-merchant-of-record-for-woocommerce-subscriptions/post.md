@@ -108,7 +108,7 @@ It is usually a poor or unverified fit for:
 - merchants that must remain the named buyer-facing seller; or
 - stores that require WooCommerce to initiate and control every renewal charge.
 
-The broader [gateway comparison](/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/) helps choose between direct processing, wallet agreements, MoR, and manual billing before you implement a provider.
+The broader [gateway comparison](/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/) helps choose between direct processing, wallet agreements, MoR, and manual billing before you implement a provider.
 
 ## The three-system architecture
 
@@ -355,7 +355,7 @@ Document:
 - how local fixed-term/cancellation stops remote collection; and
 - how support confirms no remote retry before asking for another payment.
 
-For general recovery policy, read [What Happens When a Subscription Payment Fails](/deals/arraysubs/resources/payment-recovery/what-happens-when-a-subscription-payment-fails/). Do not impose a separate ArraySubs charge retry on a Paddle-managed schedule.
+For general recovery policy, read [What Happens When a Subscription Payment Fails](/payment-recovery/what-happens-when-a-subscription-payment-fails/). Do not impose a separate ArraySubs charge retry on a Paddle-managed schedule.
 
 ## Lifecycle operations have provider-specific timing
 
@@ -571,7 +571,7 @@ The ArraySubs [Gateway Health recipe](/deals/arraysubs/use-cases/recipes/gateway
 - you cannot accept remote payout timing/reserves/control; or
 - your team cannot build the required reconciliation and monitoring.
 
-Compare the provider-owned model with [PayPal recurring agreements](/deals/arraysubs/resources/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/) and the site-initiated [Stripe renewal model](/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/).
+Compare the provider-owned model with [PayPal recurring agreements](/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/) and the site-initiated [Stripe renewal model](/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/).
 
 ## Final recommendation
 

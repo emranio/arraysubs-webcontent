@@ -25,7 +25,7 @@ Annotation contract for all three: purple `#873EFF`, focused crop, three review 
 **Research date:** 2026-07-20  
 **Article brief:** `web-content/marketing-materials/content-plan/articles/060-paddle-merchant-of-record-for-woocommerce-subscriptions.md`  
 **Focus keyword:** `Paddle Merchant of Record WooCommerce`  
-**Recommended URL:** `/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/`  
+**Recommended URL:** `/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/`
 **Evidence standard:** Paddle primary documentation and legal terms, WooCommerce documentation for ecosystem context, and first-party inspection of the installed ArraySubs/ArraySubs Pro/WooCommerce code. Code observations are not a substitute for live Paddle sandbox verification.
 
 ## Executive answer for the writer
@@ -1340,7 +1340,7 @@ Required commercial/product links:
 
 Editorial cluster links:
 
-- A056, gateway comparison: `/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/`
+- A056, gateway comparison: `/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/`
 - A057, Stripe vs PayPal vs Paddle: use its published URL after registry confirmation; current blog source slug is `/blogs/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/` and its resource URL should be preferred if published.
 - A059, PayPal recurring payments: use published resource URL/registry after confirmation.
 - A061, automatic vs manual gateway support: add when published.

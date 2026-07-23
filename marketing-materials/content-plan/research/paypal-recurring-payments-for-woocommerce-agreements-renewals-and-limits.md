@@ -26,7 +26,7 @@ Annotation contract for all three: purple `#873EFF`, focused crop, three review 
 
 - **Research date / last verified:** 2026-07-20 (Asia/Dhaka).
 - **Article brief:** `web-content/marketing-materials/content-plan/articles/059-paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits.md`.
-- **Intended article URL:** `/deals/arraysubs/resources/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/`.
+- **Intended article URL:** `/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/`.
 - **Focus keyword:** `PayPal recurring payments WooCommerce`.
 - **Audience:** WooCommerce merchants, developers, operations teams, finance teams, and support teams evaluating or operating PayPal-backed subscriptions.
 - **Research boundary:** This pack describes PayPal's current Subscriptions REST API and the current ArraySubs/ArraySubsPro PayPal adapter. It does **not** describe PayPal Standard, the legacy PayPal Billing Agreements API, PayPal Reference Transactions, WooPayments, or the official WooCommerce PayPal Payments extension unless explicitly labeled as ecosystem context.
@@ -271,8 +271,8 @@ A scheduled action can run successfully even when PayPal never charged, and PayP
 
 Internal support links suitable for this distinction:
 
-- `/deals/arraysubs/resources/billing-strategy/how-woocommerce-subscription-renewals-work/`
-- `/deals/arraysubs/resources/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/`
+- `/billing-strategy/how-woocommerce-subscription-renewals-work/`
+- `/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/`
 - `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
 
 ## Webhook endpoint, verification, mapping, and duplicate handling
@@ -408,9 +408,9 @@ PayPal documents that some currency/account conditions can leave payments pendin
 
 Useful internal follow-up links:
 
-- `/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/`
-- `/deals/arraysubs/resources/payment-recovery/automatic-retry-for-failed-subscription-payments-what-good-looks-like/`
-- `/deals/arraysubs/resources/payment-recovery/subscription-payment-failure-codes-a-practical-triage-guide/`
+- `/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/`
+- `/payment-recovery/automatic-retry-for-failed-subscription-payments-what-good-looks-like/`
+- `/payment-recovery/subscription-payment-failure-codes-a-practical-triage-guide/`
 
 ## Customer payment update, plan migration, quantity, and price changes
 
@@ -748,17 +748,17 @@ Use natural anchor text; do not dump all links into one paragraph.
 | `/deals/arraysubs/features/#payment-gateways` | “ArraySubs payment gateway features” after the independent architecture explanation. |
 | `/deals/arraysubs/use-cases/recipes/member-update-payment/` | Link when explaining payment-method update requirements; explicitly distinguish desired recipe/workflow from the inspected PayPal gap. |
 | `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/` | “monitor gateway and webhook health” in operations section. |
-| `/deals/arraysubs/resources/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/` | Compare gateway-owned recurring lifecycle after the reader understands PayPal. |
-| `/deals/arraysubs/resources/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/` | Alternative for merchants prioritizing Merchant of Record tax/compliance. Publish/link when A060 exists. |
-| `/deals/arraysubs/resources/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/` | Explain why automatic support means lifecycle synchronization, not simply checkout acceptance. Publish/link when A061 exists. |
-| `/deals/arraysubs/resources/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/` | Broader gateway-selection context (A056 if published). |
-| `/deals/arraysubs/resources/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/` | Comparison intent (A057 if published). |
-| `/deals/arraysubs/resources/billing-strategy/how-woocommerce-subscription-renewals-work/` | Local invoice/scheduler versus remote charge explanation. |
-| `/deals/arraysubs/resources/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/` | Manual fallback and duplicate-collection risk. |
-| `/deals/arraysubs/resources/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/` | Failed-payment operations. |
-| `/deals/arraysubs/resources/payment-recovery/automatic-retry-for-failed-subscription-payments-what-good-looks-like/` | Clarify PayPal-owned retries. |
-| `/deals/arraysubs/resources/payment-recovery/subscription-payment-failure-codes-a-practical-triage-guide/` | Diagnostic handoff. |
-| `/deals/arraysubs/resources/subscription-foundations/woocommerce-subscription-launch-readiness-checklist/` | Prelaunch matrix/checklist. |
+| `/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/` | Compare gateway-owned recurring lifecycle after the reader understands PayPal. |
+| `/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/` | Alternative for merchants prioritizing Merchant of Record tax/compliance. Publish/link when A060 exists. |
+| `/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/` | Explain why automatic support means lifecycle synchronization, not simply checkout acceptance. Publish/link when A061 exists. |
+| `/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/` | Broader gateway-selection context (A056 if published). |
+| `/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/` | Comparison intent (A057 if published). |
+| `/billing-strategy/how-woocommerce-subscription-renewals-work/` | Local invoice/scheduler versus remote charge explanation. |
+| `/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/` | Manual fallback and duplicate-collection risk. |
+| `/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/` | Failed-payment operations. |
+| `/payment-recovery/automatic-retry-for-failed-subscription-payments-what-good-looks-like/` | Clarify PayPal-owned retries. |
+| `/payment-recovery/subscription-payment-failure-codes-a-practical-triage-guide/` | Diagnostic handoff. |
+| `/subscription-foundations/woocommerce-subscription-launch-readiness-checklist/` | Prelaunch matrix/checklist. |
 | `/deals/arraysubs/pricing/` | Primary “View Pro Pricing” CTA only after the reader has received the answer, limitations, and test checklist. |
 
 The A059 brief mentions `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`. That is Stripe-specific and should not be forced into the PayPal guide unless used in a clearly labeled comparison sentence. The PayPal article must not repeat a product setup recipe; it owns the broader architecture, constraints, decision, and testing intent.

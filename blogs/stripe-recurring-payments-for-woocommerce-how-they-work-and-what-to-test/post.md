@@ -67,7 +67,7 @@ customer checks out
 
 This is not Stripe Billing. You should not expect to find a Stripe Subscription, Stripe Price, or Stripe Invoice that controls the cadence; the [official WooCommerce Stripe documentation makes the same Stripe Billing distinction](https://woocommerce.com/document/stripe/admin-experience/stripe-billing/). The schedule lives in ArraySubs, and WooCommerce renewal orders are the local commercial records. Stripe PaymentIntents and their Charges are the provider-side money-movement records.
 
-That local-control model is why Stripe is the most flexible current automatic gateway in ArraySubs Pro. It can support mixed regular and subscription items, multiple subscription products, and different billing cycles in one checkout. Read the broader [Stripe vs PayPal vs Paddle comparison](/deals/arraysubs/resources/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/) before assuming those cart capabilities apply to every provider.
+That local-control model is why Stripe is the most flexible current automatic gateway in ArraySubs Pro. It can support mixed regular and subscription items, multiple subscription products, and different billing cycles in one checkout. Read the broader [Stripe vs PayPal vs Paddle comparison](/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/) before assuming those cart capabilities apply to every provider.
 
 ## The objects you must be able to trace
 
@@ -145,7 +145,7 @@ This distinction protects stores from false assumptions. A gateway that can take
 - payment-source updates; or
 - the specific cart shape allowed by the subscription plugin.
 
-ArraySubs Free can still use compatible gateways for **manual renewals**. In that model, a renewal invoice asks the customer to return and pay. Automatic renewal with Stripe is different: the site attempts the charge while the customer is absent. If you are choosing between those models, read [Manual vs Automatic Subscription Renewals](/deals/arraysubs/resources/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/).
+ArraySubs Free can still use compatible gateways for **manual renewals**. In that model, a renewal invoice asks the customer to return and pay. Automatic renewal with Stripe is different: the site attempts the charge while the customer is absent. If you are choosing between those models, read [Manual vs Automatic Subscription Renewals](/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/).
 
 ## Step 3: establish future-use authority at checkout
 
@@ -211,7 +211,7 @@ The centralized Action Scheduler layer uses defined hook and group contracts. Ea
 
 This is why “WP-Cron is enabled” is an inadequate launch check. Inspect the scheduled action queue and prove that actions become due, are claimed by a runner, complete, and do not accumulate failures. A low-traffic store may need a real server-side cron trigger. A high-traffic store may need worker capacity and queue monitoring.
 
-For the broader lifecycle from subscription schedule to renewal order, see [WooCommerce Renewal Synchronization Explained](/deals/arraysubs/resources/billing-strategy/woocommerce-renewal-synchronization-explained/).
+For the broader lifecycle from subscription schedule to renewal order, see [WooCommerce Renewal Synchronization Explained](/billing-strategy/woocommerce-renewal-synchronization-explained/).
 
 ## Step 5: confirm a new off-session PaymentIntent
 
@@ -364,7 +364,7 @@ A retry should never be a silent loop. For each attempt, record:
 
 Useful customer messages explain the next action without exposing raw decline details. “Update your card to keep access” is clearer than “PaymentIntent requires_payment_method.” Issuer decline reasons can be sensitive or inaccurate; Stripe’s [decline-handling guidance](https://docs.stripe.com/declines/card) recommends customer-safe recovery rather than overinterpreting issuer signals, with specific meanings maintained separately in its [decline-code reference](https://docs.stripe.com/declines/codes). Do not tell a customer their bank suspected fraud unless the provider response safely supports that conclusion.
 
-For a full operational sequence, use the [Subscription Dunning Strategy guide](/deals/arraysubs/resources/payment-recovery/subscription-dunning-strategy-timing-messages-and-stop-rules/) and [What Happens When a Subscription Payment Fails](/deals/arraysubs/resources/payment-recovery/what-happens-when-a-subscription-payment-fails/).
+For a full operational sequence, use the [Subscription Dunning Strategy guide](/payment-recovery/subscription-dunning-strategy-timing-messages-and-stop-rules/) and [What Happens When a Subscription Payment Fails](/payment-recovery/what-happens-when-a-subscription-payment-fails/).
 
 ## Payment-method updates need an end-to-end proof
 
@@ -626,7 +626,7 @@ ArraySubs provides the local subscription, renewal-order, scheduling, retry, cus
 
 [View ArraySubs Pro pricing](/deals/arraysubs/pricing/) when you are ready to add Stripe automatic renewals, gateway-health diagnostics, and provider-aware recovery to the ArraySubs subscription lifecycle.
 
-Next, review [SCA and 3D Secure for Subscription Renewals](/deals/arraysubs/resources/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/) for the authentication layer, and [Subscription Webhooks: Events Every WooCommerce Store Should Monitor](/deals/arraysubs/resources/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/) for the event operations layer.
+Next, review [SCA and 3D Secure for Subscription Renewals](/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/) for the authentication layer, and [Subscription Webhooks: Events Every WooCommerce Store Should Monitor](/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/) for the event operations layer.
 
 ## Verification scope, limitations, and update log
 

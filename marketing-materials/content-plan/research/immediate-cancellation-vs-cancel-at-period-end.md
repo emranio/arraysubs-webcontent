@@ -228,8 +228,8 @@ No. It often matches prepaid digital access, while immediate cancellation can fi
 - Refund-on-cancellation recipe: `/deals/arraysubs/use-cases/recipes/refund-on-cancellation/`
 - Prorated-refund recipe: `/deals/arraysubs/use-cases/recipes/prorated-refund/`
 - Subscription notes/timeline recipe: `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
-- Plan-change timing: `/deals/arraysubs/resources/billing-strategy/immediate-vs-next-renewal-plan-changes/`
-- Billing versus shipping: `/deals/arraysubs/resources/billing-strategy/subscription-billing-schedule-vs-shipping-schedule/`
+- Plan-change timing: `/billing-strategy/immediate-vs-next-renewal-plan-changes/`
+- Billing versus shipping: `/billing-strategy/subscription-billing-schedule-vs-shipping-schedule/`
 - Use the canonical grace-period and cancellation-flow article URLs from the registry where relevant.
 
 Verify canonical recipe URLs and keep click-by-click configuration in recipes.

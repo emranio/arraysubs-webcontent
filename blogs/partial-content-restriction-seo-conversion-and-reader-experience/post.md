@@ -252,7 +252,7 @@ Do not use partial gating as the primary boundary for:
 - a meter based on article-view counts;
 - a publisher architecture that intentionally gives an authorized crawler complete paywalled content.
 
-For private resources, create a public explanation page and keep the actual workspace or object behind stronger authorization. For protected files, follow [Protecting Membership Downloads in WordPress](/deals/arraysubs/resources/membership-strategy/protecting-membership-downloads-in-wordpress/).
+For private resources, create a public explanation page and keep the actual workspace or object behind stronger authorization. For protected files, follow [Protecting Membership Downloads in WordPress](/membership-strategy/protecting-membership-downloads-in-wordpress/).
 
 ## Final recommendation
 
