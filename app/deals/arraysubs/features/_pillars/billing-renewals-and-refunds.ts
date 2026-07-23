@@ -186,6 +186,7 @@ export const billingRenewalsAndRefunds: FeaturePillar = {
     "auto-retry-failed-payments",
     "auto-downgrade-on-failure",
     "renewal-sync",
+    "early-renew",
     "skip-next-renewal",
     "pause-vacation-mode",
     "manage-refunds",

@@ -327,7 +327,7 @@ export const COMPARISONS: Comparison[] = [
           row("Role mapping", yes(), yes(), no()),
           row("Rules engine (AND/OR groups)", yes(), yes(), no()),
           row("Restriction shortcodes", yes(), yes(), no()),
-          row("Member-only free shipping", no(), no(), yes()),
+          row("Member-only free shipping", yes("discount rules"), yes(), yes()),
           row("Teams / group memberships", no(), no(), part("$129/yr add-on")),
         ],
       },
@@ -376,8 +376,8 @@ export const COMPARISONS: Comparison[] = [
       {
         title: "Member-only free shipping",
         description:
-          "WooCommerce Memberships includes member-only free shipping out of the box. In ArraySubs this is approximated with member discount rules.",
-        winner: "competitor",
+          "Both include member-only free shipping. ArraySubs adds it directly to free-core member discount rules, where one qualifying rule can combine product discounts with zero-cost paid shipping methods.",
+        winner: "tie",
       },
       {
         title: "Core content restriction",
@@ -407,7 +407,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "What does WooCommerce Memberships do that ArraySubs doesn't?",
         answer:
-          "WooCommerce Memberships has a paid Teams add-on for group memberships and built-in member-only free shipping. ArraySubs lacks group memberships today and handles member perks through discount rules instead.",
+          "WooCommerce Memberships has a paid Teams add-on for group memberships. ArraySubs lacks group memberships today, while both products now include member-only free shipping.",
       },
     ],
     related: ["woocommerce-subscriptions", "yith-woocommerce-membership"],

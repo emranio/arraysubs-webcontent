@@ -1,7 +1,7 @@
 /**
  * Curated Free-vs-Pro capability matrix for the {@link FreeVsProTable}.
  *
- * Deliberately NOT derived from the raw 67-module feature list: comparison
+ * Deliberately NOT derived from the raw 70-module feature list: comparison
  * tables need concrete, self-explanatory capability rows, not generic module
  * names. Several modules are split into the distinct things a buyer actually
  * evaluates (e.g. Subscription Products → simple / variable / trials / fees),
@@ -140,8 +140,8 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
       },
       {
         label: "Let customers renew early, before the due date",
-        hint: "Coming soon",
         proOnly: true,
+        proNote: "Stripe & manual",
       },
     ],
   },
@@ -214,6 +214,21 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
       },
       {
         label: "Member-only discounts and pricing",
+      },
+      {
+        label: "Member-only free shipping on every paid shipping method",
+      },
+      {
+        label: "Comment reading and posting rules by post type, taxonomy term or specific content",
+      },
+      {
+        label: "Per-product or per-order purchase quantity limits for matching or non-matching shoppers",
+      },
+      {
+        label: "Member Styling: conditional body classes and custom CSS on the storefront or wp-admin",
+      },
+      {
+        label: "Logged-in / guest and negative subscription or variation conditions",
       },
       {
         label: "Gate access by per-plan feature entitlement",

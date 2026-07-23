@@ -12,6 +12,9 @@ import {
   LayoutGrid,
   Lock,
   Mail,
+  MessageSquareLock,
+  PackageCheck,
+  Palette,
   ReceiptText,
   Repeat,
   ShieldCheck,
@@ -1910,53 +1913,62 @@ export const FEATURES: Feature[] = [
     icon: Repeat,
     name: "Early Renew",
     cardDescription:
-      "Coming soon: let customers renew before the scheduled date when they want to extend access or keep billing current.",
+      "Let customers pay the next renewal before its due date, straight from the portal — without shortening the billing period.",
     tier: "Pro",
-    status: "coming-soon",
     summary:
-      "Give customers and staff a Pro workflow for renewing a subscription before the next scheduled billing date.",
+      "A Pro customer-portal action that lets subscribers pay their next renewal ahead of the scheduled date on eligible subscriptions.",
     h1: "Let subscribers renew early",
-    highlights: ["Coming soon", "Pro renewal action", "Customer self-service"],
+    highlights: ["Portal action", "Stripe & manual gateways", "Cadence-safe"],
     intro:
-      "Early Renew is a planned Pro renewal workflow for stores that want customers or staff to ==pay the next renewal before the scheduled date==. It helps teams handle prepaid access, expiring budgets, account cleanup, or customers who simply want to keep a subscription current ahead of time.",
+      "Early Renew adds a Renew Early button to the customer portal so subscribers can ==pay the next renewal before the scheduled date==. It suits prepaid access, expiring budgets, account cleanup, or customers who simply want to keep a subscription current ahead of time — and because the period is measured from the original due date, paying early never shortens what they already paid for.",
     capabilities: [
       {
         title: "Customer early-renew action",
         description:
-          "Expose an eligible renewal action before the next payment date when the store allows early payment.",
+          "A Renew Early button appears on eligible subscriptions before the next payment date whenever the store enables the Allow Early Renew setting.",
       },
       {
-        title: "Admin support control",
+        title: "Charges the way the subscription already bills",
         description:
-          "Let staff trigger or guide an early renewal for customers who contact support.",
+          "Automatic Stripe subscriptions are charged off-session on the saved card; manual-gateway subscriptions get an invoice and the customer is taken to the payment page.",
       },
       {
         title: "Schedule-safe handling",
         description:
-          "Apply early renewal payments without losing the subscription's intended billing cadence.",
+          "The renewal period is measured from the original due date, so the next payment simply moves one full cycle further out — the cadence is never shortened.",
       },
       {
         title: "Lifecycle visibility",
         description:
-          "Record the early renewal event so support can see why the payment happened before the due date.",
+          "The early renewal is recorded on the order and subscription notes so support can see why the payment happened before the due date.",
       },
     ],
     stats: [
       { value: "Pro", label: "Availability" },
-      { value: "Soon", label: "Status" },
       { value: "Portal", label: "Customer action" },
-      { value: "Admin", label: "Support action" },
+      { value: "Stripe", label: "Automatic gateway" },
+      { value: "Manual", label: "Invoice gateways" },
     ],
     faq: [
       {
         question: "Is Early Renew available in the free core?",
         answer:
-          "No. Early Renew is planned as a Pro-only renewal workflow and is marked as coming soon.",
+          "No. Early Renew is a Pro-only customer-portal action. Turn it on under ArraySubs → Settings → Customer Actions → Allow Early Renew.",
+      },
+      {
+        question: "Which gateways support early renewal?",
+        answer:
+          "Stripe (charged off-session on the saved card) and any manual payment method (invoice plus payment page). PayPal and Paddle keep the billing schedule on their own side, so the button stays hidden for subscriptions paid through them, even when the setting is on.",
+      },
+      {
+        question: "Does paying early shorten the subscription?",
+        answer:
+          "No. The next payment date is calculated from the original due date, so an early payment moves the following renewal one full cycle out rather than cutting the paid-through period short.",
       },
       {
         question: "Does early renewal replace automatic renewals?",
         answer:
-          "No. It is planned as an optional early-payment action for eligible subscriptions, not a replacement for the normal renewal schedule.",
+          "No. It is an optional early-payment action for eligible subscriptions, not a replacement for the normal renewal schedule.",
       },
     ],
     related: ["billing-and-renewals", "customer-portal", "emails"],
@@ -2542,14 +2554,14 @@ export const FEATURES: Feature[] = [
     icon: ShieldCheck,
     name: "Member Access",
     cardDescription:
-      "Control who can see, download, and purchase content using flexible rules tied to subscriptions and roles.",
+      "Control who can see, comment, download, and purchase using flexible rules tied to subscriptions, roles, and commerce history.",
     tier: "Free + Pro",
     summary:
-      "Gate content, URLs, products, downloads, roles, discounts, and drip access by subscription conditions.",
+      "Gate content, comments, URLs, products, downloads, roles, discounts, quantities, and drip access by member conditions.",
     h1: "Control member access and restriction rules",
     highlights: ["Access rules", "Commerce rules", "Content dripping"],
     intro:
-      "Member Access and Restriction Rules controls who can ==see, download, and purchase content== using conditions tied to subscription status, purchase history, roles, spending thresholds, and feature entitlements. The Login Limit extension is Pro.",
+      "Member Access and Restriction Rules controls who can ==see, comment, download, and purchase== using conditions tied to subscription status, login state, purchase history, roles, spending thresholds, and feature entitlements. The Login Limit extension is Pro.",
     capabilities: [
       {
         title: "Access rules",
@@ -2559,12 +2571,12 @@ export const FEATURES: Feature[] = [
       {
         title: "Commerce benefits",
         description:
-          "Create member discounts, product purchase restrictions, and download access rules.",
+          "Create member discounts, free-shipping benefits, product purchase limits, shop restrictions, and download access rules.",
       },
       {
         title: "Content restriction",
         description:
-          "Drip content, show gated messages, protect per-post content, and gate Elementor Containers from the builder.",
+          "Drip content, control comment reading or posting, protect per-post content, and gate Elementor Containers from the builder.",
       },
       {
         title: "Session extension",
@@ -2598,19 +2610,187 @@ export const FEATURES: Feature[] = [
     related: ["feature-manager", "restricted-downloads", "multi-login-prevention"],
   }),
   buildFeature({
+    slug: "member-styling",
+    category: "member-experience",
+    icon: Palette,
+    name: "Member Styling",
+    cardDescription:
+      "Apply conditional body classes and custom CSS to matching visitors on the storefront, with optional wp-admin styling.",
+    tier: "Free",
+    summary:
+      "Give members, guests, plans, roles, or purchase segments their own presentation without duplicating templates.",
+    h1: "Style the site for each member segment",
+    highlights: ["Body classes", "Conditional CSS", "Optional wp-admin styling"],
+    intro:
+      "Member Styling is a free top-level module that ==adds sanitized body classes and inline custom CSS only when a visitor matches a rule==. Rules can use the shared subscription, login, role, purchase, spend, or Pro feature conditions, can start after a schedule delay, and can optionally apply inside wp-admin.",
+    capabilities: [
+      {
+        title: "Conditional body classes",
+        description:
+          "Attach one or more sanitized class names to the body element for every matching visitor.",
+      },
+      {
+        title: "Per-segment custom CSS",
+        description:
+          "Inject CSS only for qualifying users while everyone else receives the normal theme presentation.",
+      },
+      {
+        title: "Frontend or admin context",
+        description:
+          "Apply each rule on the storefront by default and opt into WordPress dashboard styling when needed.",
+      },
+      {
+        title: "Stacked and scheduled rules",
+        description:
+          "Combine every qualifying rule in list order and delay activation by days, weeks, or months.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "2", label: "Style outputs" },
+      { value: "2", label: "Page contexts" },
+      { value: "Rules", label: "Condition model" },
+    ],
+    faq: [
+      {
+        question: "Does Member Styling require ArraySubs Pro?",
+        answer:
+          "No. Body classes, custom CSS, login, subscription, role, and purchase conditions are in the free core. Feature Manager value conditions require Pro.",
+      },
+      {
+        question: "What happens when several styling rules match?",
+        answer:
+          "Their unique body classes and CSS blocks are combined in the order the rules appear.",
+      },
+    ],
+    related: ["member-access", "advanced-condition-builder", "profile-builder"],
+  }),
+  buildFeature({
+    slug: "comment-restrictions",
+    category: "member-experience",
+    icon: MessageSquareLock,
+    name: "Comment Restrictions",
+    cardDescription:
+      "Control who can read or post comments across posts, pages, products, custom post types, taxonomy terms, or selected entries.",
+    tier: "Free",
+    summary:
+      "Turn comments and product reviews into a membership benefit with separate reading and posting controls.",
+    h1: "Restrict comment reading and posting by member rules",
+    highlights: ["Read and post controls", "Four target modes", "REST protection"],
+    intro:
+      "Comment Restrictions is a free Member Access rule type that ==controls comment visibility and submission separately==. Target all content, selected post types, taxonomy terms, or specific entries; then hide existing comments, block new posts, or do both for users who do not qualify.",
+    capabilities: [
+      {
+        title: "Four content targets",
+        description:
+          "Cover all content, selected post types, any or selected taxonomy terms, or individual posts, pages, products, and CPT entries.",
+      },
+      {
+        title: "Three restriction modes",
+        description:
+          "Hide comments and block posting, allow reading but block posting, or hide comments while leaving the form available.",
+      },
+      {
+        title: "Theme and block coverage",
+        description:
+          "Handles classic comment templates, comment blocks, product review tabs, counts, and closed-comment notices.",
+      },
+      {
+        title: "Server-side submission checks",
+        description:
+          "Rechecks direct form and WordPress REST comment submissions instead of relying on hidden frontend controls.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "4", label: "Target modes" },
+      { value: "3", label: "Restriction modes" },
+      { value: "REST", label: "Protected path" },
+    ],
+    faq: [
+      {
+        question: "Can members read comments but be prevented from posting?",
+        answer:
+          "Yes. Reading and posting are separate rule actions, so you can allow one without the other.",
+      },
+      {
+        question: "Do administrators lose comment access?",
+        answer:
+          "No. Users who can moderate comments or manage options bypass these restrictions.",
+      },
+    ],
+    related: ["member-access", "cpt-content-restrictions", "advanced-condition-builder"],
+  }),
+  buildFeature({
+    slug: "purchase-limits",
+    category: "member-experience",
+    icon: PackageCheck,
+    name: "Purchase Limits",
+    cardDescription:
+      "Cap each matching product or the combined matching quantity per order for members, guests, or non-qualifying shoppers.",
+    tier: "Free",
+    summary:
+      "Reserve inventory, limit trials, or prevent bulk buying with membership-aware quantity rules.",
+    h1: "Set member-aware purchase quantity limits",
+    highlights: ["Per product", "Per order total", "Store API enforcement"],
+    intro:
+      "Purchase Limits is a free Member Access rule type that ==caps product quantities for shoppers who do or do not match the IF conditions==. Rules can target products, categories, or tags, support exclusions, treat zero as a purchase block, and enforce the strictest matching maximum across classic and block-based commerce flows.",
+    capabilities: [
+      {
+        title: "Audience inversion",
+        description:
+          "Apply a cap to qualifying shoppers or invert it so members bypass a limit that applies to guests and non-members.",
+      },
+      {
+        title: "Product and order caps",
+        description:
+          "Limit each matching product independently or cap the combined quantity of every matching line in the order.",
+      },
+      {
+        title: "Scopes and exclusions",
+        description:
+          "Target all products, selected products, categories, or tags while excluding named products or categories.",
+      },
+      {
+        title: "End-to-end enforcement",
+        description:
+          "Caps product and cart quantity controls and validates add-to-cart, checkout, direct URLs, and WooCommerce Store API requests.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "2", label: "Limit modes" },
+      { value: "4", label: "Target scopes" },
+      { value: "0", label: "Can block sales" },
+    ],
+    faq: [
+      {
+        question: "What happens when several limits match one product?",
+        answer:
+          "The strictest lowest maximum wins. A configured maximum of zero makes the matching product unavailable to that audience.",
+      },
+      {
+        question: "Can administrators still place test or manual orders?",
+        answer:
+          "Yes. Administrators and shop managers bypass purchase limits.",
+      },
+    ],
+    related: ["member-access", "shop-access-restrictions", "advanced-condition-builder"],
+  }),
+  buildFeature({
     slug: "member-discounts",
     category: "member-experience",
     icon: Wallet,
     name: "Member Discounts",
     cardDescription:
-      "Offer subscriber-only discounts for products, categories, or targeted purchase paths using member access rules.",
+      "Offer subscriber-only discounts and zero-cost paid shipping methods for targeted products, categories, or purchase paths.",
     tier: "Free",
     summary:
-      "Reward active members with pricing benefits tied to subscription and commerce conditions.",
+      "Reward active members with pricing and shipping benefits tied to subscription and commerce conditions.",
     h1: "Create member-only discounts",
     highlights: ["Member pricing", "Access rules", "WooCommerce products"],
     intro:
-      "Member Discounts use the Member Access rule engine to ==offer targeted pricing benefits to qualifying subscribers==. Stores can connect discounts to active plans, roles, product history, spend thresholds, or other access conditions so benefits follow membership value.",
+      "Member Discounts use the Member Access rule engine to ==offer targeted pricing and free-shipping benefits to qualifying subscribers==. Stores can connect discounts or zero-cost shipping to active plans, roles, product history, spend thresholds, or other access conditions so benefits follow membership value.",
     capabilities: [
       {
         title: "Subscription-based discounts",
@@ -2628,9 +2808,9 @@ export const FEATURES: Feature[] = [
           "Use purchase history, lifetime spend, role, or plan state to qualify the discount.",
       },
       {
-        title: "Benefit visibility",
+        title: "Member-only free shipping",
         description:
-          "Keep member pricing aligned with shop restrictions, content access, and customer portal status.",
+          "Waive every paid shipping method offered for a qualifying cart while preserving the customer's choice of carrier or service.",
       },
     ],
     stats: [
@@ -3163,14 +3343,14 @@ export const FEATURES: Feature[] = [
     icon: SlidersHorizontal,
     name: "Advanced Condition Builder",
     cardDescription:
-      "Combine subscription, product, role, purchase, spend, feature, and schedule logic with nested AND/OR condition groups.",
+      "Combine login state, positive or negative subscription checks, product, role, purchase, spend, feature, and schedule logic with nested AND/OR groups.",
     tier: "Free + Pro",
     summary:
       "Model real membership logic with relational conditions instead of one-dimensional access toggles.",
     h1: "Build advanced relational access conditions",
     highlights: ["Nested AND/OR groups", "Commerce conditions", "Feature conditions"],
     intro:
-      "Advanced Condition Builder is the shared rule model behind Member Access and partial content gates. Merchants can ==combine subscription status, products, variations, roles, purchase history, lifetime spend, Pro features, and schedules with nested AND/OR groups== so complex membership logic stays readable.",
+      "Advanced Condition Builder is the shared rule model behind Member Access, Member Styling, and partial content gates. Merchants can ==combine login state, positive or negative subscription and variation checks, products, roles, purchase history, lifetime spend, Pro features, and schedules with nested AND/OR groups== so complex membership logic stays readable.",
     capabilities: [
       {
         title: "Nested condition groups",
@@ -3180,7 +3360,7 @@ export const FEATURES: Feature[] = [
       {
         title: "Subscription and commerce logic",
         description:
-          "Check active subscriptions, products, variations, categories, tags, and lifetime value.",
+          "Check logged-in or guest state, active or missing subscriptions and variations, products, categories, tags, and lifetime value.",
       },
       {
         title: "Role and feature logic",
@@ -3208,7 +3388,7 @@ export const FEATURES: Feature[] = [
       {
         question: "Which advanced conditions require Pro?",
         answer:
-          "Feature Manager values are Pro-only. Subscription, role, product, variation, category, tag, and lifetime spend conditions are part of the core access model.",
+          "Feature Manager values are Pro-only. Login state, positive and negative subscription checks, role, product, variation, category, tag, and lifetime spend conditions are part of the core access model.",
       },
     ],
     related: ["member-access", "feature-based-conditions", "shop-access-restrictions"],
