@@ -175,6 +175,7 @@ export const analytics: FeaturePillar = {
   },
   moduleSlugs: [
     "analytics",
+    "ai-reports",
     "retention-analytics",
     "member-insight",
     "gateway-health",

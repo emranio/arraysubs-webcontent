@@ -19,6 +19,7 @@ import {
   Repeat,
   ShieldCheck,
   SlidersHorizontal,
+  Sparkles,
   SquareDashedMousePointer,
   UserCheck,
   UserCog,
@@ -1178,6 +1179,87 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["subscription-products", "member-access", "feature-manager"],
+  }),
+  buildFeature({
+    slug: "subscription-box",
+    category: "products-checkout",
+    icon: PackageCheck,
+    name: "Subscription Box",
+    cardDescription:
+      "Sell a build-your-own box product type where customers assemble their own contents and pay one recurring amount for the whole box.",
+    tier: "Pro",
+    summary:
+      "Let customers build their own box from steps you define and bill the whole box as a single subscription.",
+    h1: "Sell build-your-own subscription boxes",
+    highlights: ["Pro product type", "3-step box wizard", "One recurring charge"],
+    intro:
+      "Subscription Box is a Pro WooCommerce product type where ==customers assemble a box from the steps you define, then pay one recurring amount for the whole box==. Everything is configured from the product's General tab: a modal wizard sets the billing cycle, the box steps and their elements, the discount and freebie ranges, and the box's own renewal sync plan.",
+    capabilities: [
+      {
+        title: "Dedicated box product type",
+        description:
+          "Choosing Subscription Box [ArraySubs] puts every box control in the product's General tab behind one Edit Box Configuration modal.",
+      },
+      {
+        title: "Step-by-step box builder",
+        description:
+          "Nested step and element repeaters cover product, category, text, textarea, checkbox, select, multi select, and upload fields, each optionally required.",
+      },
+      {
+        title: "Cycle-matched contents",
+        description:
+          "Only simple products are eligible: plain catalog items billed once inside the box, or subscription products whose billing period and interval match the box exactly.",
+      },
+      {
+        title: "Discount and freebie ranges",
+        description:
+          "A multi-point slider over total box value or item count attaches free gift products and a fixed or percentage discount to each range.",
+      },
+      {
+        title: "One box, one cart line",
+        description:
+          "Adding a box empties the cart first, then cart and checkout show a single box line with its contents, free gift, discount, and customer inputs listed under it.",
+      },
+      {
+        title: "Linked child subscriptions",
+        description:
+          "Every subscription product inside the box gets its own zero-value subscription tied to the box, so member access and feature entitlements keep working per product.",
+      },
+      {
+        title: "Per-box renewal sync",
+        description:
+          "Give a box its own segment plan, or leave it following the store-wide renewal sync setting like any other subscription product.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "8", label: "Element types" },
+      { value: "3", label: "Wizard steps" },
+      { value: "1", label: "Cart line" },
+    ],
+    faq: [
+      {
+        question: "Does Subscription Box require Pro?",
+        answer:
+          "Yes. The Subscription Box product type ships in ArraySubs Pro. It adds a new WooCommerce product type rather than a separate admin menu.",
+      },
+      {
+        question: "Which products can go inside a box?",
+        answer:
+          "Simple products only: non-subscription items, which are billed once inside the box, and subscription products whose billing period and interval match the box. Products using a different renewal price are excluded, and trials are switched off inside a box.",
+      },
+      {
+        question: "How many subscriptions does a box create?",
+        answer:
+          "One billed subscription for the box, plus a zero-value child subscription for each subscription product inside it. Children never invoice on their own; they mirror the box's status, dates, and payment count, and they are cancelled or expired with it.",
+      },
+      {
+        question: "What do customers see in the account area?",
+        answer:
+          "The box subscription lists Box Contents and Included Subscriptions. Each child subscription is read-only and shows a Manage subscription box button that links back to the box.",
+      },
+    ],
+    related: ["subscription-products", "renewal-sync", "feature-manager"],
   }),
   buildFeature({
     slug: "stripe-payments",
@@ -3802,7 +3884,7 @@ export const FEATURES: Feature[] = [
     icon: ChartColumn,
     name: "Analytics",
     cardDescription:
-      "Track subscription revenue, growth, churn, retention, and customer behavior across reports and WooCommerce Analytics.",
+      "Track subscription revenue, growth, churn, retention, and customer behavior across the reports hub, two AI reports, and WooCommerce Analytics.",
     tier: "Free + Pro",
     summary:
       "Use the reports hub and WooCommerce Analytics extensions to understand subscription performance.",
@@ -3850,7 +3932,68 @@ export const FEATURES: Feature[] = [
           "Reports appear in the ArraySubs reports hub and extended WooCommerce Analytics screens.",
       },
     ],
-    related: ["retention-analytics", "gateway-health", "manage-subscriptions"],
+    related: ["ai-reports", "retention-analytics", "gateway-health"],
+  }),
+  buildFeature({
+    slug: "ai-reports",
+    category: "analytics-infrastructure",
+    icon: Sparkles,
+    name: "AI Reports",
+    cardDescription:
+      "Score every live subscription for churn risk and project MRR and ARR forward, with AI-written reasons, next steps, and a confidence range.",
+    tier: "Free",
+    summary:
+      "Two free AI reports under WooCommerce Analytics: who is about to churn, and where recurring revenue lands next.",
+    h1: "Predict churn and forecast recurring revenue",
+    highlights: ["Free module", "Churn risk scoring", "MRR & ARR forecast"],
+    intro:
+      "AI Churn Analysis and AI Revenue Forecast add ==per-subscriber churn risk scoring and a forward MRR and ARR projection== to WooCommerce Analytics. Every figure is calculated from your own store data; the AI layer adds the written explanation on top, and only anonymised aggregates are ever sent to the provider.",
+    capabilities: [
+      {
+        title: "Per-subscriber churn risk",
+        description:
+          "Scores every live subscription 0-100 from its own billing history and splits the base into High, Medium, and Low risk bands.",
+      },
+      {
+        title: "Reasons and next steps",
+        description:
+          "AI explains why each at-risk subscriber is leaving and recommends one concrete action, exportable to CSV for a save campaign.",
+      },
+      {
+        title: "MRR and ARR outlook",
+        description:
+          "Projects recurring revenue 6, 12, or 24 months ahead with a conservative-to-optimistic range, assumptions, risks, and opportunities.",
+      },
+      {
+        title: "Runs on the WordPress AI connector",
+        description:
+          "Configure Anthropic, OpenAI, or Google once under Settings then Connectors. Every figure stays available with no provider configured.",
+      },
+    ],
+    stats: [
+      { value: "Free", label: "Availability" },
+      { value: "2", label: "AI reports" },
+      { value: "24mo", label: "Longest forecast" },
+      { value: "0", label: "Customer records sent" },
+    ],
+    faq: [
+      {
+        question: "Do I need a paid AI plan to use these reports?",
+        answer:
+          "No. Scores, bands, tiles, charts, and tables are calculated from your own store data and work with no AI provider configured. A provider only adds the written analysis and the forward projection.",
+      },
+      {
+        question: "What data is sent to the AI provider?",
+        answer:
+          "Only anonymised aggregates: statuses, risk scores, tenure in days, payment counts, normalised monthly values, billing cadences, and monthly totals. Customer names, email addresses, and payment details never leave the store.",
+      },
+      {
+        question: "Are the AI reports Pro-only?",
+        answer:
+          "No. Both AI Churn Analysis and AI Revenue Forecast ship in the free core plugin, alongside Retention Analytics.",
+      },
+    ],
+    related: ["analytics", "retention-analytics", "retention-and-refunds"],
   }),
   buildFeature({
     slug: "emails",

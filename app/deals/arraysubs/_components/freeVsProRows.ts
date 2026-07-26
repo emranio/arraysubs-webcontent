@@ -87,6 +87,28 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
         proOnly: true,
       },
       {
+        label: "Customer-built subscription boxes (multi-step builder, one recurring price for the whole box)",
+        proOnly: true,
+      },
+      {
+        label: "Box step builder with product, category, text, choice & file-upload elements",
+        proOnly: true,
+        proNote: "Required rules & min/max counts",
+      },
+      {
+        label: "Box discount tiers by total value or item count, with free gifts and live 'unlock' hints",
+        proOnly: true,
+      },
+      {
+        label: "A zero-value subscription per subscription product inside a box, so per-product entitlements keep working",
+        proOnly: true,
+        proNote: "Read-only, box-driven",
+      },
+      {
+        label: "Renewals reproduce the exact box the customer built (contents, quantities, freebies & inputs at the frozen price)",
+        proOnly: true,
+      },
+      {
         label: "Installment / split payments on a fixed-price product",
         hint: "Coming soon",
         proOnly: true,
@@ -136,6 +158,10 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
       },
       {
         label: "Flexible renewal sync (align renewals to one date for batch billing)",
+        proOnly: true,
+      },
+      {
+        label: "Per-box renewal-sync segment plan (own signup-day segments, or follow the store default)",
         proOnly: true,
       },
       {
@@ -279,6 +305,10 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
         label: "Retention analytics (offer performance & cancel reasons)",
       },
       {
+        label: "AI churn risk scoring per subscriber, with reasons & next steps",
+        hint: "Needs a WordPress AI connector",
+      },
+      {
         label: "Store credit wallet with balances & transaction history",
         proOnly: true,
       },
@@ -327,6 +357,10 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
         label: "Subscription & revenue analytics (MRR, churn, ARPU, retention)",
         freeNote: "Core reports",
         proNote: "Full dashboard",
+      },
+      {
+        label: "AI revenue forecast: MRR & ARR projected 6, 12 or 24 months",
+        hint: "Needs a WordPress AI connector",
       },
       {
         label: "Renewal, portal & access troubleshooting logs",

@@ -181,6 +181,7 @@ export const subscriptionsAndRecurringProducts: FeaturePillar = {
       "Purchase guardrails and one-click checkout URLs",
     ],
     pro: [
+      "Build-your-own subscription boxes billed as one recurring charge",
       "Fixed-date subscriptions with enrollment windows",
       "Customer-chosen subscription length and billing period",
       "Recurring shipping charges on physical subscriptions",
@@ -198,6 +199,7 @@ export const subscriptionsAndRecurringProducts: FeaturePillar = {
     "lifetime-deals",
     "fixed-date-subscriptions",
     "customer-chosen-subscription-duration",
+    "subscription-box",
     "plan-switching",
     "coupons",
   ],
