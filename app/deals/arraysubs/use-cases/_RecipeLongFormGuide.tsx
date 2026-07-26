@@ -5,17 +5,12 @@ import {
   SearchCheck,
   Settings2,
 } from "lucide-react";
-import {
-  Container,
-  Eyebrow,
-  Section,
-  SectionTitle,
-} from "@/components/ui";
+import { Container, Eyebrow, Section, SectionTitle } from "@/components/ui";
 import type { Recipe, RecipeGroup } from "./_recipes";
 import {
   DEFAULT_GUIDANCE,
   GROUP_GUIDANCE,
-  screenshotForRecipe,
+  screenshotsForRecipe,
   uniqueLocations,
 } from "./_recipeGuideContent";
 
@@ -26,7 +21,7 @@ export function RecipeLongFormGuide({
   recipe: Recipe;
   group?: RecipeGroup;
 }) {
-  const screenshot = screenshotForRecipe(recipe);
+  const screenshots = screenshotsForRecipe(recipe);
   const guidance = GROUP_GUIDANCE[recipe.group] ?? DEFAULT_GUIDANCE;
   const locations = uniqueLocations(recipe);
   const mainLocation = locations[0] ?? "the relevant ArraySubs admin screen";
@@ -60,12 +55,12 @@ export function RecipeLongFormGuide({
               <p>
                 Start by defining success in one sentence. For this setup, the
                 first expected result is:{" "}
-                <strong className="text-foreground">{firstOutcome}</strong>{" "}
-                Keep that result beside you while configuring the recipe. If a
-                field, product relationship, rule, or customer action does not
-                support that outcome, pause and resolve the mismatch before
-                launch. This simple check prevents a collection of individually
-                valid settings from producing a confusing overall workflow.
+                <strong className="text-foreground">{firstOutcome}</strong> Keep
+                that result beside you while configuring the recipe. If a field,
+                product relationship, rule, or customer action does not support
+                that outcome, pause and resolve the mismatch before launch. This
+                simple check prevents a collection of individually valid
+                settings from producing a confusing overall workflow.
               </p>
               <p>{guidance.planning}</p>
               <p>
@@ -74,9 +69,7 @@ export function RecipeLongFormGuide({
                 values to suit your business. Most of the work begins in{" "}
                 <strong className="text-foreground">{mainLocation}</strong>
                 {locations.length > 1
-                  ? ` and continues across ${locations
-                      .slice(1)
-                      .join(", ")}.`
+                  ? ` and continues across ${locations.slice(1).join(", ")}.`
                   : "."}{" "}
                 Take a screenshot or configuration export for your internal
                 record, note the date and responsible administrator, and record
@@ -112,10 +105,10 @@ export function RecipeLongFormGuide({
                 <Eyebrow>Define the finish line</Eyebrow>
                 <p className="mt-4 leading-7 text-muted">
                   A saved form is only an intermediate result. The finish line
-                  is observable behavior. Use these recipe outcomes as acceptance
-                  criteria, then add any store-specific requirement such as tax,
-                  shipping, role assignment, gateway, cache, or email-delivery
-                  behavior that affects your implementation.
+                  is observable behavior. Use these recipe outcomes as
+                  acceptance criteria, then add any store-specific requirement
+                  such as tax, shipping, role assignment, gateway, cache, or
+                  email-delivery behavior that affects your implementation.
                 </p>
                 <ul className="mt-5 flex flex-col gap-3">
                   {recipe.outcomes.map((outcome) => (
@@ -138,39 +131,60 @@ export function RecipeLongFormGuide({
         <Container>
           <SectionTitle
             eyebrow="Captured on staging"
-            title={screenshot.title}
-            subtitle="Use this real ArraySubs administration screen as an orientation aid; the exact values for this recipe remain in the configuration table above."
+            title="Walk through the configuration screens"
+            subtitle={`${screenshots.length} real staging captures show the tabs, expanded sections, nested controls, and supporting screens used by this recipe.`}
             align="center"
           />
-          <figure className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl bg-card">
-            <img
-              src={screenshot.src}
-              alt={screenshot.alt}
-              width={1440}
-              height={1000}
-              loading="lazy"
-              className="h-auto w-full"
-            />
-            <figcaption className="flex items-start gap-3 border-t border-border p-5 text-sm leading-6 text-muted sm:p-6">
-              <ImageIcon
-                aria-hidden="true"
-                className="mt-0.5 size-4 shrink-0 text-primary"
-              />
-              <span>
-                {screenshot.caption} Captured on the ArraySubs staging site on
-                July 23, 2026. Interfaces can evolve, so follow the field names
-                and values in this recipe if the visual arrangement changes.
-              </span>
-            </figcaption>
-          </figure>
+          <div
+            className="mx-auto mt-12 flex max-w-5xl flex-col gap-8"
+            data-recipe-screenshot-count={screenshots.length}
+          >
+            {screenshots.map((screenshot, index) => (
+              <figure
+                key={screenshot.src}
+                className="overflow-hidden rounded-2xl bg-card"
+              >
+                <div className="flex items-center gap-3 border-b border-border px-5 py-4 sm:px-6">
+                  <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-primary font-display text-sm font-semibold text-on-dark">
+                    {index + 1}
+                  </span>
+                  <h3 className="font-display text-lg text-foreground sm:text-xl">
+                    {screenshot.title}
+                  </h3>
+                </div>
+                <img
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  width={1440}
+                  height={1000}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
+                <figcaption className="flex items-start gap-3 border-t border-border p-5 text-sm leading-6 text-muted sm:p-6">
+                  <ImageIcon
+                    aria-hidden="true"
+                    className="mt-0.5 size-4 shrink-0 text-primary"
+                  />
+                  <span>
+                    Screenshot {index + 1} of {screenshots.length}.{" "}
+                    {screenshot.caption} Captured on the ArraySubs staging site
+                    on July 23, 2026. Interfaces can evolve, so follow the field
+                    names and values in this recipe if the visual arrangement
+                    changes.
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
           <div className="mx-auto mt-8 max-w-4xl space-y-5 text-lg leading-8 text-muted">
             <p>
-              Read the screenshot as a map, not as a substitute for the exact
-              table. Find the named section first, then work through the recipe
-              values in order. Some recipes span more than one screen because a
-              store-wide policy, product-level option, customer-facing workflow,
-              and reporting view can cooperate. Saving one screen does not
-              automatically verify the others.
+              Read the screenshots as a sequence, not as a substitute for the
+              exact table. Start with the orientation screen, then follow the
+              opened tab, expanded accordion, nested group, repeater, or popup
+              shown in the later captures. Some recipes span more than one
+              screen because a store-wide policy, product-level option,
+              customer-facing workflow, and reporting view can cooperate. Saving
+              one screen does not automatically verify the others.
             </p>
             <p>
               Before changing a live configuration, compare the current state
@@ -202,7 +216,7 @@ export function RecipeLongFormGuide({
                   <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-primary font-display font-semibold text-on-dark">
                     {index + 1}
                   </span>
-                  <div>
+                  <div className="min-w-0 break-words">
                     <h3 className="font-display text-xl">{row.setting}</h3>
                     <p className="mt-1 text-sm text-muted">
                       {row.where ?? mainLocation}
@@ -236,10 +250,10 @@ export function RecipeLongFormGuide({
               Do not copy values from the screenshot when they differ from the
               recipe table. The screenshot documents the location and shape of
               the real staging interface; the table is the authoritative
-              configuration for this use case. This distinction lets one
-              staging screen explain several related recipes without pretending
-              that a single saved staging record represents every possible
-              business policy.
+              configuration for this use case. This distinction lets one staging
+              screen explain several related recipes without pretending that a
+              single saved staging record represents every possible business
+              policy.
             </p>
           </div>
         </Container>
@@ -263,7 +277,7 @@ export function RecipeLongFormGuide({
                   <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary font-display font-semibold text-on-dark">
                     {index + 1}
                   </span>
-                  <div>
+                  <div className="min-w-0 break-words">
                     <h3 className="font-display text-2xl">{step.title}</h3>
                     <p className="mt-3 leading-7 text-muted">
                       {step.description}
@@ -271,9 +285,9 @@ export function RecipeLongFormGuide({
                     <p className="mt-4 leading-7 text-muted">
                       Pause after this step and confirm that the screen reflects
                       the intended choice before moving on. If the control is
-                      unavailable, check the active plugin tier, required module,
-                      selected product type, earlier prerequisite, and your
-                      administrator capability. Record any store-specific
+                      unavailable, check the active plugin tier, required
+                      module, selected product type, earlier prerequisite, and
+                      your administrator capability. Record any store-specific
                       variation so another operator can reproduce the same
                       result without guessing.
                     </p>
@@ -311,10 +325,7 @@ export function RecipeLongFormGuide({
                 key={note}
                 className="rounded-2xl bg-card p-6 text-foreground sm:p-8"
               >
-                <Settings2
-                  aria-hidden="true"
-                  className="size-6 text-primary"
-                />
+                <Settings2 aria-hidden="true" className="size-6 text-primary" />
                 <p className="mt-4 leading-7 text-muted">{note}</p>
                 <p className="mt-4 leading-7 text-muted">
                   Include this condition in the launch checklist and support
@@ -367,11 +378,12 @@ export function RecipeLongFormGuide({
                 </h3>
                 <p className="mt-4 leading-7 text-muted">
                   Repeat the important step with an account that should not
-                  qualify, a different status or plan, and a value near any date,
-                  amount, usage, or cycle boundary. Confirm that the workflow
-                  fails safely, explains what the person can do next, and does
-                  not create a partial order or contradictory state. Test both
-                  desktop and mobile when customers interact with the result.
+                  qualify, a different status or plan, and a value near any
+                  date, amount, usage, or cycle boundary. Confirm that the
+                  workflow fails safely, explains what the person can do next,
+                  and does not create a partial order or contradictory state.
+                  Test both desktop and mobile when customers interact with the
+                  result.
                 </p>
               </div>
             </div>

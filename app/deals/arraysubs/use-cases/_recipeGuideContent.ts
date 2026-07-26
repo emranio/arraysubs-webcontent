@@ -81,193 +81,872 @@ function recipeSearchText(recipe: Recipe): string {
     .toLowerCase();
 }
 
-export function screenshotForRecipe(recipe: Recipe): RecipeScreenshot {
+function capture(
+  file: string,
+  title: string,
+  detail: string,
+): RecipeScreenshot {
+  return {
+    src: `/recipes/settings/${file}`,
+    alt: `${title} on the ArraySubs staging site`,
+    title,
+    caption: `This staging capture ${detail}.`,
+  };
+}
+
+const SCREENSHOTS = {
+  generalOverview: capture(
+    "general-subscription-settings.png",
+    "General subscription settings",
+    "orients you to the store-wide subscription, checkout, trial, recovery, and customer-action controls",
+  ),
+  generalMultiple: capture(
+    "general-multiple-subscriptions.png",
+    "Multiple-subscription policy",
+    "shows the product and cart rules that decide whether customers may hold or purchase more than one subscription",
+  ),
+  generalTrialAccount: capture(
+    "general-checkout-trials-account-mode-open.png",
+    "Trial and checkout account controls",
+    "opens the account-creation choice beside the trial and checkout policy fields",
+  ),
+  generalRenewal: capture(
+    "general-renewal-sync-charge-open.png",
+    "Renewal synchronization behavior",
+    "opens the renewal synchronization charge behavior so the full-charge and prorated choices are visible",
+  ),
+  generalCustomerActions: capture(
+    "general-customer-actions.png",
+    "Customer subscription actions",
+    "shows the cancellation, early-renewal, auto-renew, and related self-service controls lower on the General screen",
+  ),
+  toolkitOverview: capture(
+    "admin-toolkit-settings.png",
+    "Administrator toolkit",
+    "shows the admin-bar, dashboard-access, login-page, and login-as-user configuration area",
+  ),
+  toolkitRedirect: capture(
+    "toolkit-admin-redirect-open.png",
+    "Administrator redirect options",
+    "opens the dashboard redirect control used to define where restricted users land",
+  ),
+  toolkitRoles: capture(
+    "toolkit-allowed-roles-open.png",
+    "Administrator access roles",
+    "shows the role selector and the neighboring administrator-access safeguards",
+  ),
+  refunds: capture(
+    "refunds-settings-overview.png",
+    "Subscription refund policy",
+    "shows refund timing, gateway handling, and prorated-refund choices on one screen",
+  ),
+  skipRenewal: capture(
+    "skip-renewal-controls-expanded.png",
+    "Skip-renewal controls",
+    "expands the skip feature to reveal cycle limits, cutoff timing, and the customer-facing toggle",
+  ),
+  pauseSubscription: capture(
+    "pause-subscription-controls-expanded.png",
+    "Pause-subscription controls",
+    "expands pause settings to reveal duration, count, cooldown, reason, and content-access fields",
+  ),
+  pauseAccess: capture(
+    "pause-content-access-open.png",
+    "Paused content-access options",
+    "opens the access dropdown so no access, limited access, and full access can be compared",
+  ),
+  productOverview: capture(
+    "subscription-product-settings.png",
+    "Subscription product data",
+    "shows the Subscription product-data tab and its core recurring-product controls",
+  ),
+  productSchedule: capture(
+    "product-subscription-interval-trial-fields.png",
+    "Billing schedule and trial fields",
+    "scrolls directly to billing period, interval, length, trial, fee, renewal-price, and shipping settings",
+  ),
+  productBillingPeriod: capture(
+    "product-billing-period-open.png",
+    "Billing-period choices",
+    "opens the product billing-period menu with day, week, month, year, and lifetime choices",
+  ),
+  productFixedEnd: capture(
+    "product-fixed-end-date-expanded.png",
+    "Fixed end-date controls",
+    "enables the nested end-date section to reveal annual cutoff, absolute date, and period-end behavior",
+  ),
+  productLinked: capture(
+    "product-linked-products-plan-switching.png",
+    "Linked plan-switching products",
+    "shows the upgrade, downgrade, and related linked-product selectors on a real subscription product",
+  ),
+  productFeature: capture(
+    "product-feature-manager-settings.png",
+    "Product feature manager",
+    "opens the product-level feature tab where plan entitlements are assigned",
+  ),
+  productFeatureModal: capture(
+    "product-feature-row-expanded.png",
+    "Feature repeater modal",
+    "opens the Manage Features popup and adds a feature row with name, type, value, and enabled controls",
+  ),
+  checkoutSettings: capture(
+    "checkout-builder-settings.png",
+    "Checkout data settings",
+    "shows how custom checkout fields are copied to orders, subscriptions, and renewal orders",
+  ),
+  checkoutEntry: capture(
+    "checkout-builder-editor-entry.png",
+    "Checkout Builder entry screen",
+    "shows the builder status and the control used to open the visual editor",
+  ),
+  checkoutCanvas: capture(
+    "checkout-builder-canvas.png",
+    "Checkout Builder canvas",
+    "shows the element palette, checkout steps, and current field layout inside the visual builder",
+  ),
+  checkoutDesign: capture(
+    "checkout-builder-design-tab.png",
+    "Checkout Builder design tab",
+    "opens the Design tab with its color, layout, and step-navigation sections",
+  ),
+  checkoutFieldPanel: capture(
+    "checkout-builder-field-settings-panel.png",
+    "Checkout field settings panel",
+    "opens a field editor with label, key, type, and nested billing-address field toggles",
+  ),
+  checkoutStep: capture(
+    "checkout-builder-add-step-popup.png",
+    "Multi-step checkout layout",
+    "shows a newly added second checkout step so the step repeater and navigation are visible",
+  ),
+  retentionOverview: capture(
+    "retention-flow-settings.png",
+    "Retention Flow overview",
+    "shows cancellation reasons and the discount, pause, downgrade, and contact-support offer areas",
+  ),
+  retentionReason: capture(
+    "retention-reason-item-expanded.png",
+    "Cancellation reason item",
+    "expands a saved cancellation-reason accordion to reveal its label and slug fields",
+  ),
+  retentionReasonRepeater: capture(
+    "retention-reason-repeater-new-item.png",
+    "Cancellation reason repeater",
+    "adds and opens a new reason row so the complete repeater workflow is visible",
+  ),
+  retentionDiscountReasons: capture(
+    "retention-discount-reasons-open.png",
+    "Retention discount targeting",
+    "opens the discount-offer reason selector with every eligible cancellation reason visible",
+  ),
+  retentionPause: capture(
+    "retention-pause-offer-expanded.png",
+    "Retention pause offer",
+    "expands the pause offer to show reasons, duration, title, and message controls",
+  ),
+  retentionContact: capture(
+    "retention-contact-offer-expanded.png",
+    "Contact-support retention offer",
+    "expands the contact offer to show reason targeting, support URL, copy, and button fields",
+  ),
+  couponOverview: capture(
+    "subscription-coupon-settings.png",
+    "Subscription coupon controls",
+    "shows the subscription toggle, duration, and renewal-cycle fields inside WooCommerce coupon data",
+  ),
+  couponDuration: capture(
+    "coupon-recurring-duration-fields.png",
+    "Recurring coupon duration",
+    "shows a recurring renewal coupon with a three-cycle limit and initial-checkout counting",
+  ),
+  couponDurationOpen: capture(
+    "coupon-duration-options-open.png",
+    "Coupon duration options",
+    "opens the one-time and recurring subscription discount choices",
+  ),
+  couponRestrictions: capture(
+    "coupon-usage-restrictions.png",
+    "Coupon usage restrictions",
+    "opens the restriction tab with spend, product, category, email, and brand eligibility controls",
+  ),
+  couponLimits: capture(
+    "coupon-usage-limits.png",
+    "Coupon usage limits",
+    "opens the limits tab with per-coupon, per-item, and per-user caps",
+  ),
+  planOverview: capture(
+    "plan-switching-settings.png",
+    "Plan Switching settings",
+    "shows global switching direction, self-service, proration, fee, and auto-downgrade controls",
+  ),
+  planProration: capture(
+    "plan-switching-proration-open.png",
+    "Plan-switch proration options",
+    "opens the proration behavior menu used for immediate and renewal-time switching",
+  ),
+  planRounding: capture(
+    "plan-switching-rounding-open.png",
+    "Plan-switch rounding method",
+    "opens the rounding menu used when prorated charges or credits produce fractional values",
+  ),
+  planAutoDowngrade: capture(
+    "plan-switching-auto-downgrade-open.png",
+    "Automatic downgrade triggers",
+    "opens the expiration, cancellation, and trial-expiry downgrade choices",
+  ),
+  featureSettings: capture(
+    "feature-manager-display-settings.png",
+    "Feature Manager settings",
+    "shows feature display, usage, and aggregation controls at the global level",
+  ),
+  featureComparison: capture(
+    "feature-manager-comparison-expanded.png",
+    "Feature comparison option",
+    "enables the comparison setting so the customer-facing plan comparison behavior is visible",
+  ),
+  storeCredit: capture(
+    "store-credit-settings.png",
+    "Store Credit settings",
+    "shows renewal application, checkout use, expiration, and credit-purchase limits",
+  ),
+  memberAccessOverview: capture(
+    "member-access-rules.png",
+    "Member Access rule builder",
+    "shows the condition, protected target, and denial-behavior structure shared by access rules",
+  ),
+  roleMapping: capture(
+    "member-access-role-mapping-expanded.png",
+    "Role-mapping rule",
+    "expands an existing rule with product conditions, added roles, removed roles, and fallback behavior",
+  ),
+  accessNested: capture(
+    "member-access-nested-condition-group.png",
+    "Nested access conditions",
+    "adds a nested condition group and exposes the ALL and ANY relationship controls",
+  ),
+  discountRule: capture(
+    "member-discount-rule-expanded.png",
+    "Member discount rule",
+    "shows product scope, eligibility conditions, discount value, and free-shipping behavior",
+  ),
+  discountTypes: capture(
+    "member-discount-condition-types-open.png",
+    "Discount eligibility conditions",
+    "opens the condition-type menu with purchase, subscription, feature, login, and role choices",
+  ),
+  discountNested: capture(
+    "member-discount-nested-group.png",
+    "Nested member-discount group",
+    "adds a nested condition group above the discount action and free-shipping controls",
+  ),
+  shopRule: capture(
+    "shop-access-rule-expanded.png",
+    "Shop Access rule",
+    "shows store scope, member eligibility, denial behavior, and the customer message",
+  ),
+  shopAction: capture(
+    "shop-access-action-open.png",
+    "Shop Access denial actions",
+    "opens the choices for blocking purchase, returning a 404, or redirecting the visitor",
+  ),
+  shopScope: capture(
+    "shop-access-scope-open.png",
+    "Shop Access product scope",
+    "opens the full-store, product, and category targeting choices",
+  ),
+  urlRule: capture(
+    "url-rule-list-expanded.png",
+    "URL access rules",
+    "shows URL pattern, priority, exceptions, qualification, and denial action in the expanded rule list",
+  ),
+  urlMatch: capture(
+    "url-rule-match-types-open.png",
+    "URL match types",
+    "opens starts-with, contains, exact-match, and regular-expression choices",
+  ),
+  urlPriority: capture(
+    "url-rule-priority-actions.png",
+    "URL rule priority and actions",
+    "scrolls through multiple expanded URL rules so priority, exception, and response differences can be compared",
+  ),
+  cptRule: capture(
+    "cpt-rule-taxonomy-expanded.png",
+    "Post-type taxonomy rule",
+    "shows taxonomy targeting, archive visibility, qualification, access response, and drip delay",
+  ),
+  cptScope: capture(
+    "cpt-rule-scope-open.png",
+    "Post-type protection scope",
+    "opens entire-post-type, taxonomy, and specific-content targeting choices",
+  ),
+  cptArchive: capture(
+    "cpt-rule-archive-behavior-open.png",
+    "Protected archive behavior",
+    "opens hide, lock-icon, and normal-listing behavior for protected content",
+  ),
+  downloadRule: capture(
+    "download-rule-expanded.png",
+    "Download access rule",
+    "adds and opens a download rule with its file, condition, group, and drip controls",
+  ),
+  downloadFile: capture(
+    "download-file-repeater-expanded.png",
+    "Download file repeater",
+    "adds a nested file row with display name, file picker, ordering, and removal controls",
+  ),
+  contentElementor: capture(
+    "content-gate-elementor-tab.png",
+    "Elementor content gating",
+    "shows the supported Elementor gating workflow and its step-by-step guidance",
+  ),
+  contentShortcode: capture(
+    "content-gate-shortcode-tab.png",
+    "Shortcode content gating",
+    "opens the shortcode section with supported syntax, setup steps, and examples",
+  ),
+  contentProgrammatic: capture(
+    "content-gate-programmatic-tab.png",
+    "Programmatic content gating",
+    "opens the PHP integration section and its implementation examples",
+  ),
+  loginSettings: capture(
+    "login-limit-settings.png",
+    "Multi-login prevention",
+    "shows the global session cap, administrator exception, and rule list",
+  ),
+  loginRule: capture(
+    "login-limit-rule-expanded.png",
+    "Login-limit rule",
+    "adds an expanded rule with nested eligibility conditions and its per-rule session limit",
+  ),
+  profileOverview: capture(
+    "profile-builder-overview.png",
+    "Profile Builder overview",
+    "shows the avatar and custom-profile-field modules before their nested settings are enabled",
+  ),
+  profileAvatar: capture(
+    "profile-avatar-fields-expanded.png",
+    "Avatar and profile-field controls",
+    "enables both modules to reveal upload size, file types, and the custom-field repeater",
+  ),
+  profileFieldRepeater: capture(
+    "profile-custom-field-repeater.png",
+    "Custom profile-field repeater",
+    "adds a custom field row with ordering, enable, expand, and delete controls",
+  ),
+  profileFieldDetails: capture(
+    "profile-custom-field-details-expanded.png",
+    "Custom profile-field details",
+    "expands the nested row to reveal label, key, type, placeholder, help text, and required status",
+  ),
+  profileFieldTypes: capture(
+    "profile-field-types-open.png",
+    "Profile-field type options",
+    "opens text, textarea, select, date, checkbox, and file-upload field types",
+  ),
+  myAccountOverview: capture(
+    "my-account-builder-overview.png",
+    "My Account menu builder",
+    "shows the customer-account menu customization switch before the item repeater is enabled",
+  ),
+  myAccountRepeater: capture(
+    "my-account-menu-repeater.png",
+    "My Account menu repeater",
+    "enables the builder to reveal draggable, disableable, expandable menu items and the custom-item action",
+  ),
+  myAccountItem: capture(
+    "my-account-item-expanded.png",
+    "My Account item details",
+    "expands a menu item so its editable label appears within the ordered list",
+  ),
+  memberStyling: capture(
+    "member-styling-rule-expanded.png",
+    "Member Styling rule",
+    "adds a rule with nested conditions, CSS classes, custom CSS, and delayed activation",
+  ),
+  cartInfo: capture(
+    "cart-info-editor-overview.png",
+    "Cart information editor",
+    "shows controls for first-cycle, shipping-charge, and duration information in the cart",
+  ),
+  createSubscription: capture(
+    "subscription-create-product-details.png",
+    "Create-subscription form",
+    "shows product selection, quantity, recurring price, cadence, length, fee, and trial controls",
+  ),
+  createBillingPeriod: capture(
+    "subscription-create-billing-period-open.png",
+    "Manual billing-period choices",
+    "opens day, week, month, year, and lifetime options on the administrator creation form",
+  ),
+  createRenewalPrice: capture(
+    "subscription-create-renewal-price-expanded.png",
+    "Different renewal price",
+    "enables the nested renewal-price and payment-threshold fields on the creation form",
+  ),
+  createAddresses: capture(
+    "subscription-create-address-fields.png",
+    "Subscription billing and shipping",
+    "scrolls through the billing and shipping address fields before the subscription is created",
+  ),
+  emailList: capture(
+    "subscription-email-list-expanded.png",
+    "Subscription email notifications",
+    "scrolls to the ArraySubs customer and administrator notifications registered in WooCommerce",
+  ),
+  emailTemplate: capture(
+    "subscription-email-template-settings.png",
+    "Subscription email template",
+    "opens a notification with enable, subject, heading, placeholders, additional content, format, and template controls",
+  ),
+  reportsDirectory: capture(
+    "reports-overview-dashboard.png",
+    "Reports directory",
+    "maps performance, retention, revenue, subscription, member, credit, audit, gateway, and job reports",
+  ),
+  reportsPerformance: capture(
+    "reports-performance-dashboard.png",
+    "Performance analytics dashboard",
+    "opens the WooCommerce analytics surface used for recurring-revenue and subscription performance reporting",
+  ),
+  retentionAnalytics: capture(
+    "retention-analytics-summary.png",
+    "Retention analytics",
+    "shows date and product filters, cancellation KPIs, reason and outcome charts, trends, and activity",
+  ),
+  auditLog: capture(
+    "activity-audit-log.png",
+    "Activity audit trail",
+    "shows author, entity, date, and search filters above the subscription activity log",
+  ),
+  auditFilter: capture(
+    "activity-audit-author-filter-open.png",
+    "Audit author filter",
+    "opens System, Admin, Customer, and Gateway author choices for tracing changes",
+  ),
+  gatewayHealth: capture(
+    "gateway-health-settings.png",
+    "Gateway health and webhook log",
+    "shows gateway health cards, gateway and event filters, and recent webhook processing",
+  ),
+  scheduledJobs: capture(
+    "scheduled-job-logs.png",
+    "Scheduled-job monitor",
+    "shows dated renewal and maintenance jobs with success status and execution details",
+  ),
+} as const;
+
+type ScreenshotKey = keyof typeof SCREENSHOTS;
+
+export function screenshotsForRecipe(recipe: Recipe): RecipeScreenshot[] {
   const text = recipeSearchText(recipe);
   const identity = [recipe.slug, recipe.name, recipe.h1]
     .join(" ")
-    .toLowerCase();
+    .toLowerCase()
+    .replace(/[-_]/g, " ");
+  const slugText = recipe.slug.replace(/[-_]/g, " ").toLowerCase();
+  const keys: ScreenshotKey[] = [];
+  const add = (...items: ScreenshotKey[]) => {
+    for (const item of items) {
+      if (!keys.includes(item)) keys.push(item);
+    }
+  };
+  const prioritize = (...items: ScreenshotKey[]) => {
+    for (const item of [...items].reverse()) {
+      const existingIndex = keys.indexOf(item);
+      if (existingIndex >= 0) keys.splice(existingIndex, 1);
+      keys.unshift(item);
+    }
+  };
 
-  if (/(coupon|promo code|discount duration|renewal cycles)/.test(text)) {
-    return {
-      src: "/recipes/settings/subscription-coupon-settings.png",
-      alt: "WooCommerce coupon settings with ArraySubs subscription duration and renewal-cycle controls",
-      title: "Subscription coupon settings",
-      caption:
-        "The staging coupon editor shows the subscription toggle, recurring duration, and renewal-cycle controls used by coupon recipes.",
-    };
+  if (
+    /(multi subs|one subscription|one sub auto migrate|subscriptions only checkout)/.test(
+      identity,
+    )
+  ) {
+    prioritize("generalMultiple", "generalOverview", "generalCustomerActions");
   }
 
-  if (recipe.group === "retention-coupons") {
-    return {
-      src: "/recipes/settings/retention-flow-settings.png",
-      alt: "ArraySubs Retention Flow settings on the staging site",
-      title: "Retention Flow settings",
-      caption:
-        "The staging Retention Flow screen shows cancellation reasons and the discount, pause, downgrade, and contact-support offer controls.",
-    };
+  if (
+    /(coupon|promo code|welcome 15|half off 3 months|lifetime recurring 10|fixed amount first order|influencer recurring)/.test(
+      identity,
+    )
+  ) {
+    add(
+      "couponOverview",
+      "couponDuration",
+      "couponDurationOpen",
+      "couponRestrictions",
+      "couponLimits",
+    );
   }
 
-  if (recipe.group === "analytics-growth") {
-    return {
-      src: "/recipes/settings/reports-dashboard.png",
-      alt: "ArraySubs Reports directory on the staging site",
-      title: "Reports and operational monitoring",
-      caption:
-        "The staging Reports directory maps performance, retention, revenue, audit, job, and gateway views in one place.",
-    };
+  if (
+    /(checkout builder|custom checkout|checkout field|multi step checkout)/.test(
+      identity,
+    )
+  ) {
+    add(
+      "checkoutEntry",
+      "checkoutCanvas",
+      "checkoutFieldPanel",
+      "checkoutDesign",
+      "checkoutStep",
+      "checkoutSettings",
+    );
   }
 
-  if (/(checkout builder|custom checkout|checkout field|multi-step checkout)/.test(text)) {
-    return {
-      src: "/recipes/settings/checkout-builder-settings.png",
-      alt: "ArraySubs Checkout Builder settings on the staging site",
-      title: "Checkout Builder settings",
-      caption:
-        "The staging settings screen shows how custom checkout data is copied to orders, subscriptions, and renewals.",
-    };
+  if (/(skip|pause)/.test(identity)) {
+    add("skipRenewal", "pauseSubscription", "pauseAccess");
   }
 
-  if (/(email|notification|reminder)/.test(identity)) {
-    return {
-      src: "/recipes/settings/subscription-email-settings.png",
-      alt: "ArraySubs subscription email notifications in WooCommerce settings",
-      title: "Subscription email settings",
-      caption:
-        "The staging email screen lists the customer and administrator notifications registered by ArraySubs.",
-    };
+  if (/(fixed|limited|lifetime|end date|number of cycles)/.test(slugText)) {
+    add("productSchedule", "productFixedEnd", "productBillingPeriod");
   }
 
-  if (/(store credit|credit balance|credit purchase|credit history|wallet)/.test(text)) {
-    return {
-      src: "/recipes/settings/store-credit-settings.png",
-      alt: "ArraySubs Store Credit settings on the staging site",
-      title: "Store Credit settings",
-      caption:
-        "The staging Store Credit screen shows renewal application, checkout use, expiration, and credit-purchase controls.",
-    };
+  if (
+    /(trial|signup fee|sign up fee|billing period|billing interval|shipping)/.test(
+      slugText,
+    )
+  ) {
+    add(
+      "productOverview",
+      "productSchedule",
+      "productBillingPeriod",
+      "generalTrialAccount",
+    );
+  }
+
+  if (
+    /(different renewal price|intro pricing|price increase|loss leader)/.test(
+      slugText,
+    )
+  ) {
+    add("productSchedule", "createRenewalPrice", "productOverview");
+  }
+
+  if (
+    /(feature manager|feature value|feature gated|plan feature|whats included|compare tiers|usage limits metering)/.test(
+      identity,
+    )
+  ) {
+    add(
+      "featureSettings",
+      "productFeature",
+      "productFeatureModal",
+      "featureComparison",
+    );
   }
 
   if (
     /(plan switch|upgrade|downgrade|crossgrade|prorat|switch fee|linked products)/.test(
-      text,
+      identity,
     )
   ) {
-    return {
-      src: "/recipes/settings/plan-switching-settings.png",
-      alt: "ArraySubs Plan Switching settings on the staging site",
-      title: "Plan Switching settings",
-      caption:
-        "The staging Plan Switching screen shows allowed paths, customer self-service, proration, fees, and auto-downgrade controls.",
-    };
+    add(
+      "productLinked",
+      "planOverview",
+      "planProration",
+      "planAutoDowngrade",
+      "planRounding",
+    );
   }
 
   if (
-    /(member access|content gate|restrict|gated|paywall|role mapping|download|shortcode|elementor|login limit|session limit|url prefix|regex)/.test(
-      text,
+    /(store credit|credit balance|credit purchase|credit history|wallet|prepaid credit|promo credit|credit bonus|auto apply credit)/.test(
+      identity,
     )
   ) {
-    return {
-      src: "/recipes/settings/member-access-rules.png",
-      alt: "ArraySubs Member Access rule builder on the staging site",
-      title: "Member Access rule builder",
-      caption:
-        "The staging rule builder shows the condition, target, and behavior structure used by access-control recipes.",
-    };
+    add("storeCredit", "generalCustomerActions", "auditLog");
+  }
+
+  if (/(refund|prorated refund)/.test(identity)) {
+    prioritize("refunds", "generalCustomerActions", "auditLog");
+  }
+
+  if (/(email|notification|reminder)/.test(identity)) {
+    add("emailList", "emailTemplate", "auditLog", "scheduledJobs");
   }
 
   if (
-    /(profile|avatar|my account|customer portal|member 360|member insight|shipping address|payment method)/.test(
-      text,
+    /(admin bar|wp admin|wordpress login|login as user|login as customer|toolkit|admin dashboard)/.test(
+      identity,
     )
   ) {
-    return {
-      src: "/recipes/settings/member-profile-settings.png",
-      alt: "ArraySubs member profile settings on the staging site",
-      title: "Member profile settings",
-      caption:
-        "The staging Profile Builder screen shows the member-avatar and custom-profile-field configuration area.",
-    };
+    add("toolkitOverview", "toolkitRedirect", "toolkitRoles");
+  }
+
+  if (/(download)/.test(identity)) {
+    add(
+      "memberAccessOverview",
+      "downloadRule",
+      "downloadFile",
+      "accessNested",
+      "contentShortcode",
+    );
+  }
+
+  if (/(url prefix|url regex|url rule|regex gating|lockdown)/.test(identity)) {
+    add(
+      "memberAccessOverview",
+      "urlRule",
+      "urlMatch",
+      "urlPriority",
+      "accessNested",
+    );
   }
 
   if (
-    /(report|analytics|mrr|growth|leaderboard|retention insight|audit|scheduled job|gateway health|metric)/.test(
-      text,
+    /(paywall|category|specific pages|post type|archive teaser|drip course)/.test(
+      identity,
     )
   ) {
-    return {
-      src: "/recipes/settings/reports-dashboard.png",
-      alt: "ArraySubs Reports directory on the staging site",
-      title: "Reports and operational monitoring",
-      caption:
-        "The staging Reports directory maps performance, retention, revenue, audit, job, and gateway views in one place.",
-    };
+    add(
+      "memberAccessOverview",
+      "cptRule",
+      "cptScope",
+      "cptArchive",
+      "accessNested",
+    );
+  }
+
+  if (/(catalog|hide products|shop access)/.test(identity)) {
+    add(
+      "memberAccessOverview",
+      "shopRule",
+      "shopScope",
+      "shopAction",
+      "accessNested",
+    );
   }
 
   if (
-    /(admin bar|wp-admin|wordpress login|login as user|login as customer|toolkit|admin dashboard)/.test(
-      text,
-    )
+    /(member pricing|cart discount|discount rule|spend-based)/.test(identity)
   ) {
-    return {
-      src: "/recipes/settings/admin-toolkit-settings.png",
-      alt: "ArraySubs administrator toolkit settings on the staging site",
-      title: "Administrator toolkit settings",
-      caption:
-        "The staging Toolkit screen contains admin-bar, dashboard-access, login-page, and login-as-user controls.",
-    };
+    add(
+      "memberAccessOverview",
+      "discountRule",
+      "discountTypes",
+      "discountNested",
+      "accessNested",
+    );
+  }
+
+  if (/(role mapping|tiered roles)/.test(identity)) {
+    add("memberAccessOverview", "roleMapping", "accessNested", "discountTypes");
+  }
+
+  if (/(shortcode|elementor|inline content|programmatic)/.test(identity)) {
+    add(
+      "contentElementor",
+      "contentShortcode",
+      "contentProgrammatic",
+      "accessNested",
+    );
   }
 
   if (
-    /(multiple subscriptions|grace period|renewal|customer action|automatic payment|trial payment method|mixed checkout)/.test(
-      text,
+    /(login personalization|session limit|login limit|multi login|concurrent login)/.test(
+      identity,
     )
   ) {
-    return {
-      src: "/recipes/settings/general-subscription-settings.png",
-      alt: "ArraySubs general subscription settings on the staging site",
-      title: "General subscription settings",
-      caption:
-        "The staging General screen shows the store-wide subscription, checkout, trial, recovery, and customer-action controls.",
-    };
+    add("loginSettings", "loginRule", "roleMapping", "accessNested");
   }
 
-  if (recipe.group === "manage-subscriptions") {
-    return {
-      src: "/recipes/settings/admin-toolkit-settings.png",
-      alt: "ArraySubs administrator toolkit settings on the staging site",
-      title: "Administrator toolkit settings",
-      caption:
-        "The staging Toolkit screen is one of the central configuration surfaces for administrator and account workflows.",
-    };
+  if (/(custom profile|avatar|profile field|member 360)/.test(identity)) {
+    add(
+      "profileOverview",
+      "profileAvatar",
+      "profileFieldRepeater",
+      "profileFieldDetails",
+      "profileFieldTypes",
+    );
   }
 
-  if (recipe.group === "member-restrictions") {
-    return {
-      src: "/recipes/settings/member-access-rules.png",
-      alt: "ArraySubs Member Access rule builder on the staging site",
-      title: "Member Access rule builder",
-      caption:
-        "The staging rule builder shows how ArraySubs combines eligibility conditions with protected targets and access behavior.",
-    };
+  if (/(my account|custom pages|account menu)/.test(identity)) {
+    add(
+      "myAccountOverview",
+      "myAccountRepeater",
+      "myAccountItem",
+      "profileOverview",
+    );
   }
 
-  if (recipe.group === "membership-modules") {
-    return {
-      src: "/recipes/settings/member-profile-settings.png",
-      alt: "ArraySubs member profile settings on the staging site",
-      title: "Member profile settings",
-      caption:
-        "The staging Profile Builder is one of the member-experience settings surfaces used by these recipes.",
-    };
+  if (
+    /(customer portal|self service|update payment|update shipping|auto renew)/.test(
+      identity,
+    )
+  ) {
+    add(
+      "generalCustomerActions",
+      "createSubscription",
+      "createRenewalPrice",
+      "createAddresses",
+      "cartInfo",
+    );
+    prioritize(
+      "generalCustomerActions",
+      "createSubscription",
+      "createRenewalPrice",
+      "createAddresses",
+      "cartInfo",
+    );
   }
 
-  return {
-    src: "/recipes/settings/subscription-product-settings.png",
-    alt: "ArraySubs subscription product settings on the staging site",
-    title: "Subscription product settings",
-    caption:
-      "The staging product editor shows the recurring interval, length, trial, fee, and related subscription controls.",
-  };
+  if (/(gateway health|webhook|stripe|paypal|paddle)/.test(identity)) {
+    add("gatewayHealth", "auditLog", "scheduledJobs", "reportsDirectory");
+  }
+
+  if (/(scheduled job|job monitor|renewal monitor)/.test(identity)) {
+    add("scheduledJobs", "auditLog", "gatewayHealth", "reportsDirectory");
+  }
+
+  if (/(audit trail|activity audit)/.test(identity)) {
+    add("auditLog", "auditFilter", "scheduledJobs", "gatewayHealth");
+  }
+
+  if (
+    /(retention analytics|churn|cancellation reason|offer performance)/.test(
+      slugText,
+    )
+  ) {
+    add(
+      "retentionAnalytics",
+      "retentionOverview",
+      "retentionReason",
+      "retentionDiscountReasons",
+    );
+  }
+
+  switch (recipe.group) {
+    case "recurring-billing":
+      add(
+        "productOverview",
+        "productSchedule",
+        "generalOverview",
+        "generalRenewal",
+        "generalCustomerActions",
+        "scheduledJobs",
+      );
+      break;
+    case "retention-coupons":
+      add(
+        "retentionOverview",
+        "retentionReason",
+        "retentionReasonRepeater",
+        "retentionDiscountReasons",
+        "retentionPause",
+        "retentionContact",
+        "retentionAnalytics",
+      );
+      if (
+        !/(coupon|welcome 15|half off|lifetime recurring|fixed amount|influencer recurring)/.test(
+          identity,
+        )
+      ) {
+        if (/pause/.test(identity)) {
+          prioritize("retentionOverview", "retentionPause", "retentionReason");
+        } else if (/contact support/.test(identity)) {
+          prioritize(
+            "retentionOverview",
+            "retentionContact",
+            "retentionReason",
+          );
+        } else if (/downgrade/.test(identity)) {
+          prioritize("retentionOverview", "productLinked", "planAutoDowngrade");
+        } else {
+          prioritize(
+            "retentionOverview",
+            "retentionReason",
+            "retentionDiscountReasons",
+          );
+        }
+      }
+      break;
+    case "plan-switching-features":
+      add(
+        "productLinked",
+        "planOverview",
+        "planProration",
+        "planAutoDowngrade",
+        "planRounding",
+        "storeCredit",
+      );
+      break;
+    case "manage-subscriptions":
+      add(
+        "createSubscription",
+        "createBillingPeriod",
+        "createRenewalPrice",
+        "createAddresses",
+        "generalCustomerActions",
+        "auditLog",
+      );
+      break;
+    case "member-restrictions":
+      add(
+        "memberAccessOverview",
+        "roleMapping",
+        "accessNested",
+        "contentElementor",
+        "contentShortcode",
+        "contentProgrammatic",
+      );
+      break;
+    case "membership-modules":
+      add(
+        "profileOverview",
+        "profileAvatar",
+        "profileFieldDetails",
+        "myAccountRepeater",
+        "generalCustomerActions",
+        "emailTemplate",
+      );
+      break;
+    case "analytics-growth":
+      add(
+        "reportsDirectory",
+        "reportsPerformance",
+        "retentionAnalytics",
+        "auditLog",
+        "scheduledJobs",
+        "gatewayHealth",
+      );
+      if (/scheduled job/.test(identity)) {
+        prioritize(
+          "scheduledJobs",
+          "auditLog",
+          "gatewayHealth",
+          "reportsDirectory",
+        );
+      } else if (/gateway health/.test(identity)) {
+        prioritize(
+          "gatewayHealth",
+          "auditLog",
+          "scheduledJobs",
+          "reportsDirectory",
+        );
+      } else if (/activity audit/.test(identity)) {
+        prioritize("auditLog", "auditFilter", "scheduledJobs", "gatewayHealth");
+      } else if (/retention analytics/.test(identity)) {
+        prioritize(
+          "retentionAnalytics",
+          "reportsDirectory",
+          "retentionOverview",
+          "retentionReason",
+        );
+      } else if (!/coupon/.test(identity)) {
+        prioritize("reportsDirectory", "reportsPerformance");
+      }
+      break;
+    default:
+      add("generalOverview", "productOverview", "auditLog");
+  }
+
+  add("generalOverview", "productOverview", "reportsDirectory");
+
+  return keys.slice(0, 6).map((key) => SCREENSHOTS[key]);
 }
 
 export function uniqueLocations(recipe: Recipe): string[] {
