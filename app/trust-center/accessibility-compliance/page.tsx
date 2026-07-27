@@ -18,7 +18,7 @@ import {
 } from "../_components";
 
 const ACCESSIBILITY_REVIEWED_DATE = "June 25, 2026";
-const ACCESSIBILITY_REPORT_URL = "/contact/#contact-form";
+const ACCESSIBILITY_REPORT_URL = site.contactUrl;
 
 export const metadata: Metadata = createMetadata({
   title: "Accessibility Statement",
@@ -208,7 +208,12 @@ export default function AccessibilityCompliancePage() {
         <PolicySection title="Report an accessibility barrier">
           <p>
             If you have trouble using any ArrayHash or ArraySubs page, email{" "}
-            <InlineLink href={`mailto:${site.email}`}>{site.email}</InlineLink>
+            <InlineLink
+              href={site.contactUrl}
+              mailtoUrl={`mailto:${site.email}`}
+            >
+              {site.email}
+            </InlineLink>
             . Include the page URL, browser, device, assistive technology if
             relevant, and what blocked you. Do not include passwords, full card
             details or private customer exports.

@@ -23,6 +23,7 @@ import {
   Container,
   CTA,
   IconCard,
+  MailtoFallbackLink,
   PageHero,
   Section,
   SectionTitle,
@@ -345,12 +346,12 @@ export default function BecomeAnAffiliatePage() {
                   Log in to your dashboard
                 </a>
                 . Questions? Write to{" "}
-                <a
-                  href={`mailto:${site.email}`}
+                <MailtoFallbackLink
+                  mailtoUrl={`mailto:${site.email}`}
                   className="font-medium text-foreground underline decoration-primary decoration-2 underline-offset-4 hover:decoration-dark"
                 >
                   {site.email}
-                </a>
+                </MailtoFallbackLink>
                 .
               </p>
             </div>

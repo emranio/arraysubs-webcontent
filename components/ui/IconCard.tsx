@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { MailtoFallbackLink } from "./MailtoFallbackLink";
 
 type IconCardProps = {
   /** Decorative icon (e.g. a lucide-react icon). Rendered aria-hidden. */
@@ -10,6 +11,8 @@ type IconCardProps = {
   description: string;
   /** When set, the whole card becomes a link. */
   href?: string;
+  /** Optional mail URL attempted before falling back to href. */
+  mailtoUrl?: string;
   /** Optional pill in the top-right (e.g. a <Badge />). */
   badge?: ReactNode;
   className?: string;
@@ -21,6 +24,7 @@ export function IconCard({
   title,
   description,
   href,
+  mailtoUrl,
   badge,
   className,
 }: IconCardProps) {
@@ -35,7 +39,7 @@ export function IconCard({
         {icon && (
           <span
             aria-hidden="true"
-            className="inline-flex size-12 shrink-0 items-center justify-center rounded-lg bg-surface text-dark transition-colors duration-300 group-hover:bg-primary group-hover:text-on-dark"
+            className="pointer-events-none inline-flex size-12 shrink-0 items-center justify-center rounded-lg bg-surface text-dark transition-colors duration-300 group-hover:bg-primary group-hover:text-on-dark"
           >
             {icon}
           </span>
@@ -48,7 +52,7 @@ export function IconCard({
           {href && (
             <ArrowUpRight
               aria-hidden="true"
-              className="ml-1 inline size-5 -translate-y-0.5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              className="pointer-events-none ml-1 inline size-5 -translate-y-0.5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
           )}
         </h3>
@@ -58,6 +62,18 @@ export function IconCard({
   );
 
   if (href) {
+    if (mailtoUrl) {
+      return (
+        <MailtoFallbackLink
+          fallbackUrl={href}
+          mailtoUrl={mailtoUrl}
+          className={classes}
+        >
+          {content}
+        </MailtoFallbackLink>
+      );
+    }
+
     return (
       <Link href={href} className={classes}>
         {content}

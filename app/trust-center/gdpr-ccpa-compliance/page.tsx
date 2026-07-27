@@ -45,7 +45,8 @@ export default function GdprCcpaCompliancePage() {
         ]}
         actions={
           <Button
-            href={`mailto:${site.email}?subject=Privacy%20rights%20request`}
+            href={site.contactUrl}
+            mailtoUrl={`mailto:${site.email}?subject=Privacy%20rights%20request`}
             size="lg"
             magnetic
             iconLeft={<Mail className="size-5" />}
@@ -104,7 +105,16 @@ export default function GdprCcpaCompliancePage() {
         <PolicySection title="How to make a request">
           <PolicyList
             items={[
-              <>Email <InlineLink href={`mailto:${site.email}`}>{site.email}</InlineLink>.</>,
+              <>
+                Email{" "}
+                <InlineLink
+                  href={site.contactUrl}
+                  mailtoUrl={`mailto:${site.email}`}
+                >
+                  {site.email}
+                </InlineLink>
+                .
+              </>,
               "Use the email address connected to your signup, newsletter, support, contact, checkout or license record.",
               "Include your country and the right you want to exercise.",
               "For payment or license requests, include the order number, invoice number or license key if available.",
@@ -211,11 +221,17 @@ export default function GdprCcpaCompliancePage() {
         <PolicySection title="Contact">
           <p>
             Privacy rights requests should be sent to{" "}
-            <InlineLink href={`mailto:${site.email}`}>{site.email}</InlineLink>
+            <InlineLink
+              href={site.contactUrl}
+              mailtoUrl={`mailto:${site.email}`}
+            >
+              {site.email}
+            </InlineLink>
             . Put &quot;Privacy rights request&quot; in the subject line.
           </p>
           <Button
-            href={`mailto:${site.email}?subject=Privacy%20rights%20request`}
+            href={site.contactUrl}
+            mailtoUrl={`mailto:${site.email}?subject=Privacy%20rights%20request`}
             size="lg"
             magnetic
             iconLeft={<Scale className="size-5" />}

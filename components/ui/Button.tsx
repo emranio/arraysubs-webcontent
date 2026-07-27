@@ -8,6 +8,7 @@ import type {
 } from "react";
 import { cn } from "@/lib/cn";
 import { Magnetic } from "@/components/animation/Magnetic";
+import { MailtoFallbackLink } from "./MailtoFallbackLink";
 
 /** Style variants are named by their look, per the design-system convention. */
 type Variant =
@@ -39,7 +40,7 @@ type ButtonProps = OwnProps &
     | ({ href: string } & Omit<
         AnchorHTMLAttributes<HTMLAnchorElement>,
         keyof OwnProps | "href"
-      >)
+      > & { mailtoUrl?: string })
     | ({ href?: undefined } & Omit<
         ButtonHTMLAttributes<HTMLButtonElement>,
         keyof OwnProps
@@ -121,7 +122,7 @@ export function Button({
         <span
           aria-hidden="true"
           className={cn(
-            "absolute inset-0 translate-y-[0.125rem] rounded-pill transition-transform duration-[600ms] [transition-timing-function:cubic-bezier(0.3,0.7,0.4,1)]",
+            "pointer-events-none absolute inset-0 translate-y-[0.125rem] rounded-pill transition-transform duration-[600ms] [transition-timing-function:cubic-bezier(0.3,0.7,0.4,1)]",
             "group-hover:translate-y-1 group-hover:duration-[250ms] group-hover:[transition-timing-function:cubic-bezier(0.3,0.7,0.4,1.5)]",
             "group-active:translate-y-[0.0625rem] group-active:duration-[34ms]",
             tone.shadow,
@@ -130,11 +131,14 @@ export function Button({
       )}
       <span
         aria-hidden="true"
-        className={cn("absolute inset-0 rounded-pill", tone.edge)}
+        className={cn(
+          "pointer-events-none absolute inset-0 rounded-pill",
+          tone.edge,
+        )}
       />
       <span
         className={cn(
-          "relative flex w-full items-center justify-center gap-2 rounded-pill transition-transform duration-[600ms] [transition-timing-function:cubic-bezier(0.3,0.7,0.4,1)] -translate-y-1",
+          "pointer-events-none relative flex w-full items-center justify-center gap-2 rounded-pill transition-transform duration-[600ms] [transition-timing-function:cubic-bezier(0.3,0.7,0.4,1)] -translate-y-1",
           "group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-hover:[transition-timing-function:cubic-bezier(0.3,0.7,0.4,1.5)]",
           "group-active:-translate-y-0.5 group-active:duration-[34ms]",
           sizes[size],
@@ -156,16 +160,40 @@ export function Button({
     </>
   );
 
-  const element =
-    rest.href !== undefined ? (
-      <Link
+  let element;
+
+  if (rest.href !== undefined) {
+    const {
+      href,
+      mailtoUrl,
+      ...anchorProps
+    } = rest as {
+      href: string;
+      mailtoUrl?: string;
+    } & AnchorHTMLAttributes<HTMLAnchorElement>;
+
+    element = mailtoUrl ? (
+      <MailtoFallbackLink
+        {...anchorProps}
         className={classes}
         data-button-layers={layers}
-        {...(rest as { href: string } & AnchorHTMLAttributes<HTMLAnchorElement>)}
+        fallbackUrl={href}
+        mailtoUrl={mailtoUrl}
+      >
+        {inner}
+      </MailtoFallbackLink>
+    ) : (
+      <Link
+        {...anchorProps}
+        href={href}
+        className={classes}
+        data-button-layers={layers}
       >
         {inner}
       </Link>
-    ) : (
+    );
+  } else {
+    element = (
       <button
         className={classes}
         data-button-layers={layers}
@@ -174,6 +202,7 @@ export function Button({
         {inner}
       </button>
     );
+  }
 
   if (!magnetic) return element;
   return (

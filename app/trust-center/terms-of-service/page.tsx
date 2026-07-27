@@ -212,11 +212,17 @@ export default function TermsOfServicePage() {
           </p>
           <p>
             Questions can be sent to{" "}
-            <InlineLink href={`mailto:${site.email}`}>{site.email}</InlineLink>
+            <InlineLink
+              href={site.contactUrl}
+              mailtoUrl={`mailto:${site.email}`}
+            >
+              {site.email}
+            </InlineLink>
             .
           </p>
           <Button
-            href={`mailto:${site.email}`}
+            href={site.contactUrl}
+            mailtoUrl={`mailto:${site.email}`}
             size="lg"
             magnetic
             iconLeft={<Mail className="size-5" />}

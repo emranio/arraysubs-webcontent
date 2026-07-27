@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle2, Send } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { site } from "@/lib/site";
 import { Button } from "../Button";
+import { MailtoFallbackLink } from "../MailtoFallbackLink";
 import { Field } from "./Field";
 import { Input } from "./Input";
 import { Textarea } from "./Textarea";
@@ -226,12 +227,12 @@ export function ContactForm({ className }: { className?: string }) {
           Privacy Policy
         </Link>
         . Prefer email? Write to{" "}
-        <a
-          href={`mailto:${site.email}`}
+        <MailtoFallbackLink
+          mailtoUrl={`mailto:${site.email}`}
           className="font-medium text-foreground underline decoration-primary decoration-2 underline-offset-4 hover:decoration-dark"
         >
           {site.email}
-        </a>
+        </MailtoFallbackLink>
       </p>
     </form>
   );

@@ -45,7 +45,8 @@ export default function EditorialStandardsPage() {
         ]}
         actions={
           <Button
-            href={`mailto:${site.email}?subject=Editorial%20correction`}
+            href={site.contactUrl}
+            mailtoUrl={`mailto:${site.email}?subject=Editorial%20correction`}
             size="lg"
             magnetic
             iconLeft={<Mail className="size-5" />}
@@ -133,8 +134,14 @@ export default function EditorialStandardsPage() {
         >
           <p>
             To report an error, email{" "}
-            <InlineLink href={`mailto:${site.email}`}>{site.email}</InlineLink>{" "}
-            or use the <InlineLink href="/contact/">contact page</InlineLink>.
+            <InlineLink
+              href={site.contactUrl}
+              mailtoUrl={`mailto:${site.email}`}
+            >
+              {site.email}
+            </InlineLink>{" "}
+            or use the{" "}
+            <InlineLink href={site.contactUrl}>contact page</InlineLink>.
             Please include the article URL, the disputed statement, and
             supporting evidence when available.
           </p>
@@ -212,7 +219,13 @@ export default function EditorialStandardsPage() {
           </p>
           <p>
             Editorial and correction questions can be sent to{" "}
-            <InlineLink href={`mailto:${site.email}`}>{site.email}</InlineLink>.
+            <InlineLink
+              href={site.contactUrl}
+              mailtoUrl={`mailto:${site.email}`}
+            >
+              {site.email}
+            </InlineLink>
+            .
           </p>
         </PolicySection>
       </PolicyBody>

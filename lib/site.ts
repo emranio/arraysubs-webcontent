@@ -27,6 +27,8 @@ export const site = {
   lang: "en",
   locale: "en_US",
   email: "emran@arraysubs.com",
+  /** Direct fallback target for email actions when no mail client opens. */
+  contactUrl: "/contact/#contact-form",
   defaultTitle:
     "ArraySubs — Free WooCommerce Subscription & Membership Plugin",
   titleTemplate: "%s — ArraySubs",

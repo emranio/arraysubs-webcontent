@@ -17,6 +17,7 @@ import {
   Button,
   Container,
   CTA,
+  MailtoFallbackLink,
   OrganicPortrait,
   PageHero,
   Pagination,
@@ -296,15 +297,18 @@ export default async function AuthorPage({
                   Published by {site.name} · {site.brand}. Reach the team to
                   verify authorship or request a correction.
                 </p>
-                <a
-                  href={`mailto:${author.email}`}
+                <MailtoFallbackLink
+                  mailtoUrl={`mailto:${author.email}`}
                   className="mt-4 inline-flex items-center gap-2 font-medium underline underline-offset-4"
                 >
-                  <Mail aria-hidden="true" className="size-4" />
+                  <Mail
+                    aria-hidden="true"
+                    className="pointer-events-none size-4"
+                  />
                   {author.email}
-                </a>
+                </MailtoFallbackLink>
                 <div className="mt-3">
-                  <Button href="/contact/" variant="dark" size="sm">
+                  <Button href={site.contactUrl} variant="dark" size="sm">
                     Contact the team
                   </Button>
                 </div>

@@ -43,7 +43,8 @@ export default function PrivacyPolicyPage() {
         ]}
         actions={
           <Button
-            href={`mailto:${site.email}`}
+            href={site.contactUrl}
+            mailtoUrl={`mailto:${site.email}`}
             size="lg"
             magnetic
             iconLeft={<Mail className="size-5" />}
@@ -430,7 +431,12 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>
             Email{" "}
-            <InlineLink href={`mailto:${site.email}`}>{site.email}</InlineLink>{" "}
+            <InlineLink
+              href={site.contactUrl}
+              mailtoUrl={`mailto:${site.email}`}
+            >
+              {site.email}
+            </InlineLink>{" "}
             to exercise your rights. We respond within 30 days unless a legally
             permitted extension applies. More details are available on the{" "}
             <InlineLink href="/trust-center/gdpr-ccpa-compliance/">
@@ -456,7 +462,13 @@ export default function PrivacyPolicyPage() {
             reflected by the last reviewed date on this page.
           </p>
           <p>
-            Contact: <InlineLink href={`mailto:${site.email}`}>{site.email}</InlineLink>
+            Contact:{" "}
+            <InlineLink
+              href={site.contactUrl}
+              mailtoUrl={`mailto:${site.email}`}
+            >
+              {site.email}
+            </InlineLink>
           </p>
           <PolicyNote title="Policy owner">
             <p>

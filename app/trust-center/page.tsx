@@ -120,7 +120,7 @@ export default function TrustCenterPage() {
             </div>
             <div className="flex shrink-0 flex-wrap gap-3">
               <Button
-                href="/contact/"
+                href={site.contactUrl}
                 size="md"
                 magnetic
                 iconRight={<ArrowRight className="size-4" />}
@@ -128,7 +128,8 @@ export default function TrustCenterPage() {
                 Contact us
               </Button>
               <Button
-                href={`mailto:${site.email}`}
+                href={site.contactUrl}
+                mailtoUrl={`mailto:${site.email}`}
                 variant="outline"
                 size="md"
                 iconRight={<Mail className="size-4" />}
@@ -237,7 +238,10 @@ export default function TrustCenterPage() {
               <p className="mt-3 text-muted">
                 To request access, correction, deletion or other privacy rights,
                 email{" "}
-                <InlineLink href={`mailto:${site.email}`}>
+                <InlineLink
+                  href={site.contactUrl}
+                  mailtoUrl={`mailto:${site.email}`}
+                >
                   {site.email}
                 </InlineLink>
                 . See the{" "}
@@ -262,7 +266,8 @@ export default function TrustCenterPage() {
             actions={
               <>
                 <Button
-                  href={`mailto:${site.email}`}
+                  href={site.contactUrl}
+                  mailtoUrl={`mailto:${site.email}`}
                   variant="dark"
                   size="lg"
                   layers="2layer"
@@ -271,7 +276,7 @@ export default function TrustCenterPage() {
                   Email {site.name}
                 </Button>
                 <Button
-                  href="/contact/"
+                  href={site.contactUrl}
                   variant="outline"
                   size="lg"
                   layers="2layer"

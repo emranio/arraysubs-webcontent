@@ -41,7 +41,8 @@ export default function RefundPolicyPage() {
         ]}
         actions={
           <Button
-            href={`mailto:${site.email}?subject=ArraySubs%20refund%20request`}
+            href={site.contactUrl}
+            mailtoUrl={`mailto:${site.email}?subject=ArraySubs%20refund%20request`}
             size="lg"
             magnetic
             iconLeft={<Mail className="size-5" />}
@@ -148,7 +149,12 @@ export default function RefundPolicyPage() {
           />
           <p>
             If you are unsure whether an order qualifies, email{" "}
-            <InlineLink href={`mailto:${site.email}`}>{site.email}</InlineLink>
+            <InlineLink
+              href={site.contactUrl}
+              mailtoUrl={`mailto:${site.email}`}
+            >
+              {site.email}
+            </InlineLink>
             . Include the order email and country so we can locate the
             transaction.
           </p>
@@ -201,7 +207,12 @@ export default function RefundPolicyPage() {
         <PolicySection title="Contact">
           <p>
             Refund requests and billing questions should be sent to{" "}
-            <InlineLink href={`mailto:${site.email}`}>{site.email}</InlineLink>
+            <InlineLink
+              href={site.contactUrl}
+              mailtoUrl={`mailto:${site.email}`}
+            >
+              {site.email}
+            </InlineLink>
             . For privacy details related to payments, see the{" "}
             <InlineLink href="/trust-center/privacy-policy/">
               Privacy Policy

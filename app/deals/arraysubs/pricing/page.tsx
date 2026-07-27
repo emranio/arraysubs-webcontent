@@ -26,6 +26,7 @@ import {
   Container,
   CTA,
   IconCard,
+  MailtoFallbackLink,
   ModuleShowcase,
   PageHero,
   Section,
@@ -279,12 +280,12 @@ export default function ArraySubsPricingPage() {
                   I value support the most.
                 </span>{" "}
                 For any support, email{" "}
-                <a
-                  href="mailto:emran@arrayhash.com"
+                <MailtoFallbackLink
+                  mailtoUrl={`mailto:${site.email}`}
                   className="font-semibold text-primary underline decoration-current underline-offset-4"
                 >
-                  emran@arrayhash.com
-                </a>
+                  {site.email}
+                </MailtoFallbackLink>
                 . I will help you out. I always do.
               </p>
             </div>

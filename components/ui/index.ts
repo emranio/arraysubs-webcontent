@@ -6,6 +6,7 @@ export { ArrayHashMark } from "./ArrayHashMark";
 export { Eyebrow } from "./Eyebrow";
 export { SectionTitle } from "./SectionTitle";
 export { Button } from "./Button";
+export { MailtoFallbackLink } from "./MailtoFallbackLink";
 export { Badge } from "./Badge";
 export { EditorialArtwork } from "./EditorialArtwork";
 export { OrganicPortrait } from "./OrganicPortrait";

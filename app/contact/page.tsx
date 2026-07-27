@@ -71,7 +71,8 @@ export default function ContactPage() {
             <Button
               size="lg"
               magnetic
-              href={`mailto:${site.email}`}
+              href={site.contactUrl}
+              mailtoUrl={`mailto:${site.email}`}
               iconLeft={<Mail className="size-5" />}
             >
               Email us
@@ -125,7 +126,8 @@ export default function ContactPage() {
                 icon={<Mail className="size-6" />}
                 title="Email us"
                 description={site.email}
-                href={`mailto:${site.email}`}
+                href={site.contactUrl}
+                mailtoUrl={`mailto:${site.email}`}
               />
               <IconCard
                 icon={<FacebookIcon className="size-6" />}

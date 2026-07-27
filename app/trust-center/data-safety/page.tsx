@@ -270,12 +270,18 @@ export default function DataSafetyPage() {
         <PolicySection title="Contact">
           <p>
             Data safety questions can be sent to{" "}
-            <InlineLink href={`mailto:${site.email}`}>{site.email}</InlineLink>
+            <InlineLink
+              href={site.contactUrl}
+              mailtoUrl={`mailto:${site.email}`}
+            >
+              {site.email}
+            </InlineLink>
             . For privacy rights, include the email address connected to your
             ArrayHash signup, newsletter, support, checkout or license record.
           </p>
           <Button
-            href={`mailto:${site.email}`}
+            href={site.contactUrl}
+            mailtoUrl={`mailto:${site.email}`}
             size="lg"
             magnetic
             iconLeft={<Mail className="size-5" />}

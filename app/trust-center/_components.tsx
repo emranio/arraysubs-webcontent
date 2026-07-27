@@ -2,7 +2,14 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Mail } from "lucide-react";
 import { site } from "@/lib/site";
-import { Button, CTA, Container, Section, SectionTitle } from "@/components/ui";
+import {
+  Button,
+  CTA,
+  Container,
+  MailtoFallbackLink,
+  Section,
+  SectionTitle,
+} from "@/components/ui";
 
 export const REVIEWED_DATE = "June 7, 2026";
 export const EFFECTIVE_DATE = "April 10, 2026";
@@ -186,16 +193,30 @@ export function PolicyNote({
 
 export function InlineLink({
   href,
+  mailtoUrl,
   children,
 }: {
   href: string;
+  mailtoUrl?: string;
   children: ReactNode;
 }) {
+  const className =
+    "font-semibold text-foreground underline decoration-primary decoration-2 underline-offset-4 hover:decoration-dark";
+
+  if (mailtoUrl) {
+    return (
+      <MailtoFallbackLink
+        fallbackUrl={href}
+        mailtoUrl={mailtoUrl}
+        className={className}
+      >
+        {children}
+      </MailtoFallbackLink>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className="font-semibold text-foreground underline decoration-primary decoration-2 underline-offset-4 hover:decoration-dark"
-    >
+    <Link href={href} className={className}>
       {children}
     </Link>
   );
@@ -273,7 +294,8 @@ export function TrustContactCta({
           actions={
             <>
               <Button
-                href={`mailto:${site.email}`}
+                href={site.contactUrl}
+                mailtoUrl={`mailto:${site.email}`}
                 variant="dark"
                 size="lg"
                 layers="2layer"
@@ -283,7 +305,7 @@ export function TrustContactCta({
                 Email {site.name}
               </Button>
               <Button
-                href="/contact/"
+                href={site.contactUrl}
                 variant="outline"
                 size="lg"
                 layers="2layer"
