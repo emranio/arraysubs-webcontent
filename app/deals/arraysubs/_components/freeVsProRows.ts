@@ -147,7 +147,29 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
         proOnly: true,
       },
       {
+        label: "Automatic renewals via Mollie (card & SEPA Direct Debit mandates)",
+        proOnly: true,
+      },
+      {
+        label: "Automatic renewals via Braintree (vaulted cards)",
+        proOnly: true,
+      },
+      {
         label: "SCA / 3D Secure handling, off-session for renewals",
+        proOnly: true,
+        proNote: "Stripe, PayPal, Paddle & Mollie",
+      },
+      {
+        label: "Delayed-settlement renewals tracked to completion (SEPA Direct Debit)",
+        proOnly: true,
+        proNote: "Mollie",
+      },
+      {
+        label: "Missed-webhook reconciliation sweep for unconfirmed renewals",
+        proOnly: true,
+      },
+      {
+        label: "Double-charge protection on interrupted renewal attempts",
         proOnly: true,
       },
       {
@@ -199,7 +221,7 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
       },
       {
         label: "Self-service payment-method update",
-        proNote: "Stripe / PayPal / Paddle",
+        proNote: "Stripe / PayPal / Paddle / Mollie / Braintree",
         proOnly: true,
       },
     ],
@@ -380,6 +402,10 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
       },
       {
         label: "Gateway Health: webhook status & connection monitoring",
+        proOnly: true,
+      },
+      {
+        label: "Per-gateway capability notes explaining what each provider can't do",
         proOnly: true,
       },
       {
