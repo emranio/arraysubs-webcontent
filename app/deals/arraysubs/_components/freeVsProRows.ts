@@ -109,6 +109,11 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
         proOnly: true,
       },
       {
+        label: "Merchant-curated subscription bundles (fixed contents, one Add to Cart, one recurring price)",
+        proOnly: true,
+        proNote: "Fixed or % bundle discount",
+      },
+      {
         label: "Installment / split payments on a fixed-price product",
         hint: "Coming soon",
         proOnly: true,

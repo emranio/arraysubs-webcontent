@@ -14,6 +14,7 @@ import {
   Mail,
   MessageSquareLock,
   PackageCheck,
+  PackagePlus,
   Palette,
   ReceiptText,
   Repeat,
@@ -1260,6 +1261,92 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["subscription-products", "renewal-sync", "feature-manager"],
+  }),
+  buildFeature({
+    slug: "subscription-bundle",
+    category: "products-checkout",
+    icon: PackagePlus,
+    name: "Subscription Bundle",
+    cardDescription:
+      "Sell a fixed bundle of products as one subscription, with a bundle-wide discount and a single Add to Cart click.",
+    tier: "Pro",
+    summary:
+      "Curate the contents yourself and bill the whole bundle as a single subscription the customer buys in one click.",
+    h1: "Sell curated product bundles as one subscription",
+    highlights: ["Pro product type", "Fixed contents", "One Add to Cart"],
+    intro:
+      "Subscription Bundle is a Pro WooCommerce product type where ==you fix the contents and the customer buys the whole bundle with a single Add to Cart click==. Everything is configured from the product's General tab: a modal wizard sets the billing cycle, the products in the bundle, one bundle-wide discount, and the bundle's own renewal sync plan.",
+    capabilities: [
+      {
+        title: "Dedicated bundle product type",
+        description:
+          "Choosing Subscription Bundle [ArraySubs] puts every bundle control in the product's General tab behind one Edit Bundle Configuration modal.",
+      },
+      {
+        title: "Merchant-curated contents",
+        description:
+          "A searchable picker adds products to an ordered list where each row carries its own quantity and can be reordered or removed, with a live subtotal underneath.",
+      },
+      {
+        title: "Cycle-matched contents",
+        description:
+          "Only simple products are eligible: plain catalog items that ship with every payment, or subscription products whose billing period and interval match the bundle exactly.",
+      },
+      {
+        title: "One bundle-wide discount",
+        description:
+          "A fixed amount or a percentage off the subtotal, with a live preview of subtotal, discount and bundle total. It applies to every payment, including renewals.",
+      },
+      {
+        title: "No wizard for the customer",
+        description:
+          "The product page lists what is included and the Add to Cart button uses your subscription button text, so a bundle reads like any other subscription product.",
+      },
+      {
+        title: "Linked child subscriptions",
+        description:
+          "Every subscription product inside the bundle gets its own zero-value subscription tied to the bundle, so member access and feature entitlements keep working per product.",
+      },
+      {
+        title: "Per-bundle renewal sync",
+        description:
+          "Give a bundle its own segment plan, or leave it following the store-wide renewal sync setting like any other subscription product.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "3", label: "Wizard steps" },
+      { value: "1", label: "Cart line" },
+      { value: "1", label: "Click to buy" },
+    ],
+    faq: [
+      {
+        question: "Does Subscription Bundle require Pro?",
+        answer:
+          "Yes. The Subscription Bundle product type ships in ArraySubs Pro. It adds a new WooCommerce product type rather than a separate admin menu.",
+      },
+      {
+        question: "How is this different from Subscription Box?",
+        answer:
+          "A box is assembled by the customer through a multi-step wizard on the product page. A bundle is curated by you: the contents are fixed, there is no wizard, and the customer buys it with one Add to Cart click.",
+      },
+      {
+        question: "Which products can go inside a bundle?",
+        answer:
+          "Simple products only: non-subscription items, which ship with every payment for as long as the subscription runs, and subscription products whose billing period and interval match the bundle. Products using a different renewal price are excluded, and trials are switched off inside a bundle.",
+      },
+      {
+        question: "How is a bundle priced?",
+        answer:
+          "The bundle total is the sum of its contents at their current prices, minus the bundle discount. It is recomputed on the server on every cart and checkout load, so editing a bundle reprices it everywhere immediately.",
+      },
+      {
+        question: "How many subscriptions does a bundle create?",
+        answer:
+          "One billed subscription for the bundle, plus a zero-value child subscription for each subscription product inside it. Children never invoice on their own; they mirror the bundle's status, dates, and payment count, and they are cancelled, expired, or deleted with it.",
+      },
+    ],
+    related: ["subscription-box", "subscription-products", "renewal-sync"],
   }),
   buildFeature({
     slug: "stripe-payments",
