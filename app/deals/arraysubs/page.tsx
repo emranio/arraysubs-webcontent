@@ -134,7 +134,7 @@ const BENEFIT_BLOCKS: BenefitBlock[] = [
   {
     eyebrow: "Recurring billing",
     title: "Renewals that collect themselves",
-    lead: "Stripe, PayPal, and Paddle run automatic off-session renewals with Pro, while the free core keeps 500+ WooCommerce gateways working through manual renewal invoices.",
+    lead: "Stripe, PayPal, Paddle, and Mollie run automatic off-session renewals with Pro, while the free core keeps 500+ WooCommerce gateways working through manual renewal invoices.",
     bullets: [
       "ArraySubs-managed Stripe billing with saved cards and SCA handling",
       "Failed payments hit auto-retry, a 2-phase grace period, or auto-downgrade — not churn",
@@ -348,7 +348,7 @@ const STEPS = [
   {
     title: "Switch on Pro when it pays",
     description:
-      "Add automatic Stripe, PayPal, and Paddle renewals, failed-payment recovery, store credit, and advanced analytics.",
+      "Add automatic Stripe, PayPal, Paddle, and Mollie renewals, failed-payment recovery, store credit, and advanced analytics.",
   },
 ];
 
@@ -360,7 +360,7 @@ const FAQ_ITEMS = [
   {
     question: "Which payment gateways renew subscriptions automatically?",
     answer:
-      "Stripe, PayPal, and Paddle run automatic off-session renewals with ArraySubs Pro. On the free core, renewals create invoices that customers pay through any of the 500+ WooCommerce-compatible gateways, including offline methods like bank transfer.",
+      "Stripe, PayPal, Paddle, and Mollie run automatic off-session renewals with ArraySubs Pro. On the free core, renewals create invoices that customers pay through any of the 500+ WooCommerce-compatible gateways, including offline methods like bank transfer.",
   },
   {
     question: "Can I restrict content by subscription plan?",

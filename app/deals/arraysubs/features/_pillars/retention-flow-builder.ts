@@ -177,7 +177,7 @@ export const retentionFlowBuilder: FeaturePillar = {
       "Automatic retry of failed renewal payments",
       "Auto-downgrade to a fallback plan when recovery fails",
       "Refund to store credit so refunded value stays in the store",
-      "Self-service payment-method updates via Stripe, PayPal, or Paddle",
+      "Self-service payment-method updates via Stripe, PayPal, Paddle, or Mollie",
     ],
   },
   moduleSlugs: [

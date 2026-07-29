@@ -182,7 +182,7 @@ const WHY_SWITCH = [
     icon: <PanelsTopLeft className="size-6" />,
     title: "Checkout and payments depth",
     description:
-      "Checkout and Payments covers subscription checkout, manual fallback, Stripe, PayPal, Paddle, and Pro checkout customization.",
+      "Checkout and Payments covers subscription checkout, manual fallback, Stripe, PayPal, Paddle, Mollie, and Pro checkout customization.",
   },
   {
     icon: <Rocket className="size-6" />,

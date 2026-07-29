@@ -20,7 +20,7 @@ export const customerPortal: FeaturePillar = {
     "Pro payment-method updates",
   ],
   directAnswer:
-    "The ArraySubs customer portal is a free subscription self-service area inside WooCommerce My Account. Customers see billing terms, related orders, and invoices for each subscription, and run seven core lifecycle actions — cancel, undo a scheduled cancellation, reactivate, pause, resume, skip the next renewal, and switch plans — plus pay pending renewal invoices. Pro adds payment-method updates for Stripe, PayPal, and Paddle, an auto-renew toggle, and shipping address changes.",
+    "The ArraySubs customer portal is a free subscription self-service area inside WooCommerce My Account. Customers see billing terms, related orders, and invoices for each subscription, and run seven core lifecycle actions — cancel, undo a scheduled cancellation, reactivate, pause, resume, skip the next renewal, and switch plans — plus pay pending renewal invoices. Pro adds payment-method updates for Stripe, PayPal, Paddle, and Mollie, an auto-renew toggle, and shipping address changes.",
   intro:
     "Every subscription question a customer emails you — when do I renew, how do I cancel, can I switch to annual — is a portal page they could have opened themselves. The free portal puts ==seven lifecycle actions== inside WooCommerce My Account, from cancel-with-undo to plan switching with your store's proration method. Cancel attempts can route through the ==3-step retention flow== before they complete, and every failed portal action is logged for admins. You decide which actions are exposed, and ==Pro adds payment-method updates==, an auto-renew toggle, and shipping address changes.",
   stats: [
@@ -75,7 +75,7 @@ export const customerPortal: FeaturePillar = {
     {
       title: "Payment method & auto-renew",
       description:
-        "Customers update their card or billing agreement on Stripe, PayPal, or Paddle and toggle auto-renew.",
+        "Customers update their card, mandate, or billing agreement on Stripe, PayPal, Paddle, or Mollie and toggle auto-renew.",
       tier: "Pro",
     },
     {
@@ -122,7 +122,7 @@ export const customerPortal: FeaturePillar = {
       id: "payment-methods",
       question: "How do customers update their payment method?",
       paragraphs: [
-        "With ArraySubs Pro, customers update the payment method behind a subscription from the portal on ==Stripe, PayPal, or Paddle== — a new card or a fresh billing agreement, no support involvement. The auto-renew toggle and shipping address updates live in the same Pro action set.",
+        "With ArraySubs Pro, customers update the payment method behind a subscription from the portal on ==Stripe, PayPal, Paddle, or Mollie== — a new card, mandate, or billing agreement, no support involvement. The auto-renew toggle and shipping address updates live in the same Pro action set.",
         "It is the highest-leverage Pro upgrade for stores on automatic renewals, because an expired card is the most common problem a customer can fix alone. And every failed portal action is ==logged for admins==, so when a customer says “it did not work,” support sees exactly what happened.",
       ],
     },
@@ -176,7 +176,7 @@ export const customerPortal: FeaturePillar = {
       "Portal failure logs and Login as User for support",
     ],
     pro: [
-      "Self-service payment-method updates on Stripe, PayPal, and Paddle",
+      "Self-service payment-method updates on Stripe, PayPal, Paddle, and Mollie",
       "Auto-renew toggle per subscription",
       "Shipping address updates",
       "My Features and Store Credit account pages",
@@ -225,7 +225,7 @@ export const customerPortal: FeaturePillar = {
     {
       question: "How do customers update their card for renewals?",
       answer:
-        "With Pro, customers open the subscription in My Account and update the payment method directly on Stripe, PayPal, or Paddle. No support involvement is needed — which matters, because expired cards are the renewal problem customers can fix themselves.",
+        "With Pro, customers open the subscription in My Account and update the payment method directly on Stripe, PayPal, Paddle, or Mollie. No support involvement is needed — which matters, because expired cards are the renewal problem customers can fix themselves.",
     },
     {
       question: "Can customers pause instead of cancelling?",

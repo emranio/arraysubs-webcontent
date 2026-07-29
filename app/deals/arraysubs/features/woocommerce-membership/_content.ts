@@ -41,7 +41,7 @@ export const FREE_MEMBERSHIP_FEATURES = [
 ] as const;
 
 export const PRO_MEMBERSHIP_FEATURES = [
-  "Automatic off-session renewals through Stripe, PayPal, and Paddle",
+  "Automatic off-session renewals through Stripe, PayPal, Paddle, and Mollie",
   "Per-plan feature entitlements and numeric allowance checks",
   "Fixed-date membership periods and customer-chosen subscription duration",
   "Concurrent-login limits with plan-level overrides",
@@ -64,7 +64,7 @@ export const FAQ_ITEMS = [
     question:
       "Can I create recurring memberships without a separate subscription plugin?",
     answer:
-      "Yes. ArraySubs creates simple and variable subscription products and connects their lifecycle directly to membership access. The free core supports renewal invoices that customers pay manually; ArraySubs Pro adds automatic off-session billing through Stripe, PayPal, and Paddle.",
+      "Yes. ArraySubs creates simple and variable subscription products and connects their lifecycle directly to membership access. The free core supports renewal invoices that customers pay manually; ArraySubs Pro adds automatic off-session billing through Stripe, PayPal, Paddle, and Mollie.",
   },
   {
     question: "Is ArraySubs membership access really free?",

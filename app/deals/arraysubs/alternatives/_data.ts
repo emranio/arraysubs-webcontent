@@ -167,7 +167,7 @@ export const COMPARISONS: Comparison[] = [
           row("Two-phase grace period", yes(), yes(), part("basic")),
           row("Auto-retry failed payments", no(), yes(), yes()),
           row("Gifting subscriptions", no(), no(), yes()),
-          row("Payment gateways", part("manual"), txt("Stripe/PayPal/Paddle"), txt("25+")),
+          row("Payment gateways", part("manual"), txt("Stripe/PayPal/Paddle/Mollie"), txt("25+")),
         ],
       },
       {
@@ -211,7 +211,7 @@ export const COMPARISONS: Comparison[] = [
       {
         title: "Payment gateway breadth",
         description:
-          "WooCommerce Subscriptions integrates 25+ gateways — its biggest moat. ArraySubs covers Stripe, PayPal and Paddle automatically plus manual renewal on any gateway.",
+          "WooCommerce Subscriptions integrates 25+ gateways — its biggest moat. ArraySubs covers Stripe, PayPal, Paddle and Mollie automatically plus manual renewal on any gateway.",
         winner: "competitor",
       },
       {
@@ -253,7 +253,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Does ArraySubs support automatic recurring payments like WooCommerce Subscriptions?",
         answer:
-          "Yes. ArraySubs Pro adds automatic recurring billing via Stripe, PayPal and Paddle, and the free core supports manual renewal on any WooCommerce gateway.",
+          "Yes. ArraySubs Pro adds automatic recurring billing via Stripe, PayPal, Paddle and Mollie, and the free core supports manual renewal on any WooCommerce gateway.",
       },
     ],
     related: ["woocommerce-memberships", "yith-woocommerce-subscription", "wpsubscription"],
@@ -481,7 +481,7 @@ export const COMPARISONS: Comparison[] = [
           row("Skip next renewal", yes(), yes(), no()),
           row("Auto-suspend / retry on failure", yes("auto-downgrade, Pro"), yes(), yes("premium")),
           row("Subscription box module", no(), no(), yes("premium")),
-          row("Gateways", part("manual"), txt("Stripe/PayPal/Paddle"), txt("YITH add-ons")),
+          row("Gateways", part("manual"), txt("Stripe/PayPal/Paddle/Mollie"), txt("YITH add-ons")),
         ],
       },
       {
@@ -512,7 +512,7 @@ export const COMPARISONS: Comparison[] = [
       {
         title: "No gateway lock-in",
         description:
-          "ArraySubs supports Stripe, PayPal and Paddle directly. YITH's automatic gateways mostly require buying additional YITH plugins (YITH Stripe, PayPal Express), raising the real cost.",
+          "ArraySubs supports Stripe, PayPal, Paddle and Mollie directly. YITH's automatic gateways mostly require buying additional YITH plugins (YITH Stripe, PayPal Express), raising the real cost.",
         winner: "arraysubs",
       },
       {
@@ -787,7 +787,7 @@ export const COMPARISONS: Comparison[] = [
           row("Two-phase grace period", yes(), yes(), part("retry only")),
           row("Auto-retry failed payments", no(), yes(), part("Pro")),
           row("Subscription box", no(), no(), yes("free")),
-          row("Multiple gateways", part("manual"), txt("Stripe/PayPal/Paddle"), part("4 free, +Pro")),
+          row("Multiple gateways", part("manual"), txt("Stripe/PayPal/Paddle/Mollie"), part("4 free, +Pro")),
         ],
       },
       {
@@ -1091,7 +1091,7 @@ export const COMPARISONS: Comparison[] = [
           row("Different renewal price", yes(), yes(), part("Pro")),
           row("Skip next renewal", yes(), yes(), no()),
           row("Grace period", yes(), yes(), yes("Pro")),
-          row("Payment gateways", part("manual"), txt("Stripe/PayPal/Paddle"), txt("7 gateways")),
+          row("Payment gateways", part("manual"), txt("Stripe/PayPal/Paddle/Mollie"), txt("7 gateways")),
         ],
       },
       {

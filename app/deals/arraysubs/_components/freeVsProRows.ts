@@ -151,10 +151,6 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
         proOnly: true,
       },
       {
-        label: "Automatic renewals via Braintree (vaulted cards)",
-        proOnly: true,
-      },
-      {
         label: "SCA / 3D Secure handling, off-session for renewals",
         proOnly: true,
         proNote: "Stripe, PayPal, Paddle & Mollie",
@@ -194,7 +190,7 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
       {
         label: "Let customers renew early, before the due date",
         proOnly: true,
-        proNote: "Stripe & manual",
+        proNote: "Stripe, Mollie & manual",
       },
     ],
   },
@@ -221,7 +217,7 @@ export const FREE_VS_PRO_GROUPS: FvpGroup[] = [
       },
       {
         label: "Self-service payment-method update",
-        proNote: "Stripe / PayPal / Paddle / Mollie / Braintree",
+        proNote: "Stripe / PayPal / Paddle / Mollie",
         proOnly: true,
       },
     ],

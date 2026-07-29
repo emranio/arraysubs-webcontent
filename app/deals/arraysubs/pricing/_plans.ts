@@ -67,7 +67,7 @@ export const PRO_PLAN_FEATURES = [
   "Every current ArraySubs Pro module and workflow",
   "Future Pro workflows as they ship",
   "Store Credit, Checkout Builder, and Feature Manager",
-  "Automatic recurring payments with Stripe, PayPal, and Paddle",
+  "Automatic recurring payments with Stripe, PayPal, Paddle, and Mollie",
   "Advanced analytics, audit logs, Gateway Health, and Member Insight",
   "30-day money-back guarantee",
 ];

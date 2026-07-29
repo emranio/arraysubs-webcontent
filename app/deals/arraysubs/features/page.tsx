@@ -78,7 +78,7 @@ const SYSTEMS = [
     tag: "Payments",
     title: "Gateways, manual payments, and tax",
     description:
-      "Stripe, Paddle, PayPal, WooCommerce manual payments, and WooCommerce tax handling explain how subscription payments are collected.",
+      "Stripe, Paddle, PayPal, Mollie, WooCommerce manual payments, and WooCommerce tax handling explain how subscription payments are collected.",
   },
   {
     tag: "Operations",
@@ -151,7 +151,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Which features are Pro-only?",
-    answer: `There are ${PRO_ONLY_MODULE_COUNT} Pro-only features, including the Checkout Page Builder, automatic Stripe/PayPal/Paddle billing, Flexible Renewal Sync, Auto-Retry, Auto-Downgrade, Fixed-Date Subscriptions, Customer-Chosen Subscription Duration, Subscription Shipping, Product Page Redirection, Multi-Login Prevention, Feature Manager, Feature-Based Conditions, Member Insight, Store Credit, Gateway Health, Early Renew, and the coming-soon Installment / Split Payments and Donation & Crowdfunding modules.`,
+    answer: `There are ${PRO_ONLY_MODULE_COUNT} Pro-only features, including the Checkout Page Builder, automatic Stripe/PayPal/Paddle/Mollie billing, Flexible Renewal Sync, Auto-Retry, Auto-Downgrade, Fixed-Date Subscriptions, Customer-Chosen Subscription Duration, Subscription Shipping, Product Page Redirection, Multi-Login Prevention, Feature Manager, Feature-Based Conditions, Member Insight, Store Credit, Gateway Health, Early Renew, and the coming-soon Installment / Split Payments and Donation & Crowdfunding modules.`,
   },
   {
     question: "Are all features in one plugin, or paid add-ons?",

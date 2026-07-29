@@ -161,12 +161,12 @@ const FAQ_ITEMS = [
   {
     question: "What does ArraySubs Pro add?",
     answer:
-      "Store credit, the checkout builder, automatic payments (Stripe, PayPal, Paddle), advanced analytics, audit logs, the feature manager and more.",
+      "Store credit, the checkout builder, automatic payments (Stripe, PayPal, Paddle, Mollie), advanced analytics, audit logs, the feature manager and more.",
   },
   {
-    question: "Does it support Stripe, PayPal and Paddle?",
+    question: "Does it support Stripe, PayPal, Paddle and Mollie?",
     answer:
-      "Free supports manual renewals with any WooCommerce gateway. Pro adds automatic recurring payments with Stripe (SCA/3DS), PayPal billing agreements and Paddle as merchant of record.",
+      "Free supports manual renewals with any WooCommerce gateway. Pro adds automatic recurring payments with Stripe (SCA/3DS), PayPal billing agreements, Paddle as merchant of record and Mollie card/SEPA mandates.",
   },
   {
     question: "Can I use memberships without subscriptions?",
@@ -609,7 +609,7 @@ export default function DesignSystemPage() {
               badge="Paid Pro"
               title="ArraySubs Pro"
               eyebrow="Unlock the full subscription stack"
-              description="Adds store credit, the visual checkout builder, automatic payments (Stripe / PayPal / Paddle), advanced analytics and audit logs."
+              description="Adds store credit, the visual checkout builder, automatic payments (Stripe / PayPal / Paddle / Mollie), advanced analytics and audit logs."
               metaLabel="From"
               metaValue="$129"
               metaSuffix="/ year"
@@ -713,7 +713,7 @@ export default function DesignSystemPage() {
                 bare
                 tag="Recurring"
                 title="Automatic payments"
-                description="Stripe, PayPal and Paddle with SCA/3DS, billing agreements and merchant-of-record support."
+                description="Stripe, PayPal, Paddle and Mollie with SCA/3DS, billing agreements, merchant-of-record and SEPA mandate support."
                 href="#tag-cards"
               />
               <TagCard

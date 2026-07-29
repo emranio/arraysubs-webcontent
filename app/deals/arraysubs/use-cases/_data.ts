@@ -60,20 +60,20 @@ export const USE_CASES: UseCase[] = [
     icon: Monitor,
     name: "SaaS & Digital Products",
     cardDescription:
-      "Sell tiered software licenses and usage-based plans — feature-gated entitlements, automatic Stripe/PayPal/Paddle billing, and churn-saving retention.",
+      "Sell tiered software licenses and usage-based plans — feature-gated entitlements, automatic Stripe/PayPal/Paddle/Mollie billing, and churn-saving retention.",
     seoTitle: "WooCommerce Subscriptions for SaaS & Digital Products",
     metaDescription:
-      "Build a SaaS billing system on WooCommerce — tiered plans, feature-gated entitlements, usage credits, automatic Stripe, PayPal, and Paddle billing, dunning recovery, and retention flows in one plugin.",
+      "Build a SaaS billing system on WooCommerce — tiered plans, feature-gated entitlements, usage credits, automatic Stripe, PayPal, Paddle, and Mollie billing, dunning recovery, and retention flows in one plugin.",
     h1: "Sell SaaS & digital products with recurring billing",
     heroSubtitle:
       "Turn WooCommerce into a full SaaS billing engine — tiered plans, feature entitlements, usage credits, and automatic recurring payments, all on infrastructure you already own.",
     heroHighlights: [
       "Tiered plans & per-plan entitlements",
       "Usage credits & prepaid top-ups",
-      "Automatic Stripe, PayPal & Paddle billing",
+      "Automatic Stripe, PayPal, Paddle & Mollie billing",
     ],
     intro:
-      "SaaS vendors, plugin shops, and API platforms need four things in one place: ==recurring billing, feature-gated entitlements, usage limits, and churn prevention==. Most teams bolt together a payment gateway, an entitlements hack, a metering script, and a separate cancellation survey — then spend months keeping them in sync. ArraySubs turns WooCommerce into a ==complete SaaS billing engine== instead. Build Basic, Pro, and Enterprise as variable Subscription Products, define exactly what each tier unlocks with Feature Manager, meter usage with Store Credit wallets, collect payments automatically through ==First-Class Stripe Support, PayPal, or Paddle==, recover failed charges with Auto-Retry and a 2-Phase Grace Period, and intercept cancellations with the Retention Flow Builder — all from one plugin, with ==no per-transaction billing-platform fees==.",
+      "SaaS vendors, plugin shops, and API platforms need four things in one place: ==recurring billing, feature-gated entitlements, usage limits, and churn prevention==. Most teams bolt together a payment gateway, an entitlements hack, a metering script, and a separate cancellation survey — then spend months keeping them in sync. ArraySubs turns WooCommerce into a ==complete SaaS billing engine== instead. Build Basic, Pro, and Enterprise as variable Subscription Products, define exactly what each tier unlocks with Feature Manager, meter usage with Store Credit wallets, collect payments automatically through ==First-Class Stripe Support, PayPal, Paddle, or Mollie==, recover failed charges with Auto-Retry and a 2-Phase Grace Period, and intercept cancellations with the Retention Flow Builder — all from one plugin, with ==no per-transaction billing-platform fees==.",
     stats: [
       { value: "3-tier", label: "Basic / Pro / Enterprise" },
       { value: "MRR", label: "Churn & ARPU tracked" },
@@ -153,7 +153,7 @@ export const USE_CASES: UseCase[] = [
       {
         title: "Connect automatic payments",
         description:
-          "Add First-Class Stripe Support, PayPal, or Paddle for hands-off recurring billing with SCA/3DS support.",
+          "Add First-Class Stripe Support, PayPal, Paddle, or Mollie for hands-off recurring billing with SCA/3DS support.",
       },
       {
         title: "Turn on retention & analytics",
@@ -181,7 +181,7 @@ export const USE_CASES: UseCase[] = [
     outcomes: [
       "Reduce churn with retention flows that offer discounts or downgrades at cancellation.",
       "Grow MRR with Feature Manager upsells and Store Credit usage top-ups in one system.",
-      "Scale with automatic Stripe, PayPal, and Paddle billing — no manual invoicing.",
+      "Scale with automatic Stripe, PayPal, Paddle, and Mollie billing — no manual invoicing.",
       "Build trust by showing exactly what each tier includes on the product page.",
       "Track MRR, churn, ARPU, and trial conversion in real time.",
     ],
@@ -1738,12 +1738,12 @@ export const USE_CASE_CAN_DO: Record<string, UseCaseFaq[]> = {
     {
       question: "Can I let customers update their card themselves?",
       answer:
-        "Yes (Pro). The Customer Portal runs a secure Stripe update, or a re-authorization for PayPal and Paddle.",
+        "Yes (Pro). The Customer Portal runs a secure Stripe update, or a re-authorization for PayPal, Paddle and Mollie.",
     },
     {
       question: "Can I handle EU VAT without configuring tax?",
       answer:
-        "Yes (Pro). Paddle Payments acts as merchant of record and handles tax/VAT natively; Stripe and manual flows use WooCommerce Tax Handling.",
+        "Yes (Pro). Paddle Payments acts as merchant of record and handles tax/VAT natively; Stripe, Mollie and manual flows use WooCommerce Tax Handling.",
     },
     {
       question: "Can I build a multi-step checkout for signups?",

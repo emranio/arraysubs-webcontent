@@ -20,7 +20,7 @@ export const billingRenewalsAndRefunds: FeaturePillar = {
     "Prorated refunds built in",
   ],
   directAnswer:
-    "ArraySubs handles WooCommerce subscription billing end to end: the free core schedules renewals, creates renewal invoices payable through 500+ WooCommerce gateways, converts trials to paid, and protects failed payments with a 2-phase grace period. Pro adds automatic off-session collection via Stripe, PayPal, and Paddle, plus failed-payment retries, auto-downgrade to a fallback plan, and renewal date synchronization. Full, partial, and prorated refunds are free; Pro can refund to store credit instead of cash.",
+    "ArraySubs handles WooCommerce subscription billing end to end: the free core schedules renewals, creates renewal invoices payable through 500+ WooCommerce gateways, converts trials to paid, and protects failed payments with a 2-phase grace period. Pro adds automatic off-session collection via Stripe, PayPal, Paddle, and Mollie, plus failed-payment retries, auto-downgrade to a fallback plan, and renewal date synchronization. Full, partial, and prorated refunds are free; Pro can refund to store credit instead of cash.",
   intro:
     "Renewals are where subscription revenue is actually won or lost, so ArraySubs ships the entire renewal engine in the ==free core==: it schedules each cycle, generates the renewal invoice or order, converts trials to paid, and checks expirations. When a payment fails, a ==2-phase grace period== keeps access recoverable while the customer fixes billing — and Pro layers on automatic retries, fallback-plan downgrades, and synced renewal dates. Refund tooling is built into the same flow, from full and partial order refunds to ==prorated refunds based on unused time==.",
   stats: [
@@ -45,7 +45,7 @@ export const billingRenewalsAndRefunds: FeaturePillar = {
     {
       title: "Automatic off-session collection",
       description:
-        "Charge renewals without the customer present via Stripe saved cards with SCA, PayPal billing agreements, or Paddle as merchant of record.",
+        "Charge renewals without the customer present via Stripe saved cards with SCA, PayPal billing agreements, Paddle as merchant of record, or Mollie card and SEPA mandates.",
       tier: "Pro",
     },
     {
@@ -91,7 +91,7 @@ export const billingRenewalsAndRefunds: FeaturePillar = {
       question: "How do subscription renewals work in WooCommerce?",
       paragraphs: [
         "WooCommerce has no renewal engine of its own, so ArraySubs supplies one: when a billing cycle ends, it ==creates a renewal invoice or order==, applies WooCommerce tax, and routes it for payment. The same engine converts trials into their first paid renewal — calculated from the trial end date — and checks expirations so fixed-length plans stop exactly on schedule.",
-        "The entire engine ships in the free core: scheduling, invoices, trial conversion, and expiration checks. The free-vs-Pro line is collection — free renewals are paid by the customer through a payment link on ==any of 500+ WooCommerce gateways==, while Pro charges automatically off-session through Stripe, PayPal, or Paddle.",
+        "The entire engine ships in the free core: scheduling, invoices, trial conversion, and expiration checks. The free-vs-Pro line is collection — free renewals are paid by the customer through a payment link on ==any of 500+ WooCommerce gateways==, while Pro charges automatically off-session through Stripe, PayPal, Paddle, or Mollie.",
       ],
     },
     {
@@ -99,11 +99,11 @@ export const billingRenewalsAndRefunds: FeaturePillar = {
       question: "What is the difference between manual and automatic renewals?",
       paragraphs: [
         "A manual renewal creates a ==pending invoice with a payment link== and waits for the customer to pay it — through any of the 500+ WooCommerce-compatible gateways, including offline methods like bank transfer. It is free, works with the gateways you already have, and suits invoicing-driven businesses.",
-        "An automatic renewal collects without the customer present: with Pro, ==Stripe charges saved cards off-session== with SCA handling, PayPal collects through billing agreements, and Paddle bills as merchant of record. Automatic collection is the retention default; manual remains the right fit for B2B invoicing, bank-transfer markets, and unsupported gateways.",
+        "An automatic renewal collects without the customer present: with Pro, ==Stripe charges saved cards off-session== with SCA handling, PayPal collects through billing agreements, Paddle bills as merchant of record, and Mollie charges the mandate created at checkout. Automatic collection is the retention default; manual remains the right fit for B2B invoicing, bank-transfer markets, and unsupported gateways.",
       ],
       bullets: [
         "Manual (Free): renewal invoice + payment link on any WooCommerce gateway",
-        "Automatic (Pro): Stripe, PayPal billing agreements, or Paddle",
+        "Automatic (Pro): Stripe, PayPal billing agreements, Paddle, or Mollie",
         "Both run on the same free schedule, invoices, and renewal emails",
       ],
     },
@@ -154,7 +154,7 @@ export const billingRenewalsAndRefunds: FeaturePillar = {
     {
       title: "Choose how renewals are collected",
       description:
-        "Stay on manual invoices through any WooCommerce gateway, or connect Stripe, PayPal, or Paddle with Pro for off-session charging.",
+        "Stay on manual invoices through any WooCommerce gateway, or connect Stripe, PayPal, Paddle, or Mollie with Pro for off-session charging.",
     },
     {
       title: "Add Pro recovery automation",
@@ -173,7 +173,7 @@ export const billingRenewalsAndRefunds: FeaturePillar = {
       "WooCommerce tax on checkout and every renewal",
     ],
     pro: [
-      "Automatic off-session collection via Stripe, PayPal, and Paddle",
+      "Automatic off-session collection via Stripe, PayPal, Paddle, and Mollie",
       "Auto-retry of failed payments with notices and recovery tracking",
       "Auto-downgrade to a fallback plan when recovery is exhausted",
       "Flexible Renewal Sync with full, prorated, or next-cycle first charges",
@@ -216,7 +216,7 @@ export const billingRenewalsAndRefunds: FeaturePillar = {
     {
       question: "Which payment gateways support automatic renewals?",
       answer:
-        "Stripe, PayPal, and Paddle, all with ArraySubs Pro. Every other WooCommerce-compatible gateway — 500+ of them — works with free manual renewals, where the customer pays each renewal invoice through a payment link.",
+        "Stripe, PayPal, Paddle, and Mollie, all with ArraySubs Pro. Every other WooCommerce-compatible gateway — 500+ of them — works with free manual renewals, where the customer pays each renewal invoice through a payment link.",
     },
     {
       question: "How long does a customer keep access after a failed payment?",

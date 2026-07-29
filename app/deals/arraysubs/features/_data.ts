@@ -1399,7 +1399,7 @@ export const FEATURES: Feature[] = [
       {
         question: "Does Stripe support synced renewal checkout?",
         answer:
-          "Yes. Flexible Renewal Sync supports synced checkout with manual/offline gateways and Stripe.",
+          "Yes. Flexible Renewal Sync supports synced checkout with manual/offline gateways, Stripe and Mollie.",
       },
     ],
     related: ["billing-and-renewals", "gateway-health", "woocommerce-tax-handling"],
@@ -1459,6 +1459,62 @@ export const FEATURES: Feature[] = [
       },
     ],
     related: ["billing-and-renewals", "gateway-health", "woocommerce-tax-handling"],
+  }),
+  buildFeature({
+    slug: "mollie-payments",
+    category: "payment-gateways",
+    icon: Wallet,
+    name: "Mollie Payments",
+    cardDescription:
+      "Charge the customer's Mollie mandate for renewals — credit card and SEPA Direct Debit, with settlement tracked before an order is marked paid.",
+    tier: "Pro",
+    summary:
+      "Renew subscriptions against the Mollie mandate created at checkout, with delayed SEPA settlement handled safely.",
+    h1: "Sell subscriptions through Mollie",
+    highlights: ["Pro gateway", "ArraySubs-managed billing", "SEPA Direct Debit"],
+    intro:
+      "Mollie Payments is a Pro ArraySubs-managed billing path built on the official Mollie Payments for WooCommerce plugin. Checkout creates a ==Mollie mandate==, and ArraySubs keeps the schedule and charges that mandate for every renewal. ==A SEPA Direct Debit renewal is never marked paid until Mollie confirms settlement==, which can take days, so a subscription is never extended on money that has not moved.",
+    capabilities: [
+      {
+        title: "Mandate-based renewals",
+        description:
+          "Charges the customer's stored Mollie mandate off-session, with ArraySubs owning the billing schedule, trials, plan switches, and grace periods.",
+      },
+      {
+        title: "Card and SEPA Direct Debit",
+        description:
+          "Credit card, iDEAL, and Bancontact checkouts all produce a chargeable mandate; iDEAL and Bancontact convert to a SEPA mandate that ArraySubs follows automatically.",
+      },
+      {
+        title: "Delayed settlement handled",
+        description:
+          "SEPA renewals stay pending until Mollie confirms them, and a settlement that never arrives is failed rather than left hanging.",
+      },
+      {
+        title: "Reconciliation and chargebacks",
+        description:
+          "Missed webhooks are reconciled from the Mollie API on a schedule, and chargebacks put the order on hold for review without cancelling the subscription.",
+      },
+    ],
+    stats: [
+      { value: "Pro", label: "Availability" },
+      { value: "Mollie", label: "Gateway" },
+      { value: "ArraySubs", label: "Billing owner" },
+      { value: "SEPA", label: "Direct debit support" },
+    ],
+    faq: [
+      {
+        question: "Do I need separate Mollie API keys for ArraySubs?",
+        answer:
+          "No. ArraySubs uses the keys the Mollie Payments for WooCommerce plugin already stores, and picks the live or test key based on how the subscription was originally paid.",
+      },
+      {
+        question: "Why is a SEPA renewal still pending days later?",
+        answer:
+          "SEPA Direct Debit settles over several business days. ArraySubs deliberately waits for Mollie to confirm the payment before marking the renewal paid, so the subscription is never extended before the money moves.",
+      },
+    ],
+    related: ["billing-and-renewals", "gateway-health", "stripe-payments"],
   }),
   buildFeature({
     slug: "paypal-payments",
@@ -1549,7 +1605,7 @@ export const FEATURES: Feature[] = [
       {
         title: "Automatic gateway boundary",
         description:
-          "Keeps off-session automatic renewal collection limited to Stripe, PayPal, and Paddle Pro gateway integrations.",
+          "Keeps off-session automatic renewal collection limited to the Stripe, PayPal, Paddle, and Mollie Pro gateway integrations.",
       },
     ],
     stats: [
@@ -1585,7 +1641,7 @@ export const FEATURES: Feature[] = [
     h1: "Handle subscription taxes through WooCommerce",
     highlights: ["WooCommerce tax", "Renewal taxes", "Paddle exception"],
     intro:
-      "WooCommerce Tax Handling keeps subscription checkout and renewal tax behavior aligned with the store's WooCommerce tax configuration. ArraySubs can ==carry WooCommerce tax calculations through manual, Stripe, and PayPal subscription flows, while Paddle remains the exception because Paddle handles tax/VAT natively==.",
+      "WooCommerce Tax Handling keeps subscription checkout and renewal tax behavior aligned with the store's WooCommerce tax configuration. ArraySubs can ==carry WooCommerce tax calculations through manual, Stripe, PayPal, and Mollie subscription flows, while Paddle remains the exception because Paddle handles tax/VAT natively==.",
     capabilities: [
       {
         title: "WooCommerce tax source",
@@ -2127,7 +2183,7 @@ export const FEATURES: Feature[] = [
       {
         question: "Which gateways support early renewal?",
         answer:
-          "Stripe (charged off-session on the saved card) and any manual payment method (invoice plus payment page). PayPal and Paddle keep the billing schedule on their own side, so the button stays hidden for subscriptions paid through them, even when the setting is on.",
+          "Stripe (charged off-session on the saved card), Mollie (charged off-session against the stored mandate), and any manual payment method (invoice plus payment page). PayPal and Paddle keep the billing schedule on their own side, so the button stays hidden for subscriptions paid through them, even when the setting is on.",
       },
       {
         question: "Does paying early shorten the subscription?",
@@ -4245,7 +4301,7 @@ export const FEATURES: Feature[] = [
       {
         question: "Which gateways does it help monitor?",
         answer:
-          "The manual highlights Stripe, PayPal, and Paddle gateway workflows, plus gateway capabilities and webhook events.",
+          "The manual highlights Stripe, PayPal, Paddle, and Mollie gateway workflows, plus gateway capabilities and webhook events.",
       },
     ],
     related: ["stripe-payments", "paypal-payments", "paddle-payments"],

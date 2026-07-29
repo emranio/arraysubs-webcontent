@@ -450,7 +450,7 @@ export default function ArraySubsPricingPage() {
 
           <p className="mt-10 text-center text-sm text-on-dark-muted text-pretty">
             Available on WordPress.org · Works with WooCommerce 8+ · Stripe ·
-            PayPal · Paddle · HPOS compatible
+            PayPal · Paddle · Mollie · HPOS compatible
           </p>
           <p className="mt-4 text-center text-sm">
             <a

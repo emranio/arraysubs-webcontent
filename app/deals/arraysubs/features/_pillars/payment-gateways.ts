@@ -6,26 +6,26 @@ export const paymentGateways: FeaturePillar = {
   icon: Wallet,
   name: "Payment Gateways",
   cardDescription:
-    "Checkout and manual renewals on 500+ WooCommerce gateways free — Pro adds automatic billing via Stripe with SCA, PayPal agreements, and Paddle as merchant of record.",
+    "Checkout and manual renewals on 500+ WooCommerce gateways free — Pro adds automatic billing via Stripe with SCA, PayPal agreements, Paddle as merchant of record, and Mollie card and SEPA mandates.",
   tier: "Free + Pro",
-  seoTitle: "WooCommerce Subscription Payment Gateways — Stripe, PayPal, Paddle",
+  seoTitle: "WooCommerce Subscription Payment Gateways — Stripe, PayPal, Paddle, Mollie",
   metaDescription:
-    "WooCommerce subscription payment gateways: 500+ free for checkout and manual renewals — Pro adds automatic Stripe billing with SCA, PayPal, and Paddle native VAT.",
-  h1: "Take recurring payments with Stripe, PayPal, Paddle, or any WooCommerce gateway",
+    "WooCommerce subscription payment gateways: 500+ free for checkout and manual renewals — Pro adds automatic Stripe billing with SCA, PayPal, Paddle native VAT, and Mollie SEPA mandates.",
+  h1: "Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",
   heroSubtitle:
-    "The free core takes subscription checkout and manual renewal invoices on 500+ WooCommerce-compatible gateways; ArraySubs Pro adds automatic off-session billing through Stripe, PayPal billing agreements, and Paddle as merchant of record — with Gateway Health watching the webhooks.",
+    "The free core takes subscription checkout and manual renewal invoices on 500+ WooCommerce-compatible gateways; ArraySubs Pro adds automatic off-session billing through Stripe, PayPal billing agreements, Paddle as merchant of record, and Mollie card and SEPA Direct Debit mandates — with Gateway Health watching the webhooks.",
   heroHighlights: [
     "500+ gateways free",
-    "Stripe, PayPal & Paddle automatic",
+    "Stripe, PayPal, Paddle & Mollie",
     "SCA / 3D Secure ready",
   ],
   directAnswer:
-    "ArraySubs supports subscription checkout and manual renewal invoices through 500+ WooCommerce-compatible gateways in the free plugin, including offline methods like bank transfer. ArraySubs Pro adds automatic off-session renewals through three gateways: Stripe with saved cards and SCA handling, PayPal billing agreements, and Paddle as merchant of record with native VAT. Pro also brings customer self-service payment-method updates and Gateway Health webhook monitoring.",
+    "ArraySubs supports subscription checkout and manual renewal invoices through 500+ WooCommerce-compatible gateways in the free plugin, including offline methods like bank transfer. ArraySubs Pro adds automatic off-session renewals through four gateways: Stripe with saved cards and SCA handling, PayPal billing agreements, Paddle as merchant of record with native VAT, and Mollie charging card or SEPA Direct Debit mandates. Pro also brings customer self-service payment-method updates and Gateway Health webhook monitoring.",
   intro:
-    "A subscription plugin is only as useful as the gateways it can bill through. ArraySubs keeps checkout open on ==500+ WooCommerce-compatible gateways== in the free core — every renewal can be paid manually through an invoice link — while Pro adds ==automatic off-session collection== through Stripe, PayPal, and Paddle. Each integration follows its gateway's model: ArraySubs drives the Stripe schedule, PayPal owns its billing agreements, and ==Paddle acts as merchant of record== with native VAT.",
+    "A subscription plugin is only as useful as the gateways it can bill through. ArraySubs keeps checkout open on ==500+ WooCommerce-compatible gateways== in the free core — every renewal can be paid manually through an invoice link — while Pro adds ==automatic off-session collection== through Stripe, PayPal, Paddle, and Mollie. Each integration follows its gateway's model: ArraySubs drives the Stripe and Mollie schedules, PayPal owns its billing agreements, and ==Paddle acts as merchant of record== with native VAT.",
   stats: [
     { value: "500+", label: "Gateways for checkout & manual renewals" },
-    { value: "3", label: "Automatic Pro gateways" },
+    { value: "4", label: "Automatic Pro gateways" },
     { value: "1", label: "Merchant-of-record option" },
     { value: "SCA", label: "3D Secure–ready renewals" },
   ],
@@ -67,9 +67,15 @@ export const paymentGateways: FeaturePillar = {
       tier: "Pro",
     },
     {
+      title: "Mollie card & SEPA mandates",
+      description:
+        "Renewals charge the Mollie mandate created at checkout, with SEPA Direct Debit tracked to settlement instead of being marked paid early.",
+      tier: "Pro",
+    },
+    {
       title: "Self-service payment updates",
       description:
-        "Customers update their own payment method for Stripe, PayPal, and Paddle subscriptions — no support ticket needed.",
+        "Customers update their own payment method for Stripe, PayPal, Paddle, and Mollie subscriptions — no support ticket needed.",
       tier: "Pro",
     },
     {
@@ -81,7 +87,7 @@ export const paymentGateways: FeaturePillar = {
     {
       title: "WooCommerce tax on renewals",
       description:
-        "Manual, Stripe, and PayPal flows use your WooCommerce tax configuration on checkout and every renewal; Paddle is the native-VAT exception.",
+        "Manual, Stripe, PayPal, and Mollie flows use your WooCommerce tax configuration on checkout and every renewal; Paddle is the native-VAT exception.",
       tier: "Free",
     },
   ],
@@ -91,11 +97,11 @@ export const paymentGateways: FeaturePillar = {
       question: "Which payment gateways work with WooCommerce subscriptions?",
       paragraphs: [
         "All of them, for checkout: ArraySubs takes subscription orders and manual renewal invoices through ==500+ WooCommerce-compatible gateways==, including offline methods like bank transfer. That part is free and requires nothing beyond the gateways your store already runs.",
-        "Automatic renewals — charging the customer off-session without a click — are gateway-specific and come with Pro: ==Stripe, PayPal, and Paddle==. Every other gateway keeps working in manual mode, where each renewal generates an invoice with a payment link.",
+        "Automatic renewals — charging the customer off-session without a click — are gateway-specific and come with Pro: ==Stripe, PayPal, Paddle, and Mollie==. Every other gateway keeps working in manual mode, where each renewal generates an invoice with a payment link.",
       ],
       bullets: [
         "Free: checkout + manual renewal invoices on 500+ gateways",
-        "Pro: automatic off-session renewals via Stripe, PayPal, or Paddle",
+        "Pro: automatic off-session renewals via Stripe, PayPal, Paddle, or Mollie",
         "Gateways without automatic support still collect renewals manually",
       ],
     },
@@ -129,6 +135,19 @@ export const paymentGateways: FeaturePillar = {
       ],
     },
     {
+      id: "mollie",
+      question: "Can I take recurring Mollie payments in WooCommerce?",
+      paragraphs: [
+        "Yes — with ArraySubs Pro, checkout through the official Mollie plugin creates a ==Mollie mandate==, and ArraySubs charges that mandate for every renewal on its own schedule. Card and SEPA Direct Debit both work, and Mollie rotates the mandate automatically when an iDEAL or Bancontact first payment converts to SEPA.",
+        "SEPA is the reason this integration is careful: a direct debit takes days to clear, so ArraySubs ==never marks the order paid until Mollie confirms it== and reconciles anything the webhook misses. Nothing is credited before the money actually moves.",
+      ],
+      bullets: [
+        "Card, iDEAL, and Bancontact all mint a chargeable mandate",
+        "SEPA renewals stay pending until settlement confirms",
+        "Missed webhooks are reconciled automatically",
+      ],
+    },
+    {
       id: "manual-gateways",
       question: "Do subscriptions work without an automatic payment gateway?",
       paragraphs: [
@@ -154,7 +173,7 @@ export const paymentGateways: FeaturePillar = {
     {
       title: "Connect an automatic Pro gateway",
       description:
-        "Add Stripe for ArraySubs-managed off-session billing, PayPal for billing agreements, or Paddle for merchant-of-record VAT.",
+        "Add Stripe or Mollie for ArraySubs-managed off-session billing, PayPal for billing agreements, or Paddle for merchant-of-record VAT.",
     },
     {
       title: "Verify webhooks in Gateway Health",
@@ -180,6 +199,7 @@ export const paymentGateways: FeaturePillar = {
       "Stripe card auto-updates, expiring-card notices, and Express payment methods",
       "PayPal billing agreements with webhook renewal sync",
       "Paddle merchant of record with native VAT and hosted flows",
+      "Mollie renewals on card and SEPA Direct Debit mandates, with delayed-settlement tracking",
       "Customer self-service payment-method updates",
       "Gateway Health webhook and connection monitoring",
     ],
@@ -188,6 +208,7 @@ export const paymentGateways: FeaturePillar = {
     "stripe-payments",
     "paypal-payments",
     "paddle-payments",
+    "mollie-payments",
     "woocommerce-manual-payments",
     "woocommerce-tax-handling",
     "gateway-health",
@@ -216,7 +237,7 @@ export const paymentGateways: FeaturePillar = {
     {
       question: "Which gateways charge subscription renewals automatically?",
       answer:
-        "Three, all Pro: Stripe (ArraySubs-managed schedule with saved cards), PayPal (gateway-managed billing agreements), and Paddle (gateway-managed, merchant of record). All other gateways collect renewals manually through invoice payment links.",
+        "Four, all Pro: Stripe (ArraySubs-managed schedule with saved cards), PayPal (gateway-managed billing agreements), Paddle (gateway-managed, merchant of record), and Mollie (ArraySubs-managed schedule against a card or SEPA Direct Debit mandate). All other gateways collect renewals manually through invoice payment links.",
     },
     {
       question: "Does ArraySubs handle SCA and 3D Secure?",
@@ -226,7 +247,7 @@ export const paymentGateways: FeaturePillar = {
     {
       question: "Can customers update their payment method themselves?",
       answer:
-        "Yes, with Pro: self-service payment-method updates work for Stripe, PayPal, and Paddle. Stripe also supports card auto-updates and expiring-card notices, PayPal updates happen by creating a new agreement, and Paddle uses hosted customer flows.",
+        "Yes, with Pro: self-service payment-method updates work for Stripe, PayPal, Paddle, and Mollie. Stripe also supports card auto-updates and expiring-card notices, PayPal updates happen by creating a new agreement, Paddle uses hosted customer flows, and Mollie authorises a fresh mandate.",
     },
     {
       question: "What are PayPal's restrictions for subscription checkout?",
@@ -236,7 +257,7 @@ export const paymentGateways: FeaturePillar = {
     {
       question: "Who handles VAT when I sell through Paddle?",
       answer:
-        "Paddle does, natively, as merchant of record — the one exception to WooCommerce tax handling in ArraySubs. Manual, Stripe, and PayPal flows keep using your WooCommerce tax configuration on checkout and renewals.",
+        "Paddle does, natively, as merchant of record — the one exception to WooCommerce tax handling in ArraySubs. Manual, Stripe, PayPal, and Mollie flows keep using your WooCommerce tax configuration on checkout and renewals.",
     },
     {
       question: "Does Flexible Renewal Sync work with every gateway?",

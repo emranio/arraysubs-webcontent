@@ -634,7 +634,7 @@ export const RECIPES: Recipe[] = [
       "First order charges $150.00 ($100 first period + $50 signup fee).",
       "Every renewal charges a flat $100.00 — the signup fee never repeats.",
       "Customers see the signup fee broken out as a line item at checkout.",
-      "Works on manual and automatic (Stripe/PayPal/Paddle) renewals.",
+      "Works on manual and automatic (Stripe/PayPal/Paddle/Mollie) renewals.",
     ],
     bestFor: [
       "Services with a setup or onboarding cost",
@@ -2541,7 +2541,7 @@ export const RECIPES: Recipe[] = [
     notes: [
       "Stripe stores cards via SetupIntent, which also powers card-required $0 trials.",
       "Pair with a sensible grace period so retries have time to succeed before cancellation.",
-      "PayPal and Paddle are also supported for automatic payments with their own capabilities.",
+      "PayPal, Paddle and Mollie are also supported for automatic payments with their own capabilities.",
     ],
     faq: [
       {
@@ -3194,7 +3194,7 @@ export const RECIPES: Recipe[] = [
     ],
     notes: [
       "A subscription can only use one retention discount at a time — it won’t be re-offered once accepted.",
-      "Discount renewal adjustments are fully automatic on manual payments and Stripe; PayPal/Paddle may need manual handling.",
+      "Discount renewal adjustments are fully automatic on manual payments, Stripe and Mollie; PayPal/Paddle may need manual handling.",
       "Leave ‘Show for these reasons’ empty to offer the discount for all reasons instead of just price.",
     ],
     faq: [
@@ -3564,7 +3564,7 @@ export const RECIPES: Recipe[] = [
     ],
     notes: [
       "Like any retention discount, a free month can only be used once per subscription.",
-      "Automatic free-cycle adjustment works on manual payments and Stripe; PayPal/Paddle may need manual handling.",
+      "Automatic free-cycle adjustment works on manual payments, Stripe and Mollie; PayPal/Paddle may need manual handling.",
       "Use sparingly — reserve the 100% offer for your highest-value or hardest-to-replace customers.",
     ],
     faq: [
@@ -7445,7 +7445,7 @@ export const RECIPES: Recipe[] = [
     ],
     outcomes: [
       "A full refund cancels immediately, at period end, or not at all.",
-      "Gateway refunds can return money automatically (Stripe/PayPal/Paddle).",
+      "Gateway refunds can return money automatically (Stripe/PayPal/Paddle/Mollie).",
       "Tiny refunds can be blocked with a minimum.",
       "Partial/older-order refunds never auto-change status.",
     ],
@@ -10272,17 +10272,17 @@ export const RECIPES: Recipe[] = [
     icon: CreditCard,
     name: "Let members update their card",
     cardDescription:
-      "Members update their payment method from My Account via a secure gateway flow — Stripe, PayPal, or Paddle.",
+      "Members update their payment method from My Account via a secure gateway flow — Stripe, PayPal, Paddle, or Mollie.",
     tier: "Pro",
     seoTitle: "Let Members Update Their Payment Method on WooCommerce (Pro)",
     metaDescription:
-      "Let WooCommerce members update their saved card from My Account via a secure Stripe/PayPal/Paddle flow with ArraySubs Pro. Exact behavior and card-on-file display inside.",
+      "Let WooCommerce members update their saved card from My Account via a secure Stripe/PayPal/Paddle/Mollie flow with ArraySubs Pro. Exact behavior and card-on-file display inside.",
     h1: "Let members update their payment method",
     heroSubtitle:
       "Stop card-failure churn — members update their card themselves through a secure, gateway-hosted flow from My Account.",
-    heroHighlights: ["Self-service card update", "Stripe / PayPal / Paddle", "Card-on-file shown"],
+    heroHighlights: ["Self-service card update", "Stripe / PayPal / Paddle / Mollie", "Card-on-file shown"],
     intro:
-      "Failed renewals are often just ==an expired card==. With automatic payments (==Pro==), members can ==update their payment method== from the subscription detail page via a ==secure, gateway-hosted flow== — Stripe, PayPal, or Paddle — and see their ==card-on-file (brand + last 4 + expiry)==. This recipe enables self-service card updates.",
+      "Failed renewals are often just ==an expired card==. With automatic payments (==Pro==), members can ==update their payment method== from the subscription detail page via a ==secure, gateway-hosted flow== — Stripe, PayPal, Paddle, or Mollie — and see their ==card-on-file (brand + last 4 + expiry)==. This recipe enables self-service card updates.",
     settings: [
       {
         setting: "Requires",
@@ -10296,7 +10296,7 @@ export const RECIPES: Recipe[] = [
       },
       {
         setting: "Update flow",
-        value: "Redirect to Stripe / PayPal / Paddle, returns to detail",
+        value: "Redirect to Stripe / PayPal / Paddle / Mollie, returns to detail",
         where: "Behaviour",
       },
       {
@@ -10320,7 +10320,7 @@ export const RECIPES: Recipe[] = [
       {
         title: "Use an automatic gateway",
         description:
-          "Activate Pro and connect Stripe, PayPal, or Paddle — the update link appears only when the gateway supports updates.",
+          "Activate Pro and connect Stripe, PayPal, Paddle, or Mollie — the update link appears only when the gateway supports updates.",
         manual: M.paymentShipping,
       },
       {
@@ -10333,13 +10333,13 @@ export const RECIPES: Recipe[] = [
     notes: [
       "Updating affects future charges only, not the current cycle.",
       "Not all gateways support updates — when unsupported, only the current card details show.",
-      "Gateway specifics: Stripe hosted session, PayPal billing-agreement update, Paddle update portal.",
+      "Gateway specifics: Stripe hosted session, PayPal billing-agreement update, Paddle update portal, Mollie first-payment re-authorisation that mints a fresh mandate.",
     ],
     faq: [
       {
         question: "Is card data stored on my site?",
         answer:
-          "No. The update happens through a secure gateway-hosted flow (Stripe/PayPal/Paddle); your site only stores a reference and shows brand/last-4/expiry.",
+          "No. The update happens through a secure gateway-hosted flow (Stripe/PayPal/Paddle/Mollie); your site only stores a reference and shows brand/last-4/expiry.",
       },
       {
         question: "Does updating re-charge the current renewal?",
@@ -10501,7 +10501,7 @@ export const RECIPES: Recipe[] = [
     notes: [
       "Turning auto-renew off does not cancel the subscription and does not delay renewals — invoices still generate on schedule, only auto-collection stops.",
       "Re-enabling requires a valid payment method; an expired/removed method must be refreshed first.",
-      "Gateway behavior differs: Stripe stops auto-charges, PayPal cancels the billing agreement, Paddle pauses at Paddle.",
+      "Gateway behavior differs: Stripe stops auto-charges, PayPal cancels the billing agreement, Paddle pauses at Paddle, Mollie simply stops being charged because ArraySubs owns the schedule.",
     ],
     faq: [
       {
@@ -11791,7 +11791,7 @@ export const RECIPES: Recipe[] = [
     tier: "Pro",
     seoTitle: "Payment Gateway Health Dashboard on WooCommerce (Pro)",
     metaDescription:
-      "Monitor Stripe/PayPal/Paddle connection status, webhook event logs, and per-gateway subscription counts with the ArraySubs Pro Gateway Health dashboard. Stop revenue leaks.",
+      "Monitor Stripe/PayPal/Paddle/Mollie connection status, webhook event logs, and per-gateway subscription counts with the ArraySubs Pro Gateway Health dashboard. Stop revenue leaks.",
     h1: "Keep the money flowing — gateway health",
     heroSubtitle:
       "A broken webhook can silently stop renewals — monitor every gateway’s status and webhook activity from one screen.",
@@ -11827,7 +11827,7 @@ export const RECIPES: Recipe[] = [
       "Diagnose missing-renewal incidents fast.",
     ],
     bestFor: [
-      "Stores on automatic payments (Stripe/PayPal/Paddle)",
+      "Stores on automatic payments (Stripe/PayPal/Paddle/Mollie)",
       "After a site migration or URL/SSL change",
       "Diagnosing missing or failed renewals",
     ],
@@ -11859,7 +11859,7 @@ export const RECIPES: Recipe[] = [
       {
         question: "Which gateways does it cover?",
         answer:
-          "All registered gateways (Stripe, PayPal, Paddle), including disabled ones, with per-gateway status, capabilities, and webhook history.",
+          "All registered gateways (Stripe, PayPal, Paddle, Mollie), including disabled ones, with per-gateway status, capabilities, and webhook history.",
       },
     ],
     relatedFeatures: ["gateway-health", "checkout-and-payments", "billing-and-renewals"],
