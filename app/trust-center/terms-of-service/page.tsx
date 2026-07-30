@@ -5,6 +5,7 @@ import { Button, PageHero } from "@/components/ui";
 import { site } from "@/lib/site";
 import {
   EFFECTIVE_DATE,
+  FreemiusPaymentStatement,
   InlineLink,
   PolicyBody,
   PolicyIntro,
@@ -12,10 +13,11 @@ import {
   PolicyNote,
   PolicySection,
   PolicyTable,
-  REVIEWED_DATE,
   TrustContactCta,
   TrustCrossLinks,
 } from "../_components";
+
+const TERMS_REVIEWED_DATE = "July 30, 2026";
 
 export const metadata: Metadata = createMetadata({
   title: "Terms of Service",
@@ -56,7 +58,7 @@ export default function TermsOfServicePage() {
           { label: "Service provider", value: "ArrayHash" },
           { label: "Product", value: "All, sold on site" },
           { label: "Effective date", value: EFFECTIVE_DATE },
-          { label: "Last reviewed", value: REVIEWED_DATE },
+          { label: "Last reviewed", value: TERMS_REVIEWED_DATE },
         ]}
       />
 
@@ -107,20 +109,20 @@ export default function TermsOfServicePage() {
           />
         </PolicySection>
 
-        <PolicySection title="Payments, billing and licensing providers">
+        <PolicySection title="Payments, billing and licensing">
           <p>
-            Stripe and Freemius are active for checkout, payment processing,
-            license and account management, taxes where applicable, fraud
-            prevention, transaction support and refunds. ArrayHash does not
-            store full card numbers or card security codes.
+            Stripe and Freemius are active for checkout and payment processing.
+            ArrayHash handles billing and license management directly through
+            its dedicated user portal. ArrayHash does not store full card
+            numbers or card security codes.
           </p>
           <PolicyTable
             caption="Provider responsibilities"
             headers={["Provider", "Role"]}
             rows={[
               ["Stripe", "Payment processing and card handling."],
-              ["Freemius", "Checkout, licensing, accounts, invoices, taxes where applicable, transaction support and refund workflows."],
-              ["ArrayHash", "Product, website, customer communication, license policy, refund policy and support."],
+              ["Freemius", <FreemiusPaymentStatement key="freemius-role" />],
+              ["ArrayHash", "Product, website, customer communication, billing and license management, license policy, refund policy and support."],
             ]}
           />
         </PolicySection>

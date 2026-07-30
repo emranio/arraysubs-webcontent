@@ -13,6 +13,39 @@ import {
 
 export const REVIEWED_DATE = "June 7, 2026";
 export const EFFECTIVE_DATE = "April 10, 2026";
+export const PLUGIN_DATA_COMMITMENT_POINTS = [
+  "Your WordPress data stays on your site",
+  "No annoying promotional banners in our plugins",
+] as const;
+export const PLUGIN_DATA_COMMITMENT =
+  "We do not collect any data from a user's WordPress site. No theme or plugin data, server IP address, end-user email, or other WordPress site or end-user information is ever sent to or collected by our plugins. All of our plugins are built with data safety in mind. No telemetry SDK or telemetry code is included in any of our plugins.";
+export const PLUGIN_PROMOTIONAL_BANNER_COMMITMENT =
+  "Our plugins don't even show any promotional banners scattered throughout the WordPress admin, unlike other plugin vendors. Those banners are ridiculously annoying and I know it.";
+
+export function PluginDataCommitmentTitle({
+  tone = "primary",
+}: {
+  tone?: "primary" | "light";
+}) {
+  return (
+    <span className="flex flex-col gap-3 text-left">
+      {PLUGIN_DATA_COMMITMENT_POINTS.map((point, index) => (
+        <span key={point} className="flex items-start gap-3">
+          <span
+            className={
+              tone === "primary"
+                ? "mt-2 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-background font-sans text-[0.9rem] font-bold leading-none text-primary"
+                : "mt-2 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-primary font-sans text-[0.9rem] font-bold leading-none text-on-dark"
+            }
+          >
+            {index + 1}
+          </span>
+          <span>{point}</span>
+        </span>
+      ))}
+    </span>
+  );
+}
 
 export const TRUST_LINKS = [
   {
@@ -178,15 +211,38 @@ export function PolicyTable({ caption, headers, rows }: TableProps) {
 
 export function PolicyNote({
   title,
+  tone = "default",
   children,
 }: {
   title: ReactNode;
+  tone?: "default" | "highlight" | "primary";
   children: ReactNode;
 }) {
+  const isHighlighted = tone === "highlight";
+  const isPrimary = tone === "primary";
+
   return (
-    <div className="rounded-xl border border-border bg-card p-6 text-foreground">
-      <h3 className="font-display text-xl">{title}</h3>
-      <div className="mt-3 space-y-4 text-muted">{children}</div>
+    <div
+      className={
+        isPrimary
+          ? "rounded-xl border border-primary bg-primary p-8 text-on-dark on-dark sm:p-10"
+          : isHighlighted
+            ? "rounded-xl border border-primary bg-highlight p-6 text-foreground"
+            : "rounded-xl border border-border bg-card p-6 text-foreground"
+      }
+    >
+      <h3 className={isPrimary ? "font-display text-2xl sm:text-3xl" : "font-display text-xl"}>
+        {title}
+      </h3>
+      <div
+        className={
+          isPrimary
+            ? "mt-5 space-y-5 text-lg leading-8 text-on-dark sm:text-xl"
+            : "mt-3 space-y-4 text-muted"
+        }
+      >
+        {children}
+      </div>
     </div>
   );
 }
@@ -236,6 +292,22 @@ export function ExternalLink({
     >
       {children}
     </a>
+  );
+}
+
+export function FreemiusPaymentStatement() {
+  return (
+    <>
+      Freemius is used only for payment processing. ArrayHash handles everything
+      else directly, including billing and license management through our
+      dedicated{" "}
+      <ExternalLink href="https://user-portal.arrayhash.com/">
+        user portal
+      </ExternalLink>
+      . No Freemius SDK is included in any ArrayHash plugin. All license
+      activations are handled by ArrayHash&apos;s own server, so Freemius does
+      not receive the WordPress site&apos;s server IP address.
+    </>
   );
 }
 

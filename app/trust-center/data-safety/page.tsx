@@ -5,7 +5,11 @@ import { Button, PageHero } from "@/components/ui";
 import { site } from "@/lib/site";
 import {
   EFFECTIVE_DATE,
+  FreemiusPaymentStatement,
   InlineLink,
+  PluginDataCommitmentTitle,
+  PLUGIN_DATA_COMMITMENT,
+  PLUGIN_PROMOTIONAL_BANNER_COMMITMENT,
   PolicyBody,
   PolicyIntro,
   PolicyList,
@@ -16,7 +20,7 @@ import {
   TrustCrossLinks,
 } from "../_components";
 
-const DATA_SAFETY_REVIEWED_DATE = "July 23, 2026";
+const DATA_SAFETY_REVIEWED_DATE = "July 30, 2026";
 
 export const metadata: Metadata = createMetadata({
   title: "Data Safety",
@@ -74,7 +78,8 @@ export default function DataSafetyPage() {
                 analytics loads on every visit as necessary measurement, and
                 retargeting loads only after the visitor opts in. GoAffPro
                 supports affiliate referral attribution. Stripe and Freemius
-                process checkout, license and transaction workflows.
+                process payments. ArrayHash handles billing and license
+                management directly.
               </p>
             </PolicyNote>
             <PolicyNote title="Merchant WordPress site">
@@ -87,6 +92,15 @@ export default function DataSafetyPage() {
               </p>
             </PolicyNote>
           </div>
+          <PolicyNote
+            title={<PluginDataCommitmentTitle tone="light" />}
+            tone="highlight"
+          >
+            <p>{PLUGIN_DATA_COMMITMENT}</p>
+            <p>
+              <strong>{PLUGIN_PROMOTIONAL_BANNER_COMMITMENT}</strong>
+            </p>
+          </PolicyNote>
         </PolicySection>
 
         <PolicySection title="Website data map">
@@ -110,9 +124,14 @@ export default function DataSafetyPage() {
                 "Remember referral attribution and process valid commissions through GoAffPro.",
               ],
               [
-                "Payment, invoice, tax and license records",
+                "Payment, invoice and tax records",
                 "Yes, through Stripe and Freemius",
-                "Checkout, payment processing, licensing, refunds and compliance.",
+                "Checkout, payment processing, refunds and compliance.",
+              ],
+              [
+                "Billing and license management records",
+                "Yes, through ArrayHash",
+                "Manage billing and licenses in the dedicated ArrayHash user portal.",
               ],
               [
                 "Advertising and retargeting tags",
@@ -154,9 +173,19 @@ export default function DataSafetyPage() {
                 "Merchant WordPress database and merchant systems.",
               ],
               [
+                "WordPress server IP address",
+                "No",
+                "Not collected by ArrayHash or shared with Freemius.",
+              ],
+              [
                 "WordPress, WooCommerce, PHP or plugin logs",
                 "No",
                 "Merchant server and hosting environment.",
+              ],
+              [
+                "Any other WordPress site or end-user information",
+                "No",
+                "Not collected by ArrayHash.",
               ],
             ]}
           />
@@ -236,8 +265,8 @@ export default function DataSafetyPage() {
               ],
               [
                 "Freemius",
-                "Checkout, licensing, accounts, tax and transaction support",
-                "License, account, invoice, refund and payment-related records.",
+                "Payment processing only",
+                <FreemiusPaymentStatement key="freemius-data" />,
               ],
               [
                 "GoAffPro",

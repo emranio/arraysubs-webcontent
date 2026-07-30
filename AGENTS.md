@@ -180,8 +180,9 @@ Use `surface` intentionally:
   separated.
 - `highlight` - light purple emphasis band with dark text. Use for lighter
   decision or offer moments.
-- `primary` - saturated purple band with `text-on-dark`. Use for final CTA or
-  high-priority action bands. Buttons on this surface should use
+- `primary` - saturated purple band with pure-white `text-on-dark`. All text on
+  this surface, including supporting copy, must resolve to white. Use for final
+  CTA or high-priority action bands. Buttons on this surface should use
   `layers="2layer"`.
 - `dark` - fixed dark-purple editorial surface with `text-on-dark`. Use
   sparingly for manifesto, risk, trust or high-focus storytelling sections.
@@ -195,9 +196,11 @@ Surface pairing rules:
 - Use `text-foreground` for primary text on light surfaces, `text-muted` for
   paragraph/supporting copy, and `text-faint` only for short labels, metadata and
   placeholders.
-- On `primary` and `dark` surfaces, use `text-on-dark`,
-  `text-on-dark-muted`, `border-on-dark-border` and the `on-dark` focus-ring
-  context.
+- On `primary` surfaces, all text must be pure white. Use the contextual
+  `text-on-dark` utilities and `on-primary`; do not introduce muted or faint
+  text colors on primary purple.
+- On `dark` surfaces, use `text-on-dark`, `text-on-dark-muted`,
+  `border-on-dark-border` and the `on-dark` focus-ring context.
 - Do not stack colored cards on colored sections unless the component already
   handles the contrast. Prefer contextual `bg-card`.
 

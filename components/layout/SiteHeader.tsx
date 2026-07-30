@@ -245,9 +245,12 @@ export function SiteHeader() {
                             "inline-flex cursor-pointer items-center gap-1 whitespace-nowrap bg-transparent p-0 text-sm font-medium transition-colors hover:text-foreground",
                             childIsCurrent ? "text-foreground" : "text-muted",
                           )}
-                          onClick={() => setResourcesOpen((value) => !value)}
                           onKeyDown={(event) => {
-                            if (event.key !== "ArrowDown") return;
+                            if (
+                              !["ArrowDown", "Enter", " "].includes(event.key)
+                            ) {
+                              return;
+                            }
                             event.preventDefault();
                             setResourcesOpen(true);
                             requestAnimationFrame(() => {

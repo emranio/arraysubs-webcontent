@@ -31,7 +31,7 @@ const surfaces: Record<Surface, string> = {
   surface:
     "text-foreground [--section-bg:var(--color-surface)] [--color-card:var(--color-background)]",
   primary:
-    "text-on-dark on-dark [--section-bg:var(--color-primary)] [--color-card:var(--color-background)]",
+    "text-on-dark on-dark on-primary [--section-bg:var(--color-primary)] [--color-card:var(--color-background)]",
   dark:
     "text-on-dark on-dark [--section-bg:var(--color-dark)] [--color-card:var(--color-background)]",
   highlight:

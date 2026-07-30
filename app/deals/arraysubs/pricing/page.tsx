@@ -27,12 +27,16 @@ import {
   CTA,
   IconCard,
   MailtoFallbackLink,
-  ModuleShowcase,
   PageHero,
   Section,
   SectionTitle,
 } from "@/components/ui";
 import { FreeVsProTable } from "../_components/FreeVsProTable";
+import {
+  PluginDataCommitmentTitle,
+  PLUGIN_DATA_COMMITMENT,
+  PLUGIN_PROMOTIONAL_BANNER_COMMITMENT,
+} from "@/app/trust-center/_components";
 import { PricingPlanCards } from "./PricingPlanCards";
 import {
   ARRAYSUBS_PRO_PLANS,
@@ -340,16 +344,33 @@ export default function ArraySubsPricingPage() {
         </Container>
       </Section>
 
-      <ModuleShowcase
-        moduleCount={MODULE_COUNT}
-        compact
-        artworkSrc="/shapes/feature-count.webp"
-        artworkAlt={`${MODULE_COUNT} ArraySubs features`}
-        primaryHref=""
-        primaryLabel=""
-        secondaryHref=""
-        secondaryLabel=""
-      />
+      <Section surface="default" spacing="md">
+        <Container>
+          <div className="rounded-2xl bg-highlight p-6 text-dark sm:p-8 lg:p-10">
+            <SectionTitle
+              eyebrow="Plugin privacy commitment"
+              title={<PluginDataCommitmentTitle tone="light" />}
+              size="md"
+              className="[&>span]:text-dark"
+              titleClassName="text-dark"
+            />
+            <div className="mt-6 max-w-5xl space-y-4 text-lg leading-8 text-dark text-pretty sm:text-xl">
+              <p>{PLUGIN_DATA_COMMITMENT}</p>
+              <p className="font-semibold">
+                {PLUGIN_PROMOTIONAL_BANNER_COMMITMENT}
+              </p>
+              <p>
+                <Link
+                  href="/trust-center/"
+                  className="font-semibold text-dark underline decoration-primary decoration-2 underline-offset-4 transition-colors hover:decoration-dark"
+                >
+                  Read more at our Trust Center →
+                </Link>
+              </p>
+            </div>
+          </div>
+        </Container>
+      </Section>
 
       <Section id="compare" surface="default" spacing="md">
         <Container>

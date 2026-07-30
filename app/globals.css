@@ -41,7 +41,8 @@
   --color-gold: #873EFF; /* star ratings                                    */
 
   /* ---- On dark surfaces ------------------------------------------------- */
-  --color-on-dark: #F6F0FF;
+  --color-on-primary: #FFFFFF;
+  --color-on-dark: #FFFFFF;
   --color-on-dark-muted: #CBB8EE;
   --color-on-dark-border: #3C1A72;
 
@@ -187,6 +188,18 @@
   .on-dark :focus-visible,
   [data-surface="dark"] :focus-visible {
     outline-color: var(--color-highlight);
+  }
+
+  /*
+   * Primary purple always uses pure white text. Remap the shared on-dark
+   * text tokens contextually so existing primary components cannot render
+   * lavender supporting copy.
+   */
+  .bg-primary,
+  .on-primary {
+    --color-on-dark: var(--color-on-primary);
+    --color-on-dark-muted: var(--color-on-primary);
+    color: var(--color-on-primary);
   }
 }
 

@@ -261,7 +261,7 @@ function MobileCellValue({
   switch (cell.kind) {
     case "check":
       return (
-        <span className="inline-flex min-w-0 items-center gap-1.5 text-xs font-semibold text-foreground">
+        <span className="inline-flex min-w-0 flex-col items-start gap-1.5 text-xs font-semibold text-foreground">
           <span
             aria-hidden="true"
             className={cn(
@@ -276,7 +276,7 @@ function MobileCellValue({
       );
     case "no":
       return (
-        <span className="inline-flex min-w-0 items-center gap-1.5 text-xs font-semibold text-muted">
+        <span className="inline-flex min-w-0 flex-col items-start gap-1.5 text-xs font-semibold text-muted">
           <Minus aria-hidden="true" className="size-4 shrink-0 text-faint" />
           <span>Not included</span>
         </span>
@@ -304,7 +304,7 @@ function CellValue({
   switch (cell.kind) {
     case "check":
       return (
-        <span className="inline-flex items-center justify-center gap-1.5">
+        <span className="inline-flex flex-col items-center justify-center gap-1.5">
           <span
             aria-hidden="true"
             className={cn(

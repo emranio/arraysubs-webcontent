@@ -21,7 +21,8 @@ export const siteColors = {
   danger: "#B83A7A",
   success: "#6040DB",
   gold: brandBaseColor,
-  onDark: "#F6F0FF",
+  onPrimary: "#FFFFFF",
+  onDark: "#FFFFFF",
   onDarkMuted: "#CBB8EE",
   onDarkBorder: "#3C1A72",
 } as const;

@@ -6,7 +6,11 @@ import { site } from "@/lib/site";
 import {
   EFFECTIVE_DATE,
   ExternalLink,
+  FreemiusPaymentStatement,
   InlineLink,
+  PluginDataCommitmentTitle,
+  PLUGIN_DATA_COMMITMENT,
+  PLUGIN_PROMOTIONAL_BANNER_COMMITMENT,
   PolicyBody,
   PolicyIntro,
   PolicyList,
@@ -17,7 +21,7 @@ import {
   TrustCrossLinks,
 } from "../_components";
 
-const PRIVACY_REVIEWED_DATE = "July 23, 2026";
+const PRIVACY_REVIEWED_DATE = "July 30, 2026";
 
 export const metadata: Metadata = createMetadata({
   title: "Privacy Policy",
@@ -75,13 +79,13 @@ export default function PrivacyPolicyPage() {
             buy or manage an ArraySubs Pro license, request a refund, or contact
             us about privacy rights.
           </p>
-          <PolicyNote title="Important WordPress plugin distinction">
+          <PolicyNote
+            title={<PluginDataCommitmentTitle />}
+            tone="primary"
+          >
+            <p>{PLUGIN_DATA_COMMITMENT}</p>
             <p>
-              ArraySubs runs inside the merchant&apos;s own WordPress and
-              WooCommerce installation. ArrayHash does not collect plugin or
-              theme installation events, activation events, plugin usage
-              telemetry, WooCommerce store metrics, WordPress admin emails,
-              WordPress user emails or plugin logs from your store.
+              <strong>{PLUGIN_PROMOTIONAL_BANNER_COMMITMENT}</strong>
             </p>
           </PolicyNote>
         </PolicySection>
@@ -125,9 +129,9 @@ export default function PrivacyPolicyPage() {
                 "Remember an affiliate referral, validate attribution and process commissions.",
               ],
               [
-                "Stripe and Freemius",
-                "Checkout, transaction, tax, invoice, license and account records needed to process purchases",
-                "Complete payments, handle licenses, issue refunds, prevent fraud and meet legal obligations.",
+                "Payment providers",
+                "Checkout, transaction, tax and invoice records needed to process purchases",
+                "Complete payments, issue refunds, prevent fraud and meet legal obligations.",
               ],
             ]}
           />
@@ -145,7 +149,9 @@ export default function PrivacyPolicyPage() {
               "ArraySubs feature usage telemetry.",
               "WooCommerce store revenue, product, customer, subscription or order metrics.",
               "WordPress admin emails, WordPress user emails or customer emails from your store.",
+              "The WordPress site's server IP address.",
               "WordPress, WooCommerce, PHP or plugin logs from your site.",
+              "Any other WordPress site or end-user information.",
               "Names or email addresses for roadmap suggestions and votes.",
               "Heatmap or session recording data.",
             ]}
@@ -193,7 +199,7 @@ export default function PrivacyPolicyPage() {
               [
                 "Payments, licenses, tax and refunds",
                 "Contract and legal obligation",
-                "Stripe and Freemius process the license and transaction records needed for the purchase.",
+                "Stripe and Freemius process the payment and transaction records needed for the purchase. ArrayHash handles license activation and management directly.",
               ],
               [
                 "Security and abuse prevention",
@@ -353,15 +359,14 @@ export default function PrivacyPolicyPage() {
               ],
               [
                 "Freemius",
-                "Checkout, licensing, account and transaction management",
-                <>
-                  Used for payment and licensing workflows, not ArraySubs
-                  plugin telemetry. See the{" "}
+                "Payment processing only",
+                <p key="freemius-notes">
+                  <FreemiusPaymentStatement /> See the{" "}
                   <ExternalLink href="https://freemius.com/privacy/">
                     Freemius privacy policy
                   </ExternalLink>
                   .
-                </>,
+                </p>,
               ],
               [
                 "GoAffPro",

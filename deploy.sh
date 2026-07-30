@@ -84,17 +84,9 @@ trap cleanup EXIT
 
 mkdir -p "$RELEASES_DIR" "$SHARED_DIR"
 
-# storage/ is runtime-written (ROADMAP_DATA_PATH=./storage/roadmap.json) and
-# untracked; it lives in shared/ and is linked into every release. Bootstrap
-# it from the checkout on first run.
-if [ ! -d "$SHARED_DIR/storage" ]; then
-  if [ -d "$ROOT_DIR/storage" ]; then
-    cp -a "$ROOT_DIR/storage" "$SHARED_DIR/storage"
-    echo "==> Bootstrapped $SHARED_DIR/storage from checkout storage/"
-  else
-    mkdir -p "$SHARED_DIR/storage"
-  fi
-fi
+# storage/ is runtime-written and untracked. Never copy a checkout or seed file
+# into shared storage: the server's configured roadmap.json is authoritative.
+mkdir -p "$SHARED_DIR/storage"
 
 # .env holds the real credentials and is untracked, so `git archive` never
 # produces one; like storage/ it lives in shared/ and is linked into every
@@ -106,6 +98,31 @@ fi
 
 if [ ! -f "$SHARED_DIR/.env" ]; then
   echo "$SHARED_DIR/.env is missing; create it before deploying." >&2
+  exit 1
+fi
+
+ROADMAP_FILE="$(sed -n 's/^[[:space:]]*ROADMAP_DATA_PATH[[:space:]]*=[[:space:]]*//p' "$SHARED_DIR/.env" | tail -1)"
+ROADMAP_FILE="${ROADMAP_FILE#\"}"
+ROADMAP_FILE="${ROADMAP_FILE%\"}"
+ROADMAP_FILE="${ROADMAP_FILE#\'}"
+ROADMAP_FILE="${ROADMAP_FILE%\'}"
+
+if [ -z "$ROADMAP_FILE" ]; then
+  echo "ROADMAP_DATA_PATH is missing from $SHARED_DIR/.env." >&2
+  exit 1
+fi
+
+case "$ROADMAP_FILE" in
+  /*) ;;
+  *)
+    echo "ROADMAP_DATA_PATH must be an absolute path: $ROADMAP_FILE" >&2
+    exit 1
+    ;;
+esac
+
+if [ ! -f "$ROADMAP_FILE" ]; then
+  echo "Configured roadmap file is missing: $ROADMAP_FILE" >&2
+  echo "Refusing to create or replace it from checkout or seed data." >&2
   exit 1
 fi
 

@@ -44,11 +44,11 @@ function roadmapPath() {
     throw new Error("ROADMAP_DATA_PATH is not configured.");
   }
 
-  return path.resolve(process.cwd(), configured);
-}
+  if (!path.isAbsolute(configured)) {
+    throw new Error("ROADMAP_DATA_PATH must be an absolute path.");
+  }
 
-function seedPath() {
-  return path.join(process.cwd(), "data", "roadmap.seed.json");
+  return path.normalize(configured);
 }
 
 function isMissingFile(error: unknown) {
@@ -59,31 +59,20 @@ function isMissingFile(error: unknown) {
   );
 }
 
-function isExistingFile(error: unknown) {
-  return (
-    error instanceof Error &&
-    "code" in error &&
-    (error as NodeJS.ErrnoException).code === "EEXIST"
-  );
-}
-
 async function initializeRoadmapFile() {
   const filePath = roadmapPath();
 
   try {
     await access(filePath);
-    return;
   } catch (error) {
-    if (!isMissingFile(error)) throw error;
-  }
+    if (isMissingFile(error)) {
+      throw new Error(
+        "The configured ROADMAP_DATA_PATH does not exist. Refusing to replace it with local or seed data.",
+        { cause: error },
+      );
+    }
 
-  await mkdir(path.dirname(filePath), { recursive: true });
-  const seed = await readFile(seedPath(), "utf8");
-
-  try {
-    await writeFile(filePath, seed, { encoding: "utf8", flag: "wx", mode: 0o600 });
-  } catch (error) {
-    if (!isExistingFile(error)) throw error;
+    throw error;
   }
 }
 

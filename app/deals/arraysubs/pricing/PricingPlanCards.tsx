@@ -154,10 +154,10 @@ export function PricingPlanCards() {
                       Early bird price - save {formatUsd(savings)}
                     </span>
                   </div>
-                  <div className="mt-3 flex flex-wrap items-end gap-x-3 gap-y-1">
+                  <div className="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
                     <span
                       className={cn(
-                        "pb-2 text-sm font-semibold line-through",
+                        "text-sm leading-none font-semibold line-through",
                         oldPriceTextClass,
                       )}
                     >
@@ -168,7 +168,7 @@ export function PricingPlanCards() {
                     </span>
                     <span
                       className={cn(
-                        "pb-2 text-sm font-semibold",
+                        "text-sm leading-none font-semibold",
                         isFeatured ? featuredMutedClass : "text-muted",
                       )}
                     >

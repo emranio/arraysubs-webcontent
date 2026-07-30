@@ -27,7 +27,11 @@ import { absoluteUrl, site } from "@/lib/site";
 import {
   EFFECTIVE_DATE,
   ExternalLink,
+  FreemiusPaymentStatement,
   InlineLink,
+  PluginDataCommitmentTitle,
+  PLUGIN_DATA_COMMITMENT,
+  PLUGIN_PROMOTIONAL_BANNER_COMMITMENT,
   PolicyList,
   TRUST_LINKS,
 } from "./_components";
@@ -39,7 +43,7 @@ export const metadata: Metadata = createMetadata({
   path: "/trust-center/",
 });
 
-const TRUST_CENTER_REVIEWED_DATE = "July 23, 2026";
+const TRUST_CENTER_REVIEWED_DATE = "July 30, 2026";
 
 const TRUST_ITEMS = [
   {
@@ -103,47 +107,56 @@ export default function TrustCenterPage() {
         ]}
       />
 
-      {/* ---- Contact (moved here from the header nav) ------------------- */}
-      <Section surface="surface" spacing="sm">
-        <Container>
-          <div className="flex flex-col items-start justify-between gap-6 rounded-2xl bg-card p-6 text-foreground sm:p-8 lg:flex-row lg:items-center">
-            <div className="max-w-2xl">
-              <Eyebrow>Contact</Eyebrow>
-              <h2 className="mt-3 font-display text-2xl leading-tight text-balance sm:text-3xl">
-                Talk to the {site.name} team
-              </h2>
-              <p className="mt-3 text-muted text-pretty">
-                Sales, support, privacy and rights requests, refunds, licensing,
-                and accessibility reports are all handled from one place. Reach
-                out and a human replies.
-              </p>
-            </div>
-            <div className="flex shrink-0 flex-wrap gap-3">
-              <Button
-                href={site.contactUrl}
-                size="md"
-                magnetic
-                iconRight={<ArrowRight className="size-4" />}
-              >
-                Contact us
-              </Button>
-              <Button
-                href={site.contactUrl}
-                mailtoUrl={`mailto:${site.email}`}
-                variant="outline"
-                size="md"
-                iconRight={<Mail className="size-4" />}
-              >
-                Email {site.name}
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
       <Section surface="default" spacing="md">
         <Container>
-          <div className="mt-12 grid gap-[0.1875rem] md:grid-cols-2 xl:grid-cols-3">
+          <div className="rounded-2xl bg-primary p-6 text-on-dark on-dark sm:p-8 lg:p-10">
+            <SectionTitle
+              eyebrow="Plugin privacy commitment"
+              title={<PluginDataCommitmentTitle />}
+              size="md"
+              className="[&>span]:text-on-dark"
+              titleClassName="text-on-dark"
+            />
+            <p className="mt-6 max-w-5xl text-lg leading-8 text-on-dark text-pretty sm:text-xl">
+              {PLUGIN_DATA_COMMITMENT}
+            </p>
+            <p className="mt-4 max-w-5xl text-lg leading-8 font-semibold text-on-dark text-pretty sm:text-xl">
+              {PLUGIN_PROMOTIONAL_BANNER_COMMITMENT}
+            </p>
+          </div>
+          <div className="mt-[0.1875rem] grid gap-[0.1875rem] md:grid-cols-2 xl:grid-cols-3">
+            <div className="flex h-full flex-col items-start justify-between gap-6 rounded-xl border border-border bg-card p-6 text-foreground sm:p-8 md:col-span-2 xl:flex-row xl:items-center">
+              <div className="max-w-2xl">
+                <Eyebrow>Contact</Eyebrow>
+                <h3 className="mt-3 font-display text-2xl leading-tight text-balance sm:text-3xl">
+                  Talk to the {site.name} team
+                </h3>
+                <p className="mt-3 text-muted text-pretty">
+                  Sales, support, privacy and rights requests, refunds,
+                  licensing, and accessibility reports are all handled from one
+                  place. Reach out and a human replies.
+                </p>
+              </div>
+              <div className="flex w-full flex-col gap-3 sm:flex-row md:w-auto md:shrink-0 md:flex-row">
+                <Button
+                  href={site.contactUrl}
+                  size="md"
+                  magnetic
+                  iconRight={<ArrowRight className="size-4" />}
+                >
+                  Contact us
+                </Button>
+                <Button
+                  href={site.contactUrl}
+                  mailtoUrl={`mailto:${site.email}`}
+                  variant="outline"
+                  size="md"
+                  iconRight={<Mail className="size-4" />}
+                >
+                  Email {site.name}
+                </Button>
+              </div>
+            </div>
             {TRUST_ITEMS.map((item) => (
               <IconCard
                 key={item.href}
@@ -172,7 +185,7 @@ export default function TrustCenterPage() {
                   items={[
                     "Website forms collect only the fields needed for signup, license request, newsletter, support and contact workflows.",
                     "GA4/GTM analytics loads as necessary aggregate measurement; retargeting loads only after opt-in.",
-                    "Stripe and Freemius are active for purchases, licenses, taxes where applicable, account management and transaction support.",
+                    "Stripe and Freemius process payments. ArrayHash handles billing and license management directly through its dedicated user portal.",
                     "GoAffPro supports affiliate referral attribution and commission processing.",
                     "ArraySubs does not collect plugin or theme installations, activations, usage telemetry, WooCommerce store metrics, WordPress admin emails, user emails or plugin logs.",
                   ]}
@@ -184,16 +197,29 @@ export default function TrustCenterPage() {
               <SectionTitle
                 eyebrow="Third parties"
                 title="Payment and analytics providers are disclosed"
-                subtitle="ArrayHash uses established providers for website analytics, checkout, card handling, tax and licensing workflows."
+                subtitle="ArrayHash uses established providers for website analytics, checkout, card handling and payment workflows."
                 size="md"
               />
               <dl className="mt-8 grid gap-[0.1875rem]">
                 {[
-                  ["Google Analytics 4 / GTM", "Always-on aggregate website analytics"],
-                  ["Stripe", "Payment processing and card handling"],
-                  ["Freemius", "Checkout, licensing, account, tax and transaction management"],
-                  ["GoAffPro", "Affiliate referral attribution and commission processing"],
-                ].map(([name, value]) => (
+                  {
+                    name: "Google Analytics 4 / GTM",
+                    value: "Always-on aggregate website analytics",
+                  },
+                  {
+                    name: "Stripe",
+                    value: "Payment processing and card handling",
+                  },
+                  {
+                    name: "Freemius",
+                    value: <FreemiusPaymentStatement />,
+                  },
+                  {
+                    name: "GoAffPro",
+                    value:
+                      "Affiliate referral attribution and commission processing",
+                  },
+                ].map(({ name, value }) => (
                   <div
                     key={name}
                     className="rounded-xl border border-border bg-background p-5"
