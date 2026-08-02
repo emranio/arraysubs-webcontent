@@ -8,6 +8,8 @@ type SeoInput = {
   path?: string;
   /** Set true for internal / non-marketing pages (design system, previews). */
   noindex?: boolean;
+  /** Override link-following behavior. Defaults to false for noindex pages. */
+  follow?: boolean;
   /** Absolute or root-relative OG image. */
   ogImage?: string;
   type?: "website" | "article";
@@ -26,6 +28,7 @@ export function createMetadata(input: SeoInput = {}): Metadata {
     description = site.description,
     path = "/",
     noindex = false,
+    follow = !noindex,
     ogImage = site.ogImage,
     type = "website",
     publishedTime,
@@ -39,19 +42,17 @@ export function createMetadata(input: SeoInput = {}): Metadata {
     title,
     description,
     alternates: { canonical },
-    robots: noindex
-      ? { index: false, follow: false }
-      : {
-          index: true,
-          follow: true,
-          googleBot: {
-            index: true,
-            follow: true,
-            "max-image-preview": "large",
-            "max-snippet": -1,
-            "max-video-preview": -1,
-          },
-        },
+    robots: {
+      index: !noindex,
+      follow,
+      googleBot: {
+        index: !noindex,
+        follow,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
     openGraph:
       type === "article"
         ? {

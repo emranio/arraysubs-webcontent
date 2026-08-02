@@ -10,6 +10,8 @@ export const metadata: Metadata = createMetadata({
   description:
     "The people who write and maintain the ArraySubs resource library, with verifiable experience in WooCommerce subscriptions, memberships, and recurring payments.",
   path: AUTHOR_BASE,
+  noindex: true,
+  follow: true,
 });
 
 export default function AuthorsIndexPage() {

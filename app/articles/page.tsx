@@ -24,6 +24,8 @@ export async function generateMetadata({
     description:
       "Practical WooCommerce subscription guides for product models, billing, payment recovery, memberships, retention, and customer operations.",
     path: page > 1 ? `${RESOURCE_BASE}?page=${page}` : RESOURCE_BASE,
+    noindex: true,
+    follow: true,
   });
 }
 
