@@ -25,6 +25,10 @@ export type ComparisonColumn = {
   offer?: string;
   /** Visually emphasise this column (e.g. the recommended plan). */
   featured?: boolean;
+  /** Brand-highlight the column without presenting it as the recommended tier. */
+  brand?: boolean;
+  /** Optional badge shown above the column name. */
+  badge?: string;
 };
 
 export type ComparisonRow = {
@@ -103,13 +107,14 @@ export function ComparisonTable({
                       key={col.key}
                       className={cn(
                         "min-w-0 rounded-xl border border-border bg-background p-3",
-                        col.featured && "border-primary bg-primary/[0.06]",
+                        (col.featured || col.brand) &&
+                          "border-primary bg-primary/[0.06]",
                       )}
                     >
                       <div className="flex min-w-0 flex-col gap-1">
-                        {col.featured && (
+                        {(col.badge || col.featured) && (
                           <Badge tone="primary" className="self-start">
-                            Best value
+                            {col.badge ?? "Best value"}
                           </Badge>
                         )}
                         <p className="text-xs leading-tight font-semibold text-foreground">
@@ -124,7 +129,7 @@ export function ComparisonTable({
                       <div className="mt-3">
                         <MobileCellValue
                           cell={row.cells[col.key] ?? { kind: "no" }}
-                          featured={col.featured}
+                          featured={col.featured || col.brand}
                         />
                       </div>
                     </div>
@@ -165,11 +170,17 @@ export function ComparisonTable({
                     "px-5 py-5 text-center align-bottom",
                     col.featured
                       ? "border-l border-border bg-primary text-on-dark"
+                      : col.brand
+                        ? "border-l border-primary bg-highlight text-foreground"
                       : "text-foreground",
                   )}
                 >
                   <span className="flex flex-col items-center gap-1.5">
-                    {col.featured && <Badge tone="highlight">Best value</Badge>}
+                    {(col.badge || col.featured) && (
+                      <Badge tone={col.featured ? "highlight" : "primary"}>
+                        {col.badge ?? "Best value"}
+                      </Badge>
+                    )}
                     <span className="font-display text-lg font-semibold sm:text-xl">
                       {col.name}
                     </span>
@@ -232,11 +243,13 @@ export function ComparisonTable({
                           "px-5 py-4 text-center align-middle text-sm",
                           col.featured &&
                             "border-l border-border bg-primary/[0.05]",
+                          col.brand &&
+                            "border-l border-primary bg-primary/[0.03]",
                         )}
                       >
                         <CellValue
                           cell={row.cells[col.key] ?? { kind: "no" }}
-                          featured={col.featured}
+                          featured={col.featured || col.brand}
                         />
                       </td>
                     ))}

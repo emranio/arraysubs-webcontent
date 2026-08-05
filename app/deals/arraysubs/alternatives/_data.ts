@@ -6,6 +6,7 @@ import type {
   ComparisonGroup,
   ComparisonRow,
 } from "@/components/ui";
+import type { CompetitorSlug } from "./_advantageMatrix";
 
 /**
  * Single source of truth for the ArraySubs comparison ("alternatives") pages.
@@ -21,7 +22,7 @@ import type {
 export type DifferenceWinner = "arraysubs" | "competitor" | "tie";
 
 export type Comparison = {
-  slug: string;
+  slug: CompetitorSlug;
   /** Display name of the competing product. */
   competitor: string;
   /** Vendor behind the competitor (for context + entity clarity). */
@@ -91,7 +92,13 @@ const row = (
 /** The fixed 3-column header used by every comparison table. */
 export function comparisonColumns(c: Comparison): ComparisonColumn[] {
   return [
-    { key: "free", name: "ArraySubs Free", offer: "Free core" },
+    {
+      key: "free",
+      name: "ArraySubs Free",
+      offer: "Free core",
+      brand: true,
+      badge: "Included free",
+    },
     { key: "pro", name: "ArraySubs Pro", offer: "Pro upgrade", featured: true },
     { key: "competitor", name: c.competitorShort, offer: c.pricing.competitor },
   ];
@@ -441,7 +448,7 @@ export const COMPARISONS: Comparison[] = [
       "ArraySubs is an ==all-in-one alternative to YITH WooCommerce Subscription==. Both create recurring products, but YITH's free version is limited (PayPal-only auto-pay) and its real capabilities — trials, sign-up fees, failed-payment handling — need the €199.99/yr premium. ArraySubs puts ==subscriptions, memberships, retention flows, Store Credit, Feature Manager, Gateway Health, Member Insight, and Analytics workflows== in one plugin without locking you into a single vendor's gateway add-ons.",
     verdict: {
       summary:
-        "Short answer: choose ArraySubs for a genuinely capable free tier plus memberships, retention and store credit in one plugin. YITH WooCommerce Subscription suits stores already invested in the YITH ecosystem, and it has a unique Subscription Box module — but its free tier is thin, upgrade/downgrade is limited to variable products, its gateways are mostly YITH's own paid plugins, and its WordPress.org rating is 3.0★.",
+        "Short answer: choose ArraySubs for a genuinely capable free tier plus memberships, retention, store credit, a Pro subscription-box builder and curated bundles in one plugin. YITH WooCommerce Subscription suits stores already invested in the YITH ecosystem and has an established premium box workflow — but its free tier is thin, upgrade/downgrade is limited to variable products, its gateways are mostly YITH's own paid plugins, and its WordPress.org rating is 3.0★.",
       arraysubsBestFor: [
         "Stores wanting a capable free subscription core",
         "Anyone needing subscriptions and memberships together",
@@ -450,7 +457,7 @@ export const COMPARISONS: Comparison[] = [
       ],
       competitorBestFor: [
         "Stores already standardised on YITH plugins",
-        "Curated subscription boxes (YITH's Box module)",
+        "Stores preferring YITH's established premium Box workflow",
         "Sellers wanting YITH's delivery scheduling features",
       ],
     },
@@ -480,7 +487,7 @@ export const COMPARISONS: Comparison[] = [
           row("Different renewal price", yes(), yes(), no()),
           row("Skip next renewal", yes(), yes(), no()),
           row("Auto-suspend / retry on failure", yes("auto-downgrade, Pro"), yes(), yes("premium")),
-          row("Subscription box module", no(), no(), yes("premium")),
+          row("Subscription box module", no(), yes("Pro"), yes("Premium")),
           row("Gateways", part("manual"), txt("Stripe/PayPal/Paddle/Mollie"), txt("YITH add-ons")),
         ],
       },
@@ -522,10 +529,10 @@ export const COMPARISONS: Comparison[] = [
         winner: "arraysubs",
       },
       {
-        title: "Subscription Box module",
+        title: "Two capable subscription-box workflows",
         description:
-          "YITH WooCommerce Subscription has a polished Subscription Box module letting customers choose box contents — useful for curated-box businesses. ArraySubs doesn't offer this yet.",
-        winner: "competitor",
+          "Both plugins now let customers build recurring boxes. ArraySubs Pro adds a multi-step product/category/choice/upload builder, quantity rules, discount tiers, free gifts, frozen-price renewals and a separate merchant-curated bundle product; YITH offers its established premium Box workflow.",
+        winner: "tie",
       },
       {
         title: "Delivery scheduling",
@@ -556,7 +563,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Does ArraySubs have a subscription box feature like YITH?",
         answer:
-          "Not yet. YITH's Subscription Box module, which lets customers choose box contents, is a genuine YITH advantage for curated-box stores. ArraySubs focuses on subscriptions, memberships, retention and analytics.",
+          "Yes. ArraySubs Pro includes a multi-step Subscription Box product with product, category, text, choice and file-upload steps; required and min/max rules; discount and free-gift tiers; renewal-sync planning; and exact frozen-price renewal reproduction. It also includes a separate merchant-curated Subscription Bundle product. YITH offers its own premium Subscription Box workflow.",
       },
       {
         question: "Can I get memberships with ArraySubs without a second plugin?",
@@ -744,7 +751,7 @@ export const COMPARISONS: Comparison[] = [
       "Plan switching + retention",
     ],
     intro:
-      "ArraySubs and Subscriptions for WooCommerce by WP Swings are both ==free WooCommerce subscription plugins==. WP Swings is well-established (10k+ installs, 4.4★), added basic membership access rules in v2.0.0, and has a free subscription-box option — but its ==free tier still lacks plan switching, deep member rules and retention flows==, which need WP Swings Pro ($129/yr) or stay absent. ArraySubs puts plan switching, a full member rules engine, a retention flow builder and a setup wizard in its free core.",
+      "ArraySubs and Subscriptions for WooCommerce by WP Swings are both ==free WooCommerce subscription plugins==. WP Swings is well-established (10k+ installs, 4.4★), added basic membership access rules in v2.0.0, and includes subscription-box support free — but its ==free tier still lacks plan switching, deep member rules and retention flows==, which need WP Swings Pro ($129/yr) or stay absent. ArraySubs puts plan switching, a full member rules engine, a retention flow builder and a setup wizard in its free core, while Pro adds a deeper multi-step box builder and curated bundles.",
     verdict: {
       summary:
         "Short answer: pick ArraySubs if you want more from a free plugin — a full member rules engine, plan switching, retention flows and a setup wizard, all in the free tier. WP Swings' Subscriptions for WooCommerce is a proven option (10k+ installs) with a free subscription box and, since v2.0.0, basic native memberships — but its free tier is thinner: plan switching, pause, failed-payment retry and analytics are Pro ($129/yr), and its access rules lack ArraySubs' AND/OR engine, URL/role targeting and content dripping.",
@@ -786,7 +793,7 @@ export const COMPARISONS: Comparison[] = [
           row("Different renewal price / skip renewal", yes(), yes(), no()),
           row("Two-phase grace period", yes(), yes(), part("retry only")),
           row("Auto-retry failed payments", no(), yes(), part("Pro")),
-          row("Subscription box", no(), no(), yes("free")),
+          row("Subscription box", no(), yes("Advanced, Pro"), yes("Free")),
           row("Multiple gateways", part("manual"), txt("Stripe/PayPal/Paddle/Mollie"), part("4 free, +Pro")),
         ],
       },
@@ -833,9 +840,9 @@ export const COMPARISONS: Comparison[] = [
         winner: "competitor",
       },
       {
-        title: "Free subscription box",
+        title: "Subscription boxes at different tiers",
         description:
-          "WP Swings offers subscription-box support in its free tier. ArraySubs doesn't have a dedicated box module yet.",
+          "WP Swings keeps subscription-box support in its free tier. ArraySubs requires Pro, but adds a multi-step product/category/choice/upload builder, min/max rules, discount tiers, free gifts, exact renewal reproduction and a separate merchant-curated bundle product.",
         winner: "competitor",
       },
       {
@@ -851,7 +858,7 @@ export const COMPARISONS: Comparison[] = [
       {
         question: "Which is better, ArraySubs or WP Swings Subscriptions?",
         answer:
-          "Both have free tiers. ArraySubs' free tier offers more — a deep member rules engine, plan switching, retention flows and a setup wizard — where WP Swings keeps plan switching and analytics in Pro and offers only basic membership rules (added in v2.0.0). WP Swings has a larger install base and a free subscription box.",
+          "Both have free tiers. ArraySubs' free core offers a deep member rules engine, plan switching, retention flows and a setup wizard, while WP Swings keeps plan switching and analytics in Pro and offers only basic membership rules (added in v2.0.0). WP Swings has a larger install base and free box support; ArraySubs Pro has the more detailed box and bundle workflow.",
       },
       {
         question: "Does WP Swings Subscriptions support plan switching?",

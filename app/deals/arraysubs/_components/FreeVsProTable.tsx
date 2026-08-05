@@ -44,7 +44,13 @@ export function FreeVsProTable({
   proOffer = "Annual & lifetime plans",
 }: FreeVsProTableProps) {
   const columns: ComparisonColumn[] = [
-    { key: "free", name: "ArraySubs Free", offer: freeOffer },
+    {
+      key: "free",
+      name: "ArraySubs Free",
+      offer: freeOffer,
+      brand: true,
+      badge: "Free core",
+    },
     {
       key: "pro",
       name: "ArraySubs Pro",

@@ -6,18 +6,46 @@ import { cn } from "@/lib/cn";
 import {
   ComparisonTable,
   type ComparisonColumn,
+  type ComparisonGroup,
   type ComparisonRow,
 } from "@/components/ui/ComparisonTable";
 
-type CollapsibleComparisonProps = {
+type CollapsibleComparisonBaseProps = {
   caption: string;
   className?: string;
   columns: ComparisonColumn[];
-  /** Full, pre-sorted row set. Collapsed view slices the first N. */
-  rows: ComparisonRow[];
   /** Rows kept visible while collapsed (Pro-only rows + a few extras). */
   collapsedRowCount: number;
 };
+
+type CollapsibleComparisonProps = CollapsibleComparisonBaseProps &
+  (
+    | {
+        /** Full, pre-sorted row set. Collapsed view slices the first N. */
+        rows: ComparisonRow[];
+        groups?: never;
+      }
+    | {
+        /** Grouped rows. Group headings are retained when the table is sliced. */
+        groups: ComparisonGroup[];
+        rows?: never;
+      }
+  );
+
+function sliceGroups(
+  groups: ComparisonGroup[],
+  rowCount: number,
+): ComparisonGroup[] {
+  let remaining = rowCount;
+
+  return groups.flatMap((group) => {
+    if (remaining <= 0) return [];
+
+    const rows = group.rows.slice(0, remaining);
+    remaining -= rows.length;
+    return rows.length > 0 ? [{ ...group, rows }] : [];
+  });
+}
 
 /**
  * Client wrapper that renders a {@link ComparisonTable} with a show-more /
@@ -31,15 +59,23 @@ export function CollapsibleComparison({
   className,
   columns,
   rows,
+  groups,
   collapsedRowCount,
 }: CollapsibleComparisonProps) {
   const [expanded, setExpanded] = useState(false);
   const tableId = useId();
 
-  const collapsible = rows.length > collapsedRowCount;
-  const hiddenCount = rows.length - collapsedRowCount;
+  const allGroups = groups ?? [{ label: "", rows }];
+  const totalRowCount = allGroups.reduce(
+    (total, group) => total + group.rows.length,
+    0,
+  );
+  const collapsible = totalRowCount > collapsedRowCount;
+  const hiddenCount = totalRowCount - collapsedRowCount;
   const showFull = expanded || !collapsible;
-  const visibleRows = showFull ? rows : rows.slice(0, collapsedRowCount);
+  const visibleGroups = showFull
+    ? allGroups
+    : sliceGroups(allGroups, collapsedRowCount);
 
   return (
     <div className="flex w-full min-w-0 flex-col items-center gap-6">
@@ -47,15 +83,9 @@ export function CollapsibleComparison({
         <ComparisonTable
           caption={caption}
           columns={columns}
-          groups={[{ label: "", rows: visibleRows }]}
+          groups={visibleGroups}
           className={className}
         />
-        {!showFull && (
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-16 rounded-b-2xl bg-gradient-to-t from-card to-transparent"
-          />
-        )}
       </div>
 
       {collapsible && (

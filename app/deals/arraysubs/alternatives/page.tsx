@@ -15,7 +15,6 @@ import { createMetadata, softwareApplicationSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   Button,
-  ComparisonTable,
   Container,
   CTA,
   Eyebrow,
@@ -29,7 +28,12 @@ import {
   type ComparisonGroup,
   type ComparisonRow,
 } from "@/components/ui";
+import { CollapsibleComparison } from "../_components/CollapsibleComparison";
 import { COMPARISONS } from "./_data";
+import {
+  getAdvantageHubGroups,
+  mergeComparisonGroups,
+} from "./_advantageMatrix";
 import { FEATURES } from "../features/_data";
 import { RECIPES } from "../use-cases/_recipes";
 
@@ -100,7 +104,7 @@ const FIELD_GROUPS: ComparisonGroup[] = [
       r("Pause / vacation mode", yes(), yes(), part("premium"), part("Pro"), yes(), yes()),
       r("Two-phase grace period", yes(), part("basic"), part("premium"), part("Pro"), part("Pro"), yes()),
       r("Installment / split payments", part("soon"), no, no, no, yes(), part("limited")),
-      r("Payment gateways", txt("3 + manual"), txt("25+"), txt("PayPal + add-ons"), txt("4 + Pro"), txt("7"), txt("Stripe/PayPal")),
+      r("Payment gateways", txt("4 + 500+ manual"), txt("25+"), txt("PayPal + add-ons"), txt("4 + Pro"), txt("7"), txt("Stripe/PayPal")),
     ],
   },
   {
@@ -142,10 +146,19 @@ const FIELD_GROUPS: ComparisonGroup[] = [
       r("Member Insight profile dashboard", yes(), no, no, no, no, no),
       r("Listed on WordPress.org", yes(), no, yes(), yes(), yes(), no),
       r("Actively maintained in 2026", yes(), yes(), yes(), yes(), yes(), yes()),
-      r("Subscription box module", no, no, yes(), yes(), no, no),
+      r("Subscription box module", txt("Pro"), no, yes(), yes(), no, no),
     ],
   },
 ];
+
+const EXPANDED_FIELD_GROUPS = mergeComparisonGroups(
+  FIELD_GROUPS,
+  getAdvantageHubGroups(),
+);
+const FIELD_ROW_COUNT = EXPANDED_FIELD_GROUPS.reduce(
+  (total, group) => total + group.rows.length,
+  0,
+);
 
 const WHY_SWITCH = [
   {
@@ -359,10 +372,11 @@ export default function AlternativesHubPage() {
             align="center"
           />
           <div className="mt-12">
-            <ComparisonTable
-              caption={`How ArraySubs compares with WooCommerce Subscriptions, YITH Subscription, WP Swings, WPSubscription and SUMO on free tier, ${MODULE_COUNT} root-module coverage, retention, Store Credit, analytics, setup and operations.`}
+            <CollapsibleComparison
+              caption={`How ArraySubs compares with WooCommerce Subscriptions, YITH Subscription, WP Swings, WPSubscription and SUMO across ${FIELD_ROW_COUNT} pricing, product, checkout, billing, membership, retention, credit, analytics, setup and operations criteria. Not documented is used when the reviewed competitor material does not support a definitive yes or no.`}
               columns={FIELD_COLUMNS}
-              groups={FIELD_GROUPS}
+              groups={EXPANDED_FIELD_GROUPS}
+              collapsedRowCount={36}
             />
           </div>
         </Container>

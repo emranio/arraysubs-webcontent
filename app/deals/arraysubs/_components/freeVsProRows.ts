@@ -1,7 +1,7 @@
 /**
  * Curated Free-vs-Pro capability matrix for the {@link FreeVsProTable}.
  *
- * Deliberately NOT derived from the raw 70-module feature list: comparison
+ * Deliberately NOT derived from the raw feature-card list: comparison
  * tables need concrete, self-explanatory capability rows, not generic module
  * names. Several modules are split into the distinct things a buyer actually
  * evaluates (e.g. Subscription Products → simple / variable / trials / fees),

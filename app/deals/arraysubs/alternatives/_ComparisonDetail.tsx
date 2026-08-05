@@ -6,7 +6,6 @@ import {
   Accordion,
   Badge,
   Button,
-  ComparisonTable,
   Container,
   CTA,
   IconCard,
@@ -14,6 +13,7 @@ import {
   Section,
   SectionTitle,
 } from "@/components/ui";
+import { CollapsibleComparison } from "../_components/CollapsibleComparison";
 import {
   COMPARISONS,
   comparisonColumns,
@@ -21,6 +21,10 @@ import {
   type Comparison,
   type DifferenceWinner,
 } from "./_data";
+import {
+  getAdvantageDetailGroups,
+  mergeComparisonGroups,
+} from "./_advantageMatrix";
 import { FEATURES } from "../features/_data";
 import { RECIPES } from "../use-cases/_recipes";
 import { highlight } from "../_highlight";
@@ -51,6 +55,14 @@ const WINNER_META: Record<
  */
 export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
   const c = comparison;
+  const comparisonGroups = mergeComparisonGroups(
+    c.tableGroups,
+    getAdvantageDetailGroups(c.slug),
+  );
+  const comparisonRowCount = comparisonGroups.reduce(
+    (total, group) => total + group.rows.length,
+    0,
+  );
   const usedRelatedSlugs = new Set<string>();
   const related = [...c.related, ...COMPARISONS.map((item) => item.slug)]
     .flatMap((slug) => {
@@ -201,10 +213,11 @@ export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
             align="center"
           />
           <div className="mt-12">
-            <ComparisonTable
-              caption={`Feature-by-feature comparison of ArraySubs (Free and Pro) versus ${c.competitor} across pricing, root-module coverage, subscriptions, memberships, retention and operations.`}
+            <CollapsibleComparison
+              caption={`Feature-by-feature comparison of ArraySubs Free and Pro versus ${c.competitor} across ${comparisonRowCount} pricing, product, checkout, billing, membership, retention, credit, analytics, support and operations criteria. Not documented is used when the reviewed competitor material does not support a definitive yes or no.`}
               columns={comparisonColumns(c)}
-              groups={c.tableGroups}
+              groups={comparisonGroups}
+              collapsedRowCount={28}
             />
           </div>
         </Container>
