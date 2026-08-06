@@ -218,13 +218,13 @@ Current first-party review on July 16, 2026 found:
 
 This was a source and interface review, not a statistically valid gateway matrix or recovery benchmark.
 
-For implementation, start with a documented [lenient grace recipe](/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict grace recipe](/deals/arraysubs/use-cases/recipes/strict-dunning-grace/) and keep the complete [failed-payment recovery guide](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) beside this checklist.
+For implementation, start with a documented [lenient grace recipe](/product/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict grace recipe](/product/arraysubs/use-cases/recipes/strict-dunning-grace/) and keep the complete [failed-payment recovery guide](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/) beside this checklist.
 
 ## Final recommendation
 
 Run involuntary-churn recovery as an auditable control system. Prevent what can be prevented, route each failure by the required remedy, let only one engine own collection, preserve a safe customer path, and verify every recovered payment through order, status, access, fulfillment, messages, and next renewal before counting it.
 
-After the checklist passes in sandbox and controlled live monitoring, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) or explore [subscription operations](/deals/arraysubs/features/#subscription-operations).
+After the checklist passes in sandbox and controlled live monitoring, [review ArraySubs Pro pricing](/product/arraysubs/pricing/) or explore [subscription operations](/product/arraysubs/features/#subscription-operations).
 
 ## Frequently asked questions
 

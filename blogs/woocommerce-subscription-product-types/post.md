@@ -90,13 +90,13 @@ The choice should be customer-visible. Do not use variations merely because two 
 
 Variable products create more test paths. WooCommerce also changes some dropdown behavior after more than 30 variations, and ambiguous attributes can produce unexpected cart data. Keep combinations intentional, name the terms clearly, and test each variation through signup and renewal ([Variable Products](https://woocommerce.com/document/variable-product/)).
 
-The [monthly-versus-annual recipe](/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/) shows a practical customer-facing use of variations.
+The [monthly-versus-annual recipe](/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/) shows a practical customer-facing use of variations.
 
 ### A current WooCommerce Subscriptions 9.0 note
 
 At the article's latest update, WooCommerce Subscriptions 9.0.1 recommends subscription plans on supported standard simple, variable, bundle, and composite products for new stores. The older dedicated Simple Subscription and Variable Subscription types remain supported; Woo states there is no fixed removal date or forced migration ([creating a subscription product](https://woocommerce.com/document/subscriptions/creating-subscription-products/), [Subscriptions FAQ](https://woocommerce.com/document/subscriptions/faq/)).
 
-That is a WooCommerce Subscriptions-specific interface change, not a universal rule for every extension. ArraySubs' current public setup path focuses on enabling subscription behavior on simple and variable WooCommerce products. Review the [ArraySubs product and checkout feature map](/deals/arraysubs/features/#products-checkout) for current scope.
+That is a WooCommerce Subscriptions-specific interface change, not a universal rule for every extension. ArraySubs' current public setup path focuses on enabling subscription behavior on simple and variable WooCommerce products. Review the [ArraySubs product and checkout feature map](/product/arraysubs/features/#products-checkout) for current scope.
 
 ### Bundle, composite, and grouped structures
 
@@ -130,7 +130,7 @@ A prepaid term collects the full amount at checkout while access or delivery con
 
 Woo documents both one-period configurations and a $0-recurring-plus-sign-up-fee workaround, and it offers a separate prepaid-plan extension. The workaround can expose $0 renewal orders, customer emails, and cancellation interactions, so do not call prepaid a single clean native product type across every setup ([Subscriptions FAQ](https://woocommerce.com/document/subscriptions/faq/), [Prepaid for WooCommerce Subscriptions](https://woocommerce.com/document/prepaid-for-woocommerce-subscriptions/)).
 
-The ArraySubs [fixed-cycle recipe](/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/) uses multiple scheduled charges. Treat it as a fixed-cycle implementation, not proof that the full term is collected upfront.
+The ArraySubs [fixed-cycle recipe](/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/) uses multiple scheduled charges. Treat it as a fixed-cycle implementation, not proof that the full term is collected upfront.
 
 ### Installment or split-payment plan
 
@@ -142,7 +142,7 @@ ArraySubs currently marks Installment / Split Payments as **coming soon**. Do no
 
 Lifetime access is one payment with no recurring renewal. It may be managed by a subscription-aware system, but it is not recurring billing. Define whose or what lifetime applies and whether updates, support, storage, transfers, and future features are included.
 
-ArraySubs currently ships a Lifetime Deal billing period that collects once and schedules no renewal. See the [lifetime-deal recipe](/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/) for the implementation path.
+ArraySubs currently ships a Lifetime Deal billing period that collects once and schedules no renewal. See the [lifetime-deal recipe](/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/) for the implementation path.
 
 ### Fixed date and billing alignment are separate controls
 
@@ -262,7 +262,7 @@ Start with the smallest model that represents a real customer choice: usually on
 
 Choose WooCommerce subscription product types in three passes. First select the simplest catalog structure that presents a real customer choice. Then define exactly when money is collected and what ends the agreement. Finally, map the physical fulfillment, digital delivery, service, or access behavior to every lifecycle state.
 
-That produces a product customers can understand and a subscription team can operate. When the model is clear, review the [ArraySubs overview](/deals/arraysubs/) and [pricing](/deals/arraysubs/pricing/) to see whether its current product, gateway, and lifecycle scope matches the offer.
+That produces a product customers can understand and a subscription team can operate. When the model is clear, review the [ArraySubs overview](/product/arraysubs/) and [pricing](/product/arraysubs/pricing/) to see whether its current product, gateway, and lifecycle scope matches the offer.
 
 ---
 

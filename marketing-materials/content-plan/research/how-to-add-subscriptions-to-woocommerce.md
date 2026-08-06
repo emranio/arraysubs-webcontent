@@ -254,7 +254,7 @@ Article guidance:
 Evidence:
 
 - Woo automatic/manual renewal tax comparison: https://woocommerce.com/document/subscriptions/renewal-process/
-- ArraySubs first-party statement: https://arrayhash.com/deals/arraysubs/
+- ArraySubs first-party statement: https://arrayhash.com/product/arraysubs/
 
 ### Shipping and stock
 
@@ -379,7 +379,7 @@ Use this only after the educational answer and decision framework. Recommended d
 
 ### First-party public product-page statements
 
-The live ArraySubs product page currently presents simple/variable subscriptions, trials, sign-up fees, different renewal prices, fixed-period rules, lifetime deals, a customer portal, manual renewals in core, and Stripe/PayPal/Paddle automatic renewals in Pro: https://arrayhash.com/deals/arraysubs/
+The live ArraySubs product page currently presents simple/variable subscriptions, trials, sign-up fees, different renewal prices, fixed-period rules, lifetime deals, a customer portal, manual renewals in core, and Stripe/PayPal/Paddle automatic renewals in Pro: https://arrayhash.com/product/arraysubs/
 
 The same page correctly marks several features **Coming soon**. The article must not present these as shipped:
 
@@ -403,17 +403,17 @@ Do not claim a competitor is better or lacks a feature without a separate curren
 
 ## Required internal links and placement
 
-- After the neutral engine-selection framework: `/deals/arraysubs/` (commercial pillar).
-- In the product/model section: `/deals/arraysubs/features/#products-checkout`.
+- After the neutral engine-selection framework: `/product/arraysubs/` (commercial pillar).
+- In the product/model section: `/product/arraysubs/features/#products-checkout`.
 - Contextual recipe links, without duplicating their configuration:
-  - monthly versus annual: `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
-  - fixed-cycle recipe: `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
-  - lifetime: `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
+  - monthly versus annual: `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
+  - fixed-cycle recipe: `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
+  - lifetime: `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
 - Sibling education:
   - A002 “What Is a WooCommerce Subscription?”
   - A003 “WooCommerce Subscription Product Types Explained”
   - A004 “Simple vs Variable WooCommerce Subscriptions”
-- Primary CTA only after the core answer and launch framework: `/deals/arraysubs/pricing/` (“View Pro Pricing”).
+- Primary CTA only after the core answer and launch framework: `/product/arraysubs/pricing/` (“View Pro Pricing”).
 
 ## Visual and image opportunities
 
@@ -492,4 +492,4 @@ Screenshots should be current and original if the article names exact ArraySubs 
 | Address updates | https://woocommerce.com/document/subscriptions/customers-view/update-address/ |
 | Cancellation/suspension | https://woocommerce.com/document/subscriptions/customers-view/suspend-cancel-or-remove-an-item/ |
 | Generic Woo test-order caveats | https://woocommerce.com/document/managing-orders/testing-orders/ |
-| ArraySubs public current feature/tier/coming-soon statements | https://arrayhash.com/deals/arraysubs/ |
+| ArraySubs public current feature/tier/coming-soon statements | https://arrayhash.com/product/arraysubs/ |

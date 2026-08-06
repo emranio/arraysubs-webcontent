@@ -26,7 +26,7 @@ Rank and earn AI citations for “customer chosen subscription duration WooComme
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -54,16 +54,16 @@ Create a strategy guide for first-time WooCommerce subscription operators, imple
 
 - [WooCommerce Subscriptions documentation](https://woocommerce.com/document/subscriptions/)
 - [WooCommerce Subscriptions FAQ](https://woocommerce.com/document/subscriptions/faq/)
-- [ArraySubs live product page](https://arrayhash.com/deals/arraysubs/)
+- [ArraySubs live product page](https://arrayhash.com/product/arraysubs/)
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#products-checkout`
+- Commercial pillar: `/product/arraysubs/`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#products-checkout`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
-  - `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
-  - `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
+  - `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
+  - `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
+  - `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
 - Related briefs:
   - A010 — Fixed-Date WooCommerce Subscriptions for Cohorts, Seasons, and Enrollment Windows
   - A012 — Lifetime Deals vs Recurring Subscriptions: Revenue, Support, and Risk

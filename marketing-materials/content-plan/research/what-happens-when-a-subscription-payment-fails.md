@@ -223,7 +223,7 @@ Current ArraySubs advances from the scheduled due-date basis stored on the renew
 
 ## Internal-link suggestions
 
-- Commercial hub: `/deals/arraysubs/features/#subscription-operations`
+- Commercial hub: `/product/arraysubs/features/#subscription-operations`
 - Recipe: `/recipes/arraysubs/lenient-dunning-grace/`
 - Recipe: `/recipes/arraysubs/strict-dunning-grace/`
 - Recipe: `/recipes/arraysubs/auto-downgrade-on-failed-payment/`

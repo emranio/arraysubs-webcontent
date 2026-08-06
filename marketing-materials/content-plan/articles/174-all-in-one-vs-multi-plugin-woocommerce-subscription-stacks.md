@@ -25,7 +25,7 @@ Earn decision-stage visibility for “all in one vs multi plugin subscription st
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -58,12 +58,12 @@ Create a comparison for buyers, switchers, agencies, and technical decision-make
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/alternatives/`
-- Relevant feature/use-case hub: `/deals/arraysubs/alternatives/`
+- Commercial pillar: `/product/arraysubs/alternatives/`
+- Relevant feature/use-case hub: `/product/arraysubs/alternatives/`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/export-subscriptions/`
-  - `/deals/arraysubs/use-cases/recipes/admin-manage-lifecycle/`
-  - `/deals/arraysubs/use-cases/recipes/member-update-payment/`
+  - `/product/arraysubs/use-cases/recipes/export-subscriptions/`
+  - `/product/arraysubs/use-cases/recipes/admin-manage-lifecycle/`
+  - `/product/arraysubs/use-cases/recipes/member-update-payment/`
 - Related briefs:
   - A173 — The True Cost of WooCommerce Subscriptions and Memberships
   - A175 — How to Migrate from WooCommerce Subscriptions Safely

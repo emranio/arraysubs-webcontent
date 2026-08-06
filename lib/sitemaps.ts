@@ -1,7 +1,7 @@
-import { COMPARISONS } from "@/app/deals/arraysubs/alternatives/_data";
-import { PILLARS } from "@/app/deals/arraysubs/features/_pillars";
-import { USE_CASES } from "@/app/deals/arraysubs/use-cases/_data";
-import { RECIPES } from "@/app/deals/arraysubs/use-cases/_recipes";
+import { COMPARISONS } from "@/app/product/arraysubs/alternatives/_data";
+import { PILLARS } from "@/app/product/arraysubs/features/_pillars";
+import { USE_CASES } from "@/app/product/arraysubs/use-cases/_data";
+import { RECIPES } from "@/app/product/arraysubs/use-cases/_recipes";
 import {
   RESOURCE_ARTICLES,
   RESOURCE_CATEGORIES,
@@ -24,17 +24,17 @@ export const sitemapPaths = {
 } as const;
 
 const staticPagePaths = [
-  "/deals/arraysubs/",
+  "/product/arraysubs/",
   "/contact/",
   "/become-an-affiliate/",
   "/roadmap/",
   "/changelog/",
-  "/deals/arraysubs/pricing/",
-  "/deals/arraysubs/features/",
-  "/deals/arraysubs/features/woocommerce-membership/",
-  "/deals/arraysubs/use-cases/",
-  "/deals/arraysubs/use-cases/can-i/",
-  "/deals/arraysubs/alternatives/",
+  "/product/arraysubs/pricing/",
+  "/product/arraysubs/features/",
+  "/product/arraysubs/features/woocommerce-membership/",
+  "/product/arraysubs/use-cases/",
+  "/product/arraysubs/use-cases/can-i/",
+  "/product/arraysubs/alternatives/",
   "/trust-center/",
   "/trust-center/privacy-policy/",
   "/trust-center/refund-policy/",
@@ -62,7 +62,7 @@ export function getArticleSitemapEntries(): SitemapEntry[] {
 
 export function getRecipeSitemapEntries(): SitemapEntry[] {
   return RECIPES.map((recipe) => ({
-    url: absoluteUrl(`/deals/arraysubs/use-cases/recipes/${recipe.slug}/`),
+    url: absoluteUrl(`/product/arraysubs/use-cases/recipes/${recipe.slug}/`),
   }));
 }
 
@@ -70,14 +70,14 @@ export function getPageSitemapEntries(): SitemapEntry[] {
   return [
     ...staticPagePaths.map((path) => ({ url: absoluteUrl(path) })),
     ...PILLARS.map((pillar) => ({
-      url: absoluteUrl(`/deals/arraysubs/features/${pillar.slug}/`),
+      url: absoluteUrl(`/product/arraysubs/features/${pillar.slug}/`),
     })),
     ...USE_CASES.map((useCase) => ({
-      url: absoluteUrl(`/deals/arraysubs/use-cases/${useCase.slug}/`),
+      url: absoluteUrl(`/product/arraysubs/use-cases/${useCase.slug}/`),
     })),
     ...COMPARISONS.map((comparison) => ({
       url: absoluteUrl(
-        `/deals/arraysubs/alternatives/${comparison.slug}/`,
+        `/product/arraysubs/alternatives/${comparison.slug}/`,
       ),
     })),
     ...RESOURCE_CATEGORIES.map((category) => ({

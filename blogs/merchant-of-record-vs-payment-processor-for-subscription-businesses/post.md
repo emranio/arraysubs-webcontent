@@ -283,7 +283,7 @@ Gateway Health provides an operational control plane for setup, availability, te
 
 ![Stripe account connection in WooCommerce settings](/blogs/merchant-of-record-vs-payment-processor-for-subscription-businesses/stripe-account-connection.png)
 
-For Stripe automatic billing, the current ArraySubs path depends on the official WooCommerce Stripe integration. See the [Stripe automatic billing and SCA recipe](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) and the [member payment-method update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/) for the operational workflow.
+For Stripe automatic billing, the current ArraySubs path depends on the official WooCommerce Stripe integration. See the [Stripe automatic billing and SCA recipe](/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) and the [member payment-method update recipe](/product/arraysubs/use-cases/recipes/member-update-payment/) for the operational workflow.
 
 ![Paddle gateway health details in the ArraySubs test environment](/blogs/merchant-of-record-vs-payment-processor-for-subscription-businesses/paddle-gateway-health.png)
 
@@ -347,7 +347,7 @@ Potentially. A business may use an MoR for eligible markets or products and a pr
 
 ### Does ArraySubs decide which model I am using?
 
-No. The provider product and contract define the legal model. ArraySubs connects subscription lifecycle behavior to supported gateway integrations. Review [payment gateway capabilities](/deals/arraysubs/features/#payment-gateways) and use the [Gateway Health monitor recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) for operations.
+No. The provider product and contract define the legal model. ArraySubs connects subscription lifecycle behavior to supported gateway integrations. Review [payment gateway capabilities](/product/arraysubs/features/#payment-gateways) and use the [Gateway Health monitor recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) for operations.
 
 ## Decision summary
 
@@ -355,7 +355,7 @@ Use a processor when your business is ready to own or assemble the surrounding t
 
 Before choosing either, verify six things in writing: seller role, scope, total cost, control, data portability, and exit treatment. Then pilot the exact subscription scenarios you intend to sell.
 
-ArraySubs can operate the shared WooCommerce subscription lifecycle and connect supported automatic gateway paths, while Gateway Health makes the integration state visible. [View ArraySubs Pro pricing](/deals/arraysubs/pricing/) after you have chosen the provider model and validated your eligibility.
+ArraySubs can operate the shared WooCommerce subscription lifecycle and connect supported automatic gateway paths, while Gateway Health makes the integration state visible. [View ArraySubs Pro pricing](/product/arraysubs/pricing/) after you have chosen the provider model and validated your eligibility.
 
 ## Primary sources
 

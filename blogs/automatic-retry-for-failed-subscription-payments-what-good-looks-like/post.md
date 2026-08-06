@@ -262,13 +262,13 @@ This is a source review, not a live decline, webhook-loss, concurrency, or sched
 
 ArraySubs is a practical fit when WooCommerce should own local Stripe renewal orders and the merchant wants retry, grace, notes, emails, manual recovery, and portal actions in one lifecycle. It is not automatically the best fit when Stripe Billing invoices and Smart Retries are the real source of truth, when fully decline-adaptive optimization is required, or when the business cannot test webhooks, scheduler reliability, duplicate-charge safety, and access restoration.
 
-For store-level timing and communication policy, read [Subscription Dunning Strategy](/payment-recovery/subscription-dunning-strategy-timing-messages-and-stop-rules/). For the complete operating runbook, use [Failed Subscription Payment Recovery](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/). When implementing ArraySubs, choose a documented [lenient dunning and grace recipe](/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict dunning and grace recipe](/deals/arraysubs/use-cases/recipes/strict-dunning-grace/) rather than duplicating setup steps here.
+For store-level timing and communication policy, read [Subscription Dunning Strategy](/payment-recovery/subscription-dunning-strategy-timing-messages-and-stop-rules/). For the complete operating runbook, use [Failed Subscription Payment Recovery](/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/). When implementing ArraySubs, choose a documented [lenient dunning and grace recipe](/product/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict dunning and grace recipe](/product/arraysubs/use-cases/recipes/strict-dunning-grace/) rather than duplicating setup steps here.
 
 ## Final recommendation
 
 Treat every automatic retry as a new payment decision. Verify who owns collection, route the failure by remedy, confirm the renewal is still unpaid and eligible, then attempt only within an explicit grace and communication policy. Reconcile every successful payment across the gateway, order, subscription, access, next date, scheduled jobs, and customer message.
 
-Once those controls are tested, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) for the supported automatic-payment and recovery workflow.
+Once those controls are tested, [review ArraySubs Pro pricing](/product/arraysubs/pricing/) for the supported automatic-payment and recovery workflow.
 
 ## Frequently asked questions
 

@@ -62,7 +62,7 @@ The first question is not “monthly or yearly?” It is “will the customer be
 
 *Start with whether another charge will occur, then decide whether the number of charges is predetermined.*
 
-For a practical implementation, compare the [monthly-versus-annual variable recipe](/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/), the [fixed-cycle recipe](/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/), and the [lifetime-deal recipe](/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/). The fixed-cycle recipe uses multiple scheduled charges; it is not the same as collecting the full term upfront.
+For a practical implementation, compare the [monthly-versus-annual variable recipe](/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/), the [fixed-cycle recipe](/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/), and the [lifetime-deal recipe](/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/). The fixed-cycle recipe uses multiple scheduled charges; it is not the same as collecting the full term upfront.
 
 ### A hypothetical cash-timing comparison
 
@@ -125,7 +125,7 @@ Once the offer and clocks are clear, compare engines against the lifecycle you a
 
 Do not buy a long feature list and hope it contains your specific path. Write two or three representative scenarios—signup, successful renewal, and failure recovery—and ask whether the engine can execute each one visibly.
 
-ArraySubs is the product discussed on this site, so this section is first-party. The current code review on July 13, 2026 found simple and variable subscription fields, day/week/month/year and lifetime periods, interval and term controls, trials, sign-up fees, manual renewal fallback, a customer portal, centralized scheduled actions, and Pro automatic-payment paths for Stripe, PayPal, and Paddle. See the [ArraySubs feature map](/deals/arraysubs/features/#products-checkout) and [commercial overview](/deals/arraysubs/) for the current scope.
+ArraySubs is the product discussed on this site, so this section is first-party. The current code review on July 13, 2026 found simple and variable subscription fields, day/week/month/year and lifetime periods, interval and term controls, trials, sign-up fees, manual renewal fallback, a customer portal, centralized scheduled actions, and Pro automatic-payment paths for Stripe, PayPal, and Paddle. See the [ArraySubs feature map](/product/arraysubs/features/#products-checkout) and [commercial overview](/product/arraysubs/) for the current scope.
 
 ArraySubs may not fit a non-WooCommerce store, a store requiring an automatic gateway outside the currently implemented paths, a usage-metered billing model, or a launch dependent on a workflow still marked “coming soon,” such as native split-payment installments. A hosted platform may also be a better operational match if your team does not want to own WordPress updates, cron, payment integrations, and logs.
 
@@ -321,7 +321,7 @@ If the first payment occurs at signup and the plan is defined as 12 total paymen
 
 The reliable way to add subscriptions to WooCommerce is to design the business model and lifecycle first, configure the engine second, and prove the complete loop before launch. If you can explain each clock, each record, and every success or failure transition, the system is ready to operate—not merely ready to accept a first order.
 
-ArraySubs is built around that WooCommerce workflow, with a free core for subscription products and manual renewals and Pro automation for supported gateways and deeper operations. Review [ArraySubs pricing](/deals/arraysubs/pricing/) only after you have mapped the model and gateway your store needs.
+ArraySubs is built around that WooCommerce workflow, with a free core for subscription products and manual renewals and Pro automation for supported gateways and deeper operations. Review [ArraySubs pricing](/product/arraysubs/pricing/) only after you have mapped the model and gateway your store needs.
 
 ---
 

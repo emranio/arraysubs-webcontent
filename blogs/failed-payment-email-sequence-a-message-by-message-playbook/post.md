@@ -305,7 +305,7 @@ No open-rate or revenue-lift benchmark is claimed here.
 
 Build the failed-payment email sequence around verified state changes. Send the first notice quickly, make every later message add a real event or deadline, provide one secure task, and stop the moment the branch changes. Fix token, gateway, webhook, scheduler, and order-state problems before trying to write around them.
 
-Use the [lenient dunning recipe](/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict dunning recipe](/deals/arraysubs/use-cases/recipes/strict-dunning-grace/) to align implementation with the policy, then [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) for supported payment-recovery capabilities.
+Use the [lenient dunning recipe](/product/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict dunning recipe](/product/arraysubs/use-cases/recipes/strict-dunning-grace/) to align implementation with the policy, then [review ArraySubs Pro pricing](/product/arraysubs/pricing/) for supported payment-recovery capabilities.
 
 ## Frequently asked questions
 

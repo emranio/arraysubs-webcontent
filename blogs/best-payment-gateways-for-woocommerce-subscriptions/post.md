@@ -128,7 +128,7 @@ Availability is also not universal. Check [Stripe’s supported countries and re
 
 The current integration uses the official WooCommerce Stripe gateway rather than presenting a parallel card form. ArraySubs Pro coordinates the subscription lifecycle and renewal order; Stripe handles the payment credential and transaction. The inspected code also includes safeguards around scheduled renewal processing so the same subscription is not casually charged twice by overlapping workers.
 
-For setup details, use the focused [Stripe automatic billing and SCA recipe](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) instead of treating this comparison as a configuration manual.
+For setup details, use the focused [Stripe automatic billing and SCA recipe](/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) instead of treating this comparison as a configuration manual.
 
 ## Why PayPal is often the best second option
 
@@ -301,7 +301,7 @@ The expanded Stripe view distinguishes the official WooCommerce Stripe webhook f
 
 ![Annotated expanded Stripe Gateway Health card showing official and secondary webhook status areas.](/blogs/best-payment-gateways-for-woocommerce-subscriptions/stripe-webhook-health.png)
 
-Use the [Gateway Health monitoring recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) for the product-specific workflow. Operationally, assign owners and escalation thresholds:
+Use the [Gateway Health monitoring recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) for the product-specific workflow. Operationally, assign owners and escalation thresholds:
 
 | Signal | First owner | Initial response |
 | --- | --- | --- |
@@ -323,7 +323,7 @@ A subscription gateway is only as durable as its update-payment path. Customers 
 3. Does it replace a local token, create a new remote agreement, or update a provider-managed subscription?
 4. Does the failed renewal retry automatically afterward, or must the customer/admin trigger another action?
 
-ArraySubs exposes a member update-payment workflow, but the underlying action differs by gateway. Read the focused [member payment-update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/) and test it for every enabled gateway. A support article that says only “update your card” is insufficient when PayPal requires reauthorization or Paddle sends the customer through a provider portal.
+ArraySubs exposes a member update-payment workflow, but the underlying action differs by gateway. Read the focused [member payment-update recipe](/product/arraysubs/use-cases/recipes/member-update-payment/) and test it for every enabled gateway. A support article that says only “update your card” is insufficient when PayPal requires reauthorization or Paddle sends the customer through a provider portal.
 
 ## Build a failure and recovery policy before launch
 
@@ -434,7 +434,7 @@ Never represent a database copy as a payment-token migration. Never cancel all o
 
 ## Where ArraySubs fits—and where it does not
 
-ArraySubs is designed to give WooCommerce stores a coherent subscription product, lifecycle, renewal-order, customer-portal, and operations layer. [ArraySubs payment-gateway features](/deals/arraysubs/features/#payment-gateways) connect that system to automatic Stripe, PayPal, and Paddle workflows in Pro, while Free supports manual renewal invoicing.
+ArraySubs is designed to give WooCommerce stores a coherent subscription product, lifecycle, renewal-order, customer-portal, and operations layer. [ArraySubs payment-gateway features](/product/arraysubs/features/#payment-gateways) connect that system to automatic Stripe, PayPal, and Paddle workflows in Pro, while Free supports manual renewal invoicing.
 
 Useful capabilities around the gateway include:
 
@@ -451,7 +451,7 @@ Useful capabilities around the gateway include:
 
 ArraySubs is not the right fit if the business needs an unsupported automatic gateway and refuses manual renewal, if the product violates the chosen provider’s rules, if the desired cart structure conflicts with a remote agreement, or if the team will not operate WordPress scheduling and webhook infrastructure. It also does not replace qualified legal, tax, accounting, payments-risk, or data-protection advice.
 
-Once the architecture is clear, [view ArraySubs Pro pricing](/deals/arraysubs/pricing/) to compare the automatic gateway and operations features. Keep the product evaluation separate from the gateway’s own account eligibility, pricing, and terms.
+Once the architecture is clear, [view ArraySubs Pro pricing](/product/arraysubs/pricing/) to compare the automatic gateway and operations features. Keep the product evaluation separate from the gateway’s own account eligibility, pricing, and terms.
 
 ## Final recommendation
 

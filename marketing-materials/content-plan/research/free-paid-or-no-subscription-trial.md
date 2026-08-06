@@ -69,7 +69,7 @@ A sign-up fee is a separate one-time checkout amount, not a paid trial. Woo says
 
 Introductory pricing charges a stated amount for one or more initial billing cycles and then changes to a different renewal price. It may be marketed as an introductory offer, but it is not necessarily a trial lifecycle.
 
-ArraySubs’ current public setup guide documents Different Renewal Price for introductory, promotional, or graduated pricing. Its example is $19.99/month for three months and then $29.99/month. The current repository also contains a `$1 first period, then full price` recipe that explicitly says it is “a real payment, not a trial.” Source: [ArraySubs product setup documentation](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html) and repository file `web-content/app/deals/arraysubs/use-cases/_recipes.ts`.
+ArraySubs’ current public setup guide documents Different Renewal Price for introductory, promotional, or graduated pricing. Its example is $19.99/month for three months and then $29.99/month. The current repository also contains a `$1 first period, then full price` recipe that explicitly says it is “a real payment, not a trial.” Source: [ArraySubs product setup documentation](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html) and repository file `web-content/app/product/arraysubs/use-cases/_recipes.ts`.
 
 ## The four-axis framework
 
@@ -314,7 +314,7 @@ If traffic is too low for a credible randomized result, use qualitative activati
 - Current logged-in-customer validation can block repeat trials when a past subscription carries trial history. Guest history cannot be checked before account creation.
 - Automatic Stripe, PayPal, and Paddle billing is Pro; the free core uses manual renewal invoices across WooCommerce gateways.
 
-Public sources: [ArraySubs product page](https://arrayhash.com/deals/arraysubs/) and [ArraySubs product setup documentation](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html).
+Public sources: [ArraySubs product page](https://arrayhash.com/product/arraysubs/) and [ArraySubs product setup documentation](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html).
 
 Repository verification points:
 
@@ -592,11 +592,11 @@ Suggested word budget for a 2,600-word article:
 
 ## Internal links required by the brief
 
-- Commercial pillar: `/deals/arraysubs/`
-- Products and checkout feature hub: `/deals/arraysubs/features/#products-checkout`
-- Monthly versus annual variable recipe: `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
-- Prepaid fixed cycles recipe: `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
-- Lifetime deal recipe: `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
+- Commercial pillar: `/product/arraysubs/`
+- Products and checkout feature hub: `/product/arraysubs/features/#products-checkout`
+- Monthly versus annual variable recipe: `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
+- Prepaid fixed cycles recipe: `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
+- Lifetime deal recipe: `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
 - Relevant existing narrow recipes if available in navigation:
   - no-card trial then monthly
   - card-required trial
@@ -665,7 +665,7 @@ The final article should visibly include:
 
 ### ArraySubs primary sources and repository observations
 
-13. [ArraySubs product page](https://arrayhash.com/deals/arraysubs/)  
+13. [ArraySubs product page](https://arrayhash.com/product/arraysubs/)\
     Use for shipped Free Trials, free/pro scope, automatic gateway scope, manual renewals, Different Renewal Price positioning, and the CTA destination.
 14. [ArraySubs — Create and Configure Subscription Products](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html)  
     Use for trial fields, sign-up-fee independence, Different Renewal Price, and product configuration boundaries.

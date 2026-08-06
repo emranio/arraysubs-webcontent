@@ -237,9 +237,9 @@ Flat ArraySubs palette, no gradients/glow/3D.
 
 ## Internal links
 
-- Commercial overview: `/deals/arraysubs/`
-- Subscription operations: `/deals/arraysubs/features/#subscription-operations`
-- Recipes: `/deals/arraysubs/use-cases/recipes/switch-at-renewal/`, `/deals/arraysubs/use-cases/recipes/downgrade-with-credit/`, `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
+- Commercial overview: `/product/arraysubs/`
+- Subscription operations: `/product/arraysubs/features/#subscription-operations`
+- Recipes: `/product/arraysubs/use-cases/recipes/switch-at-renewal/`, `/product/arraysubs/use-cases/recipes/downgrade-with-credit/`, `/product/arraysubs/use-cases/recipes/subscription-notes-timeline/`
 - Siblings: A018 manual vs automatic, A019 record types, A020 renewal synchronization.
 
 ## Primary sources (accessed 2026-07-13)

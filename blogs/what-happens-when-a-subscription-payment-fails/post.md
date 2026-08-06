@@ -99,7 +99,7 @@ For the complete recovery program, read [Failed Subscription Payment Recovery](/
 
 ## Final recommendation
 
-Tell the customer exactly what failed, what remains active, what they must do, and when the next status change occurs. Operators should reconcile payment before retrying and verify recovery across every state. [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Tell the customer exactly what failed, what remains active, what they must do, and when the next status change occurs. Operators should reconcile payment before retrying and verify recovery across every state. [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

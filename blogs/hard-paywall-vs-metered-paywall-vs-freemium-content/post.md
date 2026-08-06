@@ -101,7 +101,7 @@ A hard paywall is not equivalent to returning 404 for every premium URL. A publi
 
 ![A live ArraySubs URL rule shows the premium path scope and eligibility behind a hard gate.](/blogs/hard-paywall-vs-metered-paywall-vs-freemium-content/hard-paywall-url-rule.png)
 
-Use the [URL-prefix lockdown recipe](/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/) only after account and recovery exclusions are documented.
+Use the [URL-prefix lockdown recipe](/product/arraysubs/use-cases/recipes/url-prefix-lockdown/) only after account and recovery exclusions are documented.
 
 ## What does a real metered paywall require?
 
@@ -176,7 +176,7 @@ Current ArraySubs provides Gutenberg, Elementor, shortcode, and programmatic par
 
 ![The live Content Gate guide shows the partial-gating surfaces and calls for allowed/denied testing.](/blogs/hard-paywall-vs-metered-paywall-vs-freemium-content/partial-gate-methods.png)
 
-Use the [inline content-gating recipe](/deals/arraysubs/use-cases/recipes/inline-content-gating/) after the public/premium editorial contract is written.
+Use the [inline content-gating recipe](/product/arraysubs/use-cases/recipes/inline-content-gating/) after the public/premium editorial contract is written.
 
 ## Can paywalled content appear in Google Search?
 
@@ -268,7 +268,7 @@ ArraySubs fits subscription, purchase, role, and feature-driven access inside Wo
 
 Choose the model that matches audience frequency, content uniqueness, public proof, acquisition, identity capability, and member aftercare. Start with a reversible classification, protect server responses correctly, measure closed cohorts, and add a meter only when the organization can operate its identity, privacy, cache, and counting system responsibly.
 
-After choosing a model that ArraySubs actually supports, map it to the [WooCommerce membership feature system](/deals/arraysubs/features/woocommerce-membership/), then [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) if automatic billing or advanced controls are required.
+After choosing a model that ArraySubs actually supports, map it to the [WooCommerce membership feature system](/product/arraysubs/features/woocommerce-membership/), then [review ArraySubs Pro pricing](/product/arraysubs/pricing/) if automatic billing or advanced controls are required.
 
 ## Frequently asked questions
 

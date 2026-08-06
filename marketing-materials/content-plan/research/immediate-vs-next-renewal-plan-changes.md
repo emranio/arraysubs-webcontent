@@ -201,13 +201,13 @@ Current code supports replacing an existing pending switch only after explicit c
 
 ## Internal-link suggestions
 
-- Primary CTA: `/deals/arraysubs/pricing/`
-- Switch at renewal recipe: `/deals/arraysubs/use-cases/recipes/switch-at-renewal/`
-- Downgrade with credit recipe: `/deals/arraysubs/use-cases/recipes/downgrade-with-credit/`
-- Upgrade path recipe: `/deals/arraysubs/use-cases/recipes/upgrade-path-tiers/`
-- Customer self-service switch recipe: `/deals/arraysubs/use-cases/recipes/customer-self-serve-switch/`
-- Switch fees recipe: `/deals/arraysubs/use-cases/recipes/switch-fees/`
-- Subscription notes/timeline recipe: `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
+- Primary CTA: `/product/arraysubs/pricing/`
+- Switch at renewal recipe: `/product/arraysubs/use-cases/recipes/switch-at-renewal/`
+- Downgrade with credit recipe: `/product/arraysubs/use-cases/recipes/downgrade-with-credit/`
+- Upgrade path recipe: `/product/arraysubs/use-cases/recipes/upgrade-path-tiers/`
+- Customer self-service switch recipe: `/product/arraysubs/use-cases/recipes/customer-self-serve-switch/`
+- Switch fees recipe: `/product/arraysubs/use-cases/recipes/switch-fees/`
+- Subscription notes/timeline recipe: `/product/arraysubs/use-cases/recipes/subscription-notes-timeline/`
 - Proration comparison: `/billing-strategy/subscription-proration-methods-compared-charge-credit-or-defer/`
 
 Do not duplicate recipe configuration steps.

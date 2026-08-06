@@ -127,7 +127,7 @@ Four mechanisms are regularly described as “card update,” but they solve dif
 
 The staging account currently has no saved methods, which is a useful boundary: an account-level screen can be empty even while an ArraySubs subscription record displays its own payment-method label. The core customer view can send eligible active, on-hold, or trial subscriptions to this WooCommerce account-level screen. ArraySubs Pro can additionally expose a gateway-specific update route when the gateway advertises support and the subscription is not waiting for cancellation.
 
-The [member payment-method update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/) owns the click-by-click setup. This article owns the verification question: what provider object and local subscription reference actually changed?
+The [member payment-method update recipe](/product/arraysubs/use-cases/recipes/member-update-payment/) owns the click-by-click setup. This article owns the verification question: what provider object and local subscription reference actually changed?
 
 ### A method update does not settle an unpaid renewal
 
@@ -162,7 +162,7 @@ ArraySubs Pro relies on the official WooCommerce Stripe Gateway for checkout. It
 
 At renewal, the Stripe delegate creates an off-session PaymentIntent and explicitly passes the subscription’s stored Customer and PaymentMethod IDs. This is why the subscription reference is decisive.
 
-The [Stripe automatic billing and SCA recipe](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) explains the setup. The [Stripe recurring-payment test guide](/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/) provides the larger architecture.
+The [Stripe automatic billing and SCA recipe](/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) explains the setup. The [Stripe recurring-payment test guide](/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/) provides the larger architecture.
 
 ### Provider-account and mode scope matter
 
@@ -358,7 +358,7 @@ ArraySubs already writes payment logs, private subscription notes, gateway event
 
 ![Annotated Stripe Gateway Health detail showing payment-method update capabilities alongside the disabled and not-configured staging state.](/blogs/subscription-payment-tokens-and-card-updates-explained/stripe-payment-method-health-verified.png)
 
-The staging capture shows a deliberately disabled/unconfigured state. It proves the UI exposes connection, subscription-count, and event/webhook checks; it does not prove token validity or production readiness. The [Gateway Health monitoring recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) explains the operational setup.
+The staging capture shows a deliberately disabled/unconfigured state. It proves the UI exposes connection, subscription-count, and event/webhook checks; it does not prove token validity or production readiness. The [Gateway Health monitoring recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) explains the operational setup.
 
 ### Five signatures of stale or mis-scoped payment context
 
@@ -468,7 +468,7 @@ It is not a network account updater, card-data vault, universal token migration 
 - the team cannot test webhooks, multi-subscription propagation, and reconciliation; or
 - the verified PayPal/Paddle limitations conflict with a promised self-service flow.
 
-Use the [ArraySubs payment-gateway capabilities](/deals/arraysubs/features/#payment-gateways) as a starting point, then validate the source-grounded constraints in this guide.
+Use the [ArraySubs payment-gateway capabilities](/product/arraysubs/features/#payment-gateways) as a starting point, then validate the source-grounded constraints in this guide.
 
 ## Verification scope, limitations, and update log
 
@@ -512,4 +512,4 @@ The intended subscription references the intended provider method/agreement, a c
 
 A token is useful because it points to an authorized provider object. It is safe only within its owner/account scope, and it is operationally complete only when the subscription that will renew points to the correct object.
 
-Open the [member payment-method update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/) for the product workflow, use Gateway Health and a sandbox renewal for proof, and compare the current Pro options. If the supported gateway model fits your requirements, [View Pro Pricing](/deals/arraysubs/pricing/).
+Open the [member payment-method update recipe](/product/arraysubs/use-cases/recipes/member-update-payment/) for the product workflow, use Gateway Health and a sandbox renewal for proof, and compare the current Pro options. If the supported gateway model fits your requirements, [View Pro Pricing](/product/arraysubs/pricing/).

@@ -717,15 +717,15 @@ This is the clearest way to satisfy the content plan's instruction to identify w
 
 | Destination | Suggested anchor/context | Placement |
 | --- | --- | --- |
-| `/deals/arraysubs/` | “ArraySubs subscription platform” or “see what ArraySubs supports” | In the implementation-options section, after the limitation is clear. |
-| `/deals/arraysubs/features/#products-checkout` | “subscription product and checkout features” | In a paragraph about separate subscription products and checkout controls. |
-| `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/` | “configure monthly and annual subscription variations” | Where multiple recurring cadences are distinguished from one-time vs recurring mode. |
-| `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/` | “prepaid or fixed-cycle recipe” | When the buyer wants a defined number of deliveries rather than indefinite renewal. |
-| `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/` | “lifetime deal one-time recipe” | When the real offer is permanent access, not buy once versus recurring replenishment. |
+| `/product/arraysubs/` | “ArraySubs subscription platform” or “see what ArraySubs supports” | In the implementation-options section, after the limitation is clear. |
+| `/product/arraysubs/features/#products-checkout` | “subscription product and checkout features” | In a paragraph about separate subscription products and checkout controls. |
+| `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/` | “configure monthly and annual subscription variations” | Where multiple recurring cadences are distinguished from one-time vs recurring mode. |
+| `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/` | “prepaid or fixed-cycle recipe” | When the buyer wants a defined number of deliveries rather than indefinite renewal. |
+| `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/` | “lifetime deal one-time recipe” | When the real offer is permanent access, not buy once versus recurring replenishment. |
 | `/subscription-foundations/monthly-and-annual-subscription-plans-packaging-without-cannibalization/` | “monthly versus annual packaging” | Do not repeat annual discount/cadence strategy. |
 | `/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/` | “fixed-date subscriptions” | Where a shared season/cohort end date is the actual requirement. |
 | `/subscription-foundations/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/` | “customer-chosen subscription duration” | Where shoppers need to choose a term rather than choose one-time vs recurring. |
-| `/deals/arraysubs/pricing/` | “View Pro Pricing” | After the core educational answer and implementation boundary, never in the opening. |
+| `/product/arraysubs/pricing/` | “View Pro Pricing” | After the core educational answer and implementation boundary, never in the opening. |
 
 ### Optional relevant links if published
 
@@ -935,7 +935,7 @@ Use the five questions above. Keep answers factual. Do not promise FAQ rich resu
 
 ### ArraySubs first-party web sources
 
-7. [ArraySubs product page](https://arrayhash.com/deals/arraysubs/)  
+7. [ArraySubs product page](https://arrayhash.com/product/arraysubs/)\
    Use for current public positioning and feature availability. It lists simple/variable subscription products and Lifetime Deals but does not document a native same-product buy-once/subscribe control.
 
 8. [Create and Configure Subscription Products](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html)  

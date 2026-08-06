@@ -25,7 +25,7 @@ Rank and earn AI citations for “WooCommerce subscription data quality,” full
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a guide for founders, analysts, finance teams, and WooCommerce store mana
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#analytics-infrastructure`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#analytics-infrastructure`
+- Commercial pillar: `/product/arraysubs/features/#analytics-infrastructure`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#analytics-infrastructure`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/track-mrr-growth/`
-  - `/deals/arraysubs/use-cases/recipes/retention-analytics-insights/`
-  - `/deals/arraysubs/use-cases/recipes/subscription-revenue-reports/`
+  - `/product/arraysubs/use-cases/recipes/track-mrr-growth/`
+  - `/product/arraysubs/use-cases/recipes/retention-analytics-insights/`
+  - `/product/arraysubs/use-cases/recipes/subscription-revenue-reports/`
 - Related briefs:
   - A086 — Subscription Metrics Every WooCommerce Store Should Track
   - A087 — How to Calculate MRR for WooCommerce Subscriptions

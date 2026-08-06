@@ -22,7 +22,7 @@ APP_NAME="${APP_NAME:-arrayhash-com-next}"
 APP_HOST="${APP_HOST:-127.0.0.1}"
 HEALTH_RETRIES="${HEALTH_RETRIES:-30}"
 KEEP_RELEASES="${KEEP_RELEASES:-2}"
-HEALTH_PATHS=("/" "/deals/arraysubs/")
+HEALTH_PATHS=("/" "/product/arraysubs/")
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DEPLOY_DIR="$ROOT_DIR/.deploy"

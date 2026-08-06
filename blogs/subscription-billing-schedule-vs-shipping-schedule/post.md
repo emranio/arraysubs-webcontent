@@ -112,7 +112,7 @@ For tax and renewal reconciliation, read [How Taxes and Shipping Behave on Subsc
 
 ## Final recommendation
 
-Keep one-payment/one-shipment unless there is a documented reason and a fulfillment system for every additional obligation. Treat ArraySubs Pro shipping as charge policy, not a delivery scheduler. [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Keep one-payment/one-shipment unless there is a documented reason and a fulfillment system for every additional obligation. Treat ArraySubs Pro shipping as charge policy, not a delivery scheduler. [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

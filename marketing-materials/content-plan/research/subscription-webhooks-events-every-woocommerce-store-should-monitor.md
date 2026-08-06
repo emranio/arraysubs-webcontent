@@ -137,17 +137,17 @@ An unannotated Paddle expansion remains a research artifact and should not be pu
 
 ## Internal links
 
-- Payment-gateway feature anchor: `/deals/arraysubs/features/#payment-gateways`
-- Gateway Health recipe: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
-- Stripe setup/SCA recipe: `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
-- Member payment update recipe: `/deals/arraysubs/use-cases/recipes/member-update-payment/`
+- Payment-gateway feature anchor: `/product/arraysubs/features/#payment-gateways`
+- Gateway Health recipe: `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
+- Stripe setup/SCA recipe: `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+- Member payment update recipe: `/product/arraysubs/use-cases/recipes/member-update-payment/`
 - Stripe recurring architecture: `/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/`
 - PayPal architecture: `/payments-and-compliance/paypal-recurring-payments-for-woocommerce-agreements-renewals-and-limits/`
 - Paddle MoR architecture: `/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/`
 - SCA recovery: `/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/`
 - Token/update model: `/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/`
 - Failure recovery pillar: `/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/`
-- Pricing CTA: `/deals/arraysubs/pricing/`
+- Pricing CTA: `/product/arraysubs/pricing/`
 
 ## Recommended 5,000–7,000-word outline
 

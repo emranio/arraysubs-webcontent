@@ -90,7 +90,7 @@ Current U.S. negative-option context is evolving. The FTC’s 2024 amended rule 
 
 ## Final recommendation
 
-Make cancellation a three-part result: future billing, entitlement, and refund. Period-end is often clear for prepaid access; immediate is appropriate only when the product and policy justify ending now. [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Make cancellation a three-part result: future billing, entitlement, and refund. Period-end is often clear for prepaid access; immediate is appropriate only when the product and policy justify ending now. [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

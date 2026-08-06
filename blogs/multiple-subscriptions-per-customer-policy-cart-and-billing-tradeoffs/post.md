@@ -106,7 +106,7 @@ Track blocked attempts, migration completion, multi-subscription customers, fail
 
 ## Final recommendation
 
-Allow multiple subscriptions only for genuine independent needs and after gateway/operations testing. For replacement purchases, preserve one coherent agreement through switching. Never leave a blocked customer without a next step. [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Allow multiple subscriptions only for genuine independent needs and after gateway/operations testing. For replacement purchases, preserve one coherent agreement through switching. Never leave a blocked customer without a next step. [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

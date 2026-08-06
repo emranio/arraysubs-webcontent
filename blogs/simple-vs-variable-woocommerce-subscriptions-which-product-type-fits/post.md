@@ -85,7 +85,7 @@ Suppose a service has Basic and Pro tiers, each sold monthly or annually:
 
 One variable parent is a strong fit when all four options share one product promise and the page makes price and cadence differences obvious. Four separate simple products may be clearer when each plan needs different copy, onboarding, fulfillment, or audience targeting.
 
-The [monthly and annual ArraySubs recipe](/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/) owns the exact configuration steps.
+The [monthly and annual ArraySubs recipe](/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/) owns the exact configuration steps.
 
 ## Switching is a separate system
 
@@ -105,7 +105,7 @@ Never delete a product or variation referenced by active subscription agreements
 
 ArraySubs 1.8.9 uses normal WooCommerce Simple and Variable products with a Subscription toggle. Each subscription variation can store its own schedule, term, trial, fee, and renewal-price data. Current code synchronizes the parent subscription flag to all child variations, so one parent cannot mix ordinary one-time variations with subscription variations.
 
-Automatic or manual renewal routing depends on payment and gateway context, not simple versus variable structure. Current automatic Stripe, PayPal, and Paddle integrations are part of ArraySubs Pro; core supports manual renewal workflows. Review the current [products and checkout feature map](/deals/arraysubs/features/#products-checkout) before launch.
+Automatic or manual renewal routing depends on payment and gateway context, not simple versus variable structure. Current automatic Stripe, PayPal, and Paddle integrations are part of ArraySubs Pro; core supports manual renewal workflows. Review the current [products and checkout feature map](/product/arraysubs/features/#products-checkout) before launch.
 
 WooCommerce Subscriptions 9.0 now recommends subscription plans on supported standard product types while retaining its older dedicated subscription product types. ArraySubs already follows its own standard-product-plus-toggle model. Do not mix screenshots or instructions between the two engines ([Woo subscription product guidance](https://woocommerce.com/document/subscriptions/creating-subscription-products/)).
 
@@ -121,7 +121,7 @@ Start with one simple subscription unless consolidation clearly improves the cus
 
 For the wider model decision, read [WooCommerce Subscription Product Types Explained](/subscription-foundations/woocommerce-subscription-product-types/) and [Recurring vs Fixed-Term Subscriptions](/subscription-foundations/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/).
 
-[Compare ArraySubs plans](/deals/arraysubs/pricing/) after you have chosen the product structure and renewal requirements.
+[Compare ArraySubs plans](/product/arraysubs/pricing/) after you have chosen the product structure and renewal requirements.
 
 ## Frequently asked questions
 

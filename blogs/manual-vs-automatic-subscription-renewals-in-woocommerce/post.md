@@ -134,7 +134,7 @@ For the surrounding lifecycle, read [How WooCommerce subscription renewals work]
 
 ## Final recommendation
 
-Choose the payment mode that matches the customer contract and gateway capability. Manual renewal is a deliberate invoicing model; automatic renewal is a distributed system that needs monitoring and recovery. [Compare ArraySubs core and Pro](/deals/arraysubs/pricing/) for the mode you have validated.
+Choose the payment mode that matches the customer contract and gateway capability. Manual renewal is a deliberate invoicing model; automatic renewal is a distributed system that needs monitoring and recovery. [Compare ArraySubs core and Pro](/product/arraysubs/pricing/) for the mode you have validated.
 
 ## Frequently asked questions
 

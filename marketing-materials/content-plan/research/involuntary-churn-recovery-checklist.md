@@ -204,7 +204,7 @@ Use test records, numbered markers, redaction, and current version/date captions
 
 ## Internal links
 
-- `/deals/arraysubs/features/#subscription-operations`
+- `/product/arraysubs/features/#subscription-operations`
 - Lenient/strict dunning-grace and auto-downgrade recipes.
 - A031 recovery pillar; A032 lifecycle; A033 dunning; A034 retries.
 - A035 grace, A036 expired cards, A037 email, A038 fallback, A040 failure-code triage.

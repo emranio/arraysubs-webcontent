@@ -25,7 +25,7 @@ Rank and earn AI citations for “WooCommerce subscription lifecycle statuses,�
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a pillar guide for support teams, subscription administrators, and custom
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#subscription-operations`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#subscription-operations`
+- Commercial pillar: `/product/arraysubs/features/#subscription-operations`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#subscription-operations`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/self-service-subscriptions/`
-  - `/deals/arraysubs/use-cases/recipes/admin-create-subscription/`
-  - `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
+  - `/product/arraysubs/use-cases/recipes/self-service-subscriptions/`
+  - `/product/arraysubs/use-cases/recipes/admin-create-subscription/`
+  - `/product/arraysubs/use-cases/recipes/subscription-notes-timeline/`
 - Related briefs:
   - A119 — Customer Subscription Portal UX Checklist
   - A120 — Which Subscription Self-Service Actions Should Customers Have?

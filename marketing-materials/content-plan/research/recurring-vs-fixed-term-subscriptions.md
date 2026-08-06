@@ -82,7 +82,7 @@ An installment plan divides a fixed purchase obligation into scheduled payments.
 
 ArraySubs' current product surface lists **Installment / Split Payments** as Pro and **coming soon**. The article must not present it as shipped.
 
-First-party sources: [ArraySubs product page](https://arrayhash.com/deals/arraysubs/) and local `web-content/app/deals/arraysubs/features/page.tsx`.
+First-party sources: [ArraySubs product page](https://arrayhash.com/product/arraysubs/) and local `web-content/app/product/arraysubs/features/page.tsx`.
 
 ## Fixed-cycle versus fixed-date: the non-negotiable distinction
 
@@ -223,12 +223,12 @@ Relevant code/data:
 - `arraysubspro/src/Features/FixedPeriodMembership/Services/EndDateCalculator.php`
 - `arraysubspro/src/Features/FixedPeriodMembership/Services/Hooks.php`
 - `arraysubspro/src/Features/FixedPeriodMembership/views/simple-product-fields.php`
-- `web-content/app/deals/arraysubs/features/_data.ts` (tier is Pro)
-- [ArraySubs product page](https://arrayhash.com/deals/arraysubs/) comparison table (Free not included; Pro included)
+- `web-content/app/product/arraysubs/features/_data.ts` (tier is Pro)
+- [ArraySubs product page](https://arrayhash.com/product/arraysubs/) comparison table (Free not included; Pro included)
 
 ### Important recipe terminology issue
 
-The required internal link `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/` is implemented as **$40 monthly for six cycles**. That is fixed-cycle recurring billing, not full upfront prepayment. Its current copy also calls it suitable for installments, while the ArraySubs feature inventory marks true Installment / Split Payments as coming soon.
+The required internal link `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/` is implemented as **$40 monthly for six cycles**. That is fixed-cycle recurring billing, not full upfront prepayment. Its current copy also calls it suitable for installments, while the ArraySubs feature inventory marks true Installment / Split Payments as coming soon.
 
 Writer instruction:
 
@@ -303,7 +303,7 @@ Do not use a pie chart in A005: there is no primary dataset for model adoption o
 | [Prepaid for WooCommerce Subscriptions](https://woocommerce.com/document/prepaid-for-woocommerce-subscriptions/) | Genuine prepaid plan pricing, $0 pieces/orders, cancellation and shipping behavior | Extension change |
 | [WooCommerce Memberships Plans](https://woocommerce.com/document/woocommerce-memberships-plans/) | Unlimited, relative set-length, and fixed-date access models | Membership duration change |
 | [Memberships + Subscriptions integration](https://woocommerce.com/document/woocommerce-memberships-subscriptions-integration/) | Billing/access decoupling, fixed-date access, paid-through cancellation behavior | Integration change |
-| [ArraySubs product page](https://arrayhash.com/deals/arraysubs/) | Fixed-date Pro in comparison table; Installment/Split Payments coming soon | Product release/tier change |
+| [ArraySubs product page](https://arrayhash.com/product/arraysubs/) | Fixed-date Pro in comparison table; Installment/Split Payments coming soon | Product release/tier change |
 | Local ArraySubs core product/OrderIntegration code | Subscription length is cycles; 0 unlimited; paid-order counting; expiration | Core lifecycle change |
 | Local ArraySubs Pro FixedPeriodMembership code | Absolute/annual cutoff, enrollment windows, timezone handling, renewal/expiration, mutual exclusivity | Pro fixed-period change |
 

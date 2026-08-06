@@ -107,7 +107,7 @@ For alignment at signup, read [Renewal Synchronization Explained](/billing-strat
 
 ## Final recommendation
 
-Change the business outcome through a supported lifecycle workflow, then prove every dependent system moved with it. If the request is an arbitrary date edit, specify and test an atomic implementation rather than bypassing ArraySubs’ safety lock. [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Change the business outcome through a supported lifecycle workflow, then prove every dependent system moved with it. If the request is an arbitrary date edit, specify and test an atomic implementation rather than bypassing ArraySubs’ safety lock. [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

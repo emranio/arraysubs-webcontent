@@ -115,7 +115,7 @@ For the end-to-end process, use the [WooCommerce subscription launch checklist](
 
 ## Final recommendation
 
-Design the product page as the readable version of the subscription contract. Lead with the outcome, show the complete price sequence, explain what happens between payments, and prove the exact checkout and renewal behavior before publishing. [Compare ArraySubs plans](/deals/arraysubs/pricing/) when you are ready to implement the model.
+Design the product page as the readable version of the subscription contract. Lead with the outcome, show the complete price sequence, explain what happens between payments, and prove the exact checkout and renewal behavior before publishing. [Compare ArraySubs plans](/product/arraysubs/pricing/) when you are ready to implement the model.
 
 ## Frequently asked questions
 

@@ -26,7 +26,7 @@ Rank and earn AI citations for “what happens when subscription payment fails,�
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -58,12 +58,12 @@ Create an explainer for subscription operators, finance teams, and customer-succ
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#subscription-operations`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#subscription-operations`
+- Commercial pillar: `/product/arraysubs/features/#subscription-operations`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#subscription-operations`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/`
-  - `/deals/arraysubs/use-cases/recipes/strict-dunning-grace/`
-  - `/deals/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/`
+  - `/product/arraysubs/use-cases/recipes/lenient-dunning-grace/`
+  - `/product/arraysubs/use-cases/recipes/strict-dunning-grace/`
+  - `/product/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/`
 - Related briefs:
   - A031 — Failed Subscription Payment Recovery for WooCommerce
   - A033 — Subscription Dunning Strategy: Timing, Messages, and Stop Rules

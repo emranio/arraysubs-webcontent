@@ -230,7 +230,7 @@ The live subscription payment timeline and notes help reconstruct this mismatch:
 
 Keep provider evidence raw and private, but make the merchant response stable: retry, update, authenticate, stop, or reconcile. Begin with the current remote payment state, never infer a precise cause from generic evidence, and close the case only after the payment, renewal order, subscription, access, messages, and next date agree.
 
-Use the complete [involuntary churn recovery checklist](/payment-recovery/involuntary-churn-recovery-checklist/) beside your triage runbook. After sandbox and support testing, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) or the wider [subscription operations features](/deals/arraysubs/features/#subscription-operations).
+Use the complete [involuntary churn recovery checklist](/payment-recovery/involuntary-churn-recovery-checklist/) beside your triage runbook. After sandbox and support testing, [review ArraySubs Pro pricing](/product/arraysubs/pricing/) or the wider [subscription operations features](/product/arraysubs/features/#subscription-operations).
 
 ## Frequently asked questions
 

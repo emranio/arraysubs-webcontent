@@ -203,11 +203,11 @@ Do not use the official Woo integration’s answer as the presumed ArraySubs ans
 
 ## Internal-link plan
 
-- **Commercial pillar:** `/deals/arraysubs/features/woocommerce-membership/`
+- **Commercial pillar:** `/product/arraysubs/features/woocommerce-membership/`
 - **Recipes:** combined conditions, URL prefix lockdown, inline content gating.
 - **Siblings:** A041 architecture pillar, A043 combined architecture, A044 membership level strategy.
 - **Supporting concepts:** A045 content restriction, A047 content dripping, A051 roles vs membership levels vs entitlements.
-- **CTA after decision tree:** `/deals/arraysubs/pricing/`
+- **CTA after decision tree:** `/product/arraysubs/pricing/`
 
 ## Long-form SEO/GEO outline (target 3,200–4,000 words)
 

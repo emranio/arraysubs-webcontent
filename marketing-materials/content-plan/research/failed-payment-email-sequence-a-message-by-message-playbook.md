@@ -183,7 +183,7 @@ Use numbered markers, redact recipients/customer data, and caption product versi
 
 ## Internal links
 
-- `/deals/arraysubs/features/#subscription-operations`
+- `/product/arraysubs/features/#subscription-operations`
 - Lenient and strict dunning/grace recipes.
 - Auto-downgrade-on-failed-payment recipe.
 - A036 expired-card recovery for the update path.

@@ -493,7 +493,7 @@ This guide was verified during its latest update against ArraySubs 1.8.11, Array
 
 No real-customer dataset, interview, reason distribution, controlled experiment, offer acceptance, or cancellation was used. The six-family taxonomy and codebook practices are original editorial recommendations and require validation, privacy review, and appropriate legal review in the merchant's context.
 
-Next, review the [effective cancellation flow guide](/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/), compare [subscription save offers](/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/), or explore [reason-targeted retention features](/deals/arraysubs/features/#retention-revenue).
+Next, review the [effective cancellation flow guide](/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/), compare [subscription save offers](/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/), or explore [reason-targeted retention features](/product/arraysubs/features/#retention-revenue).
 
 ## Primary sources
 

@@ -162,7 +162,7 @@ Important current boundaries:
 
 Verify tax, coupons, gateway refund, quantity, and reporting with the exact checkout setup before launch. Use a separate product line when the upfront item needs quantity multiplication, stock, shipping, warranty, or distinct refunds.
 
-The setup steps live in the [flat monthly fee recipe](/deals/arraysubs/use-cases/recipes/signup-fee-plus-flat-monthly/), [trial plus fee recipe](/deals/arraysubs/use-cases/recipes/trial-with-signup-fee/), and [high setup/low monthly recipe](/deals/arraysubs/use-cases/recipes/high-signup-low-monthly/).
+The setup steps live in the [flat monthly fee recipe](/product/arraysubs/use-cases/recipes/signup-fee-plus-flat-monthly/), [trial plus fee recipe](/product/arraysubs/use-cases/recipes/trial-with-signup-fee/), and [high setup/low monthly recipe](/product/arraysubs/use-cases/recipes/high-signup-low-monthly/).
 
 ## Final recommendation
 
@@ -170,7 +170,7 @@ Use a sign-up fee when it funds a real one-time outcome and the amount follows a
 
 Read the adjacent [Free Trial, Paid Trial, or No Trial framework](/subscription-foundations/free-trial-paid-trial-or-no-trial-a-subscription-decision-framework/) before combining a fee with an evaluation period.
 
-[Compare ArraySubs plans](/deals/arraysubs/pricing/) after the product, gateway, and refund requirements are clear.
+[Compare ArraySubs plans](/product/arraysubs/pricing/) after the product, gateway, and refund requirements are clear.
 
 ## Frequently asked questions
 

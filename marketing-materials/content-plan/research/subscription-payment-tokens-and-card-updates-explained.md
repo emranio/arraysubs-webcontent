@@ -548,11 +548,11 @@ Required links and natural anchors:
 
 | Route | Suggested anchor | Placement |
 | --- | --- | --- |
-| `/deals/arraysubs/features/#payment-gateways` | “payment-gateway capabilities in ArraySubs” | After the direct conceptual model |
-| `/deals/arraysubs/use-cases/recipes/member-update-payment/` | “member payment-method update recipe” | After broad update-model explanation; do not repeat setup steps |
-| `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/` | “Stripe automatic billing and SCA recipe” | Stripe future-use setup section |
-| `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/` | “Gateway Health monitoring recipe” | Audit/diagnosis section |
-| `/deals/arraysubs/pricing/` | “view ArraySubs Pro pricing” | After the core answer and practical value, never in opening |
+| `/product/arraysubs/features/#payment-gateways` | “payment-gateway capabilities in ArraySubs” | After the direct conceptual model |
+| `/product/arraysubs/use-cases/recipes/member-update-payment/` | “member payment-method update recipe” | After broad update-model explanation; do not repeat setup steps |
+| `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/` | “Stripe automatic billing and SCA recipe” | Stripe future-use setup section |
+| `/product/arraysubs/use-cases/recipes/gateway-health-monitor/` | “Gateway Health monitoring recipe” | Audit/diagnosis section |
+| `/product/arraysubs/pricing/` | “view ArraySubs Pro pricing” | After the core answer and practical value, never in opening |
 | `/payment-recovery/expired-cards-and-subscription-recovery/` | “expired-card recovery guide” | Expiry and failed-renewal distinction |
 | `/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/` | “SCA and 3D Secure for renewals” | Stripe off-session setup/caveat |
 | `/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/` | “subscription webhook monitoring guide” | Event ordering/idempotency paragraph if A064 is published before A063 finalization; otherwise omit until live |

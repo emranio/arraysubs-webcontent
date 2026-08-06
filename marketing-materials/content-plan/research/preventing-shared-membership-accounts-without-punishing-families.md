@@ -183,9 +183,9 @@ Do **not** claim that ArraySubs currently provides:
 - `arraysubs/src/Features/MainAdmin/REST/SettingsController.php`
 - `arraysubs/src/functions/settings-helpers.php`
 - `arraysubs/src/Features/MembersAccess/Services/ConditionEvaluator.php`
-- `web-content/app/deals/arraysubs/features/_data.ts`
-- `web-content/app/deals/arraysubs/use-cases/_recipes.ts`
-- `web-content/app/deals/arraysubs/pricing/page.tsx`
+- `web-content/app/product/arraysubs/features/_data.ts`
+- `web-content/app/product/arraysubs/use-cases/_recipes.ts`
+- `web-content/app/product/arraysubs/pricing/page.tsx`
 - `qa/progress/kanban/tasks/109-stage-09-11-multi-login-prevention-pro-max-2.md`
 
 ## External claims: WordPress, security, privacy, and accessibility
@@ -456,11 +456,11 @@ Keep the article at 6-8 contextual internal links. Use varied anchors and do not
 1. Early architecture context: `/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/` — anchor such as “membership architecture before configuration.”
 2. Billing-versus-access distinction: `/membership-strategy/woocommerce-membership-vs-subscription-what-is-the-difference/` — anchor such as “separate subscription billing from membership access.”
 3. Lifecycle/source-of-truth context: `/membership-strategy/woocommerce-subscriptions-and-memberships-together-the-complete-architecture/` — anchor such as “connect recurring billing to member entitlements.”
-4. Product capability after the neutral framework: `/deals/arraysubs/features/woocommerce-membership/` — anchor such as “ArraySubs WooCommerce membership features.”
-5. Narrow global-cap setup: `/deals/arraysubs/use-cases/recipes/limit-concurrent-logins/` — anchor such as “configure the ArraySubs Pro concurrent-login limit.” This recipe owns step-by-step setup.
-6. Per-tier example: `/deals/arraysubs/use-cases/recipes/session-limit-per-tier/` — anchor such as “set plan-specific session allowances.”
-7. Conditional rule context, only if discussed: `/deals/arraysubs/use-cases/recipes/combined-conditions/` — anchor such as “combine membership eligibility conditions.”
-8. Final commercial CTA: `/deals/arraysubs/pricing/` — “View Pro Pricing,” only after the complete answer and limitations.
+4. Product capability after the neutral framework: `/product/arraysubs/features/woocommerce-membership/` — anchor such as “ArraySubs WooCommerce membership features.”
+5. Narrow global-cap setup: `/product/arraysubs/use-cases/recipes/limit-concurrent-logins/` — anchor such as “configure the ArraySubs Pro concurrent-login limit.” This recipe owns step-by-step setup.
+6. Per-tier example: `/product/arraysubs/use-cases/recipes/session-limit-per-tier/` — anchor such as “set plan-specific session allowances.”
+7. Conditional rule context, only if discussed: `/product/arraysubs/use-cases/recipes/combined-conditions/` — anchor such as “combine membership eligibility conditions.”
+8. Final commercial CTA: `/product/arraysubs/pricing/` — “View Pro Pricing,” only after the complete answer and limitations.
 
 Do not force the URL-prefix or inline-gating recipes into this article merely because they are cluster defaults; they do not materially help the account-sharing decision. If the publishing system requires one of those cluster links, place it only in a genuinely relevant sentence about protecting the underlying content, not the login policy.
 

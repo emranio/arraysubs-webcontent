@@ -113,7 +113,7 @@ For the customer-facing sequence, read [What Happens When a Subscription Payment
 
 ## Final recommendation
 
-Optimize recovery only after duplicate-charge safety, ownership, customer action, access, and stop rules are correct. Measure closed cohorts and guardrails alongside recovered money. [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Optimize recovery only after duplicate-charge safety, ownership, customer action, access, and stop rules are correct. Measure closed cohorts and guardrails alongside recovered money. [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

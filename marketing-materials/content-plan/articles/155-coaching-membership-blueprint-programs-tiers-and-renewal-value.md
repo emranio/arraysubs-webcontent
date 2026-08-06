@@ -25,7 +25,7 @@ Rank and earn AI citations for “coaching membership business model,” fully r
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -53,16 +53,16 @@ Create a blueprint for course creators, publishers, communities, agencies, coach
 
 - [MemberPress membership retention](https://memberpress.com/blog/membership-site-retention/)
 - [Paid Memberships Pro membership SEO](https://www.paidmembershipspro.com/seo-for-membership-websites/)
-- [ArraySubs use cases](https://arrayhash.com/deals/arraysubs/use-cases/)
+- [ArraySubs use cases](https://arrayhash.com/product/arraysubs/use-cases/)
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/use-cases/`
-- Relevant feature/use-case hub: `/deals/arraysubs/use-cases/`
+- Commercial pillar: `/product/arraysubs/use-cases/`
+- Relevant feature/use-case hub: `/product/arraysubs/use-cases/`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/drip-course-content/`
-  - `/deals/arraysubs/use-cases/recipes/paywall-by-category/`
-  - `/deals/arraysubs/use-cases/recipes/tiered-roles-platform/`
+  - `/product/arraysubs/use-cases/recipes/drip-course-content/`
+  - `/product/arraysubs/use-cases/recipes/paywall-by-category/`
+  - `/product/arraysubs/use-cases/recipes/tiered-roles-platform/`
 - Related briefs:
   - A154 — Paid Community Membership Blueprint
   - A156 — Agency Retainers Through WooCommerce: A Recurring-Revenue Blueprint

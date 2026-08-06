@@ -190,7 +190,7 @@ For every live rule, record:
 - [ ] creation/change date, reason, reviewer, and rollback;
 - [ ] content owner and retirement date.
 
-Use [combined conditions](/deals/arraysubs/use-cases/recipes/combined-conditions/), [URL prefix lockdown](/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/), and [inline content gating](/deals/arraysubs/use-cases/recipes/inline-content-gating/) for configuration after this record exists.
+Use [combined conditions](/product/arraysubs/use-cases/recipes/combined-conditions/), [URL prefix lockdown](/product/arraysubs/use-cases/recipes/url-prefix-lockdown/), and [inline content gating](/product/arraysubs/use-cases/recipes/inline-content-gating/) for configuration after this record exists.
 
 ## Fifteen-case restriction test matrix
 
@@ -222,7 +222,7 @@ It is also unsafe to rely on any membership plugin when a cache/CDN cannot keep 
 
 Classify content first, use the narrowest enforceable target, select evidence closest to the promise, design the denied journey, and govern priority, schedules, cache, exceptions, and rollback. Treat every restriction as live authorization code—even when it is configured through a friendly form.
 
-After the inventory and test matrix pass, connect the rules to the [ArraySubs WooCommerce membership feature system](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) when the implementation needs paid automation.
+After the inventory and test matrix pass, connect the rules to the [ArraySubs WooCommerce membership feature system](/product/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/product/arraysubs/pricing/) when the implementation needs paid automation.
 
 ## Frequently asked questions
 

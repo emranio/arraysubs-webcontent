@@ -273,7 +273,7 @@ Internal support links suitable for this distinction:
 
 - `/billing-strategy/how-woocommerce-subscription-renewals-work/`
 - `/billing-strategy/manual-vs-automatic-subscription-renewals-in-woocommerce/`
-- `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+- `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
 
 ## Webhook endpoint, verification, mapping, and duplicate handling
 
@@ -745,9 +745,9 @@ Use natural anchor text; do not dump all links into one paragraph.
 
 | Target | Suggested anchor / context |
 |---|---|
-| `/deals/arraysubs/features/#payment-gateways` | “ArraySubs payment gateway features” after the independent architecture explanation. |
-| `/deals/arraysubs/use-cases/recipes/member-update-payment/` | Link when explaining payment-method update requirements; explicitly distinguish desired recipe/workflow from the inspected PayPal gap. |
-| `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/` | “monitor gateway and webhook health” in operations section. |
+| `/product/arraysubs/features/#payment-gateways` | “ArraySubs payment gateway features” after the independent architecture explanation. |
+| `/product/arraysubs/use-cases/recipes/member-update-payment/` | Link when explaining payment-method update requirements; explicitly distinguish desired recipe/workflow from the inspected PayPal gap. |
+| `/product/arraysubs/use-cases/recipes/gateway-health-monitor/` | “monitor gateway and webhook health” in operations section. |
 | `/payments-and-compliance/stripe-recurring-payments-for-woocommerce-how-they-work-and-what-to-test/` | Compare gateway-owned recurring lifecycle after the reader understands PayPal. |
 | `/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/` | Alternative for merchants prioritizing Merchant of Record tax/compliance. Publish/link when A060 exists. |
 | `/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/` | Explain why automatic support means lifecycle synchronization, not simply checkout acceptance. Publish/link when A061 exists. |
@@ -759,9 +759,9 @@ Use natural anchor text; do not dump all links into one paragraph.
 | `/payment-recovery/automatic-retry-for-failed-subscription-payments-what-good-looks-like/` | Clarify PayPal-owned retries. |
 | `/payment-recovery/subscription-payment-failure-codes-a-practical-triage-guide/` | Diagnostic handoff. |
 | `/subscription-foundations/woocommerce-subscription-launch-readiness-checklist/` | Prelaunch matrix/checklist. |
-| `/deals/arraysubs/pricing/` | Primary “View Pro Pricing” CTA only after the reader has received the answer, limitations, and test checklist. |
+| `/product/arraysubs/pricing/` | Primary “View Pro Pricing” CTA only after the reader has received the answer, limitations, and test checklist. |
 
-The A059 brief mentions `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`. That is Stripe-specific and should not be forced into the PayPal guide unless used in a clearly labeled comparison sentence. The PayPal article must not repeat a product setup recipe; it owns the broader architecture, constraints, decision, and testing intent.
+The A059 brief mentions `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`. That is Stripe-specific and should not be forced into the PayPal guide unless used in a clearly labeled comparison sentence. The PayPal article must not repeat a product setup recipe; it owns the broader architecture, constraints, decision, and testing intent.
 
 ## Claims the article must not make
 

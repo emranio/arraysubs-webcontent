@@ -222,12 +222,12 @@ Avoid repeating dashboard cards and number funnels.
 
 ## Internal-link plan
 
-- Commercial pillar: `/deals/arraysubs/features/#subscription-operations`
-- Primary recipes: `/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/` and `/deals/arraysubs/use-cases/recipes/strict-dunning-grace/`
-- Final-state recipe: `/deals/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/`
+- Commercial pillar: `/product/arraysubs/features/#subscription-operations`
+- Primary recipes: `/product/arraysubs/use-cases/recipes/lenient-dunning-grace/` and `/product/arraysubs/use-cases/recipes/strict-dunning-grace/`
+- Final-state recipe: `/product/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/`
 - Siblings: A034 automatic retry, A036 expired cards, A037 failed-payment email sequence.
 - Cluster context: A031 recovery pillar, A032 failure lifecycle, A033 dunning strategy.
-- CTA after the policy/checklist answer: `/deals/arraysubs/pricing/`
+- CTA after the policy/checklist answer: `/product/arraysubs/pricing/`
 
 ## Claims and caveats to avoid
 

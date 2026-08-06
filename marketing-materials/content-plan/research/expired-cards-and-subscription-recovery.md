@@ -168,10 +168,10 @@ Do not fabricate an expired card on the production-like mirror. If the state is 
 
 ## Internal links
 
-- `/deals/arraysubs/features/#subscription-operations`
-- `/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/`
-- `/deals/arraysubs/use-cases/recipes/strict-dunning-grace/`
-- `/deals/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/`
+- `/product/arraysubs/features/#subscription-operations`
+- `/product/arraysubs/use-cases/recipes/lenient-dunning-grace/`
+- `/product/arraysubs/use-cases/recipes/strict-dunning-grace/`
+- `/product/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/`
 - A035 grace-period explainer for access timing.
 - A037 email sequence for adaptable copy.
 - A038 downgrade guide for the final fallback.

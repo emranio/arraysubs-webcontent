@@ -116,7 +116,7 @@ For current supported timing changes, use [Changing a Subscription Renewal Date 
 
 ## Final recommendation
 
-Offer early renewal only when one future cycle can be identified, locked, paid, reconciled, and advanced without ambiguity. Make the schedule and fulfillment result visible before payment. [Review current ArraySubs plans and shipped capabilities](/deals/arraysubs/pricing/).
+Offer early renewal only when one future cycle can be identified, locked, paid, reconciled, and advanced without ambiguity. Make the schedule and fulfillment result visible before payment. [Review current ArraySubs plans and shipped capabilities](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

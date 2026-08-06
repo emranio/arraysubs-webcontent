@@ -216,13 +216,13 @@ ArraySubs is useful when WooCommerce owns local renewal orders and operators wan
 
 It is also not a substitute for gateway configuration, signed webhooks, reliable Action Scheduler execution, customer identity controls, or qualified PCI/security review. If a provider cannot expose an editable method, a new authorization may be the only honest path.
 
-For timing and messages, choose a documented [lenient dunning recipe](/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict dunning recipe](/deals/arraysubs/use-cases/recipes/strict-dunning-grace/), then adapt the [failed-payment email sequence](/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/) to the actual gateway action.
+For timing and messages, choose a documented [lenient dunning recipe](/product/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict dunning recipe](/product/arraysubs/use-cases/recipes/strict-dunning-grace/), then adapt the [failed-payment email sequence](/payment-recovery/failed-payment-email-sequence-a-message-by-message-playbook/) to the actual gateway action.
 
 ## Final recommendation
 
 Treat card expiration as a credential lifecycle problem. Detect only what the gateway can prove, send customers into a trusted hosted flow, keep method update separate from collection, and call the subscription recovered only after the paid renewal, subscription status, access, failure state, and next billing schedule agree.
 
-After the recovery flow is documented and tested, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) or explore [subscription operations](/deals/arraysubs/features/#subscription-operations).
+After the recovery flow is documented and tested, [review ArraySubs Pro pricing](/product/arraysubs/pricing/) or explore [subscription operations](/product/arraysubs/features/#subscription-operations).
 
 ## Frequently asked questions
 

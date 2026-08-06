@@ -241,7 +241,7 @@ Use an explicit address-change workflow:
 
 ![A controlled tax-address change path from capture and update through effective date, preview, and reconciliation.](/blogs/sales-tax-and-vat-on-woocommerce-subscriptions/tax-address-change-control.png)
 
-The [member payment-method update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/) solves a different problem. A new card does not update tax location, and a new billing address attached to a card does not automatically prove the subscription tax address changed.
+The [member payment-method update recipe](/product/arraysubs/use-cases/recipes/member-update-payment/) solves a different problem. A new card does not update tax location, and a new billing address attached to a card does not automatically prove the subscription tax address changed.
 
 ### VAT IDs and exemptions need validation, not a text box
 
@@ -295,7 +295,7 @@ Your invoice control should verify:
 
 ## How do Stripe, PayPal, and Paddle differ in ArraySubs tax handling?
 
-Gateway choice changes where calculation happens, who controls renewal timing, and which ledger is authoritative. Review the [payment-gateway feature overview](/deals/arraysubs/features/#payment-gateways) and the [automatic-versus-manual gateway guide](/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/) before building one tax runbook for every provider.
+Gateway choice changes where calculation happens, who controls renewal timing, and which ledger is authoritative. Review the [payment-gateway feature overview](/product/arraysubs/features/#payment-gateways) and the [automatic-versus-manual gateway guide](/payments-and-compliance/automatic-vs-manual-gateway-support-for-subscriptions/) before building one tax runbook for every provider.
 
 ### Stripe: Woo calculates, ArraySubs charges the final order total
 
@@ -310,7 +310,7 @@ Therefore:
 
 Stripe Tax is a separate product that can calculate tax in supported Stripe flows, including Stripe Billing recurring payments, and can monitor potential obligations from relevant Stripe-processed sales. Stripe still tells businesses to confirm actual registration requirements. Do not claim Stripe Tax covers ArraySubs renewals merely because Stripe processes the PaymentIntent ([Stripe tax calculation](https://docs.stripe.com/tax/calculating), [Stripe Billing tax](https://docs.stripe.com/billing/taxes/collect-taxes), [Stripe obligation monitoring](https://docs.stripe.com/tax/monitoring)).
 
-The [Stripe automatic billing and SCA recipe](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) owns the gateway setup steps. Add tax scenarios to its payment tests; do not replace them with a single zero-tax renewal.
+The [Stripe automatic billing and SCA recipe](/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) owns the gateway setup steps. Add tax scenarios to its payment tests; do not replace them with a single zero-tax renewal.
 
 ### PayPal: tax is embedded in the remote plan at checkout
 
@@ -368,7 +368,7 @@ For each cycle, prove:
 5. the tax service, return, or MoR statement contains the transaction exactly once; and
 6. any difference is classified, approved, and repaired.
 
-Webhook monitoring is part of that chain, not its conclusion. Use the [subscription webhook monitoring guide](/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/) and [Gateway Health recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) to distinguish provider delivery from successful business reconciliation.
+Webhook monitoring is part of that chain, not its conclusion. Use the [subscription webhook monitoring guide](/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/) and [Gateway Health recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) to distinguish provider delivery from successful business reconciliation.
 
 ## What changes should trigger tax review?
 
@@ -451,7 +451,7 @@ A direct WooCommerce seller can be appropriate when it has tax expertise, regist
 
 ArraySubs Free provides the shared subscription engine, Woo renewal orders, lifecycle, customer records, and manual-gateway workflows. ArraySubs Pro adds Stripe, PayPal, and Paddle automatic-payment integrations, gateway sync/recovery capabilities, and Gateway Health. Neither license tier turns unreviewed product and customer data into legal tax advice.
 
-If that gateway and lifecycle coverage matches your reviewed architecture, [view ArraySubs Pro pricing](/deals/arraysubs/pricing/). Make the tax ownership decision first; then select the implementation.
+If that gateway and lifecycle coverage matches your reviewed architecture, [view ArraySubs Pro pricing](/product/arraysubs/pricing/). Make the tax ownership decision first; then select the implementation.
 
 ## What should be tested after every tax or gateway change?
 

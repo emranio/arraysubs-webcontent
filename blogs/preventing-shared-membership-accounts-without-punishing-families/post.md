@@ -172,7 +172,7 @@ This boundary matters. “Maximum sessions” is accurate. “Maximum devices,�
 
 The current source contains a server-side WordPress Heartbeat response for session checks, but a repository-wide search did not find its client sender. The safest verified promise is that an invalidated old session will fail on refresh or its next authenticated request. Do not promise a particular redirect time, warning toast, or cooldown until the real deployed flow proves it.
 
-For the narrow setup sequence, use the [ArraySubs Pro concurrent-login recipe](/deals/arraysubs/use-cases/recipes/limit-concurrent-logins/). For different allowances by membership, see the [plan-specific session-limit recipe](/deals/arraysubs/use-cases/recipes/session-limit-per-tier/). This guide owns the policy decision; those pages own configuration.
+For the narrow setup sequence, use the [ArraySubs Pro concurrent-login recipe](/product/arraysubs/use-cases/recipes/limit-concurrent-logins/). For different allowances by membership, see the [plan-specific session-limit recipe](/product/arraysubs/use-cases/recipes/session-limit-per-tier/). This guide owns the policy decision; those pages own configuration.
 
 ## How should a fair enforcement and recovery flow work?
 
@@ -349,7 +349,7 @@ ArraySubs is a good fit when a WooCommerce membership needs an explainable concu
 
 Sell the access unit first, then enforce it. Use a concurrent-session allowance when simultaneous credential sharing is the problem, make the number realistic for normal multi-device use, and keep the newest login plus a clear recovery path. Give families and teams separate identities, review repeated patterns before sanctions, and measure support, appeals, accessibility, and churn alongside limit events.
 
-After the policy, account model, and browser test pass, review how [ArraySubs connects membership access with concurrent-session controls](/deals/arraysubs/features/woocommerce-membership/), then [view ArraySubs Pro pricing](/deals/arraysubs/pricing/).
+After the policy, account model, and browser test pass, review how [ArraySubs connects membership access with concurrent-session controls](/product/arraysubs/features/woocommerce-membership/), then [view ArraySubs Pro pricing](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

@@ -328,7 +328,7 @@ Stop when payment is recovered, the gateway says not to retry, customer action/n
 
 ## Internal-link suggestions
 
-- Commercial hub: `/deals/arraysubs/features/#subscription-operations`
+- Commercial hub: `/product/arraysubs/features/#subscription-operations`
 - Recipe: `/recipes/arraysubs/lenient-dunning-grace/`
 - Recipe: `/recipes/arraysubs/strict-dunning-grace/`
 - Recipe: `/recipes/arraysubs/auto-downgrade-on-failed-payment/`

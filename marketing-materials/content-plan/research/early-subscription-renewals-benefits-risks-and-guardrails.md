@@ -255,10 +255,10 @@ No current early-renew feature was found in ArraySubs 1.8.9 or Pro 1.1.0. First-
 
 ## Internal-link suggestions
 
-- Primary CTA, with explicit status-safe copy: `/deals/arraysubs/pricing/`
-- ArraySubs feature index/status: `/deals/arraysubs/features/`
-- Subscription notes/timeline recipe: `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
-- Switch-at-renewal recipe: `/deals/arraysubs/use-cases/recipes/switch-at-renewal/`
+- Primary CTA, with explicit status-safe copy: `/product/arraysubs/pricing/`
+- ArraySubs feature index/status: `/product/arraysubs/features/`
+- Subscription notes/timeline recipe: `/product/arraysubs/use-cases/recipes/subscription-notes-timeline/`
+- Switch-at-renewal recipe: `/product/arraysubs/use-cases/recipes/switch-at-renewal/`
 - Billing versus shipping schedule: `/billing-strategy/subscription-billing-schedule-vs-shipping-schedule/`
 - Different first and renewal prices: `/billing-strategy/different-first-and-renewal-prices-subscription-pricing-patterns/`
 - Recurring coupon strategy: `/billing-strategy/recurring-subscription-coupons-economics-and-abuse-controls/`
@@ -270,8 +270,8 @@ Do not link to a setup recipe that implies a current ArraySubs early-renew workf
 All sources accessed 2026-07-13.
 
 - ArraySubs core change history: `../../arraysubs/readme.txt`
-- ArraySubs first-party feature data (`early-renew`, status `coming-soon`): `../app/deals/arraysubs/features/_data.ts`
-- ArraySubs first-party pricing page: `../app/deals/arraysubs/pricing/page.tsx`
+- ArraySubs first-party feature data (`early-renew`, status `coming-soon`): `../app/product/arraysubs/features/_data.ts`
+- ArraySubs first-party pricing page: `../app/product/arraysubs/pricing/page.tsx`
 - WooCommerce, Early Renewal: https://woocommerce.com/document/subscriptions/early-renewal/
 - WooCommerce, Subscription Renewal Process: https://woocommerce.com/document/subscriptions/renewal-process/
 - WooCommerce, Pay for Renewal: https://woocommerce.com/document/subscriptions/customers-view/pay-for-renewal/

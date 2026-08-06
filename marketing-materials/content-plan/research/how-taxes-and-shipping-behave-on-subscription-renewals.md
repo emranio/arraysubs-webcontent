@@ -242,7 +242,7 @@ Keep graphics flat, restrained, and data-led. Do not invent performance statisti
 
 ## Internal-link suggestions
 
-- Commercial hub: `/deals/arraysubs/features/#subscription-operations`
+- Commercial hub: `/product/arraysubs/features/#subscription-operations`
 - Recipe: `/recipes/arraysubs/switch-at-renewal/`
 - Recipe: `/recipes/arraysubs/downgrade-with-credit/`
 - Recipe: `/recipes/arraysubs/subscription-notes-timeline/`

@@ -25,7 +25,7 @@ Rank and earn AI citations for “HPOS compatibility subscription plugin,” ful
 
 ## CTA
 
-**Choose a Plan** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**Choose a Plan** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a checklist for developers, agencies, support engineers, and technical st
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/use-cases/subscription-support-operations/`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#analytics-infrastructure`
+- Commercial pillar: `/product/arraysubs/use-cases/subscription-support-operations/`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#analytics-infrastructure`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/scheduled-job-monitor/`
-  - `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
-  - `/deals/arraysubs/use-cases/recipes/activity-audit-trail/`
+  - `/product/arraysubs/use-cases/recipes/scheduled-job-monitor/`
+  - `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
+  - `/product/arraysubs/use-cases/recipes/activity-audit-trail/`
 - Related briefs:
   - A187 — Staging Sites and Duplicate Subscription Renewals
   - A189 — Checkout Block Compatibility Testing for Subscription Stores

@@ -253,7 +253,7 @@ Also inspect support contacts, feature usage, cancellation reasons, failed-payme
 - [ ] Tier metrics use plan versions and closed cohorts.
 - [ ] Merge levels that do not pass the five-part justification test.
 
-For architecture, read [WooCommerce Subscriptions and Memberships Together](/membership-strategy/woocommerce-subscriptions-and-memberships-together-the-complete-architecture/). Use [combined conditions](/deals/arraysubs/use-cases/recipes/combined-conditions/) and [inline content gating](/deals/arraysubs/use-cases/recipes/inline-content-gating/) only after the offer contract is complete.
+For architecture, read [WooCommerce Subscriptions and Memberships Together](/membership-strategy/woocommerce-subscriptions-and-memberships-together-the-complete-architecture/). Use [combined conditions](/product/arraysubs/use-cases/recipes/combined-conditions/) and [inline content gating](/product/arraysubs/use-cases/recipes/inline-content-gating/) only after the offer contract is complete.
 
 ## When is ArraySubs not the best tier engine?
 
@@ -265,7 +265,7 @@ ArraySubs fits product/variation-driven levels where WordPress and WooCommerce c
 
 Start with one clear promise and add a level only when a distinct segment, enforceable entitlement, sustainable economics, and complete customer journey justify it. Treat free, fixed-term, recurring, and lifetime as different obligations—not merely price options—and preserve legacy access with versioned products, features, and rules.
 
-After the level architecture and lifecycle tests are documented, connect the tiers to [ArraySubs WooCommerce membership features](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) for the automation the model requires.
+After the level architecture and lifecycle tests are documented, connect the tiers to [ArraySubs WooCommerce membership features](/product/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/product/arraysubs/pricing/) for the automation the model requires.
 
 ## Frequently asked questions
 

@@ -12,7 +12,7 @@ import {
   useGSAP,
 } from "@/lib/gsap";
 
-const PRICING_HREF = "/deals/arraysubs/pricing/";
+const PRICING_HREF = "/product/arraysubs/pricing/";
 
 const OFFER_MESSAGES = [
   {

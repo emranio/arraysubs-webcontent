@@ -327,7 +327,7 @@ Do not give universal legal/accounting advice. Consumer rules depend on location
 Fixed-Date Subscriptions are **ArraySubs Pro**, not core/free, in the current workspace:
 
 - `arraysubspro/src/Boot.php` loads `Features\FixedPeriodMembership\Provider`;
-- `web-content/app/deals/arraysubs/features/_data.ts` marks the feature Pro;
+- `web-content/app/product/arraysubs/features/_data.ts` marks the feature Pro;
 - the free-versus-pro comparison and `arraysubs/readme.txt` align with Pro ownership.
 
 This resolves an older-data conflict mentioned in the article brief. A010 should use the current Pro ownership and include a normal commercial disclosure before the ArraySubs-specific section.
@@ -351,7 +351,7 @@ On subscription creation, the implementation reads the subscription's stored sta
 
 The existing narrow recipe is:
 
-`/deals/arraysubs/use-cases/recipes/fixed-period-membership/`
+`/product/arraysubs/use-cases/recipes/fixed-period-membership/`
 
 Link to it for product-editor setup instead of reproducing the recipe step by step. The article should own decision strategy, policies, examples, and edge cases.
 
@@ -587,8 +587,8 @@ Keep this factual and label untested behavior as such.
 
 ## Internal-link plan
 
-- Primary commercial pillar: `/deals/arraysubs/`
-- Fixed-period setup recipe: `/deals/arraysubs/use-cases/recipes/fixed-period-membership/`
+- Primary commercial pillar: `/product/arraysubs/`
+- Fixed-period setup recipe: `/product/arraysubs/use-cases/recipes/fixed-period-membership/`
 - Related conceptual article A005: recurring versus fixed term.
 - Related article A009: prepaid/fixed-cycle subscriptions; use it to distinguish rolling cycles from shared dates.
 - Related article A011: lifetime access; clarify that lifetime is neither fixed date nor renewable term.
@@ -652,8 +652,8 @@ Do not turn the article into a product-editor walkthrough; the recipe owns that 
 10. `arraysubs/src/Features/RecurringBilling/Services/RenewalScheduler.php`
 11. `arraysubs/src/Features/MembersAccess/Services/RoleManager.php`
 12. `arraysubs/src/Supports/ActionScheduler.php`
-13. `web-content/app/deals/arraysubs/features/_data.ts`
-14. `web-content/app/deals/arraysubs/use-cases/_recipes.ts`
+13. `web-content/app/product/arraysubs/features/_data.ts`
+14. `web-content/app/product/arraysubs/use-cases/_recipes.ts`
 15. `arraysubs/readme.txt`
 
 ## Writer handoff: claims to avoid without new proof

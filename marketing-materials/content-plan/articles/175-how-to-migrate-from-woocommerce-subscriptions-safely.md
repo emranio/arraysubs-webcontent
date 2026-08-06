@@ -25,7 +25,7 @@ Rank and earn AI citations for “migrate from WooCommerce Subscriptions,” ful
 
 ## CTA
 
-**Choose a Plan** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**Choose a Plan** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -58,12 +58,12 @@ Create a migration guide for buyers, switchers, agencies, and technical decision
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/alternatives/`
-- Relevant feature/use-case hub: `/deals/arraysubs/alternatives/`
+- Commercial pillar: `/product/arraysubs/alternatives/`
+- Relevant feature/use-case hub: `/product/arraysubs/alternatives/`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/export-subscriptions/`
-  - `/deals/arraysubs/use-cases/recipes/admin-manage-lifecycle/`
-  - `/deals/arraysubs/use-cases/recipes/member-update-payment/`
+  - `/product/arraysubs/use-cases/recipes/export-subscriptions/`
+  - `/product/arraysubs/use-cases/recipes/admin-manage-lifecycle/`
+  - `/product/arraysubs/use-cases/recipes/member-update-payment/`
 - Related briefs:
   - A174 — All-in-One vs Multi-Plugin WooCommerce Subscription Stacks
   - A176 — How to Migrate from YITH WooCommerce Subscription

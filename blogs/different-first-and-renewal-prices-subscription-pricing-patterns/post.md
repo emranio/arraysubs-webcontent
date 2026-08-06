@@ -106,7 +106,7 @@ Use closed cohorts and label whether checkout counts. Do not claim causation wit
 
 ## Final recommendation
 
-Use a different renewal price for a simple, universal, one-step schedule. State the exact successful-payment sequence and test every zero-total and switch interaction before launch. [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Use a different renewal price for a simple, universal, one-step schedule. State the exact successful-payment sequence and test every zero-total and switch interaction before launch. [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

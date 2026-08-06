@@ -144,7 +144,7 @@ The integration therefore needs to distinguish a retryable technical issue from 
 
 ![A dark renewal decision map branches a future off-session charge through frictionless authentication, customer challenge, success, or invoice recovery.](/blogs/automatic-vs-manual-gateway-support-for-subscriptions/sca-renewal-decision-map.png)
 
-The dedicated [Stripe automatic billing and SCA recipe](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) covers the product-specific setup and recovery flow; this article intentionally does not duplicate it.
+The dedicated [Stripe automatic billing and SCA recipe](/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) covers the product-specific setup and recovery flow; this article intentionally does not duplicate it.
 
 ### Renewal-order identity and payment evidence
 
@@ -169,7 +169,7 @@ Provider-scheduled billing depends on this especially strongly. PayPal documents
 
 ### Payment-method update and cancellation
 
-A customer changing the default card in an account does not necessarily update an existing subscription. The integration must update the exact provider context that the next renewal will use. The [ArraySubs member payment-update workflow](/deals/arraysubs/use-cases/recipes/member-update-payment/) shows the intended customer-facing route for supported adapters.
+A customer changing the default card in an account does not necessarily update an existing subscription. The integration must update the exact provider context that the next renewal will use. The [ArraySubs member payment-update workflow](/product/arraysubs/use-cases/recipes/member-update-payment/) shows the intended customer-facing route for supported adapters.
 
 Cancellation has the reverse requirement: stop the future obligation in the schedule owner. Cancelling a local WordPress record while leaving a remote PayPal or Paddle subscription active is not cancellation. Removing local IDs can make the situation worse by discarding the evidence needed to find and stop the remote agreement.
 
@@ -213,7 +213,7 @@ Current ArraySubs Pro adds:
 - an optional per-subscription auto-renew control with gateway-specific behavior; and
 - Gateway Health status, capability, endpoint, event, and subscription-count evidence.
 
-See the [ArraySubs payment gateway features](/deals/arraysubs/features/#payment-gateways) for the commercial overview. The important engineering caveat is that an adapter’s existence is not proof that every exact subscription is ready.
+See the [ArraySubs payment gateway features](/product/arraysubs/features/#payment-gateways) for the commercial overview. The important engineering caveat is that an adapter’s existence is not proof that every exact subscription is ready.
 
 ## Automatic and manual journeys side by side
 
@@ -432,7 +432,7 @@ ArraySubs Pro Gateway Health collects useful operational signals for current Str
 
 ![Annotated ArraySubs Gateway Health screen separating automatic-adapter cards, readiness signals, and webhook evidence.](/blogs/automatic-vs-manual-gateway-support-for-subscriptions/arraysubs-gateway-health-overview-verified.png)
 
-This first-party staging view is intentionally empty/disabled; it demonstrates the information architecture, not production uptime or transaction performance. Use the [Gateway Health monitoring recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) to configure an operating routine.
+This first-party staging view is intentionally empty/disabled; it demonstrates the information architecture, not production uptime or transaction performance. Use the [Gateway Health monitoring recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) to configure an operating routine.
 
 Gateway Health can help answer:
 
@@ -617,7 +617,7 @@ Do not ask only, “Is this gateway supported?” Ask whether this exact subscri
 
 Anything less may still be an excellent manual-renewal gateway. It should not be presented as automatic.
 
-Use the [ArraySubs payment gateway feature overview](/deals/arraysubs/features/#payment-gateways) to compare the current integration surfaces, then validate the exact lifecycle with the recipes linked above. If the current Pro adapters fit your payment architecture and acceptance matrix, [View Pro Pricing](/deals/arraysubs/pricing/).
+Use the [ArraySubs payment gateway feature overview](/product/arraysubs/features/#payment-gateways) to compare the current integration surfaces, then validate the exact lifecycle with the recipes linked above. If the current Pro adapters fit your payment architecture and acceptance matrix, [View Pro Pricing](/product/arraysubs/pricing/).
 
 ## Verification scope, limitations, and update log
 

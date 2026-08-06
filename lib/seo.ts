@@ -4,7 +4,7 @@ import { absoluteUrl, site, withTrailingSlash } from "@/lib/site";
 type SeoInput = {
   title?: string;
   description?: string;
-  /** Canonical path beginning with "/" (e.g. "/deals/arraysubs/"). */
+  /** Canonical path beginning with "/" (e.g. "/product/arraysubs/"). */
   path?: string;
   /** Set true for internal / non-marketing pages (design system, previews). */
   noindex?: boolean;
@@ -340,7 +340,7 @@ export function blogPostSchema(input: BlogPostInput) {
     mentions: {
       "@type": "SoftwareApplication",
       name: site.brand,
-      url: absoluteUrl("/deals/arraysubs/"),
+      url: absoluteUrl("/product/arraysubs/"),
     },
     copyrightHolder: { "@id": organizationId },
   };

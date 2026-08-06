@@ -773,15 +773,15 @@ Avoid making every visual a dashboard, flowchart, or comparison card. Use at lea
 
 ### Required commercial and recipe destinations
 
-- Payment gateways feature pillar: `/deals/arraysubs/features/#payment-gateways`
+- Payment gateways feature pillar: `/product/arraysubs/features/#payment-gateways`
   - Anchor near the first ArraySubs-specific comparison: “automatic payment gateway capabilities in ArraySubs.”
-- Stripe automatic billing/SCA recipe: `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+- Stripe automatic billing/SCA recipe: `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
   - Link after the Stripe decision section; do not duplicate its setup instructions.
-- Member payment-update recipe: `/deals/arraysubs/use-cases/recipes/member-update-payment/`
+- Member payment-update recipe: `/product/arraysubs/use-cases/recipes/member-update-payment/`
   - Link from the tokens/payment-source section.
-- Gateway Health recipe: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+- Gateway Health recipe: `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
   - Link from the webhook/operations section.
-- Primary CTA after the verdict and decision framework: `/deals/arraysubs/pricing/` with anchor “View Pro Pricing.”
+- Primary CTA after the verdict and decision framework: `/product/arraysubs/pricing/` with anchor “View Pro Pricing.”
 
 ### Sibling article links
 

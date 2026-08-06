@@ -8,6 +8,20 @@ const nextConfig: NextConfig = {
     return [
       {
         source:
+          "/product/arraysubs/resources/membership-strategy/woocommerce-content-restriction-strategy/",
+        destination:
+          "/membership-strategy/woocommerce-content-restriction-strategy/",
+        statusCode: 301,
+      },
+      {
+        source:
+          "/product/arraysubs/resources/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/",
+        destination:
+          "/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/",
+        statusCode: 301,
+      },
+      {
+        source:
           "/deals/arraysubs/resources/membership-strategy/woocommerce-content-restriction-strategy/",
         destination:
           "/membership-strategy/woocommerce-content-restriction-strategy/",
@@ -21,14 +35,19 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
       {
+        source: "/deals/:path*",
+        destination: "/product/:path*",
+        statusCode: 301,
+      },
+      {
         source: "/arraysubs/compare/yith-membership/",
         destination:
-          "/deals/arraysubs/alternatives/yith-woocommerce-membership/",
+          "/product/arraysubs/alternatives/yith-woocommerce-membership/",
         statusCode: 301,
       },
       {
         source: "/arraysubs/features/payment-gateways/",
-        destination: "/deals/arraysubs/features/payment-gateways/",
+        destination: "/product/arraysubs/features/payment-gateways/",
         statusCode: 301,
       },
       {
@@ -38,7 +57,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/arraysubs/",
-        destination: "/deals/arraysubs/",
+        destination: "/product/arraysubs/",
         statusCode: 301,
       },
       {
@@ -48,7 +67,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/arraysubs/use-cases/service-businesses/",
-        destination: "/deals/arraysubs/use-cases/service-businesses/",
+        destination: "/product/arraysubs/use-cases/service-businesses/",
         statusCode: 301,
       },
       {

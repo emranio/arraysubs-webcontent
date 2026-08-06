@@ -154,7 +154,7 @@ Current ArraySubs Pro uses a site-scheduled Stripe architecture:
 
 This is **not** a Stripe Billing Subscription or Stripe Invoice architecture. ArraySubs creates a discrete PaymentIntent for each locally scheduled renewal. Stripe Billing’s subscription schedules and Smart Retries do not own these renewal charges.
 
-The exact implementation recipe is intentionally separate: [configure Stripe automatic billing and SCA in ArraySubs](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/).
+The exact implementation recipe is intentionally separate: [configure Stripe automatic billing and SCA in ArraySubs](/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/).
 
 ### Stripe payment states require different actions
 
@@ -243,7 +243,7 @@ An expired, invalid, restricted, or otherwise unusable payment method needs cust
 
 Current ArraySubs checks authentication and subscription ownership before opening a supported update mechanism. For Stripe, the delegate creates a Stripe Billing Portal session for the stored Stripe customer, keeping sensitive payment entry with Stripe.
 
-Use the [member payment-method update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/) for the implementation flow. Then verify the exact subscription context. Changing a Stripe customer’s account default and changing the token/method actually referenced by one ArraySubs subscription are not automatically equivalent, especially when a customer owns multiple subscriptions.
+Use the [member payment-method update recipe](/product/arraysubs/use-cases/recipes/member-update-payment/) for the implementation flow. Then verify the exact subscription context. Changing a Stripe customer’s account default and changing the token/method actually referenced by one ArraySubs subscription are not automatically equivalent, especially when a customer owns multiple subscriptions.
 
 ### Integration failure: repair the system
 
@@ -310,7 +310,7 @@ Paddle states that its hosted [Billing Checkout](https://www.paddle.com/billing/
 
 Stripe gives the WooCommerce store more local renewal control and therefore more local recovery responsibility. PayPal and Paddle move that responsibility into remote provider systems, but require equally disciplined webhook reconciliation and lifecycle visibility.
 
-Review the current [ArraySubs payment gateway capabilities](/deals/arraysubs/features/#payment-gateways) only after choosing which schedule-owner model fits your business.
+Review the current [ArraySubs payment gateway capabilities](/product/arraysubs/features/#payment-gateways) only after choosing which schedule-owner model fits your business.
 
 ## Why webhook health is part of SCA readiness
 
@@ -324,7 +324,7 @@ ArraySubs Pro’s Stripe architecture can involve two event surfaces: the offici
 
 This confirmed staging capture intentionally shows Stripe disabled and both webhook checks unconfigured. It proves that Gateway Health exposes the checks; it does not represent a production-ready installation. A truthful production test requires the expected endpoints, current successful deliveries, and correctly processed events.
 
-Use the [Gateway Health monitoring recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) to establish the operating workflow.
+Use the [Gateway Health monitoring recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) to establish the operating workflow.
 
 ### Webhook requirements
 
@@ -571,4 +571,4 @@ Reverify after changes to ArraySubs Stripe scheduling, PaymentIntent state handl
 
 An SCA-ready subscription system does not promise a frictionless future. It establishes authority while the customer is present, submits later charges with the correct provider context, lets the issuer decide whether more authentication is needed, preserves actionable pending payments, returns the customer safely, trusts signed events, reconciles before retry, and keeps access, email, finance, and compliance policy synchronized.
 
-Review the [ArraySubs payment gateway feature set](/deals/arraysubs/features/#payment-gateways) and the implementation recipes above. If that local Stripe ownership model and the current Pro adapters match your acceptance matrix, [View Pro Pricing](/deals/arraysubs/pricing/).
+Review the [ArraySubs payment gateway feature set](/product/arraysubs/features/#payment-gateways) and the implementation recipes above. If that local Stripe ownership model and the current Pro adapters match your acceptance matrix, [View Pro Pricing](/product/arraysubs/pricing/).

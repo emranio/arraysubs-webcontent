@@ -120,7 +120,7 @@ For implementation detail and a recovery runbook, read [Failed Subscription Paym
 
 ## Final recommendation
 
-Write the dunning policy as a governed state machine with owners, messages, stop conditions, and evidence. Optimize only within gateway rules and customer-safe guardrails. [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Write the dunning policy as a governed state machine with owners, messages, stop conditions, and evidence. Optimize only within gateway rules and customer-safe guardrails. [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

@@ -205,8 +205,8 @@ Use numbered markers, test data, redaction, and a version/date caption.
 
 ## Internal links
 
-- `/deals/arraysubs/features/#subscription-operations`
-- `/deals/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/` for setup.
+- `/product/arraysubs/features/#subscription-operations`
+- `/product/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/` for setup.
 - Lenient/strict grace recipes for the preceding recovery window.
 - A037 email playbook for downgrade messaging.
 - A039 recovery checklist and A040 failure-code triage.

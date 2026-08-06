@@ -429,10 +429,10 @@ Do not declare lifetime the winner from launch cash or recurring the winner from
 
 ### Do not duplicate the recipe
 
-The article may link to `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/` as the setup example. Do not repeat field-by-field steps. It can link to monthly/annual and prepaid fixed-cycle recipes to show alternatives:
+The article may link to `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/` as the setup example. Do not repeat field-by-field steps. It can link to monthly/annual and prepaid fixed-cycle recipes to show alternatives:
 
-- `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
-- `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
+- `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
+- `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
 
 ## Recommended article structure
 
@@ -561,11 +561,11 @@ Yes. Current ArraySubs Free supports regular recurring periods and a Lifetime De
 
 ## Internal-link map
 
-- Commercial pillar: `/deals/arraysubs/`
-- Feature hub: `/deals/arraysubs/features/#products-checkout`
-- Monthly vs annual recipe: `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
-- Prepaid fixed-cycle alternative: `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
-- Lifetime setup example: `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
+- Commercial pillar: `/product/arraysubs/`
+- Feature hub: `/product/arraysubs/features/#products-checkout`
+- Monthly vs annual recipe: `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
+- Prepaid fixed-cycle alternative: `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
+- Lifetime setup example: `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
 - A011: Customer-Chosen Subscription Duration: Use Cases, UX, and Risk Controls
 - A013: Subscription Terms Customers Must See Before They Pay
 - A014: Anatomy of a High-Converting WooCommerce Subscription Product Page
@@ -577,15 +577,15 @@ Avoid reproducing lifetime setup steps. The related recipe owns product-specific
 ### First-party ArraySubs sources
 
 1. **ArraySubs product page** — current feature/tier claims and commercial context.  
-   https://arrayhash.com/deals/arraysubs/
+   https://arrayhash.com/product/arraysubs/
 2. **ArraySubs: Create and Configure Subscription Products** — billing-period table describes Lifetime Deal as one-time purchase/no renewals and says interval becomes fixed.  
    https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html
 3. **ArraySubs: Subscription Operations** — documents “No recurring payment” for lifetime next-payment display.  
    https://support.arrayhash.com/arraysubs/manage-subscriptions/subscription-operations.html
 4. **ArraySubs: Billing and Renewals** — current recurring lifecycle explanation.  
    https://support.arrayhash.com/arraysubs/billing-and-renewals/
-5. **Repository feature data** — `web-content/app/deals/arraysubs/features/_data.ts`, `lifetime-deals` block; current tier and copy.
-6. **Repository recipe** — `web-content/app/deals/arraysubs/use-cases/_recipes.ts`, `lifetime-deal-one-time`; linked setup example and copy that needs entitlement caveats in the strategy article.
+5. **Repository feature data** — `web-content/app/product/arraysubs/features/_data.ts`, `lifetime-deals` block; current tier and copy.
+6. **Repository recipe** — `web-content/app/product/arraysubs/use-cases/_recipes.ts`, `lifetime-deal-one-time`; linked setup example and copy that needs entitlement caveats in the strategy article.
 7. **ArraySubs product helpers and save normalization** — `arraysubs/src/functions/product-helpers.php`; `arraysubs/src/Features/SubscriptionProducts/Services/Hooks.php`; lifetime interval/length/renewal-price behavior.
 8. **ArraySubs checkout display and creation path** — `arraysubs/src/Features/SubscriptionCheckout/Services/Traits/CheckoutDisplayTrait.php`; `arraysubs/src/Features/SubscriptionCheckout/views/checkout-subscription-summary.php`; managed record and no-recurring-charge presentation.
 9. **ArraySubs subscription helpers** — `arraysubs/src/functions/subscription-helpers.php`; empty lifetime next-payment date and lifetime detection.

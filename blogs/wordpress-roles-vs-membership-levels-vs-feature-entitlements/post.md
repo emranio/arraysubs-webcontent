@@ -258,7 +258,7 @@ Do not perform a big-bang role cleanup without a mapping table and rollback path
 - [ ] Support can trace the level, entitlement, and role to source records.
 - [ ] Access changes invalidate or vary relevant caches.
 
-For complex grouped policies, use [AND/OR Membership Access Rules](/membership-strategy/and-or-membership-access-rules-explained-with-examples/) and the [combined-conditions recipe](/deals/arraysubs/use-cases/recipes/combined-conditions/).
+For complex grouped policies, use [AND/OR Membership Access Rules](/membership-strategy/and-or-membership-access-rules-explained-with-examples/) and the [combined-conditions recipe](/product/arraysubs/use-cases/recipes/combined-conditions/).
 
 ## When a layered model may be unnecessary
 
@@ -270,7 +270,7 @@ Conversely, a complex SaaS application with high-volume metering, tenant isolati
 
 Keep the source of truth closest to the fact: subscription records for commercial lifecycle, entitlement definitions for specific capabilities, and WordPress roles for site capabilities and interoperability. Map outward from current commerce state, grant least privilege, and test every lifecycle transition plus overlapping ownership.
 
-After mapping the architecture, see how [ArraySubs connects membership levels, role mapping, and feature entitlements](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) when per-plan feature conditions are required.
+After mapping the architecture, see how [ArraySubs connects membership levels, role mapping, and feature entitlements](/product/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/product/arraysubs/pricing/) when per-plan feature conditions are required.
 
 ## Frequently asked questions
 

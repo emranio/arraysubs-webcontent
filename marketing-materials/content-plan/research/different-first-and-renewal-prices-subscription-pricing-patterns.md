@@ -234,10 +234,10 @@ Not through the current different-renewal-price feature. It supports one introdu
 
 ## Internal-link suggestions
 
-- Primary CTA: `/deals/arraysubs/pricing/`
-- Different Renewal Price on the feature hub: `/deals/arraysubs/features/#products-checkout`
-- Intro-pricing step-up recipe: `/deals/arraysubs/use-cases/recipes/intro-pricing-step-up/`
-- Free-first-month coupon recipe: `/deals/arraysubs/use-cases/recipes/free-first-month-coupon/`
+- Primary CTA: `/product/arraysubs/pricing/`
+- Different Renewal Price on the feature hub: `/product/arraysubs/features/#products-checkout`
+- Intro-pricing step-up recipe: `/product/arraysubs/use-cases/recipes/intro-pricing-step-up/`
+- Free-first-month coupon recipe: `/product/arraysubs/use-cases/recipes/free-first-month-coupon/`
 - Signup-fee strategy/article or recipe where canonical
 - Recurring coupon strategy: `/billing-strategy/recurring-subscription-coupons-economics-and-abuse-controls/`
 - Trial strategy: use the canonical A006 URL from the article registry

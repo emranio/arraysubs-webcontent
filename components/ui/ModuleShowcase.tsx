@@ -22,7 +22,7 @@ export function ModuleShowcase({
   compact = false,
   artworkSrc,
   artworkAlt,
-  primaryHref = "/deals/arraysubs/pricing/",
+  primaryHref = "/product/arraysubs/pricing/",
   primaryLabel = "View Pro Pricing",
   secondaryHref = "#demo",
   secondaryLabel = "Live Demo",

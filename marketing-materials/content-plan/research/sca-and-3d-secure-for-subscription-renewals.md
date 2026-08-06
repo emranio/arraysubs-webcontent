@@ -316,7 +316,7 @@ For Stripe, `StripeDelegate` creates a Stripe Billing Portal session for the sav
 
 Do not overclaim synchronization. Updating the Stripe customer's default payment method and updating the exact token referenced by an existing local subscription are related but not automatically equivalent in every multi-subscription/account scenario. The Stripe webhook handler has payment-method update logic, but the article should recommend verifying the specific subscription's stored token/context and running a renewal test after an update.
 
-Use this internal link when discussing that lifecycle: `/deals/arraysubs/use-cases/recipes/member-update-payment/`.
+Use this internal link when discussing that lifecycle: `/product/arraysubs/use-cases/recipes/member-update-payment/`.
 
 ### WooCommerce pay-for-order and 3DS
 
@@ -362,7 +362,7 @@ Webhook copy should emphasize:
 - no raw card data, CVC, client secrets, or full recovery URLs in general-purpose logs
 - periodic reconciliation of stale pending renewals against the provider
 
-Use the internal recipe `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/` for the operational setup detail.
+Use the internal recipe `/product/arraysubs/use-cases/recipes/gateway-health-monitor/` for the operational setup detail.
 
 ## Gateway Health implementation and screenshot evidence
 
@@ -740,14 +740,14 @@ All required links should be natural and non-duplicative:
 
 | Destination | Suggested anchor/context | Placement |
 |---|---|---|
-| `/deals/arraysubs/features/#payment-gateways` | “compare ArraySubs payment gateway capabilities” | After architecture comparison, not in the opening answer |
-| `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/` | “configure Stripe automatic billing and SCA in ArraySubs” | After the exact conceptual Stripe lifecycle; do not repeat the recipe |
-| `/deals/arraysubs/use-cases/recipes/member-update-payment/` | “let members update a payment method” | Customer recovery/update section |
-| `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/` | “monitor gateway and webhook health” | Logs/operations section |
+| `/product/arraysubs/features/#payment-gateways` | “compare ArraySubs payment gateway capabilities” | After architecture comparison, not in the opening answer |
+| `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/` | “configure Stripe automatic billing and SCA in ArraySubs” | After the exact conceptual Stripe lifecycle; do not repeat the recipe |
+| `/product/arraysubs/use-cases/recipes/member-update-payment/` | “let members update a payment method” | Customer recovery/update section |
+| `/product/arraysubs/use-cases/recipes/gateway-health-monitor/` | “monitor gateway and webhook health” | Logs/operations section |
 | A061 final URL | “automatic versus manual subscription gateway support” | Gateway ownership preface |
 | A063 final URL | “how subscription payment tokens and card updates work” | Token/update caveat |
 | A064 final URL | “subscription webhook events to monitor” | Webhook diagnostics |
-| `/deals/arraysubs/pricing/` | “View Pro Pricing” | Once, after the reader has the complete architecture/recovery answer; optionally repeat a restrained text link at conclusion |
+| `/product/arraysubs/pricing/` | “View Pro Pricing” | Once, after the reader has the complete architecture/recovery answer; optionally repeat a restrained text link at conclusion |
 
 Until A061/A063/A064 final URLs are known, use editorial placeholders or resolve them from the WordPress content inventory before publishing. Do not invent slugs and leave broken links.
 
@@ -882,7 +882,7 @@ Do not cite secondary marketing blogs for regulatory claims when these sources c
 
 15. **Conclusion and CTA**
     - Summarize architecture choice and recovery duty.
-    - “View Pro Pricing” to `/deals/arraysubs/pricing/` only after the core answer.
+    - “View Pro Pricing” to `/product/arraysubs/pricing/` only after the core answer.
 
 16. **Methodology, test environment, and limitations**
     - Code versions, official sources, staging screenshot status, date verified.

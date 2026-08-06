@@ -250,9 +250,9 @@ Flat ArraySubs palette; no gradients, neon, shadows, glass, or generated text.
 
 ## Internal links
 
-- Commercial context after the readiness framework: `/deals/arraysubs/`
-- Product/checkout feature context: `/deals/arraysubs/features/#products-checkout`
-- Representative setup recipes: `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`, `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`, `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
+- Commercial context after the readiness framework: `/product/arraysubs/`
+- Product/checkout feature context: `/product/arraysubs/features/#products-checkout`
+- Representative setup recipes: `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`, `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`, `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
 - Siblings: A001 complete guide, A002 concepts, A003 product types.
 
 ## Primary sources (accessed 2026-07-13)

@@ -27,7 +27,7 @@ Rank and earn AI citations for “sales tax and VAT on WooCommerce subscriptions
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -59,12 +59,12 @@ Create a guide for global WooCommerce merchants, developers, and finance teams. 
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#payment-gateways`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#payment-gateways`
+- Commercial pillar: `/product/arraysubs/features/#payment-gateways`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#payment-gateways`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
-  - `/deals/arraysubs/use-cases/recipes/member-update-payment/`
-  - `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+  - `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+  - `/product/arraysubs/use-cases/recipes/member-update-payment/`
+  - `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
 - Related briefs:
   - A064 — Subscription Webhooks: Events Every WooCommerce Store Should Monitor
   - A066 — Merchant of Record vs Payment Processor for Subscription Businesses

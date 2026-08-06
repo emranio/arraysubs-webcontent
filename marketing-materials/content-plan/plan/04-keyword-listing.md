@@ -6,7 +6,7 @@ Focus keywords and long tails are based on local modeled research, live SERP pat
 
 ## Reserved head-term boundaries
 
-- `/deals/arraysubs/` owns the main ArraySubs and WooCommerce subscription-plugin commercial terms.
+- `/product/arraysubs/` owns the main ArraySubs and WooCommerce subscription-plugin commercial terms.
 - `/pricing/` owns ArraySubs pricing, plan, purchase, annual, and lifetime transactional terms.
 - `/features/` owns feature-category and product-capability commercial terms.
 - `/use-cases/` and its nine children own “ArraySubs/WooCommerce subscriptions for <vertical>” solution terms.

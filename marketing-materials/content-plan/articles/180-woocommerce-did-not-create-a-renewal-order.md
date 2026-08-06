@@ -25,7 +25,7 @@ Become the practical diagnostic result for “WooCommerce renewal order not crea
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a troubleshooting guide for developers, agencies, support engineers, and 
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/use-cases/subscription-support-operations/`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#analytics-infrastructure`
+- Commercial pillar: `/product/arraysubs/use-cases/subscription-support-operations/`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#analytics-infrastructure`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/scheduled-job-monitor/`
-  - `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
-  - `/deals/arraysubs/use-cases/recipes/activity-audit-trail/`
+  - `/product/arraysubs/use-cases/recipes/scheduled-job-monitor/`
+  - `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
+  - `/product/arraysubs/use-cases/recipes/activity-audit-trail/`
 - Related briefs:
   - A179 — WooCommerce Subscription Renewal Not Working: A Diagnostic Decision Tree
   - A181 — WooCommerce Subscription Charged Twice: Causes and Safe Recovery

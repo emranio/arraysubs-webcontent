@@ -256,10 +256,10 @@ No live provider migration, secure PAN transfer, buyer reauthorization, renewal,
 
 Required commercial and recipe links:
 
-- Payment gateway feature overview: `/deals/arraysubs/features/#payment-gateways`
-- Stripe automatic billing and SCA recipe: `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
-- Member update-payment recipe: `/deals/arraysubs/use-cases/recipes/member-update-payment/`
-- Gateway health monitor recipe: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+- Payment gateway feature overview: `/product/arraysubs/features/#payment-gateways`
+- Stripe automatic billing and SCA recipe: `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+- Member update-payment recipe: `/product/arraysubs/use-cases/recipes/member-update-payment/`
+- Gateway health monitor recipe: `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
 
 Useful contextual links from the content plan:
 
@@ -272,7 +272,7 @@ Useful contextual links from the content plan:
 - A178, “WooCommerce subscription renewals not running: WP-Cron and Action Scheduler checks” — scheduling diagnostics.
 - A181, “How to recover a past-due WooCommerce subscription without double charging” — exact-once recovery control.
 - A187, “How to test WooCommerce subscription webhooks safely” — migration preflight.
-- Pricing page — one contextual CTA after verified ArraySubs capability/limit mapping: `/deals/arraysubs/pricing/`
+- Pricing page — one contextual CTA after verified ArraySubs capability/limit mapping: `/product/arraysubs/pricing/`
 
 ## 12. Claims to avoid
 

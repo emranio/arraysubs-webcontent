@@ -181,7 +181,7 @@ export default function ContactPage() {
             actions={
               <>
                 <Button
-                  href="/deals/arraysubs/pricing/"
+                  href="/product/arraysubs/pricing/"
                   variant="dark"
                   size="lg"
                   layers="2layer"

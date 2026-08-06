@@ -210,7 +210,7 @@ Use test records, numbered markers, heavy redaction, and version/date captions.
 
 ## Internal links
 
-- `/deals/arraysubs/features/#subscription-operations`
+- `/product/arraysubs/features/#subscription-operations`
 - Lenient/strict grace and auto-downgrade recipes.
 - A031 recovery pillar; A032 lifecycle; A033 dunning; A034 retries.
 - A036 expired-card update flow; A037 email copy; A039 operational checklist.

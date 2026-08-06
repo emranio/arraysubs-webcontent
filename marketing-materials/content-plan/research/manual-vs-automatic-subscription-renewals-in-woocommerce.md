@@ -194,9 +194,9 @@ Use flat ArraySubs palette and clear shapes; no gradients, glow, 3D, or pseudo-t
 
 ## Internal links
 
-- Commercial overview: `/deals/arraysubs/`
-- Billing operations: `/deals/arraysubs/features/#subscription-operations`
-- Recipes: `/deals/arraysubs/use-cases/recipes/switch-at-renewal/`, `/deals/arraysubs/use-cases/recipes/downgrade-with-credit/`, `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
+- Commercial overview: `/product/arraysubs/`
+- Billing operations: `/product/arraysubs/features/#subscription-operations`
+- Recipes: `/product/arraysubs/use-cases/recipes/switch-at-renewal/`, `/product/arraysubs/use-cases/recipes/downgrade-with-credit/`, `/product/arraysubs/use-cases/recipes/subscription-notes-timeline/`
 - Siblings: A017 renewal lifecycle, A019 record types, A020 synchronization.
 
 ## Primary sources (accessed 2026-07-13)

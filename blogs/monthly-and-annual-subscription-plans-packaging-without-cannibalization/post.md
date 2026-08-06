@@ -148,11 +148,11 @@ Measure support contacts by reason, not merely total tickets. One low ticket cou
 
 **Start monthly, switch later:** let customers experience value, then make an eligible annual switch available. Define whether the switch is immediate and prorated, immediate without proration, or applied at renewal.
 
-Use a [sign-up fee](/subscription-foundations/subscription-sign-up-fees-unit-economics-ux-and-examples/) when onboarding is a genuine separate one-time cost. Use a [fixed-cycle model](/subscription-foundations/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/) for a defined number of payments, and a [lifetime deal](/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/) for a one-time permanent-access promise.
+Use a [sign-up fee](/subscription-foundations/subscription-sign-up-fees-unit-economics-ux-and-examples/) when onboarding is a genuine separate one-time cost. Use a [fixed-cycle model](/subscription-foundations/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/) for a defined number of payments, and a [lifetime deal](/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/) for a one-time permanent-access promise.
 
 ## Current ArraySubs behavior
 
-ArraySubs core 1.8.9 supports per-variation price, interval, term, trial, sign-up fee, and different renewal price. A Billing attribute with Monthly and Annual variations is therefore supported in the core product engine. The exact setup belongs in the [monthly and annual recipe](/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/).
+ArraySubs core 1.8.9 supports per-variation price, interval, term, trial, sign-up fee, and different renewal price. A Billing attribute with Monthly and Annual variations is therefore supported in the core product engine. The exact setup belongs in the [monthly and annual recipe](/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/).
 
 Core plan switching supports eligible monthly-to-annual crossgrades and configurable proration: immediate prorated, apply at renewal, or immediate without proration. Depending on the policy, a switch may require a paid order now or stay pending until renewal. Older recipe wording that calls plan switching Pro-only is stale; the shared switch engine is in core.
 
@@ -162,7 +162,7 @@ The gateway boundary still matters. Core supports manual renewal invoices throug
 
 Offer both cadences only when both solve a real customer preference and the business can carry both obligations. Calculate the annual price from cost and contribution, display the full charge honestly, and wait for mature cohort evidence before declaring a retention or profitability winner.
 
-[Compare ArraySubs plans](/deals/arraysubs/pricing/) after the cadence, switching, and gateway requirements are defined.
+[Compare ArraySubs plans](/product/arraysubs/pricing/) after the cadence, switching, and gateway requirements are defined.
 
 ## Frequently asked questions
 

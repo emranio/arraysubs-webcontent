@@ -1,0 +1,374 @@
+import type { ReactNode } from "react";
+import { ArrowRight, Check, Equal, Minus } from "lucide-react";
+import { articleSchema, faqSchema, softwareApplicationSchema } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  Accordion,
+  Badge,
+  Button,
+  Container,
+  CTA,
+  IconCard,
+  PageHero,
+  Section,
+  SectionTitle,
+} from "@/components/ui";
+import { CollapsibleComparison } from "../_components/CollapsibleComparison";
+import {
+  COMPARISONS,
+  comparisonColumns,
+  getComparison,
+  type Comparison,
+  type DifferenceWinner,
+} from "./_data";
+import {
+  getAdvantageDetailGroups,
+  mergeComparisonGroups,
+} from "./_advantageMatrix";
+import { FEATURES } from "../features/_data";
+import { RECIPES } from "../use-cases/_recipes";
+import { highlight } from "../_highlight";
+
+const GET_PRO = "/product/arraysubs/pricing/";
+const ALTERNATIVES = "/product/arraysubs/alternatives/";
+const MODULE_COUNT = FEATURES.length;
+const CORE_MODULE_COUNT = FEATURES.filter((feature) => feature.tier !== "Pro").length;
+const PRO_ONLY_FEATURES = FEATURES.filter((feature) => feature.tier === "Pro");
+const PRO_ONLY_MODULE_COUNT = PRO_ONLY_FEATURES.length;
+const RECIPE_COUNT = RECIPES.length;
+
+/** Visual treatment per "who wins this difference" verdict. */
+const WINNER_META: Record<
+  DifferenceWinner,
+  { tone: "primary" | "neutral" | "highlight"; icon: ReactNode }
+> = {
+  arraysubs: { tone: "primary", icon: <Check className="size-6" /> },
+  tie: { tone: "neutral", icon: <Equal className="size-6" /> },
+  competitor: { tone: "highlight", icon: <Minus className="size-6" /> },
+};
+
+/**
+ * Shared template for every `/product/arraysubs/alternatives/<slug>/` page. All
+ * copy comes from `_data.ts`; this only arranges it with the design system,
+ * GEO-ordered: answer-first verdict, then table, pricing, balanced differences,
+ * related comparisons and FAQ.
+ */
+export function ComparisonDetail({ comparison }: { comparison: Comparison }) {
+  const c = comparison;
+  const comparisonGroups = mergeComparisonGroups(
+    c.tableGroups,
+    getAdvantageDetailGroups(c.slug),
+  );
+  const comparisonRowCount = comparisonGroups.reduce(
+    (total, group) => total + group.rows.length,
+    0,
+  );
+  const usedRelatedSlugs = new Set<string>();
+  const related = [...c.related, ...COMPARISONS.map((item) => item.slug)]
+    .flatMap((slug) => {
+      if (slug === c.slug || usedRelatedSlugs.has(slug)) return [];
+
+      const item = getComparison(slug);
+      if (!item) return [];
+
+      usedRelatedSlugs.add(slug);
+      return [item];
+    })
+    .slice(0, 3);
+
+  const winnerLabel = (winner: DifferenceWinner) =>
+    winner === "arraysubs"
+      ? "ArraySubs"
+      : winner === "competitor"
+        ? c.competitorShort
+        : "Even";
+
+  return (
+    <>
+      <PageHero
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "ArraySubs", href: "/product/arraysubs/" },
+          { name: "Compare", href: ALTERNATIVES },
+          { name: c.competitorShort, href: `${ALTERNATIVES}${c.slug}/` },
+        ]}
+        title={c.h1}
+        subtitle={c.heroSubtitle}
+        highlights={c.heroHighlights}
+        actions={
+          <Button
+            href={GET_PRO}
+            size="lg"
+            magnetic
+            iconRight={<ArrowRight className="size-5" />}
+          >
+            Start Trial
+          </Button>
+        }
+        trust="No credit card required"
+      />
+
+      {/* ---- Verdict / TL;DR (answer-first — the GEO money block) -------- */}
+      <Section surface="default" spacing="md">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+            <div>
+              <SectionTitle
+                eyebrow="The verdict"
+                title={`ArraySubs vs ${c.competitorShort}, in short`}
+              />
+              <p className="mt-8 max-w-3xl text-xl leading-9 text-dark text-pretty sm:text-2xl sm:leading-10">
+                {highlight(c.verdict.summary)}
+              </p>
+            </div>
+            <div className="grid gap-[0.1875rem]">
+              <div className="rounded-2xl bg-card p-8">
+                <h3 className="font-display text-xl text-foreground">
+                  Choose ArraySubs if…
+                </h3>
+                <ul className="mt-5 flex flex-col gap-3">
+                  {c.verdict.arraysubsBestFor.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-muted">
+                      <Check
+                        aria-hidden="true"
+                        className="mt-0.5 size-5 shrink-0 text-primary"
+                      />
+                      <span className="text-pretty">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl bg-card p-8">
+                <h3 className="font-display text-xl text-foreground">
+                  Choose {c.competitorShort} if…
+                </h3>
+                <ul className="mt-5 flex flex-col gap-3">
+                  {c.verdict.competitorBestFor.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-muted">
+                      <Check
+                        aria-hidden="true"
+                        className="mt-0.5 size-5 shrink-0 text-faint"
+                      />
+                      <span className="text-pretty">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ---- Manual-backed module coverage ------------------------------ */}
+      <Section surface="default" spacing="md">
+        <Container>
+          <SectionTitle
+            eyebrow="Module coverage"
+            title={`One plugin, ${MODULE_COUNT} modules, ${RECIPE_COUNT} ready setups`}
+            subtitle={`${CORE_MODULE_COUNT} modules are free/core-accessible. The remaining ${PRO_ONLY_MODULE_COUNT} Pro-only modules are:`}
+          />
+          <ul className="mt-10 grid list-disc gap-x-12 gap-y-3 pl-5 text-muted marker:text-primary-strong sm:grid-cols-2 lg:grid-cols-3">
+            {PRO_ONLY_FEATURES.map((feature) => (
+              <li key={feature.slug} className="pl-1 text-pretty">
+                {feature.name}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 max-w-4xl text-lg leading-8 text-muted text-pretty">
+            Together, these modules consolidate what stores otherwise license as
+            5–6 separate plugins, with {RECIPE_COUNT} documented, copy-me
+            configurations to start from.
+          </p>
+        </Container>
+      </Section>
+
+      {/* ---- Overview / definition lead --------------------------------- */}
+      <Section surface="dark" spacing="md">
+        <Container>
+          <blockquote className="relative mx-auto max-w-4xl px-10 py-8 font-display text-xl leading-9 text-on-dark text-pretty italic sm:px-16 sm:py-10 sm:text-2xl sm:leading-10 [&_mark]:text-on-dark [&_mark]:[background-image:none]">
+            <span
+              aria-hidden="true"
+              className="absolute top-0 left-0 font-display text-7xl leading-none text-highlight not-italic sm:text-8xl"
+            >
+              “
+            </span>
+            {highlight(c.intro)}
+            <span
+              aria-hidden="true"
+              className="absolute right-0 bottom-0 font-display text-7xl leading-none text-highlight not-italic sm:text-8xl"
+            >
+              ”
+            </span>
+          </blockquote>
+        </Container>
+      </Section>
+
+      {/* ---- At-a-glance comparison table ------------------------------- */}
+      <Section surface="surface" spacing="md">
+        <Container>
+          <SectionTitle
+            eyebrow="Side by side"
+            title={`ArraySubs vs ${c.competitorShort}: feature comparison`}
+            subtitle={`How ArraySubs Free and Pro compare with ${c.competitor}.`}
+            align="center"
+          />
+          <div className="mt-12">
+            <CollapsibleComparison
+              caption={`Feature-by-feature comparison of ArraySubs Free and Pro versus ${c.competitor} across ${comparisonRowCount} pricing, product, checkout, billing, membership, retention, credit, analytics, support and operations criteria. Not documented is used when the reviewed competitor material does not support a definitive yes or no.`}
+              columns={comparisonColumns(c)}
+              groups={comparisonGroups}
+              collapsedRowCount={28}
+            />
+          </div>
+        </Container>
+      </Section>
+
+      {/* ---- Pricing ---------------------------------------------------- */}
+      <Section surface="default" spacing="md">
+        <Container>
+          <SectionTitle
+            eyebrow="Pricing"
+            title={`ArraySubs vs ${c.competitorShort} pricing`}
+            align="center"
+          />
+          <div className="mx-auto mt-12 grid max-w-4xl gap-[0.1875rem] sm:grid-cols-2">
+            <div className="flex flex-col rounded-2xl border-2 border-primary bg-card p-8">
+              <Badge tone="primary" className="self-start">
+                ArraySubs
+              </Badge>
+              <p className="mt-5 text-lg leading-8 text-foreground text-pretty">
+                {c.pricing.arraysubs}
+              </p>
+              {c.pricing.savings && (
+                <p className="mt-4 font-display text-lg text-primary text-pretty">
+                  {c.pricing.savings}
+                </p>
+              )}
+            </div>
+            <div className="flex flex-col rounded-2xl bg-card p-8">
+              <Badge tone="neutral" className="self-start">
+                {c.competitorShort}
+              </Badge>
+              <p className="mt-5 font-display text-2xl text-foreground">
+                {c.pricing.competitor}
+              </p>
+              {c.pricing.combinedNote && (
+                <p className="mt-4 text-muted text-pretty">
+                  {c.pricing.combinedNote}
+                </p>
+              )}
+              {c.competitorUpdated && (
+                <p className="mt-3 text-sm text-faint">
+                  Last updated: {c.competitorUpdated}
+                </p>
+              )}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ---- Key differences (balanced — every winner tagged) ----------- */}
+      <Section surface="surface" spacing="md">
+        <Container>
+          <SectionTitle
+            eyebrow="Key differences"
+            title="Where each plugin pulls ahead"
+            subtitle="An honest read on what ArraySubs does better, what wins are even, and where the competitor leads."
+            align="center"
+          />
+          <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
+            {c.differences.map((diff) => {
+              const meta = WINNER_META[diff.winner];
+              return (
+                <IconCard
+                  key={diff.title}
+                  icon={meta.icon}
+                  title={diff.title}
+                  description={diff.description}
+                  badge={<Badge tone={meta.tone}>{winnerLabel(diff.winner)}</Badge>}
+                />
+              );
+            })}
+          </div>
+        </Container>
+      </Section>
+
+      {/* ---- Related comparisons ---------------------------------------- */}
+      {related.length > 0 && (
+        <Section surface="default" spacing="md">
+          <Container>
+            <SectionTitle
+              eyebrow="Keep comparing"
+              title="Related comparisons"
+              subtitle="See how ArraySubs stacks up against other subscription and membership plugins."
+              align="center"
+            />
+            <div className="mt-12 grid gap-[0.1875rem] sm:grid-cols-2 lg:grid-cols-3">
+              {related.map((item) => (
+                <IconCard
+                  key={item.slug}
+                  icon={<item.icon className="size-6" />}
+                  title={`vs ${item.competitorShort}`}
+                  description={item.cardDescription}
+                  href={`${ALTERNATIVES}${item.slug}/`}
+                />
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* ---- FAQ -------------------------------------------------------- */}
+      <Section surface="surface" spacing="md">
+        <Container>
+          <SectionTitle
+            eyebrow="FAQ"
+            title={`ArraySubs vs ${c.competitorShort}: common questions`}
+            align="center"
+          />
+          <div className="mx-auto mt-12 max-w-3xl">
+            <Accordion items={c.faq} defaultOpen={[0]} />
+          </div>
+        </Container>
+        <JsonLd data={faqSchema(c.faq)} />
+      </Section>
+
+      {/* ---- CTA -------------------------------------------------------- */}
+      <Section surface="primary" spacing="md">
+        <Container>
+          <CTA
+            surface="primary"
+            flat
+            eyebrow="Paid Pro plans"
+            title="Choose the ArraySubs Pro plan that fits"
+            subtitle="Install the free core today, then upgrade securely when you need the full Pro feature set."
+            microcopy="No credit card required · Annual and lifetime options available"
+            actions={
+              <Button
+                href={GET_PRO}
+                variant="dark"
+                size="lg"
+                layers="2layer"
+                magnetic
+                iconRight={<ArrowRight className="size-5" />}
+              >
+                Start Trial
+              </Button>
+            }
+          />
+        </Container>
+      </Section>
+
+      <JsonLd data={softwareApplicationSchema()} />
+      <JsonLd
+        data={articleSchema({
+          headline: c.h1,
+          description: c.metaDescription,
+          path: `${ALTERNATIVES}${c.slug}/`,
+          datePublished: c.updated,
+          dateModified: c.updated,
+        })}
+      />
+    </>
+  );
+}

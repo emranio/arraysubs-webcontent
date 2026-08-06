@@ -380,7 +380,7 @@ export default async function AuthorPage({
             microcopy="No credit card required · Written and maintained by the developer who builds ArraySubs"
             actions={
               <Button
-                href="/deals/arraysubs/pricing/"
+                href="/product/arraysubs/pricing/"
                 variant="dark"
                 size="lg"
                 layers="2layer"

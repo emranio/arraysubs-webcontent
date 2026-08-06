@@ -237,7 +237,7 @@ For an immediate-versus-drip experiment, predefine cohort assignment, content/of
 - [ ] Each ArraySubs release rule has a unique name, test, and rollback.
 - [ ] Metrics use opened release windows and closed cohorts.
 
-For gate implementation, use [combined conditions](/deals/arraysubs/use-cases/recipes/combined-conditions/), [URL prefix lockdown](/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/), or [inline content gating](/deals/arraysubs/use-cases/recipes/inline-content-gating/) without duplicating configuration here.
+For gate implementation, use [combined conditions](/product/arraysubs/use-cases/recipes/combined-conditions/), [URL prefix lockdown](/product/arraysubs/use-cases/recipes/url-prefix-lockdown/), or [inline content gating](/product/arraysubs/use-cases/recipes/inline-content-gating/) without duplicating configuration here.
 
 ## When is ArraySubs not the best drip engine?
 
@@ -247,7 +247,7 @@ ArraySubs fits relative subscription-start delays across WordPress/WooCommerce r
 
 Drip only when waiting creates a better outcome. Choose the model and anchor explicitly, open orientation and first value immediately, design catch-up and lifecycle behavior, keep notifications reconciled with access, and measure release eligibility and meaningful use rather than assuming weekly delay improves retention.
 
-After confirming that relative rule delays match the program, see how [content dripping fits the complete ArraySubs membership journey](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) for any paid lifecycle automation.
+After confirming that relative rule delays match the program, see how [content dripping fits the complete ArraySubs membership journey](/product/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/product/arraysubs/pricing/) for any paid lifecycle automation.
 
 ## Frequently asked questions
 

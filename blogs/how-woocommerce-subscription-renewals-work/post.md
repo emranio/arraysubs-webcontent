@@ -122,7 +122,7 @@ Do not edit the date or order independently to “fix” a renewal. Use [changin
 
 ## Final recommendation
 
-Treat renewal as a distributed state transition, not a recurring button press. The subscription, scheduled actions, WooCommerce order, gateway, customer communication, and access outcome must agree. [Compare ArraySubs plans](/deals/arraysubs/pricing/) for manual and automatic renewal options.
+Treat renewal as a distributed state transition, not a recurring button press. The subscription, scheduled actions, WooCommerce order, gateway, customer communication, and access outcome must agree. [Compare ArraySubs plans](/product/arraysubs/pricing/) for manual and automatic renewal options.
 
 ## Frequently asked questions
 

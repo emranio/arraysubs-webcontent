@@ -310,7 +310,7 @@ WooCommerce settings show which gateway integrations are installed, enabled, and
 
 ![The official WooCommerce Stripe account connection used by the current ArraySubs Stripe path](/blogs/choosing-a-subscription-gateway-by-country-and-business-model/stripe-account-connection.png)
 
-The Stripe connection establishes the current direct-processing dependency. Use the [Stripe automatic billing and SCA recipe](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) to verify the actual renewal path.
+The Stripe connection establishes the current direct-processing dependency. Use the [Stripe automatic billing and SCA recipe](/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) to verify the actual renewal path.
 
 ![PayPal sandbox settings in WooCommerce](/blogs/choosing-a-subscription-gateway-by-country-and-business-model/paypal-sandbox-settings.png)
 
@@ -318,7 +318,7 @@ PayPal settings and credentials can prove configuration. Provider API responses,
 
 ![Paddle gateway health in the ArraySubs test environment](/blogs/choosing-a-subscription-gateway-by-country-and-business-model/paddle-gateway-health.png)
 
-Gateway Health helps operators see setup, mode, availability, subscription counts, webhook state, endpoint, and capabilities. It is not a legal, country, product, payout, or payment-method eligibility certificate. Use the [Gateway Health monitor recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) and retain provider evidence alongside it.
+Gateway Health helps operators see setup, mode, availability, subscription counts, webhook state, endpoint, and capabilities. It is not a legal, country, product, payout, or payment-method eligibility certificate. Use the [Gateway Health monitor recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) and retain provider evidence alongside it.
 
 For provider-level comparisons, read [Stripe vs PayPal vs Paddle for WooCommerce recurring billing](/payments-and-compliance/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/), the [Paddle MoR guide](/payments-and-compliance/paddle-merchant-of-record-for-woocommerce-subscriptions/), and [best payment gateways for WooCommerce subscriptions](/payments-and-compliance/best-payment-gateways-for-woocommerce-subscriptions/).
 
@@ -376,7 +376,7 @@ Do not make a categorical recommendation. Stripe currently says the PaymentInten
 - [ ] Data export, credential portability, and exit treatment are acceptable.
 - [ ] Provider pages and confirmations have dates and owners.
 
-After the hard gates and live pilot pass, compare [ArraySubs payment gateway capabilities](/deals/arraysubs/features/#payment-gateways), the [member payment-update workflow](/deals/arraysubs/use-cases/recipes/member-update-payment/), and [ArraySubs Pro pricing](/deals/arraysubs/pricing/).
+After the hard gates and live pilot pass, compare [ArraySubs payment gateway capabilities](/product/arraysubs/features/#payment-gateways), the [member payment-update workflow](/product/arraysubs/use-cases/recipes/member-update-payment/), and [ArraySubs Pro pricing](/product/arraysubs/pricing/).
 
 ## Primary sources
 

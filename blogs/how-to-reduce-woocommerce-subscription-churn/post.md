@@ -470,7 +470,7 @@ No. In the inspected code, automatic PayPal and Paddle subscriptions fail the cu
 - [ ] Dashboard event and opening-base limitations are documented.
 - [ ] A 90-day plan sequences definitions, fixes, and controlled tests.
 
-Explore the [subscription retention feature](/deals/arraysubs/features/#retention-revenue), [reason-targeted retention flow recipe](/deals/arraysubs/use-cases/recipes/require-reason-targeted-funnel/), [pause recipe](/deals/arraysubs/use-cases/recipes/pause-need-a-break/), [downgrade recipe](/deals/arraysubs/use-cases/recipes/downgrade-offer/), and [ArraySubs Pro pricing](/deals/arraysubs/pricing/) after defining the measurement and gateway boundaries.
+Explore the [subscription retention feature](/product/arraysubs/features/#retention-revenue), [reason-targeted retention flow recipe](/product/arraysubs/use-cases/recipes/require-reason-targeted-funnel/), [pause recipe](/product/arraysubs/use-cases/recipes/pause-need-a-break/), [downgrade recipe](/product/arraysubs/use-cases/recipes/downgrade-offer/), and [ArraySubs Pro pricing](/product/arraysubs/pricing/) after defining the measurement and gateway boundaries.
 
 ## Primary sources
 

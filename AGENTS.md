@@ -399,7 +399,7 @@ Motion rules:
 
 - Product name: `ArraySubs`.
 - Umbrella brand: `ArrayHash`.
-- Product pages live under `/deals/arraysubs/`.
+- Product pages live under `/product/arraysubs/`.
 - Trust/legal pages live under `/trust-center/`.
 - Primary CTA: `View Pro Pricing`.
 - Secondary CTA: `Live Demo`.

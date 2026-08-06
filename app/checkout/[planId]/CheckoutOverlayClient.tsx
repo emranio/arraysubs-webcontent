@@ -10,7 +10,7 @@ import {
   getGoaffproVisitorId,
 } from "@/lib/goaffpro";
 import { Button } from "@/components/ui/Button";
-import type { ArraySubsProPlan } from "../../deals/arraysubs/pricing/_plans";
+import type { ArraySubsProPlan } from "../../product/arraysubs/pricing/_plans";
 import {
   CHECKOUT_PRODUCT_ID,
   CHECKOUT_PUBLIC_KEY,
@@ -19,7 +19,7 @@ import {
   EARLY_BIRD_DISCOUNT_PERCENT,
   formatUsd,
   getDiscountedPrice,
-} from "../../deals/arraysubs/pricing/_plans";
+} from "../../product/arraysubs/pricing/_plans";
 
 type CheckoutConfig = {
   product_id: string;

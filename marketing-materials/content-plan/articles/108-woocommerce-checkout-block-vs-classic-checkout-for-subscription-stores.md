@@ -25,7 +25,7 @@ Earn decision-stage visibility for “WooCommerce Checkout Block vs classic chec
 
 ## CTA
 
-**Choose a Plan** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**Choose a Plan** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a comparison for WooCommerce marketers, CRO specialists, and implementers
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#products-checkout`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#products-checkout`
+- Commercial pillar: `/product/arraysubs/features/#products-checkout`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#products-checkout`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/custom-checkout-fields/`
-  - `/deals/arraysubs/use-cases/recipes/multi-step-checkout/`
-  - `/deals/arraysubs/use-cases/recipes/conditional-checkout-fields/`
+  - `/product/arraysubs/use-cases/recipes/custom-checkout-fields/`
+  - `/product/arraysubs/use-cases/recipes/multi-step-checkout/`
+  - `/product/arraysubs/use-cases/recipes/conditional-checkout-fields/`
 - Related briefs:
   - A098 — WooCommerce Subscription Checkout Best Practices
   - A099 — Anatomy of a Subscription Checkout Page

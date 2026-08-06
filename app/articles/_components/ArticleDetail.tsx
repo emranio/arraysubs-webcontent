@@ -29,12 +29,12 @@ import type { ArticleFaq, ArticleHeading } from "../_content";
 import {
   PILLARS,
   pillarPath,
-} from "@/app/deals/arraysubs/features/_pillars";
+} from "@/app/product/arraysubs/features/_pillars";
 import { MarkdownArticle } from "./MarkdownArticle";
 
 const MEMBERSHIP_FEATURE =
-  "/deals/arraysubs/features/woocommerce-membership/";
-const MEMBERSHIP_USE_CASE = "/deals/arraysubs/use-cases/membership-sites/";
+  "/product/arraysubs/features/woocommerce-membership/";
+const MEMBERSHIP_USE_CASE = "/product/arraysubs/use-cases/membership-sites/";
 
 type ArticleDetailProps = {
   article: ResourceArticle;
@@ -148,7 +148,7 @@ export function ArticleDetail({
                     </Button>
                   ) : (
                     <Button
-                      href="/deals/arraysubs/features/"
+                      href="/product/arraysubs/features/"
                       variant={implementationFeature ? "ghost" : "outline"}
                       size="sm"
                       iconRight={<ArrowRight className="size-4" />}
@@ -160,7 +160,7 @@ export function ArticleDetail({
                     href={
                       isMembershipArticle
                         ? MEMBERSHIP_USE_CASE
-                        : "/deals/arraysubs/use-cases/"
+                        : "/product/arraysubs/use-cases/"
                     }
                     variant="ghost"
                     size="sm"
@@ -339,7 +339,7 @@ export function ArticleDetail({
                     Explore Membership Features
                   </Button>
                   <Button
-                    href="/deals/arraysubs/pricing/"
+                    href="/product/arraysubs/pricing/"
                     variant="highlight"
                     size="lg"
                     layers="2layer"
@@ -349,7 +349,7 @@ export function ArticleDetail({
                 </>
               ) : (
                 <Button
-                  href="/deals/arraysubs/pricing/"
+                  href="/product/arraysubs/pricing/"
                   variant="dark"
                   size="lg"
                   layers="2layer"

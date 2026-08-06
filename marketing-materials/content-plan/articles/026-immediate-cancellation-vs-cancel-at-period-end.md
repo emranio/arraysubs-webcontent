@@ -26,7 +26,7 @@ Earn decision-stage visibility for “immediate vs end of period cancellation,�
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -58,12 +58,12 @@ Create a comparison for store owners, finance operators, and WooCommerce impleme
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#subscription-operations`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#subscription-operations`
+- Commercial pillar: `/product/arraysubs/features/#subscription-operations`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#subscription-operations`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/switch-at-renewal/`
-  - `/deals/arraysubs/use-cases/recipes/downgrade-with-credit/`
-  - `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
+  - `/product/arraysubs/use-cases/recipes/switch-at-renewal/`
+  - `/product/arraysubs/use-cases/recipes/downgrade-with-credit/`
+  - `/product/arraysubs/use-cases/recipes/subscription-notes-timeline/`
 - Related briefs:
   - A025 — Different First and Renewal Prices: Subscription Pricing Patterns
   - A027 — Recurring Subscription Coupons: Economics and Abuse Controls

@@ -144,7 +144,7 @@ ArraySubs Free 1.8.9 includes a Lifetime Deal billing period for simple and vari
 
 Do not translate that into immutable permanent access. Current customer cancellation can change an active lifetime record to Cancelled, and status-based Members Access can remove mapped roles when no other qualifying subscription exists. Refund-to-entitlement behavior and end-of-period cancellation also require live verification.
 
-Use “ongoing access under the stated entitlement and status terms,” not an unconditional promise that access can never end. The [Lifetime Deal recipe](/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/) owns the setup steps.
+Use “ongoing access under the stated entitlement and status terms,” not an unconditional promise that access can never end. The [Lifetime Deal recipe](/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/) owns the setup steps.
 
 For the recurring alternative, read [Monthly and Annual Subscription Plans](/subscription-foundations/monthly-and-annual-subscription-plans-packaging-without-cannibalization/). For finite choices, read [Customer-Chosen Subscription Duration](/subscription-foundations/customer-chosen-subscription-duration-use-cases-ux-and-risk-controls/).
 
@@ -152,7 +152,7 @@ For the recurring alternative, read [Monthly and Annual Subscription Plans](/sub
 
 Choose lifetime only when the promise can be bounded and one price can fund the modeled long tail. Choose recurring when ongoing value creates ongoing cost. Use a hybrid when a durable asset can be separated from support, cloud, usage, or future releases.
 
-[Compare ArraySubs plans](/deals/arraysubs/pricing/) for the wider feature set; Lifetime Deal billing itself is included in core.
+[Compare ArraySubs plans](/product/arraysubs/pricing/) for the wider feature set; Lifetime Deal billing itself is included in core.
 
 ## Frequently asked questions
 

@@ -25,7 +25,7 @@ Rank and earn AI citations for “subscription checkout abandonment,” fully re
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a troubleshooting guide for WooCommerce marketers, CRO specialists, and i
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#products-checkout`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#products-checkout`
+- Commercial pillar: `/product/arraysubs/features/#products-checkout`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#products-checkout`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/custom-checkout-fields/`
-  - `/deals/arraysubs/use-cases/recipes/multi-step-checkout/`
-  - `/deals/arraysubs/use-cases/recipes/conditional-checkout-fields/`
+  - `/product/arraysubs/use-cases/recipes/custom-checkout-fields/`
+  - `/product/arraysubs/use-cases/recipes/multi-step-checkout/`
+  - `/product/arraysubs/use-cases/recipes/conditional-checkout-fields/`
 - Related briefs:
   - A105 — Card-Required vs No-Card Trial Checkout
   - A107 — Pricing Page to Checkout: A Subscription Conversion Audit

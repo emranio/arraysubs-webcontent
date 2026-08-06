@@ -106,7 +106,7 @@ The current `PaymentMethodCoordinator` resolves the subscription’s existing ga
 
 That is correct conceptually: updating a card inside a provider account is different from transferring a credential or creating a new wallet/MoR agreement. A customer seeing an “Update payment method” button should not be told that it selects any enabled gateway.
 
-See [subscription payment tokens and card updates explained](/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/) and the [member payment-update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/).
+See [subscription payment tokens and card updates explained](/payments-and-compliance/subscription-payment-tokens-and-card-updates-explained/) and the [member payment-update recipe](/product/arraysubs/use-cases/recipes/member-update-payment/).
 
 ## Build a gateway continuity card for every provider
 
@@ -294,7 +294,7 @@ The processed-event ledger also has a cleanup window. “No recent event” can 
 
 ![PayPal webhook health and recent processed-event evidence](/blogs/multi-gateway-resilience-for-subscription-stores/paypal-webhook-health.png)
 
-Use the [Gateway Health monitor recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) as one layer of the operating runbook, not as automated cross-gateway orchestration.
+Use the [Gateway Health monitor recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) as one layer of the operating runbook, not as automated cross-gateway orchestration.
 
 ## Incident runbook
 
@@ -392,7 +392,7 @@ No. A second gateway helps only for scenarios it supports and the team can opera
 - [ ] RTO, RPO, MTTD, MTTR, incident owner, and reconciliation owner are defined.
 - [ ] A tabletop exercise has tested late/duplicate events and incompatible backup carts.
 
-Review [ArraySubs payment gateway capabilities](/deals/arraysubs/features/#payment-gateways), [Stripe automatic billing and SCA](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/), and [ArraySubs Pro pricing](/deals/arraysubs/pricing/) when building a tested multi-gateway operating model.
+Review [ArraySubs payment gateway capabilities](/product/arraysubs/features/#payment-gateways), [Stripe automatic billing and SCA](/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/), and [ArraySubs Pro pricing](/product/arraysubs/pricing/) when building a tested multi-gateway operating model.
 
 ## Primary sources
 

@@ -27,7 +27,7 @@ Rank and earn AI citations for “prevent shared membership accounts,” fully r
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -59,12 +59,12 @@ Create a strategy guide for membership operators, publishers, course creators, a
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/woocommerce-membership/`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/member-access-control/`
+- Commercial pillar: `/product/arraysubs/features/woocommerce-membership/`
+- Relevant feature/use-case hub: `/product/arraysubs/features/member-access-control/`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/combined-conditions/`
-  - `/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/`
-  - `/deals/arraysubs/use-cases/recipes/inline-content-gating/`
+  - `/product/arraysubs/use-cases/recipes/combined-conditions/`
+  - `/product/arraysubs/use-cases/recipes/url-prefix-lockdown/`
+  - `/product/arraysubs/use-cases/recipes/inline-content-gating/`
 - Related briefs:
   - A041 — How to Create a WooCommerce Membership Site: Architecture Before Configuration
   - A042 — WooCommerce Membership vs Subscription: What Is the Difference?

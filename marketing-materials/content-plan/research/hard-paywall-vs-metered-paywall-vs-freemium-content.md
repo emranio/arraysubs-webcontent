@@ -227,11 +227,11 @@ ArraySubs is a fit for subscription/purchase/role/feature-driven WordPress/Woo a
 
 ## Internal-link plan
 
-- **Commercial pillar:** `/deals/arraysubs/features/woocommerce-membership/`
+- **Commercial pillar:** `/product/arraysubs/features/woocommerce-membership/`
 - **Recipes:** inline content gating, URL prefix lockdown, combined conditions.
 - **Siblings:** A045 restriction strategy, A047 dripping, A048 members-only catalog.
 - **Supporting:** A049 SEO for gated content, A053 partial restriction, A153 publisher paywall blueprint, A159 paid newsletter blueprint.
-- **CTA after neutral decision and ArraySubs limits:** `/deals/arraysubs/pricing/`
+- **CTA after neutral decision and ArraySubs limits:** `/product/arraysubs/pricing/`
 
 ## Long-form SEO/GEO outline (target 3,300–4,200 words)
 

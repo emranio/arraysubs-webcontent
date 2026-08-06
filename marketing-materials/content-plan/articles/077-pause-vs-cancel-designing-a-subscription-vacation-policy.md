@@ -25,7 +25,7 @@ Rank and earn AI citations for “pause vs cancel subscription,” fully resolve
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a comparison for subscription founders, growth teams, customer success, a
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#retention-revenue`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#retention-revenue`
+- Commercial pillar: `/product/arraysubs/features/#retention-revenue`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#retention-revenue`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/require-reason-targeted-funnel/`
-  - `/deals/arraysubs/use-cases/recipes/pause-need-a-break/`
-  - `/deals/arraysubs/use-cases/recipes/downgrade-offer/`
+  - `/product/arraysubs/use-cases/recipes/require-reason-targeted-funnel/`
+  - `/product/arraysubs/use-cases/recipes/pause-need-a-break/`
+  - `/product/arraysubs/use-cases/recipes/downgrade-offer/`
 - Related briefs:
   - A076 — How Much Discount Should a Cancellation Offer Give?
   - A078 — Downgrade vs Cancel: Retaining Customers at a Better-Fit Tier

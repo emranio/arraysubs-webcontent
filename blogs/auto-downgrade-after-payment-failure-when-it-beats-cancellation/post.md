@@ -227,7 +227,7 @@ Avoid “your payment was recovered” and avoid implying the fallback is a pena
 - [ ] Record audit evidence and assign a manual rollback owner.
 - [ ] Roll back if target mapping, entitlement enforcement, provider cancellation, or audit writing fails.
 
-For the product-specific flow, use the [auto-downgrade-on-failed-payment recipe](/deals/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/) after the preceding [lenient grace](/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict grace](/deals/arraysubs/use-cases/recipes/strict-dunning-grace/) policy is documented.
+For the product-specific flow, use the [auto-downgrade-on-failed-payment recipe](/product/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/) after the preceding [lenient grace](/product/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict grace](/product/arraysubs/use-cases/recipes/strict-dunning-grace/) policy is documented.
 
 ## When should a store choose cancellation instead?
 
@@ -239,7 +239,7 @@ ArraySubs is a practical fit for a WooCommerce-owned tiered product with testabl
 
 Use auto-downgrade as a deliberate final lifecycle policy, never as a reflex after one decline. Require eligibility, entitlement safety, and a credible path back to paid. Test the remote agreement, fallback access, manual-renewal caveat, customer message, economics, and rollback before allowing automation to change real accounts.
 
-After those controls pass, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) and the wider [subscription operations feature set](/deals/arraysubs/features/#subscription-operations).
+After those controls pass, [review ArraySubs Pro pricing](/product/arraysubs/pricing/) and the wider [subscription operations feature set](/product/arraysubs/features/#subscription-operations).
 
 ## Frequently asked questions
 

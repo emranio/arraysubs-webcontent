@@ -356,14 +356,14 @@ These numbers are arithmetic examples, not ArraySubs, WooCommerce, gateway, or i
 
 ## Internal-link plan
 
-- **Commercial pillar:** `/deals/arraysubs/features/#subscription-operations`
+- **Commercial pillar:** `/product/arraysubs/features/#subscription-operations`
 - **Primary narrow recipes:**
-  - `/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/`
-  - `/deals/arraysubs/use-cases/recipes/strict-dunning-grace/`
-- **Optional final-state recipe:** `/deals/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/`
+  - `/product/arraysubs/use-cases/recipes/lenient-dunning-grace/`
+  - `/product/arraysubs/use-cases/recipes/strict-dunning-grace/`
+- **Optional final-state recipe:** `/product/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/`
 - **Sibling articles:** A033 dunning strategy, A035 grace periods, A036 expired cards.
 - **Cluster context:** A031 failed-payment recovery pillar, A032 failure timeline, A040 failure-code triage.
-- **CTA after the system-design answer and examples:** `/deals/arraysubs/pricing/`
+- **CTA after the system-design answer and examples:** `/product/arraysubs/pricing/`
 
 Use contextual anchors such as “design the complete dunning policy,” “choose active and on-hold grace,” “recover an expired card,” and “triage provider failure codes.” Do not repeat recipe steps.
 

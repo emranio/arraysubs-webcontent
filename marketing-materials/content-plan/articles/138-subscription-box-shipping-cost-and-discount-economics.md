@@ -25,7 +25,7 @@ Rank and earn AI citations for “subscription box shipping cost economics,” f
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a calculator guide for subscription-box founders, replenishment brands, a
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/use-cases/subscription-boxes/`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#products-checkout`
+- Commercial pillar: `/product/arraysubs/use-cases/subscription-boxes/`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#products-checkout`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/recurring-shipping-box/`
-  - `/deals/arraysubs/use-cases/recipes/one-time-shipping-welcome-kit/`
-  - `/deals/arraysubs/use-cases/recipes/skip-and-pause-enabled/`
+  - `/product/arraysubs/use-cases/recipes/recurring-shipping-box/`
+  - `/product/arraysubs/use-cases/recipes/one-time-shipping-welcome-kit/`
+  - `/product/arraysubs/use-cases/recipes/skip-and-pause-enabled/`
 - Related briefs:
   - A129 — WooCommerce Subscription Box Business Blueprint
   - A130 — Subscribe and Save for WooCommerce: Strategy and Unit Economics

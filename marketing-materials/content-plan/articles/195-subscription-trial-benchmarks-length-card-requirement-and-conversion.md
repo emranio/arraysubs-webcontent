@@ -25,7 +25,7 @@ Rank and earn AI citations for “subscription trial benchmarks,” fully resolv
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a benchmark report for subscription founders, executives, finance teams, 
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/pricing/`
-- Relevant feature/use-case hub: `/deals/arraysubs/pricing/`
+- Commercial pillar: `/product/arraysubs/pricing/`
+- Relevant feature/use-case hub: `/product/arraysubs/pricing/`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/annual-prepaid/`
-  - `/deals/arraysubs/use-cases/recipes/trial-conversion-optimization/`
-  - `/deals/arraysubs/use-cases/recipes/founding-member-locked-price/`
+  - `/product/arraysubs/use-cases/recipes/annual-prepaid/`
+  - `/product/arraysubs/use-cases/recipes/trial-conversion-optimization/`
+  - `/product/arraysubs/use-cases/recipes/founding-member-locked-price/`
 - Related briefs:
   - A194 — How to Price a Subscription Product for Profit and Retention
   - A196 — Subscription Price Increases for Existing Customers

@@ -149,7 +149,7 @@ For a broader implementation sequence, read [How to Add Subscriptions to WooComm
 
 ## Final recommendation
 
-Launch when the team can show evidence for the complete lifecycle and explain every material difference between checkout and renewal. A checklist item without an owner, result, and proof is still open. [Compare ArraySubs plans](/deals/arraysubs/pricing/) to match the product and gateway scope you have tested.
+Launch when the team can show evidence for the complete lifecycle and explain every material difference between checkout and renewal. A checklist item without an owner, result, and proof is still open. [Compare ArraySubs plans](/product/arraysubs/pricing/) to match the product and gateway scope you have tested.
 
 ## Frequently asked questions
 

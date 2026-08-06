@@ -197,10 +197,10 @@ Is the product eligible under the MoR's current policy and your supplier entity 
 
 Required commercial and recipe links:
 
-- Payment gateway feature overview: `/deals/arraysubs/features/#payment-gateways`
-- Stripe automatic billing and SCA recipe: `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
-- Member update-payment recipe: `/deals/arraysubs/use-cases/recipes/member-update-payment/`
-- Gateway health monitor recipe: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+- Payment gateway feature overview: `/product/arraysubs/features/#payment-gateways`
+- Stripe automatic billing and SCA recipe: `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+- Member update-payment recipe: `/product/arraysubs/use-cases/recipes/member-update-payment/`
+- Gateway health monitor recipe: `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
 
 Useful contextual links from the content plan:
 
@@ -210,7 +210,7 @@ Useful contextual links from the content plan:
 - A065, “Best payment gateways for WooCommerce subscriptions” — use for the broader gateway shortlist.
 - A067, “Migrating subscription gateways without breaking renewals” — use from the exit/portability section.
 - A068, “Choosing a subscription gateway by country and business model” — use from product/country eligibility.
-- Pricing page — one contextual CTA after the product mapping, not inside the neutral definition: `/deals/arraysubs/pricing/`
+- Pricing page — one contextual CTA after the product mapping, not inside the neutral definition: `/product/arraysubs/pricing/`
 
 ## 10. Claims to avoid
 

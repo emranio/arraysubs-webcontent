@@ -388,17 +388,17 @@ Include a visible “When ArraySubs is not the best fit” subsection:
 14. ArraySubs Gateway Health and diagnostic workflow
 15. Implementation/testing checklist
 16. Limitations and quarterly refresh triggers
-17. CTA after the reader has the verdict: `/deals/arraysubs/pricing/`
+17. CTA after the reader has the verdict: `/product/arraysubs/pricing/`
 
 ## Internal-link plan
 
 Required:
 
-- Payment gateway feature pillar: `/deals/arraysubs/features/#payment-gateways`
-- Stripe automatic billing/SCA recipe: `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
-- Member payment-method update recipe: `/deals/arraysubs/use-cases/recipes/member-update-payment/`
-- Gateway Health recipe: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
-- Pricing CTA: `/deals/arraysubs/pricing/`
+- Payment gateway feature pillar: `/product/arraysubs/features/#payment-gateways`
+- Stripe automatic billing/SCA recipe: `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+- Member payment-method update recipe: `/product/arraysubs/use-cases/recipes/member-update-payment/`
+- Gateway Health recipe: `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
+- Pricing CTA: `/product/arraysubs/pricing/`
 
 Sibling links as they publish:
 

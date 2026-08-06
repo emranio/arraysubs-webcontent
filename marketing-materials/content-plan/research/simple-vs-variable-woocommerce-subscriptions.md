@@ -156,7 +156,7 @@ One service with Basic/Pro tiers and Monthly/Annual billing creates:
 
 The variable model is a good fit if all four share one product promise and the page can clearly display what changes. Four simple products may be better if each tier/cadence has separate sales copy, campaigns, or fulfillment rules.
 
-Link to the ArraySubs monthly/annual recipe after this verdict rather than repeating its settings: `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`.
+Link to the ArraySubs monthly/annual recipe after this verdict rather than repeating its settings: `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`.
 
 ## Operational complexity
 
@@ -334,7 +334,7 @@ ArraySubs may not be the best fit when:
 - the plan matrix is usage-metered or requires another model not demonstrated by current shipped code;
 - migration risk from a mature subscription stack outweighs the benefit of reorganizing products.
 
-Do not describe currently marked coming-soon ArraySubs features as shipped. The public page marks Customer-Chosen Subscription Duration and Installment/Split Payments as coming soon: https://arrayhash.com/deals/arraysubs/
+Do not describe currently marked coming-soon ArraySubs features as shipped. The public page marks Customer-Chosen Subscription Duration and Installment/Split Payments as coming soon: https://arrayhash.com/product/arraysubs/
 
 ## Recommendations by store type
 
@@ -414,17 +414,17 @@ Recommended original screenshots after a controlled test:
 
 ## Internal-link placement
 
-- After the neutral verdict: `/deals/arraysubs/`.
-- In the ArraySubs product-model section: `/deals/arraysubs/features/#products-checkout`.
-- Exact monthly/annual setup: `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`.
+- After the neutral verdict: `/product/arraysubs/`.
+- In the ArraySubs product-model section: `/product/arraysubs/features/#products-checkout`.
+- Exact monthly/annual setup: `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`.
 - Fixed-cycle and lifetime alternatives only where the term/end model is discussed:
-  - `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
-  - `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
+  - `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
+  - `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
 - Siblings:
   - A003 WooCommerce Subscription Product Types Explained
   - A005 Recurring vs Fixed-Term Subscriptions
   - A006 Free Trial, Paid Trial, or No Trial?
-- Primary CTA after the complete decision and limitation sections: `/deals/arraysubs/pricing/`.
+- Primary CTA after the complete decision and limitation sections: `/product/arraysubs/pricing/`.
 
 ## Suggested metadata and freshness record
 
@@ -451,4 +451,4 @@ Recommended original screenshots after a controlled test:
 | Customer switch gateway requirements | https://woocommerce.com/document/subscriptions/customers-view/subscribers-view-switch/ |
 | Woo variation analytics | https://woocommerce.com/document/woocommerce-analytics/variations-report/ |
 | Woo subscription product/variation reporting | https://woocommerce.com/document/subscriptions/store-manager-guide/reports/ |
-| ArraySubs public feature/status claims | https://arrayhash.com/deals/arraysubs/ |
+| ArraySubs public feature/status claims | https://arrayhash.com/product/arraysubs/ |

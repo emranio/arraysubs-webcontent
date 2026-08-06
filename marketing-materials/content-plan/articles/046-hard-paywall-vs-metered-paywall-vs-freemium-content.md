@@ -27,7 +27,7 @@ Earn decision-stage visibility for “hard paywall vs metered paywall vs freemiu
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -59,12 +59,12 @@ Create a comparison for membership operators, publishers, course creators, and W
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/woocommerce-membership/`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/member-access-control/`
+- Commercial pillar: `/product/arraysubs/features/woocommerce-membership/`
+- Relevant feature/use-case hub: `/product/arraysubs/features/member-access-control/`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/combined-conditions/`
-  - `/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/`
-  - `/deals/arraysubs/use-cases/recipes/inline-content-gating/`
+  - `/product/arraysubs/use-cases/recipes/combined-conditions/`
+  - `/product/arraysubs/use-cases/recipes/url-prefix-lockdown/`
+  - `/product/arraysubs/use-cases/recipes/inline-content-gating/`
 - Related briefs:
   - A045 — WooCommerce Content Restriction Strategy
   - A047 — Content Dripping Strategy for Membership Sites

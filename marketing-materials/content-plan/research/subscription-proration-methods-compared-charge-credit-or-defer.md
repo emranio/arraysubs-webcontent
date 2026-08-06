@@ -185,12 +185,12 @@ The target product is placed on the next invoice, but the actual subscription pr
 
 ## Internal-link suggestions
 
-- Primary CTA: `/deals/arraysubs/pricing/`
-- Switch at renewal recipe: `/deals/arraysubs/use-cases/recipes/switch-at-renewal/`
-- Downgrade with credit recipe: `/deals/arraysubs/use-cases/recipes/downgrade-with-credit/`
-- Subscription notes/timeline recipe: `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
-- Upgrade tiers recipe: `/deals/arraysubs/use-cases/recipes/upgrade-path-tiers/`
-- Crossgrade recipe: `/deals/arraysubs/use-cases/recipes/crossgrade-lateral/`
+- Primary CTA: `/product/arraysubs/pricing/`
+- Switch at renewal recipe: `/product/arraysubs/use-cases/recipes/switch-at-renewal/`
+- Downgrade with credit recipe: `/product/arraysubs/use-cases/recipes/downgrade-with-credit/`
+- Subscription notes/timeline recipe: `/product/arraysubs/use-cases/recipes/subscription-notes-timeline/`
+- Upgrade tiers recipe: `/product/arraysubs/use-cases/recipes/upgrade-path-tiers/`
+- Crossgrade recipe: `/product/arraysubs/use-cases/recipes/crossgrade-lateral/`
 - Companion strategy article: `/billing-strategy/immediate-vs-next-renewal-plan-changes/`
 - Cancellation comparison: `/billing-strategy/immediate-cancellation-vs-cancel-at-period-end/`
 

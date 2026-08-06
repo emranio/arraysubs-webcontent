@@ -11,10 +11,10 @@ export type NavItem = NavLink & {
 };
 
 export const HEADER_NAV_ITEMS: NavItem[] = [
-  { label: "ArraySubs", href: "/deals/arraysubs/", badge: "Pro" },
-  { label: "Features", href: "/deals/arraysubs/features/" },
-  { label: "Use Cases", href: "/deals/arraysubs/use-cases/" },
-  { label: "Compare", href: "/deals/arraysubs/alternatives/" },
+  { label: "ArraySubs", href: "/product/arraysubs/", badge: "Pro" },
+  { label: "Features", href: "/product/arraysubs/features/" },
+  { label: "Use Cases", href: "/product/arraysubs/use-cases/" },
+  { label: "Compare", href: "/product/arraysubs/alternatives/" },
   {
     label: "Resources",
     href: "/articles/",

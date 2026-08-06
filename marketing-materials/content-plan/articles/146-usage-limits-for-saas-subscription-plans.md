@@ -25,7 +25,7 @@ Rank and earn AI citations for “SaaS subscription usage limits,” fully resol
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -53,16 +53,16 @@ Create a strategy guide for plugin vendors, SaaS founders, API businesses, and d
 
 - [Stripe usage-based billing](https://docs.stripe.com/billing/subscriptions/usage-based/how-it-works)
 - [Paddle Merchant of Record guide](https://www.paddle.com/resources/how-to-evaluate-a-merchant-of-record)
-- [ArraySubs SaaS use case](https://arrayhash.com/deals/arraysubs/use-cases/saas-digital-products/)
+- [ArraySubs SaaS use case](https://arrayhash.com/product/arraysubs/use-cases/saas-digital-products/)
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/use-cases/saas-digital-products/`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#products-checkout`
+- Commercial pillar: `/product/arraysubs/use-cases/saas-digital-products/`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#products-checkout`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/usage-limits-metering/`
-  - `/deals/arraysubs/use-cases/recipes/feature-gated-content/`
-  - `/deals/arraysubs/use-cases/recipes/upgrade-path-tiers/`
+  - `/product/arraysubs/use-cases/recipes/usage-limits-metering/`
+  - `/product/arraysubs/use-cases/recipes/feature-gated-content/`
+  - `/product/arraysubs/use-cases/recipes/upgrade-path-tiers/`
 - Related briefs:
   - A145 — Feature Gating by Subscription Plan
   - A147 — Usage-Based and Credit-Based Billing for AI SaaS

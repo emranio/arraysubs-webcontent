@@ -74,9 +74,9 @@ A061 should therefore answer:
 
 It should link to narrow recipes instead of repeating click-by-click configuration:
 
-- Stripe setup and SCA recipe: `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
-- Member payment update recipe: `/deals/arraysubs/use-cases/recipes/member-update-payment/`
-- Gateway Health recipe: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+- Stripe setup and SCA recipe: `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+- Member payment update recipe: `/product/arraysubs/use-cases/recipes/member-update-payment/`
+- Gateway Health recipe: `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
 
 ## The three questions merchants commonly collapse into one
 
@@ -215,7 +215,7 @@ Therefore:
 - A gateway accepting a one-time 3DS checkout does not prove it supports future off-session renewal.
 - A repeated off-session retry cannot complete customer authentication by itself.
 
-Current ArraySubs Stripe behavior illustrates the right state distinction. It creates an off-session PaymentIntent with `confirm=true`, stores the intent, treats `succeeded` as paid, `processing` as pending, and `requires_action`/`requires_confirmation` as a customer-action state. The broad A061 article should link to the dedicated [Stripe automatic billing and SCA recipe](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) instead of reproducing setup steps.
+Current ArraySubs Stripe behavior illustrates the right state distinction. It creates an off-session PaymentIntent with `confirm=true`, stores the intent, treats `succeeded` as paid, `processing` as pending, and `requires_action`/`requires_confirmation` as a customer-action state. The broad A061 article should link to the dedicated [Stripe automatic billing and SCA recipe](/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) instead of reproducing setup steps.
 
 PayPal and Paddle perform their own checkout/authentication and remote recurring processing. Their ArraySubs capability arrays set the generic `sca` flag false, so the article must not imply that ArraySubs implements Stripe-style SCA handling for those adapters. Provider/network authentication may still occur inside their hosted flows.
 
@@ -715,7 +715,7 @@ This is valuable operational evidence. It helps answer “is the integration con
 Natural product placement:
 
 - introduce Gateway Health when explaining evidence and operational readiness;
-- link the [Gateway Health monitoring recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/);
+- link the [Gateway Health monitoring recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/);
 - describe capability cards and event logs without calling the dashboard a financial reconciliation system.
 
 ## Screenshot plan for the writer
@@ -896,7 +896,7 @@ Use the executive answer almost verbatim. Mention WooCommerce, automatic renewal
 
 ### Conclusion and CTA
 
-Recommend qualifying the full lifecycle, not the checkout badge. Link [ArraySubs payment gateway features](/deals/arraysubs/features/#payment-gateways), then place **View Pro Pricing** link to `/deals/arraysubs/pricing/` after the reader has received the complete decision framework.
+Recommend qualifying the full lifecycle, not the checkout badge. Link [ArraySubs payment gateway features](/product/arraysubs/features/#payment-gateways), then place **View Pro Pricing** link to `/product/arraysubs/pricing/` after the reader has received the complete decision framework.
 
 ### Useful FAQ questions only
 
@@ -911,11 +911,11 @@ Recommend qualifying the full lifecycle, not the checkout badge. Link [ArraySubs
 
 Required and verified intended routes:
 
-- `/deals/arraysubs/features/#payment-gateways` — “ArraySubs payment gateway features,” “automatic-payment integrations,” or “gateway capability overview.”
-- `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/` — “Stripe automatic billing and SCA recipe.”
-- `/deals/arraysubs/use-cases/recipes/member-update-payment/` — “member payment-update workflow.”
-- `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/` — “Gateway Health monitoring recipe.”
-- `/deals/arraysubs/pricing/` — “View Pro Pricing.”
+- `/product/arraysubs/features/#payment-gateways` — “ArraySubs payment gateway features,” “automatic-payment integrations,” or “gateway capability overview.”
+- `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/` — “Stripe automatic billing and SCA recipe.”
+- `/product/arraysubs/use-cases/recipes/member-update-payment/` — “member payment-update workflow.”
+- `/product/arraysubs/use-cases/recipes/gateway-health-monitor/` — “Gateway Health monitoring recipe.”
+- `/product/arraysubs/pricing/` — “View Pro Pricing.”
 
 Contextual published links:
 

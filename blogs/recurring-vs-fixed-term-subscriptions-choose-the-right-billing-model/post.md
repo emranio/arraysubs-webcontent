@@ -66,7 +66,7 @@ Prepaid means the customer funds a defined term in advance. One payment may cove
 
 Woo documents both sign-up-fee/$0-renewal patterns and a dedicated prepaid extension, while warning that cancellation or suspension can interfere with later fulfillment in a naive setup ([Subscriptions FAQ](https://woocommerce.com/document/subscriptions/faq/), [Prepaid for WooCommerce Subscriptions](https://woocommerce.com/document/prepaid-for-woocommerce-subscriptions/)).
 
-The ArraySubs [fixed-cycle recipe](/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/) currently uses recurring charges. Treat it as fixed-cycle, not proof that the full term is prepaid.
+The ArraySubs [fixed-cycle recipe](/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/) currently uses recurring charges. Treat it as fixed-cycle, not proof that the full term is prepaid.
 
 ## Same stated total, different cash timing
 
@@ -115,7 +115,7 @@ For catalog structure, read [Simple vs Variable WooCommerce Subscriptions](/subs
 
 ArraySubs core 1.8.9 provides a Subscription Length measured in billing cycles; zero means no planned expiration. Current lifecycle code expires a subscription after its configured paid count. ArraySubs Pro provides fixed-date subscriptions with absolute or recurring-annual cutoffs, optional enrollment windows, and expire-or-renew behavior.
 
-Current ArraySubs materials mark Installment / Split Payments as **coming soon**. Do not sell a fixed-cycle subscription as a shipped fixed-balance installment feature. ArraySubs does ship a one-charge Lifetime Deal mode; see the [lifetime recipe](/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/) when the commercial promise is one-time rather than recurring.
+Current ArraySubs materials mark Installment / Split Payments as **coming soon**. Do not sell a fixed-cycle subscription as a shipped fixed-balance installment feature. ArraySubs does ship a one-charge Lifetime Deal mode; see the [lifetime recipe](/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/) when the commercial promise is one-time rather than recurring.
 
 ## Limitations and not-fit cases
 
@@ -132,7 +132,7 @@ This is general operational information, not legal or accounting advice about no
 
 Choose the finish first: no planned end, a cycle count, or a shared date. Then choose periodic or upfront collection. Keep “fixed-cycle,” “fixed-date,” “billing alignment,” “prepaid,” and “installment” as separate controls in product copy, configuration, and reporting.
 
-[Compare ArraySubs plans](/deals/arraysubs/pricing/) after the required duration, gateway, and access policies are clear.
+[Compare ArraySubs plans](/product/arraysubs/pricing/) after the required duration, gateway, and access policies are clear.
 
 ## Frequently asked questions
 

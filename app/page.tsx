@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 
 /**
- * The ArraySubs landing page lives at `/deals/arraysubs/`. The site root
+ * The ArraySubs landing page lives at `/product/arraysubs/`. The site root
  * redirects there so `/` and the canonical product URL stay in sync.
  *
  * The query string is forwarded because affiliate/campaign links often point
@@ -26,5 +26,5 @@ export default async function RootPage({
 
   const queryString = params.toString();
 
-  redirect(queryString ? `/deals/arraysubs/?${queryString}` : "/deals/arraysubs/");
+  redirect(queryString ? `/product/arraysubs/?${queryString}` : "/product/arraysubs/");
 }

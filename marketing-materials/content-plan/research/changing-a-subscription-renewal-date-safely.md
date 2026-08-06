@@ -295,7 +295,7 @@ It depends on whether the customer gains or loses paid service time and on the p
 
 ## Internal-link suggestions
 
-- Commercial hub: `/deals/arraysubs/features/#subscription-operations`
+- Commercial hub: `/product/arraysubs/features/#subscription-operations`
 - Recipe: `/recipes/arraysubs/switch-at-renewal/`
 - Recipe: `/recipes/arraysubs/downgrade-with-credit/`
 - Recipe: `/recipes/arraysubs/subscription-notes-timeline/`

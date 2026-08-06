@@ -232,7 +232,7 @@ The live subscription agreement owns the future schedule, including the next pay
 
 A WooCommerce subscription is the live, customer-specific agreement that governs what should happen in the future. The product defines what can be bought, the parent order records signup, and renewal orders record each later billing event. Keep those roles separate and every status, payment, and support question gets a clearer source of truth.
 
-ArraySubs uses this WooCommerce-centered model for subscription products, agreements, orders, and renewal operations. Explore the [ArraySubs overview](/deals/arraysubs/) after you understand the record model, or review [pricing](/deals/arraysubs/pricing/) when you know which renewal path your store needs.
+ArraySubs uses this WooCommerce-centered model for subscription products, agreements, orders, and renewal operations. Explore the [ArraySubs overview](/product/arraysubs/) after you understand the record model, or review [pricing](/product/arraysubs/pricing/) when you know which renewal path your store needs.
 
 ---
 

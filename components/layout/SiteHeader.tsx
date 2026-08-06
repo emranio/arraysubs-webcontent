@@ -32,7 +32,7 @@ export function SiteHeader() {
   const wasOpen = useRef(false);
   const pathname = usePathname() ?? "";
   const isArraySubsPath = withTrailingSlash(pathname).startsWith(
-    "/deals/arraysubs/",
+    "/product/arraysubs/",
   );
   const logoSubtitle = isArraySubsPath
     ? `${site.brand} - Subscription Manager for WooCommerce`
@@ -400,7 +400,7 @@ export function SiteHeader() {
                     30% off
                   </span>
                   <Button
-                    href="/deals/arraysubs/pricing/"
+                    href="/product/arraysubs/pricing/"
                     size="xs"
                     onClick={close}
                   >

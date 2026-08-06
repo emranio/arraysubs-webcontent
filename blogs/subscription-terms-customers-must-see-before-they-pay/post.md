@@ -160,7 +160,7 @@ Current core has no dedicated immutable consent/policy-version record. ArraySubs
 
 ArraySubs alone does not certify compliance. It may also be a poor fit without extension when the business requires immutable policy snapshots, specialized consent retention, or a jurisdiction-specific cancellation/notice workflow it cannot currently prove.
 
-Review the [products and checkout feature map](/deals/arraysubs/features/#products-checkout), then use the [monthly/annual](/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/), [fixed-cycle](/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/), or [lifetime](/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/) recipe only after the commercial promise is settled.
+Review the [products and checkout feature map](/product/arraysubs/features/#products-checkout), then use the [monthly/annual](/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/), [fixed-cycle](/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/), or [lifetime](/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/) recipe only after the commercial promise is settled.
 
 ## Prelaunch content test
 
@@ -180,7 +180,7 @@ Then test the same answers on product, cart, checkout, receipt, account, and ema
 
 Write the recurring promise once as structured commercial data, render it consistently on every surface, obtain a clear affirmative action, and preserve the accepted version. Treat legal, network, and gateway review as a launch dependency—not something schema markup or a plugin can certify.
 
-[Compare ArraySubs plans](/deals/arraysubs/pricing/) after the required checkout, gateway, consent-evidence, and cancellation workflows are defined.
+[Compare ArraySubs plans](/product/arraysubs/pricing/) after the required checkout, gateway, consent-evidence, and cancellation workflows are defined.
 
 ## Frequently asked questions
 

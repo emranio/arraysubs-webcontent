@@ -25,7 +25,7 @@ Rank and earn AI citations for “subscription billing and fulfillment schedules
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a guide for subscription-box founders, replenishment brands, and fulfillm
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/use-cases/subscription-boxes/`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#products-checkout`
+- Commercial pillar: `/product/arraysubs/use-cases/subscription-boxes/`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#products-checkout`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/recurring-shipping-box/`
-  - `/deals/arraysubs/use-cases/recipes/one-time-shipping-welcome-kit/`
-  - `/deals/arraysubs/use-cases/recipes/skip-and-pause-enabled/`
+  - `/product/arraysubs/use-cases/recipes/recurring-shipping-box/`
+  - `/product/arraysubs/use-cases/recipes/one-time-shipping-welcome-kit/`
+  - `/product/arraysubs/use-cases/recipes/skip-and-pause-enabled/`
 - Related briefs:
   - A132 — Recurring Shipping vs One-Time Shipping on Subscriptions
   - A134 — Inventory Forecasting for Subscription Renewals

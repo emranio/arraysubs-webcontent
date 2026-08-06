@@ -209,11 +209,11 @@ Model all fulfillment costs, then allocate them across billing events. If twelve
 
 ## Internal-link suggestions
 
-- Primary CTA: `/deals/arraysubs/pricing/`
-- Subscription Shipping on the feature hub: `/deals/arraysubs/features/#products-checkout`
-- Recurring shipping box recipe: `/deals/arraysubs/use-cases/recipes/recurring-shipping-box/`
-- One-time welcome-kit shipping recipe: `/deals/arraysubs/use-cases/recipes/one-time-shipping-welcome-kit/`
-- Customer shipping-address recipe: `/deals/arraysubs/use-cases/recipes/member-update-shipping/`
+- Primary CTA: `/product/arraysubs/pricing/`
+- Subscription Shipping on the feature hub: `/product/arraysubs/features/#products-checkout`
+- Recurring shipping box recipe: `/product/arraysubs/use-cases/recipes/recurring-shipping-box/`
+- One-time welcome-kit shipping recipe: `/product/arraysubs/use-cases/recipes/one-time-shipping-welcome-kit/`
+- Customer shipping-address recipe: `/product/arraysubs/use-cases/recipes/member-update-shipping/`
 - Early-renew strategy: `/billing-strategy/early-subscription-renewals-benefits-risks-and-guardrails/`
 - Cancellation comparison: `/billing-strategy/immediate-cancellation-vs-cancel-at-period-end/`
 

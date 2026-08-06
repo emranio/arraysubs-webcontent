@@ -128,13 +128,13 @@ Fixed-Date Subscriptions are Pro in the current product. They support absolute d
 
 They do not themselves provide late-join proration, access-start scheduling, billing alignment, a pre-expiry communication sequence, or a proven automatic next-year renewal flow. Flexible Renewal Sync is a separate Pro feature with its own gateway boundaries and must be tested together with fixed end.
 
-The [fixed-period membership recipe](/deals/arraysubs/use-cases/recipes/fixed-period-membership/) owns product-editor setup. For the conceptual distinction, read [Recurring vs Fixed-Term Subscriptions](/subscription-foundations/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/).
+The [fixed-period membership recipe](/product/arraysubs/use-cases/recipes/fixed-period-membership/) owns product-editor setup. For the conceptual distinction, read [Recurring vs Fixed-Term Subscriptions](/subscription-foundations/recurring-vs-fixed-term-subscriptions-choose-the-right-billing-model/).
 
 ## Final recommendation
 
 Use fixed date only when the shared cutoff is part of the value promise. Publish the enrollment, late-join, first/final payment, access, timezone, refund, and next-period policies before sales open. Prefer expiration and explicit next-cohort purchase until recurring-annual continuation is proven on the current gateway.
 
-[Compare ArraySubs plans](/deals/arraysubs/pricing/) after the date, alignment, access, and gateway design is complete.
+[Compare ArraySubs plans](/product/arraysubs/pricing/) after the date, alignment, access, and gateway design is complete.
 
 ## Frequently asked questions
 

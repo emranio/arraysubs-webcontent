@@ -15,7 +15,7 @@ import { site } from "@/lib/site";
 import {
   ARRAYSUBS_PRO_PLANS,
   formatUsd,
-} from "@/app/deals/arraysubs/pricing/_plans";
+} from "@/app/product/arraysubs/pricing/_plans";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   Accordion,
@@ -38,7 +38,7 @@ export const metadata: Metadata = createMetadata({
 });
 
 const APPLY = "#apply";
-const PRODUCT = "/deals/arraysubs/";
+const PRODUCT = "/product/arraysubs/";
 
 /** Affiliate sign-up and dashboard live in the GoAffPro portal. */
 const AFFILIATE_SIGNUP_URL = "https://arrayhash.goaffpro.com/create-account";

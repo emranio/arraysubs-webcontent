@@ -20,7 +20,7 @@ import {
   getCheckoutHref,
   getCheckoutPath,
   getDiscountedPrice,
-} from "../../deals/arraysubs/pricing/_plans";
+} from "../../product/arraysubs/pricing/_plans";
 import { CheckoutOverlayClient } from "./CheckoutOverlayClient";
 
 export const dynamicParams = false;
@@ -105,8 +105,8 @@ export default async function ArraySubsCheckoutPage({
       <PageHero
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "ArraySubs", href: "/deals/arraysubs/" },
-          { name: "Pricing Plan", href: "/deals/arraysubs/pricing/" },
+          { name: "ArraySubs", href: "/product/arraysubs/" },
+          { name: "Pricing Plan", href: "/product/arraysubs/pricing/" },
           {
             name: `${plan.name} Checkout`,
             href: getCheckoutHref(plan.id, { billingCycle }),
@@ -128,7 +128,7 @@ export default async function ArraySubsCheckoutPage({
         ]}
         actions={
           <Button
-            href="/deals/arraysubs/pricing/"
+            href="/product/arraysubs/pricing/"
             variant="outline"
             size="lg"
             magnetic

@@ -97,7 +97,7 @@ For a universal product-level price step, read [Different First and Renewal Pric
 
 ## Final recommendation
 
-Publish the exact discounted payment sequence and eligibility contract. Test the renewal order lines, counters, tax, switching, deletion, refund, and each gateway before scaling. [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Publish the exact discounted payment sequence and eligibility contract. Test the renewal order lines, counters, tax, switching, deletion, refund, and each gateway before scaling. [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

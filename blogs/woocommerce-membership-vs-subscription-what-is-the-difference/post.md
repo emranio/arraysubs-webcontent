@@ -286,13 +286,13 @@ Prefer a separate ledger when staff must manually manage a durable membership re
 
 An integrated ArraySubs model fits when product, purchase, subscription, role, and feature evidence is an acceptable source of truth and the business wants one access engine across WordPress content, URLs, products, downloads, discounts, and roles.
 
-For the complete planning sequence, read [How to Create a WooCommerce Membership Site](/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/). For implementation patterns, use [combined conditions](/deals/arraysubs/use-cases/recipes/combined-conditions/), [URL prefix lockdown](/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/), and [inline content gating](/deals/arraysubs/use-cases/recipes/inline-content-gating/).
+For the complete planning sequence, read [How to Create a WooCommerce Membership Site](/membership-strategy/how-to-create-a-woocommerce-membership-site-architecture-before-configuration/). For implementation patterns, use [combined conditions](/product/arraysubs/use-cases/recipes/combined-conditions/), [URL prefix lockdown](/product/arraysubs/use-cases/recipes/url-prefix-lockdown/), and [inline content gating](/product/arraysubs/use-cases/recipes/inline-content-gating/).
 
 ## Final recommendation
 
 Name the business job before choosing the plugin stack. Use a subscription for billing and lifecycle, a membership for access and privileges, and both only when payment state genuinely controls a protected experience. Then choose whether access needs an independent membership ledger or can be evaluated directly from WooCommerce and ArraySubs data.
 
-After the decision and lifecycle table are complete, see how [ArraySubs connects subscription billing to WooCommerce membership access](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) for automatic gateway billing and advanced controls.
+After the decision and lifecycle table are complete, see how [ArraySubs connects subscription billing to WooCommerce membership access](/product/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/product/arraysubs/pricing/) for automatic gateway billing and advanced controls.
 
 ## Frequently asked questions
 

@@ -117,7 +117,7 @@ For the transaction sequence, read [How WooCommerce subscription renewals work](
 
 ## Final recommendation
 
-Give every record one job: product for the reusable offer, subscription for the agreement, parent order for signup, and renewal order for a cycle’s money movement. Troubleshooting becomes much safer when teams stop calling all four “the subscription order.” [Explore ArraySubs](/deals/arraysubs/pricing/).
+Give every record one job: product for the reusable offer, subscription for the agreement, parent order for signup, and renewal order for a cycle’s money movement. Troubleshooting becomes much safer when teams stop calling all four “the subscription order.” [Explore ArraySubs](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

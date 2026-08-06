@@ -194,7 +194,7 @@ Do not claim rankings or AI citations from schema. Compare closed cohorts and an
 - [ ] Search Console live rendering is reviewed.
 - [ ] Metrics use explicit denominators and guardrails.
 
-Use the [inline content-gating recipe](/deals/arraysubs/use-cases/recipes/inline-content-gating/) after choosing the public/premium boundary, and read [WooCommerce Content Restriction Strategy](/membership-strategy/woocommerce-content-restriction-strategy/) for rule governance.
+Use the [inline content-gating recipe](/product/arraysubs/use-cases/recipes/inline-content-gating/) after choosing the public/premium boundary, and read [WooCommerce Content Restriction Strategy](/membership-strategy/woocommerce-content-restriction-strategy/) for rule governance.
 
 ## When should content stay fully private?
 
@@ -204,7 +204,7 @@ Customer workspaces, licensed source files, personal output, internal community 
 
 Decide what search visitors may genuinely receive, publish a substantial public answer, authorize premium material server-side, and keep metadata/schema honest. Validate the rendered guest response, member response, cache, robots, canonical, social previews, and Search Console independently. Treat structured data as description—not an access key or ranking shortcut.
 
-After the architecture is proven, see how [ArraySubs membership features implement public, partial, and protected experiences](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) if the operating model needs paid automation.
+After the architecture is proven, see how [ArraySubs membership features implement public, partial, and protected experiences](/product/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/product/arraysubs/pricing/) if the operating model needs paid automation.
 
 ## Frequently asked questions
 

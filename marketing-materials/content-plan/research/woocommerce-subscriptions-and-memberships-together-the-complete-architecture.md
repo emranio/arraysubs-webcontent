@@ -210,11 +210,11 @@ If any link fails, the customer can be charged without access or retain access w
 
 ## Internal-link plan
 
-- **Commercial pillar:** `/deals/arraysubs/features/woocommerce-membership/`
+- **Commercial pillar:** `/product/arraysubs/features/woocommerce-membership/`
 - **Recipes:** combined conditions, URL prefix lockdown, inline content gating.
 - **Siblings:** A042 definitions, A044 levels, A045 content restriction.
 - **Supporting:** A035 grace periods, A051 roles vs levels vs entitlements, A118 lifecycle statuses, A124 plan switching.
-- **CTA:** `/deals/arraysubs/pricing/` after architecture, status table, and test matrix.
+- **CTA:** `/product/arraysubs/pricing/` after architecture, status table, and test matrix.
 
 ## Long-form SEO/GEO outline (target 2,800–3,400 words)
 

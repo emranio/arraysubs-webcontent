@@ -136,7 +136,7 @@ ArraySubs 1.8.9 treats a product as subscription or regular through a binary fla
 
 ArraySubs can power a separate subscription product beside a regular product. Its mixed-cart setting concerns separate items; it does not create same-product modes. Current Pro capabilities declare mixed cart for Stripe and Paddle, but not PayPal. The two-product presentation also needs explicit stock, review, feed, canonical, reporting, and navigation design.
 
-If one SKU with both modes is non-negotiable, use a system that documents and passes that model. See [ArraySubs product and checkout features](/deals/arraysubs/features/#products-checkout) for current boundaries.
+If one SKU with both modes is non-negotiable, use a system that documents and passes that model. See [ArraySubs product and checkout features](/product/arraysubs/features/#products-checkout) for current boundaries.
 
 ## Final recommendation
 
@@ -144,7 +144,7 @@ Offer both only after repeat demand, cadence, contribution, inventory, consent, 
 
 Read [Monthly and Annual Subscription Plans](/subscription-foundations/monthly-and-annual-subscription-plans-packaging-without-cannibalization/) when the choice is between recurring cadences, not buy once versus recurring.
 
-[Compare ArraySubs plans](/deals/arraysubs/pricing/) after the product-mode and gateway requirements are clear.
+[Compare ArraySubs plans](/product/arraysubs/pricing/) after the product-mode and gateway requirements are clear.
 
 ## Frequently asked questions
 

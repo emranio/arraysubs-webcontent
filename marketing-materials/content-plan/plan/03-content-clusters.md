@@ -4,28 +4,28 @@
 
 | ID | Cluster | Articles | Tier | Editorial pillar | Commercial pillar |
 |---|---|---:|---|---|---|
-| C01 | WooCommerce subscription setup and product models | 16 | P0 | A001 | `/deals/arraysubs/` |
-| C02 | Billing, renewals, synchronization, and proration | 14 | P1 | A017 | `/deals/arraysubs/features/#subscription-operations` |
-| C03 | Failed payments, dunning, and grace recovery | 10 | P0 | A031 | `/deals/arraysubs/features/#subscription-operations` |
-| C04 | Memberships, access control, and content dripping | 15 | P0 | A041 | `/deals/arraysubs/features/woocommerce-membership/` |
-| C05 | Payment gateways, SCA, tax, and Merchant of Record | 14 | P1 | A056 | `/deals/arraysubs/features/#payment-gateways` |
-| C06 | Retention, churn, and cancellation flows | 16 | P0 | A070 | `/deals/arraysubs/features/#retention-revenue` |
-| C07 | Subscription analytics, forecasting, and KPIs | 12 | P1 | A086 | `/deals/arraysubs/features/#analytics-infrastructure` |
-| C08 | Checkout fields, Checkout Block, and conversion optimization | 11 | P1 | A098 | `/deals/arraysubs/features/#products-checkout` |
-| C09 | Store credit, refunds, and loyalty value | 9 | P2 | A109 | `/deals/arraysubs/features/#retention-revenue` |
-| C10 | Customer portal, self-service, and admin operations | 11 | P1 | A118 | `/deals/arraysubs/features/#subscription-operations` |
-| C11 | Subscription boxes, shipping, inventory, and fulfillment | 11 | P2 | A129 | `/deals/arraysubs/use-cases/subscription-boxes/` |
-| C12 | SaaS, digital products, entitlements, and usage billing | 12 | P1 | A140 | `/deals/arraysubs/use-cases/saas-digital-products/` |
-| C13 | Courses, publishers, communities, and service memberships | 10 | P2 | A152 | `/deals/arraysubs/use-cases/` |
-| C14 | Plugin comparisons, alternatives, and migrations | 17 | P0 | A162 | `/deals/arraysubs/alternatives/` |
-| C15 | Troubleshooting, infrastructure, and developer operations | 14 | P0 | A179 | `/deals/arraysubs/use-cases/subscription-support-operations/` |
-| C16 | Pricing strategy, compliance, and 2026 trends | 8 | P2 | A193 | `/deals/arraysubs/pricing/` |
+| C01 | WooCommerce subscription setup and product models | 16 | P0 | A001 | `/product/arraysubs/` |
+| C02 | Billing, renewals, synchronization, and proration | 14 | P1 | A017 | `/product/arraysubs/features/#subscription-operations` |
+| C03 | Failed payments, dunning, and grace recovery | 10 | P0 | A031 | `/product/arraysubs/features/#subscription-operations` |
+| C04 | Memberships, access control, and content dripping | 15 | P0 | A041 | `/product/arraysubs/features/woocommerce-membership/` |
+| C05 | Payment gateways, SCA, tax, and Merchant of Record | 14 | P1 | A056 | `/product/arraysubs/features/#payment-gateways` |
+| C06 | Retention, churn, and cancellation flows | 16 | P0 | A070 | `/product/arraysubs/features/#retention-revenue` |
+| C07 | Subscription analytics, forecasting, and KPIs | 12 | P1 | A086 | `/product/arraysubs/features/#analytics-infrastructure` |
+| C08 | Checkout fields, Checkout Block, and conversion optimization | 11 | P1 | A098 | `/product/arraysubs/features/#products-checkout` |
+| C09 | Store credit, refunds, and loyalty value | 9 | P2 | A109 | `/product/arraysubs/features/#retention-revenue` |
+| C10 | Customer portal, self-service, and admin operations | 11 | P1 | A118 | `/product/arraysubs/features/#subscription-operations` |
+| C11 | Subscription boxes, shipping, inventory, and fulfillment | 11 | P2 | A129 | `/product/arraysubs/use-cases/subscription-boxes/` |
+| C12 | SaaS, digital products, entitlements, and usage billing | 12 | P1 | A140 | `/product/arraysubs/use-cases/saas-digital-products/` |
+| C13 | Courses, publishers, communities, and service memberships | 10 | P2 | A152 | `/product/arraysubs/use-cases/` |
+| C14 | Plugin comparisons, alternatives, and migrations | 17 | P0 | A162 | `/product/arraysubs/alternatives/` |
+| C15 | Troubleshooting, infrastructure, and developer operations | 14 | P0 | A179 | `/product/arraysubs/use-cases/subscription-support-operations/` |
+| C16 | Pricing strategy, compliance, and 2026 trends | 8 | P2 | A193 | `/product/arraysubs/pricing/` |
 
 ## C01 — WooCommerce subscription setup and product models
 
 **Category:** Subscription Foundations  
 **Purpose:** Own broad subscription setup and product-model questions without duplicating ArraySubs' narrow configuration recipes.  
-**Commercial pillar:** `/deals/arraysubs/`  
+**Commercial pillar:** `/product/arraysubs/`\
 **Editorial pillar:** A001
 
 - A001 — [How to Add Subscriptions to WooCommerce: The Complete 2026 Guide](../articles/001-how-to-add-subscriptions-to-woocommerce-the-complete-2026-guide.md) — `how to add subscriptions to WooCommerce`
@@ -49,7 +49,7 @@
 
 **Category:** Billing Strategy  
 **Purpose:** Explain billing mechanics and decision tradeoffs while sending configuration intent to existing recipes.  
-**Commercial pillar:** `/deals/arraysubs/features/#subscription-operations`  
+**Commercial pillar:** `/product/arraysubs/features/#subscription-operations`\
 **Editorial pillar:** A017
 
 - A017 — [How WooCommerce Subscription Renewals Work](../articles/017-how-woocommerce-subscription-renewals-work.md) — `how WooCommerce subscription renewals work`
@@ -71,7 +71,7 @@
 
 **Category:** Payment Recovery  
 **Purpose:** Own the revenue-recovery problem space with operational frameworks rather than product-only setup copy.  
-**Commercial pillar:** `/deals/arraysubs/features/#subscription-operations`  
+**Commercial pillar:** `/product/arraysubs/features/#subscription-operations`\
 **Editorial pillar:** A031
 
 - A031 — [Failed Subscription Payment Recovery for WooCommerce](../articles/031-failed-subscription-payment-recovery-for-woocommerce.md) — `WooCommerce failed subscription payment recovery`
@@ -89,7 +89,7 @@
 
 **Category:** Membership Strategy  
 **Purpose:** Build topical authority around membership architecture, paywalls, access policy, and protected-content SEO.  
-**Commercial pillar:** `/deals/arraysubs/features/woocommerce-membership/`
+**Commercial pillar:** `/product/arraysubs/features/woocommerce-membership/`
 
 **Editorial pillar:** A041
 
@@ -113,7 +113,7 @@
 
 **Category:** Payments & Compliance  
 **Purpose:** Answer gateway-selection and payment-architecture questions with country, risk, and lifecycle context.  
-**Commercial pillar:** `/deals/arraysubs/features/#payment-gateways`  
+**Commercial pillar:** `/product/arraysubs/features/#payment-gateways`\
 **Editorial pillar:** A056
 
 - A056 — [Best Payment Gateways for WooCommerce Subscriptions in 2026](../articles/056-best-payment-gateways-for-woocommerce-subscriptions-in-2026.md) — `best payment gateways for WooCommerce subscriptions`
@@ -135,7 +135,7 @@
 
 **Category:** Retention & Churn  
 **Purpose:** Own reason-specific retention engineering with transparent formulas, ethical UX, and competitive context.  
-**Commercial pillar:** `/deals/arraysubs/features/#retention-revenue`  
+**Commercial pillar:** `/product/arraysubs/features/#retention-revenue`\
 **Editorial pillar:** A070
 
 - A070 — [How to Reduce WooCommerce Subscription Churn](../articles/070-how-to-reduce-woocommerce-subscription-churn.md) — `how to reduce WooCommerce subscription churn`
@@ -159,7 +159,7 @@
 
 **Category:** Analytics & Economics  
 **Purpose:** Create a formula-led authority hub for measuring recurring revenue and subscription health.  
-**Commercial pillar:** `/deals/arraysubs/features/#analytics-infrastructure`  
+**Commercial pillar:** `/product/arraysubs/features/#analytics-infrastructure`\
 **Editorial pillar:** A086
 
 - A086 — [Subscription Metrics Every WooCommerce Store Should Track](../articles/086-subscription-metrics-every-woocommerce-store-should-track.md) — `subscription metrics WooCommerce`
@@ -179,7 +179,7 @@
 
 **Category:** Checkout & Conversion  
 **Purpose:** Target checkout research and UX strategy without duplicating ArraySubs field-configuration recipes.  
-**Commercial pillar:** `/deals/arraysubs/features/#products-checkout`  
+**Commercial pillar:** `/product/arraysubs/features/#products-checkout`\
 **Editorial pillar:** A098
 
 - A098 — [WooCommerce Subscription Checkout Best Practices](../articles/098-woocommerce-subscription-checkout-best-practices.md) — `WooCommerce subscription checkout best practices`
@@ -198,7 +198,7 @@
 
 **Category:** Store Credit & Loyalty  
 **Purpose:** Build an evidence-led cluster around credit economics, refunds, renewal use, policy, and abuse controls.  
-**Commercial pillar:** `/deals/arraysubs/features/#retention-revenue`  
+**Commercial pillar:** `/product/arraysubs/features/#retention-revenue`\
 **Editorial pillar:** A109
 
 - A109 — [What Is WooCommerce Store Credit?](../articles/109-what-is-woocommerce-store-credit.md) — `what is WooCommerce store credit`
@@ -215,7 +215,7 @@
 
 **Category:** Customer & Admin Operations  
 **Purpose:** Help operators design lower-support lifecycle workflows and reliable subscription administration.  
-**Commercial pillar:** `/deals/arraysubs/features/#subscription-operations`  
+**Commercial pillar:** `/product/arraysubs/features/#subscription-operations`\
 **Editorial pillar:** A118
 
 - A118 — [WooCommerce Subscription Lifecycle: Statuses and Transitions](../articles/118-woocommerce-subscription-lifecycle-statuses-and-transitions.md) — `WooCommerce subscription lifecycle statuses`
@@ -234,7 +234,7 @@
 
 **Category:** Subscription Commerce  
 **Purpose:** Cover physical-subscription economics and operations beyond a plugin configuration recipe.  
-**Commercial pillar:** `/deals/arraysubs/use-cases/subscription-boxes/`  
+**Commercial pillar:** `/product/arraysubs/use-cases/subscription-boxes/`\
 **Editorial pillar:** A129
 
 - A129 — [WooCommerce Subscription Box Business Blueprint](../articles/129-woocommerce-subscription-box-business-blueprint.md) — `WooCommerce subscription box business blueprint`
@@ -253,7 +253,7 @@
 
 **Category:** SaaS & Digital Products  
 **Purpose:** Own the bridge between WooCommerce billing, digital access, feature entitlements, and modern SaaS pricing.  
-**Commercial pillar:** `/deals/arraysubs/use-cases/saas-digital-products/`  
+**Commercial pillar:** `/product/arraysubs/use-cases/saas-digital-products/`\
 **Editorial pillar:** A140
 
 - A140 — [WooCommerce SaaS Subscription Business Blueprint](../articles/140-woocommerce-saas-subscription-business-blueprint.md) — `WooCommerce SaaS subscription business blueprint`
@@ -273,7 +273,7 @@
 
 **Category:** Industry Playbooks  
 **Purpose:** Turn broad vertical interest into economics-led blueprints that support, rather than duplicate, current use-case pages.  
-**Commercial pillar:** `/deals/arraysubs/use-cases/`  
+**Commercial pillar:** `/product/arraysubs/use-cases/`\
 **Editorial pillar:** A152
 
 - A152 — [Online Course Subscription Blueprint: Pricing, Access, and Retention](../articles/152-online-course-subscription-blueprint-pricing-access-and-retention.md) — `online course subscription business model`
@@ -291,7 +291,7 @@
 
 **Category:** Comparisons & Migration  
 **Purpose:** Win commercial investigation with transparent test criteria, current facts, honest limitations, and migration risk analysis.  
-**Commercial pillar:** `/deals/arraysubs/alternatives/`  
+**Commercial pillar:** `/product/arraysubs/alternatives/`\
 **Editorial pillar:** A162
 
 - A162 — [Best WooCommerce Subscription Plugins in 2026: 10 Options Tested and Compared](../articles/162-best-woocommerce-subscription-plugins-in-2026-10-options-tested-and-compared.md) — `best WooCommerce subscription plugins 2026`
@@ -316,7 +316,7 @@
 
 **Category:** Technical Operations  
 **Purpose:** Create the most useful WooCommerce subscription reliability library with decision trees, logs, and reproducible checks.  
-**Commercial pillar:** `/deals/arraysubs/use-cases/subscription-support-operations/`  
+**Commercial pillar:** `/product/arraysubs/use-cases/subscription-support-operations/`\
 **Editorial pillar:** A179
 
 - A179 — [WooCommerce Subscription Renewal Not Working: A Diagnostic Decision Tree](../articles/179-woocommerce-subscription-renewal-not-working-a-diagnostic-decision-tree.md) — `WooCommerce subscription renewal not working`
@@ -338,7 +338,7 @@
 
 **Category:** Research & Strategy  
 **Purpose:** Publish citable strategic frameworks and dated research that generic plugin blogs cannot easily copy.  
-**Commercial pillar:** `/deals/arraysubs/pricing/`  
+**Commercial pillar:** `/product/arraysubs/pricing/`\
 **Editorial pillar:** A193
 
 - A193 — [Subscription Pricing Strategy for WooCommerce](../articles/193-subscription-pricing-strategy-for-woocommerce.md) — `subscription pricing strategy WooCommerce`

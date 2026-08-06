@@ -225,7 +225,7 @@ Pro is not required for basic Members Access in the inspected current version. C
 
 **Operations:** rule inventory, guest/member/cache tests, order/subscription timeline, support runbook, and rollback owner.
 
-The implementation details belong in the [combined-conditions recipe](/deals/arraysubs/use-cases/recipes/combined-conditions/), [URL-prefix lockdown recipe](/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/), and [inline content-gating recipe](/deals/arraysubs/use-cases/recipes/inline-content-gating/).
+The implementation details belong in the [combined-conditions recipe](/product/arraysubs/use-cases/recipes/combined-conditions/), [URL-prefix lockdown recipe](/product/arraysubs/use-cases/recipes/url-prefix-lockdown/), and [inline content-gating recipe](/product/arraysubs/use-cases/recipes/inline-content-gating/).
 
 ## Who should own the membership architecture after launch?
 
@@ -292,7 +292,7 @@ ArraySubs is a fit when WooCommerce products, purchases, and subscriptions shoul
 
 Build the policy before the paywall. Define the continuing promise, select the commercial model, name the billing and access records, inventory every target, decide lifecycle behavior, design recovery UX, and prove one thin slice through the full state matrix. Only then should rules be expanded across the site.
 
-After the architecture and launch tests are documented, translate the model into the [ArraySubs WooCommerce membership feature system](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) for the automation the store requires.
+After the architecture and launch tests are documented, translate the model into the [ArraySubs WooCommerce membership feature system](/product/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/product/arraysubs/pricing/) for the automation the store requires.
 
 ## Frequently asked questions
 

@@ -345,7 +345,7 @@ The current Detach endpoint removes local gateway and payment display metadata. 
 
 Manual fallback can preserve a payable renewal opportunity when no automatic path is available. It does not preserve automatic renewal or create consent for a new provider.
 
-Review the [payment gateway feature overview](/deals/arraysubs/features/#payment-gateways), [Gateway Health monitor recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/), [Stripe automatic billing and SCA recipe](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/), and [member payment-method update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/) as operational inputs.
+Review the [payment gateway feature overview](/product/arraysubs/features/#payment-gateways), [Gateway Health monitor recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/), [Stripe automatic billing and SCA recipe](/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/), and [member payment-method update recipe](/product/arraysubs/use-cases/recipes/member-update-payment/) as operational inputs.
 
 ## Two worked migration patterns
 
@@ -410,7 +410,7 @@ Record one charging owner for each next billing period, stop the old owner at th
 - [ ] Pause thresholds, incident owners, customer communication, and rollback are approved.
 - [ ] First target renewals and finance payouts reconcile before cohort expansion.
 
-ArraySubs can help operate and observe supported gateway paths, but a real migration still needs provider coordination and a purpose-built data/control plan. [Choose an ArraySubs plan](/deals/arraysubs/pricing/) after confirming that the target gateway and migration path meet your recurring-payment requirements.
+ArraySubs can help operate and observe supported gateway paths, but a real migration still needs provider coordination and a purpose-built data/control plan. [Choose an ArraySubs plan](/product/arraysubs/pricing/) after confirming that the target gateway and migration path meet your recurring-payment requirements.
 
 ## Primary sources
 

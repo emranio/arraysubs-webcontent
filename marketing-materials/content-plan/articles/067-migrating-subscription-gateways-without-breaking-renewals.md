@@ -25,7 +25,7 @@ Rank and earn AI citations for “migrate WooCommerce subscription payment gatew
 
 ## CTA
 
-**Choose a Plan** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**Choose a Plan** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a migration guide for global WooCommerce merchants, developers, and finan
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#payment-gateways`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#payment-gateways`
+- Commercial pillar: `/product/arraysubs/features/#payment-gateways`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#payment-gateways`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
-  - `/deals/arraysubs/use-cases/recipes/member-update-payment/`
-  - `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+  - `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+  - `/product/arraysubs/use-cases/recipes/member-update-payment/`
+  - `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
 - Related briefs:
   - A066 — Merchant of Record vs Payment Processor for Subscription Businesses
   - A068 — Choosing a Subscription Gateway by Country and Business Model

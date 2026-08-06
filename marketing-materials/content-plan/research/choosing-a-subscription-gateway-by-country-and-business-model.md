@@ -245,10 +245,10 @@ No provider onboarding, live country checkout, recurring charge, payout, or regu
 
 Required commercial and recipe links:
 
-- Payment gateway feature overview: `/deals/arraysubs/features/#payment-gateways`
-- Stripe automatic billing and SCA recipe: `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
-- Member update-payment recipe: `/deals/arraysubs/use-cases/recipes/member-update-payment/`
-- Gateway health monitor recipe: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+- Payment gateway feature overview: `/product/arraysubs/features/#payment-gateways`
+- Stripe automatic billing and SCA recipe: `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+- Member update-payment recipe: `/product/arraysubs/use-cases/recipes/member-update-payment/`
+- Gateway health monitor recipe: `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
 
 Useful contextual links from the content plan:
 
@@ -263,7 +263,7 @@ Useful contextual links from the content plan:
 - A066, “Merchant of Record vs payment processor for subscription businesses” — seller model and TCO.
 - A067, “Migrating subscription gateways without breaking renewals” — country expansion or gateway exit.
 - A069, “Automatic vs manual gateway support for subscriptions” — manual fallback and exact adapter capability.
-- Pricing page — one contextual CTA after the verified ArraySubs mapping: `/deals/arraysubs/pricing/`
+- Pricing page — one contextual CTA after the verified ArraySubs mapping: `/product/arraysubs/pricing/`
 
 ## 10. Claims to avoid
 

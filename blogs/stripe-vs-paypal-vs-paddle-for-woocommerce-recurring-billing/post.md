@@ -84,7 +84,7 @@ same visible outcome at signup
 ≠ same failure and migration path
 ```
 
-[Automatic payment gateway capabilities in ArraySubs](/deals/arraysubs/features/#payment-gateways) connect these provider-specific control planes to the shared local subscription, renewal-order, customer-portal, and lifecycle system. Do not infer automatic support from a generic WooCommerce gateway being enabled. ArraySubs Free can create manual renewal invoices for other compatible methods; unattended billing requires an explicit automatic integration.
+[Automatic payment gateway capabilities in ArraySubs](/product/arraysubs/features/#payment-gateways) connect these provider-specific control planes to the shared local subscription, renewal-order, customer-portal, and lifecycle system. Do not infer automatic support from a generic WooCommerce gateway being enabled. ArraySubs Free can create manual renewal invoices for other compatible methods; unattended billing requires an explicit automatic integration.
 
 ## First-party ArraySubs comparison matrix
 
@@ -211,7 +211,7 @@ It also searches recent subscription-tagged PaymentIntents during reconciliation
 
 ![Annotated expanded Stripe Gateway Health card distinguishing the official WooCommerce Stripe webhook and ArraySubs secondary endpoint.](/blogs/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/stripe-webhook-status.png)
 
-Stripe has two relevant event paths here: hooks from the official WooCommerce Stripe webhook and an ArraySubs secondary REST endpoint for subscription-specific reconciliation. A green checkout is not proof both paths are correct. The [Stripe automatic billing and SCA recipe](/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) covers configuration; this article owns the architectural decision.
+Stripe has two relevant event paths here: hooks from the official WooCommerce Stripe webhook and an ArraySubs secondary REST endpoint for subscription-specific reconciliation. A green checkout is not proof both paths are correct. The [Stripe automatic billing and SCA recipe](/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/) covers configuration; this article owns the architectural decision.
 
 ### Refunds and disputes
 
@@ -317,7 +317,7 @@ For a dedicated responsibility and implementation analysis, continue to [Paddle 
 | What changes locally? | Stored/display method context and next charge source | Replacement agreement and IDs | Synced remote method display/context |
 | Biggest risk | Updated method not used by next local renewal | Old and replacement agreements both remain active | Temporary portal/session mishandled or remote update not synchronized |
 
-Use the [member payment-update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/) to test the product-specific path. Support copy must name the actual experience. “Update your card in WooCommerce” is misleading when the customer must reauthorize through PayPal or use Paddle’s hosted portal.
+Use the [member payment-update recipe](/product/arraysubs/use-cases/recipes/member-update-payment/) to test the product-specific path. Support copy must name the actual experience. “Update your card in WooCommerce” is misleading when the customer must reauthorize through PayPal or use Paddle’s hosted portal.
 
 ## Webhooks are not optional on any of the three
 
@@ -341,7 +341,7 @@ Provider details still matter:
 
 ![Annotated ArraySubs Gateway Health overview comparing configuration and event visibility for Stripe, PayPal, and Paddle.](/blogs/stripe-vs-paypal-vs-paddle-for-woocommerce-recurring-billing/gateway-health-comparison.png)
 
-Gateway Health surfaces provider cards, modes, subscription counts, last-webhook evidence, and recent events. It can show readiness signals; it cannot guarantee a future payment. Use the [Gateway Health monitoring recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) and assign an incident owner.
+Gateway Health surfaces provider cards, modes, subscription counts, last-webhook evidence, and recent events. It can show readiness signals; it cannot guarantee a future payment. Use the [Gateway Health monitoring recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) and assign an incident owner.
 
 ## Compare total annual operating cost, not a fee percentage
 
@@ -407,7 +407,7 @@ weighted fit
 - The team tests combined cart restrictions, approval/return, signed events, agreement suspension, payment-source reauthorization, and sale-ID refunds.
 - Paddle is considered only if the eligible digital product and MoR relationship independently fit.
 
-After the decision is evidence-backed, [view ArraySubs Pro pricing](/deals/arraysubs/pricing/) for the gateway and operations features. Keep provider terms and eligibility as a separate evaluation.
+After the decision is evidence-backed, [view ArraySubs Pro pricing](/product/arraysubs/pricing/) for the gateway and operations features. Keep provider terms and eligibility as a separate evaluation.
 
 ## Migration risk: changing a setting does not move authority
 

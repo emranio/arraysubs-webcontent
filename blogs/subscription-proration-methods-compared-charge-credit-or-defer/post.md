@@ -90,7 +90,7 @@ For the timing decision without the formulas, read [Immediate vs Next-Renewal Pl
 
 ## Final recommendation
 
-Publish one plan-change policy that states the amount, effective date, access result, next renewal date, and credit/refund result. Test the real order with every relevant gateway and modifier. [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Publish one plan-change policy that states the amount, effective date, access result, next renewal date, and credit/refund result. Test the real order with every relevant gateway and modifier. [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

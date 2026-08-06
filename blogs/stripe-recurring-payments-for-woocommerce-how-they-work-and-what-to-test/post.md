@@ -623,7 +623,7 @@ The reliable implementation is not “install Stripe and enable renewals.” It 
 
 ArraySubs provides the local subscription, renewal-order, scheduling, retry, customer-portal, and gateway-health foundations. ArraySubs Pro connects those foundations to Stripe’s off-session payment lifecycle. Your launch is ready only when the failure paths work as deliberately as the happy path.
 
-[View ArraySubs Pro pricing](/deals/arraysubs/pricing/) when you are ready to add Stripe automatic renewals, gateway-health diagnostics, and provider-aware recovery to the ArraySubs subscription lifecycle.
+[View ArraySubs Pro pricing](/product/arraysubs/pricing/) when you are ready to add Stripe automatic renewals, gateway-health diagnostics, and provider-aware recovery to the ArraySubs subscription lifecycle.
 
 Next, review [SCA and 3D Secure for Subscription Renewals](/payments-and-compliance/sca-and-3d-secure-for-subscription-renewals/) for the authentication layer, and [Subscription Webhooks: Events Every WooCommerce Store Should Monitor](/payments-and-compliance/subscription-webhooks-events-every-woocommerce-store-should-monitor/) for the event operations layer.
 

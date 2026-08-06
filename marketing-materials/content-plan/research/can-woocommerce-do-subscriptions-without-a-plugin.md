@@ -218,9 +218,9 @@ Use flat ArraySubs colors and simple shapes; no gradients, neon, glow, 3D, or fa
 
 ## Internal links
 
-- Commercial disclosure/overview: `/deals/arraysubs/`
-- Product and checkout feature map: `/deals/arraysubs/features/#products-checkout`
-- Practical product recipes: `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`, `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`, `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
+- Commercial disclosure/overview: `/product/arraysubs/`
+- Product and checkout feature map: `/product/arraysubs/features/#products-checkout`
+- Practical product recipes: `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`, `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`, `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
 - Siblings: A013 visible terms, A014 product-page anatomy, A015 launch readiness.
 
 ## Primary sources (accessed 2026-07-13)

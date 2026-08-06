@@ -27,7 +27,7 @@ Rank and earn AI citations for “automatic vs manual subscription gateway suppo
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -59,12 +59,12 @@ Create an explainer for global WooCommerce merchants, developers, and finance te
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#payment-gateways`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#payment-gateways`
+- Commercial pillar: `/product/arraysubs/features/#payment-gateways`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#payment-gateways`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
-  - `/deals/arraysubs/use-cases/recipes/member-update-payment/`
-  - `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+  - `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+  - `/product/arraysubs/use-cases/recipes/member-update-payment/`
+  - `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
 - Related briefs:
   - A060 — Paddle Merchant of Record for WooCommerce Subscriptions
   - A062 — SCA and 3D Secure for Subscription Renewals

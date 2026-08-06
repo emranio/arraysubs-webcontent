@@ -223,11 +223,11 @@ No. It often matches prepaid digital access, while immediate cancellation can fi
 
 ## Internal-link suggestions
 
-- Primary CTA: `/deals/arraysubs/pricing/`
-- End-of-period cancellation/undo recipe: `/deals/arraysubs/use-cases/recipes/end-of-period-cancel-undo/`
-- Refund-on-cancellation recipe: `/deals/arraysubs/use-cases/recipes/refund-on-cancellation/`
-- Prorated-refund recipe: `/deals/arraysubs/use-cases/recipes/prorated-refund/`
-- Subscription notes/timeline recipe: `/deals/arraysubs/use-cases/recipes/subscription-notes-timeline/`
+- Primary CTA: `/product/arraysubs/pricing/`
+- End-of-period cancellation/undo recipe: `/product/arraysubs/use-cases/recipes/end-of-period-cancel-undo/`
+- Refund-on-cancellation recipe: `/product/arraysubs/use-cases/recipes/refund-on-cancellation/`
+- Prorated-refund recipe: `/product/arraysubs/use-cases/recipes/prorated-refund/`
+- Subscription notes/timeline recipe: `/product/arraysubs/use-cases/recipes/subscription-notes-timeline/`
 - Plan-change timing: `/billing-strategy/immediate-vs-next-renewal-plan-changes/`
 - Billing versus shipping: `/billing-strategy/subscription-billing-schedule-vs-shipping-schedule/`
 - Use the canonical grace-period and cancellation-flow article URLs from the registry where relevant.

@@ -361,10 +361,10 @@ Predeclare the primary metric, guardrails, cohort maturity, and a business-relev
 
 Verified current first-party sources all mark **Customer-Chosen Subscription Duration** as planned:
 
-- `web-content/app/deals/arraysubs/features/_data.ts` sets `tier: "Pro"` and `status: "coming-soon"` and describes merchant-approved duration choices.
-- `web-content/app/deals/arraysubs/pricing/page.tsx` marks the module `coming-soon`.
-- `web-content/app/deals/arraysubs/_components/freeVsProRows.ts` labels customer-chosen subscription length at checkout `Coming soon` and Pro-only.
-- The public [ArraySubs product page](https://arrayhash.com/deals/arraysubs/) says “Coming soon: let customers choose how many cycles or periods their subscription should run before checkout.”
+- `web-content/app/product/arraysubs/features/_data.ts` sets `tier: "Pro"` and `status: "coming-soon"` and describes merchant-approved duration choices.
+- `web-content/app/product/arraysubs/pricing/page.tsx` marks the module `coming-soon`.
+- `web-content/app/product/arraysubs/_components/freeVsProRows.ts` labels customer-chosen subscription length at checkout `Coming soon` and Pro-only.
+- The public [ArraySubs product page](https://arrayhash.com/product/arraysubs/) says “Coming soon: let customers choose how many cycles or periods their subscription should run before checkout.”
 - No `CustomerChosenSubscriptionDuration` feature directory, provider, REST controller, checkout field, or boot registration exists in current `arraysubs` or `arraysubspro` source.
 
 Current local versions inspected:
@@ -401,7 +401,7 @@ Today, a merchant can model a small set of choices as separate products or as a 
 Guardrails for the article:
 
 - Label this as an interim catalog pattern.
-- Link to `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/` for fixed-cycle setup concepts instead of reproducing step-by-step configuration.
+- Link to `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/` for fixed-cycle setup concepts instead of reproducing step-by-step configuration.
 - Do not call periodic fixed-cycle billing prepaid unless the term is actually funded upfront.
 - Test price display. WooCommerce's official Subscriptions FAQ notes that variations with the same price and billing period but different lengths can be treated as identical for minimum-price display.
 - Watch variation count and attribute combinations; WooCommerce's variable-product documentation notes changed dynamic-dropdown behavior above 30 variations.
@@ -481,17 +481,17 @@ Do not generate empirical pie charts for preferred duration, conversion, or chur
 7. Four-layer risk-control framework and lifecycle-event table.
 8. Analytics scorecard and experiment sequence.
 9. Clearly boxed **ArraySubs status: coming soon** section plus current merchant-defined-length workaround.
-10. CTA after the framework: **View Pro Pricing**, linked to `/deals/arraysubs/pricing/`, while reiterating the feature's coming-soon status.
+10. CTA after the framework: **View Pro Pricing**, linked to `/product/arraysubs/pricing/`, while reiterating the feature's coming-soon status.
 11. Five FAQs.
 12. Methodology, visible last-verified date, test environment, and limitations.
 
 Required internal links to include naturally:
 
-- `/deals/arraysubs/`
-- `/deals/arraysubs/features/#products-checkout`
-- `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
-- `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
-- `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
+- `/product/arraysubs/`
+- `/product/arraysubs/features/#products-checkout`
+- `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
+- `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
+- `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
 - A010 fixed-date article when published
 - A012 lifetime-deal comparison when published
 - A013 subscription-terms checklist when published
@@ -510,9 +510,9 @@ Required internal links to include naturally:
 | [WCAG 2.2: Labels or Instructions](https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html) | Visible labels/instructions for duration input | WCAG update |
 | [WCAG 2.2: Error Identification](https://www.w3.org/WAI/WCAG22/Understanding/error-identification) | Invalid values identified and described in text; silent clamping warning | WCAG update |
 | [WCAG 2.2: Error Suggestion](https://www.w3.org/WAI/WCAG22/Understanding/error-suggestion.html) | Suggested correction for values outside an allowed set | WCAG update |
-| [ArraySubs product page](https://arrayhash.com/deals/arraysubs/) | Current first-party coming-soon and Free/Pro surface claims | ArraySubs release/site update |
-| `web-content/app/deals/arraysubs/features/_data.ts` | Planned Pro feature definition, status, intended bounded choices | Feature release/spec change |
-| `web-content/app/deals/arraysubs/pricing/page.tsx` and `_components/freeVsProRows.ts` | Coming-soon presentation in pricing/comparison | Pricing/site update |
+| [ArraySubs product page](https://arrayhash.com/product/arraysubs/) | Current first-party coming-soon and Free/Pro surface claims | ArraySubs release/site update |
+| `web-content/app/product/arraysubs/features/_data.ts` | Planned Pro feature definition, status, intended bounded choices | Feature release/spec change |
+| `web-content/app/product/arraysubs/pricing/page.tsx` and `_components/freeVsProRows.ts` | Coming-soon presentation in pricing/comparison | Pricing/site update |
 | `arraysubs/src/Features/SubscriptionProducts/views/simple-product-fields.php` and `variation-fields.php` | Current merchant-defined length input, allowed range, per-variation support | Product editor change |
 | `arraysubs/src/Features/SubscriptionCheckout/Services/Traits/SubscriptionCreationTrait.php` | Current product length copied into created subscription | Checkout contract change |
 | `arraysubs/src/Features/Subscriptions/Services/OrderIntegration.php` | Current positive-total `_completed_payments` counting and length expiration path | Lifecycle release |

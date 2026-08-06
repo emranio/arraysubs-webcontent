@@ -396,15 +396,15 @@ The screenshot annotation helper could not reliably locate the requested analyti
 
 ## Internal-link plan
 
-- Primary feature anchor: `/deals/arraysubs/features/#retention-revenue`
+- Primary feature anchor: `/product/arraysubs/features/#retention-revenue`
 - Companion: `/retention-and-churn/voluntary-vs-involuntary-churn/` (A071)
 - Companion: `/retention-and-churn/why-customers-cancel-subscriptions-a-reason-taxonomy/` (A072)
 - Companion: `/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/` (A073)
 - Cross-cluster recovery guide: `/payment-recovery/involuntary-churn-recovery-checklist/` (A039)
 - Cross-cluster recovery guide: `/payment-recovery/failed-subscription-payment-recovery-for-woocommerce/` (A031)
-- Recipe: `/deals/arraysubs/use-cases/recipes/require-reason-targeted-funnel/`
-- Recipe: `/deals/arraysubs/use-cases/recipes/pause-need-a-break/`
-- Recipe: `/deals/arraysubs/use-cases/recipes/downgrade-offer/`
+- Recipe: `/product/arraysubs/use-cases/recipes/require-reason-targeted-funnel/`
+- Recipe: `/product/arraysubs/use-cases/recipes/pause-need-a-break/`
+- Recipe: `/product/arraysubs/use-cases/recipes/downgrade-offer/`
 
 Do not invent internal slugs. Reconcile against the content plan and published inventory at drafting time.
 

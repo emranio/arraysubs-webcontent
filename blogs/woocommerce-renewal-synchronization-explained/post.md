@@ -107,7 +107,7 @@ For a broader schedule-safety model, read [Changing a Subscription Renewal Date 
 
 ## Final recommendation
 
-Use renewal synchronization when a shared billing boundary creates real operational value. Make the partial first period transparent, verify gateway ownership, and avoid treating the feature as a bulk date editor or fixed-end contract. [Compare ArraySubs options](/deals/arraysubs/pricing/).
+Use renewal synchronization when a shared billing boundary creates real operational value. Make the partial first period transparent, verify gateway ownership, and avoid treating the feature as a bulk date editor or fixed-end contract. [Compare ArraySubs options](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

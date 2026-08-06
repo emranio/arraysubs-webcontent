@@ -47,7 +47,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          for path in / /deals/arraysubs/; do
+          for path in / /product/arraysubs/; do
             url="https://arrayhash.com${path}"
             healthy=0
 

@@ -27,7 +27,7 @@ Rank and earn AI citations for “expired card subscription recovery,” fully r
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -59,12 +59,12 @@ Create a guide for subscription operators, finance teams, and customer-success t
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#subscription-operations`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#subscription-operations`
+- Commercial pillar: `/product/arraysubs/features/#subscription-operations`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#subscription-operations`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/`
-  - `/deals/arraysubs/use-cases/recipes/strict-dunning-grace/`
-  - `/deals/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/`
+  - `/product/arraysubs/use-cases/recipes/lenient-dunning-grace/`
+  - `/product/arraysubs/use-cases/recipes/strict-dunning-grace/`
+  - `/product/arraysubs/use-cases/recipes/auto-downgrade-on-failed-payment/`
 - Related briefs:
   - A035 — Subscription Grace Periods Explained
   - A037 — Failed Payment Email Sequence: A Message-by-Message Playbook

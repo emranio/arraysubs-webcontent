@@ -593,11 +593,11 @@ Avoid making all generated visuals flowcharts. Use at least one environmental sc
 
 Required commercial/product destinations:
 
-- Payment-gateway feature pillar: `/deals/arraysubs/features/#payment-gateways`
-- Stripe automatic billing/SCA setup recipe: `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
-- Member payment-method update recipe: `/deals/arraysubs/use-cases/recipes/member-update-payment/`
-- Gateway Health monitoring recipe: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
-- CTA after the core answer/test framework: `/deals/arraysubs/pricing/`
+- Payment-gateway feature pillar: `/product/arraysubs/features/#payment-gateways`
+- Stripe automatic billing/SCA setup recipe: `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+- Member payment-method update recipe: `/product/arraysubs/use-cases/recipes/member-update-payment/`
+- Gateway Health monitoring recipe: `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
+- CTA after the core answer/test framework: `/product/arraysubs/pricing/`
 
 Adjacent C05 sibling articles:
 

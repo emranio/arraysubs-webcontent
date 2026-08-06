@@ -475,7 +475,7 @@ Monitor mismatches, not only event count.
 | Local expired, remote active | Any occurrence | Engineering/finance—urgent |
 | Gateway errored, later sale completed | State did not recover | Support/engineering |
 
-The ArraySubs [gateway-health monitor recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) helps operators inspect provider connectivity and events. It cannot replace PayPal-to-Woo financial reconciliation.
+The ArraySubs [gateway-health monitor recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) helps operators inspect provider connectivity and events. It cannot replace PayPal-to-Woo financial reconciliation.
 
 ## When PayPal is a good fit—and when it is not
 
@@ -526,9 +526,9 @@ ArraySubs Pro’s current PayPal foundation gets several important things right:
 
 Its limits are equally important. Do not promise synchronized finite terms, pause/skip, customer payment updates, plan/tax/price edits, Checkout Blocks, direct-provider cancellation, external refund accounting, or seamless retry-state recovery until the exact installed versions pass those tests.
 
-That honest boundary protects customers from duplicate collection and merchants from invisible amount or lifecycle drift. Once the test matrix passes for the intended offer, [ArraySubs payment gateway features](/deals/arraysubs/features/#payment-gateways) provide the shared subscription, renewal-order, customer-portal, audit, and gateway-health operating surface around the provider-owned PayPal schedule.
+That honest boundary protects customers from duplicate collection and merchants from invisible amount or lifecycle drift. Once the test matrix passes for the intended offer, [ArraySubs payment gateway features](/product/arraysubs/features/#payment-gateways) provide the shared subscription, renewal-order, customer-portal, audit, and gateway-health operating surface around the provider-owned PayPal schedule.
 
-[View ArraySubs Pro pricing](/deals/arraysubs/pricing/) when the verified PayPal boundary matches your offer and you are ready to add provider-owned automatic renewals to ArraySubs.
+[View ArraySubs Pro pricing](/product/arraysubs/pricing/) when the verified PayPal boundary matches your offer and you are ready to add provider-owned automatic renewals to ArraySubs.
 
 ## Verification scope, limitations, and update log
 

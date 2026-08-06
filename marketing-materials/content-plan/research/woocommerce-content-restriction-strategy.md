@@ -231,11 +231,11 @@ ArraySubs fits WordPress/WooCommerce-based entitlement rules across many surface
 
 ## Internal-link plan
 
-- **Commercial pillar:** `/deals/arraysubs/features/woocommerce-membership/`
+- **Commercial pillar:** `/product/arraysubs/features/woocommerce-membership/`
 - **Recipes:** combined conditions, URL prefix lockdown, inline content gating.
 - **Siblings:** A044 levels, A046 paywall models, A047 dripping.
 - **Supporting:** A049 SEO for gated content, A050 protected downloads, A052 URL rules, A053 partial restriction, A054 AND/OR rules, A190 caching failures.
-- **CTA after rule inventory/test matrix:** `/deals/arraysubs/pricing/`
+- **CTA after rule inventory/test matrix:** `/product/arraysubs/pricing/`
 
 ## Long-form SEO/GEO outline (target 2,700–3,400 words)
 

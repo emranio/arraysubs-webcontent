@@ -128,7 +128,7 @@ The current dashboard exposes:
 - declared subscription capabilities; and
 - a filterable Webhook Event Log with gateway, event ID, event type, and processed time.
 
-This is valuable because support can begin with the configured collector and the exact event ID instead of guessing from a generic “payment failed” email. The [Gateway Health monitoring recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) owns the setup clicks; this article focuses on interpreting the evidence.
+This is valuable because support can begin with the configured collector and the exact event ID instead of guessing from a generic “payment failed” email. The [Gateway Health monitoring recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) owns the setup clicks; this article focuses on interpreting the evidence.
 
 ### What the current event log does not prove
 
@@ -496,7 +496,7 @@ Run the test matrix in sandbox/test mode for every enabled gateway and repeat it
 
 ArraySubs Free is useful when you need the shared WooCommerce subscription engine, renewal scheduling, orders, lifecycle, and customer management. ArraySubs Pro adds automatic Stripe/PayPal/Paddle integrations, gateway-specific webhook handling, retry/recovery capabilities, synchronization, and Gateway Health.
 
-See [ArraySubs payment-gateway features](/deals/arraysubs/features/#payment-gateways) for the current product surface. The feature solves important WordPress-side integration and monitoring needs; it does not replace:
+See [ArraySubs payment-gateway features](/product/arraysubs/features/#payment-gateways) for the current product surface. The feature solves important WordPress-side integration and monitoring needs; it does not replace:
 
 - the provider’s delivery-attempt console;
 - infrastructure/uptime monitoring;
@@ -558,4 +558,4 @@ A webhook is trustworthy only when the whole chain is trustworthy:
 
 ArraySubs Pro can normalize gateway events and surface practical health evidence, but monitoring must extend beyond a recent timestamp. Test duplicates, delays, ordering, rejection, replay, and partial failure before live renewals depend on the integration.
 
-If you need automatic Stripe, PayPal, or Paddle subscription workflows with Gateway Health and recovery tooling, [view ArraySubs Pro pricing](/deals/arraysubs/pricing/). Use the [Gateway Health recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) once the architecture and monitoring responsibilities are agreed.
+If you need automatic Stripe, PayPal, or Paddle subscription workflows with Gateway Health and recovery tooling, [view ArraySubs Pro pricing](/product/arraysubs/pricing/). Use the [Gateway Health recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) once the architecture and monitoring responsibilities are agreed.

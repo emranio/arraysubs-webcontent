@@ -123,7 +123,7 @@ Do not publish a universal savings claim without first-party evidence. A free ma
 
 ## Final recommendation
 
-Use WooCommerce core for one-time commerce, not as a hidden subscription engine. If the customer promise includes recurring obligations, select a tested extension or external billing architecture that owns the full lifecycle. [Compare ArraySubs plans](/deals/arraysubs/pricing/) for a WooCommerce-native path.
+Use WooCommerce core for one-time commerce, not as a hidden subscription engine. If the customer promise includes recurring obligations, select a tested extension or external billing architecture that owns the full lifecycle. [Compare ArraySubs plans](/product/arraysubs/pricing/) for a WooCommerce-native path.
 
 ## Frequently asked questions
 

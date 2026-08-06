@@ -25,7 +25,7 @@ Rank and earn AI citations for “WooCommerce subscription checkout best practic
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a pillar guide for WooCommerce marketers, CRO specialists, and implemente
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#products-checkout`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#products-checkout`
+- Commercial pillar: `/product/arraysubs/features/#products-checkout`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#products-checkout`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/custom-checkout-fields/`
-  - `/deals/arraysubs/use-cases/recipes/multi-step-checkout/`
-  - `/deals/arraysubs/use-cases/recipes/conditional-checkout-fields/`
+  - `/product/arraysubs/use-cases/recipes/custom-checkout-fields/`
+  - `/product/arraysubs/use-cases/recipes/multi-step-checkout/`
+  - `/product/arraysubs/use-cases/recipes/conditional-checkout-fields/`
 - Related briefs:
   - A099 — Anatomy of a Subscription Checkout Page
   - A100 — Subscription Checkout Fields: What to Ask and What to Remove

@@ -246,11 +246,11 @@ Use flat ArraySubs styling: white and pale lavender surfaces, #873EFF/#6F22E6 pu
 
 ## Internal links
 
-- Commercial context after the neutral answer: `/deals/arraysubs/`
-- Product and checkout capabilities: `/deals/arraysubs/features/#products-checkout`
-- Monthly/annual configuration: `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
-- Fixed-cycle implementation: `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/` — describe as multiple scheduled charges, not true full prepayment.
-- Lifetime implementation: `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
+- Commercial context after the neutral answer: `/product/arraysubs/`
+- Product and checkout capabilities: `/product/arraysubs/features/#products-checkout`
+- Monthly/annual configuration: `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
+- Fixed-cycle implementation: `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/` — describe as multiple scheduled charges, not true full prepayment.
+- Lifetime implementation: `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
 - Siblings: A013 subscription terms, A015 launch checklist, A016 without a plugin.
 
 ## Primary sources (accessed 2026-07-13)

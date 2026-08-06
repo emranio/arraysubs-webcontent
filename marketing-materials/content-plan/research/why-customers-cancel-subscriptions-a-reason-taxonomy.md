@@ -337,14 +337,14 @@ The attempted retention screenshot annotation could not reliably locate its requ
 
 ## Internal-link plan
 
-- Primary feature anchor: `/deals/arraysubs/features/#retention-revenue`
+- Primary feature anchor: `/product/arraysubs/features/#retention-revenue`
 - Pillar: `/retention-and-churn/how-to-reduce-woocommerce-subscription-churn/` (A070)
 - Explainer: `/retention-and-churn/voluntary-vs-involuntary-churn/` (A071)
 - Related: `/retention-and-churn/anatomy-of-an-effective-subscription-cancellation-flow/` (A073)
 - Related: `/retention-and-churn/subscription-save-offers-compared-discount-pause-skip-or-downgrade/` (A074)
-- Recipe: `/deals/arraysubs/use-cases/recipes/require-reason-targeted-funnel/`
-- Recipe: `/deals/arraysubs/use-cases/recipes/pause-need-a-break/`
-- Recipe: `/deals/arraysubs/use-cases/recipes/downgrade-offer/`
+- Recipe: `/product/arraysubs/use-cases/recipes/require-reason-targeted-funnel/`
+- Recipe: `/product/arraysubs/use-cases/recipes/pause-need-a-break/`
+- Recipe: `/product/arraysubs/use-cases/recipes/downgrade-offer/`
 
 ## Claims to avoid
 

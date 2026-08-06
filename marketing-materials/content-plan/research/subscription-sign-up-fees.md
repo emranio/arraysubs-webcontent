@@ -22,7 +22,7 @@ Primary current-behavior sources:
 - WooCommerce refunds: https://woocommerce.com/document/woocommerce-refunds/
 - US ROSCA text in effect in July 2026: https://uscode.house.gov/view.xhtml?req=%28title%3A15+section%3A8403+edition%3Aprelim%29
 - UK distance-selling guidance: https://www.gov.uk/online-and-distance-selling-for-businesses/distance-selling
-- ArraySubs public product page: https://arrayhash.com/deals/arraysubs/
+- ArraySubs public product page: https://arrayhash.com/product/arraysubs/
 
 ## Recommended direct answer (40–60 words)
 
@@ -306,9 +306,9 @@ Recommended disclosure: “ArraySubs is the product discussed by this site. Thes
 
 Link strategy readers to the narrow procedures instead of duplicating them:
 
-- base setup: `/deals/arraysubs/use-cases/recipes/signup-fee-plus-flat-monthly/`;
-- trial plus fee: `/deals/arraysubs/use-cases/recipes/trial-with-signup-fee/`;
-- high setup/low recurring: `/deals/arraysubs/use-cases/recipes/high-signup-low-monthly/`.
+- base setup: `/product/arraysubs/use-cases/recipes/signup-fee-plus-flat-monthly/`;
+- trial plus fee: `/product/arraysubs/use-cases/recipes/trial-with-signup-fee/`;
+- high setup/low recurring: `/product/arraysubs/use-cases/recipes/high-signup-low-monthly/`.
 
 Do not repeat unsupported copy currently present in recipe data, including “most common subscription shape,” “dramatically improves trial quality and conversion,” or “low recurring price keeps you competitive.” Those require original data and methodology.
 
@@ -381,14 +381,14 @@ Recommended original screenshots after controlled testing:
 
 ## Internal-link placement
 
-- After the neutral framework: `/deals/arraysubs/`.
-- In the ArraySubs truth section: `/deals/arraysubs/features/#products-checkout`.
+- After the neutral framework: `/product/arraysubs/`.
+- In the ArraySubs truth section: `/product/arraysubs/features/#products-checkout`.
 - Exact setup links: the three sign-up-fee recipes listed above.
-- Use `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/` only when explaining per-variation fees.
-- Link `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/` only as a different billing model; that recipe represents a finite series of recurring charges, not true full-upfront prepayment.
-- Link `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/` only when explaining that a one-time product is not a recurring plan with an arbitrary fee.
+- Use `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/` only when explaining per-variation fees.
+- Link `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/` only as a different billing model; that recipe represents a finite series of recurring charges, not true full-upfront prepayment.
+- Link `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/` only when explaining that a one-time product is not a recurring plan with an arbitrary fee.
 - Siblings: A006 trial framework, A008 monthly/annual packaging, A009 one-time plus subscription.
-- Primary CTA after the complete framework, limitations, and commercial disclosure: `/deals/arraysubs/pricing/`.
+- Primary CTA after the complete framework, limitations, and commercial disclosure: `/product/arraysubs/pricing/`.
 
 ## Suggested metadata and freshness record
 
@@ -412,7 +412,7 @@ Recommended original screenshots after controlled testing:
 | Woo initial-only cart fee model | https://woocommerce.com/document/subscriptions/develop/recurring-cart-fees/ |
 | US online negative-option disclosure, consent, cancellation | https://uscode.house.gov/view.xhtml?req=%28title%3A15+section%3A8403+edition%3Aprelim%29 |
 | UK pre-order price, contract, cancellation, deposit information | https://www.gov.uk/online-and-distance-selling-for-businesses/distance-selling |
-| ArraySubs public feature claims | https://arrayhash.com/deals/arraysubs/ |
+| ArraySubs public feature claims | https://arrayhash.com/product/arraysubs/ |
 | ArraySubs fee field, display, cart charge, and quantity logic | `arraysubs/src/Features/SubscriptionProducts/Services/Hooks.php`; product/variation field views |
 | ArraySubs trial and fee payment requirement | `arraysubs/src/Features/SubscriptionCheckout/Services/Traits/TrialCheckoutTrait.php` |
 | ArraySubs fee persistence and renewal exclusion | `SubscriptionCreationTrait.php`; `src/functions/subscription-helpers.php`; `RecurringBilling/Services/OrderCreation.php` |

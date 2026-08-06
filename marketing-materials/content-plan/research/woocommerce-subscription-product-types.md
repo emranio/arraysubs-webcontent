@@ -51,7 +51,7 @@ Use these terms carefully:
 - **Core-native:** shipped by WooCommerce itself without a subscription extension. Recurring subscription billing is not core-native.
 - **WooCommerce Subscriptions:** Woo’s paid extension. It uses WooCommerce products and adds subscription plans, dedicated legacy product types, subscription agreements, billing schedules, renewal orders, and related behavior.
 - **WooCommerce-native architecture:** an extension may use normal WooCommerce products, checkout, orders, coupons, tax, and HPOS. This does not mean its features ship in WooCommerce core.
-- **ArraySubs:** a separate ArrayHash plugin built around WooCommerce. Its public product page says it uses WooCommerce products, checkout, coupons, tax, and HPOS; its own extension supplies the subscription and membership functionality. Sources: [ArraySubs product page](https://arrayhash.com/deals/arraysubs/) and [ArraySubs product setup documentation](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html).
+- **ArraySubs:** a separate ArrayHash plugin built around WooCommerce. Its public product page says it uses WooCommerce products, checkout, coupons, tax, and HPOS; its own extension supplies the subscription and membership functionality. Sources: [ArraySubs product page](https://arrayhash.com/product/arraysubs/) and [ArraySubs product setup documentation](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html).
 
 ### Product versus subscription agreement
 
@@ -119,7 +119,7 @@ Woo’s FAQ documents grouped products as one way to present multiple simple sub
 
 Billing date alignment makes subscribers renew on a shared weekday, day of month, or month of year. It changes **when renewals occur**, not necessarily when access ends. Woo’s documentation says daily plans cannot be aligned, existing subscriptions are not retroactively changed when alignment is enabled, and future payment times can drift based on when a queued renewal actually processes. Source: [Guide to Billing Date Alignment](https://woocommerce.com/document/subscriptions/billing-date-alignment/).
 
-ArraySubs separately markets **Fixed-Date Subscriptions** for enrollment windows, cutoffs, and period-end renewal/expiration, and lists that capability as Pro. Source: [ArraySubs product page](https://arrayhash.com/deals/arraysubs/).
+ArraySubs separately markets **Fixed-Date Subscriptions** for enrollment windows, cutoffs, and period-end renewal/expiration, and lists that capability as Pro. Source: [ArraySubs product page](https://arrayhash.com/product/arraysubs/).
 
 Use a boxed warning: **Fixed-cycle, fixed-date, and billing-date alignment are three different controls.**
 
@@ -151,7 +151,7 @@ Source: [Subscriptions FAQ](https://woocommerce.com/document/subscriptions/faq/)
 
 Official marketplace evidence shows that installment behavior is supplied by separate payment-plan/deposit extensions, such as Woo’s marketplace documentation for Deposit and Partial Payment Plan, which tracks an upfront deposit, remaining balance, installment due dates, reminders, and auto-charge attempts. Source: [Deposit and Partial Payment Plan](https://woocommerce.com/document/deposit-and-partial-payment-plan/).
 
-**ArraySubs truth gate:** the public ArraySubs page marks **Installment / Split Payments** as **Pro — Coming soon** and describes it as splitting a fixed-price product across multiple installments. It must not be presented as a shipped ArraySubs capability. Source: [ArraySubs product page](https://arrayhash.com/deals/arraysubs/).
+**ArraySubs truth gate:** the public ArraySubs page marks **Installment / Split Payments** as **Pro — Coming soon** and describes it as splitting a fixed-price product across multiple installments. It must not be presented as a shipped ArraySubs capability. Source: [ArraySubs product page](https://arrayhash.com/product/arraysubs/).
 
 **Writer guidance:** a fixed-cycle subscription can resemble installments because it creates several charges, but cancellation, fulfillment, accounting, and remaining-balance semantics differ. If the customer owes a fixed balance regardless of continued access, recommend a genuine payment-plan tool and qualified accounting/legal review rather than relabeling it as a cancel-anytime subscription.
 
@@ -161,7 +161,7 @@ Official marketplace evidence shows that installment behavior is supplied by sep
 
 This is not recurring billing. Woo’s own Subscriptions product page says the extension is not the right tool when a store only needs one-time purchases. For gated access, WooCommerce Memberships can grant unlimited membership from a product purchase, while recurring membership requires WooCommerce Subscriptions alongside it. Sources: [WooCommerce Subscriptions product page](https://woocommerce.com/products/woocommerce-subscriptions/), [WooCommerce Memberships](https://woocommerce.com/document/woocommerce-memberships/), and [WooCommerce Memberships Plans](https://woocommerce.com/document/woocommerce-memberships-plans/).
 
-ArraySubs explicitly ships a **Lifetime Deal** billing-period option: its setup guide says the customer pays once and no renewal occurs, while the product page describes one-time lifetime access through the subscription-aware setup. Sources: [ArraySubs product setup documentation](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html) and [ArraySubs product page](https://arrayhash.com/deals/arraysubs/).
+ArraySubs explicitly ships a **Lifetime Deal** billing-period option: its setup guide says the customer pays once and no renewal occurs, while the product page describes one-time lifetime access through the subscription-aware setup. Sources: [ArraySubs product setup documentation](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html) and [ArraySubs product page](https://arrayhash.com/product/arraysubs/).
 
 **Limitations to state:** “lifetime” must define whose or what lifetime and what is included—access, updates, support, storage, or future features. Do not imply lifetime access is an ordinary recurring WooCommerce subscription type across all plugins.
 
@@ -206,7 +206,7 @@ Woo’s official product page explicitly lists weekly service subscriptions and 
 
 WooCommerce Subscriptions supplies recurring billing; WooCommerce Memberships supplies access control. Woo’s official page says the two are separate and often integrated. Memberships can grant unlimited or fixed-length access from a product purchase and can become recurring when used with Subscriptions. Sources: [WooCommerce Subscriptions product page](https://woocommerce.com/products/woocommerce-subscriptions/) and [WooCommerce Memberships](https://woocommerce.com/document/woocommerce-memberships/).
 
-ArraySubs publicly states that it combines subscriptions and member access in its own plugin and that membership access can operate independently of billing. Source: [ArraySubs product page](https://arrayhash.com/deals/arraysubs/).
+ArraySubs publicly states that it combines subscriptions and member access in its own plugin and that membership access can operate independently of billing. Source: [ArraySubs product page](https://arrayhash.com/product/arraysubs/).
 
 **Implication:** billing status and entitlement status are related but not identical concepts. The article should avoid saying “a subscription is a membership” or “a membership must recur.” Link to A002/A042 for deeper treatment.
 
@@ -393,7 +393,7 @@ Verified shipped/current public claims:
 - Fixed-Date Subscriptions are Pro.
 - Automatic renewals through Stripe, PayPal, and Paddle are Pro; manual renewal invoices work through the free core.
 
-Sources: [ArraySubs product page](https://arrayhash.com/deals/arraysubs/) and [Create and Configure Subscription Products](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html).
+Sources: [ArraySubs product page](https://arrayhash.com/product/arraysubs/) and [Create and Configure Subscription Products](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html).
 
 Visible “not a fit / not yet” guidance:
 
@@ -431,11 +431,11 @@ Avoid detailed ArraySubs configuration steps; link to the recipes instead. A004 
 
 ## Internal links required by the brief
 
-- Commercial pillar: `/deals/arraysubs/`
-- Products/checkout feature hub: `/deals/arraysubs/features/#products-checkout`
-- Monthly versus annual variable recipe: `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
-- Prepaid fixed cycles recipe: `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
-- Lifetime deal recipe: `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
+- Commercial pillar: `/product/arraysubs/`
+- Products/checkout feature hub: `/product/arraysubs/features/#products-checkout`
+- Monthly versus annual variable recipe: `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
+- Prepaid fixed cycles recipe: `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
+- Lifetime deal recipe: `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
 - A002: What Is a WooCommerce Subscription? Products, Orders, and Renewals Explained
 - A004: Simple vs Variable WooCommerce Subscriptions: Which Product Type Fits?
 - A005: Recurring vs Fixed-Term Subscriptions: Choose the Right Billing Model
@@ -475,7 +475,7 @@ Avoid detailed ArraySubs configuration steps; link to the recipes instead. A004 
 
 ### ArrayHash primary sources
 
-15. [ArraySubs product page](https://arrayhash.com/deals/arraysubs/)  
+15. [ArraySubs product page](https://arrayhash.com/product/arraysubs/)\
     Use for current public feature/tier claims, WooCommerce-native architecture wording, fixed-date Pro, lifetime deals, manual versus automatic renewals, and installment coming-soon status.
 16. [Create and Configure Subscription Products](https://support.arrayhash.com/arraysubs/subscription-products/create-and-configure.html)  
     Use for the ArraySubs checkbox/UI model, simple/variable behavior, billing period/interval/length ranges, per-variation fields, trial and sign-up fee behavior, lifetime behavior, and documented limitations.

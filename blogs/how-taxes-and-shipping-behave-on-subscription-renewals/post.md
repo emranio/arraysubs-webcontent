@@ -118,7 +118,7 @@ For cadence differences, read [Billing Schedule vs Shipping Schedule](/billing-s
 
 ## Final recommendation
 
-Reconcile renewal components, not one percentage or grand-total difference. Preserve stored-price and shipping truth, test address/tax changes, and get tax advice before changing production. [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Reconcile renewal components, not one percentage or grand-total difference. Preserve stored-price and shipping truth, test address/tax changes, and get tax advice before changing production. [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

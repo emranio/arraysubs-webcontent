@@ -212,13 +212,13 @@ Use another or additional layer when staff need independent membership records, 
 
 Current ArraySubs fits when direct evaluation from WooCommerce and ArraySubs records is sufficient and protected resources live in WordPress/WooCommerce. It does not mirror official Woo membership statuses or provide an independent membership CPT.
 
-Use [combined conditions](/deals/arraysubs/use-cases/recipes/combined-conditions/), [URL prefix lockdown](/deals/arraysubs/use-cases/recipes/url-prefix-lockdown/), and [inline content gating](/deals/arraysubs/use-cases/recipes/inline-content-gating/) for implementation after policy is settled.
+Use [combined conditions](/product/arraysubs/use-cases/recipes/combined-conditions/), [URL prefix lockdown](/product/arraysubs/use-cases/recipes/url-prefix-lockdown/), and [inline content gating](/product/arraysubs/use-cases/recipes/inline-content-gating/) for implementation after policy is settled.
 
 ## Final recommendation
 
 Treat subscriptions and memberships together as a controlled contract between financial state and authorization. Name every system of record, map every lifecycle state, preserve recovery routes, govern rule precedence, and test the complete gateway-to-entitlement chain—including multiple subscriptions and missed events—before launch.
 
-After that architecture is proven, map it to the [ArraySubs system for subscriptions and WooCommerce memberships together](/deals/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/deals/arraysubs/pricing/) for automatic gateways and deeper lifecycle automation.
+After that architecture is proven, map it to the [ArraySubs system for subscriptions and WooCommerce memberships together](/product/arraysubs/features/woocommerce-membership/), then [review Pro pricing](/product/arraysubs/pricing/) for automatic gateways and deeper lifecycle automation.
 
 ## Frequently asked questions
 

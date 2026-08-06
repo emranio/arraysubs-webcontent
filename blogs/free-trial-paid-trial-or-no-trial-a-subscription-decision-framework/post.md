@@ -127,13 +127,13 @@ ArraySubs does **not** currently expose a dedicated paid-trial price or lifecycl
 
 Current code and public copy are not fully aligned on the exact first post-trial charge timing. Do not promise an immediate charge at the trial boundary without end-to-end verification for the selected gateway. Test the entire path before publishing customer-facing dates.
 
-See the [ArraySubs products and checkout feature map](/deals/arraysubs/features/#products-checkout) and [Subscription Sign-Up Fees](/subscription-foundations/subscription-sign-up-fees-unit-economics-ux-and-examples/) for the adjacent one-time charge decision.
+See the [ArraySubs products and checkout feature map](/product/arraysubs/features/#products-checkout) and [Subscription Sign-Up Fees](/subscription-foundations/subscription-sign-up-fees-unit-economics-ux-and-examples/) for the adjacent one-time charge decision.
 
 ## Final recommendation
 
 Use a free trial only when customers need time to prove value and the loss ceiling is controlled. Use a paid evaluation or introductory period when delivery has meaningful cost. Use no trial when value is immediate, already demonstrable, or expensive to reverse. Then test the card rule as its own decision.
 
-[Compare ArraySubs plans](/deals/arraysubs/pricing/) after the required trial, gateway, and automation paths are clear.
+[Compare ArraySubs plans](/product/arraysubs/pricing/) after the required trial, gateway, and automation paths are clear.
 
 ## Frequently asked questions
 

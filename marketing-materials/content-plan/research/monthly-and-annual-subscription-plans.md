@@ -21,7 +21,7 @@ The decision should be made from first-party economics and customer behavior. An
 
 The article's differentiating idea should be **cannibalization as a testable cohort question**, not a slogan. An annual option is harmful when the discount and associated costs produce less net contribution than the monthly behavior it replaces, without enough incremental purchases or operational benefit to compensate. Only the store's own cohorts can answer that.
 
-Do not let A008 duplicate the exact ArraySubs product configuration in the [monthly-and-annual variable recipe](/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/). A008 owns pricing logic, disclosure, choice architecture, operational tradeoffs, packaging, and experiment design. The recipe owns clicks and settings.
+Do not let A008 duplicate the exact ArraySubs product configuration in the [monthly-and-annual variable recipe](/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/). A008 owns pricing logic, disclosure, choice architecture, operational tradeoffs, packaging, and experiment design. The recipe owns clicks and settings.
 
 ## Direct-answer fact pattern
 
@@ -73,8 +73,8 @@ Official WooCommerce Subscriptions documentation supports variable billing perio
 
 ### When not to frame the choice as monthly versus annual
 
-- **Defined delivery count or term:** Consider a fixed-cycle or genuinely prepaid design; link to `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`.
-- **One-time permanent access:** Compare a one-time lifetime product instead; link to `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`.
+- **Defined delivery count or term:** Consider a fixed-cycle or genuinely prepaid design; link to `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`.
+- **One-time permanent access:** Compare a one-time lifetime product instead; link to `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`.
 - **Same calendar end for everyone:** Use fixed-date logic, not a rolling annual variation.
 - **One-time product plus replenishment:** A009 owns one-time purchase versus subscription packaging.
 - **Large onboarding cost:** A007 owns sign-up fee economics. Do not bury a real setup cost inside an arbitrary annual discount.
@@ -427,8 +427,8 @@ Therefore a **Billing: Monthly / Annual** attribute with separate variation pric
 Relevant source:
 
 - `arraysubs/src/Features/SubscriptionProducts/views/variation-fields.php`
-- `web-content/app/deals/arraysubs/features/_data.ts` (`subscription-products`)
-- [ArraySubs product page](https://arrayhash.com/deals/arraysubs/)
+- `web-content/app/product/arraysubs/features/_data.ts` (`subscription-products`)
+- [ArraySubs product page](https://arrayhash.com/product/arraysubs/)
 
 Do not claim the article's selector design exists automatically. Product variations supply the terms; theme/product-page presentation still needs current UI verification.
 
@@ -447,7 +447,7 @@ Relevant source:
 - `documentations/architecture/plan-switching.md`
 - `documentations/user-guides/subscription-lifecycle-and-plan-switching.md`
 - `arraysubs/src/Features/PlanSwitching/Services/ProrationCalculator.php`
-- `web-content/app/deals/arraysubs/features/_data.ts` (`plan-switching`, `proration-methods`)
+- `web-content/app/product/arraysubs/features/_data.ts` (`plan-switching`, `proration-methods`)
 
 ### Important stale-copy warning
 
@@ -465,8 +465,8 @@ This affects monthly-versus-annual operations. Monthly manual renewal produces m
 
 Relevant source:
 
-- [ArraySubs product page](https://arrayhash.com/deals/arraysubs/)
-- `web-content/app/deals/arraysubs/features/_data.ts` (`woocommerce-manual-payments`, gateway features)
+- [ArraySubs product page](https://arrayhash.com/product/arraysubs/)
+- `web-content/app/product/arraysubs/features/_data.ts` (`woocommerce-manual-payments`, gateway features)
 
 ### Refund behavior
 
@@ -532,17 +532,17 @@ Do not create an empirical market-share pie chart, churn chart, or “annual con
 8. Packaging examples and “not this model” links.
 9. Experiment sequence and scorecard.
 10. Short ArraySubs implementation truth note linking to the exact recipe rather than repeating setup.
-11. CTA: **View Pro Pricing** after the reader has the full framework, linked to `/deals/arraysubs/pricing/`.
+11. CTA: **View Pro Pricing** after the reader has the full framework, linked to `/product/arraysubs/pricing/`.
 12. Five evidence-based FAQs.
 13. Methodology, last verified date, test environment, and limitations.
 
 Required internal links to include naturally:
 
-- `/deals/arraysubs/`
-- `/deals/arraysubs/features/#products-checkout`
-- `/deals/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
-- `/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
-- `/deals/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
+- `/product/arraysubs/`
+- `/product/arraysubs/features/#products-checkout`
+- `/product/arraysubs/use-cases/recipes/monthly-vs-annual-variable/`
+- `/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/`
+- `/product/arraysubs/use-cases/recipes/lifetime-deal-one-time/`
 - A007 sign-up fee article when published
 - A009 one-time purchase and subscription article when published
 - A010 fixed-date subscriptions article when published
@@ -558,7 +558,7 @@ Required internal links to include naturally:
 | [Refunding Orders in WooCommerce](https://woocommerce.com/document/woocommerce-refunds/) | Automatic versus manual refund handling; gateway support; partial refunds; normally lost gateway fees; publishing a refund policy | WooCommerce refund UI/API change |
 | [Subscribers' Guide to Switching Subscriptions](https://woocommerce.com/document/subscriptions/customers-view/subscribers-view-switch/) | General WooCommerce Subscriptions switch flow and gateway/active-status conditions; use only when discussing that product, not ArraySubs | Switching UI or gateway capability change |
 | [FTC staff report: Bringing Dark Patterns to Light](https://www.ftc.gov/system/files/ftc_gov/pdf/P214800%20Dark%20Patterns%20Report%209.14.2022%20-%20FINAL.pdf) | Design-risk context for hidden costs, drip pricing, and false visual hierarchy; not a universal legal conclusion | New FTC rule/guidance or jurisdiction-specific legal review |
-| [ArraySubs product page](https://arrayhash.com/deals/arraysubs/) | Current first-party public feature/tier statements for variable products, manual/automatic renewals, plan switching, refunds | ArraySubs release or site-content update |
+| [ArraySubs product page](https://arrayhash.com/product/arraysubs/) | Current first-party public feature/tier statements for variable products, manual/automatic renewals, plan switching, refunds | ArraySubs release or site-content update |
 | `arraysubs/src/Features/SubscriptionProducts/views/variation-fields.php` | Current per-variation billing, trial, sign-up fee, and renewal-price fields | ArraySubs product editor change |
 | `arraysubs/src/Features/PlanSwitching/Services/ProrationCalculator.php` | Current cross-cycle proration behavior | Plan-switching calculation change |
 | `documentations/architecture/plan-switching.md` | Current proration methods, pending-switch lifecycle, server-side enforcement | Plan-switching release |

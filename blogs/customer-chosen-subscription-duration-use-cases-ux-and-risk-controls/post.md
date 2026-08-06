@@ -134,13 +134,13 @@ An interim pattern is separate products or a variable subscription with merchant
 
 Current source has two expiration-counting paths with different possible treatment of zero-total orders. Do not promise how trials, coupons, or credit-zeroed cycles count until the behavior is reconciled and tested.
 
-The [fixed-cycle recipe](/deals/arraysubs/use-cases/recipes/prepaid-fixed-cycles/) provides adjacent configuration concepts, but its recurring charges are not true full prepayment. For shared dates, read [Fixed-Date WooCommerce Subscriptions](/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/).
+The [fixed-cycle recipe](/product/arraysubs/use-cases/recipes/prepaid-fixed-cycles/) provides adjacent configuration concepts, but its recurring charges are not true full prepayment. For shared dates, read [Fixed-Date WooCommerce Subscriptions](/subscription-foundations/fixed-date-woocommerce-subscriptions-for-cohorts-seasons-and-enrollment-windows/).
 
 ## Final recommendation
 
 Offer a small, approved choice set only when every term is safe to sell and support. Make the scheduled total and end state explicit, validate everything server-side, and publish lifecycle rules before checkout. For ArraySubs, use current merchant-defined variations only as a transparent interim pattern and label the dedicated Pro workflow coming soon.
 
-[View ArraySubs Pro pricing](/deals/arraysubs/pricing/) for current and planned feature boundaries; Customer-Chosen Subscription Duration is not yet shipped.
+[View ArraySubs Pro pricing](/product/arraysubs/pricing/) for current and planned feature boundaries; Customer-Chosen Subscription Duration is not yet shipped.
 
 ## Frequently asked questions
 

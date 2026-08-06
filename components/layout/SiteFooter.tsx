@@ -7,10 +7,10 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
   {
     title: "Product",
     links: [
-      ["ArraySubs", "/deals/arraysubs/"],
-      ["Features", "/deals/arraysubs/features/"],
-      ["Pricing", "/deals/arraysubs/pricing/"],
-      ["Use Cases", "/deals/arraysubs/use-cases/"],
+      ["ArraySubs", "/product/arraysubs/"],
+      ["Features", "/product/arraysubs/features/"],
+      ["Pricing", "/product/arraysubs/pricing/"],
+      ["Use Cases", "/product/arraysubs/use-cases/"],
       ["Download", "https://wordpress.org/plugins/arraysubs/"],
     ],
   },
@@ -19,20 +19,20 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
     links: [
       [
         "WooCommerce Membership",
-        "/deals/arraysubs/features/woocommerce-membership/",
+        "/product/arraysubs/features/woocommerce-membership/",
       ],
       [
         "Subscription Products",
-        "/deals/arraysubs/features/subscriptions-and-recurring-products/",
+        "/product/arraysubs/features/subscriptions-and-recurring-products/",
       ],
-      ["Member Access Control", "/deals/arraysubs/features/member-access-control/"],
+      ["Member Access Control", "/product/arraysubs/features/member-access-control/"],
       [
         "Billing & Renewals",
-        "/deals/arraysubs/features/billing-renewals-and-refunds/",
+        "/product/arraysubs/features/billing-renewals-and-refunds/",
       ],
-      ["Retention Flow", "/deals/arraysubs/features/retention-flow-builder/"],
-      ["Payment Gateways", "/deals/arraysubs/features/payment-gateways/"],
-      ["Store Credit", "/deals/arraysubs/features/store-credit/"],
+      ["Retention Flow", "/product/arraysubs/features/retention-flow-builder/"],
+      ["Payment Gateways", "/product/arraysubs/features/payment-gateways/"],
+      ["Store Credit", "/product/arraysubs/features/store-credit/"],
     ],
   },
   {
@@ -40,15 +40,15 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
     links: [
       [
         "Vs WooCommerce Subscriptions",
-        "/deals/arraysubs/alternatives/woocommerce-subscriptions/",
+        "/product/arraysubs/alternatives/woocommerce-subscriptions/",
       ],
       [
         "Vs WooCommerce Memberships",
-        "/deals/arraysubs/alternatives/woocommerce-memberships/",
+        "/product/arraysubs/alternatives/woocommerce-memberships/",
       ],
       [
         "Vs YITH Subscription",
-        "/deals/arraysubs/alternatives/yith-woocommerce-subscription/",
+        "/product/arraysubs/alternatives/yith-woocommerce-subscription/",
       ],
     ],
   },
@@ -60,7 +60,7 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
       ["Useful Articles", "/articles/"],
       ["Documentations", "https://support.arrayhash.com/"],
       ["User Portal Login", "https://user-portal.arrayhash.com/"],
-      ["Use Cases", "/deals/arraysubs/use-cases/"],
+      ["Use Cases", "/product/arraysubs/use-cases/"],
       ["Become an Affiliate", "/become-an-affiliate/"],
     ],
   },

@@ -25,7 +25,7 @@ Rank and earn AI citations for “store credit expiration policy,” fully resol
 
 ## CTA
 
-**View Pro Pricing** — link to `/deals/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
+**View Pro Pricing** — link to `/product/arraysubs/pricing/`. Place the primary CTA after the reader has received the core answer; do not interrupt the direct-answer opening.
 
 ## Content brief
 
@@ -57,12 +57,12 @@ Create a guide for store owners, finance operators, and customer-experience team
 
 ### Internal-link requirements
 
-- Commercial pillar: `/deals/arraysubs/features/#retention-revenue`
-- Relevant feature/use-case hub: `/deals/arraysubs/features/#retention-revenue`
+- Commercial pillar: `/product/arraysubs/features/#retention-revenue`
+- Relevant feature/use-case hub: `/product/arraysubs/features/#retention-revenue`
 - Supporting ArraySubs recipes or implementation pages:
-  - `/deals/arraysubs/use-cases/recipes/refund-to-store-credit/`
-  - `/deals/arraysubs/use-cases/recipes/auto-apply-credit-renewals/`
-  - `/deals/arraysubs/use-cases/recipes/credit-history-audit/`
+  - `/product/arraysubs/use-cases/recipes/refund-to-store-credit/`
+  - `/product/arraysubs/use-cases/recipes/auto-apply-credit-renewals/`
+  - `/product/arraysubs/use-cases/recipes/credit-history-audit/`
 - Related briefs:
   - A113 — Selling Prepaid Store Credit: Bonus Economics and Liability
   - A115 — Reconciling Store Credit Balances and Transaction History

@@ -618,7 +618,7 @@ Article guidance:
 - confirm which subscription the updated method applies to;
 - monitor Paddle events and verify the next renewal with a sandbox/test clock process.
 
-Related internal link: `/deals/arraysubs/use-cases/recipes/member-update-payment/`
+Related internal link: `/product/arraysubs/use-cases/recipes/member-update-payment/`
 
 ## Webhooks, ordering, deduplication and race conditions
 
@@ -756,7 +756,7 @@ Production hardening:
 13. handler changes Woo state then crashes before remembering event ID.
 14. event arrives after the 30-day dedupe record is cleaned.
 
-Related internal link: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+Related internal link: `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
 
 ## Refunds, credits and chargebacks
 
@@ -1286,7 +1286,7 @@ Repeat every classic scenario plus:
 - whether a second charge/refund is possible;
 - operator and corrective action.
 
-Use the internal Gateway Health recipe for the product workflow, but state that health telemetry is not financial reconciliation: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+Use the internal Gateway Health recipe for the product workflow, but state that health telemetry is not financial reconciliation: `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
 
 ## Recommended article structure and evidence notes
 
@@ -1332,11 +1332,11 @@ Suggested context-specific generated visuals:
 
 Required commercial/product links:
 
-- Payment gateway feature pillar: `/deals/arraysubs/features/#payment-gateways`
-- Pro/pricing CTA: `/deals/arraysubs/pricing/`
-- Stripe automatic billing/SCA recipe: `/deals/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
-- Member payment-update recipe: `/deals/arraysubs/use-cases/recipes/member-update-payment/`
-- Gateway Health recipe: `/deals/arraysubs/use-cases/recipes/gateway-health-monitor/`
+- Payment gateway feature pillar: `/product/arraysubs/features/#payment-gateways`
+- Pro/pricing CTA: `/product/arraysubs/pricing/`
+- Stripe automatic billing/SCA recipe: `/product/arraysubs/use-cases/recipes/stripe-automatic-billing-sca/`
+- Member payment-update recipe: `/product/arraysubs/use-cases/recipes/member-update-payment/`
+- Gateway Health recipe: `/product/arraysubs/use-cases/recipes/gateway-health-monitor/`
 
 Editorial cluster links:
 

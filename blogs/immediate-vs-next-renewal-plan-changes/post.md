@@ -89,7 +89,7 @@ For calculation choices, see [Subscription Proration Methods Compared](/billing-
 
 ## Final recommendation
 
-Choose timing from the entitlement promise. Immediate changes require a successful payment boundary; deferred changes require a clear pending state and a paid target renewal. Publish the exact transition instead of “your plan will update shortly.” [Compare ArraySubs plans](/deals/arraysubs/pricing/).
+Choose timing from the entitlement promise. Immediate changes require a successful payment boundary; deferred changes require a clear pending state and a paid target renewal. Publish the exact transition instead of “your plan will update shortly.” [Compare ArraySubs plans](/product/arraysubs/pricing/).
 
 ## Frequently asked questions
 

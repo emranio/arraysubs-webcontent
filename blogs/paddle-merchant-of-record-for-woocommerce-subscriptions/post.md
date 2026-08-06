@@ -401,7 +401,7 @@ Limitations to test:
 - payment-method saved/deleted event coverage; and
 - whether local brand/last-four display refreshes.
 
-Say “ArraySubs sends the customer to Paddle’s portal,” not “ArraySubs updates the card.” The [member payment-update recipe](/deals/arraysubs/use-cases/recipes/member-update-payment/) describes the desired customer workflow; verify the provider-specific behavior separately.
+Say “ArraySubs sends the customer to Paddle’s portal,” not “ArraySubs updates the card.” The [member payment-update recipe](/product/arraysubs/use-cases/recipes/member-update-payment/) describes the desired customer workflow; verify the provider-specific behavior separately.
 
 ## Current refunds are a launch blocker
 
@@ -546,7 +546,7 @@ Alert on:
 - unhandled chargeback action; and
 - payout/bank variance.
 
-The ArraySubs [Gateway Health recipe](/deals/arraysubs/use-cases/recipes/gateway-health-monitor/) helps monitor credentials, endpoint state, and event flow. It is not financial reconciliation.
+The ArraySubs [Gateway Health recipe](/product/arraysubs/use-cases/recipes/gateway-health-monitor/) helps monitor credentials, endpoint state, and event flow. It is not financial reconciliation.
 
 ## Decision framework
 
@@ -591,9 +591,9 @@ signed events + reconciliation
 
 Before launch, fix and test the current interval/trial metadata mismatch, stale Price behavior, commercial-total omissions, refund Adjustment flow, webhook ordering/idempotency, fixed-term stop, and payout reconciliation. Those are not edge polish; they determine whether the buyer is charged the disclosed amount and whether Woo access/accounting matches Paddle truth.
 
-ArraySubs Pro supplies Paddle catalog/checkout wiring, local subscription and renewal-order integration, customer portal routing, lifecycle hooks, and Gateway Health around that provider-controlled system. Use [ArraySubs payment gateway features](/deals/arraysubs/features/#payment-gateways) after the independent architecture decision is settled, and enable live billing only after the full intended offer passes sandbox and production-readiness testing.
+ArraySubs Pro supplies Paddle catalog/checkout wiring, local subscription and renewal-order integration, customer portal routing, lifecycle hooks, and Gateway Health around that provider-controlled system. Use [ArraySubs payment gateway features](/product/arraysubs/features/#payment-gateways) after the independent architecture decision is settled, and enable live billing only after the full intended offer passes sandbox and production-readiness testing.
 
-[View ArraySubs Pro pricing](/deals/arraysubs/pricing/) when Paddle’s Merchant-of-Record model fits your catalog and the intended offer has passed the article’s launch gates.
+[View ArraySubs Pro pricing](/product/arraysubs/pricing/) when Paddle’s Merchant-of-Record model fits your catalog and the intended offer has passed the article’s launch gates.
 
 ## Verification scope, limitations, and update log
 

@@ -329,7 +329,7 @@ Current retry processing asks the gateway whether the renewal order was already 
 
 ## Internal-link suggestions
 
-- Commercial hub: `/deals/arraysubs/features/#subscription-operations`
+- Commercial hub: `/product/arraysubs/features/#subscription-operations`
 - Recipe: `/recipes/arraysubs/lenient-dunning-grace/`
 - Recipe: `/recipes/arraysubs/strict-dunning-grace/`
 - Recipe: `/recipes/arraysubs/auto-downgrade-on-failed-payment/`

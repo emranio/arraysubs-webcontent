@@ -230,7 +230,7 @@ Suppose a physical shipment has a July 18, 15:00 warehouse cutoff. The fulfillme
 - [ ] Test WordPress cron, Action Scheduler, webhooks, caching, and concurrency.
 - [ ] Review the policy after material product, gateway, or lifecycle changes.
 
-For ArraySubs implementation, use a documented [lenient dunning and grace recipe](/deals/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict dunning and grace recipe](/deals/arraysubs/use-cases/recipes/strict-dunning-grace/) instead of duplicating settings from this strategy guide.
+For ArraySubs implementation, use a documented [lenient dunning and grace recipe](/product/arraysubs/use-cases/recipes/lenient-dunning-grace/) or [strict dunning and grace recipe](/product/arraysubs/use-cases/recipes/strict-dunning-grace/) instead of duplicating settings from this strategy guide.
 
 ## When is a generic grace policy not a fit?
 
@@ -242,7 +242,7 @@ ArraySubs is a practical fit when WooCommerce should coordinate the renewal orde
 
 Design grace as an explicit state machine, not a number typed into a settings field. Separate payment, access, fulfillment, and lifecycle decisions; expose real deadlines; align the gateway's recovery owner; and verify every late recovery across the payment, order, subscription, entitlement, and next-renewal state.
 
-After documenting and testing that policy, [review ArraySubs Pro pricing](/deals/arraysubs/pricing/) for supported automatic-payment recovery, or explore the broader [subscription operations feature set](/deals/arraysubs/features/#subscription-operations).
+After documenting and testing that policy, [review ArraySubs Pro pricing](/product/arraysubs/pricing/) for supported automatic-payment recovery, or explore the broader [subscription operations feature set](/product/arraysubs/features/#subscription-operations).
 
 ## Frequently asked questions
 
