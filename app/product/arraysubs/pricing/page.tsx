@@ -222,7 +222,7 @@ export default function ArraySubsPricingPage() {
               size="lg"
               magnetic
             >
-              Get Free Core - WP.ORG
+              Get free Trial
             </Button>
             <Button
               href="#plans"

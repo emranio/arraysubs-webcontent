@@ -395,18 +395,13 @@ export function SiteHeader() {
               </nav>
 
               <Magnetic className="inline-flex">
-                <span className="relative inline-flex">
-                  <span className="pointer-events-none absolute -top-2 -right-2 z-20 rounded-pill bg-[#FE8218] px-1.5 py-0.5 text-[0.625rem] leading-none font-extrabold tracking-wide text-white uppercase shadow-sm">
-                    30% off
-                  </span>
-                  <Button
-                    href="/product/arraysubs/pricing/"
-                    size="xs"
-                    onClick={close}
-                  >
-                    Pricing Plans
-                  </Button>
-                </span>
+                <Button
+                  href="https://downloads.wordpress.org/plugin/arraysubs.latest-stable.zip"
+                  size="xs"
+                  onClick={close}
+                >
+                  Download Free
+                </Button>
               </Magnetic>
 
               {/* Hamburger / X toggle for mobile/tablet */}

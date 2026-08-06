@@ -15,6 +15,7 @@ export const HEADER_NAV_ITEMS: NavItem[] = [
   { label: "Features", href: "/product/arraysubs/features/" },
   { label: "Use Cases", href: "/product/arraysubs/use-cases/" },
   { label: "Compare", href: "/product/arraysubs/alternatives/" },
+  { label: "Pricing Plans", href: "/product/arraysubs/pricing/" },
   {
     label: "Resources",
     href: "/articles/",
