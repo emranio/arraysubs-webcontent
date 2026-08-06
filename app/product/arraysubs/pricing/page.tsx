@@ -217,7 +217,7 @@ export default function ArraySubsPricingPage() {
         actions={
           <>
             <Button
-              href={site.sameAs[0]}
+              href="https://arrayhash.com/checkout/54910/?coupon=special30&trial=free"
               variant="outline"
               size="lg"
               magnetic
