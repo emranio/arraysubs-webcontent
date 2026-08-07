@@ -1,0 +1,98 @@
+Feature Title,Plugin,Feature Page,Feature Page URL
+"Fixed-date subscriptions (cohorts, seasons, enrollment windows)",ArraySubs Pro,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+Recurring shipping charges on physical subscriptions,ArraySubs Pro,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+Per-plan feature entitlements + 'What's included' on the product page,ArraySubs Pro,Define the features and entitlements behind every subscription plan,/product/arraysubs/features/feature-manager/
+Drag-and-drop multi-step checkout builder with conditional fields,ArraySubs Pro,Build a custom WooCommerce checkout for subscriptions,/product/arraysubs/features/checkout-builder/
+"Hide first billing-cycle, shipping-charge & duration details in cart, checkout, mini-cart & emails",ArraySubs Pro,Build a custom WooCommerce checkout for subscriptions,/product/arraysubs/features/checkout-builder/
+Redirect or 404 direct product URLs to a sales page,ArraySubs Pro,Build a custom WooCommerce checkout for subscriptions,/product/arraysubs/features/checkout-builder/
+Customer-chosen subscription length and billing period at checkout,ArraySubs Pro,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+"Customer-built subscription boxes (multi-step builder, one recurring price for the whole box)",ArraySubs Pro,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+"Box step builder with product, category, text, choice & file-upload elements",ArraySubs Pro,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+"Box discount tiers by total value or item count, with free gifts and live 'unlock' hints",ArraySubs Pro,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+"A zero-value subscription per subscription product inside a box, so per-product entitlements keep working",ArraySubs Pro,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+"Renewals reproduce the exact box the customer built (contents, quantities, freebies & inputs at the frozen price)",ArraySubs Pro,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+"Merchant-curated subscription bundles (fixed contents, one Add to Cart, one recurring price)",ArraySubs Pro,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+Installment / split payments on a fixed-price product,ArraySubs Pro,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+Automatic off-session renewals via Stripe (saved cards),ArraySubs Pro,"Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",/product/arraysubs/features/payment-gateways/
+Automatic renewals via PayPal billing agreements,ArraySubs Pro,"Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",/product/arraysubs/features/payment-gateways/
+"Automatic renewals via Paddle (native VAT, merchant of record)",ArraySubs Pro,"Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",/product/arraysubs/features/payment-gateways/
+Automatic renewals via Mollie (card & SEPA Direct Debit mandates),ArraySubs Pro,"Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",/product/arraysubs/features/payment-gateways/
+"SCA / 3D Secure handling, off-session for renewals",ArraySubs Pro,"Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",/product/arraysubs/features/payment-gateways/
+Delayed-settlement renewals tracked to completion (SEPA Direct Debit),ArraySubs Pro,"Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",/product/arraysubs/features/payment-gateways/
+Missed-webhook reconciliation sweep for unconfirmed renewals,ArraySubs Pro,"Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",/product/arraysubs/features/payment-gateways/
+Double-charge protection on interrupted renewal attempts,ArraySubs Pro,"Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",/product/arraysubs/features/payment-gateways/
+Automatic retry of failed renewals (dunning),ArraySubs Pro,Run WooCommerce recurring billing from first invoice to final refund,/product/arraysubs/features/billing-renewals-and-refunds/
+Auto-downgrade to a fallback plan instead of cancelling,ArraySubs Pro,Run WooCommerce recurring billing from first invoice to final refund,/product/arraysubs/features/billing-renewals-and-refunds/
+Flexible renewal sync (align renewals to one date for batch billing),ArraySubs Pro,Run WooCommerce recurring billing from first invoice to final refund,/product/arraysubs/features/billing-renewals-and-refunds/
+"Per-box renewal-sync segment plan (own signup-day segments, or follow the store default)",ArraySubs Pro,Run WooCommerce recurring billing from first invoice to final refund,/product/arraysubs/features/billing-renewals-and-refunds/
+"Let customers renew early, before the due date",ArraySubs Pro,Run WooCommerce recurring billing from first invoice to final refund,/product/arraysubs/features/billing-renewals-and-refunds/
+Self-service payment-method update,ArraySubs Pro,Give subscribers a self-service portal in My Account,/product/arraysubs/features/customer-portal/
+Gate access by per-plan feature entitlement,ArraySubs Pro,Define the features and entitlements behind every subscription plan,/product/arraysubs/features/feature-manager/
+Multi-login prevention (limit concurrent sessions per account),ArraySubs Pro,Give subscribers a self-service portal in My Account,/product/arraysubs/features/customer-portal/
+Store credit wallet with balances & transaction history,ArraySubs Pro,Give customers a store credit wallet inside WooCommerce,/product/arraysubs/features/store-credit/
+Refund an order to store credit instead of cash,ArraySubs Pro,Give customers a store credit wallet inside WooCommerce,/product/arraysubs/features/store-credit/
+Sell prepaid credit packs with an optional bonus percentage,ArraySubs Pro,Give customers a store credit wallet inside WooCommerce,/product/arraysubs/features/store-credit/
+Credit expiry + Added / Used / Expiring / Expired emails,ArraySubs Pro,Give customers a store credit wallet inside WooCommerce,/product/arraysubs/features/store-credit/
+Recurring donations & crowdfunding contributions,ArraySubs Pro,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+Activity audit trail + scheduled-job logs,ArraySubs Pro,Keep an audit trail on every WooCommerce subscription,/product/arraysubs/features/audits-and-logs/
+Member Insight: one unified customer dashboard,ArraySubs Pro,Subscription analytics that live inside WooCommerce,/product/arraysubs/features/analytics/
+Gateway Health: webhook status & connection monitoring,ArraySubs Pro,"Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",/product/arraysubs/features/payment-gateways/
+Per-gateway capability notes explaining what each provider can't do,ArraySubs Pro,"Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",/product/arraysubs/features/payment-gateways/
+Simple subscription products (one recurring price),ArraySubs,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+"Variable subscriptions with per-plan price, cycle & trial",ArraySubs,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+Free trials before the first charge,ArraySubs,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+One-time signup / setup fees at checkout,ArraySubs,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+Introductory price that changes on renewal,ArraySubs,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+"Lifetime deals (one payment, ongoing access, no renewals)",ArraySubs,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+One-click / direct-to-checkout purchase URLs,ArraySubs,Build a custom WooCommerce checkout for subscriptions,/product/arraysubs/features/checkout-builder/
+Coupons on subscriptions (recurring discounts & cycle limits),ArraySubs,Turn any WooCommerce product into a subscription,/product/arraysubs/features/subscriptions-and-recurring-products/
+"Purchase guardrails (one-per-customer, mixed-cart & migration rules)",ArraySubs,Build a custom WooCommerce checkout for subscriptions,/product/arraysubs/features/checkout-builder/
+Recurring renewal billing engine & schedule,ArraySubs,Run WooCommerce recurring billing from first invoice to final refund,/product/arraysubs/features/billing-renewals-and-refunds/
+500+ WooCommerce gateways for checkout & manual renewals,ArraySubs,"Take recurring payments with Stripe, PayPal, Paddle, Mollie, or any WooCommerce gateway",/product/arraysubs/features/payment-gateways/
+WooCommerce tax on checkout and every renewal,ArraySubs,Run WooCommerce recurring billing from first invoice to final refund,/product/arraysubs/features/billing-renewals-and-refunds/
+2-phase grace period keeps access alive on a failed payment,ArraySubs,Run WooCommerce recurring billing from first invoice to final refund,/product/arraysubs/features/billing-renewals-and-refunds/
+"Customer portal: view subscriptions, invoices & details",ArraySubs,Give subscribers a self-service portal in My Account,/product/arraysubs/features/customer-portal/
+Self-service cancel (with undo) and reactivate,ArraySubs,Give subscribers a self-service portal in My Account,/product/arraysubs/features/customer-portal/
+Pause / vacation mode without cancelling,ArraySubs,Give subscribers a self-service portal in My Account,/product/arraysubs/features/customer-portal/
+Skip the next renewal and keep the schedule,ArraySubs,Give subscribers a self-service portal in My Account,/product/arraysubs/features/customer-portal/
+"Upgrade, downgrade & crossgrade between plans",ArraySubs,Give subscribers a self-service portal in My Account,/product/arraysubs/features/customer-portal/
+"3 proration methods (charge now, at renewal, or none)",ArraySubs,Give subscribers a self-service portal in My Account,/product/arraysubs/features/customer-portal/
+"Gate pages, posts & any custom post type",ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+"Restrict by subscription, plan or product purchased",ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Restrict by WordPress role,ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Restrict by lifetime spend or purchase history,ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+"URL path rules (exact, prefix, contains & regex)",ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+"Partial, in-page content restriction with teasers",ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Native Elementor container restriction,ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Native Gutenberg block restriction,ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Nested AND/OR advanced condition builder,ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Scheduled content dripping (days-since-join or fixed date),ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Gated / restricted file downloads,ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+"Shop & product-catalog restrictions (redirect, 404, block purchase)",ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Member-only discounts and pricing,ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Member-only free shipping on every paid shipping method,ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+"Comment reading and posting rules by post type, taxonomy term or specific content",ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Per-product or per-order purchase quantity limits for matching or non-matching shoppers,ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Member Styling: conditional body classes and custom CSS on the storefront or wp-admin,ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Logged-in / guest and negative subscription or variation conditions,ArraySubs,Restrict WooCommerce content and products by membership,/product/arraysubs/features/member-access-control/
+Guided 9-step setup wizard + settings import/export,ArraySubs,Set up WooCommerce subscriptions with a guided wizard,/product/arraysubs/features/easy-setup/
+Custom profile fields & avatars on My Account,ArraySubs,Customize the WooCommerce My Account page for members,/product/arraysubs/features/profile-builder/
+"My Account page builder (reorder, rename, custom endpoints)",ArraySubs,Give subscribers a self-service portal in My Account,/product/arraysubs/features/customer-portal/
+"Shortcodes for account links, gated content & forms",ArraySubs,Customize the WooCommerce My Account page for members,/product/arraysubs/features/profile-builder/
+Hide the WordPress admin bar from customers,ArraySubs,Customize the WooCommerce My Account page for members,/product/arraysubs/features/profile-builder/
+Redirect customers away from wp-admin,ArraySubs,Customize the WooCommerce My Account page for members,/product/arraysubs/features/profile-builder/
+Route login & registration through My Account,ArraySubs,Customize the WooCommerce My Account page for members,/product/arraysubs/features/profile-builder/
+Log in as a customer for support (no password needed),ArraySubs,Keep an audit trail on every WooCommerce subscription,/product/arraysubs/features/audits-and-logs/
+"Cancellation retention flow (capture reason, present save offers)",ArraySubs,Save WooCommerce subscriptions at the moment of cancellation,/product/arraysubs/features/retention-flow-builder/
+Retention analytics (offer performance & cancel reasons),ArraySubs,Save WooCommerce subscriptions at the moment of cancellation,/product/arraysubs/features/retention-flow-builder/
+"AI churn risk scoring per subscriber, with reasons & next steps",ArraySubs,Subscription analytics that live inside WooCommerce,/product/arraysubs/features/analytics/
+"Central subscription management (view, edit, bulk actions)",ArraySubs,Manage every WooCommerce subscription from one admin dashboard,/product/arraysubs/features/manage-subscriptions/
+Export subscriptions to CSV or JSON,ArraySubs,Manage every WooCommerce subscription from one admin dashboard,/product/arraysubs/features/manage-subscriptions/
+"Create a subscription from WP-Admin (migrations, phone orders)",ArraySubs,Manage every WooCommerce subscription from one admin dashboard,/product/arraysubs/features/manage-subscriptions/
+"Prorated, full & partial refunds",ArraySubs,Run WooCommerce recurring billing from first invoice to final refund,/product/arraysubs/features/billing-renewals-and-refunds/
+Subscription notes & full lifecycle timeline,ArraySubs,Keep an audit trail on every WooCommerce subscription,/product/arraysubs/features/audits-and-logs/
+"Automated lifecycle emails (signup, renewal, failure, cancel)",ArraySubs,Send every subscription email from WooCommerce automatically,/product/arraysubs/features/emails/
+"Subscription & revenue analytics (MRR, churn, ARPU, retention)",ArraySubs,Subscription analytics that live inside WooCommerce,/product/arraysubs/features/analytics/
+"AI revenue forecast: MRR & ARR projected 6, 12 or 24 months",ArraySubs,Subscription analytics that live inside WooCommerce,/product/arraysubs/features/analytics/
+"Renewal, portal & access troubleshooting logs",ArraySubs,Keep an audit trail on every WooCommerce subscription,/product/arraysubs/features/audits-and-logs/
+HPOS (high-performance order storage) compatible,ArraySubs,Manage every WooCommerce subscription from one admin dashboard,/product/arraysubs/features/manage-subscriptions/
