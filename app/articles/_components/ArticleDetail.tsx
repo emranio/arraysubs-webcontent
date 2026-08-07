@@ -15,7 +15,7 @@ import {
   PageHero,
   Section,
 } from "@/components/ui";
-import { blogPostSchema, faqSchema } from "@/lib/seo";
+import { authorEntitySchema, blogPostSchema, faqSchema } from "@/lib/seo";
 import {
   RESOURCE_BASE,
   RESOURCE_CATEGORIES,
@@ -58,6 +58,7 @@ export function ArticleDetail({
   if (!category) return null;
 
   const author = getAuthorByName(article.author);
+  const authorSchema = authorSchemaInput(author);
   const related = getRelatedArticles(article);
   const isMembershipArticle = article.categorySlug === "membership-strategy";
   // Feature guide that cites this article, for the strategy → feature bridge.
@@ -373,7 +374,7 @@ export function ArticleDetail({
             path: getArticlePath(article),
             datePublished: article.publishedAt,
             dateModified: article.updatedAt,
-            author: authorSchemaInput(author),
+            author: authorSchema,
             image: article.cover.image,
             imageWidth: 1672,
             imageHeight: 941,
@@ -389,6 +390,7 @@ export function ArticleDetail({
               : undefined,
             wordCount,
           }),
+          authorEntitySchema(authorSchema),
           ...(faqs.length >= 2
             ? [faqSchema(faqs, getArticlePath(article))]
             : []),

@@ -394,7 +394,21 @@ export default async function AuthorPage({
         </Container>
       </Section>
 
-      <JsonLd data={[profilePageSchema(authorSchemaInput(author))]} />
+      {page === 1 ? (
+        <JsonLd
+          data={[
+            profilePageSchema(
+              authorSchemaInput(author),
+              paginated.articles.map((article) => ({
+                headline: article.title,
+                path: getArticlePath(article),
+                datePublished: article.publishedAt,
+                dateModified: article.updatedAt,
+              })),
+            ),
+          ]}
+        />
+      ) : null}
     </>
   );
 }

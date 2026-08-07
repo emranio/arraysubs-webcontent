@@ -86,6 +86,7 @@ export function getPageSitemapEntries(): SitemapEntry[] {
     })),
     ...AUTHOR_LIST.map((author) => ({
       url: absoluteUrl(getAuthorPath(author)),
+      lastModified: author.profileModifiedAt,
     })),
   ];
 }

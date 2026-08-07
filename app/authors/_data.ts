@@ -25,6 +25,11 @@ export type AuthorWork = {
 export type Author = {
   slug: string;
   name: string;
+  /** Stable public handle used as the schema alternate name. */
+  alternateName?: string;
+  /** ISO 8601 timestamps for the dedicated author profile. */
+  profileCreatedAt: string;
+  profileModifiedAt: string;
   jobTitle: string;
   /**
    * Narrative voice for the visible prose (`headline`, `bio`). Use "first"
@@ -67,6 +72,9 @@ export const AUTHORS: Record<string, Author> = {
   emran: {
     slug: "emran",
     name: "Emran",
+    alternateName: "emranio",
+    profileCreatedAt: "2026-07-23T17:04:34+06:00",
+    profileModifiedAt: "2026-08-07T19:47:10+06:00",
     jobTitle: "Founder & Lead Engineer, ArrayHash",
     voice: "first",
     headline:
@@ -149,6 +157,8 @@ export function getAuthorPath(author: Pick<Author, "slug">): string {
 export function authorSchemaInput(author: Author): AuthorSchemaInput {
   return {
     name: author.name,
+    identifier: author.slug,
+    alternateName: author.alternateName,
     path: getAuthorPath(author),
     image: author.image,
     jobTitle: author.jobTitle,
@@ -156,5 +166,7 @@ export function authorSchemaInput(author: Author): AuthorSchemaInput {
     sameAs: author.profiles.map((profile) => profile.url),
     knowsAbout: author.topics,
     alumniOf: author.alumniOf,
+    profileCreatedAt: author.profileCreatedAt,
+    profileModifiedAt: author.profileModifiedAt,
   };
 }

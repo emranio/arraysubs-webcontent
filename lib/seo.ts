@@ -187,6 +187,10 @@ export function faqSchema(items: Faq[], path?: string) {
 
 export type AuthorSchemaInput = {
   name: string;
+  /** Stable site-local identifier for the author. */
+  identifier: string;
+  /** Public handle or alternate identity, when applicable. */
+  alternateName?: string;
   /** Canonical author-page path beginning with "/". */
   path: string;
   /** Headshot path or absolute URL. */
@@ -200,6 +204,16 @@ export type AuthorSchemaInput = {
   knowsAbout?: string[];
   /** Formal education institution. */
   alumniOf?: string;
+  /** ISO 8601 timestamps for the dedicated profile page. */
+  profileCreatedAt: string;
+  profileModifiedAt: string;
+};
+
+export type ProfilePageActivityInput = {
+  headline: string;
+  path: string;
+  datePublished: string;
+  dateModified: string;
 };
 
 /**
@@ -215,6 +229,10 @@ export function authorPersonSchema(author: AuthorSchemaInput) {
     "@type": "Person",
     "@id": `${url}#person`,
     name: author.name,
+    identifier: author.identifier,
+    ...(author.alternateName
+      ? { alternateName: author.alternateName }
+      : {}),
     url,
     image: absoluteUrl(author.image),
     jobTitle: author.jobTitle,
@@ -228,9 +246,21 @@ export function authorPersonSchema(author: AuthorSchemaInput) {
   };
 }
 
+/** Standalone Person entity for pages that reference an author by shared @id. */
+export function authorEntitySchema(author: AuthorSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    ...authorPersonSchema(author),
+  };
+}
+
 /** ProfilePage JSON-LD wrapping the author Person for a dedicated author page. */
-export function profilePageSchema(author: AuthorSchemaInput) {
+export function profilePageSchema(
+  author: AuthorSchemaInput,
+  activity: ProfilePageActivityInput[] = [],
+) {
   const url = absoluteUrl(author.path);
+  const personId = `${url}#person`;
 
   return {
     "@context": "https://schema.org",
@@ -238,9 +268,23 @@ export function profilePageSchema(author: AuthorSchemaInput) {
     "@id": `${url}#profilepage`,
     url,
     name: `${author.name} — Author profile`,
+    dateCreated: author.profileCreatedAt,
+    dateModified: author.profileModifiedAt,
     isPartOf: { "@id": `${absoluteUrl("/")}#website` },
     publisher: { "@id": `${absoluteUrl("/")}#organization` },
     mainEntity: authorPersonSchema(author),
+    ...(activity.length
+      ? {
+          hasPart: activity.map((item) => ({
+            "@type": "Article",
+            headline: item.headline,
+            url: absoluteUrl(item.path),
+            datePublished: item.datePublished,
+            dateModified: item.dateModified,
+            author: { "@id": personId },
+          })),
+        }
+      : {}),
   };
 }
 
