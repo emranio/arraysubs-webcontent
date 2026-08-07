@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import { X } from "lucide-react";
 import {
   useEffect,
@@ -16,10 +15,6 @@ import {
   RETARGETING_COOKIE_NAME,
   RETARGETING_ID_LENGTH,
 } from "@/lib/privacy-consent";
-
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
-const INCLUDE_BD_VISITS = process.env.NEXT_PUBLIC_INCLUDE_BD_VISITS === "true";
 
 type ConsentSource = "banner" | "preferences" | "privacy-choices";
 
@@ -151,10 +146,6 @@ function deleteRetargetingCookie() {
   for (const domain of domains) expireCookie(RETARGETING_COOKIE_NAME, domain);
 }
 
-function isBrowserUtcPlusSix() {
-  return new Date().getTimezoneOffset() === -360;
-}
-
 function ConsentAction({
   children,
   onClick,
@@ -188,11 +179,8 @@ export function CookieConsent() {
   const [consent, setConsent] = useState<CookieConsentState | null>(null);
   const [showPreferences, setShowPreferences] = useState(false);
   const [gpcEnabled, setGpcEnabled] = useState(false);
-  const [blockBangladeshAnalytics, setBlockBangladeshAnalytics] =
-    useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
-  const analyticsEnabled = !blockBangladeshAnalytics;
 
   useEffect(() => {
     const saved = decodeConsent();
@@ -203,7 +191,6 @@ export function CookieConsent() {
     setGpcEnabled(hasGpc);
     setConsent(saved);
     setShowPreferences(!saved);
-    setBlockBangladeshAnalytics(!INCLUDE_BD_VISITS && isBrowserUtcPlusSix());
     setMounted(true);
   }, []);
 
@@ -310,44 +297,6 @@ export function CookieConsent() {
 
   return (
     <>
-      {/* Analytics is required and always loads, independent of consent. */}
-      {analyticsEnabled && GA_MEASUREMENT_ID && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga4-consent-gate" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_MEASUREMENT_ID}', { anonymize_ip: true });
-            `}
-          </Script>
-        </>
-      )}
-
-      {analyticsEnabled && GTM_ID && (
-        <Script id="gtm-consent-gate" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-              'gtm.start': new Date().getTime(),
-              event: 'gtm.js'
-            });
-            (function(w,d,s,l,i){
-              var f=d.getElementsByTagName(s)[0],
-                  j=d.createElement(s),
-                  dl=l!='dataLayer'?'&l='+l:'';
-              j.async=true;
-              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-              f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','${GTM_ID}');
-          `}
-        </Script>
-      )}
-
       {showPreferences && (
         <div
           className="fixed inset-0 z-[90] flex items-end justify-start bg-dark/45 p-3 sm:p-4"

@@ -12,6 +12,7 @@ import { BottomOfferPill } from "@/components/layout/BottomOfferPill";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { CookieConsent } from "@/components/layout/CookieConsent";
+import { GoogleTagGate } from "@/components/analytics/GoogleTagGate";
 import { siteColors } from "@/lib/colors";
 
 const fontDisplay = Funnel_Display({
@@ -96,6 +97,7 @@ export default function RootLayout({
           <SiteFooter />
           <BottomOfferPill />
           <CookieConsent />
+          <GoogleTagGate />
 
           <JsonLd data={[organizationSchema(), websiteSchema()]} />
         </div>
