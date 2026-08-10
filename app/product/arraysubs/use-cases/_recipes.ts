@@ -320,7 +320,7 @@ const M = {
   },
   autopay: {
     label: "Automatic Payments",
-    href: "checkout-and-payments/automatic-payments/index.html",
+    href: "checkout-and-payments/automatic-payments/",
   },
   stripe: {
     label: "Stripe Automatic Payments",
@@ -328,11 +328,11 @@ const M = {
   },
   subShipping: {
     label: "Subscription Shipping",
-    href: "subscription-shipping/index.html",
+    href: "subscription-shipping/",
   },
   checkoutBuilder: {
     label: "Checkout Builder",
-    href: "checkout-and-payments/checkout-builder/index.html",
+    href: "checkout-and-payments/checkout-builder/",
   },
   checkoutFieldTypes: {
     label: "Checkout Builder Field Types",
@@ -340,7 +340,7 @@ const M = {
   },
   checkoutUseCases: {
     label: "Checkout Builder Use Cases",
-    href: "checkout-and-payments/checkout-builder/use-cases.html",
+    href: "checkout-and-payments/checkout-builder/",
   },
   generalSettings: {
     label: "General Settings",
@@ -356,12 +356,12 @@ const M = {
   },
   retentionAnalytics: {
     label: "Retention Analytics",
-    href: "retention-analytics/index.html",
+    href: "retention-analytics/",
   },
-  coupons: { label: "Coupons", href: "coupons/index.html" },
+  coupons: { label: "Coupons", href: "coupons/" },
   featureManager: {
     label: "Feature Manager",
-    href: "feature-manager/index.html",
+    href: "feature-manager/",
   },
   featureDefine: {
     label: "Defining Product Features",
@@ -375,7 +375,7 @@ const M = {
     label: "Feature Manager Settings",
     href: "feature-manager/feature-manager-settings.html",
   },
-  storeCredit: { label: "Store Credit", href: "store-credit/index.html" },
+  storeCredit: { label: "Store Credit", href: "store-credit/" },
   storeCreditSettings: {
     label: "Store Credit Settings",
     href: "store-credit/store-credit-settings.html",
@@ -394,7 +394,7 @@ const M = {
   },
   manageSubs: {
     label: "Manage Subscriptions",
-    href: "manage-subscriptions/index.html",
+    href: "manage-subscriptions/",
   },
   subOperations: {
     label: "Subscription Operations",
@@ -410,31 +410,31 @@ const M = {
   },
   subNotes: {
     label: "Subscription Notes",
-    href: "subscription-notes/index.html",
+    href: "subscription-notes/",
   },
   loginAsUser: {
     label: "Login as User",
-    href: "login-as-user/index.html",
+    href: "login-as-user/",
   },
   adminBar: {
     label: "Admin Bar Visibility",
-    href: "admin-bar-visibility/index.html",
+    href: "admin-bar-visibility/",
   },
   adminDashAccess: {
     label: "Admin Dashboard Access",
-    href: "admin-dashboard-access/index.html",
+    href: "admin-dashboard-access/",
   },
   wpLogin: {
     label: "WordPress Login Page",
-    href: "wordpress-login-page/index.html",
+    href: "wordpress-login-page/",
   },
   redirectProduct: {
     label: "Redirect Product Page",
-    href: "redirect-product-page/index.html",
+    href: "redirect-product-page/",
   },
   multiLogin: {
-    label: "Multi-Login Prevention",
-    href: "multi-login-prevention/index.html",
+    label: "Login Limit",
+    href: "member-access/login-limit.html",
   },
   toolkitSettings: {
     label: "Toolkit Settings",
@@ -454,39 +454,59 @@ const M = {
   },
   memberAccess: {
     label: "Member Access",
-    href: "member-access/index.html",
+    href: "member-access/",
   },
   accessRules: {
-    label: "Access Rules",
-    href: "member-access/access-rules.html",
+    label: "Member Access Rules",
+    href: "member-access/",
   },
   contentRestriction: {
-    label: "Content Restriction",
-    href: "member-access/content-restriction.html",
+    label: "Content Gate",
+    href: "member-access/content-gate.html",
   },
   commerceBenefit: {
-    label: "Commerce & Benefit Rules",
-    href: "member-access/commerce-and-benefit-rules.html",
+    label: "Ecommerce Rules",
+    href: "member-access/ecommerce.html",
   },
   sessionControls: {
-    label: "Session & Frontend Controls",
-    href: "member-access/session-and-frontend-controls.html",
+    label: "Login Limit",
+    href: "member-access/login-limit.html",
   },
   memberUseCases: {
-    label: "Member Access Use Cases",
-    href: "member-access/use-cases.html",
+    label: "Member Access",
+    href: "member-access/",
+  },
+  urlRules: {
+    label: "URL Rules",
+    href: "member-access/url.html",
+  },
+  postTypes: {
+    label: "Post Type Rules",
+    href: "member-access/post-types.html",
+  },
+  memberDiscounts: {
+    label: "Member Discounts",
+    href: "member-access/discount.html",
+  },
+  memberDownloads: {
+    label: "Member Downloads",
+    href: "member-access/downloads.html",
+  },
+  memberRoleMapping: {
+    label: "Role Mapping",
+    href: "member-access/role-mapping.html",
   },
   shortcodes: {
     label: "Shortcodes",
-    href: "shortcodes/index.html",
+    href: "shortcodes/",
   },
   contentGating: {
     label: "Content-Gating Shortcodes",
     href: "shortcodes/content-gating.html",
   },
   elementorRestrictions: {
-    label: "Elementor Content Restrictions",
-    href: "shortcodes/elementor-content-restrictions.html",
+    label: "Content-Gating Shortcodes",
+    href: "shortcodes/content-gating.html",
   },
   accountShortcodes: {
     label: "Account Shortcodes",
@@ -494,7 +514,7 @@ const M = {
   },
   memberInsight: {
     label: "Member Insight (Manage Members)",
-    href: "member-insight/index.html",
+    href: "member-insight/",
   },
   memberLookup: {
     label: "Member Lookup & Profiles",
@@ -506,7 +526,7 @@ const M = {
   },
   profileBuilder: {
     label: "Profile Builder",
-    href: "profile-builder/index.html",
+    href: "profile-builder/",
   },
   profileForm: {
     label: "Profile Form",
@@ -518,7 +538,7 @@ const M = {
   },
   customerPortal: {
     label: "Customer Portal",
-    href: "customer-portal/index.html",
+    href: "customer-portal/",
   },
   portalPages: {
     label: "Portal Pages",
@@ -532,7 +552,7 @@ const M = {
     label: "Payment & Shipping Actions",
     href: "customer-portal/payment-and-shipping.html",
   },
-  emails: { label: "Emails", href: "emails/index.html" },
+  emails: { label: "Emails", href: "emails/" },
   customerEmails: {
     label: "Customer Emails",
     href: "emails/customer-emails.html",
@@ -541,7 +561,7 @@ const M = {
     label: "Admin Emails",
     href: "emails/admin-emails.html",
   },
-  analytics: { label: "Analytics & Reports", href: "analytics/index.html" },
+  analytics: { label: "Analytics & Reports", href: "analytics/" },
   reportsHub: {
     label: "Reports Hub",
     href: "analytics/reports-hub.html",
@@ -560,7 +580,7 @@ const M = {
   },
   auditsLogs: {
     label: "Audits & Logs",
-    href: "audits-and-logs/index.html",
+    href: "audits-and-logs/",
   },
   activityAudits: {
     label: "Activity Audits",
@@ -572,7 +592,7 @@ const M = {
   },
   gatewayHealth: {
     label: "Gateway Health",
-    href: "gateway-health/index.html",
+    href: "gateway-health/",
   },
 } satisfies Record<string, ManualRef>;
 
@@ -8013,13 +8033,13 @@ export const RECIPES: Recipe[] = [
         title: "Edit your content rule’s archive behavior",
         description:
           "On a Post Type rule (e.g. your premium category), set Archive Behavior to Show with lock.",
-        manual: M.contentRestriction,
+        manual: M.postTypes,
       },
       {
         title: "Set an enticing restriction message",
         description:
           "Use the Message action with a View Plans & Pricing button (the default restriction page includes pricing and login links).",
-        manual: M.contentRestriction,
+        manual: M.postTypes,
       },
     ],
     notes: [
@@ -8048,17 +8068,17 @@ export const RECIPES: Recipe[] = [
     icon: Globe,
     name: "Lock a URL path (with exclusions)",
     cardDescription:
-      "Gate everything under a path like /members/ with a URL rule — and exempt a few public pages.",
+      "Gate everything under a path such as https://example.invalid/members/ with a URL rule — and exempt a few public pages.",
     tier: "Free",
     seoTitle: "Restrict Access by URL Path on WooCommerce",
     metaDescription:
-      "Gate a whole URL path (e.g. /members/) behind a subscription with ArraySubs URL rules, with exclusions for public pages. Exact pattern types and actions inside.",
+      "Gate a whole example URL path behind a subscription with ArraySubs URL rules, with exclusions for public pages. Exact pattern types and actions inside.",
     h1: "Lock down a URL path",
     heroSubtitle:
-      "Protect an entire section by its URL — gate everything under /members/ while leaving a preview or about page public.",
+      "Protect an entire section by its URL — gate everything under https://example.invalid/members/ while leaving a preview or about page public.",
     heroHighlights: ["Prefix match", "Exclude public pages", "Redirect non-members"],
     intro:
-      "When a members area lives under ==one URL path==, gate it by URL instead of page-by-page. A ==URL rule== with a ==Prefix== pattern (e.g. ==/members/==) locks everything beneath it, with ==Exclusions== for any public pages and a ==Redirect== for non-members. This recipe locks a path.",
+      "When a members area lives under ==one URL path==, gate it by URL instead of page-by-page. A ==URL rule== with a ==Prefix== pattern for ==https://example.invalid/members/== locks everything beneath it, with ==Exclusions== for any public pages and a ==Redirect== for non-members. This recipe locks a path.",
     settings: [
       {
         setting: "Rule tab",
@@ -8067,12 +8087,12 @@ export const RECIPES: Recipe[] = [
       },
       {
         setting: "Pattern Type + Pattern",
-        value: "Prefix · /members/",
+        value: "Prefix · members/ (enter with a leading slash)",
         where: "Rule target",
       },
       {
         setting: "Exclusions",
-        value: "e.g. /members/about/, /members/preview/",
+        value: "e.g. members/about/ and members/preview/ (enter with leading slashes)",
         where: "Rule target",
       },
       {
@@ -8101,20 +8121,20 @@ export const RECIPES: Recipe[] = [
       {
         title: "Add a URL rule",
         description:
-          "In Member Access → URL, add a rule, set Pattern Type = Prefix and the Pattern to your path (e.g. /members/).",
-        manual: M.accessRules,
+          "In Member Access → URL, add a rule, set Pattern Type = Prefix, and enter your members path with its required leading slash.",
+        manual: M.urlRules,
       },
       {
         title: "Add exclusions and priority",
         description:
           "List any public sub-paths in Exclusions, and set Priority (1–100, lower runs first) if rules might overlap.",
-        manual: M.accessRules,
+        manual: M.urlRules,
       },
       {
         title: "Choose the action + condition",
         description:
           "Set the action (Redirect to pricing is common) and require Has Active Subscription.",
-        manual: M.contentRestriction,
+        manual: M.urlRules,
       },
     ],
     notes: [
@@ -8143,7 +8163,7 @@ export const RECIPES: Recipe[] = [
     icon: Regex,
     name: "Gate URLs with regex",
     cardDescription:
-      "Match dynamic URL patterns — like /forum/board-12/ or /courses/level-3 — with a regular-expression URL rule.",
+      "Match dynamic URL patterns — like https://example.invalid/forum/board-12/ or https://example.invalid/courses/level-3 — with a regular-expression URL rule.",
     tier: "Free",
     seoTitle: "Regex URL Access Rules on WooCommerce",
     metaDescription:
@@ -8153,7 +8173,7 @@ export const RECIPES: Recipe[] = [
       "For patterned URLs that change — forum boards, numbered levels, dated paths — match them all with one regular expression.",
     heroHighlights: ["Regex pattern", "Matches dynamic paths", "One rule, many URLs"],
     intro:
-      "Some sections have ==dynamic, patterned URLs== — ==/forum/board-12/==, ==/courses/level-3== — that a prefix can’t target precisely. A ==Regex== URL rule matches them all with ==one regular expression==, gating a whole family of paths while leaving public ones (announcements, rules) open. This recipe gates by regex.",
+      "Some sections have ==dynamic, patterned URLs== — ==https://example.invalid/forum/board-12/==, ==https://example.invalid/courses/level-3== — that a prefix can’t target precisely. A ==Regex== URL rule matches them all with ==one regular expression==, gating a whole family of paths while leaving public ones (announcements, rules) open. This recipe gates by regex.",
     settings: [
       {
         setting: "Pattern Type",
@@ -8192,19 +8212,19 @@ export const RECIPES: Recipe[] = [
         title: "Add a URL rule with Regex",
         description:
           "In Member Access → URL, add a rule and set Pattern Type = Regex.",
-        manual: M.accessRules,
+        manual: M.urlRules,
       },
       {
         title: "Write the pattern",
         description:
           "Enter a regex such as ^/forum/board-[0-9]+/ to match all numbered boards.",
-        manual: M.accessRules,
+        manual: M.urlRules,
       },
       {
         title: "Set action and priority",
         description:
           "Choose an action (e.g. Login) and a Priority so this rule evaluates before broader ones.",
-        manual: M.contentRestriction,
+        manual: M.urlRules,
       },
     ],
     notes: [
@@ -8624,13 +8644,13 @@ export const RECIPES: Recipe[] = [
         title: "Create a Download rule",
         description:
           "In Member Access → Downloads, add a rule requiring the plan that unlocks the files.",
-        manual: M.commerceBenefit,
+        manual: M.memberDownloads,
       },
       {
         title: "Add your files",
         description:
           "Add each file with a display name from the Media Library; reorder by drag-and-drop. They appear on the member’s My Account → Downloads.",
-        manual: M.commerceBenefit,
+        manual: M.memberDownloads,
       },
     ],
     notes: [
@@ -8708,13 +8728,13 @@ export const RECIPES: Recipe[] = [
         title: "Open a Download rule",
         description:
           "In Member Access → Downloads, edit (or create) the rule whose files you want to meter.",
-        manual: M.commerceBenefit,
+        manual: M.memberDownloads,
       },
       {
         title: "Set the limit and period",
         description:
           "Configure the download limit and its period (day/week/month/year/lifetime), and choose whether it resets on renewal.",
-        manual: M.commerceBenefit,
+        manual: M.memberDownloads,
       },
     ],
     notes: [
@@ -9044,13 +9064,13 @@ export const RECIPES: Recipe[] = [
         title: "Create a Download rule per stage",
         description:
           "In Member Access → Downloads, add a rule per stage with that stage’s files, all requiring the program subscription.",
-        manual: M.commerceBenefit,
+        manual: M.memberDownloads,
       },
       {
         title: "Set staged delays",
         description:
           "On each rule’s Schedule, set increasing delays (0, 14 Days, 28 Days, …) measured from subscription start.",
-        manual: M.contentRestriction,
+        manual: M.memberDownloads,
       },
     ],
     notes: [

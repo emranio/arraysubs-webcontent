@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 /**
  * The ArraySubs landing page lives at `/product/arraysubs/`. The site root
@@ -26,5 +26,7 @@ export default async function RootPage({
 
   const queryString = params.toString();
 
-  redirect(queryString ? `/product/arraysubs/?${queryString}` : "/product/arraysubs/");
+  permanentRedirect(
+    queryString ? `/product/arraysubs/?${queryString}` : "/product/arraysubs/",
+  );
 }

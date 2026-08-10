@@ -22,6 +22,19 @@ const nextConfig: NextConfig = {
       },
       {
         source:
+          "/product/arraysubs/resources/retention-and-churn/voluntary-vs-involuntary-churn/",
+        destination: "/retention-and-churn/voluntary-vs-involuntary-churn/",
+        statusCode: 301,
+      },
+      {
+        source:
+          "/product/arraysubs/resources/subscription-foundations/woocommerce-subscription-product-types/",
+        destination:
+          "/subscription-foundations/woocommerce-subscription-product-types/",
+        statusCode: 301,
+      },
+      {
+        source:
           "/deals/arraysubs/resources/membership-strategy/woocommerce-content-restriction-strategy/",
         destination:
           "/membership-strategy/woocommerce-content-restriction-strategy/",
@@ -35,8 +48,21 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
       {
+        source:
+          "/deals/arraysubs/resources/retention-and-churn/voluntary-vs-involuntary-churn/",
+        destination: "/retention-and-churn/voluntary-vs-involuntary-churn/",
+        statusCode: 301,
+      },
+      {
+        source:
+          "/deals/arraysubs/resources/subscription-foundations/woocommerce-subscription-product-types/",
+        destination:
+          "/subscription-foundations/woocommerce-subscription-product-types/",
+        statusCode: 301,
+      },
+      {
         source: "/deals/:path*",
-        destination: "/product/:path*",
+        destination: "/product/:path*/",
         statusCode: 301,
       },
       {
@@ -58,6 +84,11 @@ const nextConfig: NextConfig = {
       {
         source: "/arraysubs/",
         destination: "/product/arraysubs/",
+        statusCode: 301,
+      },
+      {
+        source: "/pricing/",
+        destination: "/product/arraysubs/pricing/",
         statusCode: 301,
       },
       {

@@ -3,8 +3,8 @@ title: "URL-Based Content Restriction: Prefixes, Wildcards, and Regex"
 meta_description: "Use exact, prefix, contains, and regex URL restrictions safely in WordPress, with ArraySubs matching semantics, priority, exclusions, and a QA matrix."
 focus_keyword: "URL based content restriction WordPress"
 published: "2026-02-26"
-updated: "2026-04-24"
-last_verified: "2026-04-24"
+updated: "2026-08-10"
+last_verified: "2026-08-10"
 author: "Emran"
 author_affiliation: "ArrayHash"
 ---
@@ -27,7 +27,7 @@ The final `*` displayed with a prefix is not a general wildcard language. It is 
 
 URL rules fit resources whose access boundary follows a stable route rather than a WordPress post type or product record. Examples include:
 
-- `/academy/` and all lesson paths below it;
+- `https://example.invalid/academy/` and all lesson paths below it;
 - a custom application route rendered outside a normal post query;
 - a legacy premium directory with mixed content types;
 - a small set of structured course URLs;
@@ -41,12 +41,14 @@ Prefer post-type rules when the boundary is inherently a post, course, product, 
 
 Current `UrlRestrictor` behavior reads `REQUEST_URI`, removes the query string, and ensures a leading slash.
 
+The examples below use the reserved `example.invalid` host so crawlers do not resolve instructional paths against ArrayHash. ArraySubs matches only the path portion.
+
 Examples:
 
 ```text
-/academy/lesson-1?utm_source=email  →  /academy/lesson-1
-/academy/lesson-1/                  →  /academy/lesson-1/
-https://example.com/academy         →  scheme and host are not pattern inputs
+https://example.invalid/academy/lesson-1?utm_source=email  →  the leading-slash academy/lesson-1 path
+https://example.invalid/academy/lesson-1/                  →  the leading-slash academy/lesson-1/ path
+https://example.invalid/academy                            →  scheme and host are not pattern inputs
 ```
 
 ![Path tiles show a route and its query tag, then visibly drop the query before the restriction matcher.](/blogs/url-based-content-restriction-prefixes-wildcards-and-regex/query-string-drop-tiles.png)
@@ -57,9 +59,9 @@ The trailing slash remains meaningful. So do path case, percent-encoding, WordPr
 
 | Mode | Current code behavior | Case | Example match | Important non-match |
 | --- | --- | --- | --- | --- |
-| Exact | current path equals pattern | sensitive | `/academy` = `/academy` | `/academy/`, `/Academy`, `/academy/lesson` |
-| Starts with / prefix | remove final `*`, then check position zero | sensitive | `/academy*` matches `/academy/lesson` | `/Academy/lesson` |
-| Contains | path includes the stored text | sensitive | `members` matches `/pro/members/library` | `Members` |
+| Exact | current path equals pattern | sensitive | `academy` path equals its exact pattern | trailing-slash, uppercase, and child variants |
+| Starts with / prefix | remove final `*`, then check position zero | sensitive | `/academy*` matches the example academy child path | the uppercase Academy child path |
+| Contains | path includes the stored text | sensitive | `members` matches the example members library path | `Members` |
 | Regex | PHP PCRE wrapped with `~...~i` | insensitive | `^/academy/(lesson|course)-[0-9]+/?$` | invalid PCRE returns no match |
 
 The best rule uses the least expressive matcher that fully represents the policy.
@@ -69,29 +71,29 @@ The best rule uses the least expressive matcher that fully represents the policy
 Choose exact for one canonical route. Be deliberate about the slash:
 
 ```text
-/academy
+https://example.invalid/academy
 ```
 
 does not equal:
 
 ```text
-/academy/
+https://example.invalid/academy/
 ```
 
 If both are publicly reachable before canonical redirect, test both.
 
 ### Prefix (starts with)
 
-Choose prefix for a route family. In current ArraySubs behavior, `/academy*` becomes the prefix `/academy` and matches both `/academy` and `/academy/lesson-1`.
+Choose prefix for a route family. In current ArraySubs behavior, `/academy*` becomes the academy prefix (with a leading slash) and matches both the example academy base URL and its `lesson-1` child URL.
 
-It also matches `/academyplus`. Prefix comparison is not segment-aware. A safer design may use:
+It also matches `https://example.invalid/academyplus`. Prefix comparison is not segment-aware. A safer design may use:
 
-- exact `/academy` for the base;
-- prefix `/academy/` for descendants.
+- an exact academy-base rule;
+- the academy prefix ending in a slash for descendants.
 
 ### Contains
 
-Contains can cover stable tokens in several unrelated-looking paths, but it can overmatch. The string `member` may appear in `/membership`, `/remembered-items`, and `/team/member-directory`. Inventory real URLs before choosing it.
+Contains can cover stable tokens in several unrelated-looking paths, but it can overmatch. The string `member` may appear in `https://example.invalid/membership`, `https://example.invalid/remembered-items`, and `https://example.invalid/team/member-directory`. Inventory real URLs before choosing it.
 
 ### Regex
 
@@ -110,7 +112,7 @@ Current UI/backend inspection did not reveal a dedicated invalid-regex validator
 In prefix mode, a final star is syntactic sugar:
 
 ```text
-/academy*  → prefix /academy
+/academy*  → academy prefix with a leading slash
 ```
 
 A middle star is not a flexible segment match:
@@ -137,25 +139,25 @@ A broad priority-5 rule can shadow a specific priority-20 exception. “Higher p
 
 ![A small specific exception card sits physically before a broad directory card, showing first-match precedence without a chart.](/blogs/url-based-content-restriction-prefixes-wildcards-and-regex/priority-card-stack.png)
 
-Exclusions are always prefix checks. If `/academy/free` is excluded, its children are excluded too. Treat exclusions as policy, not merely a debugging patch, and document why each public path must bypass the broad rule.
+Exclusions are always prefix checks. If the example academy `free` path is excluded, its children are excluded too. Treat exclusions as policy, not merely a debugging patch, and document why each public path must bypass the broad rule.
 
 ## Worked example: protect an academy with a public preview
 
 Option A uses a specific first rule:
 
-- priority 5: exact `/academy/free-preview`, public policy;
-- priority 10: prefix `/academy/`, active Academy subscription, redirect denied users to `/pricing`;
-- optional exact `/academy` rule if the base route is separate.
+- priority 5: exact `https://example.invalid/academy/free-preview`, public policy;
+- priority 10: academy prefix ending in a slash, active Academy subscription, redirect denied users to `https://example.invalid/pricing`;
+- optional exact academy-base rule if the base route is separate.
 
 Option B uses the public preview as an exclusion from the membership rule. Choose the design that makes operational intent easiest to audit.
 
 | Request | Rule encountered | Expected result |
 | --- | --- | --- |
-| `/academy/free-preview` | exact exception first | public/allowed |
-| `/academy/lesson-1` | membership prefix | member allowed; denied visitor redirected |
-| `/academy/lesson-1?utm_source=email` | same normalized path | same result |
-| `/Academy/lesson-1` | no case-sensitive prefix match | falls through unless another rule covers it |
-| `/academyplus` | prefix `/academy` also matches | overmatch; use segment-aware design |
+| `https://example.invalid/academy/free-preview` | exact exception first | public/allowed |
+| `https://example.invalid/academy/lesson-1` | membership prefix | member allowed; denied visitor redirected |
+| `https://example.invalid/academy/lesson-1?utm_source=email` | same normalized path | same result |
+| `https://example.invalid/Academy/lesson-1` | no case-sensitive prefix match | falls through unless another rule covers it |
+| `https://example.invalid/academyplus` | the academy prefix also matches | overmatch; use segment-aware design |
 
 The table should become a real expected-results sheet with user personas, not remain an article example.
 
@@ -170,7 +172,7 @@ Review the table in four passes:
 3. **Shadowing:** a broad early rule does not decide before a specific later rule can run.
 4. **Escape:** login, password reset, pricing, checkout, My Account, Pay Now, support, privacy, and redirect destinations remain reachable.
 
-Add a representative URL for every row and at least one deliberate non-match. For a prefix such as `/academy/`, test `/academy`, `/academy/lesson`, `/academyplus`, localized variants, and the destination used when access fails. For regex, keep the reviewed expression and adversarial test path in the same record.
+Add a representative URL for every row and at least one deliberate non-match. For an academy prefix ending in a slash, test the example academy base, lesson, and similarly prefixed `academyplus` URLs, localized variants, and the destination used when access fails. For regex, keep the reviewed expression and adversarial test path in the same record.
 
 Treat the table as release evidence. A rule edit is incomplete until the ordered set and expected-results sheet are both updated.
 
@@ -201,7 +203,7 @@ Current ArraySubs URL rules can:
 - return HTTP 403;
 - replace the page content with a restriction message.
 
-WordPress [`wp_safe_redirect()`](https://developer.wordpress.org/reference/functions/wp_safe_redirect/) validates redirect hosts; it does not prevent a policy loop. Do not protect `/premium` and redirect denied users to `/pricing` if `/pricing` is caught by the same rule.
+WordPress [`wp_safe_redirect()`](https://developer.wordpress.org/reference/functions/wp_safe_redirect/) validates redirect hosts; it does not prevent a policy loop. Do not protect the example premium path and redirect denied users to the example pricing path if pricing is caught by the same rule.
 
 ![Two browser-door arrows form a redirect loop, while a corrected public pricing exit breaks the cycle.](/blogs/url-based-content-restriction-prefixes-wildcards-and-regex/redirect-loop-doors.png)
 
@@ -300,3 +302,4 @@ No. Protect the file endpoint and underlying object separately.
 - **Commercial disclosure:** ArraySubs is an ArrayHash product. Examples are sanitized patterns, not universal production rules.
 - **Limitations:** Web-server rewrites, localization, proxies, caches, WordPress permalinks, and custom routing can alter observed paths. Test the deployed stack.
 - **July 16, 2026:** First publication. Verified normalization, matcher semantics, trailing-star behavior, exclusions, priority, denied actions, regex caveats, and QA matrix.
+- **August 10, 2026:** Replaced crawlable relative demonstration URLs with reserved `example.invalid` examples so search engines do not treat instructional paths as ArrayHash pages.
