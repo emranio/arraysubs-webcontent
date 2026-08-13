@@ -11,6 +11,7 @@ import {
   COOKIE_CONSENT_EVENT,
   COOKIE_CONSENT_MAX_AGE,
   COOKIE_CONSENT_NAME,
+  COOKIE_CONSENT_UPDATED_EVENT,
   COOKIE_CONSENT_VERSION,
   RETARGETING_COOKIE_NAME,
   RETARGETING_ID_LENGTH,
@@ -31,6 +32,10 @@ type CookieConsentState = {
 
 type NavigatorWithGpc = Navigator & {
   globalPrivacyControl?: boolean;
+};
+
+type ConsentInteractionWindow = Window & {
+  consent_interacted?: boolean;
 };
 
 const focusableSelector = [
@@ -248,8 +253,9 @@ export function CookieConsent() {
     setConsent(next);
     setShowPreferences(false);
 
+    (window as ConsentInteractionWindow).consent_interacted = true;
     window.dispatchEvent(
-      new CustomEvent("arraysubs:cookie-consent-updated", {
+      new CustomEvent(COOKIE_CONSENT_UPDATED_EVENT, {
         detail: next,
       }),
     );
