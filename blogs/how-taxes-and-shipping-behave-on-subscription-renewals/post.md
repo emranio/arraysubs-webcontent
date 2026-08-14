@@ -5,7 +5,7 @@ focus_keyword: "WooCommerce subscription renewal tax shipping"
 published: "2026-06-14"
 updated: "2026-07-01"
 last_verified: "2026-07-01"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

@@ -5,7 +5,7 @@ focus_keyword: "WooCommerce subscription product page"
 published: "2026-04-16"
 updated: "2026-04-29"
 last_verified: "2026-04-29"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

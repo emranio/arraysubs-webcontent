@@ -5,7 +5,7 @@ focus_keyword: "lifetime deal vs subscription"
 published: "2026-02-18"
 updated: "2026-04-11"
 last_verified: "2026-04-11"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

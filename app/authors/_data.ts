@@ -24,9 +24,12 @@ export type AuthorWork = {
 
 export type Author = {
   slug: string;
+  /** Canonical real name used in bylines and Person schema. */
   name: string;
-  /** Stable public handle used as the schema alternate name. */
-  alternateName?: string;
+  /** Other public names or handles that identify the same person. */
+  alternateNames?: string[];
+  /** Public handle displayed on the profile without the leading @. */
+  handle?: string;
   /** ISO 8601 timestamps for the dedicated author profile. */
   profileCreatedAt: string;
   profileModifiedAt: string;
@@ -39,9 +42,11 @@ export type Author = {
   voice: "first" | "third";
   /** One-line summary shown under the name, written in `voice`. */
   headline: string;
+  /** Search and social description for the dedicated profile page. */
+  metaDescription: string;
   /**
    * Optional third-person entity statement for JSON-LD `Person.description`.
-   * Keeps structured data entity-clear ("Emran is …") even when the visible
+   * Keeps structured data entity-clear ("Al Emran is …") even when the visible
    * bio is first-person. Falls back to `headline` when omitted.
    */
   schemaDescription?: string;
@@ -66,26 +71,29 @@ export type Author = {
 };
 
 export const AUTHOR_BASE = "/authors/";
-export const DEFAULT_AUTHOR_SLUG = "emran";
+export const DEFAULT_AUTHOR_SLUG = "emranio";
 
 export const AUTHORS: Record<string, Author> = {
-  emran: {
-    slug: "emran",
-    name: "Emran",
-    alternateName: "emranio",
+  emranio: {
+    slug: "emranio",
+    name: "Al Emran",
+    alternateNames: ["Emran", "emranio"],
+    handle: "emranio",
     profileCreatedAt: "2026-07-23T17:04:34+06:00",
-    profileModifiedAt: "2026-08-07T19:47:10+06:00",
+    profileModifiedAt: "2026-08-14T22:12:24+06:00",
     jobTitle: "Founder & Lead Engineer, ArrayHash",
     voice: "first",
     headline:
-      "I founded ArrayHash and develop ArraySubs. 12+ years building WordPress, WooCommerce, and SaaS platforms.",
+      "I founded ArrayHash and lead engineering for ArraySubs, drawing on 12+ years building WordPress, WooCommerce, subscription, and SaaS platforms.",
+    metaDescription:
+      "Meet Al Emran, founder of ArrayHash and lead engineer of ArraySubs. Explore his WordPress and WooCommerce experience, verified profiles, work, and guides.",
     schemaDescription:
-      "Emran is the founder and lead engineer of ArrayHash, with 12+ years building WordPress, WooCommerce, and SaaS platforms.",
+      "Al Emran is the founder of ArrayHash and lead engineer of ArraySubs, with 12+ years building WordPress, WooCommerce, subscription, and SaaS platforms.",
     image: "/authors/emran.webp",
     imageWidth: 512,
     imageHeight: 512,
     bio: [
-      "I'm Emran — I founded ArrayHash and I'm the lead engineer of the plugins here. I've spent 12+ years building web platforms, specializing in system design and architecture across WordPress, WooCommerce, and SaaS products. I previously led big products ElementsKit, GetGenie, ShopEngine in Wpmet, and worked in Themewinter, XpeedStudio, and Bdthemes. Before ArraySubs I led engineering as CTO at multiple SaaS and WordPress product companies, including 5+ years scaling subscription and WordPress platforms.",
+      "I'm Al Emran, known online as Emran and @emranio. I founded ArrayHash and I'm the lead engineer of ArraySubs. I've spent 12+ years building web platforms, specializing in system design and architecture across WordPress, WooCommerce, and SaaS products. I previously led major WordPress products including ElementsKit, GetGenie, and ShopEngine at Wpmet, and worked at ThemeWinter, XpeedStudio, and BdThemes. Before ArraySubs, I led engineering as CTO at multiple SaaS and WordPress product companies, including more than five years scaling subscription and WordPress platforms.",
       "Every guide in this library comes from first-hand engineering of the exact subsystems it describes — the subscription data model, renewal scheduling, off-session Stripe payments, failed-payment recovery, and membership access control. I designed and coded these systems, so the guidance reflects how the software actually behaves rather than a summary of third-party articles.",
       "I'm a registered WordPress.org plugin developer (member since 2020) and the author and lead engineer of ArraySubs, shipping frequent releases to its public repository. ",
       "I hold a B.Sc in Computer Science & Engineering from Daffodil International University and work across PHP, WordPress, Node.js, React/Next.js, and AWS. I also maintain open-source WordPress and server tooling on GitHub.",
@@ -138,6 +146,7 @@ export const AUTHORS: Record<string, Author> = {
 };
 
 export const AUTHOR_LIST: Author[] = Object.values(AUTHORS);
+export const PRIMARY_AUTHOR = AUTHORS[DEFAULT_AUTHOR_SLUG];
 
 export function getAuthor(slug: string): Author | undefined {
   return AUTHORS[slug];
@@ -145,7 +154,15 @@ export function getAuthor(slug: string): Author | undefined {
 
 /** Resolve a resource article's `author` string to an Author record. */
 export function getAuthorByName(name: string): Author {
-  const match = AUTHOR_LIST.find((author) => author.name === name);
+  const normalizedName = name.toLocaleLowerCase("en-US");
+  const match = AUTHOR_LIST.find(
+    (author) =>
+      author.name.toLocaleLowerCase("en-US") === normalizedName ||
+      author.alternateNames?.some(
+        (alternateName) =>
+          alternateName.toLocaleLowerCase("en-US") === normalizedName,
+      ),
+  );
   return match ?? AUTHORS[DEFAULT_AUTHOR_SLUG];
 }
 
@@ -158,9 +175,11 @@ export function authorSchemaInput(author: Author): AuthorSchemaInput {
   return {
     name: author.name,
     identifier: author.slug,
-    alternateName: author.alternateName,
+    alternateName: author.alternateNames,
     path: getAuthorPath(author),
     image: author.image,
+    imageWidth: author.imageWidth,
+    imageHeight: author.imageHeight,
     jobTitle: author.jobTitle,
     description: author.schemaDescription ?? author.headline,
     sameAs: author.profiles.map((profile) => profile.url),

@@ -81,6 +81,10 @@ const nextConfig: NextConfig = {
       permanentRedirect("/deals/arraysubs/resources", "/articles/"),
       permanentRedirect("/product/arraysubs/resources", "/articles/"),
 
+      // Preserve the established author URL while moving to the verified
+      // public username used across the author's external profiles.
+      permanentRedirect("/authors/emran", "/authors/emranio/"),
+
       // Checkout moved out of the product namespace before the main migration.
       permanentRedirect(
         "/deals/arraysubs/checkout/:planId",

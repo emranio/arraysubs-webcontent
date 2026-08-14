@@ -12,6 +12,10 @@ type SeoInput = {
   follow?: boolean;
   /** Absolute or root-relative OG image. */
   ogImage?: string;
+  /** Actual social image dimensions when they differ from the page default. */
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogImageAlt?: string;
   type?: "website" | "article";
   /** ISO dates used by article Open Graph metadata. */
   publishedTime?: string;
@@ -30,6 +34,9 @@ export function createMetadata(input: SeoInput = {}): Metadata {
     noindex = false,
     follow = !noindex,
     ogImage = site.ogImage,
+    ogImageWidth,
+    ogImageHeight,
+    ogImageAlt,
     type = "website",
     publishedTime,
     modifiedTime,
@@ -64,7 +71,14 @@ export function createMetadata(input: SeoInput = {}): Metadata {
             locale: site.locale,
             publishedTime,
             modifiedTime,
-            images: [{ url: ogImage, width: 1672, height: 941, alt: resolvedTitle }],
+            images: [
+              {
+                url: ogImage,
+                width: ogImageWidth ?? 1672,
+                height: ogImageHeight ?? 941,
+                alt: ogImageAlt ?? resolvedTitle,
+              },
+            ],
           }
         : {
             type: "website",
@@ -73,7 +87,14 @@ export function createMetadata(input: SeoInput = {}): Metadata {
             url: canonical,
             siteName: site.brand,
             locale: site.locale,
-            images: [{ url: ogImage, width: 1200, height: 630, alt: resolvedTitle }],
+            images: [
+              {
+                url: ogImage,
+                width: ogImageWidth ?? 1200,
+                height: ogImageHeight ?? 630,
+                alt: ogImageAlt ?? resolvedTitle,
+              },
+            ],
           },
     twitter: {
       card: "summary_large_image",
@@ -89,9 +110,12 @@ export function createMetadata(input: SeoInput = {}): Metadata {
    Pass the result to the <JsonLd /> component.
    ========================================================================== */
 
-export function organizationSchema() {
+export function organizationSchema(
+  founder?: Pick<AuthorSchemaInput, "name" | "path">,
+) {
   const organizationId = `${absoluteUrl("/")}#organization`;
   const logoId = `${absoluteUrl("/")}#logo`;
+  const founderUrl = founder ? absoluteUrl(founder.path) : undefined;
 
   return {
     "@context": "https://schema.org",
@@ -109,6 +133,16 @@ export function organizationSchema() {
       height: 120,
     },
     brand: { "@type": "Brand", name: site.brand },
+    ...(founder && founderUrl
+      ? {
+          founder: {
+            "@type": "Person",
+            "@id": `${founderUrl}#person`,
+            name: founder.name,
+            url: founderUrl,
+          },
+        }
+      : {}),
     sameAs: [...site.sameAs],
     contactPoint: {
       "@type": "ContactPoint",
@@ -190,11 +224,13 @@ export type AuthorSchemaInput = {
   /** Stable site-local identifier for the author. */
   identifier: string;
   /** Public handle or alternate identity, when applicable. */
-  alternateName?: string;
+  alternateName?: string[];
   /** Canonical author-page path beginning with "/". */
   path: string;
   /** Headshot path or absolute URL. */
   image: string;
+  imageWidth: number;
+  imageHeight: number;
   jobTitle: string;
   /** One-line factual summary of the person. */
   description: string;
@@ -223,6 +259,8 @@ export type ProfilePageActivityInput = {
  */
 export function authorPersonSchema(author: AuthorSchemaInput) {
   const url = absoluteUrl(author.path);
+  const imageUrl = absoluteUrl(author.image);
+  const imageId = `${url}#profile-image`;
   const organizationId = `${absoluteUrl("/")}#organization`;
 
   return {
@@ -234,7 +272,15 @@ export function authorPersonSchema(author: AuthorSchemaInput) {
       ? { alternateName: author.alternateName }
       : {}),
     url,
-    image: absoluteUrl(author.image),
+    image: {
+      "@type": "ImageObject",
+      "@id": imageId,
+      url: imageUrl,
+      contentUrl: imageUrl,
+      width: author.imageWidth,
+      height: author.imageHeight,
+      caption: `${author.name}, ${author.jobTitle}`,
+    },
     jobTitle: author.jobTitle,
     description: author.description,
     worksFor: { "@id": organizationId },
@@ -258,9 +304,11 @@ export function authorEntitySchema(author: AuthorSchemaInput) {
 export function profilePageSchema(
   author: AuthorSchemaInput,
   activity: ProfilePageActivityInput[] = [],
+  publishedArticleCount?: number,
 ) {
   const url = absoluteUrl(author.path);
   const personId = `${url}#person`;
+  const person = authorPersonSchema(author);
 
   return {
     "@context": "https://schema.org",
@@ -268,11 +316,24 @@ export function profilePageSchema(
     "@id": `${url}#profilepage`,
     url,
     name: `${author.name} — Author profile`,
+    description: author.description,
     dateCreated: author.profileCreatedAt,
     dateModified: author.profileModifiedAt,
     isPartOf: { "@id": `${absoluteUrl("/")}#website` },
     publisher: { "@id": `${absoluteUrl("/")}#organization` },
-    mainEntity: authorPersonSchema(author),
+    primaryImageOfPage: { "@id": `${url}#profile-image` },
+    mainEntity: {
+      ...person,
+      ...(publishedArticleCount !== undefined
+        ? {
+            agentInteractionStatistic: {
+              "@type": "InteractionCounter",
+              interactionType: "https://schema.org/WriteAction",
+              userInteractionCount: publishedArticleCount,
+            },
+          }
+        : {}),
+    },
     ...(activity.length
       ? {
           hasPart: activity.map((item) => ({

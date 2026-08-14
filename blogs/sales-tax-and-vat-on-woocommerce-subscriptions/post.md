@@ -5,7 +5,7 @@ focus_keyword: "sales tax and VAT on WooCommerce subscriptions"
 published: "2026-01-31"
 updated: "2026-06-25"
 last_verified: "2026-06-25"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

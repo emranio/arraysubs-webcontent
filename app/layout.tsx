@@ -3,6 +3,10 @@ import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { absoluteUrl, site } from "@/lib/site";
+import {
+  PRIMARY_AUTHOR,
+  authorSchemaInput,
+} from "@/app/authors/_data";
 import { GOAFFPRO_LOADER_URL } from "@/lib/goaffpro";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
@@ -26,6 +30,8 @@ const fontSans = Funnel_Sans({
   variable: "--font-funnel-sans",
   display: "swap",
 });
+
+const primaryAuthorSchema = authorSchemaInput(PRIMARY_AUTHOR);
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -99,7 +105,9 @@ export default function RootLayout({
           <CookieConsent />
           <GoogleTagGate />
 
-          <JsonLd data={[organizationSchema(), websiteSchema()]} />
+          <JsonLd
+            data={[organizationSchema(primaryAuthorSchema), websiteSchema()]}
+          />
         </div>
 
         <Script

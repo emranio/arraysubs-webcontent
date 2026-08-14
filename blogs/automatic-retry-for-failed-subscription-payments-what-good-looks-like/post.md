@@ -5,7 +5,7 @@ focus_keyword: "automatic retry failed subscription payments"
 published: "2026-03-21"
 updated: "2026-04-05"
 last_verified: "2026-04-05"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -302,7 +302,7 @@ Do not assume it does. Verify that the paid order, subscription status, next pay
 
 ## Author, technical review, and test environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
 
 
 **Verification environment:** Source review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current official WooCommerce, Stripe, PayPal, Paddle, and PCI SSC documentation. No live decline or scheduler-race test was performed for this article.

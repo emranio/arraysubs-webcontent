@@ -5,7 +5,7 @@ focus_keyword: "monthly vs annual subscription plans WooCommerce"
 published: "2026-06-03"
 updated: "2026-06-15"
 last_verified: "2026-06-15"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

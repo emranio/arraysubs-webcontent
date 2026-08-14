@@ -68,11 +68,14 @@ export async function generateMetadata({
   return createMetadata({
     title:
       page > 1
-        ? `${author.name} — ${author.jobTitle} — Page ${page}`
-        : `${author.name} — ${author.jobTitle}`,
-    description: author.headline,
+        ? `${author.name} — WordPress & WooCommerce Engineer — Page ${page}`
+        : `${author.name} — WordPress & WooCommerce Engineer`,
+    description: author.metaDescription,
     path: page > 1 ? `${authorPath}?page=${page}` : authorPath,
     ogImage: author.image,
+    ogImageWidth: author.imageWidth,
+    ogImageHeight: author.imageHeight,
+    ogImageAlt: `Portrait of ${author.name}`,
   });
 }
 
@@ -174,6 +177,11 @@ export default async function AuthorPage({
                     </p>
                   ))}
                 </div>
+                {author.handle ? (
+                  <p className="mt-5 text-sm font-semibold text-primary">
+                    Public handle: @{author.handle}
+                  </p>
+                ) : null}
               </section>
 
               <section aria-labelledby="topics-title" className="mt-12">
@@ -405,6 +413,7 @@ export default async function AuthorPage({
                 datePublished: article.publishedAt,
                 dateModified: article.updatedAt,
               })),
+              articles.length,
             ),
           ]}
         />

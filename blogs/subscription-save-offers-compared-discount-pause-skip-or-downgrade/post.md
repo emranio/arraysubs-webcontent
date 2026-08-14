@@ -6,7 +6,7 @@ focus_keyphrase: "subscription save offers"
 published: "2026-01-26"
 updated: "2026-06-30"
 last_verified: "2026-06-30"
-author: "Emran"
+author: "Al Emran"
 ---
 
 # Subscription Save Offers Compared: Discount, Pause, Skip, or Downgrade

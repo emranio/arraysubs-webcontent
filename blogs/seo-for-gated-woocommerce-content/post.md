@@ -5,7 +5,7 @@ focus_keyword: "SEO for gated content WooCommerce"
 published: "2026-04-19"
 updated: "2026-06-16"
 last_verified: "2026-06-16"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -234,7 +234,7 @@ A canonical consolidates duplicate URL signals; it does not grant crawler access
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce content, membership, and technical SEO.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce content, membership, and technical SEO.
 
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current Google Search documentation. No Search Console property or live cache configuration was changed.

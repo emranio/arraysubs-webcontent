@@ -5,7 +5,7 @@ focus_keyword: "one time purchase and subscription same product"
 published: "2026-07-05"
 updated: "2026-07-16"
 last_verified: "2026-07-16"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

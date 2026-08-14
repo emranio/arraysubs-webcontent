@@ -5,7 +5,7 @@ focus_keyword: "expired card subscription recovery"
 published: "2026-03-09"
 updated: "2026-05-28"
 last_verified: "2026-05-28"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -252,7 +252,7 @@ A verified successful payment on the exact renewal plus a paid order, intended s
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
 
 
 **Verification environment:** Source and UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current official WooCommerce, Stripe, PayPal, Paddle, and PCI SSC documentation. No real card was allowed to expire and no live gateway recovery was executed.

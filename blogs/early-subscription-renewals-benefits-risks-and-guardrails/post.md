@@ -5,7 +5,7 @@ focus_keyword: "early subscription renewal"
 published: "2026-06-16"
 updated: "2026-06-23"
 last_verified: "2026-06-23"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

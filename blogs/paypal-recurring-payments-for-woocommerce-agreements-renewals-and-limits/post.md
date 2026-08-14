@@ -5,7 +5,7 @@ focus_keyword: "PayPal recurring payments WooCommerce"
 published: "2026-04-04"
 updated: "2026-07-03"
 last_verified: "2026-07-03"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -532,7 +532,7 @@ That honest boundary protects customers from duplicate collection and merchants 
 
 ## Verification scope, limitations, and update log
 
-This guide was written and fact-checked by Emran at ArrayHash. Verification during the latest update combined ArraySubs Free and Pro source inspection, current PayPal and WooCommerce documentation, and fresh staging captures of the PayPal settings, WooCommerce provider list, and ArraySubs Gateway Health screen.
+This guide was written and fact-checked by Al Emran at ArrayHash. Verification during the latest update combined ArraySubs Free and Pro source inspection, current PayPal and WooCommerce documentation, and fresh staging captures of the PayPal settings, WooCommerce provider list, and ArraySubs Gateway Health screen.
 
 The staging pass verified configuration surfaces, installed versions, gateway visibility, capability labels, the webhook URL display, and the event-log interface. It did **not** enter PayPal credentials, enable the gateway, create a sandbox subscription, approve a buyer agreement, receive a PayPal-originated webhook, force a retry, revise a plan, refund a sale, open a dispute, or prove Checkout Blocks compatibility. The article treats those as launch tests and does not convert source-level implementation observations into claims of completed payment behavior.
 

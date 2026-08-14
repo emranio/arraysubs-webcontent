@@ -5,7 +5,7 @@ focus_keyword: "WooCommerce recurring coupon strategy"
 published: "2026-01-31"
 updated: "2026-06-14"
 last_verified: "2026-06-14"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

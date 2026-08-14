@@ -5,7 +5,7 @@ focus_keyword: "subscription proration methods"
 published: "2026-03-04"
 updated: "2026-06-03"
 last_verified: "2026-06-03"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

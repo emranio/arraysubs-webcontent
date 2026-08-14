@@ -3,6 +3,7 @@ import { Mail } from "lucide-react";
 import { createMetadata } from "@/lib/seo";
 import { Button, PageHero } from "@/components/ui";
 import { site } from "@/lib/site";
+import { PRIMARY_AUTHOR, getAuthorPath } from "@/app/authors/_data";
 import {
   InlineLink,
   PolicyBody,
@@ -15,7 +16,7 @@ import {
 } from "../_components";
 
 const EDITORIAL_EFFECTIVE_DATE = "July 23, 2026";
-const EDITORIAL_REVIEWED_DATE = "July 23, 2026";
+const EDITORIAL_REVIEWED_DATE = "August 14, 2026";
 
 export const metadata: Metadata = createMetadata({
   title: "Editorial Standards",
@@ -39,7 +40,7 @@ export default function EditorialStandardsPage() {
         title="Editorial Standards"
         subtitle="ArrayHash is a WordPress plugin company, not an independent news or magazine publisher. These standards explain how we create and maintain technical articles for ArraySubs today and future ArrayHash products."
         highlights={[
-          "Every current article was written by Emran",
+          `Every current article was written by ${PRIMARY_AUTHOR.name}`,
           "Primary sources and product evidence come first",
           "AI assists; humans remain accountable",
         ]}
@@ -60,7 +61,7 @@ export default function EditorialStandardsPage() {
         facts={[
           { label: "Company", value: "ArrayHash" },
           { label: "Current product", value: "ArraySubs" },
-          { label: "Current author", value: "Emran" },
+          { label: "Current author", value: PRIMARY_AUTHOR.name },
           { label: "Last reviewed", value: EDITORIAL_REVIEWED_DATE },
         ]}
       />
@@ -72,8 +73,11 @@ export default function EditorialStandardsPage() {
           subtitle="Technical accuracy, first-hand product knowledge, and clear source attribution guide every article."
         >
           <p>
-            Emran, founder and lead engineer of ArrayHash, wrote and approved
-            every article currently published on this site. ArraySubs is
+            <InlineLink href={getAuthorPath(PRIMARY_AUTHOR)}>
+              {PRIMARY_AUTHOR.name}
+            </InlineLink>
+            , founder and lead engineer of ArrayHash, wrote and approved every
+            article currently published on this site. ArraySubs is
             ArrayHash&apos;s current product, and future ArrayHash products may
             also be covered here.
           </p>
@@ -120,9 +124,11 @@ export default function EditorialStandardsPage() {
             </p>
             <p>
               If no independent review occurred, the article makes no reviewer
-              claim. When invited authors publish in the future, Emran may be
-              named as reviewer only when he personally performed and accepted
-              responsibility for that review.
+              claim. When invited authors publish in the future,{
+                " "
+              }
+              {PRIMARY_AUTHOR.name} may be named as reviewer only when he
+              personally performed and accepted responsibility for that review.
             </p>
           </PolicyNote>
         </PolicySection>
@@ -188,9 +194,9 @@ export default function EditorialStandardsPage() {
         >
           <p>
             Every article currently published on this site was written and
-            approved by Emran. ArrayHash uses AI only as an assistant. Human
-            authorship, judgment, verification, and accountability remain
-            primary throughout the process.
+            approved by {PRIMARY_AUTHOR.name}. ArrayHash uses AI only as an
+            assistant. Human authorship, judgment, verification, and
+            accountability remain primary throughout the process.
           </p>
           <PolicyList
             items={[

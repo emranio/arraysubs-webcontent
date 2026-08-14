@@ -5,7 +5,7 @@ focus_keyword: "hard paywall vs metered paywall vs freemium"
 published: "2026-05-13"
 updated: "2026-07-04"
 last_verified: "2026-07-04"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -298,7 +298,7 @@ Authorize before serving protected content and bypass or vary caches with reliab
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WordPress membership and content-access strategy.
+**Author:** Al Emran, ArrayHash — product and editorial work across WordPress membership and content-access strategy.
 
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current Google Search, WooCommerce Memberships, and MemberPress documentation. No paywall conversion, search, or cohort experiment was performed.

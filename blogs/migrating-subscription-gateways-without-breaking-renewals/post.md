@@ -6,7 +6,7 @@ focus_keyphrase: "migrate WooCommerce subscription gateway"
 published: "2026-03-27"
 updated: "2026-06-20"
 last_verified: "2026-06-20"
-author: "Emran"
+author: "Al Emran"
 ---
 
 # Migrating Subscription Gateways Without Breaking Renewals

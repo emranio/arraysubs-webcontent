@@ -5,7 +5,7 @@ focus_keyword: "members only products WooCommerce strategy"
 published: "2026-03-19"
 updated: "2026-06-10"
 last_verified: "2026-06-10"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -236,7 +236,7 @@ No. Administrators and shop managers currently bypass Shop Access rules. Test gu
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce membership and catalog authorization.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce membership and catalog authorization.
 
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current WooCommerce, Google Search, and OWASP guidance. No live shop rule was saved on the mirror.

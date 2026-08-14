@@ -6,7 +6,7 @@ focus_keyphrase: "multi-gateway resilience subscription store"
 published: "2026-02-17"
 updated: "2026-05-29"
 last_verified: "2026-05-29"
-author: "Emran"
+author: "Al Emran"
 ---
 
 # Multi-Gateway Resilience for Subscription Stores

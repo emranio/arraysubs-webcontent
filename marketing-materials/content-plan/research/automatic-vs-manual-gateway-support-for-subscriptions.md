@@ -1094,7 +1094,7 @@ Preferred claims:
 - **Meta description (154 characters):** Learn why a WooCommerce gateway can work at checkout but not auto-renew, and how to qualify tokens, schedules, SCA, invoices, failures, and switching.
 - **Focus keyword:** automatic vs manual subscription gateway support
 - **Suggested format:** Technical explainer / gateway qualification guide
-- **Suggested author:** Emran, ArrayHash
+- **Suggested author:** Al Emran, ArrayHash
 - **Suggested reviewer:** ArraySubs Engineering Team
 - **Visible test environment:** WordPress + WooCommerce + current ArraySubs/ArraySubs Pro source and user-confirmed staging UI; list exact plugin versions if the main writer can obtain them without exposing credentials.
 - **Visible limitations:** provider/country/method availability changes; current code findings are version-specific; no universal PCI/SCA/legal advice; no conversion benchmark claimed.

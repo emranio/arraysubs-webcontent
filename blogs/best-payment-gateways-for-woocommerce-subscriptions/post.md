@@ -5,7 +5,7 @@ focus_keyword: "best payment gateways for WooCommerce subscriptions"
 published: "2026-02-11"
 updated: "2026-06-29"
 last_verified: "2026-06-29"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -512,4 +512,4 @@ Sometimes, but not by simply changing a WordPress setting. Tokens and remote agr
 - **What was verified:** Current ArraySubs Free manual-renewal architecture, ArraySubs Pro Stripe/PayPal/Paddle adapter behavior, cart constraints, renewal ownership, Gateway Health surfaces, webhook status surfaces, and gateway settings available in the inspected code and staging UI.
 - **What was not claimed:** This review did not make a live charge, prove provider onboarding for a particular merchant, test every country/currency/payment method, quote evergreen prices, or provide legal/tax/accounting advice.
 - **Refresh triggers:** Re-check quarterly and after a material ArraySubs, WooCommerce, Stripe extension, PayPal API, Paddle Billing, SCA/regulatory, pricing, regional-availability, or acceptable-use change.
-- **Authorship and verification:** Written and fact-checked by Emran for ArrayHash.
+- **Authorship and verification:** Written and fact-checked by Al Emran for ArrayHash.

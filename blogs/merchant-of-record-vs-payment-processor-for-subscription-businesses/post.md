@@ -6,7 +6,7 @@ focus_keyphrase: "Merchant of Record vs payment processor subscriptions"
 published: "2026-05-21"
 updated: "2026-07-06"
 last_verified: "2026-07-06"
-author: "Emran"
+author: "Al Emran"
 ---
 
 # Merchant of Record vs Payment Processor for Subscription Businesses

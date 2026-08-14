@@ -5,7 +5,7 @@ focus_keyword: "content dripping strategy membership site"
 published: "2026-07-20"
 updated: "2026-07-20"
 last_verified: "2026-07-20"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -277,7 +277,7 @@ No built-in unlock-notification scheduler was found in the inspected Members Acc
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across membership curriculum, access, and lifecycle strategy.
+**Author:** Al Emran, ArrayHash — product and editorial work across membership curriculum, access, and lifecycle strategy.
 
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current WooCommerce Memberships and MemberPress documentation. No live time-travel, scheduler, or learning-outcome experiment was run.

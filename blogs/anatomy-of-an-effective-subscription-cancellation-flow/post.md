@@ -6,7 +6,7 @@ focus_keyphrase: "subscription cancellation flow"
 published: "2026-05-02"
 updated: "2026-07-16"
 last_verified: "2026-07-16"
-author: "Emran"
+author: "Al Emran"
 ---
 
 # Anatomy of an Effective Subscription Cancellation Flow

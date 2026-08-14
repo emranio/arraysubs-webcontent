@@ -5,7 +5,7 @@ focus_keyword: "WooCommerce subscription product types"
 published: "2026-04-13"
 updated: "2026-05-05"
 last_verified: "2026-05-05"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

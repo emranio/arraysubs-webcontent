@@ -5,7 +5,7 @@ focus_keyword: "how WooCommerce subscription renewals work"
 published: "2026-07-17"
 updated: "2026-07-19"
 last_verified: "2026-07-19"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

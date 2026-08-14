@@ -5,7 +5,7 @@ focus_keyword: "what happens when subscription payment fails WooCommerce"
 published: "2026-06-23"
 updated: "2026-06-24"
 last_verified: "2026-06-24"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

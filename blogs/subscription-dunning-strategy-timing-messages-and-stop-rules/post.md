@@ -5,7 +5,7 @@ focus_keyword: "subscription dunning strategy WooCommerce"
 published: "2026-06-02"
 updated: "2026-06-25"
 last_verified: "2026-06-25"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

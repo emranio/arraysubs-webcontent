@@ -5,7 +5,7 @@ focus_keyword: "URL based content restriction WordPress"
 published: "2026-02-26"
 updated: "2026-08-10"
 last_verified: "2026-08-10"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -292,7 +292,7 @@ No. Protect the file endpoint and underlying object separately.
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce membership access and technical SEO.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce membership access and technical SEO.
 
 
 **Verification environment:** Source and read-only live UI review of ArraySubs 1.8.11 on July 16, 2026. No URL rule, user, or content setting was saved or changed.

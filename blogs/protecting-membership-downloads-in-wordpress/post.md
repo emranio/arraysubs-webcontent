@@ -5,7 +5,7 @@ focus_keyword: "protect membership downloads WordPress"
 published: "2026-04-06"
 updated: "2026-05-25"
 last_verified: "2026-05-25"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -237,7 +237,7 @@ No. Authorize the file, media stream, or API independently.
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscriptions, membership access, and technical SEO.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce subscriptions, membership access, and technical SEO.
 
 
 **Verification environment:** Source and read-only live UI review of ArraySubs 1.8.11 and WooCommerce/WordPress documentation on July 16, 2026. No live download rule or customer data was changed.

@@ -5,7 +5,7 @@ focus_keyword: "subscription sign up fee best practices"
 published: "2026-06-06"
 updated: "2026-07-14"
 last_verified: "2026-07-14"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

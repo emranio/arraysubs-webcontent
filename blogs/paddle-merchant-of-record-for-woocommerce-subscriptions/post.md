@@ -5,7 +5,7 @@ focus_keyword: "Paddle Merchant of Record WooCommerce"
 published: "2026-02-28"
 updated: "2026-05-26"
 last_verified: "2026-05-26"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -597,7 +597,7 @@ ArraySubs Pro supplies Paddle catalog/checkout wiring, local subscription and re
 
 ## Verification scope, limitations, and update log
 
-This guide was written and fact-checked by Emran at ArrayHash. Verification during the latest update combined ArraySubs Free and Pro source inspection, current Paddle legal/developer documentation, and fresh staging captures of the Paddle settings, WooCommerce provider row, and ArraySubs Gateway Health interface.
+This guide was written and fact-checked by Al Emran at ArrayHash. Verification during the latest update combined ArraySubs Free and Pro source inspection, current Paddle legal/developer documentation, and fresh staging captures of the Paddle settings, WooCommerce provider row, and ArraySubs Gateway Health interface.
 
 The staging pass verified installed versions, configuration surfaces, provider visibility, sandbox controls, capability labels, the webhook URL display, and the event-log interface. It did **not** enter Paddle credentials, enable the gateway, synchronize a live catalog, create a sandbox Transaction or Subscription, open Paddle Checkout, receive provider-originated events, pause or resume a remote subscription, update a payment method, request an Adjustment, test a chargeback, or reconcile a payout. The implementation gaps and launch blockers in this guide come from first-party source inspection and remain subject to sandbox proof after code changes.
 

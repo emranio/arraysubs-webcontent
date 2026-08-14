@@ -5,7 +5,7 @@ focus_keyword: "WooCommerce failed subscription payment recovery"
 published: "2026-05-25"
 updated: "2026-06-07"
 last_verified: "2026-06-07"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

@@ -5,7 +5,7 @@ focus_keyword: "subscription terms on product page"
 published: "2026-04-03"
 updated: "2026-07-06"
 last_verified: "2026-07-06"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

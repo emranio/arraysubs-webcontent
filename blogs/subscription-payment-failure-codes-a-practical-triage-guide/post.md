@@ -5,7 +5,7 @@ focus_keyword: "subscription payment failure codes"
 published: "2026-01-29"
 updated: "2026-03-12"
 last_verified: "2026-03-12"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -260,7 +260,7 @@ Use a concise, safe explanation and the required action. Keep raw payloads and s
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
 
 
 **Verification environment:** Source and UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current Stripe, PayPal, Paddle, WooCommerce, and PCI SSC documentation. Not every provider code was generated live.

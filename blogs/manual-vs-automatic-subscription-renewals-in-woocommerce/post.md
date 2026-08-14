@@ -5,7 +5,7 @@ focus_keyword: "manual vs automatic WooCommerce subscription renewals"
 published: "2026-04-07"
 updated: "2026-04-16"
 last_verified: "2026-04-16"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

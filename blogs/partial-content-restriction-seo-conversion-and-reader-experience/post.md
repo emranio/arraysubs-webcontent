@@ -5,7 +5,7 @@ focus_keyword: "partial content restriction SEO"
 published: "2026-03-05"
 updated: "2026-05-19"
 last_verified: "2026-05-19"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -287,7 +287,7 @@ The inspected partial gate is condition-based, not a publication-wide metered-pa
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce membership strategy, conversion, and technical SEO.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce membership strategy, conversion, and technical SEO.
 
 
 **Verification environment:** Source and read-only live UI review of ArraySubs 1.8.11 on July 16, 2026, plus current Google paywall, AI-feature, robots, and helpful-content guidance. No live content or restriction rule was saved.

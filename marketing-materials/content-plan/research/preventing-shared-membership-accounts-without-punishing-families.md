@@ -403,7 +403,7 @@ ArraySubs fit: per-plan/per-role limits can be one layer, but seat sales, invita
 - Focus keyword: `prevent shared membership accounts`
 - Format: long-form strategy guide
 - Visible publication and last-verified date: 2026-07-20
-- Author: Emran, ArrayHash
+- Author: Al Emran, ArrayHash
 - Technical reviewer: ArraySubs Engineering Team
 - Add a general-information/no-legal-advice note beside the privacy/policy section.
 

@@ -5,7 +5,7 @@ focus_keyword: "subscription payment tokens and card updates"
 published: "2026-05-07"
 updated: "2026-06-18"
 last_verified: "2026-06-18"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

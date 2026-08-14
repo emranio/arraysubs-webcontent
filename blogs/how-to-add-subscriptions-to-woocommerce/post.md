@@ -5,7 +5,7 @@ focus_keyword: "how to add subscriptions to WooCommerce"
 published: "2026-02-23"
 updated: "2026-03-20"
 last_verified: "2026-03-20"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

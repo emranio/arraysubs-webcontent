@@ -5,7 +5,7 @@ focus_keyword: "subscription order vs renewal order"
 published: "2026-07-19"
 updated: "2026-07-20"
 last_verified: "2026-07-20"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

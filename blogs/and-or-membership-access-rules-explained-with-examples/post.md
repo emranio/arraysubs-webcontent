@@ -5,7 +5,7 @@ focus_keyword: "AND OR membership access rules"
 published: "2026-06-08"
 updated: "2026-06-24"
 last_verified: "2026-06-24"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -340,7 +340,7 @@ No. URL, shop, content, download, and pricing subsystems can differ. Check each 
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce membership architecture, access policy, and technical education.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce membership architecture, access policy, and technical education.
 
 
 **Verification environment:** Source and read-only live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026. The screenshot used unsaved UI state; no access rule or member data was changed.

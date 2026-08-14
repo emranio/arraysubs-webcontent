@@ -6,7 +6,7 @@ focus_keyphrase: "why customers cancel subscriptions"
 published: "2026-03-08"
 updated: "2026-07-09"
 last_verified: "2026-07-09"
-author: "Emran"
+author: "Al Emran"
 ---
 
 # Why Customers Cancel Subscriptions: A Reason Taxonomy

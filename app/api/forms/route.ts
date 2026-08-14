@@ -1,5 +1,6 @@
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
+import { PRIMARY_AUTHOR } from "@/app/authors/_data";
 
 export const runtime = "nodejs";
 
@@ -122,7 +123,7 @@ function buildAlternativePart(text: string, html: string, boundary: string) {
 function buildMimeEmail(payload: GmailEmailPayload) {
   const alternativeBoundary = `arraysubs-alt-${crypto.randomUUID()}`;
   const headers = [
-    `From: ${formatMailbox(FROM_EMAIL, "Emran")}`,
+    `From: ${formatMailbox(FROM_EMAIL, PRIMARY_AUTHOR.name)}`,
     `To: ${formatMailbox(payload.to)}`,
     payload.replyTo ? `Reply-To: ${formatMailbox(payload.replyTo)}` : "",
     `Subject: ${encodeHeaderValue(payload.subject)}`,
@@ -305,7 +306,7 @@ function pageSlugFromSource(sourcePath: string) {
 function signatureText() {
   return [
     "Warm Regards",
-    "Emran",
+    PRIMARY_AUTHOR.name,
     "Cell & WhatsApp: +8801625000066",
     "LinkedIn: https://www.linkedin.com/in/emranio/",
   ].join("\n");
@@ -316,7 +317,7 @@ function signatureHtml() {
     <div style="margin:24px 0 0;color:#000000;font-size:16px;line-height:1.5;font-weight:400;">
       <div style="color:#000000;font-size:16px;line-height:1.25;font-weight:700;margin:0 0 6px;">##</div>
       <div style="color:#000000;font-size:16px;line-height:1.35;font-weight:700;margin:0 0 4px;">Warm Regards</div>
-      <div style="color:#000000;margin:0 0 2px;">Emran</div>
+      <div style="color:#000000;margin:0 0 2px;">${PRIMARY_AUTHOR.name}</div>
       <div style="color:#000000;margin:0 0 2px;">Cell &amp; WhatsApp: +8801625000066</div>
       <div style="color:#000000;margin:0;">LinkedIn: <a href="https://www.linkedin.com/in/emranio/" style="color:#0B57D0;font-weight:400;text-decoration:underline;">https://www.linkedin.com/in/emranio/</a></div>
     </div>

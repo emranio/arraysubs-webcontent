@@ -6,7 +6,7 @@ focus_keyphrase: "cancellation survey questions"
 published: "2026-06-07"
 updated: "2026-07-20"
 last_verified: "2026-07-20"
-author: "Emran"
+author: "Al Emran"
 ---
 
 # Cancellation Survey Questions That Produce Useful Data

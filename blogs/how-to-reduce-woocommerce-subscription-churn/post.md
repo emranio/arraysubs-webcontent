@@ -6,7 +6,7 @@ focus_keyphrase: "how to reduce WooCommerce subscription churn"
 published: "2026-01-09"
 updated: "2026-07-14"
 last_verified: "2026-07-14"
-author: "Emran"
+author: "Al Emran"
 ---
 
 # How to Reduce WooCommerce Subscription Churn

@@ -6,7 +6,7 @@ focus_keyphrase: "choose subscription gateway by country"
 published: "2026-06-12"
 updated: "2026-07-18"
 last_verified: "2026-07-18"
-author: "Emran"
+author: "Al Emran"
 ---
 
 # Choosing a Subscription Gateway by Country and Business Model

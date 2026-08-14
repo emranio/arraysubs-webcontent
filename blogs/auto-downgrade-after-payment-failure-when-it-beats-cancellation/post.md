@@ -5,7 +5,7 @@ focus_keyword: "auto downgrade after failed subscription payment"
 published: "2026-06-10"
 updated: "2026-06-20"
 last_verified: "2026-06-20"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -269,7 +269,7 @@ State disagreement: the remote paid agreement continues charging while local acc
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
 
 
 **Verification environment:** Source and UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026. No live gateway-backed subscription was advanced from failed renewal through overdue cancellation into fallback.

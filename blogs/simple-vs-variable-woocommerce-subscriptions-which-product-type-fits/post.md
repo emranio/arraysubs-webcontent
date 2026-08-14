@@ -5,7 +5,7 @@ focus_keyword: "simple vs variable WooCommerce subscriptions"
 published: "2026-06-12"
 updated: "2026-06-13"
 last_verified: "2026-06-13"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

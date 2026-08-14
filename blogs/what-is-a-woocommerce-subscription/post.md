@@ -5,7 +5,7 @@ focus_keyword: "what is a WooCommerce subscription"
 published: "2026-05-30"
 updated: "2026-06-08"
 last_verified: "2026-06-08"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

@@ -5,7 +5,7 @@ focus_keyword: "WooCommerce subscriptions and memberships together"
 published: "2026-04-09"
 updated: "2026-07-13"
 last_verified: "2026-07-13"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -248,7 +248,7 @@ No equivalent membership-plan/user-membership CPT exists in the inspected versio
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription and membership architecture.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce subscription and membership architecture.
 
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current WooCommerce and WordPress documentation. No live status transition or access mutation was performed on the mirror.

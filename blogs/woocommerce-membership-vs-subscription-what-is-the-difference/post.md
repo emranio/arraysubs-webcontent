@@ -5,7 +5,7 @@ focus_keyword: "WooCommerce membership vs subscription"
 published: "2026-06-30"
 updated: "2026-07-10"
 last_verified: "2026-07-10"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -322,7 +322,7 @@ Current ArraySubs does not create a membership-plan or user-membership custom po
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription and membership architecture.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce subscription and membership architecture.
 
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current WooCommerce and WordPress documentation. No new live membership records or transactions were created on the mirror.

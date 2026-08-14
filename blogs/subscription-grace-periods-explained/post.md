@@ -5,7 +5,7 @@ focus_keyword: "subscription grace period explained"
 published: "2026-02-04"
 updated: "2026-05-06"
 last_verified: "2026-05-06"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -276,7 +276,7 @@ The provider can own remote payment recovery while WordPress controls local acce
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce subscription operations.
 
 
 **Verification environment:** Source and UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current official WooCommerce, PayPal, and Paddle documentation. No live overdue subscription was advanced through both grace boundaries for this article.

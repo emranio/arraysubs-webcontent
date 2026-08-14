@@ -5,7 +5,7 @@ focus_keyword: "different first and renewal price WooCommerce"
 published: "2026-06-27"
 updated: "2026-07-16"
 last_verified: "2026-07-16"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

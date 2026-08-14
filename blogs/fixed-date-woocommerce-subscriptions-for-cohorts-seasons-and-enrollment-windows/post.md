@@ -5,7 +5,7 @@ focus_keyword: "fixed date WooCommerce subscriptions"
 published: "2026-04-01"
 updated: "2026-06-07"
 last_verified: "2026-06-07"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

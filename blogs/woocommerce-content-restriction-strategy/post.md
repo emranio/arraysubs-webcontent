@@ -5,7 +5,7 @@ focus_keyword: "content restriction strategy WooCommerce"
 published: "2026-07-12"
 updated: "2026-07-13"
 last_verified: "2026-07-13"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -252,7 +252,7 @@ Roles can support capabilities and compatibility, but they are usually too coars
 
 ## Author, technical review, and verification environment
 
-**Author:** Emran, ArrayHash — product and editorial work across WooCommerce membership and access architecture.
+**Author:** Al Emran, ArrayHash — product and editorial work across WooCommerce membership and access architecture.
 
 
 **Verification environment:** Source and live UI review of ArraySubs 1.8.11 and ArraySubs Pro 1.1.2 on July 16, 2026, plus current WooCommerce, WordPress, Google Search, and MemberPress documentation. No live rule was saved or cache behavior mutated on the mirror.

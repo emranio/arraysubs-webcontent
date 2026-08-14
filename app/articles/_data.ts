@@ -155,7 +155,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-03-20",
     readTime: "24 min read",
     format: "Pillar guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "how to add subscriptions to WooCommerce",
       "WooCommerce subscriptions",
@@ -185,7 +185,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-08",
     readTime: "16 min read",
     format: "Explainer",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "what is a WooCommerce subscription",
       "subscription product",
@@ -215,7 +215,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-05",
     readTime: "18 min read",
     format: "Decision guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WooCommerce subscription product types",
       "simple subscription product",
@@ -245,7 +245,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-13",
     readTime: "9 min read",
     format: "Comparison guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "simple vs variable WooCommerce subscriptions",
       "variable subscription product",
@@ -276,7 +276,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-22",
     readTime: "9 min read",
     format: "Decision guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "recurring vs fixed term subscriptions",
       "fixed cycle subscription",
@@ -307,7 +307,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-17",
     readTime: "10 min read",
     format: "Decision framework",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription free trial vs paid trial",
       "card required trial",
@@ -338,7 +338,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-14",
     readTime: "11 min read",
     format: "Economics guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription sign up fee best practices",
       "subscription setup fee",
@@ -369,7 +369,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-15",
     readTime: "10 min read",
     format: "Packaging guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "monthly vs annual subscription plans WooCommerce",
       "annual subscription discount",
@@ -400,7 +400,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-16",
     readTime: "10 min read",
     format: "Strategy guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "one time purchase and subscription same product",
       "buy once or subscribe WooCommerce",
@@ -431,7 +431,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-07",
     readTime: "9 min read",
     format: "Operations guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "fixed date WooCommerce subscriptions",
       "cohort subscription",
@@ -462,7 +462,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-18",
     readTime: "10 min read",
     format: "UX framework",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "customer chosen subscription duration WooCommerce",
       "subscription length selector",
@@ -493,7 +493,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-04-11",
     readTime: "10 min read",
     format: "Financial model",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "lifetime deal vs subscription",
       "lifetime deal pricing",
@@ -524,7 +524,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-06",
     readTime: "11 min read",
     format: "Disclosure checklist",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription terms on product page",
       "recurring billing disclosure WooCommerce",
@@ -555,7 +555,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-04-29",
     readTime: "9 min read",
     format: "Conversion guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WooCommerce subscription product page",
       "subscription pricing disclosure",
@@ -585,7 +585,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-05",
     readTime: "9 min read",
     format: "Launch checklist",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WooCommerce subscription launch checklist",
       "subscription testing",
@@ -614,7 +614,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-21",
     readTime: "8 min read",
     format: "Direct answer",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WooCommerce subscriptions without a plugin",
       "WooCommerce recurring payments",
@@ -643,7 +643,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-19",
     readTime: "10 min read",
     format: "Pillar guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "how WooCommerce subscription renewals work",
       "renewal order",
@@ -672,7 +672,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-04-16",
     readTime: "9 min read",
     format: "Comparison guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "manual vs automatic WooCommerce subscription renewals",
       "automatic recurring payments",
@@ -702,7 +702,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-20",
     readTime: "8 min read",
     format: "Record explainer",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription order vs renewal order",
       "WooCommerce parent order",
@@ -732,7 +732,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-31",
     readTime: "8 min read",
     format: "Explainer",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WooCommerce renewal synchronization",
       "billing date alignment",
@@ -761,7 +761,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-03",
     readTime: "10 min read",
     format: "Decision guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription proration methods",
       "subscription credit",
@@ -791,7 +791,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-04-30",
     readTime: "8 min read",
     format: "Timing guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "immediate vs next renewal plan change",
       "subscription upgrade",
@@ -820,7 +820,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-23",
     readTime: "8 min read",
     format: "Risk guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "early subscription renewal",
       "renew now",
@@ -850,7 +850,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-28",
     readTime: "9 min read",
     format: "Operations guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription billing schedule vs shipping schedule",
       "subscription fulfillment",
@@ -879,7 +879,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-16",
     readTime: "9 min read",
     format: "Pricing guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "different first and renewal price WooCommerce",
       "introductory subscription price",
@@ -909,7 +909,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-04-29",
     readTime: "9 min read",
     format: "Policy guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "immediate vs end of period cancellation",
       "cancel subscription",
@@ -938,7 +938,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-14",
     readTime: "10 min read",
     format: "Economics guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WooCommerce recurring coupon strategy",
       "subscription coupon",
@@ -968,7 +968,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-01",
     readTime: "10 min read",
     format: "Reconciliation guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WooCommerce subscription renewal tax shipping",
       "renewal shipping",
@@ -997,7 +997,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-14",
     readTime: "10 min read",
     format: "Safety guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "change WooCommerce subscription renewal date",
       "subscription schedule",
@@ -1026,7 +1026,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-02-06",
     readTime: "9 min read",
     format: "Policy guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "multiple WooCommerce subscriptions per customer",
       "subscription cart policy",
@@ -1056,7 +1056,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-07",
     readTime: "12 min read",
     format: "Pillar guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WooCommerce failed subscription payment recovery",
       "failed renewal",
@@ -1085,7 +1085,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-24",
     readTime: "8 min read",
     format: "Timeline explainer",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "what happens when subscription payment fails WooCommerce",
       "subscription grace period",
@@ -1114,7 +1114,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-25",
     readTime: "10 min read",
     format: "Strategy guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription dunning strategy WooCommerce",
       "dunning emails",
@@ -1144,7 +1144,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-04-05",
     readTime: "18 min read",
     format: "Guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "automatic retry failed subscription payments",
       "WooCommerce failed payment retry rules",
@@ -1175,7 +1175,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-06",
     readTime: "17 min read",
     format: "Explainer",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription grace period explained",
       "WooCommerce subscription grace period",
@@ -1205,7 +1205,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-28",
     readTime: "15 min read",
     format: "Guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "expired card subscription recovery",
       "update expired card WooCommerce subscription",
@@ -1235,7 +1235,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-03-26",
     readTime: "16 min read",
     format: "Guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "failed payment email sequence",
       "subscription payment failed email examples",
@@ -1266,7 +1266,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-20",
     readTime: "15 min read",
     format: "Strategy guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "auto downgrade after failed subscription payment",
       "failed payment downgrade to free plan",
@@ -1297,7 +1297,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-22",
     readTime: "14 min read",
     format: "Checklist",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "involuntary churn recovery checklist",
       "reduce failed payment churn ecommerce",
@@ -1327,7 +1327,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-03-12",
     readTime: "14 min read",
     format: "Troubleshooting guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription payment failure codes",
       "Stripe decline codes recurring payments",
@@ -1359,7 +1359,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-17",
     readTime: "21 min read",
     format: "Pillar guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "how to create a WooCommerce membership site",
       "WooCommerce membership site planning guide",
@@ -1390,7 +1390,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-10",
     readTime: "17 min read",
     format: "Comparison",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WooCommerce membership vs subscription",
       "subscription vs membership difference WooCommerce",
@@ -1422,7 +1422,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-13",
     readTime: "14 min read",
     format: "Guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WooCommerce subscriptions and memberships together",
       "recurring membership WooCommerce architecture",
@@ -1453,7 +1453,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-18",
     readTime: "14 min read",
     format: "Strategy guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "membership level strategy",
       "how many membership tiers",
@@ -1484,7 +1484,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-13",
     readTime: "14 min read",
     format: "Guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "content restriction strategy WooCommerce",
       "WooCommerce gated content best practices",
@@ -1514,7 +1514,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-04",
     readTime: "17 min read",
     format: "Comparison",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "hard paywall vs metered paywall vs freemium",
       "best paywall model for WordPress",
@@ -1545,7 +1545,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-20",
     readTime: "13 min read",
     format: "Strategy guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "content dripping strategy membership site",
       "drip content schedule best practices",
@@ -1575,7 +1575,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-10",
     readTime: "14 min read",
     format: "Guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "members only products WooCommerce strategy",
       "private WooCommerce catalog membership",
@@ -1606,7 +1606,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-16",
     readTime: "14 min read",
     format: "Guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "SEO for gated content WooCommerce",
       "membership content SEO",
@@ -1636,7 +1636,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-25",
     readTime: "14 min read",
     format: "Guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "protect membership downloads WordPress",
       "secure WooCommerce member downloads",
@@ -1666,7 +1666,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-16",
     readTime: "17 min read",
     format: "Comparison",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WordPress roles vs membership levels",
       "subscription plan vs user role WordPress",
@@ -1697,7 +1697,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-04-24",
     readTime: "14 min read",
     format: "Guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "URL based content restriction WordPress",
       "restrict WordPress URL path by membership",
@@ -1729,7 +1729,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-19",
     readTime: "14 min read",
     format: "Guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "partial content restriction SEO",
       "gate part of a WordPress page",
@@ -1760,7 +1760,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-24",
     readTime: "13 min read",
     format: "Explainer",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "AND OR membership access rules",
       "combine membership access conditions",
@@ -1791,7 +1791,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-03-15",
     readTime: "24 min read",
     format: "Strategy guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "prevent shared membership accounts",
       "limit concurrent logins WordPress membership",
@@ -1822,7 +1822,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-29",
     readTime: "33 min read",
     format: "Comparison guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "best payment gateways for WooCommerce subscriptions",
       "WooCommerce recurring payment gateway comparison",
@@ -1853,7 +1853,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-11",
     readTime: "32 min read",
     format: "Comparison guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "Stripe vs PayPal vs Paddle for WooCommerce recurring billing",
       "best subscription gateway Stripe or PayPal",
@@ -1885,7 +1885,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-15",
     readTime: "29 min read",
     format: "Technical guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "Stripe recurring payments for WooCommerce",
       "WooCommerce Stripe subscription renewals",
@@ -1917,7 +1917,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-03",
     readTime: "27 min read",
     format: "Technical guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "PayPal recurring payments WooCommerce",
       "WooCommerce PayPal subscription renewal",
@@ -1948,7 +1948,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-26",
     readTime: "27 min read",
     format: "Technical guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "Paddle Merchant of Record WooCommerce",
       "use Paddle for WooCommerce subscriptions",
@@ -1979,7 +1979,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-13",
     readTime: "34 min read",
     format: "Technical explainer",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "automatic vs manual subscription gateway support",
       "WooCommerce gateway automatic renewal support",
@@ -2010,7 +2010,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-02",
     readTime: "29 min read",
     format: "Technical guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "SCA 3D Secure subscription renewals",
       "strong customer authentication recurring payments",
@@ -2040,7 +2040,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-18",
     readTime: "27 min read",
     format: "Technical explainer",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription payment tokens and card updates",
       "WooCommerce subscription payment token",
@@ -2071,7 +2071,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-19",
     readTime: "27 min read",
     format: "Technical guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "WooCommerce subscription webhooks",
       "Stripe webhook events for subscriptions",
@@ -2102,7 +2102,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-25",
     readTime: "33 min read",
     format: "Technical guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "sales tax and VAT on WooCommerce subscriptions",
       "tax recurring subscription payments WooCommerce",
@@ -2134,7 +2134,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-06",
     readTime: "23 min read",
     format: "Decision guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "Merchant of Record vs payment processor subscriptions",
       "subscription payment processor responsibilities",
@@ -2165,7 +2165,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-20",
     readTime: "23 min read",
     format: "Migration runbook",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "migrate WooCommerce subscription gateway",
       "subscription gateway migration runbook",
@@ -2196,7 +2196,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-18",
     readTime: "21 min read",
     format: "Decision framework",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "choose subscription gateway by country",
       "WooCommerce recurring payment gateway business model",
@@ -2227,7 +2227,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-05-29",
     readTime: "21 min read",
     format: "Architecture guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "multi-gateway resilience subscription store",
       "subscription payment gateway failover",
@@ -2258,7 +2258,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-14",
     readTime: "23 min read",
     format: "Operating guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "how to reduce WooCommerce subscription churn",
       "subscription retention WooCommerce",
@@ -2289,7 +2289,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-11",
     readTime: "22 min read",
     format: "Measurement guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "voluntary vs involuntary churn",
       "subscription payment failure churn",
@@ -2319,7 +2319,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-09",
     readTime: "22 min read",
     format: "Taxonomy guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "why customers cancel subscriptions",
       "subscription cancellation reason taxonomy",
@@ -2350,7 +2350,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-16",
     readTime: "22 min read",
     format: "UX and operations guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription cancellation flow",
       "WooCommerce cancellation UX",
@@ -2382,7 +2382,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-06-30",
     readTime: "22 min read",
     format: "Comparison guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "subscription save offers",
       "subscription discount pause skip downgrade",
@@ -2413,7 +2413,7 @@ export const RESOURCE_ARTICLES: ResourceArticle[] = [
     lastVerifiedAt: "2026-07-20",
     readTime: "22 min read",
     format: "Survey design guide",
-    author: "Emran",
+    author: "Al Emran",
     keywords: [
       "cancellation survey questions",
       "subscription cancellation questionnaire",

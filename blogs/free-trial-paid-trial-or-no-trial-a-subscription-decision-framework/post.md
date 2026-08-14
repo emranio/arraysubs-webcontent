@@ -5,7 +5,7 @@ focus_keyword: "subscription free trial vs paid trial"
 published: "2026-06-05"
 updated: "2026-06-17"
 last_verified: "2026-06-17"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

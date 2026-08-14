@@ -5,7 +5,7 @@ focus_keyword: "customer chosen subscription duration WooCommerce"
 published: "2026-03-06"
 updated: "2026-05-18"
 last_verified: "2026-05-18"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

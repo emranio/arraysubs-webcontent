@@ -5,7 +5,7 @@ focus_keyword: "WooCommerce renewal synchronization"
 published: "2026-05-14"
 updated: "2026-05-31"
 last_verified: "2026-05-31"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

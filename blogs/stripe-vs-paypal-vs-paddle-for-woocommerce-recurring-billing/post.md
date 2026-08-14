@@ -5,7 +5,7 @@ focus_keyword: "Stripe vs PayPal vs Paddle for WooCommerce recurring billing"
 published: "2026-03-18"
 updated: "2026-07-11"
 last_verified: "2026-07-11"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
@@ -557,4 +557,4 @@ No. A PayPal agreement does not become a Stripe PaymentMethod. The customer need
 - **Not claimed:** No live or sandbox charge, 3DS challenge, retry, refund, dispute, remote portal action, catalog mutation, remote cancellation, or signed provider-to-staging webhook delivery was represented as completed.
 - **Availability:** Countries, currencies, methods, prices, underwriting, product policy, and legal/tax responsibility can change; recheck provider terms and obtain qualified legal, tax, accounting, and payment-compliance advice.
 - **Scope:** Provider documentation may describe features the current ArraySubs adapter does not expose. This article uses the inspected adapter matrix for product claims.
-- **Authorship and verification:** Written and fact-checked by Emran for ArrayHash.
+- **Authorship and verification:** Written and fact-checked by Al Emran for ArrayHash.

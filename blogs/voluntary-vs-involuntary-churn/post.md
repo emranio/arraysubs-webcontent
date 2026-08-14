@@ -6,7 +6,7 @@ focus_keyphrase: "voluntary vs involuntary churn"
 published: "2026-04-23"
 updated: "2026-06-11"
 last_verified: "2026-06-11"
-author: "Emran"
+author: "Al Emran"
 ---
 
 # Voluntary vs Involuntary Churn

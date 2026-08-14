@@ -5,7 +5,7 @@ focus_keyword: "multiple WooCommerce subscriptions per customer"
 published: "2026-01-12"
 updated: "2026-02-06"
 last_verified: "2026-02-06"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 

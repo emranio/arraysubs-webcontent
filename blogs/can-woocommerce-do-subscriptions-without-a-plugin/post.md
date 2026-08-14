@@ -5,7 +5,7 @@ focus_keyword: "WooCommerce subscriptions without a plugin"
 published: "2026-05-22"
 updated: "2026-06-21"
 last_verified: "2026-06-21"
-author: "Emran"
+author: "Al Emran"
 author_affiliation: "ArrayHash"
 ---
 
