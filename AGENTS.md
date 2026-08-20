@@ -405,7 +405,7 @@ Motion rules:
 - Secondary CTA: `Live Demo`.
 - Pro pricing: Personal (1 site), Professional (10 sites), and Agency (1000
   sites), with annual and lifetime options through secure checkout.
-- Support email: `emran@arraysubs.com`.
+- Support email: `emran@arrayhash.com`.
 - Docs/support: `support.arrayhash.com`.
 - Do not reference a GitHub repository in public marketing copy.
 

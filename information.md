@@ -1,12 +1,12 @@
 Support
 For technical support and plugin-related questions:
-Email: emran@arraysubs.com
+Email: emran@arrayhash.com
 Response time: Within 24 hours on business days
 
 
 Other Inquiries
 For partnerships, media, pre-sale and general questions:
-Email: emran@arraysubs.com
+Email: emran@arrayhash.com
 
 
 wordpress.org link: https://wordpress.org/plugins/arraysubs/

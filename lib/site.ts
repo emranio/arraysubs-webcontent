@@ -26,7 +26,7 @@ export const site = {
   url: "https://arrayhash.com",
   lang: "en",
   locale: "en_US",
-  email: "emran@arraysubs.com",
+  email: "emran@arrayhash.com",
   /** Direct fallback target for email actions when no mail client opens. */
   contactUrl: "/contact/#contact-form",
   defaultTitle:

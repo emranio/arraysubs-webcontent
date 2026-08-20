@@ -9,7 +9,6 @@ const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "emran@arrayhash.com";
 const FROM_EMAIL = process.env.GMAIL_SENDER_EMAIL ?? "emran@arrayhash.com";
 const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? "ArrayHash Website <onboarding@resend.dev>";
 const GWS_CLI_PATH = process.env.GWS_CLI_PATH ?? "gws";
-const GMAIL_SUPPORT_LABEL_NAME = process.env.GMAIL_SUPPORT_LABEL_NAME ?? "ArrayHash Supports";
 
 const execFileAsync = promisify(execFile);
 
@@ -39,26 +38,12 @@ type ResendOptions = {
 
 type GmailEmailPayload = {
   to: string;
+  cc?: string;
   replyTo?: string;
   subject: string;
   html: string;
   text: string;
 };
-
-type GmailMessageResponse = {
-  id?: string;
-};
-
-type GmailLabel = {
-  id?: string;
-  name?: string;
-};
-
-type GmailLabelsResponse = {
-  labels?: GmailLabel[];
-};
-
-let gmailSupportLabelIdPromise: Promise<string> | null = null;
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
@@ -125,6 +110,7 @@ function buildMimeEmail(payload: GmailEmailPayload) {
   const headers = [
     `From: ${formatMailbox(FROM_EMAIL, PRIMARY_AUTHOR.name)}`,
     `To: ${formatMailbox(payload.to)}`,
+    payload.cc ? `Cc: ${formatMailbox(payload.cc)}` : "",
     payload.replyTo ? `Reply-To: ${formatMailbox(payload.replyTo)}` : "",
     `Subject: ${encodeHeaderValue(payload.subject)}`,
     `Date: ${new Date().toUTCString()}`,
@@ -144,9 +130,9 @@ function buildMimeEmail(payload: GmailEmailPayload) {
   ].join("\r\n");
 }
 
-async function gmailSendRaw(payload: GmailEmailPayload): Promise<string | undefined> {
+async function gmailSendRaw(payload: GmailEmailPayload) {
   const raw = Buffer.from(buildMimeEmail(payload), "utf8").toString("base64url");
-  const { stdout } = await execFileAsync(
+  await execFileAsync(
     GWS_CLI_PATH,
     [
       "gmail",
@@ -165,106 +151,10 @@ async function gmailSendRaw(payload: GmailEmailPayload): Promise<string | undefi
       maxBuffer: 1024 * 1024,
     },
   );
-  const response = JSON.parse(String(stdout || "{}")) as GmailMessageResponse;
-
-  return response.id;
 }
 
 async function sendGmailEmail(payload: GmailEmailPayload) {
-  const messageId = await gmailSendRaw(payload);
-
-  if (messageId) {
-    // The message is already delivered — labeling is best-effort. Never let a
-    // post-send label failure propagate, or the caller would treat the send as
-    // failed and re-deliver a duplicate through the Resend fallback.
-    try {
-      await markGmailMessageUnread(messageId);
-    } catch (labelError) {
-      console.error("Contact auto-reply labeling failed (already sent)", labelError);
-    }
-  }
-}
-
-async function markGmailMessageUnread(messageId: string) {
-  const supportLabelId = await getGmailSupportLabelId();
-
-  await execFileAsync(
-    GWS_CLI_PATH,
-    [
-      "gmail",
-      "users",
-      "messages",
-      "modify",
-      "--params",
-      JSON.stringify({
-        userId: FROM_EMAIL,
-        id: messageId,
-      }),
-      "--json",
-      JSON.stringify({
-        addLabelIds: ["UNREAD", "INBOX", "IMPORTANT", "STARRED", supportLabelId],
-      }),
-      "--format",
-      "json",
-    ],
-    {
-      cwd: process.cwd(),
-      maxBuffer: 1024 * 1024,
-    },
-  );
-}
-
-function getConfiguredGmailSupportLabelId() {
-  return process.env.GMAIL_SUPPORT_LABEL_ID?.trim() ?? "";
-}
-
-async function getGmailSupportLabelId() {
-  const configuredLabelId = getConfiguredGmailSupportLabelId();
-
-  if (configuredLabelId) {
-    return configuredLabelId;
-  }
-
-  if (!gmailSupportLabelIdPromise) {
-    gmailSupportLabelIdPromise = resolveGmailSupportLabelId();
-    // Don't cache a rejection for the process lifetime — let the next submission
-    // retry instead of permanently degrading the auto-reply labeling.
-    gmailSupportLabelIdPromise.catch(() => {
-      gmailSupportLabelIdPromise = null;
-    });
-  }
-
-  return gmailSupportLabelIdPromise;
-}
-
-async function resolveGmailSupportLabelId() {
-  const { stdout } = await execFileAsync(
-    GWS_CLI_PATH,
-    [
-      "gmail",
-      "users",
-      "labels",
-      "list",
-      "--params",
-      JSON.stringify({ userId: FROM_EMAIL }),
-      "--format",
-      "json",
-    ],
-    {
-      cwd: process.cwd(),
-      maxBuffer: 1024 * 1024,
-    },
-  );
-  const response = JSON.parse(String(stdout || "{}")) as GmailLabelsResponse;
-  const label = response.labels?.find(
-    (item) => item.name === GMAIL_SUPPORT_LABEL_NAME,
-  );
-
-  if (!label?.id) {
-    throw new Error(`Gmail label "${GMAIL_SUPPORT_LABEL_NAME}" was not found.`);
-  }
-
-  return label.id;
+  await gmailSendRaw(payload);
 }
 function normalizePayload(payload: FormPayload):
   | { ok: true; data: NormalizedSubmission }
@@ -373,9 +263,8 @@ function customerContactHtml(data: NormalizedSubmission, submittedAt: string) {
 }
 
 /**
- * Resend fallback for a direct customer email (e.g. the contact auto-reply)
- * when the Google Workspace send fails. Sent from the website Resend address
- * with reply-to pointing at the real support mailbox.
+ * Resend fallback for the customer acknowledgement when Google Workspace is
+ * unavailable. It preserves the same Reply-To and CC recipients as Gmail.
  */
 async function sendResendEmail(
   payload: GmailEmailPayload,
@@ -395,6 +284,7 @@ async function sendResendEmail(
     body: JSON.stringify({
       from: options.from ?? RESEND_FROM_EMAIL,
       to: [payload.to],
+      cc: payload.cc ? [payload.cc] : undefined,
       reply_to: payload.replyTo ?? TO_EMAIL,
       subject: payload.subject,
       html: payload.html,
@@ -487,6 +377,7 @@ export async function POST(request: Request) {
   try {
     const customerPayload: GmailEmailPayload = {
       to: normalized.data.email,
+      cc: TO_EMAIL,
       replyTo: TO_EMAIL,
       subject: customerContactSubject(normalized.data),
       html: customerContactHtml(normalized.data, submittedAt),
